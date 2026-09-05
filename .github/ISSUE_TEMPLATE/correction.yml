@@ -1,0 +1,36 @@
+name: Correct or add a tool
+description: Propose an evidence-backed correction or addition to the index.
+title: "[Index]: "
+labels:
+  - evidence-review
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      placeholder: Google Ads
+    validations:
+      required: true
+  - type: dropdown
+    id: change
+    attributes:
+      label: Change type
+      options:
+        - Correct an existing entry
+        - Add a new tool
+        - Report a broken source
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Official evidence
+      description: Link to vendor documentation, a vendor announcement, or a verified vendor repository.
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: What should change?
+    validations:
+      required: true
