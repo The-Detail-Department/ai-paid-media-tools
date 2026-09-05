@@ -1,0 +1,18 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI paid-media tools</title>
+  <desc id="desc">The Detail Department's production-readiness index for AI paid-media workflows.</desc>
+  <rect width="1280" height="640" fill="#FAF8F2"/>
+  <rect x="0" y="0" width="18" height="640" fill="#0969DA"/>
+  <rect x="72" y="72" width="112" height="112" fill="#11110F"/>
+  <g transform="translate(72 72) scale(0.112)" fill="#FAF8F2">
+    <path transform="translate(-166.43 -442.28) scale(2.2756)" d="M168.656 480V348.164H208.383C224.438 348.164 238.295 350.83 249.955 356.162C261.615 361.436 270.58 368.994 276.85 378.838C283.119 388.682 286.254 400.43 286.254 414.082C286.254 427.676 283.119 439.424 276.85 449.326C270.58 459.17 261.615 466.758 249.955 472.09C238.295 477.363 224.438 480 208.383 480H168.656ZM187.992 462.949H209.174C221.303 462.949 231.645 461.045 240.199 457.236C248.754 453.369 255.258 447.803 259.711 440.537C264.223 433.213 266.479 424.395 266.479 414.082C266.479 403.711 264.223 394.893 259.711 387.627C255.258 380.361 248.754 374.824 240.199 371.016C231.645 367.148 221.303 365.215 209.174 365.215H187.992V462.949Z"/>
+    <path transform="translate(131.17 -442.28) scale(2.2756)" d="M168.656 480V348.164H208.383C224.438 348.164 238.295 350.83 249.955 356.162C261.615 361.436 270.58 368.994 276.85 378.838C283.119 388.682 286.254 400.43 286.254 414.082C286.254 427.676 283.119 439.424 276.85 449.326C270.58 459.17 261.615 466.758 249.955 472.09C238.295 477.363 224.438 480 208.383 480H168.656ZM187.992 462.949H209.174C221.303 462.949 231.645 461.045 240.199 457.236C248.754 453.369 255.258 447.803 259.711 440.537C264.223 433.213 266.479 424.395 266.479 414.082C266.479 403.711 264.223 394.893 259.711 387.627C255.258 380.361 248.754 374.824 240.199 371.016C231.645 367.148 221.303 365.215 209.174 365.215H187.992V462.949Z"/>
+  </g>
+  <text x="220" y="112" fill="#11110F" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="1.4">THE DETAIL DEPARTMENT</text>
+  <text x="72" y="330" fill="#11110F" font-family="Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-3">AI paid-media tools</text>
+  <text x="72" y="405" fill="#3F3F3B" font-family="Arial, sans-serif" font-size="31">Production-readiness for real daily workflows.</text>
+  <line x1="72" y1="480" x2="1208" y2="480" stroke="#11110F" stroke-width="2"/>
+  <text x="72" y="550" fill="#11110F" font-family="Arial, sans-serif" font-size="24" font-weight="700">50 TOOLS</text>
+  <text x="270" y="550" fill="#11110F" font-family="Arial, sans-serif" font-size="24" font-weight="700">8 WORKFLOW AREAS</text>
+  <text x="1208" y="550" fill="#666661" font-family="Arial, sans-serif" font-size="22" text-anchor="end">Edition 0.4</text>
+</svg>

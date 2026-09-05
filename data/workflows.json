@@ -1,8 +1,15 @@
 {
   "meta": {
-    "version": "0.3",
+    "version": "0.4",
     "updatedOn": "2026-09-05",
-    "surfaceDefinition": "Actions describe the most direct official AI-compatible route named for each tool, not every capability in the vendor's manual interface.",
+    "surfaceDefinition": "Capabilities describe the most direct official AI-compatible route named for each tool, not every capability in the vendor manual interface.",
+    "defaultEvidenceBasis": "Documentation reviewed",
+    "evidenceBasisDefinition": {
+      "Documentation reviewed": "Assessment based on current official documentation, product announcements and public source repositories.",
+      "Connected": "The route was authenticated and its advertised tools or commands were inspected.",
+      "Executed": "At least one representative workflow was run against a controlled account or dataset.",
+      "Used repeatedly": "The route was used across recurring production work, within the stated boundary."
+    },
     "setupDefinition": {
       "Easy": "Connect a hosted service and approve access. No developer project or custom code.",
       "Moderate": "Requires account configuration, credentials or a small amount of technical setup.",
@@ -18,311 +25,1421 @@
       "Unverified": "The vendor has not documented a dependable boundary."
     },
     "coverageDefinition": {
-      "Broad": "Covers most recurring work for the tool's role, but not necessarily every manual feature.",
-      "Partial": "Useful recurring workflows are available, with material gaps.",
-      "Narrow": "Useful for a constrained job such as retrieval, reporting or one asset type.",
-      "Configurable": "Coverage depends on the tools, actions or database permissions exposed by the operator.",
-      "Specialist": "Covers a specialist modelling or engineering job rather than ordinary campaign operations."
+      "End to end": "Completes nearly all of the recurring human job through the evaluated route.",
+      "Most steps": "Completes most of the recurring job with a bounded human handoff.",
+      "Some steps": "Handles useful parts of the job but leaves material work elsewhere.",
+      "Assist only": "Supplies context or one narrow output rather than completing the job.",
+      "Depends": "Coverage depends on the tools, data or permissions configured by the operator.",
+      "Specialist": "Completes a specialist modelling or engineering job rather than ordinary campaign operations."
     },
-    "commercialDefinition": "Affiliate means a public commission-paying programme. Referral and Partner are shown separately and must not be described as affiliate programmes."
+    "commercialDefinition": "Affiliate means a public commission-paying programme. Referral and Partner are shown separately and must not be described as affiliate programmes.",
+    "capabilityDefinition": {
+      "Yes": "The evaluated route directly supports the action for its core objects.",
+      "Partial": "The action exists, but important objects, fields or workflows are missing or inconsistent.",
+      "No": "The evaluated route does not support the action.",
+      "Depends": "The action is determined by connected tools, permissions or custom configuration.",
+      "N/A": "The action is not meaningful for this type of tool.",
+      "Unverified": "The vendor has not documented a dependable boundary."
+    }
   },
   "workflows": {
     "google-ads": {
       "surface": "Official MCP",
       "object": "Campaign and performance data",
-      "setup": {"level": "Hard", "note": "Requires Python, a Google Ads developer token, a Google Cloud project, enabled APIs, OAuth credentials and MCP client configuration."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Narrow", "note": "Account discovery, metadata and GAQL queries. Campaign building and optimisation still happen elsewhere."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires Python, a Google Ads developer token, a Google Cloud project, enabled APIs, OAuth credentials and MCP client configuration."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Assist only",
+        "note": "Account discovery, metadata and GAQL queries. Campaign building and optimisation still happen elsewhere."
+      },
       "blocker": "It cannot create an ad, change a bid or budget, pause an entity or fix the issue it finds.",
-      "commercial": {"type": "Partner", "label": "Google Partners", "url": "https://support.google.com/google-ads/answer/9029203?hl=en", "note": "Agency recognition, training and support. Not a public cash affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Google Partners",
+        "url": "https://support.google.com/google-ads/answer/9029203?hl=en",
+        "note": "Agency recognition, training and support. Not a public cash affiliate programme."
+      }
     },
     "meta-ads": {
       "surface": "Official remote MCP, open beta",
       "object": "Campaigns, ad sets, ads and insights",
-      "setup": {"level": "Easy", "note": "Add the hosted connector and authorise the Meta account. Availability still rolls out by account and tool."},
-      "actions": {"read": "Yes", "create": "Partial", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Partial", "note": "Creation and analysis are present, but the current beta does not provide dependable general modification of existing campaign objects."},
+      "setup": {
+        "level": "Easy",
+        "note": "Add the hosted connector and authorise the Meta account. Availability still rolls out by account and tool."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Creation and analysis are present, but the current beta does not provide dependable general modification of existing campaign objects."
+      },
       "blocker": "A workflow can create supported objects, then still send the operator back to Ads Manager to make ordinary changes.",
-      "commercial": {"type": "Partner", "label": "Meta Business Partners", "url": "https://www.facebook.com/business/marketing-partners", "note": "Vetted services and technology ecosystem. No public commission-paying Ads affiliate programme was verified."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Meta Business Partners",
+        "url": "https://www.facebook.com/business/marketing-partners",
+        "note": "Vetted services and technology ecosystem. No public commission-paying Ads affiliate programme was verified."
+      }
     },
     "tiktok-for-business": {
       "surface": "Official remote MCP",
       "object": "Campaigns, ad groups, ads, audiences, creative and reporting",
-      "setup": {"level": "Easy", "note": "Hosted OAuth connection with no developer token, API key management or custom code."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Partial"},
-      "coverage": {"level": "Broad", "note": "Around 400 tools cover creation, targeting, bidding, reporting and creative operations. Some manual and account workflows remain outside the route."},
+      "setup": {
+        "level": "Easy",
+        "note": "Hosted OAuth connection with no developer token, API key management or custom code."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Around 400 tools cover creation, targeting, bidding, reporting and creative operations. Some manual and account workflows remain outside the route."
+      },
       "blocker": "The full endpoint loads an enormous tool surface. Progressive disclosure is safer and easier for daily use.",
-      "commercial": {"type": "Affiliate", "label": "TikTok for Business Affiliate Program", "url": "https://getstarted.tiktok.com/affiliates?lang=en-PH", "note": "Impact-hosted programme with a flat-fee bounty for qualified new advertisers."}
+      "commercial": {
+        "type": "Affiliate",
+        "label": "TikTok for Business Affiliate Program",
+        "url": "https://getstarted.tiktok.com/affiliates?lang=en-PH",
+        "note": "Impact-hosted programme with a flat-fee bounty for qualified new advertisers."
+      }
     },
     "microsoft-advertising": {
       "surface": "Official managed MCP",
       "object": "Accounts, campaigns, ad groups, ads, keywords and performance",
-      "setup": {"level": "Easy", "note": "Connect the managed server to a supported assistant and authenticate the advertising account."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Narrow", "note": "Current launch documentation covers exploration, performance queries and audits, not mutation."},
+      "setup": {
+        "level": "Easy",
+        "note": "Connect the managed server to a supported assistant and authenticate the advertising account."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Assist only",
+        "note": "Current launch documentation covers exploration, performance queries and audits, not mutation."
+      },
       "blocker": "The product language says manage campaigns, but the documented tool boundary only retrieves and audits data.",
-      "commercial": {"type": "Partner", "label": "Microsoft Advertising Partner Program", "url": "https://msadvertisingpartnerprogram.powerappsportals.com/welcome", "note": "Agency, channel and technology partner programme with spend and tenure requirements. Not a public affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Microsoft Advertising Partner Program",
+        "url": "https://msadvertisingpartnerprogram.powerappsportals.com/welcome",
+        "note": "Agency, channel and technology partner programme with spend and tenure requirements. Not a public affiliate programme."
+      }
     },
     "amazon-ads": {
       "surface": "Official remote MCP, open beta",
       "object": "Campaigns, accounts, reports, billing and selected multi-step workflows",
-      "setup": {"level": "Hard", "note": "Limited to Amazon Ads partners with active API credentials despite the hosted MCP route."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Yes"},
-      "coverage": {"level": "Broad", "note": "Includes individual API capabilities plus tools for account creation, reports, campaign launch and locale expansion."},
+      "setup": {
+        "level": "Hard",
+        "note": "Limited to Amazon Ads partners with active API credentials despite the hosted MCP route."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Includes individual API capabilities plus tools for account creation, reports, campaign launch and locale expansion."
+      },
       "blocker": "Strong action coverage is offset by partner-only API access and beta maturity.",
-      "commercial": {"type": "Partner", "label": "Amazon Ads Partner Network", "url": "https://advertising.amazon.com/partners/network", "note": "Self-service agency and tool-provider network. Amazon Associates is a separate retail affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Amazon Ads Partner Network",
+        "url": "https://advertising.amazon.com/partners/network",
+        "note": "Self-service agency and tool-provider network. Amazon Associates is a separate retail affiliate programme."
+      }
     },
     "snapchat-ads": {
       "surface": "Official remote MCP, allowlist",
       "object": "Campaign data and performance",
-      "setup": {"level": "Hard", "note": "Requires allowlist access as well as an authenticated advertising account."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Narrow", "note": "Retrieval and analysis only. The broader Marketing API is a separate engineering route."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires allowlist access as well as an authenticated advertising account."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Assist only",
+        "note": "Retrieval and analysis only. The broader Marketing API is a separate engineering route."
+      },
       "blocker": "It is both gated and read-only, so it cannot carry a campaign from diagnosis to correction.",
-      "commercial": {"type": "Affiliate", "label": "Snapchat Affiliate Programme", "url": "https://help.snapchat.com/hc/en-gb/articles/36391141656724-About-Snapchat-s-Affiliate-Programme", "note": "PartnerStack programme paying a one-time 20% revenue share on eligible advertiser spend during the first 30 days."}
+      "commercial": {
+        "type": "Affiliate",
+        "label": "Snapchat Affiliate Programme",
+        "url": "https://help.snapchat.com/hc/en-gb/articles/36391141656724-About-Snapchat-s-Affiliate-Programme",
+        "note": "PartnerStack programme paying a one-time 20% revenue share on eligible advertiser spend during the first 30 days."
+      }
     },
     "linkedin-ads": {
       "surface": "Official Marketing API",
       "object": "Campaigns, reporting, audiences, leads and conversions",
-      "setup": {"level": "Hard", "note": "Requires a developer application, a defined use case, product access, application vetting and a custom agent layer."},
-      "actions": {"read": "Yes", "create": "Partial", "modify": "Partial", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "The API covers important campaign-management jobs, but access is approved by product and use case and there is no official agent interface."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires a developer application, a defined use case, product access, application vetting and a custom agent layer."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "The API covers important campaign-management jobs, but access is approved by product and use case and there is no official agent interface."
+      },
       "blocker": "A team cannot simply connect an assistant. It must first win API approval and build and maintain the route.",
-      "commercial": {"type": "Partner", "label": "LinkedIn Marketing Partner Program", "url": "https://business.linkedin.com/advertise/partners", "note": "Vetted programme with API access, directory visibility and possible incentive or revenue-share programmes. Not an open affiliate scheme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "LinkedIn Marketing Partner Program",
+        "url": "https://business.linkedin.com/advertise/partners",
+        "note": "Vetted programme with API access, directory visibility and possible incentive or revenue-share programmes. Not an open affiliate scheme."
+      }
     },
     "pinterest-ads": {
       "surface": "Official Ads API",
       "object": "Campaigns, ad groups, ads, audiences and reporting",
-      "setup": {"level": "Hard", "note": "Requires a developer application, authorised ad accounts and a custom agent or integration layer."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "Useful campaign and reporting coverage through the API, without a vendor-backed MCP, plugin or CLI."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires a developer application, authorised ad accounts and a custom agent or integration layer."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Useful campaign and reporting coverage through the API, without a vendor-backed MCP, plugin or CLI."
+      },
       "blocker": "The API is usable, but the AI workflow is yours to engineer and maintain.",
-      "commercial": {"type": "Partner", "label": "Pinterest Business Partners", "url": "https://business.pinterest.com/pinterest-business-partners/", "note": "Vetted media, creative, commerce and measurement ecosystem. No public Ads affiliate programme was verified."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Pinterest Business Partners",
+        "url": "https://business.pinterest.com/pinterest-business-partners/",
+        "note": "Vetted media, creative, commerce and measurement ecosystem. No public Ads affiliate programme was verified."
+      }
     },
     "reddit-ads": {
       "surface": "Official Ads API",
       "object": "Accounts, campaigns, ad groups, ads and reporting",
-      "setup": {"level": "Hard", "note": "Requires an OAuth application, approved advertising access and a custom agent layer."},
-      "actions": {"read": "Yes", "create": "Partial", "modify": "Partial", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "Core campaign operations exist in the API, but no official agent interface was verified."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires an OAuth application, approved advertising access and a custom agent layer."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Core campaign operations exist in the API, but no official agent interface was verified."
+      },
       "blocker": "API approval and custom integration make this unsuitable as an immediate daily AI workflow.",
-      "commercial": {"type": "Partner", "label": "Reddit Partner Program", "url": "https://www.business.reddit.com/solutions/reddit-partnership-overview", "note": "Agency, API and data partner programme with badging and directory visibility. No public affiliate commission was verified."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Reddit Partner Program",
+        "url": "https://www.business.reddit.com/solutions/reddit-partnership-overview",
+        "note": "Agency, API and data partner programme with badging and directory visibility. No public affiliate commission was verified."
+      }
     },
     "x-ads": {
       "surface": "Official xurl CLI and Ads API",
       "object": "Advertiser resources, campaigns and reporting",
-      "setup": {"level": "Hard", "note": "Requires developer and Ads API access, CLI authentication and endpoint-level implementation."},
-      "actions": {"read": "Yes", "create": "Partial", "modify": "Partial", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "The CLI is agent-friendly, but the general X MCP does not establish Ads coverage and some Ads endpoints are allowlisted."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires developer and Ads API access, CLI authentication and endpoint-level implementation."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "The CLI is agent-friendly, but the general X MCP does not establish Ads coverage and some Ads endpoints are allowlisted."
+      },
       "blocker": "A useful official CLI exists, but there is no supported Ads-specific MCP or turn-key campaign workflow.",
-      "commercial": {"type": "Partner", "label": "X Official Partner directory", "url": "https://docs.x.com/enterprise/partner-directory", "note": "Selected enterprise partner ecosystem. No public X Ads affiliate programme was verified."}
+      "commercial": {
+        "type": "Partner",
+        "label": "X Official Partner directory",
+        "url": "https://docs.x.com/enterprise/partner-directory",
+        "note": "Selected enterprise partner ecosystem. No public X Ads affiliate programme was verified."
+      }
     },
     "display-video-360": {
       "surface": "Official API",
       "object": "Advertisers, campaigns, insertion orders, line items, targeting and creatives",
-      "setup": {"level": "Hard", "note": "Requires Google Cloud, OAuth, DV360 account permissions and a custom agent layer."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "Broad trafficking coverage, but performance reporting is separate and some YouTube and Partners writes are unsupported."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires Google Cloud, OAuth, DV360 account permissions and a custom agent layer."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Broad trafficking coverage, but performance reporting is separate and some YouTube and Partners writes are unsupported."
+      },
       "blocker": "An operator needs two API surfaces for build plus performance and still cannot reproduce every manual workflow.",
-      "commercial": {"type": "Partner", "label": "Google Marketing Platform Partners", "url": "https://support.google.com/analytics/answer/7237700?hl=en", "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Google Marketing Platform Partners",
+        "url": "https://support.google.com/analytics/answer/7237700?hl=en",
+        "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."
+      }
     },
     "campaign-manager-360": {
       "surface": "Official API",
       "object": "Campaigns, placements, ads, creatives, conversions and reports",
-      "setup": {"level": "Hard", "note": "Requires a CM360 account with API access, user-profile permissions, Google Cloud and OAuth."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Partial"},
-      "coverage": {"level": "Broad", "note": "Strong trafficking and measurement coverage, but no official agent interface packages the resource model for daily use."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires a CM360 account with API access, user-profile permissions, Google Cloud and OAuth."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Strong trafficking and measurement coverage, but no official agent interface packages the resource model for daily use."
+      },
       "blocker": "The API can do serious production work, but permissions and resource complexity demand engineering and a second-person check.",
-      "commercial": {"type": "Partner", "label": "Google Marketing Platform Partners", "url": "https://support.google.com/analytics/answer/7237700?hl=en", "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Google Marketing Platform Partners",
+        "url": "https://support.google.com/analytics/answer/7237700?hl=en",
+        "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."
+      }
     },
     "search-ads-360": {
       "surface": "Official Reporting API",
       "object": "Campaign, ad, keyword and performance data",
-      "setup": {"level": "Hard", "note": "Requires OAuth application credentials, SA360 account access and a custom agent or reporting layer."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Narrow", "note": "High-volume reporting only. Offline conversion upload is a separate surface and ordinary campaign writes are absent."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires OAuth application credentials, SA360 account access and a custom agent or reporting layer."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Assist only",
+        "note": "High-volume reporting only. Offline conversion upload is a separate surface and ordinary campaign writes are absent."
+      },
       "blocker": "It can explain the account but cannot perform the optimisation it recommends.",
-      "commercial": {"type": "Partner", "label": "Google Marketing Platform Partners", "url": "https://support.google.com/analytics/answer/7237700?hl=en", "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Google Marketing Platform Partners",
+        "url": "https://support.google.com/analytics/answer/7237700?hl=en",
+        "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."
+      }
     },
     "apple-ads": {
       "surface": "Official Platform API",
       "object": "Campaigns, ad groups, keywords and reports",
-      "setup": {"level": "Hard", "note": "Requires an eligible API role, OAuth credentials and custom agent integration. Providers register separately."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "Core campaign operations are covered, but no official MCP, agent plugin or daily CLI was verified."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires an eligible API role, OAuth credentials and custom agent integration. Providers register separately."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Core campaign operations are covered, but no official MCP, agent plugin or daily CLI was verified."
+      },
       "blocker": "The official API is capable, but there is no direct assistant workflow without custom implementation.",
-      "commercial": {"type": "Partner", "label": "Apple Ads agency account path", "url": "https://ads.apple.com/maps/agencies", "note": "Supports delegated agency management. No Apple Ads-specific public affiliate programme was verified."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Apple Ads agency account path",
+        "url": "https://ads.apple.com/maps/agencies",
+        "note": "Supports delegated agency management. No Apple Ads-specific public affiliate programme was verified."
+      }
     },
     "the-trade-desk": {
       "surface": "Official OAK MCP, private beta",
       "object": "Campaign planning, activation, optimisation and reporting",
-      "setup": {"level": "Hard", "note": "Available only to selected partners through an account representative, with account-managed credentials."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Partial"},
-      "coverage": {"level": "Broad", "note": "Published scope spans data and actions, but exact tool coverage is not public and access is private beta."},
+      "setup": {
+        "level": "Hard",
+        "note": "Available only to selected partners through an account representative, with account-managed credentials."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Published scope spans data and actions, but exact tool coverage is not public and access is private beta."
+      },
       "blocker": "It may be powerful, but most teams cannot evaluate or adopt it without vendor selection.",
-      "commercial": {"type": "Partner", "label": "The Trade Desk partner ecosystem", "url": "https://www.thetradedesk.com/us/partners", "note": "Vendor partnership route. No public affiliate programme was verified."}
+      "commercial": {
+        "type": "Partner",
+        "label": "The Trade Desk partner ecosystem",
+        "url": "https://www.thetradedesk.com/us/partners",
+        "note": "Vendor partnership route. No public affiliate programme was verified."
+      }
     },
     "google-analytics": {
       "surface": "Official MCP",
       "object": "Property metadata, dimensions, metrics and reports",
-      "setup": {"level": "Hard", "note": "Requires Google Cloud credentials, enabled APIs, property permissions and local or hosted MCP configuration."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Narrow", "note": "Strong querying and reporting, but events, audiences and property settings cannot be changed through the MCP."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires Google Cloud credentials, enabled APIs, property permissions and local or hosted MCP configuration."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Strong querying and reporting, but events, audiences and property settings cannot be changed through the MCP."
+      },
       "blocker": "It is useful after implementation, but cannot repair tracking or administer the property it diagnoses.",
-      "commercial": {"type": "Partner", "label": "Google Marketing Platform Partners", "url": "https://support.google.com/analytics/answer/7237700?hl=en", "note": "Certified Company and Sales Partner programme covering Analytics and Tag Manager. Not a public affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Google Marketing Platform Partners",
+        "url": "https://support.google.com/analytics/answer/7237700?hl=en",
+        "note": "Certified Company and Sales Partner programme covering Analytics and Tag Manager. Not a public affiliate programme."
+      },
+      "capabilities": {
+        "analyse": "Yes",
+        "buildReports": "Partial",
+        "configure": "No",
+        "validate": "Partial",
+        "share": "Partial"
+      }
     },
     "google-tag-manager": {
       "surface": "Official API",
       "object": "Accounts, containers, workspaces, tags, triggers and versions",
-      "setup": {"level": "Hard", "note": "Requires Google Cloud OAuth credentials, container permissions and a custom agent or automation layer."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Yes"},
-      "coverage": {"level": "Broad", "note": "Most configuration objects are available through the API, including version and publish workflows."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires Google Cloud OAuth credentials, container permissions and a custom agent or automation layer."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Most configuration objects are available through the API, including version and publish workflows."
+      },
       "blocker": "There is no official agent interface, and an automated publish can immediately break production tracking.",
-      "commercial": {"type": "Partner", "label": "Google Marketing Platform Partners", "url": "https://support.google.com/analytics/answer/7237700?hl=en", "note": "Certified Company and Sales Partner programme covering Analytics and Tag Manager. Not a public affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Google Marketing Platform Partners",
+        "url": "https://support.google.com/analytics/answer/7237700?hl=en",
+        "note": "Certified Company and Sales Partner programme covering Analytics and Tag Manager. Not a public affiliate programme."
+      },
+      "capabilities": {
+        "inspect": "Yes",
+        "configure": "Yes",
+        "validate": "Partial",
+        "deploy": "Yes",
+        "monitor": "Partial"
+      }
     },
     "amplitude": {
       "surface": "Official remote MCP",
       "object": "Charts, dashboards, cohorts, experiments and taxonomy",
-      "setup": {"level": "Easy", "note": "Connect the hosted MCP and authorise an Amplitude user with the appropriate project role."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Yes", "delete": "Partial"},
-      "coverage": {"level": "Broad", "note": "Strong analytics-asset workflow. Raw event instrumentation and ingestion remain outside the MCP."},
+      "setup": {
+        "level": "Easy",
+        "note": "Connect the hosted MCP and authorise an Amplitude user with the appropriate project role."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Strong analytics-asset workflow. Raw event instrumentation and ingestion remain outside the MCP."
+      },
       "blocker": "The agent can change shared analysis assets and taxonomy, so user permissions and review still matter.",
-      "commercial": {"type": "Affiliate", "label": "Amplitude Affiliate Program", "url": "https://www.amplitude.com/affiliates", "note": "Public application with commissions for qualified new Starter or Startup customers."}
+      "commercial": {
+        "type": "Affiliate",
+        "label": "Amplitude Affiliate Program",
+        "url": "https://www.amplitude.com/affiliates",
+        "note": "Public application with commissions for qualified new Starter or Startup customers."
+      },
+      "capabilities": {
+        "analyse": "Yes",
+        "buildReports": "Yes",
+        "configure": "Yes",
+        "validate": "Partial",
+        "share": "Yes"
+      }
     },
     "mixpanel": {
       "surface": "Official MCP, beta",
       "object": "Product analytics data and supported assets",
-      "setup": {"level": "Easy", "note": "Connect a compatible MCP client and authorise the Mixpanel account."},
-      "actions": {"read": "Yes", "create": "Unverified", "modify": "Unverified", "delete": "Unverified"},
-      "coverage": {"level": "Narrow", "note": "The public beta announcement does not document a stable action-by-action write boundary."},
+      "setup": {
+        "level": "Easy",
+        "note": "Connect a compatible MCP client and authorise the Mixpanel account."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Unverified",
+        "modify": "Unverified",
+        "delete": "Unverified"
+      },
+      "coverage": {
+        "level": "Assist only",
+        "note": "The public beta announcement does not document a stable action-by-action write boundary."
+      },
       "blocker": "The vendor has not published enough tool-level detail to trust write workflows without inspecting the live connection.",
-      "commercial": {"type": "Referral", "label": "Mixpanel Referral Partners", "url": "https://mixpanel.com/partners/", "note": "Open to partners, agencies, marketplaces and independent consultants. Commercial terms depend on the partner arrangement."}
+      "commercial": {
+        "type": "Referral",
+        "label": "Mixpanel Referral Partners",
+        "url": "https://mixpanel.com/partners/",
+        "note": "Open to partners, agencies, marketplaces and independent consultants. Commercial terms depend on the partner arrangement."
+      },
+      "capabilities": {
+        "analyse": "Yes",
+        "buildReports": "Unverified",
+        "configure": "Unverified",
+        "validate": "Partial",
+        "share": "Unverified"
+      }
     },
     "figma": {
       "surface": "Official remote and desktop MCP",
       "object": "Design files, components, variables and canvas objects",
-      "setup": {"level": "Easy", "note": "Connect a supported client and authorise Figma. Canvas writes require a Full seat and edit permission."},
-      "actions": {"read": "Yes", "create": "Partial", "modify": "Partial", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem."},
+      "setup": {
+        "level": "Easy",
+        "note": "Connect a supported client and authorise Figma. Canvas writes require a Full seat and edit permission."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem."
+      },
       "blocker": "A connected agent still cannot rely on every manual design operation, and write access depends on seat type and file permission.",
-      "commercial": {"type": "Retired", "label": "Affiliate programme deprecated", "url": "https://www.figma.com/affiliate-program/", "note": "New affiliate applications are closed. A separate Service Partner Program remains available."}
+      "commercial": {
+        "type": "Retired",
+        "label": "Affiliate programme deprecated",
+        "url": "https://www.figma.com/affiliate-program/",
+        "note": "New affiliate applications are closed. A separate Service Partner Program remains available."
+      },
+      "capabilities": {
+        "context": "Yes",
+        "create": "Partial",
+        "edit": "Partial",
+        "adapt": "Partial",
+        "export": "Partial"
+      }
     },
     "canva": {
       "surface": "Official remote MCP",
       "object": "Designs, assets and selected content workflows",
-      "setup": {"level": "Easy", "note": "Connect and authorise an individual Canva account. App-development workflows have separate requirements."},
-      "actions": {"read": "Yes", "create": "Yes", "modify": "Partial", "delete": "Partial"},
-      "coverage": {"level": "Partial", "note": "Useful design creation and editing, without full parity with Canva's manual editor and app ecosystem."},
+      "setup": {
+        "level": "Easy",
+        "note": "Connect and authorise an individual Canva account. App-development workflows have separate requirements."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Useful design creation and editing, without full parity with Canva's manual editor and app ecosystem."
+      },
       "blocker": "The Apps CLI is for building Canva apps, not a general daily creative-production CLI.",
-      "commercial": {"type": "Retired", "label": "Affiliate programme sunset", "url": "https://www.canva.com/partners/", "note": "The former affiliate programme is no longer the current route. Canva now promotes partner and creator programmes."}
+      "commercial": {
+        "type": "Retired",
+        "label": "Affiliate programme sunset",
+        "url": "https://www.canva.com/partners/",
+        "note": "The former affiliate programme is no longer the current route. Canva now promotes partner and creator programmes."
+      },
+      "capabilities": {
+        "context": "Yes",
+        "create": "Yes",
+        "edit": "Partial",
+        "adapt": "Partial",
+        "export": "Yes"
+      }
     },
     "supermetrics": {
       "surface": "Official remote MCP",
       "object": "Marketing-source metadata and query results",
-      "setup": {"level": "Moderate", "note": "Requires a subscription with API access plus authentication for every source queried."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Broad", "note": "Broad source coverage for retrieval and reporting, but it does not change media-platform objects."},
+      "setup": {
+        "level": "Moderate",
+        "note": "Requires a subscription with API access plus authentication for every source queried."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Broad source coverage for retrieval and reporting, but it does not change media-platform objects."
+      },
       "blocker": "It moves and queries data only. Entitlements, connector costs and source authentication still shape the workflow.",
-      "commercial": {"type": "Affiliate", "label": "Supermetrics Affiliate Partner Program", "url": "https://supermetrics.com/partners", "note": "15% recurring commission for one year at entry tier; 20% for two years after ten successful referrals."}
+      "commercial": {
+        "type": "Affiliate",
+        "label": "Supermetrics Affiliate Partner Program",
+        "url": "https://supermetrics.com/partners",
+        "note": "15% recurring commission for one year at entry tier; 20% for two years after ten successful referrals."
+      },
+      "capabilities": {
+        "connect": "Partial",
+        "inspect": "Yes",
+        "query": "Yes",
+        "transform": "Partial",
+        "operate": "Partial"
+      }
     },
     "dataforseo": {
       "surface": "Official remote and local MCP",
       "object": "SERPs, keywords, backlinks, businesses, products and content data",
-      "setup": {"level": "Moderate", "note": "Hosted OAuth is relatively direct; CLI and local MCP use API credentials and module-specific billing."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Broad", "note": "Wide research-data coverage. It does not read or control the advertiser's own paid-media accounts."},
+      "setup": {
+        "level": "Moderate",
+        "note": "Hosted OAuth is relatively direct; CLI and local MCP use API credentials and module-specific billing."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Wide research-data coverage. It does not read or control the advertiser's own paid-media accounts."
+      },
       "blocker": "It is a research input, not a media activation or first-party performance interface.",
-      "commercial": {"type": "Affiliate", "label": "DataForSEO Affiliate Program", "url": "https://dataforseo.com/update/affiliate-google-sheets-connector", "note": "Standard programme pays 25% of a referred user's first payment; the Sheets connector has a separate fixed bounty."}
+      "commercial": {
+        "type": "Affiliate",
+        "label": "DataForSEO Affiliate Program",
+        "url": "https://dataforseo.com/update/affiliate-google-sheets-connector",
+        "note": "Standard programme pays 25% of a referred user's first payment; the Sheets connector has a separate fixed bounty."
+      },
+      "capabilities": {
+        "discover": "Yes",
+        "retrieve": "Yes",
+        "compare": "Yes",
+        "analyse": "Partial",
+        "export": "Yes"
+      }
     },
     "airbyte": {
       "surface": "Official agent MCP",
       "object": "Connected data sources, destinations and data operations",
-      "setup": {"level": "Hard", "note": "Requires an Airbyte account or instance plus configured sources, destinations, credentials and permissions."},
-      "actions": {"read": "Yes", "create": "Partial", "modify": "Partial", "delete": "Partial"},
-      "coverage": {"level": "Configurable", "note": "Coverage depends on the connected sources and destinations. Documentation search and action-capable MCP surfaces are distinct."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires an Airbyte account or instance plus configured sources, destinations, credentials and permissions."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Coverage depends on the connected sources and destinations. Documentation search and action-capable MCP surfaces are distinct."
+      },
       "blocker": "The MCP does not remove the difficult part: building, authenticating and governing the data connections.",
-      "commercial": {"type": "Referral", "label": "Airbyte partner client referral", "url": "https://airbyte.com/company/partners", "note": "Partner page offers a Refer a Client route, but no public commission schedule was verified."}
+      "commercial": {
+        "type": "Referral",
+        "label": "Airbyte partner client referral",
+        "url": "https://airbyte.com/company/partners",
+        "note": "Partner page offers a Refer a Client route, but no public commission schedule was verified."
+      },
+      "capabilities": {
+        "connect": "Partial",
+        "inspect": "Yes",
+        "query": "Partial",
+        "transform": "Partial",
+        "operate": "Partial"
+      }
     },
     "fivetran": {
       "surface": "Official MCP context layer, public preview",
       "object": "Connector metadata, schemas and documentation context",
-      "setup": {"level": "Moderate", "note": "Requires Fivetran account permissions and a compatible MCP connection."},
-      "actions": {"read": "Yes", "create": "No", "modify": "No", "delete": "No"},
-      "coverage": {"level": "Narrow", "note": "The MCP supplies context and retrieval. Connector operations remain in the REST API, SDK or product."},
+      "setup": {
+        "level": "Moderate",
+        "note": "Requires Fivetran account permissions and a compatible MCP connection."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "coverage": {
+        "level": "Assist only",
+        "note": "The MCP supplies context and retrieval. Connector operations remain in the REST API, SDK or product."
+      },
       "blocker": "The agent surface cannot operate the connectors it describes.",
-      "commercial": {"type": "Referral", "label": "Fivetran Partner Program", "url": "https://www.fivetran.com/partners/become-a-partner", "note": "Partner programme includes referral incentives, co-selling and reselling; terms vary by tier."}
+      "commercial": {
+        "type": "Referral",
+        "label": "Fivetran Partner Program",
+        "url": "https://www.fivetran.com/partners/become-a-partner",
+        "note": "Partner programme includes referral incentives, co-selling and reselling; terms vary by tier."
+      },
+      "capabilities": {
+        "connect": "No",
+        "inspect": "Yes",
+        "query": "No",
+        "transform": "No",
+        "operate": "No"
+      }
     },
     "google-mcp-toolbox": {
       "surface": "Official self-hosted MCP framework",
       "object": "Databases and operator-defined tools",
-      "setup": {"level": "Hard", "note": "Requires deployment or local runtime, database credentials, tools configuration and security design."},
-      "actions": {"read": "Depends", "create": "Depends", "modify": "Depends", "delete": "Depends"},
-      "coverage": {"level": "Configurable", "note": "Prebuilt database tools and custom YAML definitions can expose broad operations, bounded by the configured role and queries."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires deployment or local runtime, database credentials, tools configuration and security design."
+      },
+      "actions": {
+        "read": "Depends",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Prebuilt database tools and custom YAML definitions can expose broad operations, bounded by the configured role and queries."
+      },
       "blocker": "It is infrastructure for building a safe interface, not a paid-media connector that works after sign-in.",
-      "commercial": {"type": "None verified", "label": "No product-specific commercial programme verified", "note": "General Google Cloud partnership routes are not specific to this open-source toolbox."}
+      "commercial": {
+        "type": "None verified",
+        "label": "No product-specific commercial programme verified",
+        "note": "General Google Cloud partnership routes are not specific to this open-source toolbox."
+      },
+      "capabilities": {
+        "connect": "Depends",
+        "inspect": "Depends",
+        "query": "Depends",
+        "transform": "Depends",
+        "operate": "Depends"
+      }
     },
     "snowflake": {
       "surface": "Official managed MCP",
       "object": "Warehouse data and operator-approved tools",
-      "setup": {"level": "Hard", "note": "Requires Snowflake account configuration, Cortex Agent setup, warehouse roles and deliberate tool exposure."},
-      "actions": {"read": "Yes", "create": "Depends", "modify": "Depends", "delete": "Depends"},
-      "coverage": {"level": "Configurable", "note": "Coverage can be broad, but it depends entirely on schemas, tools, semantic models and role permissions configured by the team."},
+      "setup": {
+        "level": "Hard",
+        "note": "Requires Snowflake account configuration, Cortex Agent setup, warehouse roles and deliberate tool exposure."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Coverage can be broad, but it depends entirely on schemas, tools, semantic models and role permissions configured by the team."
+      },
       "blocker": "The quality and safety of the workflow depend on substantial data-platform work before the first useful marketing prompt.",
-      "commercial": {"type": "Referral", "label": "Snowflake Partner Network", "url": "https://www.snowflake.com/en/why-snowflake/partners/", "note": "Eligible partners can receive referral rebates, service credits and co-marketing support."}
+      "commercial": {
+        "type": "Referral",
+        "label": "Snowflake Partner Network",
+        "url": "https://www.snowflake.com/en/why-snowflake/partners/",
+        "note": "Eligible partners can receive referral rebates, service credits and co-marketing support."
+      },
+      "capabilities": {
+        "connect": "Depends",
+        "inspect": "Yes",
+        "query": "Yes",
+        "transform": "Depends",
+        "operate": "Depends"
+      }
     },
     "zapier": {
       "surface": "Official remote MCP",
       "object": "Actions in connected applications",
-      "setup": {"level": "Easy", "note": "Create a scoped MCP server, choose actions and authorise the connected apps."},
-      "actions": {"read": "Depends", "create": "Depends", "modify": "Depends", "delete": "Depends"},
-      "coverage": {"level": "Configurable", "note": "Large app catalogue, but each action must exist in the connector and be explicitly exposed."},
+      "setup": {
+        "level": "Easy",
+        "note": "Create a scoped MCP server, choose actions and authorise the connected apps."
+      },
+      "actions": {
+        "read": "Depends",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Large app catalogue, but each action must exist in the connector and be explicitly exposed."
+      },
       "blocker": "It is easy to connect but can only do what each Zapier action exposes, while successful MCP calls consume tasks.",
-      "commercial": {"type": "Referral", "label": "Zapier Solution Partner referral benefit", "url": "https://zapier.com/l/partners", "note": "Referral benefit is tied to eligible Solution Partners. Zapier does not offer a general public affiliate programme."}
+      "commercial": {
+        "type": "Referral",
+        "label": "Zapier Solution Partner referral benefit",
+        "url": "https://zapier.com/l/partners",
+        "note": "Referral benefit is tied to eligible Solution Partners. Zapier does not offer a general public affiliate programme."
+      },
+      "capabilities": {
+        "connect": "Yes",
+        "build": "Partial",
+        "run": "Yes",
+        "debug": "Partial",
+        "monitor": "Partial"
+      }
     },
     "pipedream": {
       "surface": "Official remote MCP",
       "object": "Actions and APIs in connected applications",
-      "setup": {"level": "Moderate", "note": "Pipedream manages connected-app credentials, but the operator must choose apps, actions and permission boundaries."},
-      "actions": {"read": "Depends", "create": "Depends", "modify": "Depends", "delete": "Depends"},
-      "coverage": {"level": "Configurable", "note": "Broad API and action catalogue, with exact parity determined by the connected component."},
+      "setup": {
+        "level": "Moderate",
+        "note": "Pipedream manages connected-app credentials, but the operator must choose apps, actions and permission boundaries."
+      },
+      "actions": {
+        "read": "Depends",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Broad API and action catalogue, with exact parity determined by the connected component."
+      },
       "blocker": "The route is flexible rather than opinionated. The team still owns action selection, annotations and production separation.",
-      "commercial": {"type": "Affiliate", "label": "Pipedream Affiliate Program", "url": "https://pipedream.com/affiliates", "note": "Official affiliate application exists; no current public commission rate was visible in the reviewed page."}
+      "commercial": {
+        "type": "Affiliate",
+        "label": "Pipedream Affiliate Program",
+        "url": "https://pipedream.com/affiliates",
+        "note": "Official affiliate application exists; no current public commission rate was visible in the reviewed page."
+      },
+      "capabilities": {
+        "connect": "Yes",
+        "build": "Yes",
+        "run": "Yes",
+        "debug": "Yes",
+        "monitor": "Yes"
+      }
     },
     "n8n": {
       "surface": "Official built-in MCP, beta",
       "object": "Enabled workflows and their connected applications",
-      "setup": {"level": "Moderate", "note": "Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients."},
-      "actions": {"read": "Depends", "create": "Depends", "modify": "Depends", "delete": "Depends"},
-      "coverage": {"level": "Configurable", "note": "Can trigger powerful multi-step workflows, but the MCP does not automatically expose every node or manual editor feature."},
+      "setup": {
+        "level": "Moderate",
+        "note": "Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients."
+      },
+      "actions": {
+        "read": "Depends",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Can trigger powerful multi-step workflows, but the MCP does not automatically expose every node or manual editor feature."
+      },
       "blocker": "The workflow must already be designed and governed. A connected client can trigger credentials and external writes across the enabled set.",
-      "commercial": {"type": "Affiliate", "label": "n8n Affiliate Partner Program", "url": "https://n8n.io/partners/", "note": "30% revenue share for 12 months on eligible Starter and Pro referrals."}
+      "commercial": {
+        "type": "Affiliate",
+        "label": "n8n Affiliate Partner Program",
+        "url": "https://n8n.io/partners/",
+        "note": "30% revenue share for 12 months on eligible Starter and Pro referrals."
+      },
+      "capabilities": {
+        "connect": "Yes",
+        "build": "Yes",
+        "run": "Yes",
+        "debug": "Partial",
+        "monitor": "Partial"
+      }
     },
     "meridian": {
       "surface": "Official open-source Python package",
       "object": "Marketing mix models and budget scenarios",
-      "setup": {"level": "Specialist", "note": "Requires model-ready historical data, Python, statistical judgement, compute and validation design."},
-      "actions": {"read": "N/A", "create": "Yes", "modify": "Yes", "delete": "N/A"},
-      "coverage": {"level": "Specialist", "note": "Covers the MMM lifecycle and scenario planning, not live campaign control."},
+      "setup": {
+        "level": "Specialist",
+        "note": "Requires model-ready historical data, Python, statistical judgement, compute and validation design."
+      },
+      "actions": {
+        "read": "N/A",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "N/A"
+      },
+      "coverage": {
+        "level": "Specialist",
+        "note": "Covers the MMM lifecycle and scenario planning, not live campaign control."
+      },
       "blocker": "It is not an agent or optimiser. Data preparation, priors, model criticism and action rules remain expert work.",
-      "commercial": {"type": "Partner", "label": "Meridian certified partner programme", "url": "https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/", "note": "Selected measurement partners are trained and certified by Google. No public affiliate programme."}
+      "commercial": {
+        "type": "Partner",
+        "label": "Meridian certified partner programme",
+        "url": "https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/",
+        "note": "Selected measurement partners are trained and certified by Google. No public affiliate programme."
+      },
+      "capabilities": {
+        "prepare": "Partial",
+        "configure": "Yes",
+        "run": "Yes",
+        "validate": "Yes",
+        "scenarios": "Yes"
+      }
     },
     "robyn": {
       "surface": "Official open-source R and Python package",
       "object": "Marketing mix models and budget allocation scenarios",
-      "setup": {"level": "Specialist", "note": "Requires prepared historical data, R or Python, statistical modelling and validation expertise."},
-      "actions": {"read": "N/A", "create": "Yes", "modify": "Yes", "delete": "N/A"},
-      "coverage": {"level": "Specialist", "note": "Produces MMM results and allocation hypotheses, without a governed connection to live accounts."},
+      "setup": {
+        "level": "Specialist",
+        "note": "Requires prepared historical data, R or Python, statistical modelling and validation expertise."
+      },
+      "actions": {
+        "read": "N/A",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "N/A"
+      },
+      "coverage": {
+        "level": "Specialist",
+        "note": "Produces MMM results and allocation hypotheses, without a governed connection to live accounts."
+      },
       "blocker": "Model output is not an approved campaign change. A practitioner must interpret and operationalise it.",
-      "commercial": {"type": "None verified", "label": "No affiliate or partner programme verified", "note": "Open-source project rather than a separately sold workflow product."}
+      "commercial": {
+        "type": "None verified",
+        "label": "No affiliate or partner programme verified",
+        "note": "Open-source project rather than a separately sold workflow product."
+      },
+      "capabilities": {
+        "prepare": "Partial",
+        "configure": "Yes",
+        "run": "Yes",
+        "validate": "Yes",
+        "scenarios": "Yes"
+      }
     },
     "pymc-marketing": {
       "surface": "Official open-source Python package",
       "object": "Bayesian marketing models",
-      "setup": {"level": "Specialist", "note": "Requires Python, Bayesian modelling expertise, prepared data, compute and model validation."},
-      "actions": {"read": "N/A", "create": "Yes", "modify": "Yes", "delete": "N/A"},
-      "coverage": {"level": "Specialist", "note": "Flexible modelling toolkit, not a campaign-operation or turn-key daily marketer interface."},
+      "setup": {
+        "level": "Specialist",
+        "note": "Requires Python, Bayesian modelling expertise, prepared data, compute and model validation."
+      },
+      "actions": {
+        "read": "N/A",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "N/A"
+      },
+      "coverage": {
+        "level": "Specialist",
+        "note": "Flexible modelling toolkit, not a campaign-operation or turn-key daily marketer interface."
+      },
       "blocker": "Its flexibility increases the amount of expert modelling work required before any media decision is safe.",
-      "commercial": {"type": "None verified", "label": "No affiliate or partner programme verified", "note": "Open-source project rather than a separately sold workflow product."}
+      "commercial": {
+        "type": "None verified",
+        "label": "No affiliate or partner programme verified",
+        "note": "Open-source project rather than a separately sold workflow product."
+      },
+      "capabilities": {
+        "prepare": "Partial",
+        "configure": "Yes",
+        "run": "Yes",
+        "validate": "Yes",
+        "scenarios": "Yes"
+      }
+    },
+    "adobe-analytics": {
+      "surface": "Adobe-hosted MCP",
+      "endpoint": "https://aa-mcp.adobe.io/mcp",
+      "object": "Report suites, components, reports and workspace projects",
+      "setup": {
+        "level": "Moderate",
+        "note": "Connect the hosted endpoint, authenticate and obtain MCP Access plus the product permissions needed for each action."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "analyse": "Yes",
+        "buildReports": "Yes",
+        "configure": "Yes",
+        "validate": "Partial",
+        "share": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "It completes ad-hoc analysis and creates reusable components or projects; governed interpretation and stakeholder delivery remain human work."
+      },
+      "blocker": "The route is powerful only after an administrator grants MCP access and the Analytics implementation is already trustworthy."
+    },
+    "adobe-customer-journey-analytics": {
+      "surface": "Adobe-hosted MCP",
+      "endpoint": "https://cja-mcp.adobe.io/mcp",
+      "object": "CJA connections, data views, components, reports and projects",
+      "setup": {
+        "level": "Moderate",
+        "note": "Connect the hosted endpoint and authenticate with CJA entitlements, MCP Access and normal product permissions."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "analyse": "Yes",
+        "buildReports": "Yes",
+        "configure": "Yes",
+        "validate": "Partial",
+        "share": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Strong analysis and component coverage once the cross-channel data model exists; upstream data design stays outside the route."
+      },
+      "blocker": "The MCP cannot compensate for missing connections, weak identity stitching or badly designed data views."
+    },
+    "posthog": {
+      "surface": "Official PostHog MCP",
+      "object": "Events, SQL, insights and dashboards",
+      "setup": {
+        "level": "Easy",
+        "note": "Run the official wizard, authorise a PostHog project and expose the required tools."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "capabilities": {
+        "analyse": "Yes",
+        "buildReports": "Yes",
+        "configure": "Yes",
+        "validate": "Yes",
+        "share": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "The route can investigate behaviour and maintain reusable insights and dashboards; distribution and paid-media decisions remain outside it."
+      },
+      "blocker": "It can finish the analytics job, but not the downstream media optimisation job."
+    },
+    "appsflyer": {
+      "surface": "Official beta MCP",
+      "endpoint": "https://mcp.appsflyer.com/auth/mcp",
+      "object": "Apps, campaign performance, attribution and implementation guidance",
+      "setup": {
+        "level": "Easy",
+        "note": "Use hosted OAuth in supported clients or an account-level bearer token for automation."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "capabilities": {
+        "inspect": "Yes",
+        "configure": "No",
+        "validate": "Partial",
+        "deploy": "No",
+        "monitor": "Yes"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Useful performance monitoring and implementation diagnosis, without a dependable write route for correcting configuration."
+      },
+      "blocker": "The beta can explain and audit, then hands configuration changes back to the human or another API workflow."
+    },
+    "adjust": {
+      "surface": "Official APIs and SDKs",
+      "object": "Attribution data, apps, events, campaigns and test devices",
+      "setup": {
+        "level": "Hard",
+        "note": "Choose and authenticate several APIs, obtain feature enablement where required, then build the agent wrapper."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "inspect": "Yes",
+        "configure": "Partial",
+        "validate": "Partial",
+        "deploy": "Partial",
+        "monitor": "Yes"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Broad developer capability exists, but it is fragmented and not presented as a ready AI route."
+      },
+      "blocker": "There is no official MCP to connect; the team must design, build and govern the complete agent interface."
+    },
+    "segment": {
+      "surface": "Public API and collection SDKs",
+      "object": "Sources, destinations, warehouses, tracking plans and events",
+      "setup": {
+        "level": "Hard",
+        "note": "Requires workspace-owner tokens, instrumentation, schemas and a custom agent wrapper around the API."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "capabilities": {
+        "inspect": "Yes",
+        "configure": "Yes",
+        "validate": "Partial",
+        "deploy": "Yes",
+        "monitor": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "The Public API can manage core workspace resources, but event design and quality validation still require specialist work."
+      },
+      "blocker": "The underlying API is capable; the missing piece is an official, safe agent interface for daily operators."
+    },
+    "adobe-firefly-creative-production": {
+      "surface": "Hosted Run-Workflow MCP",
+      "object": "Published creative workflows, images, videos and batch jobs",
+      "setup": {
+        "level": "Moderate",
+        "note": "Requires enterprise entitlement, an MCP client and organisation workflows or templates that the server can discover and run."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "context": "Yes",
+        "create": "Yes",
+        "edit": "Yes",
+        "adapt": "Yes",
+        "export": "Yes"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Can execute and monitor multi-step production workflows, with human brand, legal and final-quality approval."
+      },
+      "blocker": "It is not a self-service route for most teams: the enterprise entitlement and reusable workflow design must already exist."
+    },
+    "runway": {
+      "surface": "Official generation MCP and API",
+      "object": "Image, video, audio, tasks and workflows",
+      "setup": {
+        "level": "Moderate",
+        "note": "Use the official local MCP repository or hosted developer route, then configure billing and authentication."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "context": "Partial",
+        "create": "Yes",
+        "edit": "Yes",
+        "adapt": "Yes",
+        "export": "Yes"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Creates and transforms production media across modalities; the brief, brand system, rights review and final QC remain human responsibilities."
+      },
+      "blocker": "The route can make assets, but it cannot decide whether they are on-brand, legally usable or campaign-ready."
+    },
+    "ahrefs": {
+      "surface": "Official hosted MCP",
+      "endpoint": "https://api.ahrefs.com/mcp/mcp",
+      "object": "Keywords, domains, backlinks, competitors and content gaps",
+      "setup": {
+        "level": "Easy",
+        "note": "Connect the hosted endpoint and authenticate an eligible Ahrefs account."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "capabilities": {
+        "discover": "Yes",
+        "retrieve": "Yes",
+        "compare": "Yes",
+        "analyse": "Yes",
+        "export": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Strong search and competitor research without custom integration; decision framing and activation remain outside the product."
+      },
+      "blocker": "It provides research evidence, not first-party account performance or campaign action."
+    },
+    "semrush": {
+      "surface": "Semrush Public MCP",
+      "endpoint": "https://mcp.semrush.com/v2/mcp",
+      "object": "SEO, traffic, market, paid-search, shopping and project reports",
+      "setup": {
+        "level": "Easy",
+        "note": "Connect the hosted OAuth endpoint with an eligible subscription and enough API units."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "capabilities": {
+        "discover": "Yes",
+        "retrieve": "Yes",
+        "compare": "Yes",
+        "analyse": "Yes",
+        "export": "Yes"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Broad report discovery and execution across Semrush datasets; changes to projects or campaigns stay elsewhere."
+      },
+      "blocker": "Read-only access and unit consumption make it an intelligence route, not an operating system for paid media."
+    },
+    "similarweb": {
+      "surface": "Official hosted MCP",
+      "endpoint": "https://mcp.similarweb.com",
+      "object": "Web, app, search, audience, PPC and retail intelligence",
+      "setup": {
+        "level": "Easy",
+        "note": "Connect the hosted endpoint and authenticate an API-inclusive subscription."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "No",
+        "modify": "No",
+        "delete": "No"
+      },
+      "capabilities": {
+        "discover": "Yes",
+        "retrieve": "Yes",
+        "compare": "Yes",
+        "analyse": "Yes",
+        "export": "Yes"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Wide external-market coverage and direct comparisons, bounded by licensed datasets and data-credit economics."
+      },
+      "blocker": "The figures are external estimates and often delayed, so they cannot replace first-party platform or analytics truth."
+    },
+    "rudderstack": {
+      "surface": "Official hosted MCP",
+      "endpoint": "https://mcp.rudderstack.com/mcp",
+      "object": "Sources, destinations, transformations and event streams",
+      "setup": {
+        "level": "Easy",
+        "note": "Connect the hosted endpoint and complete OAuth with an authorised RudderStack account."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "connect": "Partial",
+        "inspect": "Yes",
+        "query": "Partial",
+        "transform": "Yes",
+        "operate": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Useful management coverage for customer-data pipelines, with gaps and stability caveats while the server evolves."
+      },
+      "blocker": "The vendor explicitly warns that the MCP is incomplete and may change during active development."
+    },
+    "databricks": {
+      "surface": "Managed MCP servers, public preview",
+      "object": "SQL, Genie, Vector Search and workspace resources",
+      "setup": {
+        "level": "Specialist",
+        "note": "Requires a configured Databricks workspace, managed MCP availability, governed resources and Unity Catalog permissions."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "capabilities": {
+        "connect": "Depends",
+        "inspect": "Yes",
+        "query": "Yes",
+        "transform": "Depends",
+        "operate": "Depends"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Potentially broad, but every useful marketing workflow depends on the data products and tools an enterprise exposes."
+      },
+      "blocker": "The MCP is only the governed access layer; the warehouse and marketing semantic model still have to be built."
+    },
+    "dbt": {
+      "surface": "Official self-hosted MCP",
+      "object": "dbt projects, semantic metrics, lineage, health, SQL and CLI jobs",
+      "setup": {
+        "level": "Specialist",
+        "note": "Install with uvx, point to a local project and enable only the toolsets backed by available dbt Platform or CLI credentials."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "connect": "Partial",
+        "inspect": "Yes",
+        "query": "Yes",
+        "transform": "Yes",
+        "operate": "Yes"
+      },
+      "coverage": {
+        "level": "Specialist",
+        "note": "Strong analytics-engineering coverage, including build and test, but not a marketer-facing turn-key workflow."
+      },
+      "blocker": "A daily operator still needs an analytics engineer to configure the project, credentials and safe tool allowlist."
+    },
+    "make": {
+      "surface": "Official cloud MCP",
+      "endpoint": "https://mcp.make.com",
+      "object": "Scenarios, connections, webhooks, data stores, teams and organisations",
+      "setup": {
+        "level": "Easy",
+        "note": "Connect the universal OAuth endpoint, select an organisation and grant the minimum required scopes."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Partial",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "connect": "Yes",
+        "build": "Partial",
+        "run": "Yes",
+        "debug": "Partial",
+        "monitor": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Runs existing scenarios directly and can manage workflow entities on paid plans; complex design still benefits from the visual builder."
+      },
+      "blocker": "The agent can only use scenarios reliably when inputs, outputs and descriptions were designed for machine invocation."
+    },
+    "workato": {
+      "surface": "Enterprise MCP",
+      "object": "API collections, recipes, recipe functions and skills",
+      "setup": {
+        "level": "Hard",
+        "note": "An enterprise administrator configures the MCP endpoint, identity, exposed tools and audit policy."
+      },
+      "actions": {
+        "read": "Depends",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "capabilities": {
+        "connect": "Partial",
+        "build": "Partial",
+        "run": "Yes",
+        "debug": "Partial",
+        "monitor": "Yes"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Strong governed execution once recipes and functions are exposed, with coverage determined by enterprise configuration."
+      },
+      "blocker": "There is no instant universal endpoint: a Workato enterprise setup and administrator-owned tool catalogue come first."
+    },
+    "gumloop": {
+      "surface": "AI-native workflow platform and CLI",
+      "object": "Agents, sessions, integrations, MCP servers, skills and artifacts",
+      "setup": {
+        "level": "Easy",
+        "note": "Create an account, connect built-in services or public remote MCP endpoints and use the visual builder or CLI."
+      },
+      "actions": {
+        "read": "Depends",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "capabilities": {
+        "connect": "Yes",
+        "build": "Yes",
+        "run": "Yes",
+        "debug": "Partial",
+        "monitor": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Strong AI-native workflow construction and execution, with exact depth inherited from each integration and model."
+      },
+      "blocker": "It makes orchestration easy, but it does not remove the need to test every connected action and failure path."
     }
   }
 }

@@ -10,15 +10,28 @@ Three sources stay separate:
 
 A factual correction does not silently change a workflow assessment or grade. A rating cannot rewrite the underlying capability.
 
+## Evidence basis
+
+The evidence label records how directly a route has been observed. It is separate from grade and readiness.
+
+| Label | Meaning |
+| --- | --- |
+| Documentation reviewed | Assessment based on current official documentation, product announcements and public source repositories. |
+| Connected | The route was authenticated and its advertised tools or commands were inspected. |
+| Executed | At least one representative workflow was run against a controlled account or dataset. |
+| Used repeatedly | The route was used across recurring production work, within the stated boundary. |
+
+Unless an entry states otherwise, the current evidence basis is **Documentation reviewed**. A Production rating means the documented route appears dependable enough for a controlled recurring workflow. It does not claim that The Detail Department has executed it.
+
 ## What matters, in order
 
 1. **End-to-end completion.** Can the route finish a recurring job, or does it stop at analysis?
-2. **Read, Create, Modify and Delete.** These are separate actions. Creating an ad does not prove that the same route can maintain it.
+2. **The human job.** Every category has its own capability test. Read, Create, Modify and Delete are right for media platforms, but wrong for analytics, measurement or modelling.
 3. **Connection effort.** Hosted OAuth is materially different from developer approval, a cloud project, API enablement, tokens and custom client configuration.
 4. **Manual-feature coverage.** An MCP or API can exist while exposing only a small subset of the vendor's interface.
 5. **Maturity and governance.** Beta access, inconsistent account availability, unclear permissions and broad write scopes reduce production confidence.
 
-The `surface` field names the exact route being judged. Actions belong to that route. We do not borrow a capability from the manual product or an underlying API to make an MCP, plugin or CLI appear writable.
+The `surface` field names the exact route being judged. Capabilities belong to that route. We do not borrow a capability from the manual product or an underlying API to make an MCP, plugin or CLI appear more complete.
 
 ## How we grade
 
@@ -55,7 +68,7 @@ Production never means broad feature parity or unrestricted automation.
 - **Hard**: developer access, cloud or OAuth configuration, custom integration or vendor approval.
 - **Specialist**: data engineering, infrastructure or statistical expertise beyond ordinary campaign operations.
 
-### Actions
+### Capability values
 
 - **Yes**: directly supported for the core objects of the evaluated route.
 - **Partial**: available, but important objects, fields or workflows are missing or inconsistent.
@@ -66,11 +79,33 @@ Production never means broad feature parity or unrestricted automation.
 
 ### Coverage
 
-- **Broad**: covers most recurring work for the tool's role, but not necessarily every manual feature.
-- **Partial**: supports useful recurring workflows with material gaps.
-- **Narrow**: useful for a constrained job such as retrieval, reporting or one asset type.
-- **Configurable**: depends on the tools, actions or database permissions exposed by the operator.
+- **End to end**: completes nearly all of the recurring human job through the evaluated route.
+- **Most steps**: completes most of the recurring job with a bounded human handoff.
+- **Some steps**: handles useful parts of the job but leaves material work elsewhere.
+- **Assist only**: supplies context or one narrow output rather than completing the job.
+- **Depends**: coverage is determined by the tools, data or permissions configured by the operator.
 - **Specialist**: covers a modelling or engineering job rather than ordinary campaign operations.
+
+### Market role
+
+- **Reference**: an established category leader or default comparison point.
+- **Emerging**: a newer challenger with a credible route worth watching or using.
+- **Specialist**: a narrower expert tool that is relevant for a defined job.
+
+Market role is editorial context, not a quality score. An Emerging product can earn a higher grade than a Reference product.
+
+### Category capability tests
+
+| Category | Human-job capabilities |
+| --- | --- |
+| Media platforms | Read, Create, Modify, Delete |
+| Analytics | Analyse, Build reports, Configure, Validate, Share |
+| Measurement | Inspect, Configure, Validate, Deploy, Monitor |
+| Creative production | Read context, Create, Edit, Adapt, Export |
+| Research and intelligence | Discover, Retrieve, Compare, Analyse, Export |
+| Data infrastructure | Connect, Inspect, Query, Transform, Operate |
+| Automation and workflow | Connect, Build, Run, Debug, Monitor |
+| Modelling | Prepare data, Configure, Run, Validate, Scenarios |
 
 ## Interface labels
 
@@ -82,16 +117,6 @@ Production never means broad feature parity or unrestricted automation.
 - **CLI**: a documented command-line product with useful operations beyond merely launching an MCP server.
 - **API / SDK**: the primary programmable interface when no agent-native interface exists, or when it remains the more complete route.
 
-## Commercial programme labels
-
-- **Affiliate**: a public commission-paying programme with a documented application or enrolment route.
-- **Referral**: a commercial introduction programme that is not a general public affiliate programme.
-- **Partner**: an agency, technology, certification or directory programme. Partner does not imply commission.
-- **Retired**: a previously available programme whose official page says it has ended.
-- **None verified**: no current official public affiliate, referral or applicable partner programme was verified.
-
-Terms are summarised only from current official pages. The repository never inserts referral codes or affiliate links.
-
 ## Review method
 
 1. Search vendor documentation, vendor product announcements and verified vendor source-code organisations.
@@ -100,6 +125,6 @@ Terms are summarised only from current official pages. The repository never inse
 4. Record the biggest ordinary-workday blocker, not only exceptional edge cases.
 5. Recheck the entry on the date stored in `verifiedOn`.
 6. Record up to five specific reasons for and against the grade.
-7. Treat programme availability and terms as a separate, time-sensitive fact.
+7. Link the official product, exact AI route or endpoint, documentation, official GitHub repository and API or SDK. State clearly when one is not publicly documented.
 
 The index is intentionally conservative. A missing capability is better than an unsupported claim.

@@ -1,20 +1,22 @@
-# Modelling and experimentation
+# Modelling
 
-Specialist modelling frameworks for incrementality, marketing mix analysis and budget scenarios.
+Specialist modelling frameworks judged on preparation, configuration, execution, validation and scenario planning.
+
+> **Evidence basis:** Documentation reviewed unless an entry states otherwise.
 
 [Main index](../README.md) · [Methodology](../METHODOLOGY.md)
 
-[Media platforms](media-platforms.md) · [Analytics and measurement](analytics-measurement.md) · [Creative and images](creative-images.md) · [Data and research](data-research.md) · [Automation and workflow](automation-workflow.md) · [Modelling and experimentation](modelling-experimentation.md)
+[Media platforms](media-platforms.md) · [Analytics](analytics.md) · [Measurement](measurement.md) · [Creative production](creative-production.md) · [Research and intelligence](research-intelligence.md) · [Data infrastructure](data-infrastructure.md) · [Automation and workflow](automation-workflow.md) · [Modelling](modelling.md)
 
-| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Meridian](#meridian) | **B+** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
-| [PyMC-Marketing](#pymc-marketing) | **B** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
-| [Robyn](#robyn) | **B** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
+| Tool | Grade | Market role | Readiness | Setup | Prepare data | Configure | Run | Validate | Scenarios | Human-job coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Meridian](#meridian) | **B+** | Specialist | Research | Specialist | Partial | Yes | Yes | Yes | Yes | Specialist |
+| [PyMC-Marketing](#pymc-marketing) | **B** | Specialist | Research | Specialist | Partial | Yes | Yes | Yes | Yes | Specialist |
+| [Robyn](#robyn) | **B** | Specialist | Research | Specialist | Partial | Yes | Yes | Yes | Yes | Specialist |
 
 ## Meridian
 
-**B+ · Research**
+**B+ · Research · Specialist**
 
 Google's open-source marketing mix modelling framework for estimating incremental impact and informing budget allocation.
 
@@ -23,8 +25,10 @@ Google's open-source marketing mix modelling framework for estimating incrementa
 - **Route:** Official open-source Python package.
 - **Scope:** Marketing mix models and budget scenarios.
 - **Setup:** Specialist. Requires model-ready historical data, Python, statistical judgement, compute and validation design.
-- **Controls:** Read **N/A** · Create **Yes** · Modify **Yes** · Delete **N/A**
+- **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
+- **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Covers the MMM lifecycle and scenario planning, not live campaign control.
+- **Evidence basis:** Documentation reviewed
 
 **Good**
 
@@ -38,24 +42,27 @@ Google's open-source marketing mix modelling framework for estimating incrementa
 - Requires statistical skill and suitable historical data.
 - It is not a daily campaign-operation interface.
 
-**Interfaces**
+**Official links**
 
+- **Product / official page:** [Official Meridian repository](https://github.com/google/meridian)
+- **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** Python package, not a dedicated CLI
 - **API / SDK:** [Open-source Python package](https://github.com/google/meridian)
+- **Documentation:** [Official Meridian repository](https://github.com/google/meridian)
+- **GitHub:** [Official Meridian repository](https://github.com/google/meridian)
 
 - **Access:** Open source; requires model-ready historical data and Python expertise.
-- **Commercial:** Partner. [Meridian certified partner programme](https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/). Selected measurement partners are trained and certified by Google. No public affiliate programme.
 - **Watch:** A model library is not an autonomous media optimiser. Inputs, priors, validation and decision rules remain practitioner work.
 - **Sources:** [Official Meridian repository](https://github.com/google/meridian)
-- **Verified:** 5 Sept 2026
+- **Last checked:** 5 Sept 2026
 
-[Back to comparison](#modelling-and-experimentation)
+[Back to comparison](#modelling)
 
 ## PyMC-Marketing
 
-**B · Research**
+**B · Research · Specialist**
 
 An open-source Bayesian marketing analytics package covering marketing mix modelling and customer-lifetime-value work.
 
@@ -64,8 +71,10 @@ An open-source Bayesian marketing analytics package covering marketing mix model
 - **Route:** Official open-source Python package.
 - **Scope:** Bayesian marketing models.
 - **Setup:** Specialist. Requires Python, Bayesian modelling expertise, prepared data, compute and model validation.
-- **Controls:** Read **N/A** · Create **Yes** · Modify **Yes** · Delete **N/A**
+- **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
+- **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Flexible modelling toolkit, not a campaign-operation or turn-key daily marketer interface.
+- **Evidence basis:** Documentation reviewed
 
 **Good**
 
@@ -79,24 +88,27 @@ An open-source Bayesian marketing analytics package covering marketing mix model
 - No official MCP, plugin or dedicated workflow CLI was verified.
 - It is a modelling library rather than a daily media-operations product.
 
-**Interfaces**
+**Official links**
 
+- **Product / official page:** [PyMC-Marketing documentation](https://www.pymc-marketing.io/en/stable/)
+- **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** Python package, not a dedicated CLI
 - **API / SDK:** [Open-source Python package](https://github.com/pymc-labs/pymc-marketing)
+- **Documentation:** [PyMC-Marketing documentation](https://www.pymc-marketing.io/en/stable/)
+- **GitHub:** [PyMC-Marketing repository](https://github.com/pymc-labs/pymc-marketing)
 
 - **Access:** Open source; requires Python and Bayesian modelling expertise.
-- **Commercial:** None verified. No affiliate or partner programme verified. Open-source project rather than a separately sold workflow product.
 - **Watch:** The package supports analysis. It does not provide a governed connection to advertising accounts.
 - **Sources:** [PyMC-Marketing repository](https://github.com/pymc-labs/pymc-marketing) · [PyMC-Marketing documentation](https://www.pymc-marketing.io/en/stable/)
-- **Verified:** 5 Sept 2026
+- **Last checked:** 5 Sept 2026
 
-[Back to comparison](#modelling-and-experimentation)
+[Back to comparison](#modelling)
 
 ## Robyn
 
-**B · Research**
+**B · Research · Specialist**
 
 Meta's open-source marketing mix modelling package for estimating channel contribution and budget scenarios.
 
@@ -105,8 +117,10 @@ Meta's open-source marketing mix modelling package for estimating channel contri
 - **Route:** Official open-source R and Python package.
 - **Scope:** Marketing mix models and budget allocation scenarios.
 - **Setup:** Specialist. Requires prepared historical data, R or Python, statistical modelling and validation expertise.
-- **Controls:** Read **N/A** · Create **Yes** · Modify **Yes** · Delete **N/A**
+- **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
+- **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Produces MMM results and allocation hypotheses, without a governed connection to live accounts.
+- **Evidence basis:** Documentation reviewed
 
 **Good**
 
@@ -120,20 +134,23 @@ Meta's open-source marketing mix modelling package for estimating channel contri
 - Model selection and calibration still require specialist judgement.
 - Outputs do not translate directly into safe platform changes.
 
-**Interfaces**
+**Official links**
 
+- **Product / official page:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
+- **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** R and Python package, not a dedicated CLI
 - **API / SDK:** [Open-source R and Python package](https://github.com/facebookexperimental/Robyn)
+- **Documentation:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
+- **GitHub:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
 
 - **Access:** Open source; requires prepared data and statistical modelling expertise.
-- **Commercial:** None verified. No affiliate or partner programme verified. Open-source project rather than a separately sold workflow product.
 - **Watch:** Robyn produces model outputs, not campaign changes. Treat automated budget recommendations as hypotheses requiring review.
 - **Sources:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
-- **Verified:** 5 Sept 2026
+- **Last checked:** 5 Sept 2026
 
-[Back to comparison](#modelling-and-experimentation)
+[Back to comparison](#modelling)
 
 ---
 

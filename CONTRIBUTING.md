@@ -7,13 +7,16 @@ Corrections and additions are welcome.
 1. Use an official source wherever possible.
 2. Name the exact route being assessed: MCP, plugin, CLI, API, SDK or another official surface.
 3. Explain whether the interface is official, community-maintained, beta, preview or restricted.
-4. Record Read, Create, Modify and Delete separately in `data/workflows.json`.
+4. Record the category-specific capabilities in `data/workflows.json`; use Read, Create, Modify and Delete only for media platforms.
 5. Describe setup effort and how much of the manual product the route covers.
 6. State the biggest blocker in an ordinary daily workflow.
 7. Update `verifiedOn`.
-8. Run `npm run build` and `npm run check`.
+8. Set `evidenceBasis` only when the route has been connected, executed or used repeatedly. Include reproducible, non-sensitive evidence in the pull request.
+9. Run `npm run build` and `npm run check`.
 
 Do not infer MCP capability from the underlying API. If an API can update an ad but the evaluated MCP cannot, the MCP must remain `No` for Modify.
+
+Add official links separately where available: product, exact AI route or endpoint, documentation, official GitHub repository and API or SDK. Write `No official repository verified` instead of linking an unofficial wrapper.
 
 ## Rating changes
 
@@ -25,17 +28,5 @@ Capability facts, workflow assessment and editorial ratings are intentionally se
 4. which positive or negative should be added, removed or rewritten.
 
 Keep each list to five points or fewer. A vendor announcement alone does not establish production readiness.
-
-## Affiliate, referral and partner programmes
-
-Use the vendor's official programme page. Label the programme precisely:
-
-- `Affiliate` only for a current public commission-paying programme;
-- `Referral` for a commercial introduction scheme;
-- `Partner` for agency, technology, certification or directory access;
-- `Retired` when the official programme has ended; or
-- `None verified` when no applicable current programme was found.
-
-Terms and availability can change quickly. Include the official URL and a fresh review date. Never add tracking parameters, referral codes or personal affiliate links.
 
 Please do not submit copied vendor copy, client information, credentials or unverified promotional claims.

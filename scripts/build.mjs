@@ -7,14 +7,107 @@ const checking = process.argv.includes('--check');
 const data = JSON.parse(await readFile(resolve(root, 'data/tools.json'), 'utf8'));
 const editorial = JSON.parse(await readFile(resolve(root, 'data/ratings.json'), 'utf8'));
 const workflowData = JSON.parse(await readFile(resolve(root, 'data/workflows.json'), 'utf8'));
-const sectionOrder = [
-  'Media platforms',
-  'Analytics and measurement',
-  'Creative and images',
-  'Data and research',
-  'Automation and workflow',
-  'Modelling and experimentation'
-];
+const siteUrl = 'https://the-detail-department.github.io/ai-paid-media-tools/';
+const repositoryUrl = 'https://github.com/The-Detail-Department/ai-paid-media-tools';
+const socialImageUrl = siteUrl + 'assets/social-preview.png';
+const sectionConfig = {
+  'Media platforms': {
+    file: 'media-platforms.md',
+    description: 'Advertising platforms and buying systems, judged on the most direct official route available to an AI-assisted operator.',
+    humanJob: 'Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.',
+    criteria: [
+      { key: 'read', label: 'Read', fallback: 'read' },
+      { key: 'create', label: 'Create', fallback: 'create' },
+      { key: 'modify', label: 'Modify', fallback: 'modify' },
+      { key: 'delete', label: 'Delete', fallback: 'delete' }
+    ]
+  },
+  Analytics: {
+    file: 'analytics.md',
+    description: 'Analytics products judged on whether an agent can investigate performance and leave useful analysis behind.',
+    humanJob: 'Explore data, answer a question, build a reusable report, configure analysis components and share the result.',
+    criteria: [
+      { key: 'analyse', label: 'Analyse', fallback: 'read' },
+      { key: 'buildReports', label: 'Build reports', fallback: 'create' },
+      { key: 'configure', label: 'Configure', fallback: 'modify' },
+      { key: 'validate', label: 'Validate', fallback: 'read' },
+      { key: 'share', label: 'Share', fallback: 'create' }
+    ]
+  },
+  Measurement: {
+    file: 'measurement.md',
+    description: 'Collection, tagging and attribution systems judged on implementation, validation and operational monitoring.',
+    humanJob: 'Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.',
+    criteria: [
+      { key: 'inspect', label: 'Inspect', fallback: 'read' },
+      { key: 'configure', label: 'Configure', fallback: 'modify' },
+      { key: 'validate', label: 'Validate', fallback: 'read' },
+      { key: 'deploy', label: 'Deploy', fallback: 'create' },
+      { key: 'monitor', label: 'Monitor', fallback: 'read' }
+    ]
+  },
+  'Creative production': {
+    file: 'creative-production.md',
+    description: 'Creative systems judged on context, generation, editing, format adaptation and usable output.',
+    humanJob: 'Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.',
+    criteria: [
+      { key: 'context', label: 'Read context', fallback: 'read' },
+      { key: 'create', label: 'Create', fallback: 'create' },
+      { key: 'edit', label: 'Edit', fallback: 'modify' },
+      { key: 'adapt', label: 'Adapt', fallback: 'modify' },
+      { key: 'export', label: 'Export', fallback: 'read' }
+    ]
+  },
+  'Research and intelligence': {
+    file: 'research-intelligence.md',
+    description: 'External research systems judged on discovery, retrieval, comparison, analysis and export.',
+    humanJob: 'Find the right market evidence, retrieve it, compare competitors or queries, analyse patterns and export the evidence.',
+    criteria: [
+      { key: 'discover', label: 'Discover', fallback: 'read' },
+      { key: 'retrieve', label: 'Retrieve', fallback: 'read' },
+      { key: 'compare', label: 'Compare', fallback: 'read' },
+      { key: 'analyse', label: 'Analyse', fallback: 'read' },
+      { key: 'export', label: 'Export', fallback: 'read' }
+    ]
+  },
+  'Data infrastructure': {
+    file: 'data-infrastructure.md',
+    description: 'Pipelines, warehouses and semantic layers judged on connection, inspection, querying, transformation and operation.',
+    humanJob: 'Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.',
+    criteria: [
+      { key: 'connect', label: 'Connect', fallback: 'create' },
+      { key: 'inspect', label: 'Inspect', fallback: 'read' },
+      { key: 'query', label: 'Query', fallback: 'read' },
+      { key: 'transform', label: 'Transform', fallback: 'modify' },
+      { key: 'operate', label: 'Operate', fallback: 'delete' }
+    ]
+  },
+  'Automation and workflow': {
+    file: 'automation-workflow.md',
+    description: 'Cross-tool automation systems judged on connection, workflow construction, execution, debugging and monitoring.',
+    humanJob: 'Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.',
+    criteria: [
+      { key: 'connect', label: 'Connect', fallback: 'create' },
+      { key: 'build', label: 'Build', fallback: 'create' },
+      { key: 'run', label: 'Run', fallback: 'read' },
+      { key: 'debug', label: 'Debug', fallback: 'modify' },
+      { key: 'monitor', label: 'Monitor', fallback: 'read' }
+    ]
+  },
+  Modelling: {
+    file: 'modelling.md',
+    description: 'Specialist modelling frameworks judged on preparation, configuration, execution, validation and scenario planning.',
+    humanJob: 'Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.',
+    criteria: [
+      { key: 'prepare', label: 'Prepare data', fallback: 'create' },
+      { key: 'configure', label: 'Configure', fallback: 'modify' },
+      { key: 'run', label: 'Run', fallback: 'create' },
+      { key: 'validate', label: 'Validate', fallback: 'read' },
+      { key: 'scenarios', label: 'Scenarios', fallback: 'modify' }
+    ]
+  }
+};
+const sectionOrder = Object.keys(sectionConfig);
 const tools = data.tools.map((tool) => ({
   ...tool,
   ...editorial.ratings[tool.id],
@@ -71,11 +164,35 @@ const operationCell = (label, value) => [
   '</div>'
 ].join('');
 
-const commercialLink = (commercial) => {
-  const label = '<strong>' + escapeHtml(commercial.type) + '</strong><span>' + escapeHtml(commercial.label) + '</span>';
-  if (!commercial.url) return '<div class="commercial-link">' + label + '</div>';
-  return '<a class="commercial-link" href="' + escapeHtml(commercial.url) + '" target="_blank" rel="noreferrer">' + label + '<span aria-hidden="true">↗</span></a>';
+const capabilitiesFor = (tool) => sectionConfig[tool.section].criteria.map((criterion) => ({
+  label: criterion.label,
+  value: tool.workflow.capabilities?.[criterion.key] ?? tool.workflow.actions[criterion.fallback]
+}));
+
+const evidenceBasisFor = (tool) => tool.workflow.evidenceBasis ?? workflowData.meta.defaultEvidenceBasis;
+
+const bestAiRoute = (tool) => {
+  if (tool.workflow.endpoint) return { label: tool.workflow.endpoint, url: tool.workflow.endpoint };
+  const entry = [tool.mcp, tool.plugin, tool.cli].find((candidate) => candidate.provenance === 'official' && candidate.url);
+  return entry ? { label: entry.label, url: entry.url } : { label: 'No official AI route verified' };
 };
+
+const firstDocumentation = (tool) => tool.sources.find((source) => !source.url.includes('github.com')) ?? tool.sources[0];
+const firstGithub = (tool) => tool.github ?? tool.sources.find((source) => source.url.includes('github.com'));
+const productLink = (tool) => tool.product ?? firstDocumentation(tool);
+
+const markdownLink = (entry) => entry?.url ? '[' + entry.label + '](' + entry.url + ')' : entry?.label ?? 'Not publicly documented';
+
+const officialLinkRows = (tool) => [
+  ['Product / official page', productLink(tool)],
+  ['AI interface / endpoint', bestAiRoute(tool)],
+  ['MCP', tool.mcp],
+  ['Plugin', tool.plugin],
+  ['CLI', tool.cli],
+  ['API / SDK', tool.developer],
+  ['Documentation', firstDocumentation(tool)],
+  ['GitHub', firstGithub(tool) ?? { label: 'No official repository verified' }]
+];
 
 const toolRows = tools.map((tool, index) => {
   const workflow = tool.workflow;
@@ -84,9 +201,9 @@ const toolRows = tools.map((tool, index) => {
     tool.channels.join(' '), tool.jobs.join(' '), tool.mcp.label, tool.plugin.label,
     tool.cli.label, tool.developer.label, tool.positives.join(' '), tool.negatives.join(' '),
     workflow.surface, workflow.object, workflow.setup.level, workflow.setup.note,
-    Object.values(workflow.actions).join(' '), workflow.coverage.level,
-    workflow.coverage.note, workflow.blocker, workflow.commercial.type,
-    workflow.commercial.label, workflow.commercial.note
+    capabilitiesFor(tool).map((entry) => entry.label + ' ' + entry.value).join(' '),
+    workflow.coverage.level, workflow.coverage.note, workflow.blocker, tool.position,
+    evidenceBasisFor(tool)
   ].join(' ').toLowerCase();
   const interfaces = [
     tool.mcp.provenance !== 'none' ? 'mcp' : '',
@@ -102,15 +219,11 @@ const toolRows = tools.map((tool, index) => {
     ' data-readiness="' + escapeHtml(tool.readiness) + '"',
     ' data-grade="' + escapeHtml(tool.grade) + '"',
     ' data-setup="' + escapeHtml(workflow.setup.level) + '"',
-    ' data-read="' + escapeHtml(workflow.actions.read) + '"',
-    ' data-create="' + escapeHtml(workflow.actions.create) + '"',
-    ' data-modify="' + escapeHtml(workflow.actions.modify) + '"',
-    ' data-delete="' + escapeHtml(workflow.actions.delete) + '"',
-    ' data-commercial="' + escapeHtml(workflow.commercial.type) + '"',
+    ' data-position="' + escapeHtml(tool.position) + '"',
     ' data-interfaces="' + escapeHtml(interfaces) + '">',
     '  <div class="tool-index" aria-hidden="true">' + String(index + 1).padStart(2, '0') + '</div>',
     '  <div class="tool-summary">',
-    '    <p class="tool-category">' + escapeHtml(tool.section) + '</p>',
+    '    <p class="tool-category">' + escapeHtml(tool.section) + ' · ' + escapeHtml(tool.position) + '</p>',
     '    <h2><a href="#' + escapeHtml(tool.id) + '">' + escapeHtml(tool.name) + '</a></h2>',
     '    <p>' + escapeHtml(tool.summary) + '</p>',
     '    <p class="tool-tags"><span>' + tool.channels.map(escapeHtml).join('</span><span>') + '</span></p>',
@@ -128,33 +241,28 @@ const toolRows = tools.map((tool, index) => {
     '    <div class="blocker"><span>Biggest daily blocker</span><p>' + escapeHtml(workflow.blocker) + '</p></div>',
     '    <div class="operation-grid">',
     operationCell('Setup', workflow.setup.level),
-    operationCell('Read', workflow.actions.read),
-    operationCell('Create', workflow.actions.create),
-    operationCell('Modify', workflow.actions.modify),
-    operationCell('Delete', workflow.actions.delete),
+    ...capabilitiesFor(tool).map((entry) => operationCell(entry.label, entry.value)),
     operationCell('Coverage', workflow.coverage.level),
     '    </div>',
     '    <div class="workflow-notes">',
     '      <div><h3>Connection</h3><p>' + escapeHtml(workflow.setup.note) + '</p></div>',
-    '      <div><h3>Manual-feature coverage</h3><p>' + escapeHtml(workflow.coverage.note) + '</p></div>',
+    '      <div><h3>Human job benchmark</h3><p>' + escapeHtml(sectionConfig[tool.section].humanJob) + '</p></div>',
+    '      <div><h3>Route coverage</h3><p>' + escapeHtml(workflow.coverage.note) + '</p></div>',
     '    </div>',
     '    <div class="editorial-grid">',
     '      <div class="positive"><h3>+</h3>' + htmlList(tool.positives) + '</div>',
     '      <div class="negative"><h3>−</h3>' + htmlList(tool.negatives) + '</div>',
     '    </div>',
     '    <div class="interfaces">',
-    interfaceLink('MCP', tool.mcp),
-    interfaceLink('Plugin', tool.plugin),
-    interfaceLink('CLI', tool.cli),
-    interfaceLink('API / SDK', tool.developer),
+    ...officialLinkRows(tool).map(([label, entry]) => interfaceLink(label, entry)),
     '    </div>',
     '    <div class="detail-grid">',
     '      <div><h3>Access</h3><p>' + escapeHtml(tool.access) + '</p></div>',
-    '      <div><h3>Commercial programme</h3>' + commercialLink(workflow.commercial) + '<p>' + escapeHtml(workflow.commercial.note) + '</p></div>',
-    '      <div><h3>Watch</h3><p>' + escapeHtml(tool.caution) + '</p></div>',
+      '      <div><h3>Watch</h3><p>' + escapeHtml(tool.caution) + '</p></div>',
     '      <div><h3>Sources</h3><p class="source-links">' + sourceLinks(tool.sources) + '</p></div>',
+    '      <div><h3>Evidence basis</h3><p>' + escapeHtml(evidenceBasisFor(tool)) + '</p></div>',
     '    </div>',
-    '    <p class="verified">Verified ' + escapeHtml(formatDate(tool.verifiedOn)) + '</p>',
+    '    <p class="verified">Last checked ' + escapeHtml(formatDate(tool.verifiedOn)) + '</p>',
     '  </section>',
     '</article>'
   ].join('');
@@ -172,19 +280,66 @@ const sectionNav = sectionOrder.map((section) => {
 const officialMcp = tools.filter((tool) => tool.mcp.provenance === 'official').length;
 const productionReady = tools.filter((tool) => tool.readiness === 'Production').length;
 const inTest = tools.filter((tool) => tool.readiness === 'Test').length;
-const affiliatePrograms = tools.filter((tool) => tool.workflow.commercial.type === 'Affiliate').length;
+const emergingTools = tools.filter((tool) => tool.position === 'Emerging').length;
 
 const template = await readFile(resolve(root, 'templates/index.html'), 'utf8');
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: data.meta.title,
+  description: data.meta.description,
+  url: siteUrl,
+  version: data.meta.version,
+  dateModified: data.meta.updatedOn,
+  license: 'https://opensource.org/license/mit',
+  creator: {
+    '@type': 'Organization',
+    name: 'The Detail Department',
+    url: 'https://detail-department.com/',
+    sameAs: 'https://github.com/The-Detail-Department'
+  },
+  author: {
+    '@type': 'Person',
+    name: 'L\u00e9on Houlier',
+    url: 'https://leonhoulier.com/',
+    sameAs: 'https://github.com/leonhoulier'
+  },
+  distribution: [
+    {
+      '@type': 'DataDownload',
+      name: 'Interface facts',
+      contentUrl: siteUrl + 'data/tools.json',
+      encodingFormat: 'application/json'
+    },
+    {
+      '@type': 'DataDownload',
+      name: 'Daily workflow assessments',
+      contentUrl: siteUrl + 'data/workflows.json',
+      encodingFormat: 'application/json'
+    },
+    {
+      '@type': 'DataDownload',
+      name: 'Editorial ratings',
+      contentUrl: siteUrl + 'data/ratings.json',
+      encodingFormat: 'application/json'
+    }
+  ]
+}).replaceAll('<', '\\u003c');
 const page = template
   .replaceAll('{{TITLE}}', escapeHtml(data.meta.title))
   .replaceAll('{{DESCRIPTION}}', escapeHtml(data.meta.description))
   .replaceAll('{{UPDATED_ISO}}', escapeHtml(data.meta.updatedOn))
   .replaceAll('{{UPDATED}}', escapeHtml(formatDate(data.meta.updatedOn)))
+  .replaceAll('{{CANONICAL_URL}}', siteUrl)
+  .replaceAll('{{REPOSITORY_URL}}', repositoryUrl)
+  .replaceAll('{{SOCIAL_IMAGE_URL}}', socialImageUrl)
+  .replaceAll('{{JSON_LD}}', structuredData)
+  .replaceAll('{{EVIDENCE_BASIS}}', escapeHtml(workflowData.meta.defaultEvidenceBasis))
   .replaceAll('{{TOTAL}}', String(tools.length))
   .replaceAll('{{OFFICIAL_MCP}}', String(officialMcp))
   .replaceAll('{{PRODUCTION_READY}}', String(productionReady))
   .replaceAll('{{IN_TEST}}', String(inTest))
-  .replaceAll('{{AFFILIATE_PROGRAMS}}', String(affiliatePrograms))
+  .replaceAll('{{EMERGING_TOOLS}}', String(emergingTools))
   .replaceAll('{{CATEGORY_OPTIONS}}', categoryOptions)
   .replaceAll('{{SECTION_NAV}}', sectionNav)
   .replaceAll('{{TOOL_ROWS}}', toolRows);
@@ -192,37 +347,6 @@ const page = template
 const markdownCell = (value) => String(value).replaceAll('|', '\\|').replaceAll('\n', ' ');
 const markdownSources = (sources) => sources.map((source) => '[' + source.label + '](' + source.url + ')').join(' · ');
 const markdownList = (items) => items.map((item) => '- ' + item).join('\n');
-const markdownCommercial = (commercial) => commercial.url
-  ? '[' + commercial.label + '](' + commercial.url + ')'
-  : commercial.label;
-
-const sectionConfig = {
-  'Media platforms': {
-    file: 'media-platforms.md',
-    description: 'Advertising platforms and buying systems, judged on the most direct official route available to an AI-assisted operator.'
-  },
-  'Analytics and measurement': {
-    file: 'analytics-measurement.md',
-    description: 'Analytics and implementation systems used to query, configure and verify measurement.'
-  },
-  'Creative and images': {
-    file: 'creative-images.md',
-    description: 'Creative-production systems assessed for usable context, native creation and editing depth.'
-  },
-  'Data and research': {
-    file: 'data-research.md',
-    description: 'Research, connector and warehouse routes that supply the evidence behind paid-media decisions.'
-  },
-  'Automation and workflow': {
-    file: 'automation-workflow.md',
-    description: 'Cross-tool automation systems assessed on connection effort, action depth and operational control.'
-  },
-  'Modelling and experimentation': {
-    file: 'modelling-experimentation.md',
-    description: 'Specialist modelling frameworks for incrementality, marketing mix analysis and budget scenarios.'
-  }
-};
-
 const gradeRank = new Map([
   ['A+', 12], ['A', 11], ['A-', 10],
   ['B+', 9], ['B', 8], ['B-', 7],
@@ -231,9 +355,12 @@ const gradeRank = new Map([
 ]);
 const readinessRank = new Map([['Production', 3], ['Test', 2], ['Research', 1]]);
 
+const positionRank = new Map([['Reference', 3], ['Emerging', 2], ['Specialist', 1]]);
+
 const rankedTools = (section) => tools
   .filter((tool) => tool.section === section)
   .sort((left, right) =>
+    positionRank.get(right.position) - positionRank.get(left.position) ||
     gradeRank.get(right.grade) - gradeRank.get(left.grade) ||
     readinessRank.get(right.readiness) - readinessRank.get(left.readiness) ||
     left.name.localeCompare(right.name)
@@ -248,20 +375,19 @@ const githubAnchor = (value) => value
 const overviewRow = (tool, link) => '| ' + [
   '[' + tool.name + '](' + link + ')',
   '**' + tool.grade + '**',
+  tool.position,
   tool.readiness,
   tool.workflow.setup.level,
-  tool.workflow.actions.read,
-  tool.workflow.actions.create,
-  tool.workflow.actions.modify,
-  tool.workflow.actions.delete,
+  ...capabilitiesFor(tool).map((entry) => entry.value),
   tool.workflow.coverage.level
 ].map(markdownCell).join(' | ') + ' |';
 
 const comparisonTable = (section, linkFor) => {
   const sectionTools = rankedTools(section);
+  const criteria = sectionConfig[section].criteria.map((criterion) => criterion.label);
   return [
-    '| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |',
-    '| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |',
+    '| ' + ['Tool', 'Grade', 'Market role', 'Readiness', 'Setup', ...criteria, 'Human-job coverage'].join(' | ') + ' |',
+    '| ' + [':---', ':---:', ':---:', ':---:', ':---:', ...criteria.map(() => ':---:'), ':---:'].join(' | ') + ' |',
     ...sectionTools.map((tool) => overviewRow(tool, linkFor(tool)))
   ].join('\n');
 };
@@ -276,7 +402,7 @@ const toolDetail = (tool, section) => {
   return [
     '## ' + tool.name,
     '',
-    '**' + tool.grade + ' · ' + tool.readiness + '**',
+    '**' + tool.grade + ' · ' + tool.readiness + ' · ' + tool.position + '**',
     '',
     tool.summary,
     '',
@@ -285,8 +411,10 @@ const toolDetail = (tool, section) => {
     '- **Route:** ' + workflow.surface + '.',
     '- **Scope:** ' + workflow.object + '.',
     '- **Setup:** ' + workflow.setup.level + '. ' + workflow.setup.note,
-    '- **Controls:** Read **' + workflow.actions.read + '** · Create **' + workflow.actions.create + '** · Modify **' + workflow.actions.modify + '** · Delete **' + workflow.actions.delete + '**',
+    '- **Human job:** ' + sectionConfig[section].humanJob,
+    '- **Capabilities:** ' + capabilitiesFor(tool).map((entry) => entry.label + ' **' + entry.value + '**').join(' · '),
     '- **Coverage:** ' + workflow.coverage.level + '. ' + workflow.coverage.note,
+    '- **Evidence basis:** ' + evidenceBasisFor(tool),
     '',
     '**Good**',
     '',
@@ -296,18 +424,14 @@ const toolDetail = (tool, section) => {
     '',
     markdownList(tool.negatives),
     '',
-    '**Interfaces**',
+    '**Official links**',
     '',
-    markdownInterface('MCP', tool.mcp),
-    markdownInterface('Plugin', tool.plugin),
-    markdownInterface('CLI', tool.cli),
-    markdownInterface('API / SDK', tool.developer),
+    ...officialLinkRows(tool).map(([label, entry]) => '- **' + label + ':** ' + markdownLink(entry)),
     '',
     '- **Access:** ' + tool.access,
-    '- **Commercial:** ' + workflow.commercial.type + '. ' + markdownCommercial(workflow.commercial) + '. ' + workflow.commercial.note,
     '- **Watch:** ' + tool.caution,
     '- **Sources:** ' + markdownSources(tool.sources),
-    '- **Verified:** ' + formatDate(tool.verifiedOn),
+    '- **Last checked:** ' + formatDate(tool.verifiedOn),
     '',
     '[Back to comparison](#' + githubAnchor(section) + ')'
   ].join('\n');
@@ -323,6 +447,7 @@ const cataloguePage = (section) => {
   return [
     '# ' + section,
     sectionConfig[section].description,
+    '> **Evidence basis:** ' + workflowData.meta.defaultEvidenceBasis + ' unless an entry states otherwise.',
     '[Main index](../README.md) · [Methodology](../METHODOLOGY.md)',
     catalogueNavigation,
     matrix,
@@ -365,7 +490,13 @@ const readme = [
   '',
   '**The Detail Department\'s view of what an AI paid-media team can use in real work today.**',
   '',
-  'We grade the route an operator can connect now, not the vendor\'s potential. Setup, Read, Create, Modify, Delete and manual-feature coverage all count.',
+  'Published by [The Detail Department](https://detail-department.com/). Editorial lead: [L\u00e9on Houlier](https://github.com/leonhoulier).',
+  '',
+  'An evidence-backed comparison of Model Context Protocol (MCP) servers, advertising APIs, plugins and command-line tools used across media buying, analytics, measurement, creative production and marketing automation.',
+  '',
+  'We grade the route an operator can connect now, not the vendor\'s potential. Every category is judged against the work a human would normally do with that kind of tool.',
+  '',
+  '> **Evidence basis:** ' + workflowData.meta.defaultEvidenceBasis + ' unless an entry states otherwise. A Production readiness label is not proof of hands-on execution.',
   '',
   topNavigation,
   '',
@@ -373,12 +504,14 @@ const readme = [
   '',
   '[Read the methodology](METHODOLOGY.md) · [Propose a correction](../../issues/new?template=correction.yml)',
   '',
+  '**Market role:** Reference = established category leader · Emerging = newer challenger worth watching · Specialist = narrower expert tool. Market role does not determine grade.',
+  '',
   readmeSections,
   '',
   '## How scoring works',
   '',
   '1. Can the route finish a recurring job?',
-  '2. Can it Read, Create, Modify and Delete?',
+  '2. How much of that category\'s human job can it complete?',
   '3. How hard is it to connect?',
   '4. How much of the manual product does it cover?',
   '5. Is it mature and governable?',
@@ -399,6 +532,8 @@ const readme = [
   '- [Interface facts](data/tools.json)',
   '- [Daily workflow assessments](data/workflows.json)',
   '- [Editorial ratings](data/ratings.json)',
+  '- [Citation metadata](CITATION.cff)',
+  '- [Changelog](CHANGELOG.md)',
   '- [Contribution guide](CONTRIBUTING.md)',
   '- [Generated web interface source](docs/index.html) (`npm run serve` to run locally)',
   '',
@@ -421,6 +556,10 @@ const outputs = new Map([
   [resolve(root, 'docs/data/tools.json'), JSON.stringify(data, null, 2) + '\n'],
   [resolve(root, 'docs/data/ratings.json'), JSON.stringify(editorial, null, 2) + '\n'],
   [resolve(root, 'docs/data/workflows.json'), JSON.stringify(workflowData, null, 2) + '\n'],
+  [resolve(root, 'docs/robots.txt'), 'User-agent: *\nAllow: /\nSitemap: ' + siteUrl + 'sitemap.xml\n'],
+  [resolve(root, 'docs/sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url>\n    <loc>' + siteUrl + '</loc>\n    <lastmod>' + data.meta.updatedOn + '</lastmod>\n  </url>\n</urlset>\n'],
+  [resolve(root, 'docs/assets/favicon.svg'), await readFile(resolve(root, 'assets/favicon.svg'))],
+  [resolve(root, 'docs/assets/social-preview.png'), await readFile(resolve(root, 'assets/social-preview.png'))],
   [resolve(root, 'docs/.nojekyll'), '']
 ]);
 
@@ -428,8 +567,9 @@ let stale = false;
 for (const [path, content] of outputs) {
   if (checking) {
     try {
-      const existing = await readFile(path, 'utf8');
-      if (existing !== content) {
+      const existing = await readFile(path, typeof content === 'string' ? 'utf8' : undefined);
+      const matches = typeof content === 'string' ? existing === content : existing.equals(content);
+      if (!matches) {
         console.error('Generated file is stale: ' + path.replace(root + '/', ''));
         stale = true;
       }

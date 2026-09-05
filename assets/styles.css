@@ -144,6 +144,12 @@ select {
   line-height: 1.45;
 }
 
+.publisher {
+  margin: 1rem 0 0;
+  color: var(--grey-600);
+  font-size: 0.86rem;
+}
+
 .edition {
   justify-self: end;
   margin: 0;

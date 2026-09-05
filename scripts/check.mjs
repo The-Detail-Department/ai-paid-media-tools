@@ -15,17 +15,31 @@ const interfaceNames = ['mcp', 'plugin', 'cli', 'developer'];
 const allowedReadiness = new Set(['Production', 'Test', 'Research']);
 const allowedSections = new Set([
   'Media platforms',
-  'Analytics and measurement',
-  'Creative and images',
-  'Data and research',
+  'Analytics',
+  'Measurement',
+  'Creative production',
+  'Research and intelligence',
+  'Data infrastructure',
   'Automation and workflow',
-  'Modelling and experimentation'
+  'Modelling'
 ]);
+const capabilityKeys = {
+  'Media platforms': ['read', 'create', 'modify', 'delete'],
+  Analytics: ['analyse', 'buildReports', 'configure', 'validate', 'share'],
+  Measurement: ['inspect', 'configure', 'validate', 'deploy', 'monitor'],
+  'Creative production': ['context', 'create', 'edit', 'adapt', 'export'],
+  'Research and intelligence': ['discover', 'retrieve', 'compare', 'analyse', 'export'],
+  'Data infrastructure': ['connect', 'inspect', 'query', 'transform', 'operate'],
+  'Automation and workflow': ['connect', 'build', 'run', 'debug', 'monitor'],
+  Modelling: ['prepare', 'configure', 'run', 'validate', 'scenarios']
+};
 const gradePattern = /^(A\+|A|A-|B\+|B|B-|C\+|C|C-|D|F)$/;
+const allowedPosition = new Set(['Reference', 'Emerging', 'Specialist']);
 const allowedSetup = new Set(['Easy', 'Moderate', 'Hard', 'Specialist']);
 const allowedAction = new Set(['Yes', 'Partial', 'No', 'Depends', 'N/A', 'Unverified']);
-const allowedCoverage = new Set(['Broad', 'Partial', 'Narrow', 'Configurable', 'Specialist']);
+const allowedCoverage = new Set(['End to end', 'Most steps', 'Some steps', 'Assist only', 'Depends', 'Specialist']);
 const allowedCommercial = new Set(['Affiliate', 'Referral', 'Partner', 'Retired', 'None verified']);
+const allowedEvidenceBasis = new Set(['Documentation reviewed', 'Connected', 'Executed', 'Used repeatedly']);
 
 const githubAnchor = (value) => value
   .toLowerCase()
@@ -44,6 +58,14 @@ const checkUrl = (url, path) => {
 
 if (!data.meta || !Array.isArray(data.tools)) errors.push('Expected meta and tools');
 if (!/^\d{4}-\d{2}-\d{2}$/.test(data.meta.updatedOn || '')) errors.push('meta.updatedOn must be an ISO date');
+if (!allowedEvidenceBasis.has(workflowData.meta?.defaultEvidenceBasis)) {
+  errors.push('workflow meta.defaultEvidenceBasis is invalid');
+}
+for (const basis of allowedEvidenceBasis) {
+  if (!workflowData.meta?.evidenceBasisDefinition?.[basis]) {
+    errors.push('workflow meta.evidenceBasisDefinition is missing ' + basis);
+  }
+}
 
 const ids = new Set();
 const names = new Set();
@@ -61,6 +83,12 @@ for (const [index, tool] of data.tools.entries()) {
   if (!Array.isArray(tool.jobs) || tool.jobs.length === 0) errors.push(path + '.jobs must not be empty');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(tool.verifiedOn || '')) errors.push(path + '.verifiedOn must be an ISO date');
   if (!Array.isArray(tool.sources) || tool.sources.length === 0) errors.push(path + '.sources must not be empty');
+  for (const linkName of ['product', 'github']) {
+    const link = tool[linkName];
+    if (!link) continue;
+    if (!link.label || !link.url) errors.push(path + '.' + linkName + ' is incomplete');
+    if (link.url) checkUrl(link.url, path + '.' + linkName + '.url');
+  }
 
   for (const interfaceName of interfaceNames) {
     const entry = tool[interfaceName];
@@ -97,6 +125,7 @@ for (const [index, tool] of data.tools.entries()) {
   if (!allowedSections.has(rating.section)) errors.push(path + ' rating section is invalid');
   if (!allowedReadiness.has(rating.readiness)) errors.push(path + ' readiness is invalid');
   if (!gradePattern.test(rating.grade || '')) errors.push(path + ' grade is invalid');
+  if (!allowedPosition.has(rating.position)) errors.push(path + ' market position is invalid');
   for (const listName of ['positives', 'negatives']) {
     const list = rating[listName];
     if (!Array.isArray(list) || list.length < 1 || list.length > 5) {
@@ -121,11 +150,24 @@ for (const [index, tool] of data.tools.entries()) {
   for (const action of ['read', 'create', 'modify', 'delete']) {
     if (!allowedAction.has(workflow.actions?.[action])) errors.push(path + ' workflow action ' + action + ' is invalid');
   }
+  if (rating.section !== 'Media platforms') {
+    for (const capability of capabilityKeys[rating.section] ?? []) {
+      if (!allowedAction.has(workflow.capabilities?.[capability])) {
+        errors.push(path + ' workflow capability ' + capability + ' is invalid');
+      }
+    }
+  }
   if (!allowedCoverage.has(workflow.coverage?.level)) errors.push(path + ' workflow coverage is invalid');
   if (!workflow.coverage?.note) errors.push(path + ' workflow coverage note is required');
-  if (!allowedCommercial.has(workflow.commercial?.type)) errors.push(path + ' commercial programme type is invalid');
-  if (!workflow.commercial?.label || !workflow.commercial?.note) errors.push(path + ' commercial programme label and note are required');
-  if (workflow.commercial?.url) checkUrl(workflow.commercial.url, path + ' workflow commercial.url');
+  if (workflow.evidenceBasis && !allowedEvidenceBasis.has(workflow.evidenceBasis)) {
+    errors.push(path + ' workflow evidence basis is invalid');
+  }
+  if (workflow.endpoint) checkUrl(workflow.endpoint, path + ' workflow.endpoint');
+  if (workflow.commercial) {
+    if (!allowedCommercial.has(workflow.commercial.type)) errors.push(path + ' commercial programme type is invalid');
+    if (!workflow.commercial.label || !workflow.commercial.note) errors.push(path + ' workflow commercial programme is incomplete');
+    if (workflow.commercial.url) checkUrl(workflow.commercial.url, path + ' workflow commercial.url');
+  }
 }
 
 for (const id of Object.keys(editorial.ratings || {})) {

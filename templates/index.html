@@ -4,13 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="author" content="Léon Houlier">
   <meta name="theme-color" content="#f6f8fa">
+  <link rel="canonical" href="{{CANONICAL_URL}}">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{TITLE}} | The Detail Department">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL_URL}}">
+  <meta property="og:site_name" content="The Detail Department">
+  <meta property="og:image" content="{{SOCIAL_IMAGE_URL}}">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{TITLE}} | The Detail Department">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <meta name="twitter:image" content="{{SOCIAL_IMAGE_URL}}">
   <title>{{TITLE}} | The Detail Department</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Kumbh+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/app.js" defer></script>
+  <script type="application/ld+json">{{JSON_LD}}</script>
 </head>
 <body>
   <a class="skip-link" href="#index">Skip to the index</a>
@@ -30,8 +46,11 @@
       <p class="eyebrow">GitHub field guide</p>
       <h1 id="page-title">AI paid media tools</h1>
       <div class="hero-bottom">
-        <p class="lede">The Detail Department's point of view on what an AI paid-media team can actually use today. Read, Create and Modify are different capabilities. Setup pain and manual gaps count.</p>
-        <p class="edition">Edition 0.3<br>Verified <time datetime="{{UPDATED_ISO}}">{{UPDATED}}</time></p>
+        <div>
+          <p class="lede">The Detail Department's point of view on what an AI paid-media team can actually use today. Every category is judged against the work a human would normally do.</p>
+          <p class="publisher">Published by <a href="https://detail-department.com/">The Detail Department</a>. Editorial lead: <a href="https://github.com/leonhoulier">Léon Houlier</a>.</p>
+        </div>
+        <p class="edition">Edition 0.4<br>Last checked <time datetime="{{UPDATED_ISO}}">{{UPDATED}}</time></p>
       </div>
     </section>
 
@@ -39,7 +58,7 @@
       <div><strong>{{TOTAL}}</strong><span>tools reviewed</span></div>
       <div><strong>{{PRODUCTION_READY}}</strong><span>rated Production</span></div>
       <div><strong>{{IN_TEST}}</strong><span>rated Test</span></div>
-      <div><strong>{{AFFILIATE_PROGRAMS}}</strong><span>public affiliate programmes</span></div>
+      <div><strong>{{EMERGING_TOOLS}}</strong><span>emerging players</span></div>
     </section>
 
     <section class="premise" id="method" aria-labelledby="premise-title">
@@ -50,16 +69,20 @@
       </div>
       <dl>
         <div>
-          <dt>Read / Create / Modify / Delete</dt>
-          <dd>These are scored separately. Creation without maintenance is a serious gap.</dd>
+          <dt>Human job, by category</dt>
+          <dd>Media needs Read, Create, Modify and Delete. Analytics, measurement, creative and infrastructure need different tests.</dd>
         </div>
         <div>
           <dt>Connection effort</dt>
           <dd>Cloud projects, developer tokens, OAuth applications, custom code and allowlists lower daily usefulness.</dd>
         </div>
         <div>
-          <dt>Manual-feature coverage</dt>
-          <dd>MCP or API availability does not establish parity with the interface practitioners use.</dd>
+          <dt>Market role</dt>
+          <dd>Reference, Emerging and Specialist describe the player's place in the field. They do not determine its grade.</dd>
+        </div>
+        <div>
+          <dt>Evidence basis</dt>
+          <dd>{{EVIDENCE_BASIS}} unless an entry states otherwise. A Production readiness label is not proof of hands-on execution.</dd>
         </div>
       </dl>
     </section>
@@ -132,26 +155,12 @@
           </select>
         </label>
         <label>
-          <span>Action</span>
-          <select id="action" name="action">
-            <option value="">Any action</option>
-            <option value="read">Read: Yes</option>
-            <option value="create">Create: Yes</option>
-            <option value="modify">Modify: Yes</option>
-            <option value="delete">Delete: Yes</option>
-            <option value="write-partial">Any partial write</option>
-            <option value="write-none">No write path</option>
-          </select>
-        </label>
-        <label>
-          <span>Programme</span>
-          <select id="commercial" name="commercial">
-            <option value="">Any programme</option>
-            <option value="Affiliate">Affiliate</option>
-            <option value="Referral">Referral</option>
-            <option value="Partner">Partner only</option>
-            <option value="Retired">Retired</option>
-            <option value="None verified">None verified</option>
+          <span>Market role</span>
+          <select id="position" name="position">
+            <option value="">Any market role</option>
+            <option value="Reference">Reference</option>
+            <option value="Emerging">Emerging</option>
+            <option value="Specialist">Specialist</option>
           </select>
         </label>
         <button type="reset">Reset</button>
@@ -180,6 +189,7 @@
       <div>
         <p>Interface facts, daily workflow assessment and editorial grade are stored separately. Every detail stays open because the limitations are part of the recommendation, not optional fine print.</p>
         <p>The repository README is the primary reference. This browser is a secondary filter for the same source files.</p>
+        <a class="text-link" href="{{REPOSITORY_URL}}">Open the repository <span aria-hidden="true">↗</span></a><br>
         <a class="text-link" href="data/tools.json">Open tool facts <span aria-hidden="true">↗</span></a><br>
         <a class="text-link" href="data/workflows.json">Open workflow data <span aria-hidden="true">↗</span></a><br>
         <a class="text-link" href="data/ratings.json">Open editorial ratings <span aria-hidden="true">↗</span></a>

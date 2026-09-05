@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this index, please cite it as below."
+title: "AI paid-media tools"
+type: dataset
+authors:
+  - given-names: "Léon"
+    family-names: "Houlier"
+    affiliation: "The Detail Department"
+abstract: "An evidence-backed comparison of AI-compatible routes for paid-media operations, analytics, measurement, creative production, research, data infrastructure, automation and modelling."
+keywords:
+  - paid media
+  - media buying
+  - advertising API
+  - Model Context Protocol
+  - marketing analytics
+  - marketing automation
+license: MIT
+version: 0.4.0
+date-released: 2026-09-05
+repository-code: "https://github.com/The-Detail-Department/ai-paid-media-tools"
+url: "https://the-detail-department.github.io/ai-paid-media-tools/"
