@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{DESCRIPTION}}">
-  <meta name="theme-color" content="#0019ff">
+  <meta name="theme-color" content="#f6f8fa">
   <title>{{TITLE}} | The Detail Department</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,48 +17,49 @@
 
   <header class="site-header">
     <a class="wordmark" href="https://detail-department.com/">The Detail Department</a>
-    <p>Field index 01</p>
+    <p>README-first field guide</p>
     <nav aria-label="Page">
       <a href="#method">Method</a>
-      <a href="data/tools.json">Data</a>
+      <a href="data/tools.json">Facts</a>
+      <a href="data/ratings.json">Ratings</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <p class="eyebrow">For AI paid-media practitioners</p>
-      <h1 id="page-title">The tools.<br><em>The truth.</em></h1>
+      <p class="eyebrow">GitHub field guide</p>
+      <h1 id="page-title">AI paid media tools</h1>
       <div class="hero-bottom">
-        <p class="lede">A maintained map of MCP servers, agent plugins, CLIs, APIs and modelling libraries. Each interface is labelled by who maintains it, how mature it is and what it can change.</p>
-        <p class="edition">Edition 0.1<br>Verified <time datetime="{{UPDATED_ISO}}">{{UPDATED}}</time></p>
+        <p class="lede">The Detail Department's point of view on what is usable in a daily AI paid-media workflow today. Grades combine usable scope, production readiness, access friction, control, documentation and operational risk.</p>
+        <p class="edition">Edition 0.2<br>Verified <time datetime="{{UPDATED_ISO}}">{{UPDATED}}</time></p>
       </div>
     </section>
 
     <section class="signal-strip" aria-label="Index totals">
       <div><strong>{{TOTAL}}</strong><span>tools reviewed</span></div>
+      <div><strong>{{PRODUCTION_READY}}</strong><span>rated Production</span></div>
+      <div><strong>{{IN_TEST}}</strong><span>rated Test</span></div>
       <div><strong>{{OFFICIAL_MCP}}</strong><span>official MCPs</span></div>
-      <div><strong>{{WRITE_CAPABLE}}</strong><span>write or mixed MCPs</span></div>
-      <div><strong>{{OFFICIAL_CLI}}</strong><span>official CLIs</span></div>
     </section>
 
     <section class="premise" id="method" aria-labelledby="premise-title">
       <p class="section-number">00 / How to read it</p>
       <div>
-        <h2 id="premise-title">Connection is not control.</h2>
-        <p>An MCP badge alone tells you almost nothing. An official server can be read-only, limited to an allowlist, or capable of launching and deleting campaigns. A community wrapper can expose a vendor API without becoming vendor-supported.</p>
+        <h2 id="premise-title">Grade the daily workflow.</h2>
+        <p>The letter grade is our recommendation for current AI paid-media work, not a score for the vendor overall. Readiness is separate. A strong product can still need a bounded test when its agent interface is new or gated.</p>
       </div>
       <dl>
         <div>
-          <dt>Official</dt>
-          <dd>Documented by the vendor or maintained in its verified source-code organisation.</dd>
+          <dt>A range</dt>
+          <dd>Strong daily recommendation. A minus still signals a material operational limit.</dd>
         </div>
         <div>
-          <dt>No official MCP verified</dt>
-          <dd>None found in this review. It is not a claim that no community implementation exists.</dd>
+          <dt>Production</dt>
+          <dd>Dependable enough for a controlled recurring workflow today.</dd>
         </div>
         <div>
-          <dt>Read + write</dt>
-          <dd>Can create, update, launch or delete connected objects. Review gates matter.</dd>
+          <dt>Test or Research</dt>
+          <dd>Test means pilot it within limits. Research means specialist value rather than daily operation.</dd>
         </div>
       </dl>
     </section>
@@ -67,7 +68,7 @@
       <div class="index-heading">
         <div>
           <p class="section-number">01 / The field</p>
-          <h2 id="index-title">Find the usable interface.</h2>
+          <h2 id="index-title">Tool index</h2>
         </div>
         <p id="result-count" class="result-count" aria-live="polite">{{TOTAL}} of {{TOTAL}} tools</p>
       </div>
@@ -79,10 +80,30 @@
           <kbd>/</kbd>
         </label>
         <label>
-          <span>Area</span>
+          <span>Section</span>
           <select id="category" name="category">
-            <option value="">All areas</option>
+            <option value="">All sections</option>
             {{CATEGORY_OPTIONS}}
+          </select>
+        </label>
+        <label>
+          <span>Readiness</span>
+          <select id="readiness" name="readiness">
+            <option value="">Any readiness</option>
+            <option value="Production">Production</option>
+            <option value="Test">Test</option>
+            <option value="Research">Research</option>
+          </select>
+        </label>
+        <label>
+          <span>Grade</span>
+          <select id="grade" name="grade">
+            <option value="">Any grade</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
           </select>
         </label>
         <label>
@@ -104,16 +125,6 @@
             <option value="preview">Preview</option>
             <option value="restricted">Restricted</option>
             <option value="none-verified">None verified</option>
-          </select>
-        </label>
-        <label>
-          <span>MCP control</span>
-          <select id="control" name="control">
-            <option value="">Any control</option>
-            <option value="read-only">Read-only</option>
-            <option value="read-write">Read + write</option>
-            <option value="mixed">Mixed</option>
-            <option value="not-stated">Not stated</option>
           </select>
         </label>
         <button type="reset">Reset</button>
@@ -140,16 +151,17 @@
       <p class="section-number">02 / Maintenance</p>
       <h2 id="maintenance-title">Facts age.<br>This index shows its work.</h2>
       <div>
-        <p>Every entry carries a verification date and links to primary evidence. Additions need an official source, a provenance label, an access note and a clear read/write boundary.</p>
-        <p>Found something wrong? Open a correction when the repository is published, or use the structured data now.</p>
-        <a class="text-link" href="data/tools.json">Open the source data <span aria-hidden="true">↗</span></a>
+        <p>Facts and opinion are stored separately. Every capability carries a verification date and primary evidence. Every grade carries a production rationale with up to five positives and negatives.</p>
+        <p>The repository README is the primary reference. This browser is a secondary filter for the same source files.</p>
+        <a class="text-link" href="data/tools.json">Open tool facts <span aria-hidden="true">↗</span></a><br>
+        <a class="text-link" href="data/ratings.json">Open editorial ratings <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
 
   <footer>
     <p>The Detail Department</p>
-    <p>Media operations, made exact.</p>
+    <p>AI paid-media field guide</p>
     <p>No vendor sponsorship or client relationship is implied.</p>
   </footer>
 </body>

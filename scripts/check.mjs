@@ -4,12 +4,23 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(await readFile(resolve(root, 'data/tools.json'), 'utf8'));
+const editorial = JSON.parse(await readFile(resolve(root, 'data/ratings.json'), 'utf8'));
 const errors = [];
 const allowedProvenance = new Set(['official', 'community', 'none']);
 const allowedMaturity = new Set(['available', 'beta', 'preview', 'restricted', 'none-verified']);
 const allowedMode = new Set(['remote', 'local', 'both', 'none']);
 const allowedControl = new Set(['read-only', 'read-write', 'mixed', 'not-stated', 'none']);
 const interfaceNames = ['mcp', 'plugin', 'cli', 'developer'];
+const allowedReadiness = new Set(['Production', 'Test', 'Research']);
+const allowedSections = new Set([
+  'Media platforms',
+  'Analytics and measurement',
+  'Creative and images',
+  'Data and research',
+  'Automation and workflow',
+  'Modelling and experimentation'
+]);
+const gradePattern = /^(A\+|A|A-|B\+|B|B-|C\+|C|C-|D|F)$/;
 
 const checkUrl = (url, path) => {
   try {
@@ -66,9 +77,32 @@ for (const [index, tool] of data.tools.entries()) {
     if (source.url) checkUrl(source.url, path + '.sources[' + sourceIndex + '].url');
   }
   if (!hasPrimarySource) errors.push(path + ' needs a primary source');
+
+  const rating = editorial.ratings?.[tool.id];
+  if (!rating) {
+    errors.push(path + ' needs an editorial rating');
+    continue;
+  }
+  if (!allowedSections.has(rating.section)) errors.push(path + ' rating section is invalid');
+  if (!allowedReadiness.has(rating.readiness)) errors.push(path + ' readiness is invalid');
+  if (!gradePattern.test(rating.grade || '')) errors.push(path + ' grade is invalid');
+  for (const listName of ['positives', 'negatives']) {
+    const list = rating[listName];
+    if (!Array.isArray(list) || list.length < 1 || list.length > 5) {
+      errors.push(path + ' ' + listName + ' must contain one to five items');
+      continue;
+    }
+    if (list.some((item) => typeof item !== 'string' || !item.trim())) {
+      errors.push(path + ' ' + listName + ' must contain non-empty strings');
+    }
+  }
 }
 
-const serialised = JSON.stringify(data);
+for (const id of Object.keys(editorial.ratings || {})) {
+  if (!ids.has(id)) errors.push('Editorial rating has no matching tool: ' + id);
+}
+
+const serialised = JSON.stringify([data, editorial]);
 if (serialised.includes('—')) errors.push('U+2014 em dash is not allowed');
 if (data.tools.length < 20) errors.push('The reference should retain at least 20 high-signal tools');
 

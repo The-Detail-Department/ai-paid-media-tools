@@ -4,7 +4,7 @@ This repository is a maintained evidence index for AI-enabled paid-media work.
 
 ## Source of truth
 
-- Edit `data/tools.json`; do not hand-edit the generated `README.md` or `docs/` files.
+- Edit capability facts in `data/tools.json` and editorial grades in `data/ratings.json`; do not hand-edit the generated `README.md` or `docs/` files.
 - Run `npm run build` after every data or presentation change.
 - Run `npm run check` before proposing a change.
 
@@ -23,4 +23,7 @@ This repository is a maintained evidence index for AI-enabled paid-media work.
 - Use British English and sentence case.
 - Use The Detail Department as the public brand name.
 - Keep descriptions operational and specific. Avoid generic AI claims.
+- Grade the current daily AI paid-media workflow, not the vendor or product overall.
+- Keep Production, Test and Research separate from the letter grade.
+- Support every grade with one to five specific positives and negatives.
 - Do not use the U+2014 em dash.
