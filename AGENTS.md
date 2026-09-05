@@ -4,7 +4,7 @@ This repository is a maintained evidence index for AI-enabled paid-media work.
 
 ## Source of truth
 
-- Edit interface facts in `data/tools.json`, daily workflow assessments in `data/workflows.json`, and editorial grades in `data/ratings.json`; do not hand-edit the generated `README.md` or `docs/` files.
+- Edit interface facts in `data/tools.json`, daily workflow assessments in `data/workflows.json`, and editorial grades in `data/ratings.json`; do not hand-edit the generated `README.md`, `catalogue/`, or `docs/` files.
 - Run `npm run build` after every data or presentation change.
 - Run `npm run check` before proposing a change.
 

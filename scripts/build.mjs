@@ -196,161 +196,257 @@ const markdownCommercial = (commercial) => commercial.url
   ? '[' + commercial.label + '](' + commercial.url + ')'
   : commercial.label;
 
-const sectionLinks = sectionOrder.map((section) => {
-  const count = tools.filter((tool) => tool.section === section).length;
-  return '- [' + section + '](#' + slug(section) + ') (' + count + ')';
-}).join('\n');
+const sectionConfig = {
+  'Media platforms': {
+    file: 'media-platforms.md',
+    description: 'Advertising platforms and buying systems, judged on the most direct official route available to an AI-assisted operator.'
+  },
+  'Analytics and measurement': {
+    file: 'analytics-measurement.md',
+    description: 'Analytics and implementation systems used to query, configure and verify measurement.'
+  },
+  'Creative and images': {
+    file: 'creative-images.md',
+    description: 'Creative-production systems assessed for usable context, native creation and editing depth.'
+  },
+  'Data and research': {
+    file: 'data-research.md',
+    description: 'Research, connector and warehouse routes that supply the evidence behind paid-media decisions.'
+  },
+  'Automation and workflow': {
+    file: 'automation-workflow.md',
+    description: 'Cross-tool automation systems assessed on connection effort, action depth and operational control.'
+  },
+  'Modelling and experimentation': {
+    file: 'modelling-experimentation.md',
+    description: 'Specialist modelling frameworks for incrementality, marketing mix analysis and budget scenarios.'
+  }
+};
 
-const commercialRows = tools
-  .filter((tool) => ['Affiliate', 'Referral', 'Retired'].includes(tool.workflow.commercial.type))
-  .map((tool) => '| ' + [
-    '[' + tool.name + '](#' + tool.id + ')',
-    tool.workflow.commercial.type,
-    markdownCommercial(tool.workflow.commercial),
-    tool.workflow.commercial.note
-  ].map(markdownCell).join(' | ') + ' |')
-  .join('\n');
+const gradeRank = new Map([
+  ['A+', 12], ['A', 11], ['A-', 10],
+  ['B+', 9], ['B', 8], ['B-', 7],
+  ['C+', 6], ['C', 5], ['C-', 4],
+  ['D', 3], ['F', 2]
+]);
+const readinessRank = new Map([['Production', 3], ['Test', 2], ['Research', 1]]);
 
-const operationalRow = (tool) => '| ' + [
-  '[' + tool.name + '](#' + tool.id + ')',
-  tool.grade,
-  tool.readiness,
-  tool.workflow.setup.level,
+const rankedTools = (section) => tools
+  .filter((tool) => tool.section === section)
+  .sort((left, right) =>
+    gradeRank.get(right.grade) - gradeRank.get(left.grade) ||
+    readinessRank.get(right.readiness) - readinessRank.get(left.readiness) ||
+    left.name.localeCompare(right.name)
+  );
+
+const actionSummary = (tool) => [
   tool.workflow.actions.read,
   tool.workflow.actions.create,
   tool.workflow.actions.modify,
-  tool.workflow.actions.delete,
+  tool.workflow.actions.delete
+].join(' / ');
+
+const githubAnchor = (value) => value
+  .toLowerCase()
+  .trim()
+  .replace(/ /g, '-')
+  .replace(/[^\p{L}\p{N}_-]/gu, '');
+
+const overviewRow = (tool, link) => '| ' + [
+  '[' + tool.name + '](' + link + ')',
+  '**' + tool.grade + '**',
+  tool.readiness,
+  tool.workflow.setup.level,
+  actionSummary(tool),
   tool.workflow.coverage.level
 ].map(markdownCell).join(' | ') + ' |';
 
-const toolDetail = (tool) => {
+const markdownInterface = (label, entry) => {
+  const value = entry.url ? '[' + entry.label + '](' + entry.url + ')' : entry.label;
+  return '- **' + label + ':** ' + value;
+};
+
+const toolDetail = (tool, section) => {
   const workflow = tool.workflow;
   return [
-    '### ' + tool.name,
+    '## ' + tool.name,
     '',
     '**' + tool.grade + ' · ' + tool.readiness + '**',
     '',
     tool.summary,
     '',
-    '> **Biggest daily blocker:** ' + workflow.blocker,
+    '> **Blocker:** ' + workflow.blocker,
     '',
-    '| Route judged | Setup | Read | Create | Modify | Delete | Coverage |',
-    '| --- | --- | --- | --- | --- | --- | --- |',
-    '| ' + [workflow.surface, workflow.setup.level, workflow.actions.read, workflow.actions.create, workflow.actions.modify, workflow.actions.delete, workflow.coverage.level].map(markdownCell).join(' | ') + ' |',
+    '- **Route:** ' + workflow.surface + '.',
+    '- **Scope:** ' + workflow.object + '.',
+    '- **Setup:** ' + workflow.setup.level + '. ' + workflow.setup.note,
+    '- **Controls:** Read **' + workflow.actions.read + '** · Create **' + workflow.actions.create + '** · Modify **' + workflow.actions.modify + '** · Delete **' + workflow.actions.delete + '**',
+    '- **Coverage:** ' + workflow.coverage.level + '. ' + workflow.coverage.note,
     '',
-    '**Connection:** ' + workflow.setup.note,
-    '',
-    '**Manual-feature coverage:** ' + workflow.coverage.note,
-    '',
-    '**+**',
+    '**Good**',
     '',
     markdownList(tool.positives),
     '',
-    '**−**',
+    '**Limits**',
     '',
     markdownList(tool.negatives),
     '',
-    '**Interfaces:** MCP: ' + tool.mcp.label + ' · Plugin: ' + tool.plugin.label + ' · CLI: ' + tool.cli.label + ' · API/SDK: ' + tool.developer.label,
+    '**Interfaces**',
     '',
-    '**Access:** ' + tool.access,
+    markdownInterface('MCP', tool.mcp),
+    markdownInterface('Plugin', tool.plugin),
+    markdownInterface('CLI', tool.cli),
+    markdownInterface('API / SDK', tool.developer),
     '',
-    '**Commercial programme:** ' + workflow.commercial.type + ' · ' + markdownCommercial(workflow.commercial) + '. ' + workflow.commercial.note,
+    '- **Access:** ' + tool.access,
+    '- **Commercial:** ' + workflow.commercial.type + '. ' + markdownCommercial(workflow.commercial) + '. ' + workflow.commercial.note,
+    '- **Watch:** ' + tool.caution,
+    '- **Sources:** ' + markdownSources(tool.sources),
+    '- **Verified:** ' + formatDate(tool.verifiedOn),
     '',
-    '**Watch:** ' + tool.caution,
-    '',
-    '**Sources:** ' + markdownSources(tool.sources) + ' · Verified ' + formatDate(tool.verifiedOn),
-    '',
-    '[Back to sections](#sections)'
+    '[Back to comparison](#' + githubAnchor(section) + ')'
   ].join('\n');
 };
 
-const detailedSections = sectionOrder.map((section) => {
-  const sectionTools = tools.filter((tool) => tool.section === section);
+const catalogueNavigation = sectionOrder.map((section) => {
+  return '[' + section + '](' + sectionConfig[section].file + ')';
+}).join(' · ');
+
+const cataloguePage = (section) => {
+  const sectionTools = rankedTools(section);
   const matrix = [
-    '| Tool | Grade | Ready | Setup | Read | Create | Modify | Delete | Coverage |',
-    '| --- | --- | --- | --- | --- | --- | --- | --- | --- |',
-    ...sectionTools.map(operationalRow)
+    '| Tool | Grade | Ready | Setup | R / C / M / D | Coverage |',
+    '| :--- | :---: | :---: | :---: | :--- | :---: |',
+    ...sectionTools.map((tool) => overviewRow(tool, '#' + githubAnchor(tool.name)))
   ].join('\n');
-  return ['## ' + section, matrix, ...sectionTools.map(toolDetail)].join('\n\n');
-}).join('\n\n');
+  return [
+    '# ' + section,
+    sectionConfig[section].description,
+    '[Main index](../README.md) · [Methodology](../METHODOLOGY.md)',
+    catalogueNavigation,
+    '`R / C / M / D` means Read / Create / Modify / Delete for the named route.',
+    matrix,
+    ...sectionTools.map((tool) => toolDetail(tool, section)),
+    '---',
+    'Maintained by [The Detail Department](https://detail-department.com/). Facts and ratings are generated from the repository data files.'
+  ].join('\n\n') + '\n';
+};
+
+const sectionDirectory = sectionOrder.map((section) => {
+  const sectionTools = rankedTools(section);
+  const leaders = sectionTools.slice(0, 2).map((tool) => tool.name + ' (' + tool.grade + ')').join(', ');
+  return '| ' + [
+    '[' + section + '](catalogue/' + sectionConfig[section].file + ')',
+    sectionTools.length,
+    leaders
+  ].map(markdownCell).join(' | ') + ' |';
+}).join('\n');
+
+const topNavigation = sectionOrder.map((section) => {
+  return '[' + section + '](catalogue/' + sectionConfig[section].file + ')';
+}).join(' · ');
+
+const mediaTools = rankedTools('Media platforms');
+const mediaMatrix = [
+  '| Platform | Grade | Ready | Setup | R / C / M / D | Coverage |',
+  '| :--- | :---: | :---: | :---: | :--- | :---: |',
+  ...mediaTools.map((tool) => overviewRow(tool, 'catalogue/media-platforms.md#' + githubAnchor(tool.name)))
+].join('\n');
+
+const toolById = (id) => tools.find((tool) => tool.id === id);
+const tiktok = toolById('tiktok-for-business');
+const googleAds = toolById('google-ads');
+const metaAds = toolById('meta-ads');
+
+const affiliateRows = tools
+  .filter((tool) => tool.workflow.commercial.type === 'Affiliate')
+  .sort((left, right) => left.name.localeCompare(right.name))
+  .map((tool) => '| ' + [
+    tool.name,
+    markdownCommercial(tool.workflow.commercial),
+    tool.workflow.commercial.note
+  ].map(markdownCell).join(' | ') + ' |')
+  .join('\n');
 
 const readme = [
-  '# AI paid media tools',
+  '# AI paid-media tools',
   '',
-  '**The Detail Department\'s point of view on what is usable in a daily AI paid-media workflow today.**',
+  '**The Detail Department\'s view of what an AI paid-media team can use in real work today.**',
   '',
-  'An official integration is not automatically a good workflow. Grades start with the work an operator can complete today: how difficult the route is to connect, whether it can read, create, modify and delete, and how much of the manual product it actually covers.',
+  'We grade the route an operator can connect now, not the vendor\'s potential. Setup, Read, Create, Modify, Delete and manual-feature coverage all count.',
   '',
-  '[Methodology](METHODOLOGY.md) · [Interface facts](data/tools.json) · [Daily workflow data](data/workflows.json) · [Editorial ratings](data/ratings.json) · [Filterable browser](docs/index.html) · [Propose a correction](../../issues/new?template=correction.yml)',
+  topNavigation,
   '',
-  '## Current view',
+  '**' + tools.length + ' tools reviewed** · ' + productionReady + ' Production · ' + inTest + ' Test · ' + tools.filter((tool) => tool.readiness === 'Research').length + ' Research · Last checked ' + formatDate(data.meta.updatedOn),
   '',
-  '- ' + tools.length + ' tools reviewed',
-  '- ' + productionReady + ' rated Production, ' + inTest + ' rated Test, ' + tools.filter((tool) => tool.readiness === 'Research').length + ' rated Research',
-  '- ' + officialMcp + ' verified official MCPs',
-  '- ' + affiliatePrograms + ' current public affiliate programmes verified',
-  '- No tool currently earns A+. The bar is an easy, dependable route that can complete most recurring work without returning to the manual product.',
+  '[Read the methodology](METHODOLOGY.md) · [Propose a correction](../../issues/new?template=correction.yml)',
   '',
-  'Last full review: **' + formatDate(data.meta.updatedOn) + '**',
+  '## Media platforms',
   '',
-  '## What matters',
+  '- **' + tiktok.name + ' (' + tiktok.grade + '):** Its official remote MCP covers campaign, reporting, audience and creative work.',
+  '- **' + googleAds.name + ' (' + googleAds.grade + '):** Google\'s official Ads MCP cannot create an ad, change a bid or budget, pause an entity or fix the issue it finds.',
+  '- **' + metaAds.name + ' (' + metaAds.grade + '):** Meta\'s connector can create supported objects, then still sends the operator back to Ads Manager for ordinary changes.',
   '',
-  '| Priority | Question | Consequence |',
-  '| --- | --- | --- |',
-  '| 1 | Can it complete a recurring job end to end? | Reporting that cannot apply a correction is useful, but incomplete. |',
-  '| 2 | What can it Read, Create, Modify and Delete? | Create and Modify are separate. A route that creates but cannot maintain the object is a serious operational gap. |',
-  '| 3 | How hard is it to connect? | Cloud projects, developer tokens, OAuth applications, allowlists and custom code reduce daily usefulness. |',
-  '| 4 | How much of the manual product is covered? | API or MCP availability does not mean feature parity with the interface used by practitioners. |',
-  '| 5 | Is the route mature and governable? | Beta access, unclear permissions or unbounded writes require a test even when the capability looks strong. |',
+  '`R / C / M / D` means Read / Create / Modify / Delete for the named route.',
   '',
-  '### Grade ceilings',
+  mediaMatrix,
   '',
-  '- A read-only route cannot score above B+ for a workflow whose normal job includes execution.',
-  '- A media-platform route that cannot dependably modify core objects cannot score above B-.',
-  '- A route requiring custom engineering or gated developer approval cannot score above B unless the operational value is exceptional.',
-  '- Beta, preview, allowlist and private-beta routes normally remain Test regardless of their feature list.',
-  '- Production describes dependability within the stated boundary. It does not mean broad feature coverage or unrestricted automation.',
+  '[Read every media-platform assessment](catalogue/media-platforms.md)',
   '',
-  '## Action and setup labels',
+  '## Full catalogue',
   '',
-  '| Label | Meaning |',
-  '| --- | --- |',
-  '| Easy | Hosted connection and account approval, without a developer project or custom code. |',
-  '| Moderate | Account configuration, credentials or light technical setup. |',
-  '| Hard | Developer access, cloud or OAuth setup, custom integration or vendor approval. |',
-  '| Specialist | Data engineering, infrastructure or statistical expertise. |',
-  '| Yes | Directly supported for the core objects of the route being judged. |',
-  '| Partial | Present, but important objects, fields or workflows are missing or inconsistent. |',
-  '| No | The evaluated route does not support the action. |',
-  '| Depends | Determined by the operator\'s connected tools, permissions or configuration. |',
-  '| N/A | The action is not meaningful for this type of tool. |',
-  '| Unverified | The vendor has not documented a dependable boundary. |',
+  '| Section | Tools | Highest grades |',
+  '| :--- | ---: | :--- |',
+  sectionDirectory,
   '',
-  '## Sections',
+  '## How scoring works',
   '',
-  sectionLinks,
+  '1. Can the route finish a recurring job?',
+  '2. Can it Read, Create, Modify and Delete?',
+  '3. How hard is it to connect?',
+  '4. How much of the manual product does it cover?',
+  '5. Is it mature and governable?',
   '',
-  '## Affiliate and referral programmes',
+  '**Grade** measures daily usefulness. **Readiness** measures maturity. Production does not mean complete feature coverage.',
   '',
-  'Affiliate means a public commission-paying programme. Referral, partner, certification and directory schemes are labelled separately. Partner-only programmes are recorded in each tool detail.',
+  '| Grade | Use |',
+  '| :---: | :--- |',
+  '| A | Strong daily recommendation |',
+  '| B | Useful within clear limits |',
+  '| C | Narrow, immature or indirect |',
+  '| D / F | Not recommended for production work |',
   '',
-  '| Tool | Type | Programme | Current note |',
-  '| --- | --- | --- | --- |',
-  commercialRows,
+  '[Definitions and grade ceilings](METHODOLOGY.md)',
   '',
-  detailedSections,
+  '## Affiliate programmes',
   '',
-  '## Contributing',
+  affiliatePrograms + ' current public commission-paying programmes were verified. Referral, certification and agency partner schemes are labelled separately in the catalogue.',
   '',
-  'Facts, operational assessment and editorial grade are stored separately. Corrections need a vendor source and fresh verification date. Rating changes need a concrete daily-workflow rationale. See [CONTRIBUTING.md](CONTRIBUTING.md).',
+  '| Tool | Programme | Terms found |',
+  '| :--- | :--- | :--- |',
+  affiliateRows,
   '',
-  'Maintained by [The Detail Department](https://detail-department.com/). No vendor sponsorship, affiliate relationship or client relationship is implied.',
+  '## Data and maintenance',
   '',
-  'MIT licensed. Vendor capabilities and programme terms remain subject to their respective access rules.'
+  '- [Interface facts](data/tools.json)',
+  '- [Daily workflow assessments](data/workflows.json)',
+  '- [Editorial ratings](data/ratings.json)',
+  '- [Contribution guide](CONTRIBUTING.md)',
+  '- [Generated web interface source](docs/index.html) (`npm run serve` to run locally)',
+  '',
+  'Generated from the repository data files. No sponsorship, affiliate relationship or client relationship is implied.',
+  '',
+  'Maintained by [The Detail Department](https://detail-department.com/). MIT licensed.'
 ].join('\n');
+
+const catalogueOutputs = sectionOrder.map((section) => [
+  resolve(root, 'catalogue', sectionConfig[section].file),
+  cataloguePage(section)
+]);
 
 const outputs = new Map([
   [resolve(root, 'README.md'), readme + '\n'],
+  ...catalogueOutputs,
   [resolve(root, 'docs/index.html'), page],
   [resolve(root, 'docs/assets/styles.css'), await readFile(resolve(root, 'assets/styles.css'), 'utf8')],
   [resolve(root, 'docs/assets/app.js'), await readFile(resolve(root, 'assets/app.js'), 'utf8')],
@@ -380,4 +476,4 @@ for (const [path, content] of outputs) {
 }
 
 if (stale) process.exitCode = 1;
-if (!checking) console.log('Built README and field index for ' + tools.length + ' tools.');
+if (!checking) console.log('Built README, catalogue and field index for ' + tools.length + ' tools.');

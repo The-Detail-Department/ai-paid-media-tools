@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -26,6 +26,12 @@ const allowedSetup = new Set(['Easy', 'Moderate', 'Hard', 'Specialist']);
 const allowedAction = new Set(['Yes', 'Partial', 'No', 'Depends', 'N/A', 'Unverified']);
 const allowedCoverage = new Set(['Broad', 'Partial', 'Narrow', 'Configurable', 'Specialist']);
 const allowedCommercial = new Set(['Affiliate', 'Referral', 'Partner', 'Retired', 'None verified']);
+
+const githubAnchor = (value) => value
+  .toLowerCase()
+  .trim()
+  .replace(/ /g, '-')
+  .replace(/[^\p{L}\p{N}_-]/gu, '');
 
 const checkUrl = (url, path) => {
   try {
@@ -133,9 +139,72 @@ const serialised = JSON.stringify([data, editorial, workflowData]);
 if (serialised.includes('—')) errors.push('U+2014 em dash is not allowed');
 if (data.tools.length < 20) errors.push('The reference should retain at least 20 high-signal tools');
 
+let catalogueFiles = [];
+try {
+  catalogueFiles = (await readdir(resolve(root, 'catalogue')))
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => 'catalogue/' + file);
+} catch {
+  errors.push('Generated catalogue directory is missing');
+}
+
+const markdownFiles = ['README.md', ...catalogueFiles];
+const markdownBodies = new Map();
+for (const file of markdownFiles) {
+  try {
+    markdownBodies.set(file, await readFile(resolve(root, file), 'utf8'));
+  } catch {
+    errors.push('Generated Markdown file is missing: ' + file);
+  }
+}
+
+const anchorCache = new Map();
+const anchorsFor = async (path) => {
+  if (anchorCache.has(path)) return anchorCache.get(path);
+  const body = markdownBodies.get(path) ?? await readFile(resolve(root, path), 'utf8');
+  const anchors = new Set();
+  const occurrences = new Map();
+  for (const line of body.split('\n')) {
+    const heading = line.match(/^#{1,6} (.+)$/)?.[1];
+    if (!heading) continue;
+    const base = githubAnchor(heading.replace(/[*_`]/g, ''));
+    const count = occurrences.get(base) ?? 0;
+    anchors.add(count === 0 ? base : base + '-' + count);
+    occurrences.set(base, count + 1);
+  }
+  anchorCache.set(path, anchors);
+  return anchors;
+};
+
+for (const [file, body] of markdownBodies) {
+  for (const match of body.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
+    const href = match[1];
+    if (/^(https?:|mailto:)/.test(href) || href.startsWith('../../issues/')) continue;
+    const [pathWithQuery, fragment] = href.split('#');
+    const relativePath = pathWithQuery.split('?')[0];
+    const targetPath = relativePath
+      ? resolve(dirname(resolve(root, file)), relativePath)
+      : resolve(root, file);
+    if (!targetPath.startsWith(root + '/')) {
+      errors.push(file + ' local link escapes the repository: ' + href);
+      continue;
+    }
+    const target = targetPath.slice(root.length + 1);
+    try {
+      await readFile(targetPath);
+    } catch {
+      errors.push(file + ' local link target is missing: ' + href);
+      continue;
+    }
+    if (fragment && target.endsWith('.md') && !(await anchorsFor(target)).has(fragment)) {
+      errors.push(file + ' local link fragment is missing: ' + href);
+    }
+  }
+}
+
 if (errors.length) {
   console.error(errors.map((error) => '- ' + error).join('\n'));
   process.exit(1);
 }
 
-console.log('Validated ' + data.tools.length + ' tools and their evidence fields.');
+console.log('Validated ' + data.tools.length + ' tools, evidence fields and generated Markdown navigation.');
