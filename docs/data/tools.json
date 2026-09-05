@@ -187,14 +187,14 @@
         "Optimise",
         "Report"
       ],
-      "summary": "Microsoft's governed MCP connects compatible assistants to Microsoft Advertising API capabilities.",
+      "summary": "Microsoft's governed MCP provides campaign structure, performance queries and audits. Its current documented launch surface is read-only.",
       "mcp": {
         "provenance": "official",
         "maturity": "available",
         "mode": "remote",
-        "control": "mixed",
+        "control": "read-only",
         "label": "Official managed MCP",
-        "url": "https://www.about.ads.microsoft.com/en/solutions/technology/mcp-server"
+        "url": "https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server"
       },
       "plugin": {
         "provenance": "none",
@@ -213,12 +213,12 @@
         "url": "https://learn.microsoft.com/en-us/advertising/"
       },
       "access": "Microsoft Advertising account and API permissions.",
-      "caution": "Confirm the live tool list and write scope after authentication.",
+      "caution": "The launch FAQ documents data retrieval and audits, not campaign creation or modification.",
       "verifiedOn": "2026-09-05",
       "sources": [
         {
           "label": "Microsoft Advertising MCP",
-          "url": "https://www.about.ads.microsoft.com/en/solutions/technology/mcp-server",
+          "url": "https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server",
           "kind": "official"
         },
         {

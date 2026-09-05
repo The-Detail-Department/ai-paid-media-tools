@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(await readFile(resolve(root, 'data/tools.json'), 'utf8'));
 const editorial = JSON.parse(await readFile(resolve(root, 'data/ratings.json'), 'utf8'));
+const workflowData = JSON.parse(await readFile(resolve(root, 'data/workflows.json'), 'utf8'));
 const errors = [];
 const allowedProvenance = new Set(['official', 'community', 'none']);
 const allowedMaturity = new Set(['available', 'beta', 'preview', 'restricted', 'none-verified']);
@@ -21,6 +22,10 @@ const allowedSections = new Set([
   'Modelling and experimentation'
 ]);
 const gradePattern = /^(A\+|A|A-|B\+|B|B-|C\+|C|C-|D|F)$/;
+const allowedSetup = new Set(['Easy', 'Moderate', 'Hard', 'Specialist']);
+const allowedAction = new Set(['Yes', 'Partial', 'No', 'Depends', 'N/A', 'Unverified']);
+const allowedCoverage = new Set(['Broad', 'Partial', 'Narrow', 'Configurable', 'Specialist']);
+const allowedCommercial = new Set(['Affiliate', 'Referral', 'Partner', 'Retired', 'None verified']);
 
 const checkUrl = (url, path) => {
   try {
@@ -96,13 +101,35 @@ for (const [index, tool] of data.tools.entries()) {
       errors.push(path + ' ' + listName + ' must contain non-empty strings');
     }
   }
+
+  const workflow = workflowData.workflows?.[tool.id];
+  if (!workflow) {
+    errors.push(path + ' needs a daily workflow assessment');
+    continue;
+  }
+  for (const key of ['surface', 'object', 'blocker']) {
+    if (!workflow[key] || typeof workflow[key] !== 'string') errors.push(path + ' workflow.' + key + ' is required');
+  }
+  if (!allowedSetup.has(workflow.setup?.level)) errors.push(path + ' workflow setup is invalid');
+  if (!workflow.setup?.note) errors.push(path + ' workflow setup note is required');
+  for (const action of ['read', 'create', 'modify', 'delete']) {
+    if (!allowedAction.has(workflow.actions?.[action])) errors.push(path + ' workflow action ' + action + ' is invalid');
+  }
+  if (!allowedCoverage.has(workflow.coverage?.level)) errors.push(path + ' workflow coverage is invalid');
+  if (!workflow.coverage?.note) errors.push(path + ' workflow coverage note is required');
+  if (!allowedCommercial.has(workflow.commercial?.type)) errors.push(path + ' commercial programme type is invalid');
+  if (!workflow.commercial?.label || !workflow.commercial?.note) errors.push(path + ' commercial programme label and note are required');
+  if (workflow.commercial?.url) checkUrl(workflow.commercial.url, path + ' workflow commercial.url');
 }
 
 for (const id of Object.keys(editorial.ratings || {})) {
   if (!ids.has(id)) errors.push('Editorial rating has no matching tool: ' + id);
 }
+for (const id of Object.keys(workflowData.workflows || {})) {
+  if (!ids.has(id)) errors.push('Workflow assessment has no matching tool: ' + id);
+}
 
-const serialised = JSON.stringify([data, editorial]);
+const serialised = JSON.stringify([data, editorial, workflowData]);
 if (serialised.includes('—')) errors.push('U+2014 em dash is not allowed');
 if (data.tools.length < 20) errors.push('The reference should retain at least 20 high-signal tools');
 

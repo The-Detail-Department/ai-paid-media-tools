@@ -1,8 +1,8 @@
 {
   "meta": {
-    "version": "0.2",
+    "version": "0.3",
     "updatedOn": "2026-09-05",
-    "definition": "The Detail Department's recommendation for real daily AI paid-media work today, based on usable scope, production readiness, access friction, control, documentation and operational risk.",
+    "definition": "The Detail Department's recommendation for real daily AI paid-media work today, based on end-to-end usefulness, setup friction, Read/Create/Modify/Delete depth, manual-feature coverage, maturity and operational risk.",
     "statusDefinition": {
       "Production": "Dependable enough for a controlled recurring workflow today.",
       "Test": "Worth piloting, but access, maturity or control needs a bounded test.",
@@ -13,31 +13,31 @@
     "google-ads": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "A",
+      "grade": "B-",
       "positives": [
-        "Official MCP with a deliberately safe read-only boundary.",
-        "Useful account structure and performance access through Google Ads Query Language.",
-        "Mature API and official client libraries cover production campaign operations."
+        "Official, maintained MCP with a clear read boundary.",
+        "Google Ads Query Language supports detailed account and performance diagnosis.",
+        "Useful as a reporting and second-pair-of-eyes surface once configured."
       ],
       "negatives": [
-        "The MCP cannot create or change campaigns.",
-        "Write workflows require separate API engineering and approval controls.",
-        "Cloud project, OAuth and account access take real setup."
+        "The MCP cannot create, modify or delete any campaign object.",
+        "Setup requires Python, a developer token, Google Cloud, enabled APIs, OAuth and client configuration.",
+        "The workflow stops at diagnosis and cannot perform the optimisation it recommends."
       ]
     },
     "meta-ads": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "A-",
+      "grade": "B-",
       "positives": [
-        "Official connector reaches one of the most important paid-social platforms.",
-        "Marketing API coverage supports both reporting and campaign operations.",
-        "Mixed control can support analysis and action in one workflow."
+        "Hosted OAuth makes the connector much easier to add than a custom Marketing API integration.",
+        "It can read performance and campaign structure in the assistant.",
+        "It can create supported campaign, ad-set and ad objects."
       ],
       "negatives": [
-        "The official AI connector remains in beta.",
-        "Permissions and available operations vary by account and tool.",
-        "No useful official campaign CLI was verified."
+        "The current beta does not provide dependable general modification of existing campaign objects.",
+        "Availability still varies by ad account and by individual tool.",
+        "Creation without ordinary follow-up editing sends the operator back to Ads Manager."
       ]
     },
     "tiktok-for-business": {
@@ -58,16 +58,16 @@
     "microsoft-advertising": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "C+",
       "positives": [
-        "Official managed MCP reduces integration ambiguity.",
-        "Supports meaningful reporting and campaign-management workflows.",
-        "Vendor governance and an established advertising API support production use."
+        "Official managed connection is easier than building against the API.",
+        "Provides entity-level performance data for campaigns, ad groups, ads and keywords.",
+        "Useful for conversational audits and cross-platform reporting."
       ],
       "negatives": [
-        "The exact read/write boundary varies across available tools.",
-        "Account and developer credentials are still required.",
-        "No dedicated official CLI was verified."
+        "The documented launch surface is read-only.",
+        "It cannot create an ad or apply the campaign changes suggested by an audit.",
+        "Broad manage-campaign language on the product page overstates the action boundary described in its FAQ."
       ]
     },
     "amazon-ads": {
@@ -88,7 +88,7 @@
     "snapchat-ads": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "B",
+      "grade": "C",
       "positives": [
         "Official hosted MCP provides campaign retrieval and analysis.",
         "Read-only control is suitable for a cautious reporting pilot.",
@@ -102,8 +102,8 @@
     },
     "linkedin-ads": {
       "section": "Media platforms",
-      "readiness": "Production",
-      "grade": "B-",
+      "readiness": "Test",
+      "grade": "C",
       "positives": [
         "Official Marketing APIs cover campaign management and reporting.",
         "Strong fit for B2B audience and lead-generation workflows.",
@@ -117,8 +117,8 @@
     },
     "pinterest-ads": {
       "section": "Media platforms",
-      "readiness": "Production",
-      "grade": "B",
+      "readiness": "Test",
+      "grade": "C+",
       "positives": [
         "Official Ads API supports campaign and reporting workflows.",
         "Useful specialist channel for visual discovery and commerce.",
@@ -132,8 +132,8 @@
     },
     "reddit-ads": {
       "section": "Media platforms",
-      "readiness": "Production",
-      "grade": "B-",
+      "readiness": "Test",
+      "grade": "C",
       "positives": [
         "Official Ads API v3 exposes campaign and account operations.",
         "Community context can be valuable for specific audience strategies.",
@@ -147,8 +147,8 @@
     },
     "x-ads": {
       "section": "Media platforms",
-      "readiness": "Production",
-      "grade": "B",
+      "readiness": "Test",
+      "grade": "B-",
       "positives": [
         "Official xurl CLI gives agents and operators a practical API route.",
         "xurl ships with an official agent skill.",
@@ -163,7 +163,7 @@
     "display-video-360": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "B-",
       "positives": [
         "Mature official API covers core programmatic campaign resources.",
         "Supports insertion orders, line items, targeting, creatives and users.",
@@ -178,7 +178,7 @@
     "campaign-manager-360": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "B",
       "positives": [
         "Mature API supports trafficking, creative, conversion and reporting workflows.",
         "Broad resource coverage suits complex enterprise operations.",
@@ -193,7 +193,7 @@
     "search-ads-360": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "B",
+      "grade": "C+",
       "positives": [
         "High-volume official reporting API with a purpose-built query language.",
         "Immediate access to granular campaign, ad and keyword data.",
@@ -208,7 +208,7 @@
     "apple-ads": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "B",
+      "grade": "B-",
       "positives": [
         "Official API supports campaign, ad-group, keyword and reporting work.",
         "API roles distinguish read-only from read/write access.",
@@ -223,7 +223,7 @@
     "the-trade-desk": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "B+",
+      "grade": "B",
       "positives": [
         "Official OAK MCP connects AI assistants to Ask Koa.",
         "Published scope includes querying data, creating campaigns and monitoring live activity.",
@@ -238,7 +238,7 @@
     "google-analytics": {
       "section": "Analytics and measurement",
       "readiness": "Production",
-      "grade": "A",
+      "grade": "B+",
       "positives": [
         "Official open-source MCP is suitable for recurring reporting and analysis.",
         "Read-only design limits accidental property changes.",
@@ -268,7 +268,7 @@
     "amplitude": {
       "section": "Analytics and measurement",
       "readiness": "Production",
-      "grade": "A",
+      "grade": "A-",
       "positives": [
         "Official MCP supports both analysis and write operations.",
         "Official agent plugins, skills and a CLI create several usable entry points.",
@@ -283,7 +283,7 @@
     "mixpanel": {
       "section": "Analytics and measurement",
       "readiness": "Test",
-      "grade": "B+",
+      "grade": "B-",
       "positives": [
         "Official MCP brings product analytics into an agent workflow.",
         "Useful for funnels, retention and behavioural investigation.",
@@ -298,7 +298,7 @@
     "supermetrics": {
       "section": "Data and research",
       "readiness": "Production",
-      "grade": "A",
+      "grade": "B+",
       "positives": [
         "Official read-only MCP fits recurring cross-channel retrieval.",
         "Established connector coverage reduces bespoke API maintenance.",
@@ -313,7 +313,7 @@
     "dataforseo": {
       "section": "Data and research",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "B+",
       "positives": [
         "Official MCP and CLI make search and competitive data directly usable by agents.",
         "Read-only control is appropriate for external research data.",
@@ -325,10 +325,10 @@
         "Raw results still require paid-media judgement before action."
       ]
     },
-    "airbyte": {
-      "section": "Data and research",
-      "readiness": "Test",
-      "grade": "B+",
+  "airbyte": {
+    "section": "Data and research",
+    "readiness": "Test",
+    "grade": "B",
       "positives": [
         "Official agent MCP can expose useful connector and data-movement context.",
         "Large connector ecosystem supports cross-channel data collection.",
@@ -343,7 +343,7 @@
     "fivetran": {
       "section": "Data and research",
       "readiness": "Test",
-      "grade": "A-",
+      "grade": "C+",
       "positives": [
         "Mature managed data movement supports reliable recurring pipelines.",
         "Official MCP, agent plugins and Connector SDK CLI cover several technical workflows.",
@@ -355,10 +355,10 @@
         "Enterprise cost and administration may be disproportionate for a small stack."
       ]
     },
-    "google-mcp-toolbox": {
-      "section": "Data and research",
-      "readiness": "Production",
-      "grade": "A-",
+  "google-mcp-toolbox": {
+    "section": "Data and research",
+    "readiness": "Production",
+    "grade": "B",
       "positives": [
         "Official open-source toolbox exposes governed database tools through MCP.",
         "Supports BigQuery and other common production data stores.",
@@ -370,10 +370,10 @@
         "Secure configuration requires data-engineering discipline."
       ]
     },
-    "snowflake": {
-      "section": "Data and research",
-      "readiness": "Production",
-      "grade": "A",
+  "snowflake": {
+    "section": "Data and research",
+    "readiness": "Production",
+    "grade": "B",
       "positives": [
         "Official managed MCP works inside Snowflake's role and governance model.",
         "Strong foundation for cross-channel measurement and governed client data.",
@@ -463,7 +463,7 @@
     "n8n": {
       "section": "Automation and workflow",
       "readiness": "Test",
-      "grade": "A",
+      "grade": "B+",
       "positives": [
         "Built-in MCP can build, test and run real workflows.",
         "Self-hosting gives strong control over data and credentials.",
@@ -478,7 +478,7 @@
     "figma": {
       "section": "Creative and images",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "B+",
       "positives": [
         "Official remote and desktop MCP expose real design context.",
         "Supported clients can create or modify native canvas content.",
@@ -493,7 +493,7 @@
     "canva": {
       "section": "Creative and images",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "B+",
       "positives": [
         "Official MCP supports design creation, editing, assets and export.",
         "Remote OAuth makes it accessible to common agent clients.",

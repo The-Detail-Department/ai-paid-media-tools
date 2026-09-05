@@ -4,21 +4,42 @@
   const category = document.querySelector('#category');
   const readiness = document.querySelector('#readiness');
   const grade = document.querySelector('#grade');
-  const interfaceControl = document.querySelector('#interface');
-  const mcp = document.querySelector('#mcp');
+  const setup = document.querySelector('#setup');
+  const action = document.querySelector('#action');
+  const commercial = document.querySelector('#commercial');
   const rows = Array.from(document.querySelectorAll('.tool-row'));
+  const sectionButtons = Array.from(document.querySelectorAll('[data-section-filter]'));
   const resultCount = document.querySelector('#result-count');
   const emptyState = document.querySelector('#empty-state');
   const emptyReset = document.querySelector('#empty-reset');
   const total = rows.length;
+
+  function matchesAction(row, value) {
+    if (!value) return true;
+    if (['read', 'create', 'modify', 'delete'].includes(value)) {
+      return row.dataset[value] === 'Yes';
+    }
+    if (value === 'write-partial') {
+      return ['create', 'modify', 'delete'].some(function (operation) {
+        return row.dataset[operation] === 'Partial';
+      });
+    }
+    if (value === 'write-none') {
+      return ['create', 'modify', 'delete'].every(function (operation) {
+        return ['No', 'N/A', 'Unverified'].includes(row.dataset[operation]);
+      });
+    }
+    return true;
+  }
 
   function applyFilters() {
     const query = search.value.trim().toLowerCase();
     const categoryValue = category.value;
     const readinessValue = readiness.value;
     const gradeValue = grade.value;
-    const interfaceValue = interfaceControl.value;
-    const mcpValue = mcp.value;
+    const setupValue = setup.value;
+    const actionValue = action.value;
+    const commercialValue = commercial.value;
     let visible = 0;
 
     rows.forEach(function (row) {
@@ -26,11 +47,18 @@
       const matchesCategory = !categoryValue || row.dataset.category === categoryValue;
       const matchesReadiness = !readinessValue || row.dataset.readiness === readinessValue;
       const matchesGrade = !gradeValue || row.dataset.grade === gradeValue;
-      const matchesInterface = !interfaceValue || row.dataset.interfaces.split(' ').includes(interfaceValue);
-      const matchesMcp = !mcpValue || row.dataset.mcp === mcpValue;
-      const matches = matchesQuery && matchesCategory && matchesReadiness && matchesGrade && matchesInterface && matchesMcp;
+      const matchesSetup = !setupValue || row.dataset.setup === setupValue;
+      const matchesCommercial = !commercialValue || row.dataset.commercial === commercialValue;
+      const matches = matchesQuery && matchesCategory && matchesReadiness && matchesGrade &&
+        matchesSetup && matchesAction(row, actionValue) && matchesCommercial;
       row.hidden = !matches;
       if (matches) visible += 1;
+    });
+
+    sectionButtons.forEach(function (button) {
+      const active = categoryValue && button.dataset.sectionFilter === categoryValue;
+      button.classList.toggle('is-active', Boolean(active));
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
     resultCount.textContent = visible + ' of ' + total + (visible === 1 ? ' tool' : ' tools');
@@ -40,6 +68,14 @@
   form.addEventListener('input', applyFilters);
   form.addEventListener('reset', function () {
     window.setTimeout(applyFilters, 0);
+  });
+  sectionButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      category.value = button.dataset.sectionFilter;
+      applyFilters();
+      document.querySelector('#index').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      category.focus({ preventScroll: true });
+    });
   });
   emptyReset.addEventListener('click', function () {
     form.reset();
