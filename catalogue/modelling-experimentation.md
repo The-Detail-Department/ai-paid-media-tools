@@ -6,13 +6,11 @@ Specialist modelling frameworks for incrementality, marketing mix analysis and b
 
 [Media platforms](media-platforms.md) · [Analytics and measurement](analytics-measurement.md) · [Creative and images](creative-images.md) · [Data and research](data-research.md) · [Automation and workflow](automation-workflow.md) · [Modelling and experimentation](modelling-experimentation.md)
 
-`R / C / M / D` means Read / Create / Modify / Delete for the named route.
-
-| Tool | Grade | Ready | Setup | R / C / M / D | Coverage |
-| :--- | :---: | :---: | :---: | :--- | :---: |
-| [Meridian](#meridian) | **B+** | Research | Specialist | N/A / Yes / Yes / N/A | Specialist |
-| [PyMC-Marketing](#pymc-marketing) | **B** | Research | Specialist | N/A / Yes / Yes / N/A | Specialist |
-| [Robyn](#robyn) | **B** | Research | Specialist | N/A / Yes / Yes / N/A | Specialist |
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Meridian](#meridian) | **B+** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
+| [PyMC-Marketing](#pymc-marketing) | **B** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
+| [Robyn](#robyn) | **B** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
 
 ## Meridian
 

@@ -6,25 +6,23 @@ Advertising platforms and buying systems, judged on the most direct official rou
 
 [Media platforms](media-platforms.md) · [Analytics and measurement](analytics-measurement.md) · [Creative and images](creative-images.md) · [Data and research](data-research.md) · [Automation and workflow](automation-workflow.md) · [Modelling and experimentation](modelling-experimentation.md)
 
-`R / C / M / D` means Read / Create / Modify / Delete for the named route.
-
-| Tool | Grade | Ready | Setup | R / C / M / D | Coverage |
-| :--- | :---: | :---: | :---: | :--- | :---: |
-| [TikTok for Business](#tiktok-for-business) | **A** | Production | Easy | Yes / Yes / Yes / Partial | Broad |
-| [Amazon Ads](#amazon-ads) | **B+** | Test | Hard | Yes / Yes / Yes / Yes | Broad |
-| [Campaign Manager 360](#campaign-manager-360) | **B** | Production | Hard | Yes / Yes / Yes / Partial | Broad |
-| [The Trade Desk](#the-trade-desk) | **B** | Test | Hard | Yes / Yes / Yes / Partial | Broad |
-| [Apple Ads](#apple-ads) | **B-** | Production | Hard | Yes / Yes / Yes / Partial | Partial |
-| [Display & Video 360](#display--video-360) | **B-** | Production | Hard | Yes / Yes / Yes / Partial | Partial |
-| [Google Ads](#google-ads) | **B-** | Production | Hard | Yes / No / No / No | Narrow |
-| [Meta Ads](#meta-ads) | **B-** | Test | Easy | Yes / Partial / No / No | Partial |
-| [X Ads](#x-ads) | **B-** | Test | Hard | Yes / Partial / Partial / Partial | Partial |
-| [Microsoft Advertising](#microsoft-advertising) | **C+** | Production | Easy | Yes / No / No / No | Narrow |
-| [Search Ads 360](#search-ads-360) | **C+** | Production | Hard | Yes / No / No / No | Narrow |
-| [Pinterest Ads](#pinterest-ads) | **C+** | Test | Hard | Yes / Yes / Yes / Partial | Partial |
-| [LinkedIn Ads](#linkedin-ads) | **C** | Test | Hard | Yes / Partial / Partial / Partial | Partial |
-| [Reddit Ads](#reddit-ads) | **C** | Test | Hard | Yes / Partial / Partial / Partial | Partial |
-| [Snapchat Ads](#snapchat-ads) | **C** | Test | Hard | Yes / No / No / No | Narrow |
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [TikTok for Business](#tiktok-for-business) | **A** | Production | Easy | Yes | Yes | Yes | Partial | Broad |
+| [Amazon Ads](#amazon-ads) | **B+** | Test | Hard | Yes | Yes | Yes | Yes | Broad |
+| [Campaign Manager 360](#campaign-manager-360) | **B** | Production | Hard | Yes | Yes | Yes | Partial | Broad |
+| [The Trade Desk](#the-trade-desk) | **B** | Test | Hard | Yes | Yes | Yes | Partial | Broad |
+| [Apple Ads](#apple-ads) | **B-** | Production | Hard | Yes | Yes | Yes | Partial | Partial |
+| [Display & Video 360](#display--video-360) | **B-** | Production | Hard | Yes | Yes | Yes | Partial | Partial |
+| [Google Ads](#google-ads) | **B-** | Production | Hard | Yes | No | No | No | Narrow |
+| [Meta Ads](#meta-ads) | **B-** | Test | Easy | Yes | Partial | No | No | Partial |
+| [X Ads](#x-ads) | **B-** | Test | Hard | Yes | Partial | Partial | Partial | Partial |
+| [Microsoft Advertising](#microsoft-advertising) | **C+** | Production | Easy | Yes | No | No | No | Narrow |
+| [Search Ads 360](#search-ads-360) | **C+** | Production | Hard | Yes | No | No | No | Narrow |
+| [Pinterest Ads](#pinterest-ads) | **C+** | Test | Hard | Yes | Yes | Yes | Partial | Partial |
+| [LinkedIn Ads](#linkedin-ads) | **C** | Test | Hard | Yes | Partial | Partial | Partial | Partial |
+| [Reddit Ads](#reddit-ads) | **C** | Test | Hard | Yes | Partial | Partial | Partial | Partial |
+| [Snapchat Ads](#snapchat-ads) | **C** | Test | Hard | Yes | No | No | No | Narrow |
 
 ## TikTok for Business
 

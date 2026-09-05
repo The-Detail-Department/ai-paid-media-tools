@@ -6,16 +6,14 @@ Research, connector and warehouse routes that supply the evidence behind paid-me
 
 [Media platforms](media-platforms.md) · [Analytics and measurement](analytics-measurement.md) · [Creative and images](creative-images.md) · [Data and research](data-research.md) · [Automation and workflow](automation-workflow.md) · [Modelling and experimentation](modelling-experimentation.md)
 
-`R / C / M / D` means Read / Create / Modify / Delete for the named route.
-
-| Tool | Grade | Ready | Setup | R / C / M / D | Coverage |
-| :--- | :---: | :---: | :---: | :--- | :---: |
-| [DataForSEO](#dataforseo) | **B+** | Production | Moderate | Yes / No / No / No | Broad |
-| [Supermetrics](#supermetrics) | **B+** | Production | Moderate | Yes / No / No / No | Broad |
-| [Google MCP Toolbox for Databases](#google-mcp-toolbox-for-databases) | **B** | Production | Hard | Depends / Depends / Depends / Depends | Configurable |
-| [Snowflake](#snowflake) | **B** | Production | Hard | Yes / Depends / Depends / Depends | Configurable |
-| [Airbyte](#airbyte) | **B** | Test | Hard | Yes / Partial / Partial / Partial | Configurable |
-| [Fivetran](#fivetran) | **C+** | Test | Moderate | Yes / No / No / No | Narrow |
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [DataForSEO](#dataforseo) | **B+** | Production | Moderate | Yes | No | No | No | Broad |
+| [Supermetrics](#supermetrics) | **B+** | Production | Moderate | Yes | No | No | No | Broad |
+| [Google MCP Toolbox for Databases](#google-mcp-toolbox-for-databases) | **B** | Production | Hard | Depends | Depends | Depends | Depends | Configurable |
+| [Snowflake](#snowflake) | **B** | Production | Hard | Yes | Depends | Depends | Depends | Configurable |
+| [Airbyte](#airbyte) | **B** | Test | Hard | Yes | Partial | Partial | Partial | Configurable |
+| [Fivetran](#fivetran) | **C+** | Test | Moderate | Yes | No | No | No | Narrow |
 
 ## DataForSEO
 

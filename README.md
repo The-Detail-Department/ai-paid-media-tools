@@ -4,7 +4,7 @@
 
 We grade the route an operator can connect now, not the vendor's potential. Setup, Read, Create, Modify, Delete and manual-feature coverage all count.
 
-[Media platforms](catalogue/media-platforms.md) · [Analytics and measurement](catalogue/analytics-measurement.md) · [Creative and images](catalogue/creative-images.md) · [Data and research](catalogue/data-research.md) · [Automation and workflow](catalogue/automation-workflow.md) · [Modelling and experimentation](catalogue/modelling-experimentation.md)
+[Media platforms](#media-platforms) · [Analytics and measurement](#analytics-and-measurement) · [Creative and images](#creative-and-images) · [Data and research](#data-and-research) · [Automation and workflow](#automation-and-workflow) · [Modelling and experimentation](#modelling-and-experimentation)
 
 **33 tools reviewed** · 18 Production · 12 Test · 3 Research · Last checked 5 Sept 2026
 
@@ -12,42 +12,94 @@ We grade the route an operator can connect now, not the vendor's potential. Setu
 
 ## Media platforms
 
+Advertising platforms and buying systems, judged on the most direct official route available to an AI-assisted operator.
+
 - **TikTok for Business (A):** Its official remote MCP covers campaign, reporting, audience and creative work.
 - **Google Ads (B-):** Google's official Ads MCP cannot create an ad, change a bid or budget, pause an entity or fix the issue it finds.
 - **Meta Ads (B-):** Meta's connector can create supported objects, then still sends the operator back to Ads Manager for ordinary changes.
 
-`R / C / M / D` means Read / Create / Modify / Delete for the named route.
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [TikTok for Business](catalogue/media-platforms.md#tiktok-for-business) | **A** | Production | Easy | Yes | Yes | Yes | Partial | Broad |
+| [Amazon Ads](catalogue/media-platforms.md#amazon-ads) | **B+** | Test | Hard | Yes | Yes | Yes | Yes | Broad |
+| [Campaign Manager 360](catalogue/media-platforms.md#campaign-manager-360) | **B** | Production | Hard | Yes | Yes | Yes | Partial | Broad |
+| [The Trade Desk](catalogue/media-platforms.md#the-trade-desk) | **B** | Test | Hard | Yes | Yes | Yes | Partial | Broad |
+| [Apple Ads](catalogue/media-platforms.md#apple-ads) | **B-** | Production | Hard | Yes | Yes | Yes | Partial | Partial |
+| [Display & Video 360](catalogue/media-platforms.md#display--video-360) | **B-** | Production | Hard | Yes | Yes | Yes | Partial | Partial |
+| [Google Ads](catalogue/media-platforms.md#google-ads) | **B-** | Production | Hard | Yes | No | No | No | Narrow |
+| [Meta Ads](catalogue/media-platforms.md#meta-ads) | **B-** | Test | Easy | Yes | Partial | No | No | Partial |
+| [X Ads](catalogue/media-platforms.md#x-ads) | **B-** | Test | Hard | Yes | Partial | Partial | Partial | Partial |
+| [Microsoft Advertising](catalogue/media-platforms.md#microsoft-advertising) | **C+** | Production | Easy | Yes | No | No | No | Narrow |
+| [Search Ads 360](catalogue/media-platforms.md#search-ads-360) | **C+** | Production | Hard | Yes | No | No | No | Narrow |
+| [Pinterest Ads](catalogue/media-platforms.md#pinterest-ads) | **C+** | Test | Hard | Yes | Yes | Yes | Partial | Partial |
+| [LinkedIn Ads](catalogue/media-platforms.md#linkedin-ads) | **C** | Test | Hard | Yes | Partial | Partial | Partial | Partial |
+| [Reddit Ads](catalogue/media-platforms.md#reddit-ads) | **C** | Test | Hard | Yes | Partial | Partial | Partial | Partial |
+| [Snapchat Ads](catalogue/media-platforms.md#snapchat-ads) | **C** | Test | Hard | Yes | No | No | No | Narrow |
 
-| Platform | Grade | Ready | Setup | R / C / M / D | Coverage |
-| :--- | :---: | :---: | :---: | :--- | :---: |
-| [TikTok for Business](catalogue/media-platforms.md#tiktok-for-business) | **A** | Production | Easy | Yes / Yes / Yes / Partial | Broad |
-| [Amazon Ads](catalogue/media-platforms.md#amazon-ads) | **B+** | Test | Hard | Yes / Yes / Yes / Yes | Broad |
-| [Campaign Manager 360](catalogue/media-platforms.md#campaign-manager-360) | **B** | Production | Hard | Yes / Yes / Yes / Partial | Broad |
-| [The Trade Desk](catalogue/media-platforms.md#the-trade-desk) | **B** | Test | Hard | Yes / Yes / Yes / Partial | Broad |
-| [Apple Ads](catalogue/media-platforms.md#apple-ads) | **B-** | Production | Hard | Yes / Yes / Yes / Partial | Partial |
-| [Display & Video 360](catalogue/media-platforms.md#display--video-360) | **B-** | Production | Hard | Yes / Yes / Yes / Partial | Partial |
-| [Google Ads](catalogue/media-platforms.md#google-ads) | **B-** | Production | Hard | Yes / No / No / No | Narrow |
-| [Meta Ads](catalogue/media-platforms.md#meta-ads) | **B-** | Test | Easy | Yes / Partial / No / No | Partial |
-| [X Ads](catalogue/media-platforms.md#x-ads) | **B-** | Test | Hard | Yes / Partial / Partial / Partial | Partial |
-| [Microsoft Advertising](catalogue/media-platforms.md#microsoft-advertising) | **C+** | Production | Easy | Yes / No / No / No | Narrow |
-| [Search Ads 360](catalogue/media-platforms.md#search-ads-360) | **C+** | Production | Hard | Yes / No / No / No | Narrow |
-| [Pinterest Ads](catalogue/media-platforms.md#pinterest-ads) | **C+** | Test | Hard | Yes / Yes / Yes / Partial | Partial |
-| [LinkedIn Ads](catalogue/media-platforms.md#linkedin-ads) | **C** | Test | Hard | Yes / Partial / Partial / Partial | Partial |
-| [Reddit Ads](catalogue/media-platforms.md#reddit-ads) | **C** | Test | Hard | Yes / Partial / Partial / Partial | Partial |
-| [Snapchat Ads](catalogue/media-platforms.md#snapchat-ads) | **C** | Test | Hard | Yes / No / No / No | Narrow |
+[Open the detailed assessments](catalogue/media-platforms.md)
 
-[Read every media-platform assessment](catalogue/media-platforms.md)
+## Analytics and measurement
 
-## Full catalogue
+Analytics and implementation systems used to query, configure and verify measurement.
 
-| Section | Tools | Highest grades |
-| :--- | ---: | :--- |
-| [Media platforms](catalogue/media-platforms.md) | 15 | TikTok for Business (A), Amazon Ads (B+) |
-| [Analytics and measurement](catalogue/analytics-measurement.md) | 4 | Amplitude (A-), Google Analytics (B+) |
-| [Creative and images](catalogue/creative-images.md) | 2 | Canva (B+), Figma (B+) |
-| [Data and research](catalogue/data-research.md) | 6 | DataForSEO (B+), Supermetrics (B+) |
-| [Automation and workflow](catalogue/automation-workflow.md) | 3 | Pipedream (A-), Zapier (A-) |
-| [Modelling and experimentation](catalogue/modelling-experimentation.md) | 3 | Meridian (B+), PyMC-Marketing (B) |
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Amplitude](catalogue/analytics-measurement.md#amplitude) | **A-** | Production | Easy | Yes | Yes | Yes | Partial | Broad |
+| [Google Analytics](catalogue/analytics-measurement.md#google-analytics) | **B+** | Production | Hard | Yes | No | No | No | Narrow |
+| [Google Tag Manager](catalogue/analytics-measurement.md#google-tag-manager) | **B** | Production | Hard | Yes | Yes | Yes | Yes | Broad |
+| [Mixpanel](catalogue/analytics-measurement.md#mixpanel) | **B-** | Test | Easy | Yes | Unverified | Unverified | Unverified | Narrow |
+
+[Open the detailed assessments](catalogue/analytics-measurement.md)
+
+## Creative and images
+
+Creative-production systems assessed for usable context, native creation and editing depth.
+
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Canva](catalogue/creative-images.md#canva) | **B+** | Production | Easy | Yes | Yes | Partial | Partial | Partial |
+| [Figma](catalogue/creative-images.md#figma) | **B+** | Production | Easy | Yes | Partial | Partial | Partial | Partial |
+
+[Open the detailed assessments](catalogue/creative-images.md)
+
+## Data and research
+
+Research, connector and warehouse routes that supply the evidence behind paid-media decisions.
+
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [DataForSEO](catalogue/data-research.md#dataforseo) | **B+** | Production | Moderate | Yes | No | No | No | Broad |
+| [Supermetrics](catalogue/data-research.md#supermetrics) | **B+** | Production | Moderate | Yes | No | No | No | Broad |
+| [Google MCP Toolbox for Databases](catalogue/data-research.md#google-mcp-toolbox-for-databases) | **B** | Production | Hard | Depends | Depends | Depends | Depends | Configurable |
+| [Snowflake](catalogue/data-research.md#snowflake) | **B** | Production | Hard | Yes | Depends | Depends | Depends | Configurable |
+| [Airbyte](catalogue/data-research.md#airbyte) | **B** | Test | Hard | Yes | Partial | Partial | Partial | Configurable |
+| [Fivetran](catalogue/data-research.md#fivetran) | **C+** | Test | Moderate | Yes | No | No | No | Narrow |
+
+[Open the detailed assessments](catalogue/data-research.md)
+
+## Automation and workflow
+
+Cross-tool automation systems assessed on connection effort, action depth and operational control.
+
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Pipedream](catalogue/automation-workflow.md#pipedream) | **A-** | Production | Moderate | Depends | Depends | Depends | Depends | Configurable |
+| [Zapier](catalogue/automation-workflow.md#zapier) | **A-** | Production | Easy | Depends | Depends | Depends | Depends | Configurable |
+| [n8n](catalogue/automation-workflow.md#n8n) | **B+** | Test | Moderate | Depends | Depends | Depends | Depends | Configurable |
+
+[Open the detailed assessments](catalogue/automation-workflow.md)
+
+## Modelling and experimentation
+
+Specialist modelling frameworks for incrementality, marketing mix analysis and budget scenarios.
+
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Meridian](catalogue/modelling-experimentation.md#meridian) | **B+** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
+| [PyMC-Marketing](catalogue/modelling-experimentation.md#pymc-marketing) | **B** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
+| [Robyn](catalogue/modelling-experimentation.md#robyn) | **B** | Research | Specialist | N/A | Yes | Yes | N/A | Specialist |
+
+[Open the detailed assessments](catalogue/modelling-experimentation.md)
 
 ## How scoring works
 
@@ -67,20 +119,6 @@ We grade the route an operator can connect now, not the vendor's potential. Setu
 | D / F | Not recommended for production work |
 
 [Definitions and grade ceilings](METHODOLOGY.md)
-
-## Affiliate programmes
-
-7 current public commission-paying programmes were verified. Referral, certification and agency partner schemes are labelled separately in the catalogue.
-
-| Tool | Programme | Terms found |
-| :--- | :--- | :--- |
-| Amplitude | [Amplitude Affiliate Program](https://www.amplitude.com/affiliates) | Public application with commissions for qualified new Starter or Startup customers. |
-| DataForSEO | [DataForSEO Affiliate Program](https://dataforseo.com/update/affiliate-google-sheets-connector) | Standard programme pays 25% of a referred user's first payment; the Sheets connector has a separate fixed bounty. |
-| n8n | [n8n Affiliate Partner Program](https://n8n.io/partners/) | 30% revenue share for 12 months on eligible Starter and Pro referrals. |
-| Pipedream | [Pipedream Affiliate Program](https://pipedream.com/affiliates) | Official affiliate application exists; no current public commission rate was visible in the reviewed page. |
-| Snapchat Ads | [Snapchat Affiliate Programme](https://help.snapchat.com/hc/en-gb/articles/36391141656724-About-Snapchat-s-Affiliate-Programme) | PartnerStack programme paying a one-time 20% revenue share on eligible advertiser spend during the first 30 days. |
-| Supermetrics | [Supermetrics Affiliate Partner Program](https://supermetrics.com/partners) | 15% recurring commission for one year at entry tier; 20% for two years after ten successful referrals. |
-| TikTok for Business | [TikTok for Business Affiliate Program](https://getstarted.tiktok.com/affiliates?lang=en-PH) | Impact-hosted programme with a flat-fee bounty for qualified new advertisers. |
 
 ## Data and maintenance
 

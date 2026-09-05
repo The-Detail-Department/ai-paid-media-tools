@@ -6,12 +6,10 @@ Creative-production systems assessed for usable context, native creation and edi
 
 [Media platforms](media-platforms.md) · [Analytics and measurement](analytics-measurement.md) · [Creative and images](creative-images.md) · [Data and research](data-research.md) · [Automation and workflow](automation-workflow.md) · [Modelling and experimentation](modelling-experimentation.md)
 
-`R / C / M / D` means Read / Create / Modify / Delete for the named route.
-
-| Tool | Grade | Ready | Setup | R / C / M / D | Coverage |
-| :--- | :---: | :---: | :---: | :--- | :---: |
-| [Canva](#canva) | **B+** | Production | Easy | Yes / Yes / Partial / Partial | Partial |
-| [Figma](#figma) | **B+** | Production | Easy | Yes / Partial / Partial / Partial | Partial |
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Canva](#canva) | **B+** | Production | Easy | Yes | Yes | Partial | Partial | Partial |
+| [Figma](#figma) | **B+** | Production | Easy | Yes | Partial | Partial | Partial | Partial |
 
 ## Canva
 

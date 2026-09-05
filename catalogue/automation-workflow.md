@@ -6,13 +6,11 @@ Cross-tool automation systems assessed on connection effort, action depth and op
 
 [Media platforms](media-platforms.md) · [Analytics and measurement](analytics-measurement.md) · [Creative and images](creative-images.md) · [Data and research](data-research.md) · [Automation and workflow](automation-workflow.md) · [Modelling and experimentation](modelling-experimentation.md)
 
-`R / C / M / D` means Read / Create / Modify / Delete for the named route.
-
-| Tool | Grade | Ready | Setup | R / C / M / D | Coverage |
-| :--- | :---: | :---: | :---: | :--- | :---: |
-| [Pipedream](#pipedream) | **A-** | Production | Moderate | Depends / Depends / Depends / Depends | Configurable |
-| [Zapier](#zapier) | **A-** | Production | Easy | Depends / Depends / Depends / Depends | Configurable |
-| [n8n](#n8n) | **B+** | Test | Moderate | Depends / Depends / Depends / Depends | Configurable |
+| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Pipedream](#pipedream) | **A-** | Production | Moderate | Depends | Depends | Depends | Depends | Configurable |
+| [Zapier](#zapier) | **A-** | Production | Easy | Depends | Depends | Depends | Depends | Configurable |
+| [n8n](#n8n) | **B+** | Test | Moderate | Depends | Depends | Depends | Depends | Configurable |
 
 ## Pipedream
 

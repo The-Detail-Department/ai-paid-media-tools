@@ -239,13 +239,6 @@ const rankedTools = (section) => tools
     left.name.localeCompare(right.name)
   );
 
-const actionSummary = (tool) => [
-  tool.workflow.actions.read,
-  tool.workflow.actions.create,
-  tool.workflow.actions.modify,
-  tool.workflow.actions.delete
-].join(' / ');
-
 const githubAnchor = (value) => value
   .toLowerCase()
   .trim()
@@ -257,9 +250,21 @@ const overviewRow = (tool, link) => '| ' + [
   '**' + tool.grade + '**',
   tool.readiness,
   tool.workflow.setup.level,
-  actionSummary(tool),
+  tool.workflow.actions.read,
+  tool.workflow.actions.create,
+  tool.workflow.actions.modify,
+  tool.workflow.actions.delete,
   tool.workflow.coverage.level
 ].map(markdownCell).join(' | ') + ' |';
+
+const comparisonTable = (section, linkFor) => {
+  const sectionTools = rankedTools(section);
+  return [
+    '| Tool | Grade | Readiness | Setup | Read | Create | Modify | Delete | Coverage |',
+    '| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |',
+    ...sectionTools.map((tool) => overviewRow(tool, linkFor(tool)))
+  ].join('\n');
+};
 
 const markdownInterface = (label, entry) => {
   const value = entry.url ? '[' + entry.label + '](' + entry.url + ')' : entry.label;
@@ -314,17 +319,12 @@ const catalogueNavigation = sectionOrder.map((section) => {
 
 const cataloguePage = (section) => {
   const sectionTools = rankedTools(section);
-  const matrix = [
-    '| Tool | Grade | Ready | Setup | R / C / M / D | Coverage |',
-    '| :--- | :---: | :---: | :---: | :--- | :---: |',
-    ...sectionTools.map((tool) => overviewRow(tool, '#' + githubAnchor(tool.name)))
-  ].join('\n');
+  const matrix = comparisonTable(section, (tool) => '#' + githubAnchor(tool.name));
   return [
     '# ' + section,
     sectionConfig[section].description,
     '[Main index](../README.md) · [Methodology](../METHODOLOGY.md)',
     catalogueNavigation,
-    '`R / C / M / D` means Read / Create / Modify / Delete for the named route.',
     matrix,
     ...sectionTools.map((tool) => toolDetail(tool, section)),
     '---',
@@ -332,41 +332,33 @@ const cataloguePage = (section) => {
   ].join('\n\n') + '\n';
 };
 
-const sectionDirectory = sectionOrder.map((section) => {
-  const sectionTools = rankedTools(section);
-  const leaders = sectionTools.slice(0, 2).map((tool) => tool.name + ' (' + tool.grade + ')').join(', ');
-  return '| ' + [
-    '[' + section + '](catalogue/' + sectionConfig[section].file + ')',
-    sectionTools.length,
-    leaders
-  ].map(markdownCell).join(' | ') + ' |';
-}).join('\n');
-
 const topNavigation = sectionOrder.map((section) => {
-  return '[' + section + '](catalogue/' + sectionConfig[section].file + ')';
+  return '[' + section + '](#' + githubAnchor(section) + ')';
 }).join(' · ');
-
-const mediaTools = rankedTools('Media platforms');
-const mediaMatrix = [
-  '| Platform | Grade | Ready | Setup | R / C / M / D | Coverage |',
-  '| :--- | :---: | :---: | :---: | :--- | :---: |',
-  ...mediaTools.map((tool) => overviewRow(tool, 'catalogue/media-platforms.md#' + githubAnchor(tool.name)))
-].join('\n');
 
 const toolById = (id) => tools.find((tool) => tool.id === id);
 const tiktok = toolById('tiktok-for-business');
 const googleAds = toolById('google-ads');
 const metaAds = toolById('meta-ads');
 
-const affiliateRows = tools
-  .filter((tool) => tool.workflow.commercial.type === 'Affiliate')
-  .sort((left, right) => left.name.localeCompare(right.name))
-  .map((tool) => '| ' + [
-    tool.name,
-    markdownCommercial(tool.workflow.commercial),
-    tool.workflow.commercial.note
-  ].map(markdownCell).join(' | ') + ' |')
-  .join('\n');
+const readmeSections = sectionOrder.map((section) => {
+  const detailUrl = 'catalogue/' + sectionConfig[section].file;
+  const matrix = comparisonTable(section, (tool) => detailUrl + '#' + githubAnchor(tool.name));
+  const verdicts = section === 'Media platforms'
+    ? [
+        '- **' + tiktok.name + ' (' + tiktok.grade + '):** Its official remote MCP covers campaign, reporting, audience and creative work.',
+        '- **' + googleAds.name + ' (' + googleAds.grade + '):** Google\'s official Ads MCP cannot create an ad, change a bid or budget, pause an entity or fix the issue it finds.',
+        '- **' + metaAds.name + ' (' + metaAds.grade + '):** Meta\'s connector can create supported objects, then still sends the operator back to Ads Manager for ordinary changes.'
+      ].join('\n')
+    : null;
+  return [
+    '## ' + section,
+    sectionConfig[section].description,
+    verdicts,
+    matrix,
+    '[Open the detailed assessments](' + detailUrl + ')'
+  ].filter(Boolean).join('\n\n');
+}).join('\n\n');
 
 const readme = [
   '# AI paid-media tools',
@@ -381,23 +373,7 @@ const readme = [
   '',
   '[Read the methodology](METHODOLOGY.md) · [Propose a correction](../../issues/new?template=correction.yml)',
   '',
-  '## Media platforms',
-  '',
-  '- **' + tiktok.name + ' (' + tiktok.grade + '):** Its official remote MCP covers campaign, reporting, audience and creative work.',
-  '- **' + googleAds.name + ' (' + googleAds.grade + '):** Google\'s official Ads MCP cannot create an ad, change a bid or budget, pause an entity or fix the issue it finds.',
-  '- **' + metaAds.name + ' (' + metaAds.grade + '):** Meta\'s connector can create supported objects, then still sends the operator back to Ads Manager for ordinary changes.',
-  '',
-  '`R / C / M / D` means Read / Create / Modify / Delete for the named route.',
-  '',
-  mediaMatrix,
-  '',
-  '[Read every media-platform assessment](catalogue/media-platforms.md)',
-  '',
-  '## Full catalogue',
-  '',
-  '| Section | Tools | Highest grades |',
-  '| :--- | ---: | :--- |',
-  sectionDirectory,
+  readmeSections,
   '',
   '## How scoring works',
   '',
@@ -417,14 +393,6 @@ const readme = [
   '| D / F | Not recommended for production work |',
   '',
   '[Definitions and grade ceilings](METHODOLOGY.md)',
-  '',
-  '## Affiliate programmes',
-  '',
-  affiliatePrograms + ' current public commission-paying programmes were verified. Referral, certification and agency partner schemes are labelled separately in the catalogue.',
-  '',
-  '| Tool | Programme | Terms found |',
-  '| :--- | :--- | :--- |',
-  affiliateRows,
   '',
   '## Data and maintenance',
   '',
