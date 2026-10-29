@@ -21,11 +21,16 @@ Collection, tagging and attribution systems judged on implementation, validation
 
 The Tag Manager API can manage accounts, containers, workspaces, tags and triggers. No vendor-backed MCP source was verified.
 
-> **Blocker:** There is no official agent interface, and an automated publish can immediately break production tracking.
+**Day to day**
+
+- Prepare tags, triggers and variables in a workspace.
+- Create versions and publish approved container changes.
+
+> **What still needs you:** Review the workspace before publishing. A container change can immediately alter tracking on the live site.
 
 - **Route:** Official API.
 - **Scope:** Accounts, containers, workspaces, tags, triggers and versions.
-- **Setup:** Hard. Requires Google Cloud OAuth credentials, container permissions and a custom agent or automation layer.
+- **Setup:** Hard. A developer must build the API connection and configure account authentication. Container permissions must allow the intended edits or publication.
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
 - **Capabilities:** Inspect **Yes** · Configure **Yes** · Validate **Partial** · Deploy **Yes** · Monitor **Partial**
 - **Coverage:** Most steps. Most configuration objects are available through the API, including version and publish workflows.
@@ -67,7 +72,12 @@ The Tag Manager API can manage accounts, containers, workspaces, tags and trigge
 
 AppsFlyer beta MCP brings campaign performance, attribution trends and implementation troubleshooting into AI clients.
 
-> **Blocker:** The beta can explain and audit, then hands configuration changes back to the human or another API workflow.
+**Day to day**
+
+- Check campaign and attribution performance.
+- Investigate measurement issues before changing configuration elsewhere.
+
+> **What still needs you:** Configuration changes still need a person or another API connection. The assistant beta focuses on analysis and audits.
 
 - **Route:** Official beta MCP.
 - **Scope:** Apps, campaign performance, attribution and implementation guidance.
@@ -113,11 +123,16 @@ AppsFlyer beta MCP brings campaign performance, attribution trends and implement
 
 Segment collects and routes first-party events, while its Public API manages sources, destinations, warehouses and tracking plans; an official MCP was not verified.
 
-> **Blocker:** The underlying API is capable; the missing piece is an official, safe agent interface for daily operators.
+**Day to day**
+
+- Inspect sources and destinations.
+- Manage supported workspace configuration through an integration.
+
+> **What still needs you:** A developer must build the assistant connection and control which workspace changes it can make.
 
 - **Route:** Public API and collection SDKs.
 - **Scope:** Sources, destinations, warehouses, tracking plans and events.
-- **Setup:** Hard. Requires workspace-owner tokens, instrumentation, schemas and a custom agent wrapper around the API.
+- **Setup:** Hard. A developer must connect the workspace API, select permissions and map the events and resources the assistant may change.
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
 - **Capabilities:** Inspect **Yes** · Configure **Yes** · Validate **Partial** · Deploy **Yes** · Monitor **Partial**
 - **Coverage:** Most steps. The Public API can manage core workspace resources, but event design and quality validation still require specialist work.
@@ -159,7 +174,12 @@ Segment collects and routes first-party events, while its Public API manages sou
 
 Adjust exposes mature SDKs and several focused APIs for reporting, app configuration, campaigns and device testing, but no official agent route was verified.
 
-> **Blocker:** There is no official MCP to connect; the team must design, build and govern the complete agent interface.
+**Day to day**
+
+- Retrieve attribution reports.
+- Manage supported settings through the appropriate APIs.
+
+> **What still needs you:** A developer must build and maintain the assistant interface across the APIs you need.
 
 - **Route:** Official APIs and SDKs.
 - **Scope:** Attribution data, apps, events, campaigns and test devices.

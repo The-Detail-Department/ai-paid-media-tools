@@ -7,7 +7,25 @@
       "Production": "Dependable enough for a controlled recurring workflow today.",
       "Test": "Worth piloting, but access, maturity or control needs a bounded test.",
       "Research": "Useful specialist capability, not a daily operating interface."
-    }
+    },
+    "featuredTools": [
+      "google-ads",
+      "meta-ads",
+      "canva",
+      "figma",
+      "tiktok-for-business",
+      "google-analytics"
+    ],
+    "sectionOrder": [
+      "Media platforms",
+      "Creative production",
+      "Analytics",
+      "Measurement",
+      "Research and intelligence",
+      "Automation and workflow",
+      "Data infrastructure",
+      "Modelling"
+    ]
   },
   "ratings": {
     "google-ads": {

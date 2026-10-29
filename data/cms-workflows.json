@@ -67,15 +67,19 @@
         "level": "Most steps",
         "note": "Documented post and page operations support drafts, updates and publication. Inspect the live tool catalogue for the connected site."
       },
-      "blocker": "Account-level tool settings are shared by connected clients. Choosing an OAuth access level can change those settings; updating a published post can go live immediately.",
-      "evidenceBasis": "Documentation reviewed"
+      "blocker": "Review changes before sending them: edits to a published post can go live immediately. Account tool settings are shared across connected assistants.",
+      "evidenceBasis": "Documentation reviewed",
+      "dailyTasks": [
+        "Create a draft post and edit supported page content.",
+        "Publish approved posts through the tools enabled for the site."
+      ]
     },
     "wordpress-adapter": {
       "surface": "Official adapter and registered Abilities",
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Hard",
-        "note": "Install and configure the adapter, register or supply Abilities, and implement permission callbacks."
+        "note": "A developer must install the adapter and supply the WordPress Abilities you need. Each Ability needs code, an input definition and a permission check."
       },
       "actions": {
         "read": "Depends",
@@ -94,15 +98,19 @@
         "level": "Depends",
         "note": "The adapter connects agents to explicitly exposed Abilities; it is not a bundled, complete editorial toolset."
       },
-      "blocker": "Review each exposed Ability and its permission callback. Installing an adapter alone does not establish draft, publish or translation support.",
-      "evidenceBasis": "Documentation reviewed"
+      "blocker": "Installing the adapter does not add editorial tools by itself. A developer must supply and check each task, including its permissions.",
+      "evidenceBasis": "Documentation reviewed",
+      "dailyTasks": [
+        "Ask an assistant to run the Abilities registered on your site.",
+        "Expose a specific editorial task once its code and permissions exist."
+      ]
     },
     "webflow": {
       "surface": "Official Webflow MCP",
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Moderate",
-        "note": "Authorise a workspace and use the appropriate site role; some operations require a connected Designer session."
+        "note": "Authorise the right workspace and site role. Some design operations also need the Designer and its bridge app open."
       },
       "actions": {
         "read": "Yes",
@@ -121,15 +129,19 @@
         "level": "Most steps",
         "note": "Manage CMS collections and items, with partial localisation and additional design tools. Scope publication tools to the connected site."
       },
-      "blocker": "The documented localisation route can update existing secondary-locale CMS items but cannot create new ones. Permissions and Designer mode constrain some tools.",
-      "evidenceBasis": "Documentation reviewed"
+      "blocker": "New items in secondary languages still need another route. Some actions also require the right site role or an open Designer session.",
+      "evidenceBasis": "Documentation reviewed",
+      "dailyTasks": [
+        "Update CMS items and supported page content.",
+        "Edit existing secondary-language items where the tool supports them."
+      ]
     },
     "contentful": {
       "surface": "Official hosted MCP",
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Moderate",
-        "note": "Connect with OAuth and configure the MCP app allowlist in each required space and environment."
+        "note": "An administrator enables the required tools for each space and environment. You then connect the assistant with your own Contentful account."
       },
       "actions": {
         "read": "Yes",
@@ -148,15 +160,19 @@
         "level": "Most steps",
         "note": "Create and update entries, publish or unpublish content, manage locales and validate or schedule releases."
       },
-      "blocker": "The hosted route combines user permissions with environment tool allowlists. Local PAT-based MCP has different, broader access boundaries. Frontend deployment is separate.",
-      "evidenceBasis": "Documentation reviewed"
+      "blocker": "Check the user role and the tools enabled for the environment. Publishing in Contentful does not deploy your website; a local token-based connection has different access rules.",
+      "evidenceBasis": "Documentation reviewed",
+      "dailyTasks": [
+        "Draft and edit entries, assets and locale content.",
+        "Publish approved content or organise it into a release."
+      ]
     },
     "sanity": {
       "surface": "Official Sanity MCP",
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Moderate",
-        "note": "Connect with OAuth or a role-scoped API token and select the intended project and dataset."
+        "note": "Connect with your Sanity account or a scoped API token. Select the correct project and dataset, and check the role’s write permissions."
       },
       "actions": {
         "read": "Yes",
@@ -175,8 +191,12 @@
         "level": "Most steps",
         "note": "Query with GROQ, create or edit structured content and publish drafts. Release versions require their own document IDs."
       },
-      "blocker": "Sanity Context MCP is a separate read-only route. Localisation depends on the schema. Live-edit document types may bypass drafts; release edits must target the correct version.",
-      "evidenceBasis": "Documentation reviewed"
+      "blocker": "Check the schema, language setup and draft or release version before editing. Some document types skip drafts. Context MCP is a separate, read-only connection.",
+      "evidenceBasis": "Documentation reviewed",
+      "dailyTasks": [
+        "Find and edit structured content with its schema in view.",
+        "Publish drafts or prepare content in a release version."
+      ]
     },
     "directus": {
       "surface": "Official built-in MCP",
@@ -202,15 +222,19 @@
         "level": "Depends",
         "note": "Create and edit content using the configured collections, roles and workflows. Publication is a project-specific status or workflow, not a universal publish button."
       },
-      "blocker": "Content exposure, publication status and language fields depend on the project schema. Review the dedicated role and deletion settings before writes.",
-      "evidenceBasis": "Documentation reviewed"
+      "blocker": "Your project defines which fields control publication and languages. Check the role’s edit and delete permissions before changing content.",
+      "evidenceBasis": "Documentation reviewed",
+      "dailyTasks": [
+        "Find and edit content in configured collections.",
+        "Use the publication and language fields your project defines."
+      ]
     },
     "shopify": {
       "surface": "Admin GraphQL API, custom integration",
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Hard",
-        "note": "Build an authenticated app integration with the necessary store content scopes and explicit write controls."
+        "note": "A developer must create an authenticated app, grant content permissions and build the assistant’s API connection. The developer toolkit alone does not write to your store."
       },
       "actions": {
         "read": "Unverified",
@@ -229,7 +253,104 @@
         "level": "Some steps",
         "note": "Create articles and pages with publication settings. This review does not establish a turnkey editorial MCP or general store-management coverage."
       },
-      "blocker": "Shopify’s developer AI toolkit supplies development context. Its existence does not establish authenticated content writes; the evaluated route here is the Admin API.",
+      "blocker": "Build an authenticated Admin API connection first. Shopify’s developer AI tools help with development; they do not by themselves edit your store.",
+      "evidenceBasis": "Documentation reviewed",
+      "dailyTasks": [
+        "Create a blog article or information page.",
+        "Set its publication status or schedule when creating it."
+      ]
+    },
+    "woocommerce": {
+      "surface": "Official Abilities and MCP Adapter, developer preview",
+      "object": "Product content",
+      "setup": {
+        "level": "Moderate",
+        "note": "A site administrator installs the MCP Adapter and creates a limited WordPress application password. Check the installed WooCommerce version and its Abilities before connecting."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "dailyTasks": [
+        "Find products for a content review.",
+        "Create or update the product fields exposed by the store’s Abilities."
+      ],
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Unverified",
+        "edit": "Yes",
+        "publish": "Unverified",
+        "localise": "Depends"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Product query, creation, updates and deletion are documented. Editorial fields depend on the exposed Ability schemas."
+      },
+      "blocker": "The connection is a developer preview. Version 11.3 changes older connections; check support for extension fields and languages separately.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "bigcommerce": {
+      "surface": "Pages V3 and Blog Content APIs",
+      "object": "Pages and supported store content",
+      "setup": {
+        "level": "Hard",
+        "note": "A developer must create a store API account, grant content permissions and build the connection to the assistant."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "dailyTasks": [
+        "Update information pages and their metadata.",
+        "Create, edit and publish blog posts."
+      ],
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Partial",
+        "edit": "Yes",
+        "publish": "Partial",
+        "localise": "Depends"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Read, create, edit and delete pages or blog posts. Blog posts have a publication flag; page visibility is not a complete editorial approval workflow."
+      },
+      "blocker": "Review changes before writing, then check the storefront. Your integration must handle each channel’s content and language conventions.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "adobe-commerce": {
+      "surface": "CMS REST API, PaaS or on-premises",
+      "object": "Pages and supported store content",
+      "setup": {
+        "level": "Hard",
+        "note": "A developer must configure an integration with CMS permissions and connect it to the assistant. The team must confirm the store’s version, deployment type and content conventions."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "dailyTasks": [
+        "Update CMS page copy and reusable content blocks.",
+        "Prepare page changes and set the page’s active state."
+      ],
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Partial",
+        "edit": "Yes",
+        "publish": "Partial",
+        "localise": "Depends"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Read, create, update and delete CMS pages and blocks. Page content and activation are separate fields; storefront delivery still needs a check."
+      },
+      "blocker": "Confirm your Commerce version and hosting type. This assessment covers the traditional CMS API, not visual Page Builder editing, a complete approval process or SaaS feature parity.",
       "evidenceBasis": "Documentation reviewed"
     }
   }

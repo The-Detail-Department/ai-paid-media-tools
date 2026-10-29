@@ -48,7 +48,7 @@
       "object": "Campaign and performance data",
       "setup": {
         "level": "Hard",
-        "note": "Requires Python, a Google Ads developer token, a Google Cloud project, enabled APIs, OAuth credentials and MCP client configuration."
+        "note": "A developer must obtain Ads API access, configure a Google Cloud project and set up account authentication before the assistant can query it."
       },
       "actions": {
         "read": "Yes",
@@ -66,14 +66,18 @@
         "label": "Google Partners",
         "url": "https://support.google.com/google-ads/answer/9029203?hl=en",
         "note": "Agency recognition, training and support. Not a public cash affiliate programme."
-      }
+      },
+      "dailyTasks": [
+        "Compare spend and conversions across campaigns.",
+        "Find campaigns that need a closer look."
+      ]
     },
     "meta-ads": {
       "surface": "Official remote MCP, open beta",
       "object": "Campaigns, ad sets, ads and insights",
       "setup": {
         "level": "Easy",
-        "note": "Add the hosted connector and authorise the Meta account. Availability still rolls out by account and tool."
+        "note": "Add the hosted connector and sign in. The tools offered can differ by account during the rollout."
       },
       "actions": {
         "read": "Yes",
@@ -85,20 +89,24 @@
         "level": "Some steps",
         "note": "Creation and analysis are present, but the current beta does not provide dependable general modification of existing campaign objects."
       },
-      "blocker": "A workflow can create supported objects, then still send the operator back to Ads Manager to make ordinary changes.",
+      "blocker": "Check which changes your account supports. Some edits still need Ads Manager after the assistant creates the campaign.",
       "commercial": {
         "type": "Partner",
         "label": "Meta Business Partners",
         "url": "https://www.facebook.com/business/marketing-partners",
         "note": "Vetted services and technology ecosystem. No public commission-paying Ads affiliate programme was verified."
-      }
+      },
+      "dailyTasks": [
+        "Review campaign performance and account structure.",
+        "Create supported campaigns, ad sets and ads."
+      ]
     },
     "tiktok-for-business": {
       "surface": "Official remote MCP",
       "object": "Campaigns, ad groups, ads, audiences, creative and reporting",
       "setup": {
         "level": "Easy",
-        "note": "Hosted OAuth connection with no developer token, API key management or custom code."
+        "note": "Connect the hosted service and approve account access. Check which advertising tools your account receives."
       },
       "actions": {
         "read": "Yes",
@@ -110,20 +118,24 @@
         "level": "Most steps",
         "note": "Around 400 tools cover creation, targeting, bidding, reporting and creative operations. Some manual and account workflows remain outside the route."
       },
-      "blocker": "The full endpoint loads an enormous tool surface. Progressive disclosure is safer and easier for daily use.",
+      "blocker": "Choose the tools needed for the task and review changes before launch. Loading every available tool makes daily use harder.",
       "commercial": {
         "type": "Affiliate",
         "label": "TikTok for Business Affiliate Program",
         "url": "https://getstarted.tiktok.com/affiliates?lang=en-PH",
         "note": "Impact-hosted programme with a flat-fee bounty for qualified new advertisers."
-      }
+      },
+      "dailyTasks": [
+        "Build campaigns and adjust supported bids or targeting.",
+        "Check results and manage supported creative assets."
+      ]
     },
     "microsoft-advertising": {
       "surface": "Official managed MCP",
       "object": "Accounts, campaigns, ad groups, ads, keywords and performance",
       "setup": {
         "level": "Easy",
-        "note": "Connect the managed server to a supported assistant and authenticate the advertising account."
+        "note": "Connect a supported assistant and sign in with access to the advertising account."
       },
       "actions": {
         "read": "Yes",
@@ -135,20 +147,24 @@
         "level": "Assist only",
         "note": "Current launch documentation covers exploration, performance queries and audits, not mutation."
       },
-      "blocker": "The product language says manage campaigns, but the documented tool boundary only retrieves and audits data.",
+      "blocker": "Make campaign changes in the advertising interface. The documented assistant tools retrieve and audit data.",
       "commercial": {
         "type": "Partner",
         "label": "Microsoft Advertising Partner Program",
         "url": "https://msadvertisingpartnerprogram.powerappsportals.com/welcome",
         "note": "Agency, channel and technology partner programme with spend and tenure requirements. Not a public affiliate programme."
-      }
+      },
+      "dailyTasks": [
+        "Ask questions about campaign performance.",
+        "Audit account settings before making changes elsewhere."
+      ]
     },
     "amazon-ads": {
       "surface": "Official remote MCP, open beta",
       "object": "Campaigns, accounts, reports, billing and selected multi-step workflows",
       "setup": {
         "level": "Hard",
-        "note": "Limited to Amazon Ads partners with active API credentials despite the hosted MCP route."
+        "note": "An eligible Amazon Ads partner needs active API credentials. A hosted connector does not remove that access requirement."
       },
       "actions": {
         "read": "Yes",
@@ -160,20 +176,24 @@
         "level": "Most steps",
         "note": "Includes individual API capabilities plus tools for account creation, reports, campaign launch and locale expansion."
       },
-      "blocker": "Strong action coverage is offset by partner-only API access and beta maturity.",
+      "blocker": "Partner API access is required, and the connection is still in beta. Check the actions available to your account.",
       "commercial": {
         "type": "Partner",
         "label": "Amazon Ads Partner Network",
         "url": "https://advertising.amazon.com/partners/network",
         "note": "Self-service agency and tool-provider network. Amazon Associates is a separate retail affiliate programme."
-      }
+      },
+      "dailyTasks": [
+        "Create or update supported campaigns.",
+        "Request reports and prepare campaigns for additional markets."
+      ]
     },
     "snapchat-ads": {
       "surface": "Official remote MCP, allowlist",
       "object": "Campaign data and performance",
       "setup": {
         "level": "Hard",
-        "note": "Requires allowlist access as well as an authenticated advertising account."
+        "note": "The account must be admitted to the MCP allowlist before you can connect and sign in."
       },
       "actions": {
         "read": "Yes",
@@ -185,19 +205,23 @@
         "level": "Assist only",
         "note": "Retrieval and analysis only. The broader Marketing API is a separate engineering route."
       },
-      "blocker": "It is both gated and read-only, so it cannot carry a campaign from diagnosis to correction.",
+      "blocker": "You must make campaign changes elsewhere. This connection is restricted to approved accounts and only reads data.",
       "commercial": {
         "type": "None verified",
         "label": "Programme needs re-verification",
         "note": "The previously cited affiliate page returned 404 on 29 October 2026; current availability and terms are unverified."
-      }
+      },
+      "dailyTasks": [
+        "Read campaign settings and results.",
+        "Investigate performance before making changes in Ads Manager."
+      ]
     },
     "linkedin-ads": {
       "surface": "Official Marketing API",
       "object": "Campaigns, reporting, audiences, leads and conversions",
       "setup": {
         "level": "Hard",
-        "note": "Requires a developer application, a defined use case, product access, application vetting and a custom agent layer."
+        "note": "A developer must register an app, obtain approval for the advertising use case and build the connection to the assistant."
       },
       "actions": {
         "read": "Yes",
@@ -209,20 +233,24 @@
         "level": "Some steps",
         "note": "The API covers important campaign-management jobs, but access is approved by product and use case and there is no official agent interface."
       },
-      "blocker": "A team cannot simply connect an assistant. It must first win API approval and build and maintain the route.",
+      "blocker": "A developer must obtain advertising API approval, then build and maintain the assistant connection.",
       "commercial": {
         "type": "Partner",
         "label": "LinkedIn Marketing Partner Program",
         "url": "https://business.linkedin.com/advertise/partners",
         "note": "Vetted programme with API access, directory visibility and possible incentive or revenue-share programmes. Not an open affiliate scheme."
-      }
+      },
+      "dailyTasks": [
+        "Build or update campaigns through an approved integration.",
+        "Retrieve results for reporting."
+      ]
     },
     "pinterest-ads": {
       "surface": "Official Ads API",
       "object": "Campaigns, ad groups, ads, audiences and reporting",
       "setup": {
         "level": "Hard",
-        "note": "Requires a developer application, authorised ad accounts and a custom agent or integration layer."
+        "note": "A developer must create an app, authorise the ad accounts and build an integration around the API."
       },
       "actions": {
         "read": "Yes",
@@ -234,20 +262,24 @@
         "level": "Some steps",
         "note": "Useful campaign and reporting coverage through the API, without a vendor-backed MCP, plugin or CLI."
       },
-      "blocker": "The API is usable, but the AI workflow is yours to engineer and maintain.",
+      "blocker": "Your team must build and maintain the assistant connection, then review the changes it makes.",
       "commercial": {
         "type": "Partner",
         "label": "Pinterest Business Partners",
         "url": "https://business.pinterest.com/pinterest-business-partners/",
         "note": "Vetted media, creative, commerce and measurement ecosystem. No public Ads affiliate programme was verified."
-      }
+      },
+      "dailyTasks": [
+        "Create and update supported advertising objects.",
+        "Pull campaign results into a reporting workflow."
+      ]
     },
     "reddit-ads": {
       "surface": "Official Ads API",
       "object": "Accounts, campaigns, ad groups, ads and reporting",
       "setup": {
         "level": "Hard",
-        "note": "Requires an OAuth application, approved advertising access and a custom agent layer."
+        "note": "A developer must register an app, obtain advertising access and connect the API to the assistant."
       },
       "actions": {
         "read": "Yes",
@@ -259,20 +291,24 @@
         "level": "Some steps",
         "note": "Core campaign operations exist in the API, but no official agent interface was verified."
       },
-      "blocker": "API approval and custom integration make this unsuitable as an immediate daily AI workflow.",
+      "blocker": "Advertising API approval and a custom connection are required before an assistant can do this work.",
       "commercial": {
         "type": "Partner",
         "label": "Reddit Partner Program",
         "url": "https://www.business.reddit.com/solutions/reddit-partnership-overview",
         "note": "Agency, API and data partner programme with badging and directory visibility. No public affiliate commission was verified."
-      }
+      },
+      "dailyTasks": [
+        "Create and manage supported campaigns through an integration.",
+        "Retrieve account and campaign results."
+      ]
     },
     "x-ads": {
       "surface": "Official hosted Ads MCP",
       "object": "Advertiser resources, campaigns and reporting",
       "setup": {
         "level": "Hard",
-        "note": "Register an X developer app, enable Ads access, configure OAuth and grant the required Ads scopes."
+        "note": "A developer must register an X app, enable Ads access and configure account authentication with the required permissions."
       },
       "actions": {
         "read": "Yes",
@@ -284,21 +320,25 @@
         "level": "Most steps",
         "note": "Read accounts and results, create and update campaigns and line items, manage targeting and supported creative and audience objects."
       },
-      "blocker": "Requires an X developer app, Ads access and OAuth scopes. Activation can start spend; the documented MCP does not cover every Ads API operation.",
+      "blocker": "Review paused campaigns before activating them: activation can start spend. Some Ads API operations remain outside the MCP.",
       "commercial": {
         "type": "Partner",
         "label": "X Official Partner directory",
         "url": "https://docs.x.com/enterprise/partner-directory",
         "note": "Selected enterprise partner ecosystem. No public X Ads affiliate programme was verified."
       },
-      "endpoint": "https://ads-api.x.com/mcp"
+      "endpoint": "https://ads-api.x.com/mcp",
+      "dailyTasks": [
+        "Build paused campaigns and line items.",
+        "Update supported targeting, audiences and creative assets."
+      ]
     },
     "display-video-360": {
       "surface": "Official API",
       "object": "Advertisers, campaigns, insertion orders, line items, targeting and creatives",
       "setup": {
         "level": "Hard",
-        "note": "Requires Google Cloud, OAuth, DV360 account permissions and a custom agent layer."
+        "note": "A developer must configure Google Cloud, account authentication and a custom connection. The user also needs DV360 account permissions."
       },
       "actions": {
         "read": "Yes",
@@ -310,20 +350,24 @@
         "level": "Some steps",
         "note": "Broad trafficking coverage, but performance reporting is separate and some YouTube and Partners writes are unsupported."
       },
-      "blocker": "An operator needs two API surfaces for build plus performance and still cannot reproduce every manual workflow.",
+      "blocker": "Building campaigns and retrieving performance use separate APIs. Some tasks still need the DV360 interface.",
       "commercial": {
         "type": "Partner",
         "label": "Google Marketing Platform Partners",
         "url": "https://support.google.com/analytics/answer/7237700?hl=en",
         "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."
-      }
+      },
+      "dailyTasks": [
+        "Build and update supported campaigns and line items.",
+        "Manage trafficking settings through an integration."
+      ]
     },
     "campaign-manager-360": {
       "surface": "Official API",
       "object": "Campaigns, placements, ads, creatives, conversions and reports",
       "setup": {
         "level": "Hard",
-        "note": "Requires a CM360 account with API access, user-profile permissions, Google Cloud and OAuth."
+        "note": "A developer must configure Google Cloud and account authentication. The CM360 account and user profile need API permission."
       },
       "actions": {
         "read": "Yes",
@@ -335,20 +379,24 @@
         "level": "Most steps",
         "note": "Strong trafficking and measurement coverage, but no official agent interface packages the resource model for daily use."
       },
-      "blocker": "The API can do serious production work, but permissions and resource complexity demand engineering and a second-person check.",
+      "blocker": "A developer must map the account permissions and linked campaign objects. A second person should check the finished setup.",
       "commercial": {
         "type": "Partner",
         "label": "Google Marketing Platform Partners",
         "url": "https://support.google.com/analytics/answer/7237700?hl=en",
         "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."
-      }
+      },
+      "dailyTasks": [
+        "Manage placements, ads and creatives.",
+        "Retrieve trafficking and measurement data."
+      ]
     },
     "search-ads-360": {
       "surface": "Official Reporting API",
       "object": "Campaign, ad, keyword and performance data",
       "setup": {
         "level": "Hard",
-        "note": "Requires OAuth application credentials, SA360 account access and a custom agent or reporting layer."
+        "note": "A developer must configure account authentication and build the reporting connection for the authorised SA360 accounts."
       },
       "actions": {
         "read": "Yes",
@@ -360,20 +408,24 @@
         "level": "Assist only",
         "note": "High-volume reporting only. Offline conversion upload is a separate surface and ordinary campaign writes are absent."
       },
-      "blocker": "It can explain the account but cannot perform the optimisation it recommends.",
+      "blocker": "Make optimisation changes elsewhere. This connection reports on the account but cannot apply its recommendations.",
       "commercial": {
         "type": "Partner",
         "label": "Google Marketing Platform Partners",
         "url": "https://support.google.com/analytics/answer/7237700?hl=en",
         "note": "Certified Company and Sales Partner programme. Not a public affiliate programme."
-      }
+      },
+      "dailyTasks": [
+        "Compare performance across linked search accounts.",
+        "Prepare recurring reports from account data."
+      ]
     },
     "apple-ads": {
       "surface": "Official Platform API",
       "object": "Campaigns, ad groups, keywords and reports",
       "setup": {
         "level": "Hard",
-        "note": "Requires an eligible API role, OAuth credentials and custom agent integration. Providers register separately."
+        "note": "A developer must configure API credentials, an eligible account role and the integration used by the assistant."
       },
       "actions": {
         "read": "Yes",
@@ -385,13 +437,17 @@
         "level": "Some steps",
         "note": "Core campaign operations are covered, but no official MCP, agent plugin or daily CLI was verified."
       },
-      "blocker": "The official API is capable, but there is no direct assistant workflow without custom implementation.",
+      "blocker": "A developer must build the assistant connection and maintain it as the API changes.",
       "commercial": {
         "type": "Partner",
         "label": "Apple Ads agency account path",
         "url": "https://ads.apple.com/maps/agencies",
         "note": "Supports delegated agency management. No Apple Ads-specific public affiliate programme was verified."
-      }
+      },
+      "dailyTasks": [
+        "Create and update supported App Store campaigns.",
+        "Retrieve campaign results for review."
+      ]
     },
     "the-trade-desk": {
       "surface": "Official OAK MCP, private beta",
@@ -410,20 +466,24 @@
         "level": "Most steps",
         "note": "Published scope spans data and actions, but exact tool coverage is not public and access is private beta."
       },
-      "blocker": "It may be powerful, but most teams cannot evaluate or adopt it without vendor selection.",
+      "blocker": "Your account team must confirm eligibility and available tools. Most teams cannot test this beta on their own.",
       "commercial": {
         "type": "Partner",
         "label": "The Trade Desk partner ecosystem",
         "url": "https://www.thetradedesk.com/us/partners",
         "note": "Vendor partnership route. No public affiliate programme was verified."
-      }
+      },
+      "dailyTasks": [
+        "Explore the data and actions enabled for your beta account.",
+        "Confirm the available tools with your account team before planning a workflow."
+      ]
     },
     "google-analytics": {
       "surface": "Official MCP",
       "object": "Property metadata, dimensions, metrics and reports",
       "setup": {
         "level": "Hard",
-        "note": "Requires Google Cloud credentials, enabled APIs, property permissions and local or hosted MCP configuration."
+        "note": "An administrator or developer must enable the Google APIs, configure credentials and grant access to the intended properties."
       },
       "actions": {
         "read": "Yes",
@@ -435,7 +495,7 @@
         "level": "Some steps",
         "note": "Strong querying and reporting, but events, audiences and property settings cannot be changed through the MCP."
       },
-      "blocker": "It is useful after implementation, but cannot repair tracking or administer the property it diagnoses.",
+      "blocker": "Fix tracking and property settings elsewhere. The assistant can investigate the data, but cannot repair its collection.",
       "commercial": {
         "type": "Partner",
         "label": "Google Marketing Platform Partners",
@@ -448,14 +508,18 @@
         "configure": "No",
         "validate": "Partial",
         "share": "Partial"
-      }
+      },
+      "dailyTasks": [
+        "Ask where visits and conversions came from.",
+        "Compare pages, events and audience segments in reports."
+      ]
     },
     "google-tag-manager": {
       "surface": "Official API",
       "object": "Accounts, containers, workspaces, tags, triggers and versions",
       "setup": {
         "level": "Hard",
-        "note": "Requires Google Cloud OAuth credentials, container permissions and a custom agent or automation layer."
+        "note": "A developer must build the API connection and configure account authentication. Container permissions must allow the intended edits or publication."
       },
       "actions": {
         "read": "Yes",
@@ -467,7 +531,7 @@
         "level": "Most steps",
         "note": "Most configuration objects are available through the API, including version and publish workflows."
       },
-      "blocker": "There is no official agent interface, and an automated publish can immediately break production tracking.",
+      "blocker": "Review the workspace before publishing. A container change can immediately alter tracking on the live site.",
       "commercial": {
         "type": "Partner",
         "label": "Google Marketing Platform Partners",
@@ -480,7 +544,11 @@
         "validate": "Partial",
         "deploy": "Yes",
         "monitor": "Partial"
-      }
+      },
+      "dailyTasks": [
+        "Prepare tags, triggers and variables in a workspace.",
+        "Create versions and publish approved container changes."
+      ]
     },
     "amplitude": {
       "surface": "Official remote MCP",
@@ -499,7 +567,7 @@
         "level": "Most steps",
         "note": "Strong analytics-asset workflow. Raw event instrumentation and ingestion remain outside the MCP."
       },
-      "blocker": "The agent can change shared analysis assets and taxonomy, so user permissions and review still matter.",
+      "blocker": "Review changes to shared charts and event definitions. The assistant acts with the connected user’s permissions.",
       "commercial": {
         "type": "Affiliate",
         "label": "Amplitude Affiliate Program",
@@ -512,7 +580,11 @@
         "configure": "Yes",
         "validate": "Partial",
         "share": "Yes"
-      }
+      },
+      "dailyTasks": [
+        "Investigate funnels, retention and user behaviour.",
+        "Create or update supported charts, dashboards and analytics definitions."
+      ]
     },
     "mixpanel": {
       "surface": "Official hosted MCP",
@@ -531,7 +603,7 @@
         "level": "Most steps",
         "note": "Query analytics, create and update dashboards, edit Lexicon metadata and manage supported cohorts and other assets."
       },
-      "blocker": "Access follows account settings and permissions. Some newer tools remain beta, and audience targeting and cohort editing within experiment/flag workflows still require the UI.",
+      "blocker": "Some tools remain in beta. Audience targeting and cohort edits inside experiment or feature-flag workflows still need the interface.",
       "commercial": {
         "type": "Referral",
         "label": "Mixpanel Referral Partners",
@@ -544,7 +616,11 @@
         "configure": "Partial",
         "validate": "Partial",
         "share": "Unverified"
-      }
+      },
+      "dailyTasks": [
+        "Investigate funnels and retention.",
+        "Create dashboards and tidy supported event or property definitions."
+      ]
     },
     "figma": {
       "surface": "Official remote MCP, canvas writes beta",
@@ -563,7 +639,7 @@
         "level": "Some steps",
         "note": "Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem."
       },
-      "blocker": "Canvas writes remain beta and do not cover every manual design operation. Desktop context access does not establish remote write access.",
+      "blocker": "Canvas editing is in beta and does not cover every design action. Reading a desktop file does not automatically grant remote editing access.",
       "commercial": {
         "type": "Retired",
         "label": "Affiliate programme deprecated",
@@ -576,7 +652,11 @@
         "edit": "Partial",
         "adapt": "Partial",
         "export": "Partial"
-      }
+      },
+      "dailyTasks": [
+        "Read design context and prepare a code handoff.",
+        "Create or edit supported canvas content through the remote beta."
+      ]
     },
     "canva": {
       "surface": "Official remote MCP",
@@ -595,7 +675,7 @@
         "level": "Some steps",
         "note": "Useful design creation and editing, without full parity with Canva's manual editor and app ecosystem."
       },
-      "blocker": "The Apps CLI is for building Canva apps, not a general daily creative-production CLI.",
+      "blocker": "Check the design and the tools available to your account. The Apps CLI builds Canva apps; it is not a substitute for the design tools.",
       "commercial": {
         "type": "Retired",
         "label": "Affiliate programme sunset",
@@ -608,7 +688,11 @@
         "edit": "Partial",
         "adapt": "Partial",
         "export": "Yes"
-      }
+      },
+      "dailyTasks": [
+        "Create and edit supported designs.",
+        "Adapt content using the tools available to your Canva account."
+      ]
     },
     "supermetrics": {
       "surface": "Official remote MCP",
@@ -627,7 +711,7 @@
         "level": "Most steps",
         "note": "Broad source coverage for retrieval and reporting, but it does not change media-platform objects."
       },
-      "blocker": "It moves and queries data only. Entitlements, connector costs and source authentication still shape the workflow.",
+      "blocker": "Connect and pay for the required data sources. This route retrieves data; campaign changes happen elsewhere.",
       "commercial": {
         "type": "Affiliate",
         "label": "Supermetrics Affiliate Partner Program",
@@ -640,7 +724,11 @@
         "query": "Yes",
         "transform": "Partial",
         "operate": "Partial"
-      }
+      },
+      "dailyTasks": [
+        "Collect reporting data from connected marketing platforms.",
+        "Prepare recurring cross-channel reporting inputs."
+      ]
     },
     "dataforseo": {
       "surface": "Official remote and local MCP",
@@ -659,7 +747,7 @@
         "level": "Most steps",
         "note": "Wide research-data coverage. It does not read or control the advertiser's own paid-media accounts."
       },
-      "blocker": "It is a research input, not a media activation or first-party performance interface.",
+      "blocker": "Use the results as research inputs. It cannot change campaigns or report directly on your advertising accounts.",
       "commercial": {
         "type": "Affiliate",
         "label": "DataForSEO Affiliate Program",
@@ -672,7 +760,11 @@
         "compare": "Yes",
         "analyse": "Partial",
         "export": "Yes"
-      }
+      },
+      "dailyTasks": [
+        "Research search results, keywords and competitors.",
+        "Bring search data into a report or planning workflow."
+      ]
     },
     "airbyte": {
       "surface": "Official agent MCP",
@@ -691,7 +783,7 @@
         "level": "Depends",
         "note": "Coverage depends on the connected sources and destinations. Documentation search and action-capable MCP surfaces are distinct."
       },
-      "blocker": "The MCP does not remove the difficult part: building, authenticating and governing the data connections.",
+      "blocker": "Your team must configure, authenticate and maintain the data connections before the assistant can use them.",
       "commercial": {
         "type": "Referral",
         "label": "Airbyte partner client referral",
@@ -704,7 +796,11 @@
         "query": "Partial",
         "transform": "Partial",
         "operate": "Partial"
-      }
+      },
+      "dailyTasks": [
+        "Retrieve data from configured sources.",
+        "Run supported connector actions where the selected route permits them."
+      ]
     },
     "fivetran": {
       "surface": "Official MCP context layer, public preview",
@@ -723,7 +819,7 @@
         "level": "Assist only",
         "note": "The MCP supplies context and retrieval. Connector operations remain in the REST API, SDK or product."
       },
-      "blocker": "The agent surface cannot operate the connectors it describes.",
+      "blocker": "Manage the data connectors elsewhere. The assistant can retrieve context but cannot operate the connectors it describes.",
       "commercial": {
         "type": "Referral",
         "label": "Fivetran Partner Program",
@@ -736,14 +832,18 @@
         "query": "No",
         "transform": "No",
         "operate": "No"
-      }
+      },
+      "dailyTasks": [
+        "Retrieve context from connected business data.",
+        "Answer reporting questions with the available data tools."
+      ]
     },
     "google-mcp-toolbox": {
       "surface": "Official self-hosted MCP framework",
       "object": "Databases and operator-defined tools",
       "setup": {
         "level": "Hard",
-        "note": "Requires deployment or local runtime, database credentials, tools configuration and security design."
+        "note": "An engineer must deploy the service, connect the database and define permitted queries. Those choices determine what the assistant can read or change."
       },
       "actions": {
         "read": "Depends",
@@ -755,7 +855,7 @@
         "level": "Depends",
         "note": "Prebuilt database tools and custom YAML definitions can expose broad operations, bounded by the configured role and queries."
       },
-      "blocker": "It is infrastructure for building a safe interface, not a paid-media connector that works after sign-in.",
+      "blocker": "An engineer must define the permitted database operations. There is no ready-made advertising connection after sign-in.",
       "commercial": {
         "type": "None verified",
         "label": "No product-specific commercial programme verified",
@@ -767,14 +867,18 @@
         "query": "Depends",
         "transform": "Depends",
         "operate": "Depends"
-      }
+      },
+      "dailyTasks": [
+        "Ask questions against approved database queries.",
+        "Run only the database operations your team has exposed."
+      ]
     },
     "snowflake": {
       "surface": "Official managed MCP",
       "object": "Warehouse data and operator-approved tools",
       "setup": {
         "level": "Hard",
-        "note": "Requires Snowflake account configuration, Cortex Agent setup, warehouse roles and deliberate tool exposure."
+        "note": "A data team must configure warehouse access, semantic models and the tools exposed to the assistant."
       },
       "actions": {
         "read": "Yes",
@@ -786,7 +890,7 @@
         "level": "Depends",
         "note": "Coverage can be broad, but it depends entirely on schemas, tools, semantic models and role permissions configured by the team."
       },
-      "blocker": "The quality and safety of the workflow depend on substantial data-platform work before the first useful marketing prompt.",
+      "blocker": "A data team must prepare reliable datasets, definitions and access rules before marketing questions produce useful answers.",
       "commercial": {
         "type": "Referral",
         "label": "Snowflake Partner Network",
@@ -799,7 +903,11 @@
         "query": "Yes",
         "transform": "Depends",
         "operate": "Depends"
-      }
+      },
+      "dailyTasks": [
+        "Query the marketing data your team has prepared.",
+        "Use approved analysis tools and semantic models."
+      ]
     },
     "zapier": {
       "surface": "Official remote MCP",
@@ -818,7 +926,7 @@
         "level": "Depends",
         "note": "Large app catalogue, but each action must exist in the connector and be explicitly exposed."
       },
-      "blocker": "It is easy to connect but can only do what each Zapier action exposes, while successful MCP calls consume tasks.",
+      "blocker": "Check each selected action’s limits and review its effect. Successful MCP calls also consume Zapier tasks.",
       "commercial": {
         "type": "Referral",
         "label": "Zapier Solution Partner referral benefit",
@@ -831,7 +939,11 @@
         "run": "Yes",
         "debug": "Partial",
         "monitor": "Partial"
-      }
+      },
+      "dailyTasks": [
+        "Run selected actions across connected apps.",
+        "Pass information between tools through the actions you expose."
+      ]
     },
     "pipedream": {
       "surface": "Official remote MCP",
@@ -850,7 +962,7 @@
         "level": "Most steps",
         "note": "Broad API and action catalogue, with exact parity determined by the connected component."
       },
-      "blocker": "The route is flexible rather than opinionated. The team still owns action selection, annotations and production separation.",
+      "blocker": "Your team chooses the permitted actions and must keep testing separate from live business workflows.",
       "commercial": {
         "type": "Affiliate",
         "label": "Pipedream Affiliate Program",
@@ -863,7 +975,11 @@
         "run": "Yes",
         "debug": "Yes",
         "monitor": "Yes"
-      }
+      },
+      "dailyTasks": [
+        "Call supported app actions from an assistant.",
+        "Connect steps across services using approved components."
+      ]
     },
     "n8n": {
       "surface": "Official instance MCP",
@@ -882,7 +998,7 @@
         "level": "Most steps",
         "note": "The documented instance server supports workflow building and editing from n8n 2.13.0, alongside search, testing and execution."
       },
-      "blocker": "Workflow access, connected credentials and external side effects need deliberate configuration. Creating a workflow does not establish that its credentials, publishing or downstream actions are ready.",
+      "blocker": "Connect credentials and test each workflow’s effects. Creating a workflow does not make its publishing or downstream actions ready.",
       "commercial": {
         "type": "Affiliate",
         "label": "n8n Affiliate Partner Program",
@@ -895,14 +1011,18 @@
         "run": "Yes",
         "debug": "Partial",
         "monitor": "Partial"
-      }
+      },
+      "dailyTasks": [
+        "Create or edit workflows on supported versions.",
+        "Run and test workflows enabled for the assistant."
+      ]
     },
     "meridian": {
       "surface": "Official open-source Python package",
       "object": "Marketing mix models and budget scenarios",
       "setup": {
         "level": "Specialist",
-        "note": "Requires model-ready historical data, Python, statistical judgement, compute and validation design."
+        "note": "A modeller must prepare historical data, run the Python model and validate its assumptions before using budget scenarios."
       },
       "actions": {
         "read": "N/A",
@@ -914,7 +1034,7 @@
         "level": "Specialist",
         "note": "Covers the MMM lifecycle and scenario planning, not live campaign control."
       },
-      "blocker": "It is not an agent or optimiser. Data preparation, priors, model criticism and action rules remain expert work.",
+      "blocker": "A specialist must prepare the data, check the model’s assumptions and interpret the scenarios. It does not change campaigns.",
       "commercial": {
         "type": "Partner",
         "label": "Meridian certified partner programme",
@@ -927,14 +1047,18 @@
         "run": "Yes",
         "validate": "Yes",
         "scenarios": "Yes"
-      }
+      },
+      "dailyTasks": [
+        "Model how marketing investment relates to business results.",
+        "Compare budget scenarios after validating the model."
+      ]
     },
     "robyn": {
       "surface": "Official open-source R and Python package",
       "object": "Marketing mix models and budget allocation scenarios",
       "setup": {
         "level": "Specialist",
-        "note": "Requires prepared historical data, R or Python, statistical modelling and validation expertise."
+        "note": "A modeller must prepare historical data and configure the R or Python workflow, then validate the results."
       },
       "actions": {
         "read": "N/A",
@@ -946,7 +1070,7 @@
         "level": "Specialist",
         "note": "Produces MMM results and allocation hypotheses, without a governed connection to live accounts."
       },
-      "blocker": "Model output is not an approved campaign change. A practitioner must interpret and operationalise it.",
+      "blocker": "A practitioner must interpret the model and approve any resulting campaign changes.",
       "commercial": {
         "type": "None verified",
         "label": "No affiliate or partner programme verified",
@@ -958,14 +1082,18 @@
         "run": "Yes",
         "validate": "Yes",
         "scenarios": "Yes"
-      }
+      },
+      "dailyTasks": [
+        "Build marketing-mix models from historical data.",
+        "Explore allocation scenarios for a planning discussion."
+      ]
     },
     "pymc-marketing": {
       "surface": "Official open-source Python package",
       "object": "Bayesian marketing models",
       "setup": {
         "level": "Specialist",
-        "note": "Requires Python, Bayesian modelling expertise, prepared data, compute and model validation."
+        "note": "A modeller needs Python, prepared data and Bayesian modelling expertise to build and validate a useful model."
       },
       "actions": {
         "read": "N/A",
@@ -977,7 +1105,7 @@
         "level": "Specialist",
         "note": "Flexible modelling toolkit, not a campaign-operation or turn-key daily marketer interface."
       },
-      "blocker": "Its flexibility increases the amount of expert modelling work required before any media decision is safe.",
+      "blocker": "A specialist must build and validate the model before its results can inform a budget decision.",
       "commercial": {
         "type": "None verified",
         "label": "No affiliate or partner programme verified",
@@ -989,7 +1117,11 @@
         "run": "Yes",
         "validate": "Yes",
         "scenarios": "Yes"
-      }
+      },
+      "dailyTasks": [
+        "Build custom marketing-mix or customer-value models.",
+        "Test assumptions and compare modelled scenarios."
+      ]
     },
     "adobe-analytics": {
       "surface": "Adobe-hosted MCP",
@@ -1016,7 +1148,11 @@
         "level": "Most steps",
         "note": "It completes ad-hoc analysis and creates reusable components or projects; governed interpretation and stakeholder delivery remain human work."
       },
-      "blocker": "The route is powerful only after an administrator grants MCP access and the Analytics implementation is already trustworthy."
+      "blocker": "An administrator must grant access. The assistant depends on the report suite’s existing data quality and configuration.",
+      "dailyTasks": [
+        "Investigate report-suite data.",
+        "Create supported reusable analysis components and projects."
+      ]
     },
     "adobe-customer-journey-analytics": {
       "surface": "Adobe-hosted MCP",
@@ -1043,7 +1179,11 @@
         "level": "Most steps",
         "note": "Strong analysis and component coverage once the cross-channel data model exists; upstream data design stays outside the route."
       },
-      "blocker": "The MCP cannot compensate for missing connections, weak identity stitching or badly designed data views."
+      "blocker": "A data team must fix missing connections, identity matching and data-view definitions. The assistant cannot make weak inputs reliable.",
+      "dailyTasks": [
+        "Analyse behaviour across a prepared cross-channel dataset.",
+        "Build supported analysis components and projects."
+      ]
     },
     "posthog": {
       "surface": "Official PostHog MCP",
@@ -1069,7 +1209,11 @@
         "level": "Most steps",
         "note": "The route can investigate behaviour and maintain reusable insights and dashboards; distribution and paid-media decisions remain outside it."
       },
-      "blocker": "It can finish the analytics job, but not the downstream media optimisation job."
+      "blocker": "Apply advertising changes elsewhere. This connection works on analytics, not campaign optimisation.",
+      "dailyTasks": [
+        "Investigate funnels and product behaviour.",
+        "Create or update reusable insights and dashboards."
+      ]
     },
     "appsflyer": {
       "surface": "Official beta MCP",
@@ -1096,7 +1240,11 @@
         "level": "Some steps",
         "note": "Useful performance monitoring and implementation diagnosis, without a dependable write route for correcting configuration."
       },
-      "blocker": "The beta can explain and audit, then hands configuration changes back to the human or another API workflow."
+      "blocker": "Configuration changes still need a person or another API connection. The assistant beta focuses on analysis and audits.",
+      "dailyTasks": [
+        "Check campaign and attribution performance.",
+        "Investigate measurement issues before changing configuration elsewhere."
+      ]
     },
     "adjust": {
       "surface": "Official APIs and SDKs",
@@ -1122,14 +1270,18 @@
         "level": "Some steps",
         "note": "Broad developer capability exists, but it is fragmented and not presented as a ready AI route."
       },
-      "blocker": "There is no official MCP to connect; the team must design, build and govern the complete agent interface."
+      "blocker": "A developer must build and maintain the assistant interface across the APIs you need.",
+      "dailyTasks": [
+        "Retrieve attribution reports.",
+        "Manage supported settings through the appropriate APIs."
+      ]
     },
     "segment": {
       "surface": "Public API and collection SDKs",
       "object": "Sources, destinations, warehouses, tracking plans and events",
       "setup": {
         "level": "Hard",
-        "note": "Requires workspace-owner tokens, instrumentation, schemas and a custom agent wrapper around the API."
+        "note": "A developer must connect the workspace API, select permissions and map the events and resources the assistant may change."
       },
       "actions": {
         "read": "Yes",
@@ -1148,7 +1300,11 @@
         "level": "Most steps",
         "note": "The Public API can manage core workspace resources, but event design and quality validation still require specialist work."
       },
-      "blocker": "The underlying API is capable; the missing piece is an official, safe agent interface for daily operators."
+      "blocker": "A developer must build the assistant connection and control which workspace changes it can make.",
+      "dailyTasks": [
+        "Inspect sources and destinations.",
+        "Manage supported workspace configuration through an integration."
+      ]
     },
     "adobe-firefly-creative-production": {
       "surface": "Hosted Run-Workflow MCP",
@@ -1174,7 +1330,11 @@
         "level": "Most steps",
         "note": "Can execute and monitor multi-step production workflows, with human brand, legal and final-quality approval."
       },
-      "blocker": "It is not a self-service route for most teams: the enterprise entitlement and reusable workflow design must already exist."
+      "blocker": "An enterprise administrator must provide access and prepare reusable workflows before the assistant can run them.",
+      "dailyTasks": [
+        "Run approved creative-production workflows.",
+        "Track jobs and review the resulting assets."
+      ]
     },
     "runway": {
       "surface": "Official generation MCP and API",
@@ -1200,7 +1360,11 @@
         "level": "Most steps",
         "note": "Creates and transforms production media across modalities; the brief, brand system, rights review and final QC remain human responsibilities."
       },
-      "blocker": "The route can make assets, but it cannot decide whether they are on-brand, legally usable or campaign-ready."
+      "blocker": "Review the output for brand fit, usage rights and campaign requirements before using it.",
+      "dailyTasks": [
+        "Generate or transform supported image and video assets.",
+        "Check generation jobs and collect outputs for review."
+      ]
     },
     "ahrefs": {
       "surface": "Official hosted MCP",
@@ -1227,7 +1391,11 @@
         "level": "Most steps",
         "note": "Strong search and competitor research without custom integration; decision framing and activation remain outside the product."
       },
-      "blocker": "It provides research evidence, not first-party account performance or campaign action."
+      "blocker": "Use it for research. It cannot report directly on your advertising accounts or change campaigns.",
+      "dailyTasks": [
+        "Research search visibility and competing sites.",
+        "Collect keyword and backlink information for a brief."
+      ]
     },
     "semrush": {
       "surface": "Semrush Public MCP",
@@ -1254,7 +1422,11 @@
         "level": "Most steps",
         "note": "Broad report discovery and execution across Semrush datasets; changes to projects or campaigns stay elsewhere."
       },
-      "blocker": "Read-only access and unit consumption make it an intelligence route, not an operating system for paid media."
+      "blocker": "The connection only reads research data and uses API units. Apply campaign decisions elsewhere.",
+      "dailyTasks": [
+        "Find and run relevant search or competitor reports.",
+        "Compare research results before deciding what to change."
+      ]
     },
     "similarweb": {
       "surface": "Official hosted MCP",
@@ -1281,7 +1453,11 @@
         "level": "Most steps",
         "note": "Wide external-market coverage and direct comparisons, bounded by licensed datasets and data-credit economics."
       },
-      "blocker": "The figures are external estimates and often delayed, so they cannot replace first-party platform or analytics truth."
+      "blocker": "Treat figures as external estimates, often delayed. Check decisions against your own platform and analytics data.",
+      "dailyTasks": [
+        "Compare external traffic and market estimates.",
+        "Build research using the datasets your subscription includes."
+      ]
     },
     "rudderstack": {
       "surface": "Official hosted MCP",
@@ -1308,14 +1484,18 @@
         "level": "Most steps",
         "note": "Useful management coverage for customer-data pipelines, with gaps and stability caveats while the server evolves."
       },
-      "blocker": "The vendor explicitly warns that the MCP is incomplete and may change during active development."
+      "blocker": "The vendor describes the MCP as incomplete and under active development. Check the tools available before relying on a workflow.",
+      "dailyTasks": [
+        "Inspect supported customer-data connections.",
+        "Manage the pipeline resources exposed by the MCP."
+      ]
     },
     "databricks": {
       "surface": "Managed MCP servers, public preview",
       "object": "SQL, Genie, Vector Search and workspace resources",
       "setup": {
         "level": "Specialist",
-        "note": "Requires a configured Databricks workspace, managed MCP availability, governed resources and Unity Catalog permissions."
+        "note": "A data team must configure the workspace, governed datasets and tool permissions before an assistant has useful data to work with."
       },
       "actions": {
         "read": "Yes",
@@ -1334,14 +1514,18 @@
         "level": "Depends",
         "note": "Potentially broad, but every useful marketing workflow depends on the data products and tools an enterprise exposes."
       },
-      "blocker": "The MCP is only the governed access layer; the warehouse and marketing semantic model still have to be built."
+      "blocker": "A data team must prepare the datasets, business definitions and access rules that the assistant will use.",
+      "dailyTasks": [
+        "Query approved datasets and analysis tools.",
+        "Use the marketing data products your team has configured."
+      ]
     },
     "dbt": {
       "surface": "Official self-hosted MCP",
       "object": "dbt projects, semantic metrics, lineage, health, SQL and CLI jobs",
       "setup": {
         "level": "Specialist",
-        "note": "Install with uvx, point to a local project and enable only the toolsets backed by available dbt Platform or CLI credentials."
+        "note": "An analytics engineer must connect a dbt project and its credentials, then enable the appropriate build, test and metadata tools."
       },
       "actions": {
         "read": "Yes",
@@ -1360,7 +1544,11 @@
         "level": "Specialist",
         "note": "Strong analytics-engineering coverage, including build and test, but not a marketer-facing turn-key workflow."
       },
-      "blocker": "A daily operator still needs an analytics engineer to configure the project, credentials and safe tool allowlist."
+      "blocker": "An analytics engineer must configure the project, credentials and permitted commands before daily use.",
+      "dailyTasks": [
+        "Inspect data models and their dependencies.",
+        "Run supported build and test commands in a configured project."
+      ]
     },
     "make": {
       "surface": "Official cloud MCP",
@@ -1387,7 +1575,11 @@
         "level": "Most steps",
         "note": "Runs existing scenarios directly and can manage workflow entities on paid plans; complex design still benefits from the visual builder."
       },
-      "blocker": "The agent can only use scenarios reliably when inputs, outputs and descriptions were designed for machine invocation."
+      "blocker": "Define each scenario’s inputs, outputs and purpose, then test it before letting an assistant run it.",
+      "dailyTasks": [
+        "Run existing scenarios.",
+        "Manage supported workflow settings where the plan permits it."
+      ]
     },
     "workato": {
       "surface": "Enterprise MCP",
@@ -1413,7 +1605,11 @@
         "level": "Depends",
         "note": "Strong governed execution once recipes and functions are exposed, with coverage determined by enterprise configuration."
       },
-      "blocker": "There is no instant universal endpoint: a Workato enterprise setup and administrator-owned tool catalogue come first."
+      "blocker": "An enterprise administrator must configure the environment and choose the tools the assistant can use.",
+      "dailyTasks": [
+        "Run the recipes or functions your administrator exposes.",
+        "Connect approved business steps through those tools."
+      ]
     },
     "gumloop": {
       "surface": "AI-native workflow platform and CLI",
@@ -1439,7 +1635,11 @@
         "level": "Most steps",
         "note": "Strong AI-native workflow construction and execution, with exact depth inherited from each integration and model."
       },
-      "blocker": "It makes orchestration easy, but it does not remove the need to test every connected action and failure path."
+      "blocker": "Test each connected action and what happens when a step fails before using the workflow for live work.",
+      "dailyTasks": [
+        "Build AI-assisted workflows with supported integrations.",
+        "Run the workflow and inspect its outputs."
+      ]
     }
   }
 }

@@ -21,7 +21,12 @@ Creative systems judged on context, generation, editing, format adaptation and u
 
 Canva's remote MCP supports design creation and editing, assets, brand resources, search, export and collaboration.
 
-> **Blocker:** The Apps CLI is for building Canva apps, not a general daily creative-production CLI.
+**Day to day**
+
+- Create and edit supported designs.
+- Adapt content using the tools available to your Canva account.
+
+> **What still needs you:** Check the design and the tools available to your account. The Apps CLI builds Canva apps; it is not a substitute for the design tools.
 
 - **Route:** Official remote MCP.
 - **Scope:** Designs, assets and selected content workflows.
@@ -67,7 +72,12 @@ Canva's remote MCP supports design creation and editing, assets, brand resources
 
 Adobe Run-Workflow MCP can discover, submit and monitor reusable creative workflows for generation, editing, composition and format adaptation.
 
-> **Blocker:** It is not a self-service route for most teams: the enterprise entitlement and reusable workflow design must already exist.
+**Day to day**
+
+- Run approved creative-production workflows.
+- Track jobs and review the resulting assets.
+
+> **What still needs you:** An enterprise administrator must provide access and prepare reusable workflows before the assistant can run them.
 
 - **Route:** Hosted Run-Workflow MCP.
 - **Scope:** Published creative workflows, images, videos and batch jobs.
@@ -113,7 +123,12 @@ Adobe Run-Workflow MCP can discover, submit and monitor reusable creative workfl
 
 Figma's remote MCP can retrieve design context and, for supported clients and seats, create or modify native canvas content.
 
-> **Blocker:** Canvas writes remain beta and do not cover every manual design operation. Desktop context access does not establish remote write access.
+**Day to day**
+
+- Read design context and prepare a code handoff.
+- Create or edit supported canvas content through the remote beta.
+
+> **What still needs you:** Canvas editing is in beta and does not cover every design action. Reading a desktop file does not automatically grant remote editing access.
 
 - **Route:** Official remote MCP, canvas writes beta.
 - **Scope:** Design files, components, variables and canvas objects.
@@ -159,7 +174,12 @@ Figma's remote MCP can retrieve design context and, for supported clients and se
 
 Runway offers an official generation MCP, a hosted developer MCP, APIs and SDKs for images, video, audio, editing, upscaling and reusable workflows.
 
-> **Blocker:** The route can make assets, but it cannot decide whether they are on-brand, legally usable or campaign-ready.
+**Day to day**
+
+- Generate or transform supported image and video assets.
+- Check generation jobs and collect outputs for review.
+
+> **What still needs you:** Review the output for brand fit, usage rights and campaign requirements before using it.
 
 - **Route:** Official generation MCP and API.
 - **Scope:** Image, video, audio, tasks and workflows.

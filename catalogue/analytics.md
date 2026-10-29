@@ -23,7 +23,12 @@ Analytics products judged on whether an agent can investigate performance and le
 
 Amplitude's hosted MCP can work with charts, dashboards, experiments, cohorts and taxonomy. It does not ingest event data.
 
-> **Blocker:** The agent can change shared analysis assets and taxonomy, so user permissions and review still matter.
+**Day to day**
+
+- Investigate funnels, retention and user behaviour.
+- Create or update supported charts, dashboards and analytics definitions.
+
+> **What still needs you:** Review changes to shared charts and event definitions. The assistant acts with the connected user’s permissions.
 
 - **Route:** Official remote MCP.
 - **Scope:** Charts, dashboards, cohorts, experiments and taxonomy.
@@ -69,7 +74,12 @@ Amplitude's hosted MCP can work with charts, dashboards, experiments, cohorts an
 
 Adobe hosts a production MCP that can query Analytics data, create reports and manage analysis components through the same product permissions as the UI.
 
-> **Blocker:** The route is powerful only after an administrator grants MCP access and the Analytics implementation is already trustworthy.
+**Day to day**
+
+- Investigate report-suite data.
+- Create supported reusable analysis components and projects.
+
+> **What still needs you:** An administrator must grant access. The assistant depends on the report suite’s existing data quality and configuration.
 
 - **Route:** Adobe-hosted MCP.
 - **Scope:** Report suites, components, reports and workspace projects.
@@ -115,7 +125,12 @@ Adobe hosts a production MCP that can query Analytics data, create reports and m
 
 Adobe hosts a separate CJA MCP for cross-channel data views, components, reports and workspace projects.
 
-> **Blocker:** The MCP cannot compensate for missing connections, weak identity stitching or badly designed data views.
+**Day to day**
+
+- Analyse behaviour across a prepared cross-channel dataset.
+- Build supported analysis components and projects.
+
+> **What still needs you:** A data team must fix missing connections, identity matching and data-view definitions. The assistant cannot make weak inputs reliable.
 
 - **Route:** Adobe-hosted MCP.
 - **Scope:** CJA connections, data views, components, reports and projects.
@@ -161,11 +176,16 @@ Adobe hosts a separate CJA MCP for cross-channel data views, components, reports
 
 Google's open-source MCP lets agents query Analytics reporting and administration data without changing the property.
 
-> **Blocker:** It is useful after implementation, but cannot repair tracking or administer the property it diagnoses.
+**Day to day**
+
+- Ask where visits and conversions came from.
+- Compare pages, events and audience segments in reports.
+
+> **What still needs you:** Fix tracking and property settings elsewhere. The assistant can investigate the data, but cannot repair its collection.
 
 - **Route:** Official MCP.
 - **Scope:** Property metadata, dimensions, metrics and reports.
-- **Setup:** Hard. Requires Google Cloud credentials, enabled APIs, property permissions and local or hosted MCP configuration.
+- **Setup:** Hard. An administrator or developer must enable the Google APIs, configure credentials and grant access to the intended properties.
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
 - **Capabilities:** Analyse **Yes** · Build reports **Partial** · Configure **No** · Validate **Partial** · Share **Partial**
 - **Coverage:** Some steps. Strong querying and reporting, but events, audiences and property settings cannot be changed through the MCP.
@@ -207,7 +227,12 @@ Google's open-source MCP lets agents query Analytics reporting and administratio
 
 Mixpanel’s hosted MCP queries product analytics and manages dashboards, Lexicon metadata and supported analytics assets.
 
-> **Blocker:** Access follows account settings and permissions. Some newer tools remain beta, and audience targeting and cohort editing within experiment/flag workflows still require the UI.
+**Day to day**
+
+- Investigate funnels and retention.
+- Create dashboards and tidy supported event or property definitions.
+
+> **What still needs you:** Some tools remain in beta. Audience targeting and cohort edits inside experiment or feature-flag workflows still need the interface.
 
 - **Route:** Official hosted MCP.
 - **Scope:** Product analytics data and supported assets.
@@ -253,7 +278,12 @@ Mixpanel’s hosted MCP queries product analytics and manages dashboards, Lexico
 
 PostHog MCP queries trends, funnels, retention, paths and SQL, then creates, updates or deletes saved insights and dashboards.
 
-> **Blocker:** It can finish the analytics job, but not the downstream media optimisation job.
+**Day to day**
+
+- Investigate funnels and product behaviour.
+- Create or update reusable insights and dashboards.
+
+> **What still needs you:** Apply advertising changes elsewhere. This connection works on analytics, not campaign optimisation.
 
 - **Route:** Official PostHog MCP.
 - **Scope:** Events, SQL, insights and dashboards.

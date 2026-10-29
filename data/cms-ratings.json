@@ -7,7 +7,19 @@
       "Production": "Dependable enough for a controlled recurring workflow today.",
       "Test": "Worth piloting, but access, maturity or control needs a bounded test.",
       "Research": "Useful specialist capability, not a daily operating interface."
-    }
+    },
+    "featuredTools": [
+      "shopify",
+      "wordpress-com",
+      "webflow",
+      "woocommerce",
+      "contentful"
+    ],
+    "sectionOrder": [
+      "Commerce content",
+      "CMS and site builders",
+      "Content platforms"
+    ]
   },
   "ratings": {
     "wordpress-com": {
@@ -106,6 +118,48 @@
       "negatives": [
         "Requires an app and custom integration work.",
         "Editing, deletion and localisation are not verified by the creation endpoints assessed here."
+      ]
+    },
+    "woocommerce": {
+      "section": "Commerce content",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Official product operations use WordPress permission checks.",
+        "The adapter can expose supported store tasks directly to an assistant."
+      ],
+      "negatives": [
+        "The integration remains developer preview.",
+        "Version changes, extension fields and publication behaviour need a store-level test."
+      ]
+    },
+    "bigcommerce": {
+      "section": "Commerce content",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Documented page and blog operations cover recurring content edits.",
+        "Blog publication is explicit in the API."
+      ],
+      "negatives": [
+        "Requires a custom authenticated integration.",
+        "Page visibility and blog publication have different semantics."
+      ]
+    },
+    "adobe-commerce": {
+      "section": "Commerce content",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Explicit CMS page and block operations.",
+        "CMS access is controlled through integration permissions."
+      ],
+      "negatives": [
+        "Requires custom engineering and deployment-specific checks.",
+        "An API write does not prove the storefront or Page Builder layout is correct."
       ]
     }
   }

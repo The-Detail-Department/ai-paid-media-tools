@@ -23,7 +23,12 @@ Cross-tool automation systems judged on connection, workflow construction, execu
 
 Make hosts an OAuth MCP that can run scenarios and, on paid plans, view or modify scenarios, connections, webhooks, data stores and organisations.
 
-> **Blocker:** The agent can only use scenarios reliably when inputs, outputs and descriptions were designed for machine invocation.
+**Day to day**
+
+- Run existing scenarios.
+- Manage supported workflow settings where the plan permits it.
+
+> **What still needs you:** Define each scenario’s inputs, outputs and purpose, then test it before letting an assistant run it.
 
 - **Route:** Official cloud MCP.
 - **Scope:** Scenarios, connections, webhooks, data stores, teams and organisations.
@@ -69,7 +74,12 @@ Make hosts an OAuth MCP that can run scenarios and, on paid plans, view or modif
 
 Zapier MCP lets assistants call scoped actions across Zapier's app catalogue; the Platform CLI is for building Zapier integrations.
 
-> **Blocker:** It is easy to connect but can only do what each Zapier action exposes, while successful MCP calls consume tasks.
+**Day to day**
+
+- Run selected actions across connected apps.
+- Pass information between tools through the actions you expose.
+
+> **What still needs you:** Check each selected action’s limits and review its effect. Successful MCP calls also consume Zapier tasks.
 
 - **Route:** Official remote MCP.
 - **Scope:** Actions in connected applications.
@@ -115,7 +125,12 @@ Zapier MCP lets assistants call scoped actions across Zapier's app catalogue; th
 
 Workato Enterprise MCP can expose governed recipe functions, API collections, recipes and skills through a hosted enterprise runtime.
 
-> **Blocker:** There is no instant universal endpoint: a Workato enterprise setup and administrator-owned tool catalogue come first.
+**Day to day**
+
+- Run the recipes or functions your administrator exposes.
+- Connect approved business steps through those tools.
+
+> **What still needs you:** An enterprise administrator must configure the environment and choose the tools the assistant can use.
 
 - **Route:** Enterprise MCP.
 - **Scope:** API collections, recipes, recipe functions and skills.
@@ -161,7 +176,12 @@ Workato Enterprise MCP can expose governed recipe functions, API collections, re
 
 Pipedream provides hosted MCP servers across thousands of APIs, managed authentication, an SDK and a full `pd` CLI.
 
-> **Blocker:** The route is flexible rather than opinionated. The team still owns action selection, annotations and production separation.
+**Day to day**
+
+- Call supported app actions from an assistant.
+- Connect steps across services using approved components.
+
+> **What still needs you:** Your team chooses the permitted actions and must keep testing separate from live business workflows.
 
 - **Route:** Official remote MCP.
 - **Scope:** Actions and APIs in connected applications.
@@ -207,7 +227,12 @@ Pipedream provides hosted MCP servers across thousands of APIs, managed authenti
 
 Gumloop is an AI-native workflow and agent builder with 50-plus built-in MCP integrations, custom remote MCP support and a JSON-capable CLI.
 
-> **Blocker:** It makes orchestration easy, but it does not remove the need to test every connected action and failure path.
+**Day to day**
+
+- Build AI-assisted workflows with supported integrations.
+- Run the workflow and inspect its outputs.
+
+> **What still needs you:** Test each connected action and what happens when a step fails before using the workflow for live work.
 
 - **Route:** AI-native workflow platform and CLI.
 - **Scope:** Agents, sessions, integrations, MCP servers, skills and artifacts.
@@ -253,7 +278,12 @@ Gumloop is an AI-native workflow and agent builder with 50-plus built-in MCP int
 
 n8n’s instance MCP can find, run and test enabled workflows, and create or edit workflows and data tables on supported versions.
 
-> **Blocker:** Workflow access, connected credentials and external side effects need deliberate configuration. Creating a workflow does not establish that its credentials, publishing or downstream actions are ready.
+**Day to day**
+
+- Create or edit workflows on supported versions.
+- Run and test workflows enabled for the assistant.
+
+> **What still needs you:** Connect credentials and test each workflow’s effects. Creating a workflow does not make its publishing or downstream actions ready.
 
 - **Route:** Official instance MCP.
 - **Scope:** Enabled workflows and their connected applications.

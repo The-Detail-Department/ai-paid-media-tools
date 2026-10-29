@@ -388,6 +388,182 @@
           "kind": "official"
         }
       ]
+    },
+    {
+      "id": "woocommerce",
+      "name": "WooCommerce",
+      "category": "Commerce CMS",
+      "channels": [
+        "Web",
+        "Commerce"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Official product Abilities let an assistant query and change supported store content through the WordPress MCP Adapter.",
+      "mcp": {
+        "provenance": "official",
+        "maturity": "preview",
+        "mode": "both",
+        "control": "read-write",
+        "label": "Official Abilities and MCP Adapter, developer preview",
+        "url": "https://developer.woocommerce.com/docs/features/mcp/"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Official API documentation",
+        "url": "https://developer.woocommerce.com/docs/features/mcp/"
+      },
+      "access": "A site administrator installs the MCP Adapter and creates a limited WordPress application password. Check the installed WooCommerce version and its Abilities before connecting.",
+      "caution": "This is developer preview. The 11.3 migration changes older MCP connections; extension fields and localisation need separate verification.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "WooCommerce MCP integration",
+          "url": "https://developer.woocommerce.com/docs/features/mcp/",
+          "kind": "official"
+        },
+        {
+          "label": "Version 11.3 migration advisory",
+          "url": "https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp/",
+          "kind": "official"
+        },
+        {
+          "label": "Version 11.3 beta status",
+          "url": "https://developer.woocommerce.com/2026/10/26/woocommerce-11-3-pre-release/",
+          "kind": "official"
+        }
+      ]
+    },
+    {
+      "id": "bigcommerce",
+      "name": "BigCommerce",
+      "category": "Commerce CMS",
+      "channels": [
+        "Web",
+        "Commerce"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Content APIs manage web pages and blog posts through a custom integration.",
+      "mcp": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route",
+        "mode": "none",
+        "control": "none"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Official API documentation",
+        "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/content/pages"
+      },
+      "access": "A developer must create a store API account, grant content permissions and build the connection to the assistant.",
+      "caution": "The API connection is custom. Review page changes before writing, verify storefront visibility, and handle language or channel conventions in the integration.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Pages V3",
+          "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/content/pages",
+          "kind": "official"
+        },
+        {
+          "label": "Official blog Content API schema",
+          "url": "https://github.com/bigcommerce/api-specs/blob/main/reference/store_content.v2.yml",
+          "kind": "source-code"
+        }
+      ]
+    },
+    {
+      "id": "adobe-commerce",
+      "name": "Adobe Commerce / Magento",
+      "category": "Commerce CMS",
+      "channels": [
+        "Web",
+        "Commerce"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "The traditional Commerce REST API manages CMS pages and blocks through a custom integration.",
+      "mcp": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route",
+        "mode": "none",
+        "control": "none"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Official API documentation",
+        "url": "https://developer.adobe.com/commerce/webapi/rest/"
+      },
+      "access": "A developer must configure an integration with CMS permissions and connect it to the assistant. The team must confirm the store’s version, deployment type and content conventions.",
+      "caution": "This assessment covers the traditional Commerce/Magento CMS API. It does not establish Adobe Commerce SaaS parity, visual Page Builder editing or a complete approval workflow.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Adobe Commerce REST API overview",
+          "url": "https://developer.adobe.com/commerce/webapi/rest/",
+          "kind": "official"
+        },
+        {
+          "label": "CMS API routes",
+          "url": "https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Cms/etc/webapi.xml",
+          "kind": "source-code"
+        },
+        {
+          "label": "CMS page content and activation fields",
+          "url": "https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Cms/Api/Data/PageInterface.php",
+          "kind": "source-code"
+        }
+      ]
     }
   ]
 }

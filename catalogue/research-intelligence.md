@@ -21,7 +21,12 @@ External research systems judged on discovery, retrieval, comparison, analysis a
 
 Ahrefs hosts an official MCP for keyword, competitor, backlink and content-gap research against live Ahrefs data.
 
-> **Blocker:** It provides research evidence, not first-party account performance or campaign action.
+**Day to day**
+
+- Research search visibility and competing sites.
+- Collect keyword and backlink information for a brief.
+
+> **What still needs you:** Use it for research. It cannot report directly on your advertising accounts or change campaigns.
 
 - **Route:** Official hosted MCP.
 - **Scope:** Keywords, domains, backlinks, competitors and content gaps.
@@ -67,7 +72,12 @@ Ahrefs hosts an official MCP for keyword, competitor, backlink and content-gap r
 
 Semrush Public MCP exposes SEO, traffic, market, project and paid-search reports through a hosted OAuth endpoint.
 
-> **Blocker:** Read-only access and unit consumption make it an intelligence route, not an operating system for paid media.
+**Day to day**
+
+- Find and run relevant search or competitor reports.
+- Compare research results before deciding what to change.
+
+> **What still needs you:** The connection only reads research data and uses API units. Apply campaign decisions elsewhere.
 
 - **Route:** Semrush Public MCP.
 - **Scope:** SEO, traffic, market, paid-search, shopping and project reports.
@@ -113,7 +123,12 @@ Semrush Public MCP exposes SEO, traffic, market, project and paid-search reports
 
 Similarweb hosts an MCP with broad web, app, audience, search, PPC-spend and retail intelligence coverage.
 
-> **Blocker:** The figures are external estimates and often delayed, so they cannot replace first-party platform or analytics truth.
+**Day to day**
+
+- Compare external traffic and market estimates.
+- Build research using the datasets your subscription includes.
+
+> **What still needs you:** Treat figures as external estimates, often delayed. Check decisions against your own platform and analytics data.
 
 - **Route:** Official hosted MCP.
 - **Scope:** Web, app, search, audience, PPC and retail intelligence.
@@ -159,7 +174,12 @@ Similarweb hosts an MCP with broad web, app, audience, search, PPC-spend and ret
 
 The official server and CLI browse DataForSEO documentation and make authenticated API requests for SERP, keyword, backlink and market data.
 
-> **Blocker:** It is a research input, not a media activation or first-party performance interface.
+**Day to day**
+
+- Research search results, keywords and competitors.
+- Bring search data into a report or planning workflow.
+
+> **What still needs you:** Use the results as research inputs. It cannot change campaigns or report directly on your advertising accounts.
 
 - **Route:** Official remote and local MCP.
 - **Scope:** SERPs, keywords, backlinks, businesses, products and content data.

@@ -146,3 +146,12 @@ A catalogue update is not a blanket re-verification: each entry carries its own
 checked existing source links; other media records retain their September dates.
 All initial CMS records are documentation reviews, with no connected-account or
 execution claim. Unverified cells identify the limits of this review.
+
+## Practical examples and reading order
+
+`dailyTasks` translates each record’s existing documented scope into examples of
+recurring work. A wording change does not reset `verifiedOn`. Setup notes name the
+account access, administrator work or engineering that makes the connection possible.
+`featuredTools` and `sectionOrder` are editorial navigation choices, not measured
+popularity or market-share rankings. The commerce additions remain documentation
+reviews; no connection or live write was performed.

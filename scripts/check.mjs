@@ -150,6 +150,7 @@ for (const [index, tool] of data.tools.entries()) {
     errors.push(path + ' needs a daily workflow assessment');
     continue;
   }
+  if (!Array.isArray(workflow.dailyTasks) || workflow.dailyTasks.length < 1 || workflow.dailyTasks.some(value => typeof value !== 'string' || !value.trim())) errors.push(path + ' needs specific daily tasks');
   for (const key of ['surface', 'object', 'blocker']) {
     if (!workflow[key] || typeof workflow[key] !== 'string') errors.push(path + ' workflow.' + key + ' is required');
   }
@@ -184,6 +185,8 @@ for (const id of Object.keys(editorial.ratings || {})) {
 for (const id of Object.keys(workflowData.workflows || {})) {
   if (!ids.has(id)) errors.push('Workflow assessment has no matching tool: ' + id);
 }
+
+for (const id of editorial.meta.featuredTools || []) if (!ids.has(id)) errors.push('Unknown featured tool: ' + id);
 
 const serialised = JSON.stringify([data, editorial, workflowData]);
 if (serialised.includes('—')) errors.push('U+2014 em dash is not allowed');

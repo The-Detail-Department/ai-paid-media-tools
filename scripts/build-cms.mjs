@@ -11,7 +11,7 @@ for (const tool of tools.tools) {
 }
 for (const t of tools.tools) {
  const w = workflows.workflows[t.id], r = ratings.ratings[t.id];
- lines.push('', `## ${t.name}`, '', t.summary, '', `Reviewed: ${t.verifiedOn}. ${w.evidenceBasis}.`, '', `**Route:** ${w.surface}. **Setup:** ${w.setup.level}. ${w.setup.note}`, '', `**Coverage:** ${w.coverage.level}. ${w.coverage.note}`, '', `**Boundary:** ${w.blocker}`, '', '**Strengths**', '', ...r.positives.map(x=>'- '+x), '', '**Limits**', '', ...r.negatives.map(x=>'- '+x), '', '**Official sources**', '', ...t.sources.map(x=>`- [${x.label}](${x.url})`));
+ lines.push('', `## ${t.name}`, '', t.summary, '', `Reviewed: ${t.verifiedOn}. ${w.evidenceBasis}.`, '', '**Day to day**', '', ...w.dailyTasks.map(x=>'- '+x), '', `**Route:** ${w.surface}. **Setup:** ${w.setup.level}. ${w.setup.note}`, '', `**Coverage:** ${w.coverage.level}. ${w.coverage.note}`, '', `**Boundary:** ${w.blocker}`, '', '**Strengths**', '', ...r.positives.map(x=>'- '+x), '', '**Limits**', '', ...r.negatives.map(x=>'- '+x), '', '**Official sources**', '', ...t.sources.map(x=>`- [${x.label}](${x.url})`));
 }
 const body=lines.join('\n')+'\n';
 const target=new URL('catalogue/cms.md',root);
