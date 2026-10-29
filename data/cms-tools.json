@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "AI paid media tools",
-    "description": "An evidence-backed comparison of MCP servers, advertising APIs, plugins and command-line tools for paid-media operations, analytics and measurement.",
+    "title": "The AI CMS Index",
+    "description": "CMS platforms assessed for AI and LLM content workflows, with documented routes, permissions and limits.",
     "updatedOn": "2026-10-29",
     "maintainer": "The Detail Department",
-    "scope": "Tools that can materially support planning, buying, measuring, modelling, moving data, automating work or producing paid-media creative.",
+    "scope": "Reading, drafting, editing, publishing and localising CMS content through the named MCP, adapter or API route.",
     "version": "0.1"
   },
   "tools": [
