@@ -30,7 +30,7 @@ Canva's remote MCP supports design creation and editing, assets, brand resources
 
 - **Route:** Official remote MCP.
 - **Scope:** Designs, assets and selected content workflows.
-- **Setup:** Easy. Connect and authorise an individual Canva account. App-development workflows have separate requirements.
+- **Setup:** Easy. Connect and authorise an individual Canva account. App-development workflows have separate requirements. [Connection documentation](https://www.canva.dev/docs/mcp/).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
 - **Capabilities:** Read context **Yes** · Create **Yes** · Edit **Partial** · Adapt **Partial** · Export **Yes**
 - **Coverage:** Some steps. Useful design creation and editing, without full parity with Canva's manual editor and app ecosystem.
@@ -81,7 +81,7 @@ Adobe Run-Workflow MCP can discover, submit and monitor reusable creative workfl
 
 - **Route:** Hosted Run-Workflow MCP.
 - **Scope:** Published creative workflows, images, videos and batch jobs.
-- **Setup:** Moderate. Requires enterprise entitlement, an MCP client and organisation workflows or templates that the server can discover and run.
+- **Setup:** Moderate. Requires enterprise entitlement, an MCP client and organisation workflows or templates that the server can discover and run. [Connection documentation](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
 - **Capabilities:** Read context **Yes** · Create **Yes** · Edit **Yes** · Adapt **Yes** · Export **Yes**
 - **Coverage:** Most steps. Can execute and monitor multi-step production workflows, with human brand, legal and final-quality approval.
@@ -132,7 +132,7 @@ Figma's remote MCP can retrieve design context and, for supported clients and se
 
 - **Route:** Official remote MCP, canvas writes beta.
 - **Scope:** Design files, components, variables and canvas objects.
-- **Setup:** Easy. Connect a supported client to the remote MCP and authorise Figma; verify write eligibility and file permissions.
+- **Setup:** Easy. Connect a supported client to the remote MCP and authorise Figma; verify write eligibility and file permissions. [Connection documentation](https://developers.figma.com/docs/figma-mcp-server/).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
 - **Capabilities:** Read context **Yes** · Create **Partial** · Edit **Partial** · Adapt **Partial** · Export **Partial**
 - **Coverage:** Some steps. Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem.
@@ -183,7 +183,7 @@ Runway offers an official generation MCP, a hosted developer MCP, APIs and SDKs 
 
 - **Route:** Official generation MCP and API.
 - **Scope:** Image, video, audio, tasks and workflows.
-- **Setup:** Moderate. Use the official local MCP repository or hosted developer route, then configure billing and authentication.
+- **Setup:** Moderate. Use the official local MCP repository or hosted developer route, then configure billing and authentication. [Connection documentation](https://docs.dev.runwayml.com/guides/mcp/).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
 - **Capabilities:** Read context **Partial** · Create **Yes** · Edit **Yes** · Adapt **Yes** · Export **Yes**
 - **Coverage:** Most steps. Creates and transforms production media across modalities; the brief, brand system, rights review and final QC remain human responsibilities.

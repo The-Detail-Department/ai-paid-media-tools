@@ -29,7 +29,7 @@ Google's open-source marketing mix modelling framework for estimating incrementa
 
 - **Route:** Official open-source Python package.
 - **Scope:** Marketing mix models and budget scenarios.
-- **Setup:** Specialist. A modeller must prepare historical data, run the Python model and validate its assumptions before using budget scenarios.
+- **Setup:** Specialist. A modeller must prepare historical data, run the Python model and validate its assumptions before using budget scenarios. [Model documentation](https://github.com/google/meridian).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Covers the MMM lifecycle and scenario planning, not live campaign control.
@@ -80,7 +80,7 @@ An open-source Bayesian marketing analytics package covering marketing mix model
 
 - **Route:** Official open-source Python package.
 - **Scope:** Bayesian marketing models.
-- **Setup:** Specialist. A modeller needs Python, prepared data and Bayesian modelling expertise to build and validate a useful model.
+- **Setup:** Specialist. A modeller needs Python, prepared data and Bayesian modelling expertise to build and validate a useful model. [Model documentation](https://github.com/pymc-labs/pymc-marketing).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Flexible modelling toolkit, not a campaign-operation or turn-key daily marketer interface.
@@ -131,7 +131,7 @@ Meta's open-source marketing mix modelling package for estimating channel contri
 
 - **Route:** Official open-source R and Python package.
 - **Scope:** Marketing mix models and budget allocation scenarios.
-- **Setup:** Specialist. A modeller must prepare historical data and configure the R or Python workflow, then validate the results.
+- **Setup:** Specialist. A modeller must prepare historical data and configure the R or Python workflow, then validate the results. [Model documentation](https://github.com/facebookexperimental/Robyn).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Produces MMM results and allocation hypotheses, without a governed connection to live accounts.

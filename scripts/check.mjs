@@ -156,6 +156,8 @@ for (const [index, tool] of data.tools.entries()) {
   }
   if (!allowedSetup.has(workflow.setup?.level)) errors.push(path + ' workflow setup is invalid');
   if (!workflow.setup?.note) errors.push(path + ' workflow setup note is required');
+  if (!workflow.setup?.documentation?.label) errors.push(path + ' needs a setup documentation label');
+  try { if (new URL(workflow.setup?.documentation?.url).protocol !== 'https:') throw new Error(); } catch { errors.push(path + ' needs an HTTPS setup documentation URL'); }
   for (const action of ['read', 'create', 'modify', 'delete']) {
     if (!allowedAction.has(workflow.actions?.[action])) errors.push(path + ' workflow action ' + action + ' is invalid');
   }

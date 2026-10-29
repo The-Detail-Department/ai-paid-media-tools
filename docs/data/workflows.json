@@ -48,7 +48,11 @@
       "object": "Campaign and performance data",
       "setup": {
         "level": "Hard",
-        "note": "A developer must obtain Ads API access, configure a Google Cloud project and set up account authentication before the assistant can query it."
+        "note": "A developer must obtain Ads API access, configure a Google Cloud project and set up account authentication before the assistant can query it.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://github.com/googleads/google-ads-mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -77,7 +81,11 @@
       "object": "Campaigns, ad sets, ads and insights",
       "setup": {
         "level": "Easy",
-        "note": "Add the hosted connector and sign in. The tools offered can differ by account during the rollout."
+        "note": "Add the hosted connector and sign in. The tools offered can differ by account during the rollout.",
+        "documentation": {
+          "label": "Connector information",
+          "url": "https://www.facebook.com/business/news/meta-ads-ai-connectors"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -106,7 +114,11 @@
       "object": "Campaigns, ad groups, ads, audiences, creative and reporting",
       "setup": {
         "level": "Easy",
-        "note": "Connect the hosted service and approve account access. Check which advertising tools your account receives."
+        "note": "Connect the hosted service and approve account access. Check which advertising tools your account receives.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -135,7 +147,11 @@
       "object": "Accounts, campaigns, ad groups, ads, keywords and performance",
       "setup": {
         "level": "Easy",
-        "note": "Connect a supported assistant and sign in with access to the advertising account."
+        "note": "Connect a supported assistant and sign in with access to the advertising account.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -164,7 +180,11 @@
       "object": "Campaigns, accounts, reports, billing and selected multi-step workflows",
       "setup": {
         "level": "Hard",
-        "note": "An eligible Amazon Ads partner needs active API credentials. A hosted connector does not remove that access requirement."
+        "note": "An eligible Amazon Ads partner needs active API credentials. A hosted connector does not remove that access requirement.",
+        "documentation": {
+          "label": "Beta access information",
+          "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -193,7 +213,11 @@
       "object": "Campaign data and performance",
       "setup": {
         "level": "Hard",
-        "note": "The account must be admitted to the MCP allowlist before you can connect and sign in."
+        "note": "The account must be admitted to the MCP allowlist before you can connect and sign in.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -221,7 +245,11 @@
       "object": "Campaigns, reporting, audiences, leads and conversions",
       "setup": {
         "level": "Hard",
-        "note": "A developer must register an app, obtain approval for the advertising use case and build the connection to the assistant."
+        "note": "A developer must register an app, obtain approval for the advertising use case and build the connection to the assistant.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -250,7 +278,11 @@
       "object": "Campaigns, ad groups, ads, audiences and reporting",
       "setup": {
         "level": "Hard",
-        "note": "A developer must create an app, authorise the ad accounts and build an integration around the API."
+        "note": "A developer must create an app, authorise the ad accounts and build an integration around the API.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://dev.pinterest.com/docs/work-with-ads/ads-overview/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -279,7 +311,11 @@
       "object": "Accounts, campaigns, ad groups, ads and reporting",
       "setup": {
         "level": "Hard",
-        "note": "A developer must register an app, obtain advertising access and connect the API to the assistant."
+        "note": "A developer must register an app, obtain advertising access and connect the API to the assistant.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://ads-api.reddit.com/docs/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -308,7 +344,11 @@
       "object": "Advertiser resources, campaigns and reporting",
       "setup": {
         "level": "Hard",
-        "note": "A developer must register an X app, enable Ads access and configure account authentication with the required permissions."
+        "note": "A developer must register an X app, enable Ads access and configure account authentication with the required permissions.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.x.com/x-ads-api/mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -338,7 +378,11 @@
       "object": "Advertisers, campaigns, insertion orders, line items, targeting and creatives",
       "setup": {
         "level": "Hard",
-        "note": "A developer must configure Google Cloud, account authentication and a custom connection. The user also needs DV360 account permissions."
+        "note": "A developer must configure Google Cloud, account authentication and a custom connection. The user also needs DV360 account permissions.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://developers.google.com/display-video/api"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -367,7 +411,11 @@
       "object": "Campaigns, placements, ads, creatives, conversions and reports",
       "setup": {
         "level": "Hard",
-        "note": "A developer must configure Google Cloud and account authentication. The CM360 account and user profile need API permission."
+        "note": "A developer must configure Google Cloud and account authentication. The CM360 account and user profile need API permission.",
+        "documentation": {
+          "label": "API setup guide",
+          "url": "https://developers.google.com/doubleclick-advertisers/getting_started"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -396,7 +444,11 @@
       "object": "Campaign, ad, keyword and performance data",
       "setup": {
         "level": "Hard",
-        "note": "A developer must configure account authentication and build the reporting connection for the authorised SA360 accounts."
+        "note": "A developer must configure account authentication and build the reporting connection for the authorised SA360 accounts.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://developers.google.com/search-ads/reporting"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -425,7 +477,11 @@
       "object": "Campaigns, ad groups, keywords and reports",
       "setup": {
         "level": "Hard",
-        "note": "A developer must configure API credentials, an eligible account role and the integration used by the assistant."
+        "note": "A developer must configure API credentials, an eligible account role and the integration used by the assistant.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -454,7 +510,11 @@
       "object": "Campaign planning, activation, optimisation and reporting",
       "setup": {
         "level": "Hard",
-        "note": "Available only to selected partners through an account representative, with account-managed credentials."
+        "note": "Available only to selected partners through an account representative, with account-managed credentials.",
+        "documentation": {
+          "label": "Beta access information",
+          "url": "https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -483,7 +543,11 @@
       "object": "Property metadata, dimensions, metrics and reports",
       "setup": {
         "level": "Hard",
-        "note": "An administrator or developer must enable the Google APIs, configure credentials and grant access to the intended properties."
+        "note": "An administrator or developer must enable the Google APIs, configure credentials and grant access to the intended properties.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developers.google.com/analytics/devguides/MCP"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -519,7 +583,11 @@
       "object": "Accounts, containers, workspaces, tags, triggers and versions",
       "setup": {
         "level": "Hard",
-        "note": "A developer must build the API connection and configure account authentication. Container permissions must allow the intended edits or publication."
+        "note": "A developer must build the API connection and configure account authentication. Container permissions must allow the intended edits or publication.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://developers.google.com/tag-platform/tag-manager/api/v2"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -555,7 +623,11 @@
       "object": "Charts, dashboards, cohorts, experiments and taxonomy",
       "setup": {
         "level": "Easy",
-        "note": "Connect the hosted MCP and authorise an Amplitude user with the appropriate project role."
+        "note": "Connect the hosted MCP and authorise an Amplitude user with the appropriate project role.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -591,7 +663,11 @@
       "object": "Product analytics data and supported assets",
       "setup": {
         "level": "Easy",
-        "note": "Connect a compatible MCP client and authorise the Mixpanel account."
+        "note": "Connect a compatible MCP client and authorise the Mixpanel account.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.mixpanel.com/docs/mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -627,7 +703,11 @@
       "object": "Design files, components, variables and canvas objects",
       "setup": {
         "level": "Easy",
-        "note": "Connect a supported client to the remote MCP and authorise Figma; verify write eligibility and file permissions."
+        "note": "Connect a supported client to the remote MCP and authorise Figma; verify write eligibility and file permissions.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -663,7 +743,11 @@
       "object": "Designs, assets and selected content workflows",
       "setup": {
         "level": "Easy",
-        "note": "Connect and authorise an individual Canva account. App-development workflows have separate requirements."
+        "note": "Connect and authorise an individual Canva account. App-development workflows have separate requirements.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://www.canva.dev/docs/mcp/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -699,7 +783,11 @@
       "object": "Marketing-source metadata and query results",
       "setup": {
         "level": "Moderate",
-        "note": "Requires a subscription with API access plus authentication for every source queried."
+        "note": "Requires a subscription with API access plus authentication for every source queried.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.supermetrics.com/docs/supermetrics-mcp-server"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -735,7 +823,11 @@
       "object": "SERPs, keywords, backlinks, businesses, products and content data",
       "setup": {
         "level": "Moderate",
-        "note": "Hosted OAuth is relatively direct; CLI and local MCP use API credentials and module-specific billing."
+        "note": "Hosted OAuth is relatively direct; CLI and local MCP use API credentials and module-specific billing.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://github.com/dataforseo/mcp-server-typescript"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -771,7 +863,11 @@
       "object": "Connected data sources, destinations and data operations",
       "setup": {
         "level": "Hard",
-        "note": "Requires an Airbyte account or instance plus configured sources, destinations, credentials and permissions."
+        "note": "Requires an Airbyte account or instance plus configured sources, destinations, credentials and permissions.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.airbyte.com/ai-agents/interfaces/mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -807,7 +903,11 @@
       "object": "Connector metadata, schemas and documentation context",
       "setup": {
         "level": "Moderate",
-        "note": "Requires Fivetran account permissions and a compatible MCP connection."
+        "note": "Requires Fivetran account permissions and a compatible MCP connection.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://fivetran.com/docs/context-layer/agent-context-mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -843,7 +943,11 @@
       "object": "Databases and operator-defined tools",
       "setup": {
         "level": "Hard",
-        "note": "An engineer must deploy the service, connect the database and define permitted queries. Those choices determine what the assistant can read or change."
+        "note": "An engineer must deploy the service, connect the database and define permitted queries. Those choices determine what the assistant can read or change.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://mcp-toolbox.dev/documentation/introduction/"
+        }
       },
       "actions": {
         "read": "Depends",
@@ -878,7 +982,11 @@
       "object": "Warehouse data and operator-approved tools",
       "setup": {
         "level": "Hard",
-        "note": "A data team must configure warehouse access, semantic models and the tools exposed to the assistant."
+        "note": "A data team must configure warehouse access, semantic models and the tools exposed to the assistant.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -914,7 +1022,11 @@
       "object": "Actions in connected applications",
       "setup": {
         "level": "Easy",
-        "note": "Create a scoped MCP server, choose actions and authorise the connected apps."
+        "note": "Create a scoped MCP server, choose actions and authorise the connected apps.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.zapier.com/mcp/home"
+        }
       },
       "actions": {
         "read": "Depends",
@@ -950,7 +1062,11 @@
       "object": "Actions and APIs in connected applications",
       "setup": {
         "level": "Moderate",
-        "note": "Pipedream manages connected-app credentials, but the operator must choose apps, actions and permission boundaries."
+        "note": "Pipedream manages connected-app credentials, but the operator must choose apps, actions and permission boundaries.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://pipedream.com/docs/connect/mcp"
+        }
       },
       "actions": {
         "read": "Depends",
@@ -986,7 +1102,11 @@
       "object": "Enabled workflows and their connected applications",
       "setup": {
         "level": "Moderate",
-        "note": "Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients."
+        "note": "Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1022,7 +1142,11 @@
       "object": "Marketing mix models and budget scenarios",
       "setup": {
         "level": "Specialist",
-        "note": "A modeller must prepare historical data, run the Python model and validate its assumptions before using budget scenarios."
+        "note": "A modeller must prepare historical data, run the Python model and validate its assumptions before using budget scenarios.",
+        "documentation": {
+          "label": "Model documentation",
+          "url": "https://github.com/google/meridian"
+        }
       },
       "actions": {
         "read": "N/A",
@@ -1058,7 +1182,11 @@
       "object": "Marketing mix models and budget allocation scenarios",
       "setup": {
         "level": "Specialist",
-        "note": "A modeller must prepare historical data and configure the R or Python workflow, then validate the results."
+        "note": "A modeller must prepare historical data and configure the R or Python workflow, then validate the results.",
+        "documentation": {
+          "label": "Model documentation",
+          "url": "https://github.com/facebookexperimental/Robyn"
+        }
       },
       "actions": {
         "read": "N/A",
@@ -1093,7 +1221,11 @@
       "object": "Bayesian marketing models",
       "setup": {
         "level": "Specialist",
-        "note": "A modeller needs Python, prepared data and Bayesian modelling expertise to build and validate a useful model."
+        "note": "A modeller needs Python, prepared data and Bayesian modelling expertise to build and validate a useful model.",
+        "documentation": {
+          "label": "Model documentation",
+          "url": "https://github.com/pymc-labs/pymc-marketing"
+        }
       },
       "actions": {
         "read": "N/A",
@@ -1129,7 +1261,11 @@
       "object": "Report suites, components, reports and workspace projects",
       "setup": {
         "level": "Moderate",
-        "note": "Connect the hosted endpoint, authenticate and obtain MCP Access plus the product permissions needed for each action."
+        "note": "Connect the hosted endpoint, authenticate and obtain MCP Access plus the product permissions needed for each action.",
+        "documentation": {
+          "label": "MCP setup guide",
+          "url": "https://developer.adobe.com/analytics-mcp/docs/guides/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1160,7 +1296,11 @@
       "object": "CJA connections, data views, components, reports and projects",
       "setup": {
         "level": "Moderate",
-        "note": "Connect the hosted endpoint and authenticate with CJA entitlements, MCP Access and normal product permissions."
+        "note": "Connect the hosted endpoint and authenticate with CJA entitlements, MCP Access and normal product permissions.",
+        "documentation": {
+          "label": "MCP setup guide",
+          "url": "https://developer.adobe.com/analytics-mcp/docs/guides/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1190,7 +1330,11 @@
       "object": "Events, SQL, insights and dashboards",
       "setup": {
         "level": "Easy",
-        "note": "Run the official wizard, authorise a PostHog project and expose the required tools."
+        "note": "Run the official wizard, authorise a PostHog project and expose the required tools.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://posthog.com/docs/product-analytics/surfaces/mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1221,7 +1365,11 @@
       "object": "Apps, campaign performance, attribution and implementation guidance",
       "setup": {
         "level": "Easy",
-        "note": "Use hosted OAuth in supported clients or an account-level bearer token for automation."
+        "note": "Use hosted OAuth in supported clients or an account-level bearer token for automation.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1251,7 +1399,11 @@
       "object": "Attribution data, apps, events, campaigns and test devices",
       "setup": {
         "level": "Hard",
-        "note": "Choose and authenticate several APIs, obtain feature enablement where required, then build the agent wrapper."
+        "note": "Choose and authenticate several APIs, obtain feature enablement where required, then build the agent wrapper.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://dev.adjust.com/en/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1281,7 +1433,11 @@
       "object": "Sources, destinations, warehouses, tracking plans and events",
       "setup": {
         "level": "Hard",
-        "note": "A developer must connect the workspace API, select permissions and map the events and resources the assistant may change."
+        "note": "A developer must connect the workspace API, select permissions and map the events and resources the assistant may change.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://www.twilio.com/docs/segment/api/public-api"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1311,7 +1467,11 @@
       "object": "Published creative workflows, images, videos and batch jobs",
       "setup": {
         "level": "Moderate",
-        "note": "Requires enterprise entitlement, an MCP client and organisation workflows or templates that the server can discover and run."
+        "note": "Requires enterprise entitlement, an MCP client and organisation workflows or templates that the server can discover and run.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1341,7 +1501,11 @@
       "object": "Image, video, audio, tasks and workflows",
       "setup": {
         "level": "Moderate",
-        "note": "Use the official local MCP repository or hosted developer route, then configure billing and authentication."
+        "note": "Use the official local MCP repository or hosted developer route, then configure billing and authentication.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.dev.runwayml.com/guides/mcp/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1372,7 +1536,11 @@
       "object": "Keywords, domains, backlinks, competitors and content gaps",
       "setup": {
         "level": "Easy",
-        "note": "Connect the hosted endpoint and authenticate an eligible Ahrefs account."
+        "note": "Connect the hosted endpoint and authenticate an eligible Ahrefs account.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1403,7 +1571,11 @@
       "object": "SEO, traffic, market, paid-search, shopping and project reports",
       "setup": {
         "level": "Easy",
-        "note": "Connect the hosted OAuth endpoint with an eligible subscription and enough API units."
+        "note": "Connect the hosted OAuth endpoint with an eligible subscription and enough API units.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1434,7 +1606,11 @@
       "object": "Web, app, search, audience, PPC and retail intelligence",
       "setup": {
         "level": "Easy",
-        "note": "Connect the hosted endpoint and authenticate an API-inclusive subscription."
+        "note": "Connect the hosted endpoint and authenticate an API-inclusive subscription.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1465,7 +1641,11 @@
       "object": "Sources, destinations, transformations and event streams",
       "setup": {
         "level": "Easy",
-        "note": "Connect the hosted endpoint and complete OAuth with an authorised RudderStack account."
+        "note": "Connect the hosted endpoint and complete OAuth with an authorised RudderStack account.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://mcp.rudderstack.com/docs"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1495,7 +1675,11 @@
       "object": "SQL, Genie, Vector Search and workspace resources",
       "setup": {
         "level": "Specialist",
-        "note": "A data team must configure the workspace, governed datasets and tool permissions before an assistant has useful data to work with."
+        "note": "A data team must configure the workspace, governed datasets and tool permissions before an assistant has useful data to work with.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/managed-mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1525,7 +1709,11 @@
       "object": "dbt projects, semantic metrics, lineage, health, SQL and CLI jobs",
       "setup": {
         "level": "Specialist",
-        "note": "An analytics engineer must connect a dbt project and its credentials, then enable the appropriate build, test and metadata tools."
+        "note": "An analytics engineer must connect a dbt project and its credentials, then enable the appropriate build, test and metadata tools.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.getdbt.com/docs/dbt-ai/setup-local-mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1556,7 +1744,11 @@
       "object": "Scenarios, connections, webhooks, data stores, teams and organisations",
       "setup": {
         "level": "Easy",
-        "note": "Connect the universal OAuth endpoint, select an organisation and grant the minimum required scopes."
+        "note": "Connect the universal OAuth endpoint, select an organisation and grant the minimum required scopes.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developers.make.com/mcp-server/connect-using-oauth"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -1586,7 +1778,11 @@
       "object": "API collections, recipes, recipe functions and skills",
       "setup": {
         "level": "Hard",
-        "note": "An enterprise administrator configures the MCP endpoint, identity, exposed tools and audit policy."
+        "note": "An enterprise administrator configures the MCP endpoint, identity, exposed tools and audit policy.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.workato.com/mcp"
+        }
       },
       "actions": {
         "read": "Depends",
@@ -1616,7 +1812,11 @@
       "object": "Agents, sessions, integrations, MCP servers, skills and artifacts",
       "setup": {
         "level": "Easy",
-        "note": "Create an account, connect built-in services or public remote MCP endpoints and use the visual builder or CLI."
+        "note": "Create an account, connect built-in services or public remote MCP endpoints and use the visual builder or CLI.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://docs.gumloop.com/nodes/mcp/custom_mcp_servers"
+        }
       },
       "actions": {
         "read": "Depends",

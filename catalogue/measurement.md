@@ -30,7 +30,7 @@ The Tag Manager API can manage accounts, containers, workspaces, tags and trigge
 
 - **Route:** Official API.
 - **Scope:** Accounts, containers, workspaces, tags, triggers and versions.
-- **Setup:** Hard. A developer must build the API connection and configure account authentication. Container permissions must allow the intended edits or publication.
+- **Setup:** Hard. A developer must build the API connection and configure account authentication. Container permissions must allow the intended edits or publication. [API documentation](https://developers.google.com/tag-platform/tag-manager/api/v2).
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
 - **Capabilities:** Inspect **Yes** · Configure **Yes** · Validate **Partial** · Deploy **Yes** · Monitor **Partial**
 - **Coverage:** Most steps. Most configuration objects are available through the API, including version and publish workflows.
@@ -81,7 +81,7 @@ AppsFlyer beta MCP brings campaign performance, attribution trends and implement
 
 - **Route:** Official beta MCP.
 - **Scope:** Apps, campaign performance, attribution and implementation guidance.
-- **Setup:** Easy. Use hosted OAuth in supported clients or an account-level bearer token for automation.
+- **Setup:** Easy. Use hosted OAuth in supported clients or an account-level bearer token for automation. [Connection documentation](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP).
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
 - **Capabilities:** Inspect **Yes** · Configure **No** · Validate **Partial** · Deploy **No** · Monitor **Yes**
 - **Coverage:** Some steps. Useful performance monitoring and implementation diagnosis, without a dependable write route for correcting configuration.
@@ -132,7 +132,7 @@ Segment collects and routes first-party events, while its Public API manages sou
 
 - **Route:** Public API and collection SDKs.
 - **Scope:** Sources, destinations, warehouses, tracking plans and events.
-- **Setup:** Hard. A developer must connect the workspace API, select permissions and map the events and resources the assistant may change.
+- **Setup:** Hard. A developer must connect the workspace API, select permissions and map the events and resources the assistant may change. [API documentation](https://www.twilio.com/docs/segment/api/public-api).
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
 - **Capabilities:** Inspect **Yes** · Configure **Yes** · Validate **Partial** · Deploy **Yes** · Monitor **Partial**
 - **Coverage:** Most steps. The Public API can manage core workspace resources, but event design and quality validation still require specialist work.
@@ -183,7 +183,7 @@ Adjust exposes mature SDKs and several focused APIs for reporting, app configura
 
 - **Route:** Official APIs and SDKs.
 - **Scope:** Attribution data, apps, events, campaigns and test devices.
-- **Setup:** Hard. Choose and authenticate several APIs, obtain feature enablement where required, then build the agent wrapper.
+- **Setup:** Hard. Choose and authenticate several APIs, obtain feature enablement where required, then build the agent wrapper. [API documentation](https://dev.adjust.com/en/).
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
 - **Capabilities:** Inspect **Yes** · Configure **Partial** · Validate **Partial** · Deploy **Partial** · Monitor **Yes**
 - **Coverage:** Some steps. Broad developer capability exists, but it is fragmented and not presented as a ready AI route.

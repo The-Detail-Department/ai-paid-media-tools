@@ -41,7 +41,7 @@ A vendor-hosted MCP for campaign management, reporting, audiences and creative o
 
 - **Route:** Official remote MCP.
 - **Scope:** Campaigns, ad groups, ads, audiences, creative and reporting.
-- **Setup:** Easy. Connect the hosted service and approve account access. Check which advertising tools your account receives.
+- **Setup:** Easy. Connect the hosted service and approve account access. Check which advertising tools your account receives. [Connection documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
 - **Coverage:** Most steps. Around 400 tools cover creation, targeting, bidding, reporting and creative operations. Some manual and account workflows remain outside the route.
@@ -92,7 +92,7 @@ An official MCP layer over Amazon Ads API functionality, including multi-step to
 
 - **Route:** Official remote MCP, open beta.
 - **Scope:** Campaigns, accounts, reports, billing and selected multi-step workflows.
-- **Setup:** Hard. An eligible Amazon Ads partner needs active API credentials. A hosted connector does not remove that access requirement.
+- **Setup:** Hard. An eligible Amazon Ads partner needs active API credentials. A hosted connector does not remove that access requirement. [Beta access information](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Yes**
 - **Coverage:** Most steps. Includes individual API capabilities plus tools for account creation, reports, campaign launch and locale expansion.
@@ -143,7 +143,7 @@ The Campaign Manager 360 API supports large-scale trafficking, creative, convers
 
 - **Route:** Official API.
 - **Scope:** Campaigns, placements, ads, creatives, conversions and reports.
-- **Setup:** Hard. A developer must configure Google Cloud and account authentication. The CM360 account and user profile need API permission.
+- **Setup:** Hard. A developer must configure Google Cloud and account authentication. The CM360 account and user profile need API permission. [API setup guide](https://developers.google.com/doubleclick-advertisers/getting_started).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
 - **Coverage:** Most steps. Strong trafficking and measurement coverage, but no official agent interface packages the resource model for daily use.
@@ -194,7 +194,7 @@ The Trade Desk's Open Agentic Kit provides MCP-based access to Ask Koa for platf
 
 - **Route:** Official OAK MCP, private beta.
 - **Scope:** Campaign planning, activation, optimisation and reporting.
-- **Setup:** Hard. Available only to selected partners through an account representative, with account-managed credentials.
+- **Setup:** Hard. Available only to selected partners through an account representative, with account-managed credentials. [Beta access information](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
 - **Coverage:** Most steps. Published scope spans data and actions, but exact tool coverage is not public and access is private beta.
@@ -245,7 +245,7 @@ X Ads has an official hosted MCP for campaign creation and updates, targeting, a
 
 - **Route:** Official hosted Ads MCP.
 - **Scope:** Advertiser resources, campaigns and reporting.
-- **Setup:** Hard. A developer must register an X app, enable Ads access and configure account authentication with the required permissions.
+- **Setup:** Hard. A developer must register an X app, enable Ads access and configure account authentication with the required permissions. [Connection documentation](https://docs.x.com/x-ads-api/mcp).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
 - **Coverage:** Most steps. Read accounts and results, create and update campaigns and line items, manage targeting and supported creative and audience objects.
@@ -296,7 +296,7 @@ Apple's Platform API lets advertisers and agencies manage campaigns, ad groups a
 
 - **Route:** Official Platform API.
 - **Scope:** Campaigns, ad groups, keywords and reports.
-- **Setup:** Hard. A developer must configure API credentials, an eligible account role and the integration used by the assistant.
+- **Setup:** Hard. A developer must configure API credentials, an eligible account role and the integration used by the assistant. [API documentation](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
 - **Coverage:** Some steps. Core campaign operations are covered, but no official MCP, agent plugin or daily CLI was verified.
@@ -347,7 +347,7 @@ Google's DV360 API can manage advertisers, campaigns, insertion orders, line ite
 
 - **Route:** Official API.
 - **Scope:** Advertisers, campaigns, insertion orders, line items, targeting and creatives.
-- **Setup:** Hard. A developer must configure Google Cloud, account authentication and a custom connection. The user also needs DV360 account permissions.
+- **Setup:** Hard. A developer must configure Google Cloud, account authentication and a custom connection. The user also needs DV360 account permissions. [API documentation](https://developers.google.com/display-video/api).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
 - **Coverage:** Some steps. Broad trafficking coverage, but performance reporting is separate and some YouTube and Partners writes are unsupported.
@@ -398,7 +398,7 @@ Queries account structure and performance through Google Ads Query Language. The
 
 - **Route:** Official MCP.
 - **Scope:** Campaign and performance data.
-- **Setup:** Hard. A developer must obtain Ads API access, configure a Google Cloud project and set up account authentication before the assistant can query it.
+- **Setup:** Hard. A developer must obtain Ads API access, configure a Google Cloud project and set up account authentication before the assistant can query it. [Connection documentation](https://github.com/googleads/google-ads-mcp).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
 - **Coverage:** Assist only. Account discovery, metadata and GAQL queries. Campaign building and optimisation still happen elsewhere.
@@ -449,7 +449,7 @@ Meta's hosted Ads AI Connector brings campaign data and actions into compatible 
 
 - **Route:** Official remote MCP, open beta.
 - **Scope:** Campaigns, ad sets, ads and insights.
-- **Setup:** Easy. Add the hosted connector and sign in. The tools offered can differ by account during the rollout.
+- **Setup:** Easy. Add the hosted connector and sign in. The tools offered can differ by account during the rollout. [Connector information](https://www.facebook.com/business/news/meta-ads-ai-connectors).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Partial** · Modify **No** · Delete **No**
 - **Coverage:** Some steps. Creation and analysis are present, but the current beta does not provide dependable general modification of existing campaign objects.
@@ -500,7 +500,7 @@ Microsoft's governed MCP provides campaign structure, performance queries and au
 
 - **Route:** Official managed MCP.
 - **Scope:** Accounts, campaigns, ad groups, ads, keywords and performance.
-- **Setup:** Easy. Connect a supported assistant and sign in with access to the advertising account.
+- **Setup:** Easy. Connect a supported assistant and sign in with access to the advertising account. [Connection documentation](https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
 - **Coverage:** Assist only. Current launch documentation covers exploration, performance queries and audits, not mutation.
@@ -551,7 +551,7 @@ The Search Ads 360 Reporting API provides high-volume, query-based reporting ove
 
 - **Route:** Official Reporting API.
 - **Scope:** Campaign, ad, keyword and performance data.
-- **Setup:** Hard. A developer must configure account authentication and build the reporting connection for the authorised SA360 accounts.
+- **Setup:** Hard. A developer must configure account authentication and build the reporting connection for the authorised SA360 accounts. [API documentation](https://developers.google.com/search-ads/reporting).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
 - **Coverage:** Assist only. High-volume reporting only. Offline conversion upload is a separate surface and ordinary campaign writes are absent.
@@ -602,7 +602,7 @@ Pinterest's Ads API supports programmatic campaign and reporting workflows. No v
 
 - **Route:** Official Ads API.
 - **Scope:** Campaigns, ad groups, ads, audiences and reporting.
-- **Setup:** Hard. A developer must create an app, authorise the ad accounts and build an integration around the API.
+- **Setup:** Hard. A developer must create an app, authorise the ad accounts and build an integration around the API. [API documentation](https://dev.pinterest.com/docs/work-with-ads/ads-overview/).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
 - **Coverage:** Some steps. Useful campaign and reporting coverage through the API, without a vendor-backed MCP, plugin or CLI.
@@ -653,7 +653,7 @@ LinkedIn's Marketing APIs cover campaign management and reporting. We found comm
 
 - **Route:** Official Marketing API.
 - **Scope:** Campaigns, reporting, audiences, leads and conversions.
-- **Setup:** Hard. A developer must register an app, obtain approval for the advertising use case and build the connection to the assistant.
+- **Setup:** Hard. A developer must register an app, obtain approval for the advertising use case and build the connection to the assistant. [API documentation](https://learn.microsoft.com/en-us/linkedin/marketing/).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Partial** · Modify **Partial** · Delete **Partial**
 - **Coverage:** Some steps. The API covers important campaign-management jobs, but access is approved by product and use case and there is no official agent interface.
@@ -704,7 +704,7 @@ Reddit's Ads API v3 exposes campaign and account operations. No vendor-backed MC
 
 - **Route:** Official Ads API.
 - **Scope:** Accounts, campaigns, ad groups, ads and reporting.
-- **Setup:** Hard. A developer must register an app, obtain advertising access and connect the API to the assistant.
+- **Setup:** Hard. A developer must register an app, obtain advertising access and connect the API to the assistant. [API documentation](https://ads-api.reddit.com/docs/).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **Partial** · Modify **Partial** · Delete **Partial**
 - **Coverage:** Some steps. Core campaign operations exist in the API, but no official agent interface was verified.
@@ -755,7 +755,7 @@ A hosted Ads MCP for retrieving Snapchat campaign data and insights from support
 
 - **Route:** Official remote MCP, allowlist.
 - **Scope:** Campaign data and performance.
-- **Setup:** Hard. The account must be admitted to the MCP allowlist before you can connect and sign in.
+- **Setup:** Hard. The account must be admitted to the MCP allowlist before you can connect and sign in. [Connection documentation](https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
 - **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
 - **Coverage:** Assist only. Retrieval and analysis only. The broader Marketing API is a separate engineering route.

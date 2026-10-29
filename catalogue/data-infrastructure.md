@@ -34,7 +34,7 @@ A marketing-data MCP that queries Supermetrics sources through one connection, a
 
 - **Route:** Official remote MCP.
 - **Scope:** Marketing-source metadata and query results.
-- **Setup:** Moderate. Requires a subscription with API access plus authentication for every source queried.
+- **Setup:** Moderate. Requires a subscription with API access plus authentication for every source queried. [Connection documentation](https://docs.supermetrics.com/docs/supermetrics-mcp-server).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **Partial** · Inspect **Yes** · Query **Yes** · Transform **Partial** · Operate **Partial**
 - **Coverage:** Most steps. Broad source coverage for retrieval and reporting, but it does not change media-platform objects.
@@ -85,7 +85,7 @@ Databricks managed MCP servers expose governed SQL, Genie, Vector Search and oth
 
 - **Route:** Managed MCP servers, public preview.
 - **Scope:** SQL, Genie, Vector Search and workspace resources.
-- **Setup:** Specialist. A data team must configure the workspace, governed datasets and tool permissions before an assistant has useful data to work with.
+- **Setup:** Specialist. A data team must configure the workspace, governed datasets and tool permissions before an assistant has useful data to work with. [Connection documentation](https://docs.databricks.com/aws/en/agents/mcp-tools/managed-mcp).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **Depends** · Inspect **Yes** · Query **Yes** · Transform **Depends** · Operate **Depends**
 - **Coverage:** Depends. Potentially broad, but every useful marketing workflow depends on the data products and tools an enterprise exposes.
@@ -136,7 +136,7 @@ Snowflake's managed MCP lets agents reach governed Snowflake capabilities withou
 
 - **Route:** Official managed MCP.
 - **Scope:** Warehouse data and operator-approved tools.
-- **Setup:** Hard. A data team must configure warehouse access, semantic models and the tools exposed to the assistant.
+- **Setup:** Hard. A data team must configure warehouse access, semantic models and the tools exposed to the assistant. [Connection documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **Depends** · Inspect **Yes** · Query **Yes** · Transform **Depends** · Operate **Depends**
 - **Coverage:** Depends. Coverage can be broad, but it depends entirely on schemas, tools, semantic models and role permissions configured by the team.
@@ -187,7 +187,7 @@ Airbyte exposes an agent MCP for working with connected data and a separate know
 
 - **Route:** Official agent MCP.
 - **Scope:** Connected data sources, destinations and data operations.
-- **Setup:** Hard. Requires an Airbyte account or instance plus configured sources, destinations, credentials and permissions.
+- **Setup:** Hard. Requires an Airbyte account or instance plus configured sources, destinations, credentials and permissions. [Connection documentation](https://docs.airbyte.com/ai-agents/interfaces/mcp).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **Partial** · Inspect **Yes** · Query **Partial** · Transform **Partial** · Operate **Partial**
 - **Coverage:** Depends. Coverage depends on the connected sources and destinations. Documentation search and action-capable MCP surfaces are distinct.
@@ -238,7 +238,7 @@ Fivetran's Agent Context MCP exposes governed data context; its Connector SDK ad
 
 - **Route:** Official MCP context layer, public preview.
 - **Scope:** Connector metadata, schemas and documentation context.
-- **Setup:** Moderate. Requires Fivetran account permissions and a compatible MCP connection.
+- **Setup:** Moderate. Requires Fivetran account permissions and a compatible MCP connection. [Connection documentation](https://fivetran.com/docs/context-layer/agent-context-mcp).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **No** · Inspect **Yes** · Query **No** · Transform **No** · Operate **No**
 - **Coverage:** Assist only. The MCP supplies context and retrieval. Connector operations remain in the REST API, SDK or product.
@@ -289,7 +289,7 @@ RudderStack hosts an OAuth MCP for sources, destinations, transformations, event
 
 - **Route:** Official hosted MCP.
 - **Scope:** Sources, destinations, transformations and event streams.
-- **Setup:** Easy. Connect the hosted endpoint and complete OAuth with an authorised RudderStack account.
+- **Setup:** Easy. Connect the hosted endpoint and complete OAuth with an authorised RudderStack account. [Connection documentation](https://mcp.rudderstack.com/docs).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **Partial** · Inspect **Yes** · Query **Partial** · Transform **Yes** · Operate **Partial**
 - **Coverage:** Most steps. Useful management coverage for customer-data pipelines, with gaps and stability caveats while the server evolves.
@@ -340,7 +340,7 @@ dbt MCP gives agents governed project context, semantic queries, lineage, model 
 
 - **Route:** Official self-hosted MCP.
 - **Scope:** dbt projects, semantic metrics, lineage, health, SQL and CLI jobs.
-- **Setup:** Specialist. An analytics engineer must connect a dbt project and its credentials, then enable the appropriate build, test and metadata tools.
+- **Setup:** Specialist. An analytics engineer must connect a dbt project and its credentials, then enable the appropriate build, test and metadata tools. [Connection documentation](https://docs.getdbt.com/docs/dbt-ai/setup-local-mcp).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **Partial** · Inspect **Yes** · Query **Yes** · Transform **Yes** · Operate **Yes**
 - **Coverage:** Specialist. Strong analytics-engineering coverage, including build and test, but not a marketer-facing turn-key workflow.
@@ -391,7 +391,7 @@ Google's open-source MCP toolbox connects agents to BigQuery and other databases
 
 - **Route:** Official self-hosted MCP framework.
 - **Scope:** Databases and operator-defined tools.
-- **Setup:** Hard. An engineer must deploy the service, connect the database and define permitted queries. Those choices determine what the assistant can read or change.
+- **Setup:** Hard. An engineer must deploy the service, connect the database and define permitted queries. Those choices determine what the assistant can read or change. [Connection documentation](https://mcp-toolbox.dev/documentation/introduction/).
 - **Human job:** Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.
 - **Capabilities:** Connect **Depends** · Inspect **Depends** · Query **Depends** · Transform **Depends** · Operate **Depends**
 - **Coverage:** Depends. Prebuilt database tools and custom YAML definitions can expose broad operations, bounded by the configured role and queries.

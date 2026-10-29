@@ -48,7 +48,11 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Easy",
-        "note": "Enable account MCP, connect with OAuth and select tool access; availability varies by plan, host and user permissions."
+        "note": "Enable account MCP, connect with OAuth and select tool access; availability varies by plan, host and user permissions.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developer.wordpress.com/docs/mcp/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -79,7 +83,11 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Hard",
-        "note": "A developer must install the adapter and supply the WordPress Abilities you need. Each Ability needs code, an input definition and a permission check."
+        "note": "A developer must install the adapter and supply the WordPress Abilities you need. Each Ability needs code, an input definition and a permission check.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/"
+        }
       },
       "actions": {
         "read": "Depends",
@@ -110,7 +118,11 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Moderate",
-        "note": "Authorise the right workspace and site role. Some design operations also need the Designer and its bridge app open."
+        "note": "Authorise the right workspace and site role. Some design operations also need the Designer and its bridge app open.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developers.webflow.com/mcp/reference/overview"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -141,7 +153,11 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Moderate",
-        "note": "An administrator enables the required tools for each space and environment. You then connect the assistant with your own Contentful account."
+        "note": "An administrator enables the required tools for each space and environment. You then connect the assistant with your own Contentful account.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -172,7 +188,11 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Moderate",
-        "note": "Connect with your Sanity account or a scoped API token. Select the correct project and dataset, and check the role’s write permissions."
+        "note": "Connect with your Sanity account or a scoped API token. Select the correct project and dataset, and check the role’s write permissions.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://www.sanity.io/docs/ai/mcp-server"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -203,7 +223,11 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Moderate",
-        "note": "Use Directus 11.12 or later, enable MCP and create a dedicated user with suitable permissions and an access token."
+        "note": "Use Directus 11.12 or later, enable MCP and create a dedicated user with suitable permissions and an access token.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://directus.com/docs/guides/ai/mcp"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -234,7 +258,11 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Hard",
-        "note": "A developer must create an authenticated app, grant content permissions and build the assistant’s API connection."
+        "note": "A developer must create an authenticated app, grant content permissions and build the assistant’s API connection.",
+        "documentation": {
+          "label": "Admin API setup guide",
+          "url": "https://shopify.dev/docs/api/admin-graphql/latest#authentication"
+        }
       },
       "actions": {
         "read": "Unverified",
@@ -265,7 +293,11 @@
       "object": "Product content",
       "setup": {
         "level": "Moderate",
-        "note": "A site administrator installs the MCP Adapter and creates a limited WordPress application password. Check the installed WooCommerce version and its Abilities before connecting."
+        "note": "A site administrator installs the MCP Adapter and creates a limited WordPress application password. Check the installed WooCommerce version and its Abilities before connecting.",
+        "documentation": {
+          "label": "Connection documentation",
+          "url": "https://developer.woocommerce.com/docs/features/mcp/"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -296,7 +328,11 @@
       "object": "Pages and supported store content",
       "setup": {
         "level": "Hard",
-        "note": "A developer must create a store API account, grant content permissions and build the connection to the assistant."
+        "note": "A developer must create a store API account, grant content permissions and build the connection to the assistant.",
+        "documentation": {
+          "label": "API account setup",
+          "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts"
+        }
       },
       "actions": {
         "read": "Yes",
@@ -327,7 +363,11 @@
       "object": "Pages and supported store content",
       "setup": {
         "level": "Hard",
-        "note": "A developer must configure an integration with CMS permissions and connect it to the assistant. The team must confirm the store’s version, deployment type and content conventions."
+        "note": "A developer must configure an integration with CMS permissions and connect it to the assistant. The team must confirm the store’s version, deployment type and content conventions.",
+        "documentation": {
+          "label": "API documentation",
+          "url": "https://developer.adobe.com/commerce/webapi/rest/"
+        }
       },
       "actions": {
         "read": "Yes",
