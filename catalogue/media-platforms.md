@@ -14,11 +14,11 @@ Advertising platforms and buying systems, judged on the most direct official rou
 | [Amazon Ads](#amazon-ads) | **B+** | Reference | Test | Hard | Yes | Yes | Yes | Yes | Most steps |
 | [Campaign Manager 360](#campaign-manager-360) | **B** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Most steps |
 | [The Trade Desk](#the-trade-desk) | **B** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Most steps |
+| [X Ads](#x-ads) | **B** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Most steps |
 | [Apple Ads](#apple-ads) | **B-** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Some steps |
 | [Display & Video 360](#display--video-360) | **B-** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Some steps |
 | [Google Ads](#google-ads) | **B-** | Reference | Production | Hard | Yes | No | No | No | Assist only |
 | [Meta Ads](#meta-ads) | **B-** | Reference | Test | Easy | Yes | Partial | No | No | Some steps |
-| [X Ads](#x-ads) | **B-** | Reference | Test | Hard | Yes | Partial | Partial | Partial | Some steps |
 | [Microsoft Advertising](#microsoft-advertising) | **C+** | Reference | Production | Easy | Yes | No | No | No | Assist only |
 | [Search Ads 360](#search-ads-360) | **C+** | Reference | Production | Hard | Yes | No | No | No | Assist only |
 | [Pinterest Ads](#pinterest-ads) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Some steps |
@@ -210,6 +210,52 @@ The Trade Desk's Open Agentic Kit provides MCP-based access to Ask Koa for platf
 
 [Back to comparison](#media-platforms)
 
+## X Ads
+
+**B · Test · Reference**
+
+X Ads has an official hosted MCP for campaign creation and updates, targeting, audiences, creative assets and reporting.
+
+> **Blocker:** Requires an X developer app, Ads access and OAuth scopes. Activation can start spend; the documented MCP does not cover every Ads API operation.
+
+- **Route:** Official hosted Ads MCP.
+- **Scope:** Advertiser resources, campaigns and reporting.
+- **Setup:** Hard. Register an X developer app, enable Ads access, configure OAuth and grant the required Ads scopes.
+- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
+- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
+- **Coverage:** Most steps. Read accounts and results, create and update campaigns and line items, manage targeting and supported creative and audience objects.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Official Ads-specific MCP documents campaign and line-item writes.
+- New campaigns and line items start paused, with separate activation tools.
+- Includes targeting, creative, audience and conversion-tracking tools.
+
+**Limits**
+
+- Developer-app and Ads access remain prerequisites.
+- Campaign deletion is not in the documented MCP tool list.
+- Activation and budget changes require explicit operating controls.
+
+**Official links**
+
+- **Product / official page:** [X Ads MCP tools and authentication](https://docs.x.com/x-ads-api/mcp)
+- **AI interface / endpoint:** [https://ads-api.x.com/mcp](https://ads-api.x.com/mcp)
+- **MCP:** [Official X Ads MCP](https://docs.x.com/x-ads-api/mcp)
+- **Plugin:** [xurl agent skill](https://github.com/xdevplatform/xurl/blob/main/SKILL.md)
+- **CLI:** [xurl CLI](https://github.com/xdevplatform/xurl)
+- **API / SDK:** [X Ads API](https://docs.x.com/x-ads-api/introduction)
+- **Documentation:** [X Ads MCP tools and authentication](https://docs.x.com/x-ads-api/mcp)
+- **GitHub:** [Official xurl repository](https://github.com/xdevplatform/xurl)
+
+- **Access:** Developer account and Ads API access; some endpoints require allowlisting.
+- **Watch:** Campaigns and line items are created paused. Activation is a separate action; some object deletion is documented, but campaign deletion is not.
+- **Sources:** [X Ads MCP tools and authentication](https://docs.x.com/x-ads-api/mcp) · [X Ads API documentation](https://docs.x.com/x-ads-api/introduction) · [Official xurl repository](https://github.com/xdevplatform/xurl) · [General X API MCP documentation](https://github.com/xdevplatform/docs/blob/main/tools/mcp.mdx)
+- **Last checked:** 29 Oct 2026
+
+[Back to comparison](#media-platforms)
+
 ## Apple Ads
 
 **B- · Production · Reference**
@@ -390,52 +436,6 @@ Meta's hosted Ads AI Connector brings campaign data and actions into compatible 
 - **Access:** Open beta; account and regional availability may vary.
 - **Watch:** Inspect the authenticated tool list and permissions before allowing campaign changes.
 - **Sources:** [Meta Ads AI Connectors announcement](https://www.facebook.com/business/news/meta-ads-ai-connectors) · [Marketing APIs](https://developers.facebook.com/docs/marketing-apis/)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#media-platforms)
-
-## X Ads
-
-**B- · Test · Reference**
-
-The X Ads API exposes advertiser resources and reporting, while X's xurl CLI can make authenticated requests and ships with an official agent skill.
-
-> **Blocker:** A useful official CLI exists, but there is no supported Ads-specific MCP or turn-key campaign workflow.
-
-- **Route:** Official xurl CLI and Ads API.
-- **Scope:** Advertiser resources, campaigns and reporting.
-- **Setup:** Hard. Requires developer and Ads API access, CLI authentication and endpoint-level implementation.
-- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Partial** · Modify **Partial** · Delete **Partial**
-- **Coverage:** Some steps. The CLI is agent-friendly, but the general X MCP does not establish Ads coverage and some Ads endpoints are allowlisted.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Official xurl CLI gives agents and operators a practical API route.
-- xurl ships with an official agent skill.
-- The Ads API supports advertiser resources and reporting.
-
-**Limits**
-
-- No official Ads-specific MCP was verified.
-- The general X MCP should not be assumed to cover advertising endpoints.
-- Ads API access and endpoint availability can be gated.
-
-**Official links**
-
-- **Product / official page:** [X Ads API documentation](https://docs.x.com/x-ads-api/introduction)
-- **AI interface / endpoint:** [xurl agent skill](https://github.com/xdevplatform/xurl/blob/main/SKILL.md)
-- **MCP:** No official Ads MCP verified
-- **Plugin:** [xurl agent skill](https://github.com/xdevplatform/xurl/blob/main/SKILL.md)
-- **CLI:** [xurl CLI](https://github.com/xdevplatform/xurl)
-- **API / SDK:** [X Ads API](https://docs.x.com/x-ads-api/introduction)
-- **Documentation:** [X Ads API documentation](https://docs.x.com/x-ads-api/introduction)
-- **GitHub:** [Official xurl repository](https://github.com/xdevplatform/xurl)
-
-- **Access:** Developer account and Ads API access; some endpoints require allowlisting.
-- **Watch:** X also operates a general X API MCP, but its published tool list does not establish Ads API coverage. Do not label it an Ads MCP without endpoint-level proof.
-- **Sources:** [X Ads API documentation](https://docs.x.com/x-ads-api/introduction) · [Official xurl repository](https://github.com/xdevplatform/xurl) · [General X API MCP documentation](https://github.com/xdevplatform/docs/blob/main/tools/mcp.mdx)
 - **Last checked:** 5 Sept 2026
 
 [Back to comparison](#media-platforms)

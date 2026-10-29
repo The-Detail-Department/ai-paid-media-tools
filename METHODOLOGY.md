@@ -128,3 +128,21 @@ Market role is editorial context, not a quality score. An Emerging product can e
 7. Link the official product, exact AI route or endpoint, documentation, official GitHub repository and API or SDK. State clearly when one is not publicly documented.
 
 The index is intentionally conservative. A missing capability is better than an unsupported claim.
+
+## CMS companion
+
+The AI CMS Index uses `data/cms-tools.json`, `data/cms-workflows.json` and
+`data/cms-ratings.json`. It assesses the named AI-compatible route against reading,
+drafting, editing, publishing and localisation. It does not rank LLM providers
+or the general quality of a CMS. The same evidence labels and grade ceilings apply.
+
+Publication means changing content visibility in the CMS. It does not prove that
+a separate frontend has deployed, caches have cleared or the live page is correct.
+A developer documentation assistant is not evidence of authenticated content writes.
+A platform's manual interface and API do not establish capability in its MCP.
+
+A catalogue update is not a blanket re-verification: each entry carries its own
+`verifiedOn` date. The October maintenance pass rechecked four media routes and
+checked existing source links; other media records retain their September dates.
+All initial CMS records are documentation reviews, with no connected-account or
+execution claim. Unverified cells identify the limits of this review.

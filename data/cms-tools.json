@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "title": "AI paid media tools",
+    "description": "An evidence-backed comparison of MCP servers, advertising APIs, plugins and command-line tools for paid-media operations, analytics and measurement.",
+    "updatedOn": "2026-10-29",
+    "maintainer": "The Detail Department",
+    "scope": "Tools that can materially support planning, buying, measuring, modelling, moving data, automating work or producing paid-media creative.",
+    "version": "0.1"
+  },
+  "tools": [
+    {
+      "id": "wordpress-com",
+      "name": "WordPress.com",
+      "category": "WordPress",
+      "channels": [
+        "Web",
+        "Content"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Hosted MCP for posts, pages and supported site operations, including Jetpack-connected sites.",
+      "mcp": {
+        "provenance": "official",
+        "maturity": "available",
+        "mode": "remote",
+        "control": "read-write",
+        "label": "Official hosted MCP",
+        "url": "https://developer.wordpress.com/docs/mcp/"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Evaluated route documentation",
+        "url": "https://developer.wordpress.com/docs/mcp/"
+      },
+      "access": "Enable account MCP, connect with OAuth and select tool access; availability varies by plan, host and user permissions.",
+      "caution": "Account-level tool settings are shared by connected clients. Choosing an OAuth access level can change those settings; updating a published post can go live immediately.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Official route documentation",
+          "url": "https://developer.wordpress.com/docs/mcp/",
+          "kind": "official"
+        },
+        {
+          "label": "WordPress.com tool reference",
+          "url": "https://developer.wordpress.com/docs/mcp/tools-reference/",
+          "kind": "official"
+        }
+      ]
+    },
+    {
+      "id": "wordpress-adapter",
+      "name": "WordPress MCP Adapter",
+      "category": "WordPress",
+      "channels": [
+        "Web",
+        "Content"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Official adapter exposes registered WordPress Abilities to an MCP client; capabilities depend on the site implementation.",
+      "mcp": {
+        "provenance": "official",
+        "maturity": "available",
+        "mode": "both",
+        "control": "mixed",
+        "label": "Official adapter and registered Abilities",
+        "url": "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Evaluated route documentation",
+        "url": "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/"
+      },
+      "access": "Install and configure the adapter, register or supply Abilities, and implement permission callbacks.",
+      "caution": "Review each exposed Ability and its permission callback. Installing an adapter alone does not establish draft, publish or translation support.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Official route documentation",
+          "url": "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/",
+          "kind": "official"
+        }
+      ]
+    },
+    {
+      "id": "webflow",
+      "name": "Webflow",
+      "category": "Hosted site builder",
+      "channels": [
+        "Web",
+        "Content"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Official MCP manages CMS content alongside design, assets and supported site operations.",
+      "mcp": {
+        "provenance": "official",
+        "maturity": "available",
+        "mode": "remote",
+        "control": "read-write",
+        "label": "Official Webflow MCP",
+        "url": "https://developers.webflow.com/mcp/reference/overview"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Evaluated route documentation",
+        "url": "https://developers.webflow.com/mcp/reference/overview"
+      },
+      "access": "Authorise a workspace and use the appropriate site role; some operations require a connected Designer session.",
+      "caution": "The documented localisation route can update existing secondary-locale CMS items but cannot create new ones. Permissions and Designer mode constrain some tools.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Official route documentation",
+          "url": "https://developers.webflow.com/mcp/reference/overview",
+          "kind": "official"
+        },
+        {
+          "label": "Webflow MCP limitations and localisation",
+          "url": "https://developers.webflow.com/mcp/faqs",
+          "kind": "official"
+        }
+      ]
+    },
+    {
+      "id": "contentful",
+      "name": "Contentful",
+      "category": "Headless CMS",
+      "channels": [
+        "Web",
+        "Content"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Hosted MCP supports content entries, assets, content models, locales and releases.",
+      "mcp": {
+        "provenance": "official",
+        "maturity": "available",
+        "mode": "remote",
+        "control": "read-write",
+        "label": "Official hosted MCP",
+        "url": "https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Evaluated route documentation",
+        "url": "https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/"
+      },
+      "access": "Connect with OAuth and configure the MCP app allowlist in each required space and environment.",
+      "caution": "The hosted route combines user permissions with environment tool allowlists. Local PAT-based MCP has different, broader access boundaries. Frontend deployment is separate.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Official route documentation",
+          "url": "https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/",
+          "kind": "official"
+        }
+      ]
+    },
+    {
+      "id": "sanity",
+      "name": "Sanity",
+      "category": "Headless CMS",
+      "channels": [
+        "Web",
+        "Content"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Hosted MCP queries content, creates drafts, patches documents and manages publication and release versions.",
+      "mcp": {
+        "provenance": "official",
+        "maturity": "available",
+        "mode": "remote",
+        "control": "read-write",
+        "label": "Official Sanity MCP",
+        "url": "https://www.sanity.io/docs/ai/mcp-server"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Evaluated route documentation",
+        "url": "https://www.sanity.io/docs/ai/mcp-server"
+      },
+      "access": "Connect with OAuth or a role-scoped API token and select the intended project and dataset.",
+      "caution": "Sanity Context MCP is a separate read-only route. Publication and localisation depend on the content model; release edits must target the correct version.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Official route documentation",
+          "url": "https://www.sanity.io/docs/ai/mcp-server",
+          "kind": "official"
+        },
+        {
+          "label": "Read-only Sanity Context MCP",
+          "url": "https://www.sanity.io/docs/ai/sanity-context-mcp",
+          "kind": "official"
+        }
+      ]
+    },
+    {
+      "id": "directus",
+      "name": "Directus",
+      "category": "Content and data platform",
+      "channels": [
+        "Web",
+        "Content"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "Built-in MCP connects assistants to content and data operations under existing Directus permissions.",
+      "mcp": {
+        "provenance": "official",
+        "maturity": "available",
+        "mode": "remote",
+        "control": "read-write",
+        "label": "Official built-in MCP",
+        "url": "https://directus.com/docs/guides/ai/mcp"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Evaluated route documentation",
+        "url": "https://directus.com/docs/guides/ai/mcp"
+      },
+      "access": "Use Directus 11.12 or later, enable MCP and create a dedicated user with suitable permissions and an access token.",
+      "caution": "Content exposure, publication status and language fields depend on the project schema. Review the dedicated role and deletion settings before writes.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Official route documentation",
+          "url": "https://directus.com/docs/guides/ai/mcp",
+          "kind": "official"
+        }
+      ]
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "category": "Commerce CMS",
+      "channels": [
+        "Web",
+        "Content"
+      ],
+      "jobs": [
+        "Read",
+        "Draft",
+        "Edit",
+        "Publish",
+        "Localise"
+      ],
+      "summary": "The Admin GraphQL API supports article and page creation and publication through a custom agent integration.",
+      "mcp": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route",
+        "mode": "none",
+        "control": "none"
+      },
+      "plugin": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "cli": {
+        "provenance": "none",
+        "maturity": "none-verified",
+        "label": "Not assessed in this route"
+      },
+      "developer": {
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Evaluated route documentation",
+        "url": "https://shopify.dev/docs/api/admin-graphql/2026-10/mutations/articleCreate"
+      },
+      "access": "Build an authenticated app integration with the necessary store content scopes and explicit write controls.",
+      "caution": "Shopify’s developer AI toolkit supplies development context. Its existence does not establish authenticated content writes; the evaluated route here is the Admin API.",
+      "verifiedOn": "2026-10-29",
+      "sources": [
+        {
+          "label": "Official route documentation",
+          "url": "https://shopify.dev/docs/api/admin-graphql/2026-10/mutations/articleCreate",
+          "kind": "official"
+        },
+        {
+          "label": "Page creation and publication",
+          "url": "https://shopify.dev/docs/api/admin-graphql/2026-10/mutations/pageCreate",
+          "kind": "official"
+        },
+        {
+          "label": "Developer AI toolkit",
+          "url": "https://shopify.dev/docs/apps/build/devmcp",
+          "kind": "official"
+        }
+      ]
+    }
+  ]
+}

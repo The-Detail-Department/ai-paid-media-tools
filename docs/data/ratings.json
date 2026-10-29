@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "0.4",
-    "updatedOn": "2026-09-05",
+    "updatedOn": "2026-10-29",
     "definition": "The Detail Department's recommendation for real daily AI paid-media work today, scored against the human job for each category rather than one universal feature checklist.",
     "statusDefinition": {
       "Production": "Dependable enough for a controlled recurring workflow today.",
@@ -157,16 +157,16 @@
     "x-ads": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "B-",
+      "grade": "B",
       "positives": [
-        "Official xurl CLI gives agents and operators a practical API route.",
-        "xurl ships with an official agent skill.",
-        "The Ads API supports advertiser resources and reporting."
+        "Official Ads-specific MCP documents campaign and line-item writes.",
+        "New campaigns and line items start paused, with separate activation tools.",
+        "Includes targeting, creative, audience and conversion-tracking tools."
       ],
       "negatives": [
-        "No official Ads-specific MCP was verified.",
-        "The general X MCP should not be assumed to cover advertising endpoints.",
-        "Ads API access and endpoint availability can be gated."
+        "Developer-app and Ads access remain prerequisites.",
+        "Campaign deletion is not in the documented MCP tool list.",
+        "Activation and budget changes require explicit operating controls."
       ],
       "position": "Reference"
     },
@@ -301,16 +301,16 @@
     "mixpanel": {
       "section": "Analytics",
       "readiness": "Test",
-      "grade": "B-",
+      "grade": "B+",
       "positives": [
-        "Official MCP brings product analytics into an agent workflow.",
-        "Useful for funnels, retention and behavioural investigation.",
-        "Established analytics APIs provide a fallback integration route."
+        "The official tool reference now documents dashboard creation, updates and deletion.",
+        "Lexicon editing and data-quality tools extend the route beyond reporting.",
+        "Regional endpoints and OAuth or service-account authentication are documented."
       ],
       "negatives": [
-        "The MCP remains in beta.",
-        "The official source does not state the control boundary clearly enough.",
-        "No official agent plugin or dedicated CLI was verified."
+        "Experiments, feature flags and audit-log tools have beta or access limits.",
+        "Free-plan query limits and organisation enablement can affect availability.",
+        "Documented tools still need a controlled account-level pilot."
       ],
       "position": "Reference"
     },
@@ -495,20 +495,20 @@
       "readiness": "Test",
       "grade": "B+",
       "positives": [
-        "Built-in MCP can build, test and run real workflows.",
-        "Self-hosting gives strong control over data and credentials.",
-        "Large node ecosystem and code support fit complex agency operations."
+        "The instance MCP documents workflow creation and editing as well as execution.",
+        "Workflow enablement and user permissions bound access.",
+        "Self-hosting supports teams that can own the operational setup."
       ],
       "negatives": [
-        "The built-in MCP remains beta.",
-        "Workflow execution can trigger consequential writes across connected tools.",
-        "Self-hosted production use requires monitoring, upgrades and incident ownership."
+        "Building and editing require n8n 2.13.0 or later.",
+        "Enabled workflow access is shared across connected clients rather than separately selected per client.",
+        "Workflow execution can trigger external writes using connected credentials."
       ],
       "position": "Emerging"
     },
     "figma": {
       "section": "Creative production",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "B+",
       "positives": [
         "Official remote and desktop MCP expose real design context.",
@@ -516,7 +516,7 @@
         "Plugin API and agent skills support structured creative workflows."
       ],
       "negatives": [
-        "Canvas writes require a Full seat and edit permission.",
+        "Write-to-canvas is beta and depends on current seat eligibility and file permissions.",
         "It does not connect creative output to media-platform delivery by itself.",
         "No dedicated official Figma CLI was verified."
       ],

@@ -11,8 +11,8 @@ Creative systems judged on context, generation, editing, format adaptation and u
 | Tool | Grade | Market role | Readiness | Setup | Read context | Create | Edit | Adapt | Export | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Canva](#canva) | **B+** | Reference | Production | Easy | Yes | Yes | Partial | Partial | Yes | Some steps |
-| [Figma](#figma) | **B+** | Reference | Production | Easy | Yes | Partial | Partial | Partial | Partial | Some steps |
 | [Adobe Firefly Creative Production](#adobe-firefly-creative-production) | **B+** | Reference | Test | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
+| [Figma](#figma) | **B+** | Reference | Test | Easy | Yes | Partial | Partial | Partial | Partial | Some steps |
 | [Runway](#runway) | **A-** | Emerging | Production | Moderate | Partial | Yes | Yes | Yes | Yes | Most steps |
 
 ## Canva
@@ -61,52 +61,6 @@ Canva's remote MCP supports design creation and editing, assets, brand resources
 
 [Back to comparison](#creative-production)
 
-## Figma
-
-**B+ · Production · Reference**
-
-Figma's remote MCP can retrieve design context and, for supported clients and seats, create or modify native canvas content.
-
-> **Blocker:** A connected agent still cannot rely on every manual design operation, and write access depends on seat type and file permission.
-
-- **Route:** Official remote and desktop MCP.
-- **Scope:** Design files, components, variables and canvas objects.
-- **Setup:** Easy. Connect a supported client and authorise Figma. Canvas writes require a Full seat and edit permission.
-- **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
-- **Capabilities:** Read context **Yes** · Create **Partial** · Edit **Partial** · Adapt **Partial** · Export **Partial**
-- **Coverage:** Some steps. Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Official remote and desktop MCP expose real design context.
-- Supported clients can create or modify native canvas content.
-- Plugin API and agent skills support structured creative workflows.
-
-**Limits**
-
-- Canvas writes require a Full seat and edit permission.
-- It does not connect creative output to media-platform delivery by itself.
-- No dedicated official Figma CLI was verified.
-
-**Official links**
-
-- **Product / official page:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/)
-- **AI interface / endpoint:** [Official remote and desktop MCP](https://developers.figma.com/docs/figma-mcp-server/)
-- **MCP:** [Official remote and desktop MCP](https://developers.figma.com/docs/figma-mcp-server/)
-- **Plugin:** [Official plugins and agent skills](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/)
-- **CLI:** No dedicated official Figma CLI verified
-- **API / SDK:** [REST and Plugin APIs](https://developers.figma.com/)
-- **Documentation:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/)
-- **GitHub:** No official repository verified
-
-- **Access:** Supported MCP client and Figma permissions; a Full seat is required for write-to-canvas.
-- **Watch:** Dev seats support read-oriented context. Canvas writes require both a Full seat and edit permission.
-- **Sources:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/) · [Write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#creative-production)
-
 ## Adobe Firefly Creative Production
 
 **B+ · Test · Reference**
@@ -150,6 +104,52 @@ Adobe Run-Workflow MCP can discover, submit and monitor reusable creative workfl
 - **Watch:** The agent can run what the enterprise workflow layer exposes; brand fidelity and final asset approval still need human review.
 - **Sources:** [Run-Workflow MCP overview](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html) · [Creative Production Workflow API](https://developer.adobe.com/firefly-services/docs/workflow-builder-api/) · [Firefly Services SDK](https://github.com/Firefly-Services/firefly-services-sdk-js)
 - **Last checked:** 5 Sept 2026
+
+[Back to comparison](#creative-production)
+
+## Figma
+
+**B+ · Test · Reference**
+
+Figma's remote MCP can retrieve design context and, for supported clients and seats, create or modify native canvas content.
+
+> **Blocker:** Canvas writes remain beta and do not cover every manual design operation. Desktop context access does not establish remote write access.
+
+- **Route:** Official remote MCP, canvas writes beta.
+- **Scope:** Design files, components, variables and canvas objects.
+- **Setup:** Easy. Connect a supported client to the remote MCP and authorise Figma; verify write eligibility and file permissions.
+- **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
+- **Capabilities:** Read context **Yes** · Create **Partial** · Edit **Partial** · Adapt **Partial** · Export **Partial**
+- **Coverage:** Some steps. Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Official remote and desktop MCP expose real design context.
+- Supported clients can create or modify native canvas content.
+- Plugin API and agent skills support structured creative workflows.
+
+**Limits**
+
+- Write-to-canvas is beta and depends on current seat eligibility and file permissions.
+- It does not connect creative output to media-platform delivery by itself.
+- No dedicated official Figma CLI was verified.
+
+**Official links**
+
+- **Product / official page:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/)
+- **AI interface / endpoint:** [Official remote and desktop MCP](https://developers.figma.com/docs/figma-mcp-server/)
+- **MCP:** [Official remote and desktop MCP](https://developers.figma.com/docs/figma-mcp-server/)
+- **Plugin:** [Official plugins and agent skills](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/)
+- **CLI:** No dedicated official Figma CLI verified
+- **API / SDK:** [REST and Plugin APIs](https://developers.figma.com/)
+- **Documentation:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/)
+- **GitHub:** No official repository verified
+
+- **Access:** Supported MCP client and file permissions; write-to-canvas uses the remote server and remains beta.
+- **Watch:** Canvas writing is beta. Verify current seat eligibility and edit permission; desktop context tools do not imply remote write access.
+- **Sources:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/) · [Write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/)
+- **Last checked:** 29 Oct 2026
 
 [Back to comparison](#creative-production)
 

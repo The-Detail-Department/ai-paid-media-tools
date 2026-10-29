@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "0.4",
-    "updatedOn": "2026-09-05",
+    "updatedOn": "2026-10-29",
     "surfaceDefinition": "Capabilities describe the most direct official AI-compatible route named for each tool, not every capability in the vendor manual interface.",
     "defaultEvidenceBasis": "Documentation reviewed",
     "evidenceBasisDefinition": {
@@ -187,10 +187,9 @@
       },
       "blocker": "It is both gated and read-only, so it cannot carry a campaign from diagnosis to correction.",
       "commercial": {
-        "type": "Affiliate",
-        "label": "Snapchat Affiliate Programme",
-        "url": "https://help.snapchat.com/hc/en-gb/articles/36391141656724-About-Snapchat-s-Affiliate-Programme",
-        "note": "PartnerStack programme paying a one-time 20% revenue share on eligible advertiser spend during the first 30 days."
+        "type": "None verified",
+        "label": "Programme needs re-verification",
+        "note": "The previously cited affiliate page returned 404 on 29 October 2026; current availability and terms are unverified."
       }
     },
     "linkedin-ads": {
@@ -269,29 +268,30 @@
       }
     },
     "x-ads": {
-      "surface": "Official xurl CLI and Ads API",
+      "surface": "Official hosted Ads MCP",
       "object": "Advertiser resources, campaigns and reporting",
       "setup": {
         "level": "Hard",
-        "note": "Requires developer and Ads API access, CLI authentication and endpoint-level implementation."
+        "note": "Register an X developer app, enable Ads access, configure OAuth and grant the required Ads scopes."
       },
       "actions": {
         "read": "Yes",
-        "create": "Partial",
-        "modify": "Partial",
+        "create": "Yes",
+        "modify": "Yes",
         "delete": "Partial"
       },
       "coverage": {
-        "level": "Some steps",
-        "note": "The CLI is agent-friendly, but the general X MCP does not establish Ads coverage and some Ads endpoints are allowlisted."
+        "level": "Most steps",
+        "note": "Read accounts and results, create and update campaigns and line items, manage targeting and supported creative and audience objects."
       },
-      "blocker": "A useful official CLI exists, but there is no supported Ads-specific MCP or turn-key campaign workflow.",
+      "blocker": "Requires an X developer app, Ads access and OAuth scopes. Activation can start spend; the documented MCP does not cover every Ads API operation.",
       "commercial": {
         "type": "Partner",
         "label": "X Official Partner directory",
         "url": "https://docs.x.com/enterprise/partner-directory",
         "note": "Selected enterprise partner ecosystem. No public X Ads affiliate programme was verified."
-      }
+      },
+      "endpoint": "https://ads-api.x.com/mcp"
     },
     "display-video-360": {
       "surface": "Official API",
@@ -515,7 +515,7 @@
       }
     },
     "mixpanel": {
-      "surface": "Official MCP, beta",
+      "surface": "Official hosted MCP",
       "object": "Product analytics data and supported assets",
       "setup": {
         "level": "Easy",
@@ -523,15 +523,15 @@
       },
       "actions": {
         "read": "Yes",
-        "create": "Unverified",
-        "modify": "Unverified",
-        "delete": "Unverified"
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
       },
       "coverage": {
-        "level": "Assist only",
-        "note": "The public beta announcement does not document a stable action-by-action write boundary."
+        "level": "Most steps",
+        "note": "Query analytics, create and update dashboards, edit Lexicon metadata and manage supported cohorts and other assets."
       },
-      "blocker": "The vendor has not published enough tool-level detail to trust write workflows without inspecting the live connection.",
+      "blocker": "Access follows account settings and permissions. Some newer tools remain beta, and audience targeting and cohort editing within experiment/flag workflows still require the UI.",
       "commercial": {
         "type": "Referral",
         "label": "Mixpanel Referral Partners",
@@ -540,18 +540,18 @@
       },
       "capabilities": {
         "analyse": "Yes",
-        "buildReports": "Unverified",
-        "configure": "Unverified",
+        "buildReports": "Yes",
+        "configure": "Partial",
         "validate": "Partial",
         "share": "Unverified"
       }
     },
     "figma": {
-      "surface": "Official remote and desktop MCP",
+      "surface": "Official remote MCP, canvas writes beta",
       "object": "Design files, components, variables and canvas objects",
       "setup": {
         "level": "Easy",
-        "note": "Connect a supported client and authorise Figma. Canvas writes require a Full seat and edit permission."
+        "note": "Connect a supported client to the remote MCP and authorise Figma; verify write eligibility and file permissions."
       },
       "actions": {
         "read": "Yes",
@@ -563,7 +563,7 @@
         "level": "Some steps",
         "note": "Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem."
       },
-      "blocker": "A connected agent still cannot rely on every manual design operation, and write access depends on seat type and file permission.",
+      "blocker": "Canvas writes remain beta and do not cover every manual design operation. Desktop context access does not establish remote write access.",
       "commercial": {
         "type": "Retired",
         "label": "Affiliate programme deprecated",
@@ -866,23 +866,23 @@
       }
     },
     "n8n": {
-      "surface": "Official built-in MCP, beta",
+      "surface": "Official instance MCP",
       "object": "Enabled workflows and their connected applications",
       "setup": {
         "level": "Moderate",
         "note": "Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients."
       },
       "actions": {
-        "read": "Depends",
-        "create": "Depends",
-        "modify": "Depends",
-        "delete": "Depends"
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Unverified"
       },
       "coverage": {
-        "level": "Depends",
-        "note": "Can trigger powerful multi-step workflows, but the MCP does not automatically expose every node or manual editor feature."
+        "level": "Most steps",
+        "note": "The documented instance server supports workflow building and editing from n8n 2.13.0, alongside search, testing and execution."
       },
-      "blocker": "The workflow must already be designed and governed. A connected client can trigger credentials and external writes across the enabled set.",
+      "blocker": "Workflow access, connected credentials and external side effects need deliberate configuration. Creating a workflow does not establish that its credentials, publishing or downstream actions are ready.",
       "commercial": {
         "type": "Affiliate",
         "label": "n8n Affiliate Partner Program",

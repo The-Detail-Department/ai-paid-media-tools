@@ -15,7 +15,7 @@ Cross-tool automation systems judged on connection, workflow construction, execu
 | [Workato](#workato) | **B+** | Reference | Production | Hard | Partial | Partial | Yes | Partial | Yes | Depends |
 | [Pipedream](#pipedream) | **A-** | Emerging | Production | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
 | [Gumloop](#gumloop) | **B+** | Emerging | Test | Easy | Yes | Yes | Yes | Partial | Partial | Most steps |
-| [n8n](#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Depends |
+| [n8n](#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 
 ## Make
 
@@ -251,35 +251,35 @@ Gumloop is an AI-native workflow and agent builder with 50-plus built-in MCP int
 
 **B+ · Test · Emerging**
 
-n8n can expose an instance or a single workflow through MCP, and can also consume external MCP tools inside workflows.
+n8n’s instance MCP can find, run and test enabled workflows, and create or edit workflows and data tables on supported versions.
 
-> **Blocker:** The workflow must already be designed and governed. A connected client can trigger credentials and external writes across the enabled set.
+> **Blocker:** Workflow access, connected credentials and external side effects need deliberate configuration. Creating a workflow does not establish that its credentials, publishing or downstream actions are ready.
 
-- **Route:** Official built-in MCP, beta.
+- **Route:** Official instance MCP.
 - **Scope:** Enabled workflows and their connected applications.
 - **Setup:** Moderate. Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients.
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Connect **Yes** · Build **Yes** · Run **Yes** · Debug **Partial** · Monitor **Partial**
-- **Coverage:** Depends. Can trigger powerful multi-step workflows, but the MCP does not automatically expose every node or manual editor feature.
+- **Coverage:** Most steps. The documented instance server supports workflow building and editing from n8n 2.13.0, alongside search, testing and execution.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Built-in MCP can build, test and run real workflows.
-- Self-hosting gives strong control over data and credentials.
-- Large node ecosystem and code support fit complex agency operations.
+- The instance MCP documents workflow creation and editing as well as execution.
+- Workflow enablement and user permissions bound access.
+- Self-hosting supports teams that can own the operational setup.
 
 **Limits**
 
-- The built-in MCP remains beta.
-- Workflow execution can trigger consequential writes across connected tools.
-- Self-hosted production use requires monitoring, upgrades and incident ownership.
+- Building and editing require n8n 2.13.0 or later.
+- Enabled workflow access is shared across connected clients rather than separately selected per client.
+- Workflow execution can trigger external writes using connected credentials.
 
 **Official links**
 
 - **Product / official page:** [Connect to n8n MCP server](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
-- **AI interface / endpoint:** [Official built-in MCP, beta](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
-- **MCP:** [Official built-in MCP, beta](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
+- **AI interface / endpoint:** [Official instance MCP](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
+- **MCP:** [Official instance MCP](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
 - **Plugin:** Native nodes and skills, not a separate plugin
 - **CLI:** [n8n CLI](https://docs.n8n.io/hosting/cli-commands/)
 - **API / SDK:** [Public API and workflow nodes](https://docs.n8n.io/api/)
@@ -287,9 +287,9 @@ n8n can expose an instance or a single workflow through MCP, and can also consum
 - **GitHub:** No official repository verified
 
 - **Access:** n8n instance; enable MCP per instance and workflow, with user-scoped access.
-- **Watch:** Connected clients may share the same enabled workflow set. Workflow execution can trigger credentials and external writes.
+- **Watch:** Workflow building requires n8n 2.13.0 or later. Enabled workflows can invoke connected credentials; client access is not a separate per-workflow allowlist.
 - **Sources:** [Connect to n8n MCP server](https://docs.n8n.io/connect/connect-to-n8n-mcp-server) · [MCP server tools reference](https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference)
-- **Last checked:** 5 Sept 2026
+- **Last checked:** 29 Oct 2026
 
 [Back to comparison](#automation-and-workflow)
 

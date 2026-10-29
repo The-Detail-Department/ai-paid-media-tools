@@ -3,9 +3,11 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const data = JSON.parse(await readFile(resolve(root, 'data/tools.json'), 'utf8'));
-const editorial = JSON.parse(await readFile(resolve(root, 'data/ratings.json'), 'utf8'));
-const workflowData = JSON.parse(await readFile(resolve(root, 'data/workflows.json'), 'utf8'));
+const cms = process.argv.includes('--cms');
+const prefix = cms ? 'cms-' : '';
+const data = JSON.parse(await readFile(resolve(root, 'data/' + prefix + 'tools.json'), 'utf8'));
+const editorial = JSON.parse(await readFile(resolve(root, 'data/' + prefix + 'ratings.json'), 'utf8'));
+const workflowData = JSON.parse(await readFile(resolve(root, 'data/' + prefix + 'workflows.json'), 'utf8'));
 const errors = [];
 const allowedProvenance = new Set(['official', 'community', 'none']);
 const allowedMaturity = new Set(['available', 'beta', 'preview', 'restricted', 'none-verified']);
@@ -21,7 +23,10 @@ const allowedSections = new Set([
   'Research and intelligence',
   'Data infrastructure',
   'Automation and workflow',
-  'Modelling'
+  'Modelling',
+  'CMS and site builders',
+  'Content platforms',
+  'Commerce content'
 ]);
 const capabilityKeys = {
   'Media platforms': ['read', 'create', 'modify', 'delete'],
@@ -31,6 +36,9 @@ const capabilityKeys = {
   'Research and intelligence': ['discover', 'retrieve', 'compare', 'analyse', 'export'],
   'Data infrastructure': ['connect', 'inspect', 'query', 'transform', 'operate'],
   'Automation and workflow': ['connect', 'build', 'run', 'debug', 'monitor'],
+  'CMS and site builders': ['read', 'draft', 'edit', 'publish', 'localise'],
+  'Content platforms': ['read', 'draft', 'edit', 'publish', 'localise'],
+  'Commerce content': ['read', 'draft', 'edit', 'publish', 'localise'],
   Modelling: ['prepare', 'configure', 'run', 'validate', 'scenarios']
 };
 const gradePattern = /^(A\+|A|A-|B\+|B|B-|C\+|C|C-|D|F)$/;
@@ -179,7 +187,7 @@ for (const id of Object.keys(workflowData.workflows || {})) {
 
 const serialised = JSON.stringify([data, editorial, workflowData]);
 if (serialised.includes('—')) errors.push('U+2014 em dash is not allowed');
-if (data.tools.length < 20) errors.push('The reference should retain at least 20 high-signal tools');
+if (data.tools.length < (cms ? 1 : 20)) errors.push('The reference should retain at least 20 high-signal tools');
 
 let catalogueFiles = [];
 try {

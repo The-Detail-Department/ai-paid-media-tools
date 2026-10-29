@@ -14,7 +14,7 @@ Analytics products judged on whether an agent can investigate performance and le
 | [Adobe Analytics](#adobe-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Adobe Customer Journey Analytics](#adobe-customer-journey-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Google Analytics](#google-analytics) | **B+** | Reference | Production | Hard | Yes | Partial | No | Partial | Partial | Some steps |
-| [Mixpanel](#mixpanel) | **B-** | Reference | Test | Easy | Yes | Unverified | Unverified | Partial | Unverified | Assist only |
+| [Mixpanel](#mixpanel) | **B+** | Reference | Test | Easy | Yes | Yes | Partial | Partial | Unverified | Most steps |
 | [PostHog](#posthog) | **A** | Emerging | Production | Easy | Yes | Yes | Yes | Yes | Partial | Most steps |
 
 ## Amplitude
@@ -203,47 +203,47 @@ Google's open-source MCP lets agents query Analytics reporting and administratio
 
 ## Mixpanel
 
-**B- · Test · Reference**
+**B+ · Test · Reference**
 
-Mixpanel's vendor-hosted MCP brings product and behavioural analytics into compatible assistants.
+Mixpanel’s hosted MCP queries product analytics and manages dashboards, Lexicon metadata and supported analytics assets.
 
-> **Blocker:** The vendor has not published enough tool-level detail to trust write workflows without inspecting the live connection.
+> **Blocker:** Access follows account settings and permissions. Some newer tools remain beta, and audience targeting and cohort editing within experiment/flag workflows still require the UI.
 
-- **Route:** Official MCP, beta.
+- **Route:** Official hosted MCP.
 - **Scope:** Product analytics data and supported assets.
 - **Setup:** Easy. Connect a compatible MCP client and authorise the Mixpanel account.
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Unverified** · Configure **Unverified** · Validate **Partial** · Share **Unverified**
-- **Coverage:** Assist only. The public beta announcement does not document a stable action-by-action write boundary.
+- **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Partial** · Validate **Partial** · Share **Unverified**
+- **Coverage:** Most steps. Query analytics, create and update dashboards, edit Lexicon metadata and manage supported cohorts and other assets.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official MCP brings product analytics into an agent workflow.
-- Useful for funnels, retention and behavioural investigation.
-- Established analytics APIs provide a fallback integration route.
+- The official tool reference now documents dashboard creation, updates and deletion.
+- Lexicon editing and data-quality tools extend the route beyond reporting.
+- Regional endpoints and OAuth or service-account authentication are documented.
 
 **Limits**
 
-- The MCP remains in beta.
-- The official source does not state the control boundary clearly enough.
-- No official agent plugin or dedicated CLI was verified.
+- Experiments, feature flags and audit-log tools have beta or access limits.
+- Free-plan query limits and organisation enablement can affect availability.
+- Documented tools still need a controlled account-level pilot.
 
 **Official links**
 
-- **Product / official page:** [Mixpanel MCP](https://mixpanel.com/ai/mcp)
-- **AI interface / endpoint:** [Official beta](https://mixpanel.com/ai/mcp)
-- **MCP:** [Official beta](https://mixpanel.com/ai/mcp)
+- **Product / official page:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp)
+- **AI interface / endpoint:** [Official hosted MCP](https://docs.mixpanel.com/docs/mcp)
+- **MCP:** [Official hosted MCP](https://docs.mixpanel.com/docs/mcp)
 - **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Mixpanel APIs](https://developer.mixpanel.com/reference/overview)
-- **Documentation:** [Mixpanel MCP](https://mixpanel.com/ai/mcp)
+- **Documentation:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp)
 - **GitHub:** No official repository verified
 
 - **Access:** Mixpanel account and compatible MCP client.
-- **Watch:** The public announcement does not define a durable write boundary. Inspect the authenticated tools before use.
-- **Sources:** [Mixpanel MCP](https://mixpanel.com/ai/mcp) · [MCP announcement](https://mixpanel.com/blog/mixpanel-mcp-server/)
-- **Last checked:** 5 Sept 2026
+- **Watch:** The core tool list documents writes. Experiments and feature flags are open beta; audit-log access is limited beta.
+- **Sources:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp) · [Mixpanel MCP](https://mixpanel.com/ai/mcp) · [MCP announcement](https://mixpanel.com/blog/mixpanel-mcp-server/)
+- **Last checked:** 29 Oct 2026
 
 [Back to comparison](#analytics)
 

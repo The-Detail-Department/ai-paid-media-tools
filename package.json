@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs && node scripts/build.mjs --check",
+    "build": "node scripts/build.mjs && node scripts/build-cms.mjs",
+    "check": "node scripts/check.mjs && node scripts/check.mjs --cms && node scripts/build.mjs --check && node scripts/build-cms.mjs --check",
     "serve": "python3 -m http.server 4173 --directory docs"
   },
   "engines": {

@@ -1,0 +1,236 @@
+{
+  "meta": {
+    "version": "0.1",
+    "updatedOn": "2026-10-29",
+    "surfaceDefinition": "Capabilities describe only the named CMS route. Publishing means changing CMS content visibility, not deploying a frontend or verifying a live page.",
+    "defaultEvidenceBasis": "Documentation reviewed",
+    "evidenceBasisDefinition": {
+      "Documentation reviewed": "Assessment based on current official documentation, product announcements and public source repositories.",
+      "Connected": "The route was authenticated and its advertised tools or commands were inspected.",
+      "Executed": "At least one representative workflow was run against a controlled account or dataset.",
+      "Used repeatedly": "The route was used across recurring production work, within the stated boundary."
+    },
+    "setupDefinition": {
+      "Easy": "Connect a hosted service and approve access. No developer project or custom code.",
+      "Moderate": "Requires account configuration, credentials or a small amount of technical setup.",
+      "Hard": "Requires developer access, cloud or OAuth configuration, custom integration work or vendor approval.",
+      "Specialist": "Requires data engineering, infrastructure or statistical expertise beyond ordinary campaign operations."
+    },
+    "actionDefinition": {
+      "Yes": "The evaluated route directly supports the action for its core objects.",
+      "Partial": "The action exists, but important objects, fields or workflows are missing or inconsistent.",
+      "No": "The evaluated route does not support the action.",
+      "Depends": "The action is determined by connected tools, permissions or custom configuration.",
+      "N/A": "The action is not meaningful for this type of tool.",
+      "Unverified": "The vendor has not documented a dependable boundary."
+    },
+    "coverageDefinition": {
+      "End to end": "Completes nearly all of the recurring human job through the evaluated route.",
+      "Most steps": "Completes most of the recurring job with a bounded human handoff.",
+      "Some steps": "Handles useful parts of the job but leaves material work elsewhere.",
+      "Assist only": "Supplies context or one narrow output rather than completing the job.",
+      "Depends": "Coverage depends on the tools, data or permissions configured by the operator.",
+      "Specialist": "Completes a specialist modelling or engineering job rather than ordinary campaign operations."
+    },
+    "commercialDefinition": "Affiliate means a public commission-paying programme. Referral and Partner are shown separately and must not be described as affiliate programmes.",
+    "capabilityDefinition": {
+      "Yes": "The evaluated route directly supports the action for its core objects.",
+      "Partial": "The action exists, but important objects, fields or workflows are missing or inconsistent.",
+      "No": "The evaluated route does not support the action.",
+      "Depends": "The action is determined by connected tools, permissions or custom configuration.",
+      "N/A": "The action is not meaningful for this type of tool.",
+      "Unverified": "The vendor has not documented a dependable boundary."
+    }
+  },
+  "workflows": {
+    "wordpress-com": {
+      "surface": "Official hosted MCP",
+      "object": "CMS content and its publication state",
+      "setup": {
+        "level": "Easy",
+        "note": "Enable account MCP, connect with OAuth and select tool access; availability varies by plan, host and user permissions."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Yes",
+        "edit": "Yes",
+        "publish": "Yes",
+        "localise": "Depends"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Documented post and page operations support drafts, updates and publication. Inspect the live tool catalogue for the connected site."
+      },
+      "blocker": "Account-level tool settings are shared by connected clients. Choosing an OAuth access level can change those settings; updating a published post can go live immediately.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "wordpress-adapter": {
+      "surface": "Official adapter and registered Abilities",
+      "object": "CMS content and its publication state",
+      "setup": {
+        "level": "Hard",
+        "note": "Install and configure the adapter, register or supply Abilities, and implement permission callbacks."
+      },
+      "actions": {
+        "read": "Depends",
+        "create": "Depends",
+        "modify": "Depends",
+        "delete": "Depends"
+      },
+      "capabilities": {
+        "read": "Depends",
+        "draft": "Depends",
+        "edit": "Depends",
+        "publish": "Depends",
+        "localise": "Depends"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "The adapter connects agents to explicitly exposed Abilities; it is not a bundled, complete editorial toolset."
+      },
+      "blocker": "Review each exposed Ability and its permission callback. Installing an adapter alone does not establish draft, publish or translation support.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "webflow": {
+      "surface": "Official Webflow MCP",
+      "object": "CMS content and its publication state",
+      "setup": {
+        "level": "Moderate",
+        "note": "Authorise a workspace and use the appropriate site role; some operations require a connected Designer session."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Unverified"
+      },
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Yes",
+        "edit": "Yes",
+        "publish": "Unverified",
+        "localise": "Partial"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Manage CMS collections and items, with partial localisation and additional design tools. Scope publication tools to the connected site."
+      },
+      "blocker": "The documented localisation route can update existing secondary-locale CMS items but cannot create new ones. Permissions and Designer mode constrain some tools.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "contentful": {
+      "surface": "Official hosted MCP",
+      "object": "CMS content and its publication state",
+      "setup": {
+        "level": "Moderate",
+        "note": "Connect with OAuth and configure the MCP app allowlist in each required space and environment."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Yes"
+      },
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Yes",
+        "edit": "Yes",
+        "publish": "Yes",
+        "localise": "Yes"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Create and update entries, publish or unpublish content, manage locales and validate or schedule releases."
+      },
+      "blocker": "The hosted route combines user permissions with environment tool allowlists. Local PAT-based MCP has different, broader access boundaries. Frontend deployment is separate.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "sanity": {
+      "surface": "Official Sanity MCP",
+      "object": "CMS content and its publication state",
+      "setup": {
+        "level": "Moderate",
+        "note": "Connect with OAuth or a role-scoped API token and select the intended project and dataset."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial"
+      },
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Yes",
+        "edit": "Yes",
+        "publish": "Yes",
+        "localise": "Depends"
+      },
+      "coverage": {
+        "level": "Most steps",
+        "note": "Query with GROQ, create or edit structured content and publish drafts. Release versions require their own document IDs."
+      },
+      "blocker": "Sanity Context MCP is a separate read-only route. Localisation depends on the schema. Live-edit document types may bypass drafts; release edits must target the correct version.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "directus": {
+      "surface": "Official built-in MCP",
+      "object": "CMS content and its publication state",
+      "setup": {
+        "level": "Moderate",
+        "note": "Use Directus 11.12 or later, enable MCP and create a dedicated user with suitable permissions and an access token."
+      },
+      "actions": {
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Depends"
+      },
+      "capabilities": {
+        "read": "Yes",
+        "draft": "Depends",
+        "edit": "Yes",
+        "publish": "Depends",
+        "localise": "Depends"
+      },
+      "coverage": {
+        "level": "Depends",
+        "note": "Create and edit content using the configured collections, roles and workflows. Publication is a project-specific status or workflow, not a universal publish button."
+      },
+      "blocker": "Content exposure, publication status and language fields depend on the project schema. Review the dedicated role and deletion settings before writes.",
+      "evidenceBasis": "Documentation reviewed"
+    },
+    "shopify": {
+      "surface": "Admin GraphQL API, custom integration",
+      "object": "CMS content and its publication state",
+      "setup": {
+        "level": "Hard",
+        "note": "Build an authenticated app integration with the necessary store content scopes and explicit write controls."
+      },
+      "actions": {
+        "read": "Unverified",
+        "create": "Yes",
+        "modify": "Unverified",
+        "delete": "Unverified"
+      },
+      "capabilities": {
+        "read": "Unverified",
+        "draft": "Yes",
+        "edit": "Unverified",
+        "publish": "Yes",
+        "localise": "Unverified"
+      },
+      "coverage": {
+        "level": "Some steps",
+        "note": "Create articles and pages with publication settings. This review does not establish a turnkey editorial MCP or general store-management coverage."
+      },
+      "blocker": "Shopify’s developer AI toolkit supplies development context. Its existence does not establish authenticated content writes; the evaluated route here is the Admin API.",
+      "evidenceBasis": "Documentation reviewed"
+    }
+  }
+}
