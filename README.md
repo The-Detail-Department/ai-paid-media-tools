@@ -12,7 +12,7 @@ We grade the route an operator can connect now, not the vendor's potential. Ever
 
 [Media platforms](#media-platforms) · [Analytics](#analytics) · [Measurement](#measurement) · [Creative production](#creative-production) · [Research and intelligence](#research-and-intelligence) · [Data infrastructure](#data-infrastructure) · [Automation and workflow](#automation-and-workflow) · [Modelling](#modelling)
 
-**50 tools reviewed** · 28 Production · 19 Test · 3 Research · Last checked 5 Sept 2026
+**50 tools reviewed** · 27 Production · 20 Test · 3 Research · Catalogue updated 29 Oct 2026
 
 [Read the methodology](METHODOLOGY.md) · [Propose a correction](../../issues/new?template=correction.yml)
 
@@ -32,11 +32,11 @@ Advertising platforms and buying systems, judged on the most direct official rou
 | [Amazon Ads](catalogue/media-platforms.md#amazon-ads) | **B+** | Reference | Test | Hard | Yes | Yes | Yes | Yes | Most steps |
 | [Campaign Manager 360](catalogue/media-platforms.md#campaign-manager-360) | **B** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Most steps |
 | [The Trade Desk](catalogue/media-platforms.md#the-trade-desk) | **B** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Most steps |
+| [X Ads](catalogue/media-platforms.md#x-ads) | **B** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Most steps |
 | [Apple Ads](catalogue/media-platforms.md#apple-ads) | **B-** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Some steps |
 | [Display & Video 360](catalogue/media-platforms.md#display--video-360) | **B-** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Some steps |
 | [Google Ads](catalogue/media-platforms.md#google-ads) | **B-** | Reference | Production | Hard | Yes | No | No | No | Assist only |
 | [Meta Ads](catalogue/media-platforms.md#meta-ads) | **B-** | Reference | Test | Easy | Yes | Partial | No | No | Some steps |
-| [X Ads](catalogue/media-platforms.md#x-ads) | **B-** | Reference | Test | Hard | Yes | Partial | Partial | Partial | Some steps |
 | [Microsoft Advertising](catalogue/media-platforms.md#microsoft-advertising) | **C+** | Reference | Production | Easy | Yes | No | No | No | Assist only |
 | [Search Ads 360](catalogue/media-platforms.md#search-ads-360) | **C+** | Reference | Production | Hard | Yes | No | No | No | Assist only |
 | [Pinterest Ads](catalogue/media-platforms.md#pinterest-ads) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Some steps |
@@ -56,7 +56,7 @@ Analytics products judged on whether an agent can investigate performance and le
 | [Adobe Analytics](catalogue/analytics.md#adobe-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Adobe Customer Journey Analytics](catalogue/analytics.md#adobe-customer-journey-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Google Analytics](catalogue/analytics.md#google-analytics) | **B+** | Reference | Production | Hard | Yes | Partial | No | Partial | Partial | Some steps |
-| [Mixpanel](catalogue/analytics.md#mixpanel) | **B-** | Reference | Test | Easy | Yes | Unverified | Unverified | Partial | Unverified | Assist only |
+| [Mixpanel](catalogue/analytics.md#mixpanel) | **B+** | Reference | Test | Easy | Yes | Yes | Partial | Partial | Unverified | Most steps |
 | [PostHog](catalogue/analytics.md#posthog) | **A** | Emerging | Production | Easy | Yes | Yes | Yes | Yes | Partial | Most steps |
 
 [Open the detailed assessments](catalogue/analytics.md)
@@ -81,8 +81,8 @@ Creative systems judged on context, generation, editing, format adaptation and u
 | Tool | Grade | Market role | Readiness | Setup | Read context | Create | Edit | Adapt | Export | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Canva](catalogue/creative-production.md#canva) | **B+** | Reference | Production | Easy | Yes | Yes | Partial | Partial | Yes | Some steps |
-| [Figma](catalogue/creative-production.md#figma) | **B+** | Reference | Production | Easy | Yes | Partial | Partial | Partial | Partial | Some steps |
 | [Adobe Firefly Creative Production](catalogue/creative-production.md#adobe-firefly-creative-production) | **B+** | Reference | Test | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
+| [Figma](catalogue/creative-production.md#figma) | **B+** | Reference | Test | Easy | Yes | Partial | Partial | Partial | Partial | Some steps |
 | [Runway](catalogue/creative-production.md#runway) | **A-** | Emerging | Production | Moderate | Partial | Yes | Yes | Yes | Yes | Most steps |
 
 [Open the detailed assessments](catalogue/creative-production.md)
@@ -128,7 +128,7 @@ Cross-tool automation systems judged on connection, workflow construction, execu
 | [Workato](catalogue/automation-workflow.md#workato) | **B+** | Reference | Production | Hard | Partial | Partial | Yes | Partial | Yes | Depends |
 | [Pipedream](catalogue/automation-workflow.md#pipedream) | **A-** | Emerging | Production | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
 | [Gumloop](catalogue/automation-workflow.md#gumloop) | **B+** | Emerging | Test | Easy | Yes | Yes | Yes | Partial | Partial | Most steps |
-| [n8n](catalogue/automation-workflow.md#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Depends |
+| [n8n](catalogue/automation-workflow.md#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 
 [Open the detailed assessments](catalogue/automation-workflow.md)
 
@@ -162,6 +162,10 @@ Specialist modelling frameworks judged on preparation, configuration, execution,
 | D / F | Not recommended for production work |
 
 [Definitions and grade ceilings](METHODOLOGY.md)
+
+## CMS companion
+
+[The AI CMS Index](catalogue/cms.md) assesses CMS platforms and AI/LLM workflows using a separate content-operations capability matrix.
 
 ## Data and maintenance
 

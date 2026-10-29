@@ -1,10 +1,11 @@
 # Project guidance
 
-This repository is a maintained evidence index for AI-enabled paid-media work.
+This repository is a maintained evidence index for AI-enabled paid-media work and CMS content operations.
 
 ## Source of truth
 
 - Edit interface facts in `data/tools.json`, daily workflow assessments in `data/workflows.json`, and editorial grades in `data/ratings.json`; do not hand-edit the generated `README.md`, `catalogue/`, or `docs/` files.
+- CMS companion facts, workflows and grades use the corresponding `data/cms-*.json` files.
 - Run `npm run build` after every data or presentation change.
 - Run `npm run check` before proposing a change.
 

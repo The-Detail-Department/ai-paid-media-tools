@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "version": "0.1",
+    "updatedOn": "2026-10-29",
+    "definition": "Editorial assessment of the named AI-compatible CMS workflow, not a ranking of CMS quality.",
+    "statusDefinition": {
+      "Production": "Dependable enough for a controlled recurring workflow today.",
+      "Test": "Worth piloting, but access, maturity or control needs a bounded test.",
+      "Research": "Useful specialist capability, not a daily operating interface."
+    },
+    "featuredTools": [
+      "shopify",
+      "wordpress-com",
+      "webflow",
+      "woocommerce",
+      "contentful"
+    ],
+    "sectionOrder": [
+      "Commerce content",
+      "CMS and site builders",
+      "Content platforms"
+    ]
+  },
+  "ratings": {
+    "wordpress-com": {
+      "section": "CMS and site builders",
+      "readiness": "Test",
+      "grade": "B+",
+      "position": "Reference",
+      "positives": [
+        "Draft creation and post-section editing are documented.",
+        "Existing WordPress roles and tool controls govern access."
+      ],
+      "negatives": [
+        "Tool availability varies by site, plan and account settings.",
+        "Shared account-level settings need review before enabling writes."
+      ]
+    },
+    "wordpress-adapter": {
+      "section": "CMS and site builders",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Uses a common WordPress Abilities contract.",
+        "The site can define narrowly scoped operations and permission checks."
+      ],
+      "negatives": [
+        "Requires technical setup and suitable Abilities.",
+        "Editorial coverage varies by plugin and site configuration."
+      ]
+    },
+    "webflow": {
+      "section": "CMS and site builders",
+      "readiness": "Test",
+      "grade": "B+",
+      "position": "Reference",
+      "positives": [
+        "Combines structured content and site-design operations.",
+        "Uses existing site permissions and roles."
+      ],
+      "negatives": [
+        "New localised CMS items are not supported through this route.",
+        "Some visual operations require the Designer, and new site creation stays in the dashboard."
+      ]
+    },
+    "contentful": {
+      "section": "Content platforms",
+      "readiness": "Production",
+      "grade": "A-",
+      "position": "Reference",
+      "positives": [
+        "Explicit entry and release publication tools.",
+        "Per-environment tool gating supplements user permissions."
+      ],
+      "negatives": [
+        "Each environment needs MCP app configuration.",
+        "Local-server defaults do not restrict a PAT to one environment."
+      ]
+    },
+    "sanity": {
+      "section": "Content platforms",
+      "readiness": "Production",
+      "grade": "A-",
+      "position": "Reference",
+      "positives": [
+        "Schema-aware document operations and explicit publishing tools.",
+        "Supports draft and release-version workflows."
+      ],
+      "negatives": [
+        "Localisation depends on project schema and conventions.",
+        "Wrong draft or release IDs can target a different editorial state."
+      ]
+    },
+    "directus": {
+      "section": "Content platforms",
+      "readiness": "Test",
+      "grade": "B+",
+      "position": "Reference",
+      "positives": [
+        "Reuses existing Directus permissions.",
+        "Content operations do not require a separate middleware layer."
+      ],
+      "negatives": [
+        "Publication and localisation need project-specific modelling.",
+        "A broad service role can expose more data than an editorial assistant needs."
+      ]
+    },
+    "shopify": {
+      "section": "Commerce content",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Documented article and page creation with publication settings.",
+        "Explicit API scopes provide a configurable access boundary."
+      ],
+      "negatives": [
+        "Requires an app and custom integration work.",
+        "Editing, deletion and localisation are not verified by the creation endpoints assessed here."
+      ]
+    },
+    "woocommerce": {
+      "section": "Commerce content",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Official product operations use WordPress permission checks.",
+        "The adapter can expose supported store tasks directly to an assistant."
+      ],
+      "negatives": [
+        "The integration remains developer preview.",
+        "Version changes, extension fields and publication behaviour need a store-level test."
+      ]
+    },
+    "bigcommerce": {
+      "section": "Commerce content",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Documented page and blog operations cover recurring content edits.",
+        "Blog publication is explicit in the API."
+      ],
+      "negatives": [
+        "Requires a custom authenticated integration.",
+        "Page visibility and blog publication have different semantics."
+      ]
+    },
+    "adobe-commerce": {
+      "section": "Commerce content",
+      "readiness": "Test",
+      "grade": "B",
+      "position": "Reference",
+      "positives": [
+        "Explicit CMS page and block operations.",
+        "CMS access is controlled through integration permissions."
+      ],
+      "negatives": [
+        "Requires custom engineering and deployment-specific checks.",
+        "An API write does not prove the storefront or Page Builder layout is correct."
+      ]
+    }
+  }
+}

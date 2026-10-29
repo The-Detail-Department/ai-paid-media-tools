@@ -14,7 +14,7 @@ Analytics products judged on whether an agent can investigate performance and le
 | [Adobe Analytics](#adobe-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Adobe Customer Journey Analytics](#adobe-customer-journey-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Google Analytics](#google-analytics) | **B+** | Reference | Production | Hard | Yes | Partial | No | Partial | Partial | Some steps |
-| [Mixpanel](#mixpanel) | **B-** | Reference | Test | Easy | Yes | Unverified | Unverified | Partial | Unverified | Assist only |
+| [Mixpanel](#mixpanel) | **B+** | Reference | Test | Easy | Yes | Yes | Partial | Partial | Unverified | Most steps |
 | [PostHog](#posthog) | **A** | Emerging | Production | Easy | Yes | Yes | Yes | Yes | Partial | Most steps |
 
 ## Amplitude
@@ -23,11 +23,16 @@ Analytics products judged on whether an agent can investigate performance and le
 
 Amplitude's hosted MCP can work with charts, dashboards, experiments, cohorts and taxonomy. It does not ingest event data.
 
-> **Blocker:** The agent can change shared analysis assets and taxonomy, so user permissions and review still matter.
+**Day to day**
+
+- Investigate funnels, retention and user behaviour.
+- Create or update supported charts, dashboards and analytics definitions.
+
+> **What still needs you:** Review changes to shared charts and event definitions. The assistant acts with the connected user’s permissions.
 
 - **Route:** Official remote MCP.
 - **Scope:** Charts, dashboards, cohorts, experiments and taxonomy.
-- **Setup:** Easy. Connect the hosted MCP and authorise an Amplitude user with the appropriate project role.
+- **Setup:** Easy. Connect the hosted MCP and authorise an Amplitude user with the appropriate project role. [Connection documentation](https://amplitude.com/docs/amplitude-ai/amplitude-mcp).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
 - **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Partial** · Share **Yes**
 - **Coverage:** Most steps. Strong analytics-asset workflow. Raw event instrumentation and ingestion remain outside the MCP.
@@ -69,11 +74,16 @@ Amplitude's hosted MCP can work with charts, dashboards, experiments, cohorts an
 
 Adobe hosts a production MCP that can query Analytics data, create reports and manage analysis components through the same product permissions as the UI.
 
-> **Blocker:** The route is powerful only after an administrator grants MCP access and the Analytics implementation is already trustworthy.
+**Day to day**
+
+- Investigate report-suite data.
+- Create supported reusable analysis components and projects.
+
+> **What still needs you:** An administrator must grant access. The assistant depends on the report suite’s existing data quality and configuration.
 
 - **Route:** Adobe-hosted MCP.
 - **Scope:** Report suites, components, reports and workspace projects.
-- **Setup:** Moderate. Connect the hosted endpoint, authenticate and obtain MCP Access plus the product permissions needed for each action.
+- **Setup:** Moderate. Connect the hosted endpoint, authenticate and obtain MCP Access plus the product permissions needed for each action. [MCP setup guide](https://developer.adobe.com/analytics-mcp/docs/guides/).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
 - **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Partial** · Share **Partial**
 - **Coverage:** Most steps. It completes ad-hoc analysis and creates reusable components or projects; governed interpretation and stakeholder delivery remain human work.
@@ -115,11 +125,16 @@ Adobe hosts a production MCP that can query Analytics data, create reports and m
 
 Adobe hosts a separate CJA MCP for cross-channel data views, components, reports and workspace projects.
 
-> **Blocker:** The MCP cannot compensate for missing connections, weak identity stitching or badly designed data views.
+**Day to day**
+
+- Analyse behaviour across a prepared cross-channel dataset.
+- Build supported analysis components and projects.
+
+> **What still needs you:** A data team must fix missing connections, identity matching and data-view definitions. The assistant cannot make weak inputs reliable.
 
 - **Route:** Adobe-hosted MCP.
 - **Scope:** CJA connections, data views, components, reports and projects.
-- **Setup:** Moderate. Connect the hosted endpoint and authenticate with CJA entitlements, MCP Access and normal product permissions.
+- **Setup:** Moderate. Connect the hosted endpoint and authenticate with CJA entitlements, MCP Access and normal product permissions. [MCP setup guide](https://developer.adobe.com/analytics-mcp/docs/guides/).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
 - **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Partial** · Share **Partial**
 - **Coverage:** Most steps. Strong analysis and component coverage once the cross-channel data model exists; upstream data design stays outside the route.
@@ -161,11 +176,16 @@ Adobe hosts a separate CJA MCP for cross-channel data views, components, reports
 
 Google's open-source MCP lets agents query Analytics reporting and administration data without changing the property.
 
-> **Blocker:** It is useful after implementation, but cannot repair tracking or administer the property it diagnoses.
+**Day to day**
+
+- Ask where visits and conversions came from.
+- Compare pages, events and audience segments in reports.
+
+> **What still needs you:** Fix tracking and property settings elsewhere. The assistant can investigate the data, but cannot repair its collection.
 
 - **Route:** Official MCP.
 - **Scope:** Property metadata, dimensions, metrics and reports.
-- **Setup:** Hard. Requires Google Cloud credentials, enabled APIs, property permissions and local or hosted MCP configuration.
+- **Setup:** Hard. An administrator or developer must enable the Google APIs, configure credentials and grant access to the intended properties. [Connection documentation](https://developers.google.com/analytics/devguides/MCP).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
 - **Capabilities:** Analyse **Yes** · Build reports **Partial** · Configure **No** · Validate **Partial** · Share **Partial**
 - **Coverage:** Some steps. Strong querying and reporting, but events, audiences and property settings cannot be changed through the MCP.
@@ -203,47 +223,52 @@ Google's open-source MCP lets agents query Analytics reporting and administratio
 
 ## Mixpanel
 
-**B- · Test · Reference**
+**B+ · Test · Reference**
 
-Mixpanel's vendor-hosted MCP brings product and behavioural analytics into compatible assistants.
+Mixpanel’s hosted MCP queries product analytics and manages dashboards, Lexicon metadata and supported analytics assets.
 
-> **Blocker:** The vendor has not published enough tool-level detail to trust write workflows without inspecting the live connection.
+**Day to day**
 
-- **Route:** Official MCP, beta.
+- Investigate funnels and retention.
+- Create dashboards and tidy supported event or property definitions.
+
+> **What still needs you:** Some tools remain in beta. Audience targeting and cohort edits inside experiment or feature-flag workflows still need the interface.
+
+- **Route:** Official hosted MCP.
 - **Scope:** Product analytics data and supported assets.
-- **Setup:** Easy. Connect a compatible MCP client and authorise the Mixpanel account.
+- **Setup:** Easy. Connect a compatible MCP client and authorise the Mixpanel account. [Connection documentation](https://docs.mixpanel.com/docs/mcp).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Unverified** · Configure **Unverified** · Validate **Partial** · Share **Unverified**
-- **Coverage:** Assist only. The public beta announcement does not document a stable action-by-action write boundary.
+- **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Partial** · Validate **Partial** · Share **Unverified**
+- **Coverage:** Most steps. Query analytics, create and update dashboards, edit Lexicon metadata and manage supported cohorts and other assets.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official MCP brings product analytics into an agent workflow.
-- Useful for funnels, retention and behavioural investigation.
-- Established analytics APIs provide a fallback integration route.
+- The official tool reference now documents dashboard creation, updates and deletion.
+- Lexicon editing and data-quality tools extend the route beyond reporting.
+- Regional endpoints and OAuth or service-account authentication are documented.
 
 **Limits**
 
-- The MCP remains in beta.
-- The official source does not state the control boundary clearly enough.
-- No official agent plugin or dedicated CLI was verified.
+- Experiments, feature flags and audit-log tools have beta or access limits.
+- Free-plan query limits and organisation enablement can affect availability.
+- Documented tools still need a controlled account-level pilot.
 
 **Official links**
 
-- **Product / official page:** [Mixpanel MCP](https://mixpanel.com/ai/mcp)
-- **AI interface / endpoint:** [Official beta](https://mixpanel.com/ai/mcp)
-- **MCP:** [Official beta](https://mixpanel.com/ai/mcp)
+- **Product / official page:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp)
+- **AI interface / endpoint:** [Official hosted MCP](https://docs.mixpanel.com/docs/mcp)
+- **MCP:** [Official hosted MCP](https://docs.mixpanel.com/docs/mcp)
 - **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Mixpanel APIs](https://developer.mixpanel.com/reference/overview)
-- **Documentation:** [Mixpanel MCP](https://mixpanel.com/ai/mcp)
+- **Documentation:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp)
 - **GitHub:** No official repository verified
 
 - **Access:** Mixpanel account and compatible MCP client.
-- **Watch:** The public announcement does not define a durable write boundary. Inspect the authenticated tools before use.
-- **Sources:** [Mixpanel MCP](https://mixpanel.com/ai/mcp) · [MCP announcement](https://mixpanel.com/blog/mixpanel-mcp-server/)
-- **Last checked:** 5 Sept 2026
+- **Watch:** The core tool list documents writes. Experiments and feature flags are open beta; audit-log access is limited beta.
+- **Sources:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp) · [Mixpanel MCP](https://mixpanel.com/ai/mcp) · [MCP announcement](https://mixpanel.com/blog/mixpanel-mcp-server/)
+- **Last checked:** 29 Oct 2026
 
 [Back to comparison](#analytics)
 
@@ -253,11 +278,16 @@ Mixpanel's vendor-hosted MCP brings product and behavioural analytics into compa
 
 PostHog MCP queries trends, funnels, retention, paths and SQL, then creates, updates or deletes saved insights and dashboards.
 
-> **Blocker:** It can finish the analytics job, but not the downstream media optimisation job.
+**Day to day**
+
+- Investigate funnels and product behaviour.
+- Create or update reusable insights and dashboards.
+
+> **What still needs you:** Apply advertising changes elsewhere. This connection works on analytics, not campaign optimisation.
 
 - **Route:** Official PostHog MCP.
 - **Scope:** Events, SQL, insights and dashboards.
-- **Setup:** Easy. Run the official wizard, authorise a PostHog project and expose the required tools.
+- **Setup:** Easy. Run the official wizard, authorise a PostHog project and expose the required tools. [Connection documentation](https://posthog.com/docs/product-analytics/surfaces/mcp).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
 - **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Yes** · Share **Partial**
 - **Coverage:** Most steps. The route can investigate behaviour and maintain reusable insights and dashboards; distribution and paid-media decisions remain outside it.

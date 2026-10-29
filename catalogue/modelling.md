@@ -20,11 +20,16 @@ Specialist modelling frameworks judged on preparation, configuration, execution,
 
 Google's open-source marketing mix modelling framework for estimating incremental impact and informing budget allocation.
 
-> **Blocker:** It is not an agent or optimiser. Data preparation, priors, model criticism and action rules remain expert work.
+**Day to day**
+
+- Model how marketing investment relates to business results.
+- Compare budget scenarios after validating the model.
+
+> **What still needs you:** A specialist must prepare the data, check the model’s assumptions and interpret the scenarios. It does not change campaigns.
 
 - **Route:** Official open-source Python package.
 - **Scope:** Marketing mix models and budget scenarios.
-- **Setup:** Specialist. Requires model-ready historical data, Python, statistical judgement, compute and validation design.
+- **Setup:** Specialist. A modeller must prepare historical data, run the Python model and validate its assumptions before using budget scenarios. [Model documentation](https://github.com/google/meridian).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Covers the MMM lifecycle and scenario planning, not live campaign control.
@@ -66,11 +71,16 @@ Google's open-source marketing mix modelling framework for estimating incrementa
 
 An open-source Bayesian marketing analytics package covering marketing mix modelling and customer-lifetime-value work.
 
-> **Blocker:** Its flexibility increases the amount of expert modelling work required before any media decision is safe.
+**Day to day**
+
+- Build custom marketing-mix or customer-value models.
+- Test assumptions and compare modelled scenarios.
+
+> **What still needs you:** A specialist must build and validate the model before its results can inform a budget decision.
 
 - **Route:** Official open-source Python package.
 - **Scope:** Bayesian marketing models.
-- **Setup:** Specialist. Requires Python, Bayesian modelling expertise, prepared data, compute and model validation.
+- **Setup:** Specialist. A modeller needs Python, prepared data and Bayesian modelling expertise to build and validate a useful model. [Model documentation](https://github.com/pymc-labs/pymc-marketing).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Flexible modelling toolkit, not a campaign-operation or turn-key daily marketer interface.
@@ -112,11 +122,16 @@ An open-source Bayesian marketing analytics package covering marketing mix model
 
 Meta's open-source marketing mix modelling package for estimating channel contribution and budget scenarios.
 
-> **Blocker:** Model output is not an approved campaign change. A practitioner must interpret and operationalise it.
+**Day to day**
+
+- Build marketing-mix models from historical data.
+- Explore allocation scenarios for a planning discussion.
+
+> **What still needs you:** A practitioner must interpret the model and approve any resulting campaign changes.
 
 - **Route:** Official open-source R and Python package.
 - **Scope:** Marketing mix models and budget allocation scenarios.
-- **Setup:** Specialist. Requires prepared historical data, R or Python, statistical modelling and validation expertise.
+- **Setup:** Specialist. A modeller must prepare historical data and configure the R or Python workflow, then validate the results. [Model documentation](https://github.com/facebookexperimental/Robyn).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
 - **Coverage:** Specialist. Produces MMM results and allocation hypotheses, without a governed connection to live accounts.

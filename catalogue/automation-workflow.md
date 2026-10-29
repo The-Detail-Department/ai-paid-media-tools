@@ -15,7 +15,7 @@ Cross-tool automation systems judged on connection, workflow construction, execu
 | [Workato](#workato) | **B+** | Reference | Production | Hard | Partial | Partial | Yes | Partial | Yes | Depends |
 | [Pipedream](#pipedream) | **A-** | Emerging | Production | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
 | [Gumloop](#gumloop) | **B+** | Emerging | Test | Easy | Yes | Yes | Yes | Partial | Partial | Most steps |
-| [n8n](#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Depends |
+| [n8n](#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 
 ## Make
 
@@ -23,11 +23,16 @@ Cross-tool automation systems judged on connection, workflow construction, execu
 
 Make hosts an OAuth MCP that can run scenarios and, on paid plans, view or modify scenarios, connections, webhooks, data stores and organisations.
 
-> **Blocker:** The agent can only use scenarios reliably when inputs, outputs and descriptions were designed for machine invocation.
+**Day to day**
+
+- Run existing scenarios.
+- Manage supported workflow settings where the plan permits it.
+
+> **What still needs you:** Define each scenario’s inputs, outputs and purpose, then test it before letting an assistant run it.
 
 - **Route:** Official cloud MCP.
 - **Scope:** Scenarios, connections, webhooks, data stores, teams and organisations.
-- **Setup:** Easy. Connect the universal OAuth endpoint, select an organisation and grant the minimum required scopes.
+- **Setup:** Easy. Connect the universal OAuth endpoint, select an organisation and grant the minimum required scopes. [Connection documentation](https://developers.make.com/mcp-server/connect-using-oauth).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Connect **Yes** · Build **Partial** · Run **Yes** · Debug **Partial** · Monitor **Partial**
 - **Coverage:** Most steps. Runs existing scenarios directly and can manage workflow entities on paid plans; complex design still benefits from the visual builder.
@@ -69,11 +74,16 @@ Make hosts an OAuth MCP that can run scenarios and, on paid plans, view or modif
 
 Zapier MCP lets assistants call scoped actions across Zapier's app catalogue; the Platform CLI is for building Zapier integrations.
 
-> **Blocker:** It is easy to connect but can only do what each Zapier action exposes, while successful MCP calls consume tasks.
+**Day to day**
+
+- Run selected actions across connected apps.
+- Pass information between tools through the actions you expose.
+
+> **What still needs you:** Check each selected action’s limits and review its effect. Successful MCP calls also consume Zapier tasks.
 
 - **Route:** Official remote MCP.
 - **Scope:** Actions in connected applications.
-- **Setup:** Easy. Create a scoped MCP server, choose actions and authorise the connected apps.
+- **Setup:** Easy. Create a scoped MCP server, choose actions and authorise the connected apps. [Connection documentation](https://docs.zapier.com/mcp/home).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Connect **Yes** · Build **Partial** · Run **Yes** · Debug **Partial** · Monitor **Partial**
 - **Coverage:** Depends. Large app catalogue, but each action must exist in the connector and be explicitly exposed.
@@ -115,11 +125,16 @@ Zapier MCP lets assistants call scoped actions across Zapier's app catalogue; th
 
 Workato Enterprise MCP can expose governed recipe functions, API collections, recipes and skills through a hosted enterprise runtime.
 
-> **Blocker:** There is no instant universal endpoint: a Workato enterprise setup and administrator-owned tool catalogue come first.
+**Day to day**
+
+- Run the recipes or functions your administrator exposes.
+- Connect approved business steps through those tools.
+
+> **What still needs you:** Choose which recipes may run and check their business effects. Available tools depend on the administrator’s configuration.
 
 - **Route:** Enterprise MCP.
 - **Scope:** API collections, recipes, recipe functions and skills.
-- **Setup:** Hard. An enterprise administrator configures the MCP endpoint, identity, exposed tools and audit policy.
+- **Setup:** Hard. An enterprise administrator configures the MCP endpoint, identity, exposed tools and audit policy. [Connection documentation](https://docs.workato.com/mcp).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Connect **Partial** · Build **Partial** · Run **Yes** · Debug **Partial** · Monitor **Yes**
 - **Coverage:** Depends. Strong governed execution once recipes and functions are exposed, with coverage determined by enterprise configuration.
@@ -161,11 +176,16 @@ Workato Enterprise MCP can expose governed recipe functions, API collections, re
 
 Pipedream provides hosted MCP servers across thousands of APIs, managed authentication, an SDK and a full `pd` CLI.
 
-> **Blocker:** The route is flexible rather than opinionated. The team still owns action selection, annotations and production separation.
+**Day to day**
+
+- Call supported app actions from an assistant.
+- Connect steps across services using approved components.
+
+> **What still needs you:** Your team chooses the permitted actions and must keep testing separate from live business workflows.
 
 - **Route:** Official remote MCP.
 - **Scope:** Actions and APIs in connected applications.
-- **Setup:** Moderate. Pipedream manages connected-app credentials, but the operator must choose apps, actions and permission boundaries.
+- **Setup:** Moderate. Pipedream manages connected-app credentials, but the operator must choose apps, actions and permission boundaries. [Connection documentation](https://pipedream.com/docs/connect/mcp).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Connect **Yes** · Build **Yes** · Run **Yes** · Debug **Yes** · Monitor **Yes**
 - **Coverage:** Most steps. Broad API and action catalogue, with exact parity determined by the connected component.
@@ -207,11 +227,16 @@ Pipedream provides hosted MCP servers across thousands of APIs, managed authenti
 
 Gumloop is an AI-native workflow and agent builder with 50-plus built-in MCP integrations, custom remote MCP support and a JSON-capable CLI.
 
-> **Blocker:** It makes orchestration easy, but it does not remove the need to test every connected action and failure path.
+**Day to day**
+
+- Build AI-assisted workflows with supported integrations.
+- Run the workflow and inspect its outputs.
+
+> **What still needs you:** Test each connected action and what happens when a step fails before using the workflow for live work.
 
 - **Route:** AI-native workflow platform and CLI.
 - **Scope:** Agents, sessions, integrations, MCP servers, skills and artifacts.
-- **Setup:** Easy. Create an account, connect built-in services or public remote MCP endpoints and use the visual builder or CLI.
+- **Setup:** Easy. Create an account, connect built-in services or public remote MCP endpoints and use the visual builder or CLI. [Connection documentation](https://docs.gumloop.com/nodes/mcp/custom_mcp_servers).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Connect **Yes** · Build **Yes** · Run **Yes** · Debug **Partial** · Monitor **Partial**
 - **Coverage:** Most steps. Strong AI-native workflow construction and execution, with exact depth inherited from each integration and model.
@@ -251,35 +276,40 @@ Gumloop is an AI-native workflow and agent builder with 50-plus built-in MCP int
 
 **B+ · Test · Emerging**
 
-n8n can expose an instance or a single workflow through MCP, and can also consume external MCP tools inside workflows.
+n8n’s instance MCP can find, run and test enabled workflows, and create or edit workflows and data tables on supported versions.
 
-> **Blocker:** The workflow must already be designed and governed. A connected client can trigger credentials and external writes across the enabled set.
+**Day to day**
 
-- **Route:** Official built-in MCP, beta.
+- Create or edit workflows on supported versions.
+- Run and test workflows enabled for the assistant.
+
+> **What still needs you:** Connect credentials and test each workflow’s effects. Creating a workflow does not make its publishing or downstream actions ready.
+
+- **Route:** Official instance MCP.
 - **Scope:** Enabled workflows and their connected applications.
-- **Setup:** Moderate. Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients.
+- **Setup:** Moderate. Requires an n8n instance, user-scoped access and deliberate enablement of each workflow exposed to MCP clients. [Connection documentation](https://docs.n8n.io/connect/connect-to-n8n-mcp-server).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Connect **Yes** · Build **Yes** · Run **Yes** · Debug **Partial** · Monitor **Partial**
-- **Coverage:** Depends. Can trigger powerful multi-step workflows, but the MCP does not automatically expose every node or manual editor feature.
+- **Coverage:** Most steps. The documented instance server supports workflow building and editing from n8n 2.13.0, alongside search, testing and execution.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Built-in MCP can build, test and run real workflows.
-- Self-hosting gives strong control over data and credentials.
-- Large node ecosystem and code support fit complex agency operations.
+- The instance MCP documents workflow creation and editing as well as execution.
+- Workflow enablement and user permissions bound access.
+- Self-hosting supports teams that can own the operational setup.
 
 **Limits**
 
-- The built-in MCP remains beta.
-- Workflow execution can trigger consequential writes across connected tools.
-- Self-hosted production use requires monitoring, upgrades and incident ownership.
+- Building and editing require n8n 2.13.0 or later.
+- Enabled workflow access is shared across connected clients rather than separately selected per client.
+- Workflow execution can trigger external writes using connected credentials.
 
 **Official links**
 
 - **Product / official page:** [Connect to n8n MCP server](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
-- **AI interface / endpoint:** [Official built-in MCP, beta](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
-- **MCP:** [Official built-in MCP, beta](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
+- **AI interface / endpoint:** [Official instance MCP](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
+- **MCP:** [Official instance MCP](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
 - **Plugin:** Native nodes and skills, not a separate plugin
 - **CLI:** [n8n CLI](https://docs.n8n.io/hosting/cli-commands/)
 - **API / SDK:** [Public API and workflow nodes](https://docs.n8n.io/api/)
@@ -287,9 +317,9 @@ n8n can expose an instance or a single workflow through MCP, and can also consum
 - **GitHub:** No official repository verified
 
 - **Access:** n8n instance; enable MCP per instance and workflow, with user-scoped access.
-- **Watch:** Connected clients may share the same enabled workflow set. Workflow execution can trigger credentials and external writes.
+- **Watch:** Workflow building requires n8n 2.13.0 or later. Enabled workflows can invoke connected credentials; client access is not a separate per-workflow allowlist.
 - **Sources:** [Connect to n8n MCP server](https://docs.n8n.io/connect/connect-to-n8n-mcp-server) · [MCP server tools reference](https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference)
-- **Last checked:** 5 Sept 2026
+- **Last checked:** 29 Oct 2026
 
 [Back to comparison](#automation-and-workflow)
 

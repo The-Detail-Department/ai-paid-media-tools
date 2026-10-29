@@ -2,7 +2,7 @@
   "meta": {
     "title": "AI paid media tools",
     "description": "An evidence-backed comparison of MCP servers, advertising APIs, plugins and command-line tools for paid-media operations, analytics and measurement.",
-    "updatedOn": "2026-09-05",
+    "updatedOn": "2026-10-29",
     "maintainer": "The Detail Department",
     "scope": "Tools that can materially support planning, buying, measuring, modelling, moving data, automating work or producing paid-media creative.",
     "version": "0.4"
@@ -505,13 +505,14 @@
         "Optimise",
         "Report"
       ],
-      "summary": "The X Ads API exposes advertiser resources and reporting, while X's xurl CLI can make authenticated requests and ships with an official agent skill.",
+      "summary": "X Ads has an official hosted MCP for campaign creation and updates, targeting, audiences, creative assets and reporting.",
       "mcp": {
-        "provenance": "none",
-        "maturity": "none-verified",
-        "mode": "none",
-        "control": "none",
-        "label": "No official Ads MCP verified"
+        "provenance": "official",
+        "maturity": "available",
+        "mode": "remote",
+        "control": "read-write",
+        "label": "Official X Ads MCP",
+        "url": "https://docs.x.com/x-ads-api/mcp"
       },
       "plugin": {
         "provenance": "official",
@@ -532,9 +533,14 @@
         "url": "https://docs.x.com/x-ads-api/introduction"
       },
       "access": "Developer account and Ads API access; some endpoints require allowlisting.",
-      "caution": "X also operates a general X API MCP, but its published tool list does not establish Ads API coverage. Do not label it an Ads MCP without endpoint-level proof.",
-      "verifiedOn": "2026-09-05",
+      "caution": "Campaigns and line items are created paused. Activation is a separate action; some object deletion is documented, but campaign deletion is not.",
+      "verifiedOn": "2026-10-29",
       "sources": [
+        {
+          "label": "X Ads MCP tools and authentication",
+          "url": "https://docs.x.com/x-ads-api/mcp",
+          "kind": "official"
+        },
         {
           "label": "X Ads API documentation",
           "url": "https://docs.x.com/x-ads-api/introduction",
@@ -1002,14 +1008,14 @@
         "Analyse",
         "Report"
       ],
-      "summary": "Mixpanel's vendor-hosted MCP brings product and behavioural analytics into compatible assistants.",
+      "summary": "Mixpanel’s hosted MCP queries product analytics and manages dashboards, Lexicon metadata and supported analytics assets.",
       "mcp": {
         "provenance": "official",
-        "maturity": "beta",
+        "maturity": "available",
         "mode": "remote",
-        "control": "not-stated",
-        "label": "Official beta",
-        "url": "https://mixpanel.com/ai/mcp"
+        "control": "read-write",
+        "label": "Official hosted MCP",
+        "url": "https://docs.mixpanel.com/docs/mcp"
       },
       "plugin": {
         "provenance": "none",
@@ -1028,9 +1034,14 @@
         "url": "https://developer.mixpanel.com/reference/overview"
       },
       "access": "Mixpanel account and compatible MCP client.",
-      "caution": "The public announcement does not define a durable write boundary. Inspect the authenticated tools before use.",
-      "verifiedOn": "2026-09-05",
+      "caution": "The core tool list documents writes. Experiments and feature flags are open beta; audit-log access is limited beta.",
+      "verifiedOn": "2026-10-29",
       "sources": [
+        {
+          "label": "Mixpanel MCP tool reference",
+          "url": "https://docs.mixpanel.com/docs/mcp",
+          "kind": "official"
+        },
         {
           "label": "Mixpanel MCP",
           "url": "https://mixpanel.com/ai/mcp",
@@ -1640,13 +1651,13 @@
         "Build",
         "Operate"
       ],
-      "summary": "n8n can expose an instance or a single workflow through MCP, and can also consume external MCP tools inside workflows.",
+      "summary": "n8n’s instance MCP can find, run and test enabled workflows, and create or edit workflows and data tables on supported versions.",
       "mcp": {
         "provenance": "official",
-        "maturity": "beta",
+        "maturity": "available",
         "mode": "both",
         "control": "read-write",
-        "label": "Official built-in MCP, beta",
+        "label": "Official instance MCP",
         "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server"
       },
       "plugin": {
@@ -1667,8 +1678,8 @@
         "url": "https://docs.n8n.io/api/"
       },
       "access": "n8n instance; enable MCP per instance and workflow, with user-scoped access.",
-      "caution": "Connected clients may share the same enabled workflow set. Workflow execution can trigger credentials and external writes.",
-      "verifiedOn": "2026-09-05",
+      "caution": "Workflow building requires n8n 2.13.0 or later. Enabled workflows can invoke connected credentials; client access is not a separate per-workflow allowlist.",
+      "verifiedOn": "2026-10-29",
       "sources": [
         {
           "label": "Connect to n8n MCP server",
@@ -1721,9 +1732,9 @@
         "label": "REST and Plugin APIs",
         "url": "https://developers.figma.com/"
       },
-      "access": "Supported MCP client and Figma permissions; a Full seat is required for write-to-canvas.",
-      "caution": "Dev seats support read-oriented context. Canvas writes require both a Full seat and edit permission.",
-      "verifiedOn": "2026-09-05",
+      "access": "Supported MCP client and file permissions; write-to-canvas uses the remote server and remains beta.",
+      "caution": "Canvas writing is beta. Verify current seat eligibility and edit permission; desktop context tools do not imply remote write access.",
+      "verifiedOn": "2026-10-29",
       "sources": [
         {
           "label": "Figma MCP introduction",

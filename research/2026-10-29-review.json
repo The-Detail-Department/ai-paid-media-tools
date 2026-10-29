@@ -1,0 +1,1191 @@
+{
+  "reviewedOn": "2026-10-29",
+  "scope": "Link health across the existing 50-tool catalogue, targeted capability refresh for X Ads, Mixpanel, n8n and Figma, and first CMS companion. HTTP success is not capability verification. Other entries retain their previous verifiedOn dates.",
+  "capabilityRefresh": [
+    "x-ads",
+    "mixpanel",
+    "n8n",
+    "figma"
+  ],
+  "cmsEntries": [
+    "wordpress-com",
+    "wordpress-adapter",
+    "webflow",
+    "contentful",
+    "sanity",
+    "directus",
+    "shopify"
+  ],
+  "receipts": [
+    {
+      "url": "https://github.com/googleads/google-ads-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "c589f1ee81193e917e789d768c7f37a2ea216a1034559cd7e7371df24876afd1",
+      "textBytes": 18309
+    },
+    {
+      "url": "https://developers.google.com/google-ads/api/docs/start",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "91b2bd67b356d0589810aa26eb34acbcd6995485f810bf03c2877db86a99db09",
+      "textBytes": 4454
+    },
+    {
+      "url": "https://support.google.com/google-ads/answer/9029203?hl=en",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "2a9b8d2a439ef0c6851ed5a0bba72f3ccf8299a2f70bab2084b1264ab7c14d44",
+      "textBytes": 1523
+    },
+    {
+      "url": "https://www.facebook.com/business/news/meta-ads-ai-connectors",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b532f38b7f5744439e208edf0f2127dc1b9750da0c06059ca04323694f16e830",
+      "textBytes": 3762
+    },
+    {
+      "url": "https://developers.facebook.com/docs/marketing-apis/",
+      "checkedOn": "2026-10-29",
+      "error": "ValueError"
+    },
+    {
+      "url": "https://mcp.facebook.com/ads",
+      "checkedOn": "2026-10-29",
+      "status": 405,
+      "sha256": "07c32363b06ed7bb99edf197f1fcea2bdef66b8fafea025323d01709e67fe913",
+      "textBytes": 116
+    },
+    {
+      "url": "https://www.facebook.com/business/marketing-partners",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "803ef76a17ea281546bff1de3169d64ae32e4495ffa69bc940a4eb0e4819f467",
+      "textBytes": 2471
+    },
+    {
+      "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d1d7f1ddd1710d591ade217d36f4918738e2188ff8d880eb1503c025c030120c",
+      "textBytes": 5507
+    },
+    {
+      "url": "https://business-api.tiktok.com/portal/docs",
+      "checkedOn": "2026-10-29",
+      "status": 403,
+      "sha256": "0b0f43cba5b5f09536d05729befaeb3c16b04c63be21b953469a760960666d5d",
+      "textBytes": 44
+    },
+    {
+      "url": "https://getstarted.tiktok.com/affiliates?lang=en-PH",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "a07374436bceb254fb8e93cefb4f9dde66bec996561709c951d89fd58079a04b",
+      "textBytes": 1099
+    },
+    {
+      "url": "https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "96269f621396e953a9f927df5f3be61cf5f2990b20a6b4d3622df63eeed98b56",
+      "textBytes": 4503
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/advertising/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "4241c7bcf1d1a0ebf77f61da932b91b85304d62cc0e389c96775bfec5d056918",
+      "textBytes": 838
+    },
+    {
+      "url": "https://msadvertisingpartnerprogram.powerappsportals.com/welcome",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "506c5169688ec66b432170341d5d3051a892775db25e1edab2b34026fc279a68",
+      "textBytes": 4764
+    },
+    {
+      "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "9534825f668617144d87477ea1da8ceb6d694bbfa54f151cd7ee0842951328a6",
+      "textBytes": 4525
+    },
+    {
+      "url": "https://advertising.amazon.com/en-ca/about-api",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "4c42476fe93bf8def5ca7f4163e697fa99819a3b14996499b03f031380ebfb9f",
+      "textBytes": 6839
+    },
+    {
+      "url": "https://advertising.amazon.com/partners/network",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "1bbfa69e3632ada28082b13502f381a5b1f7ab07befa4cc33c0753eb627b1587",
+      "textBytes": 2790
+    },
+    {
+      "url": "https://developers.snap.com/marketing-api/Ads-MCP/Introduction",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "35f40cdee79b77741f20e24aa837b8a8440c27656dc0723a38ee17f2d57c515a",
+      "textBytes": 4898
+    },
+    {
+      "url": "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "19abe1cd1e27d0dea3cb7032e2abb38677cbf9c366b340b87aa651ed2046fc2e",
+      "textBytes": 6065
+    },
+    {
+      "url": "https://developers.snap.com/marketing-api/home",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "9af44acecedf0cc579806ee81c6d8e796160b405d8a13f9c083820eab17bc0fb",
+      "textBytes": 1119
+    },
+    {
+      "url": "https://help.snapchat.com/hc/en-gb/articles/36391141656724-About-Snapchat-s-Affiliate-Programme",
+      "checkedOn": "2026-10-29",
+      "status": 404,
+      "sha256": "b8203503f8cbfc6de66adc74eafd9209d9980982913778520db1c87259f7d2a7",
+      "textBytes": 203
+    },
+    {
+      "url": "https://www.linkedin.com/help/linkedin/answer/a526048/accessing-linkedin-apis?lang=en",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d00a2c2058fc0dbf080b5ae1bd59c82b45eea4cf5d0224dccea085efbac05328",
+      "textBytes": 1707
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "0b3ae21acf994fe01bd70de47e7749666e7a3cb0ebc53bedeb2a5476e2de4048",
+      "textBytes": 3630
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "8ec2830274ef53d454e5684eb09784c1721475d3aea01366c95a611510e99a74",
+      "textBytes": 3613
+    },
+    {
+      "url": "https://business.linkedin.com/advertise/partners",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "c764092fa0638bf832a5607f283290f8a7196836eb8924e87098f90e40442290",
+      "textBytes": 6878
+    },
+    {
+      "url": "https://developer.pinterest.com/docs/overview/welcome/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "8647f663ce9989ef12e5123a8f67d2b0c52895c7526d359c7b7876531d641d49",
+      "textBytes": 0
+    },
+    {
+      "url": "https://dev.pinterest.com/docs/work-with-ads/ads-overview/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "fb9980c844a5b4ae9daaea52fe6c6be6be88e878169f49c23529fe3454102243",
+      "textBytes": 0
+    },
+    {
+      "url": "https://business.pinterest.com/pinterest-business-partners/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "90040c4500b2fa6bebd3af620ef6c6a852cb99048586cc499d6590fa5b24af05",
+      "textBytes": 1344
+    },
+    {
+      "url": "https://ads-api.reddit.com/docs/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b1c6db36fce82f1a135cbbc08b4af7fb2b40146bf600b5bc40f5aa9e5324b6aa",
+      "textBytes": 261
+    },
+    {
+      "url": "https://www.business.reddit.com/solutions/reddit-partnership-overview",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "bc0202a570444d01f4d1af971746ea8a5d9fcc039e254c3c82bb36123e708f08",
+      "textBytes": 1675
+    },
+    {
+      "url": "https://docs.x.com/x-ads-api/introduction",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "0d95b1e113d603ca0f67ad7ad4974e42291176386ed494ba523b7788a7c4e6fa",
+      "textBytes": 1425
+    },
+    {
+      "url": "https://github.com/xdevplatform/xurl",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e38ec0042dc1a86dee0de03a65fccb850abd42938a904e5ed4ab1086ef13e8d6",
+      "textBytes": 16748
+    },
+    {
+      "url": "https://github.com/xdevplatform/docs/blob/main/tools/mcp.mdx",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e201808fb87826cbac7d7bf83f53aa308b37bc4c400954483f5a8ac03fc10b01",
+      "textBytes": 14257
+    },
+    {
+      "url": "https://github.com/xdevplatform/xurl/blob/main/SKILL.md",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "0955fec7a6189aa92a5e93108666144c60cc7424f772bb353811e587afb76496",
+      "textBytes": 20016
+    },
+    {
+      "url": "https://docs.x.com/enterprise/partner-directory",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "019a5006173ee1999387b3f8a3be1daee33939a2cb5d43e245e793e69ddb6263",
+      "textBytes": 979
+    },
+    {
+      "url": "https://developers.google.com/display-video/api",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "cc7dcd108cc31e75330b10fc299b175f8bd66e476b22e5409f9e04028ac2744e",
+      "textBytes": 1171
+    },
+    {
+      "url": "https://developers.google.com/display-video/api/support/faq",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "45b9dc33e4c86911dfb747995e71755ea6e0cd7076ce6521604aba72330bac47",
+      "textBytes": 4803
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/7237700?hl=en",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "318a66bf7bd65d73843f428092c7fcb8d47a72d309cee05fb2e354332626c61a",
+      "textBytes": 1380
+    },
+    {
+      "url": "https://developers.google.com/doubleclick-advertisers/rest/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d121926caf50fcf0296eca9429650d1ed0005b378914e465b134ad11c3056a4a",
+      "textBytes": 31360
+    },
+    {
+      "url": "https://developers.google.com/doubleclick-advertisers/getting_started",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "2916f409febc37e72b18346d524abc574082ff8151882219f077b1748b9baaab",
+      "textBytes": 19221
+    },
+    {
+      "url": "https://developers.google.com/search-ads/reporting",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "92d227c3a09ee5acd91810ff21673fb479b76bddede37f56e1a389daaba00047",
+      "textBytes": 882
+    },
+    {
+      "url": "https://developers.google.com/search-ads/reporting/overview",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "2896db787181bc247f64750f5a272f5baa55cd1eb73f5f510a42d58235a140d6",
+      "textBytes": 1645
+    },
+    {
+      "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "89658193786bb68c04276ddb3a72c7b1263e464378fc35cefbcaa049f71a6e6e",
+      "textBytes": 3519
+    },
+    {
+      "url": "https://ads.apple.com/app-store/resources",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "0cd4e20ab0445d0346487efcd9f165add07a3b307846750f5ad178814e1a500c",
+      "textBytes": 2437
+    },
+    {
+      "url": "https://ads.apple.com/maps/agencies",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "883c1f96c3a3160725355669c1f2f2990b458386f95e91ed9634c143b5effefe",
+      "textBytes": 6854
+    },
+    {
+      "url": "https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "a1860c08f318eb0483dc117dda12d786506dc3f6f3c0ad55c06047bcc5b3f503",
+      "textBytes": 14
+    },
+    {
+      "url": "https://partner.thetradedesk.com/v3/portal/resources/doc/Glossary",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "40aefcaaec8f51dba6da105b97f219aa3244fdd030ba3adfab8dd9c01bdaa5c4",
+      "textBytes": 14
+    },
+    {
+      "url": "https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "85bc6cf3a10014cc247bd75a5bd761da5acfcf8cf6761ed8eabfd34baa338234",
+      "textBytes": 14
+    },
+    {
+      "url": "https://www.thetradedesk.com/us/partners",
+      "checkedOn": "2026-10-29",
+      "status": 403,
+      "sha256": "ebc9b589b38dc8dbc2b5a4d5f5abdcc8a36a4148bc05e017303675df8234ea09",
+      "textBytes": 58
+    },
+    {
+      "url": "https://developers.google.com/analytics/devguides/MCP",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "6ca8c242f128c589e9edce9227d3fe0155892a58094986103e8eed41e74efb17",
+      "textBytes": 10608
+    },
+    {
+      "url": "https://github.com/googleanalytics/google-analytics-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "7ebc35f5a7487ebe67c3f3fbbc9f257a9156268f3259384cfbd727f76efff1c9",
+      "textBytes": 5042
+    },
+    {
+      "url": "https://developers.google.com/analytics/devguides/reporting/data/v1",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "cc8b389935e81a2cdee1e62298018e375aa89f7bfd0dded83bce543999dad836",
+      "textBytes": 7538
+    },
+    {
+      "url": "https://developers.google.com/tag-platform/tag-manager/api/v2",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "8cdcf2bfd7266bdbc512b64ba8f5b443c87ec6966340ab550c795eefeeacc766",
+      "textBytes": 3782
+    },
+    {
+      "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "3665fa51a44142614db92b51f7a61f173e35934083f87a5c0898ef7ed6f0a360",
+      "textBytes": 27317
+    },
+    {
+      "url": "https://www.amplitude.com/docs/get-started/setup-wizard-cli",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "339d10bed7e4b48e05e2fa9d51620a3a2ecf233f93f6b8393c6ff734f6157d57",
+      "textBytes": 2790
+    },
+    {
+      "url": "https://amplitude.com/docs/amplitude-ai",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "72f41095615da486a99fa284b6e8e40df99b3a36728c4c34995626e7fefa70df",
+      "textBytes": 4311
+    },
+    {
+      "url": "https://www.docs.developers.amplitude.com/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d1f5cdff5c1e6974098b5ebce3170c3cc71b4656f6b9b4932a120d1e304493e2",
+      "textBytes": 6193
+    },
+    {
+      "url": "https://www.amplitude.com/affiliates",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e6a8d028a43a3ec70cd191252e50016f45041693cd129f1d42e317b9a75e00a4",
+      "textBytes": 1551
+    },
+    {
+      "url": "https://mixpanel.com/ai/mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "28eae20730b84c9cd153a067eeb4b51999a10ffdc2c70554ef1a8281fb89ae56",
+      "textBytes": 12893
+    },
+    {
+      "url": "https://mixpanel.com/blog/mixpanel-mcp-server/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e19a363bb8b3325a9dd15e3d6a57cd75eafb36616f8e51c6af7af8b2f255df8c",
+      "textBytes": 3770
+    },
+    {
+      "url": "https://developer.mixpanel.com/reference/overview",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "2545384964346d581b375d892887b258d2b0dc44ee762e83342ac7b1a180f1ca",
+      "textBytes": 3363
+    },
+    {
+      "url": "https://mixpanel.com/partners/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f4380c3a8d6f2798f44475652d9ab9f764b925b2db3528b59e67254dd9877fd5",
+      "textBytes": 2138
+    },
+    {
+      "url": "https://docs.supermetrics.com/docs/supermetrics-mcp-server",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "492af6b60c817264813368f422dc2a28158057110808598035008f0a2761ad4c",
+      "textBytes": 2615
+    },
+    {
+      "url": "https://docs.supermetrics.com/apidocs/cli",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "9f34b0ed85201ba02cf9f698361a5101e80f46a33e1647bb1f92645680718458",
+      "textBytes": 1155
+    },
+    {
+      "url": "https://supermetrics.com/products/supermetrics-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "78c508d0565271f0441ba3aeedf79188cc7f2b8d00e2e2582e2869a5219f65d0",
+      "textBytes": 7032
+    },
+    {
+      "url": "https://docs.supermetrics.com/apidocs/getting-started",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "994c2fbc6f0f342b939191ce6a984e40a1a71cac54f881ca6c1a5defda89da93",
+      "textBytes": 670
+    },
+    {
+      "url": "https://supermetrics.com/partners",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d5420ae5c33af930240b775a6f2cdba53ad71588f7ede86d12c4cad32618143c",
+      "textBytes": 5474
+    },
+    {
+      "url": "https://github.com/dataforseo/mcp-server-typescript",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b4031301366dfabc4bf3839b3f762946c02c4ac6a95d1407c3b64aaa09de073d",
+      "textBytes": 10069
+    },
+    {
+      "url": "https://docs.dataforseo.com/v3/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d43acac2cf7cfafa1211b38f323c40f60a3a7be21d1fbc8d7423a688a62fbf5e",
+      "textBytes": 4202
+    },
+    {
+      "url": "https://dataforseo.com/update/affiliate-google-sheets-connector",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "c0d8e8e2cdc5c67be9018e30b2e173db52f62d82594cb908698c611b6d44a63b",
+      "textBytes": 1344
+    },
+    {
+      "url": "https://docs.airbyte.com/ai-agents/interfaces/mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "fc376c41ce93f353f31b7bfeeb687b978679bc394a36058b7ea87f1202017d36",
+      "textBytes": 18905
+    },
+    {
+      "url": "https://docs.airbyte.com/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "34deaee00abdc4bca5d0cadd77c6e77c10ea36077a516edc84e8680beb55bdb8",
+      "textBytes": 1935
+    },
+    {
+      "url": "https://docs.airbyte.com/platform/using-airbyte/getting-started/oss-quickstart",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d8dd0e23d905091ddb5983cc2506830cb8a56e0d23539c2e0277589738c47a94",
+      "textBytes": 8905
+    },
+    {
+      "url": "https://airbyte.com/company/partners",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "67379a0fac076f7bded9c839d80e51146a54ea2afdcddaba93f398403ae6389d",
+      "textBytes": 1825
+    },
+    {
+      "url": "https://fivetran.com/docs/context-layer/agent-context-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "7ea5fe5055505b08fcd1cdc77da8a183a1debe4181d2cc0793bdc78d56c6480c",
+      "textBytes": 2648
+    },
+    {
+      "url": "https://fivetran.com/docs/connector-sdk/building-connectors/ai-tools",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f05bc7acf4638170f26150be7ede6bfcb8e7563142b123c87ff40057f45673a1",
+      "textBytes": 16648
+    },
+    {
+      "url": "https://fivetran.com/docs/connector-sdk/getting-started/connector-sdk-commands",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e686a88b55ff65c21e9b4a4e8d67b86b557e563f3d8b431ccb6f4b89813ad108",
+      "textBytes": 20679
+    },
+    {
+      "url": "https://fivetran.com/docs/rest-api",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "283fcfa2fcd8b0be8b7ccf94902fe004d6f2740e1785068bf2ae3f16cddca5a4",
+      "textBytes": 3335
+    },
+    {
+      "url": "https://www.fivetran.com/partners/become-a-partner",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "44b1552be14b603694d596ffd630fee00f6d89eda2c6bb950cbb13d7e462ae74",
+      "textBytes": 2273
+    },
+    {
+      "url": "https://github.com/googleapis/mcp-toolbox",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f6097053ef4e07afa7bf27b922aed5c1beed939ff611ab29c61b2720edd48d53",
+      "textBytes": 24268
+    },
+    {
+      "url": "https://mcp-toolbox.dev/documentation/introduction/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "3f073992a2b5550fce29796326e3ba9e0c8a01436a5b4c7f4d88e4ff1e6dc73d",
+      "textBytes": 20223
+    },
+    {
+      "url": "https://mcp-toolbox.dev/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "2851715f08c443b2bc7a2627967919965105eef74c15a09f17c6195e3e35b2a1",
+      "textBytes": 251
+    },
+    {
+      "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "4a3b736b77c1165d598430e35b1af1fce57c9c763acd1ac5a58cfe0842034d99",
+      "textBytes": 50597
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-cli/index",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f57860037c8cd5affa07a7d418b55eae2f1cc06eba35f3e3ab642b723d9a6c04",
+      "textBytes": 2561
+    },
+    {
+      "url": "https://docs.snowflake.com/en/developer",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d949f1ad70a4212665a1714f48c3497a582c1221877149405d1b47897b94101d",
+      "textBytes": 10292
+    },
+    {
+      "url": "https://www.snowflake.com/en/why-snowflake/partners/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b0812fb39422e7d252e5fec65c39608a0cb1353191e88b89e3b620f9b9708f06",
+      "textBytes": 92
+    },
+    {
+      "url": "https://github.com/google/meridian",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e10131f68f3ddee876a824197fa90196a70308017b68b77f24ec0a88b8ab67e3",
+      "textBytes": 5709
+    },
+    {
+      "url": "https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "6d2cb62d06677e2c798d2735df08244ecda2b2b358b0cae06d27abea9381197c",
+      "textBytes": 8000
+    },
+    {
+      "url": "https://github.com/facebookexperimental/Robyn",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "909611f512d23d3c6f23b885eb1615e0b4199128267377beeadbaa628a31def8",
+      "textBytes": 3241
+    },
+    {
+      "url": "https://github.com/pymc-labs/pymc-marketing",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "4025ff403a3083ddf703e9d1afe657c51edad07eaa09c583c348d56a6a2caab1",
+      "textBytes": 13593
+    },
+    {
+      "url": "https://www.pymc-marketing.io/en/stable/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "c173b1cb5bb193ddc67d2322d0fb0c9fad3e1ed6e0f009a9a9d5e8d14a047edd",
+      "textBytes": 11079
+    },
+    {
+      "url": "https://help.zapier.com/hc/en-us/articles/48308034391821-What-is-Zapier-MCP",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f5c42fac2a1a608e32146afae764409dce22d649fd45e16a7823efb6756e67cf",
+      "textBytes": 6070
+    },
+    {
+      "url": "https://docs.zapier.com/integrations/build-cli/overview",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "c71e1f12f57eaf57b9fcc7f20d997330c6ecd5a6661de83168d68602e4ac16dc",
+      "textBytes": 84350
+    },
+    {
+      "url": "https://docs.zapier.com/mcp/home",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "93f1073db6e5ea8005150bb91454a4cf8d6d7f148c88e31920321490df78cbb0",
+      "textBytes": 4440
+    },
+    {
+      "url": "https://docs.zapier.com/platform/home",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "866a529d4148112b2d165eee71bb27e505d59bb3934a5bdacc06a704c4255ca4",
+      "textBytes": 2016
+    },
+    {
+      "url": "https://zapier.com/l/partners",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "5b8c55b9694e848c571139bf0b3ae265a3a9819b4d33073026e3500f1522aa24",
+      "textBytes": 5123
+    },
+    {
+      "url": "https://pipedream.com/docs/connect/mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d8e63472dc10ef639e36385bb54c1298ffe01e0d150a0b4f693b22dd8eb2b026",
+      "textBytes": 3078
+    },
+    {
+      "url": "https://pipedream.com/docs/cli/reference",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "18fe04aea644e787d97e4682cfccdf0a2199b293c4cfef20eab214fd28ab578e",
+      "textBytes": 10608
+    },
+    {
+      "url": "https://pipedream.com/docs/connect",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d8998c1b6d36c8fb65cace6e6265a20834ef5398475456a3a0e5a1ec719dc136",
+      "textBytes": 4687
+    },
+    {
+      "url": "https://pipedream.com/affiliates",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "6082f25f67e0d731f9ed9dbeafe174d5bf155839c93779cce04a1644db7846fd",
+      "textBytes": 9
+    },
+    {
+      "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "cdff7d20fc5d6ad03eb9a7f4047c179e9b23d7cdc4fb9d9fbb53a98e5159a5fe",
+      "textBytes": 18788
+    },
+    {
+      "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference",
+      "checkedOn": "2026-10-29",
+      "error": "ValueError"
+    },
+    {
+      "url": "https://docs.n8n.io/hosting/cli-commands/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "ffc6aa43e767dcabb9e0bda2c655644c941633371944d70c6cc56ea80ee72fb5",
+      "textBytes": 11536
+    },
+    {
+      "url": "https://docs.n8n.io/api/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f76b8521949faa374e95870e0a32b6d2ef2657a37ae459a8c11af3a439635b47",
+      "textBytes": 2383
+    },
+    {
+      "url": "https://n8n.io/partners/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "43d895098c86433df8f1f05903d29a4673dbbc3ae2b673c373cd20f8cfeb1c19",
+      "textBytes": 177
+    },
+    {
+      "url": "https://developers.figma.com/docs/figma-mcp-server/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d2d67d805692f935e5df515f8cc30887c4948bd68f2b2363587cc79e2ffd32e1",
+      "textBytes": 5984
+    },
+    {
+      "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "5145481beedad751f5d608bdd25d6370e271049465b0bce2885927c66ef6b886",
+      "textBytes": 5068
+    },
+    {
+      "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b05999ff00888f3718df0021ae3818837a9410334a9dca318e5507ee485b7bce",
+      "textBytes": 11121
+    },
+    {
+      "url": "https://developers.figma.com/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d580dba497eb7bb61c2c2596917bc802775e4f48dd170883361f81ca7de3044c",
+      "textBytes": 1929
+    },
+    {
+      "url": "https://www.figma.com/affiliate-program/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "7ceb855692544879caf36d5125564c1dfeb334275488adae90415771354caef5",
+      "textBytes": 2157
+    },
+    {
+      "url": "https://www.canva.dev/docs/mcp/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "62ca5d74c5b25bb6ea0d18e2b6a5f47e19c81f403ef2cce6a49d9ded6fb9d921",
+      "textBytes": 3076
+    },
+    {
+      "url": "https://www.canva.dev/docs/apps/canva-cli/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e27699b2d97a52baf8323779d01c19756746d3d03f18252fe4c92ac95843d707",
+      "textBytes": 21991
+    },
+    {
+      "url": "https://www.canva.dev/docs/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "ab82a95a054b80ac91ba4366286fd09426f4e562b7ed29cce292c0e68df1b20c",
+      "textBytes": 6239
+    },
+    {
+      "url": "https://www.canva.com/partners/",
+      "checkedOn": "2026-10-29",
+      "status": 403,
+      "sha256": "d59ceb744f89cf66e6e585044fa08da9a453c4d5ac1324dd203deaccb412b32e",
+      "textBytes": 192
+    },
+    {
+      "url": "https://developer.adobe.com/analytics-mcp/docs/aa/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "18667fffda905d374d50173a842bcc7bed651b366047d8aeec0b28a9e4620e65",
+      "textBytes": 732
+    },
+    {
+      "url": "https://developer.adobe.com/analytics-mcp/docs/guides/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "acc00c15d0266eaf119c0ccd16729e2d86858f73fee09aba34b2a1fe2e2d9bd9",
+      "textBytes": 1167
+    },
+    {
+      "url": "https://github.com/AdobeDocs/analytics-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e9e23122dbfa4c159a2b202ca50f99faa5a51f6829f4060bc787400c96c952f3",
+      "textBytes": 161
+    },
+    {
+      "url": "https://github.com/adobe/skills",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "5da8a49e0ccca7c7e0528691274f49c58a12712825af98affc8af286e998806f",
+      "textBytes": 22783
+    },
+    {
+      "url": "https://developer.adobe.com/analytics-apis/docs/2.0/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e967ff901d0c61b747413937d4b2e2f92fe5bc9121e2557245bfa2c17360e669",
+      "textBytes": 1543
+    },
+    {
+      "url": "https://developer.adobe.com/analytics-mcp/docs/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "28d28b0c917a377cac4df5d9bd5b3ad79ab7194b82abaa9b45d3b6fd623ef6fd",
+      "textBytes": 2329
+    },
+    {
+      "url": "https://developer.adobe.com/analytics-mcp/docs/cja/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "2efaca92d93a6ad20c678fb4676b3017c1de12e7764d41e23615625549e18124",
+      "textBytes": 765
+    },
+    {
+      "url": "https://developer.adobe.com/cja-apis/docs/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "6b9b0d94052b37b985fb3f95fe3d7abd6b6dba0eec168814b291bf89708210f3",
+      "textBytes": 1267
+    },
+    {
+      "url": "https://posthog.com/docs/product-analytics/surfaces/mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "480253182b4b7fd8ca8b70c589d3098271caa25397c53e6630627b48fd2a13f7",
+      "textBytes": 5751
+    },
+    {
+      "url": "https://github.com/PostHog/posthog",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "34a9d732023f804c10cdd19493c7281b166fbd3f656b42ddb49ac12fe0e16e07",
+      "textBytes": 7148
+    },
+    {
+      "url": "https://github.com/PostHog/wizard",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "088d82ab032adedf30523fcd49babf0421a6175707147fa041cf3b3263d1277d",
+      "textBytes": 36946
+    },
+    {
+      "url": "https://posthog.com/docs/api",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "0d83a63a26f6501f3147eb482c74937e7a3a7625656e97b113e2b09586481d7f",
+      "textBytes": 9633
+    },
+    {
+      "url": "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "17c312729bdc788a2e0c65a6a058166cb409db8c99eda50e11fc4d83d6e9c1b0",
+      "textBytes": 37791
+    },
+    {
+      "url": "https://dev.appsflyer.com/hc",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "034d16c2b407df49dfca18f80c067d49a2903966f369954725ba475743b0a57d",
+      "textBytes": 3050
+    },
+    {
+      "url": "https://dev.adjust.com/en/api/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "0d4df9e067e51ec49ca389f022c2c4b5237bdc8da089fbcb7673c8580b1144c8",
+      "textBytes": 1050
+    },
+    {
+      "url": "https://dev.adjust.com/en/api/app-automation-api/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "76aae76cf22a704bb20cdd6e7a48c337dcfa0f17ddcaf9e20f18c0d8eafe8507",
+      "textBytes": 9302
+    },
+    {
+      "url": "https://dev.adjust.com/en/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "ca4e8b12ce345e897237aed3d1e7f707be7e1737d4ee1112654ad4774fff3b79",
+      "textBytes": 50
+    },
+    {
+      "url": "https://www.twilio.com/docs/segment/api/public-api",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d03f35479b676d09a0a3f8cefb4a4954a09bfab9655d33545a286ef39df6c542",
+      "textBytes": 6359
+    },
+    {
+      "url": "https://www.twilio.com/docs/segment/connections",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "758bc927af4aca9861a752b7dbe9162e37fd40eacd95f443dbbff83febc1142f",
+      "textBytes": 4846
+    },
+    {
+      "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html",
+      "checkedOn": "2026-10-29",
+      "status": 403,
+      "sha256": "4f2050069e98258f2d5851ea7af94d5fb6d8a677863e78ab15a55e550b13abfc",
+      "textBytes": 299
+    },
+    {
+      "url": "https://developer.adobe.com/firefly-services/docs/workflow-builder-api/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d739e0a73dc2142b6c9a9b14e4de7291cf5f37d198f888ae89622e77a42c00ac",
+      "textBytes": 2849
+    },
+    {
+      "url": "https://github.com/Firefly-Services/firefly-services-sdk-js",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b66af76645ad62290297904cd3d4de3c9be92c69f64be9b74a491cf8de23540e",
+      "textBytes": 8406
+    },
+    {
+      "url": "https://docs.dev.runwayml.com/guides/mcp/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "035678bde92ddcf52e543029272d190a86491fddbb61f1a4cab5699386c1427b",
+      "textBytes": 3355
+    },
+    {
+      "url": "https://docs.dev.runwayml.com/api/",
+      "checkedOn": "2026-10-29",
+      "error": "ValueError"
+    },
+    {
+      "url": "https://github.com/runwayml/runway-api-mcp-server",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "9a58c611b2c0b99086d5846343ad3629e093c64a4fbc91a5317c379f3d4ad99a",
+      "textBytes": 6381
+    },
+    {
+      "url": "https://github.com/runwayml/skills",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "97b1f0ee8e95ac59cf84ea438ad2c01574558f072e4a4f3711c30cc7eb1950d3",
+      "textBytes": 5453
+    },
+    {
+      "url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "7b65fcf23ebaf2d0653ea11cffd5d53149c5f180a9ea0158adeb4dbc902256d7",
+      "textBytes": 3382
+    },
+    {
+      "url": "https://ahrefs.com/mcp/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "02b80da0bf7e0dc3599d94a7c20fd6db05e49995d3137c074d7152d2ffdde6f5",
+      "textBytes": 3903
+    },
+    {
+      "url": "https://docs.ahrefs.com/docs/api/reference/introduction",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d5752773352fe2d4909138c77ed3c9d475599ceaa18003fba91f69fd6f147818",
+      "textBytes": 3896
+    },
+    {
+      "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f591e615194430a71f81cfa0553e54a04c8d8880d4265520797b4bbeeb986cfd",
+      "textBytes": 19375
+    },
+    {
+      "url": "https://developer.semrush.com/api/v3/introduction/semrush-api-overview/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "9af6a21d93e97a1ba7fb66d5b0adacaa20285c8e2d8aaccfbbb5c04a019e16fb",
+      "textBytes": 13221
+    },
+    {
+      "url": "https://developer.semrush.com/api/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "66062e4d45ccbd1021f8d208965824f903540ed25cb29b6fa14d5c7f5dff6cb6",
+      "textBytes": 1069
+    },
+    {
+      "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "eff573a2b93d7e086db2ac2f68dc9836f278ce7b197f3ebd76954ac5772a4c7c",
+      "textBytes": 15820
+    },
+    {
+      "url": "https://docs.similarweb.com/api-v5",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "2b4a74df3260107df5b6b1efa508a79f8a104b45c6e4aff203ec9acf48f8d55f",
+      "textBytes": 7971
+    },
+    {
+      "url": "https://mcp.rudderstack.com/docs",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "fb507ef114afd986ba1633e72c77a0fb47e90fb76bed945b66ce5ce38acd872a",
+      "textBytes": 4255
+    },
+    {
+      "url": "https://www.rudderstack.com/docs/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "4adbe93d7d4d1ed993dd48be1b308d8c985f432e8c12fbc6adce393c97618aa3",
+      "textBytes": 3505
+    },
+    {
+      "url": "https://www.rudderstack.com/docs/profiles/get-started/cli/",
+      "checkedOn": "2026-10-29",
+      "status": 404,
+      "sha256": "1eb3ca44e93e1a138a1e20573ca101e8b0615b0d237cf3077f0b20dfd10c4c6c",
+      "textBytes": 184
+    },
+    {
+      "url": "https://www.rudderstack.com/docs/api/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b65a9912107c02ec8a0e09e3c5d10338b4a87c3ec060b9d48999d14302b41bd0",
+      "textBytes": 1307
+    },
+    {
+      "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/managed-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "e752f6f7d1079a187a6782612b59d385f315fbc2655bb7a586b70384ebfcc326",
+      "textBytes": 10519
+    },
+    {
+      "url": "https://docs.databricks.com/aws/en/dev-tools/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "65816cef93f20ac6d332ffe9c929ac1b652b18d5fcd996362410c739f63a2452",
+      "textBytes": 3535
+    },
+    {
+      "url": "https://docs.databricks.com/aws/en/dev-tools/cli/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "12b981c654fb25a64105ac29be4a74306f164ae4012dab5819878b3334664d75",
+      "textBytes": 2786
+    },
+    {
+      "url": "https://github.com/dbt-labs/dbt-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "6bb7a677181eaf42b4d293f113a39b5a78c107c98fbf42b2673ce1de5a98d814",
+      "textBytes": 7488
+    },
+    {
+      "url": "https://docs.getdbt.com/docs/dbt-ai/setup-local-mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "6a79d2a6d6e53318437d96c0cfa3d3f6485e6391d173eff83c526823f4d92977",
+      "textBytes": 19491
+    },
+    {
+      "url": "https://docs.getdbt.com/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "4696869bc45f468d627d34eadbaa78e620af92e5c4b37bb1795bc3ae136384bb",
+      "textBytes": 85
+    },
+    {
+      "url": "https://developers.make.com/mcp-server",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "a971c660c34bbbaf0e51fc47618e879b9e6880abf8beba5e6748ed0dc52f9260",
+      "textBytes": 4996
+    },
+    {
+      "url": "https://developers.make.com/mcp-server/connect-using-oauth",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "d72cbcfaef53cd64c4fdddc5354d1ce094df5beed86a0bd30b49851dec4f6ce4",
+      "textBytes": 1008
+    },
+    {
+      "url": "https://developers.make.com/custom-apps-documentation/make-apps-cli",
+      "checkedOn": "2026-10-29",
+      "status": 404,
+      "sha256": "a8584680e6a491d5e107f0a22f1db5f8d5dc3d6c7c50415028c41c2910adfd5e",
+      "textBytes": 18
+    },
+    {
+      "url": "https://developers.make.com/",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "0a46dc63944faff12c7eb0c9da10aa5e54ae062d4682aeaf48afb0e0befeec2c",
+      "textBytes": 876
+    },
+    {
+      "url": "https://docs.workato.com/mcp",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "b91c18611629a578441fc94ac1f20703ee6affff5b83ddd7319e983993e43224",
+      "textBytes": 4387
+    },
+    {
+      "url": "https://docs.workato.com/en/mcp/mcp-runtime",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "22df622136f85e17ea3aa21c4f646f17429615f0c91d9c4e048c520bfb905dc7",
+      "textBytes": 846
+    },
+    {
+      "url": "https://docs.workato.com/workato-cli.html",
+      "checkedOn": "2026-10-29",
+      "status": 404,
+      "sha256": "ff2e92968c4e7decb066d24771d09edc1c1795904380579fb34e89663ed54480",
+      "textBytes": 18
+    },
+    {
+      "url": "https://docs.workato.com/developing-connectors/sdk.html",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "445eaad06f36e4c298754c3b672459fdeea72ca79563944afdfada993309b58d",
+      "textBytes": 2898
+    },
+    {
+      "url": "https://docs.gumloop.com/nodes/mcp/custom_mcp_servers",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "5709b25984bc24a744099d042069aa9b78a57f18cb4f0467aba18df8480b3117",
+      "textBytes": 6504
+    },
+    {
+      "url": "https://docs.gumloop.com/cli/overview",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "a841654c26a0f98c848666f0b6f4d56d9de17bfe4e418c5aa8953bdc8f8fd42c",
+      "textBytes": 6304
+    },
+    {
+      "url": "https://docs.gumloop.com/api-reference/getting-started",
+      "checkedOn": "2026-10-29",
+      "status": 200,
+      "sha256": "f560ca634d32eba7acf5f6e68b06087d67c4c753ea9c727b76bc0802fbb16c1b",
+      "textBytes": 3242
+    }
+  ]
+}
