@@ -128,7 +128,7 @@ Segment collects and routes first-party events, while its Public API manages sou
 - Inspect sources and destinations.
 - Manage supported workspace configuration through an integration.
 
-> **What still needs you:** A developer must build the assistant connection and control which workspace changes it can make.
+> **What still needs you:** Decide which workspace changes the assistant may make, then check that the data still reaches the intended destinations.
 
 - **Route:** Public API and collection SDKs.
 - **Scope:** Sources, destinations, warehouses, tracking plans and events.
@@ -179,7 +179,7 @@ Adjust exposes mature SDKs and several focused APIs for reporting, app configura
 - Retrieve attribution reports.
 - Manage supported settings through the appropriate APIs.
 
-> **What still needs you:** A developer must build and maintain the assistant interface across the APIs you need.
+> **What still needs you:** Choose the APIs needed for the task and review each change. Features and access differ across the separate services.
 
 - **Route:** Official APIs and SDKs.
 - **Scope:** Attribution data, apps, events, campaigns and test devices.

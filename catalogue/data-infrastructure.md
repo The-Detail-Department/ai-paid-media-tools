@@ -387,7 +387,7 @@ Google's open-source MCP toolbox connects agents to BigQuery and other databases
 - Ask questions against approved database queries.
 - Run only the database operations your team has exposed.
 
-> **What still needs you:** An engineer must define the permitted database operations. There is no ready-made advertising connection after sign-in.
+> **What still needs you:** Decide which queries and changes are allowed. The assistant has only the database operations your team exposes.
 
 - **Route:** Official self-hosted MCP framework.
 - **Scope:** Databases and operator-defined tools.

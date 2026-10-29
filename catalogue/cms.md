@@ -219,11 +219,11 @@ Reviewed: 2026-10-29. Documentation reviewed.
 - Create a blog article or information page.
 - Set its publication status or schedule when creating it.
 
-**Route:** Admin GraphQL API, custom integration. **Setup:** Hard. A developer must create an authenticated app, grant content permissions and build the assistant’s API connection. The developer toolkit alone does not write to your store.
+**Route:** Admin GraphQL API, custom integration. **Setup:** Hard. A developer must create an authenticated app, grant content permissions and build the assistant’s API connection.
 
 **Coverage:** Some steps. Create articles and pages with publication settings. This review does not establish a turnkey editorial MCP or general store-management coverage.
 
-**Boundary:** Build an authenticated Admin API connection first. Shopify’s developer AI tools help with development; they do not by themselves edit your store.
+**Boundary:** Review the copy and check the storefront after publication. Translation and editorial approvals need their own workflow.
 
 **Strengths**
 
@@ -321,7 +321,7 @@ Reviewed: 2026-10-29. Documentation reviewed.
 
 **Coverage:** Some steps. Read, create, update and delete CMS pages and blocks. Page content and activation are separate fields; storefront delivery still needs a check.
 
-**Boundary:** Confirm your Commerce version and hosting type. This assessment covers the traditional CMS API, not visual Page Builder editing, a complete approval process or SaaS feature parity.
+**Boundary:** Check the rendered page and use the editor for visual Page Builder work. This assessment does not establish a complete approval process or Adobe Commerce SaaS feature parity.
 
 **Strengths**
 

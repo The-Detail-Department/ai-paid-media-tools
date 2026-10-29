@@ -292,7 +292,7 @@ Apple's Platform API lets advertisers and agencies manage campaigns, ad groups a
 - Create and update supported App Store campaigns.
 - Retrieve campaign results for review.
 
-> **What still needs you:** A developer must build the assistant connection and maintain it as the API changes.
+> **What still needs you:** Review bids, budgets and targeting before applying changes. The assistant can only use the API actions your integration exposes.
 
 - **Route:** Official Platform API.
 - **Scope:** Campaigns, ad groups, keywords and reports.
@@ -598,7 +598,7 @@ Pinterest's Ads API supports programmatic campaign and reporting workflows. No v
 - Create and update supported advertising objects.
 - Pull campaign results into a reporting workflow.
 
-> **What still needs you:** Your team must build and maintain the assistant connection, then review the changes it makes.
+> **What still needs you:** Review the targeting, budget and creative before applying changes, then check the result in the account.
 
 - **Route:** Official Ads API.
 - **Scope:** Campaigns, ad groups, ads, audiences and reporting.
@@ -649,7 +649,7 @@ LinkedIn's Marketing APIs cover campaign management and reporting. We found comm
 - Build or update campaigns through an approved integration.
 - Retrieve results for reporting.
 
-> **What still needs you:** A developer must obtain advertising API approval, then build and maintain the assistant connection.
+> **What still needs you:** Approve targeting, budgets and creative before the integration makes changes. Check the finished campaign in the advertising account.
 
 - **Route:** Official Marketing API.
 - **Scope:** Campaigns, reporting, audiences, leads and conversions.
@@ -700,7 +700,7 @@ Reddit's Ads API v3 exposes campaign and account operations. No vendor-backed MC
 - Create and manage supported campaigns through an integration.
 - Retrieve account and campaign results.
 
-> **What still needs you:** Advertising API approval and a custom connection are required before an assistant can do this work.
+> **What still needs you:** Review campaign changes and check the result in the advertising account. The integration only covers the API operations you implement.
 
 - **Route:** Official Ads API.
 - **Scope:** Accounts, campaigns, ad groups, ads and reporting.

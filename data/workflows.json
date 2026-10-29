@@ -233,7 +233,7 @@
         "level": "Some steps",
         "note": "The API covers important campaign-management jobs, but access is approved by product and use case and there is no official agent interface."
       },
-      "blocker": "A developer must obtain advertising API approval, then build and maintain the assistant connection.",
+      "blocker": "Approve targeting, budgets and creative before the integration makes changes. Check the finished campaign in the advertising account.",
       "commercial": {
         "type": "Partner",
         "label": "LinkedIn Marketing Partner Program",
@@ -262,7 +262,7 @@
         "level": "Some steps",
         "note": "Useful campaign and reporting coverage through the API, without a vendor-backed MCP, plugin or CLI."
       },
-      "blocker": "Your team must build and maintain the assistant connection, then review the changes it makes.",
+      "blocker": "Review the targeting, budget and creative before applying changes, then check the result in the account.",
       "commercial": {
         "type": "Partner",
         "label": "Pinterest Business Partners",
@@ -291,7 +291,7 @@
         "level": "Some steps",
         "note": "Core campaign operations exist in the API, but no official agent interface was verified."
       },
-      "blocker": "Advertising API approval and a custom connection are required before an assistant can do this work.",
+      "blocker": "Review campaign changes and check the result in the advertising account. The integration only covers the API operations you implement.",
       "commercial": {
         "type": "Partner",
         "label": "Reddit Partner Program",
@@ -437,7 +437,7 @@
         "level": "Some steps",
         "note": "Core campaign operations are covered, but no official MCP, agent plugin or daily CLI was verified."
       },
-      "blocker": "A developer must build the assistant connection and maintain it as the API changes.",
+      "blocker": "Review bids, budgets and targeting before applying changes. The assistant can only use the API actions your integration exposes.",
       "commercial": {
         "type": "Partner",
         "label": "Apple Ads agency account path",
@@ -855,7 +855,7 @@
         "level": "Depends",
         "note": "Prebuilt database tools and custom YAML definitions can expose broad operations, bounded by the configured role and queries."
       },
-      "blocker": "An engineer must define the permitted database operations. There is no ready-made advertising connection after sign-in.",
+      "blocker": "Decide which queries and changes are allowed. The assistant has only the database operations your team exposes.",
       "commercial": {
         "type": "None verified",
         "label": "No product-specific commercial programme verified",
@@ -1270,7 +1270,7 @@
         "level": "Some steps",
         "note": "Broad developer capability exists, but it is fragmented and not presented as a ready AI route."
       },
-      "blocker": "A developer must build and maintain the assistant interface across the APIs you need.",
+      "blocker": "Choose the APIs needed for the task and review each change. Features and access differ across the separate services.",
       "dailyTasks": [
         "Retrieve attribution reports.",
         "Manage supported settings through the appropriate APIs."
@@ -1300,7 +1300,7 @@
         "level": "Most steps",
         "note": "The Public API can manage core workspace resources, but event design and quality validation still require specialist work."
       },
-      "blocker": "A developer must build the assistant connection and control which workspace changes it can make.",
+      "blocker": "Decide which workspace changes the assistant may make, then check that the data still reaches the intended destinations.",
       "dailyTasks": [
         "Inspect sources and destinations.",
         "Manage supported workspace configuration through an integration."
@@ -1605,7 +1605,7 @@
         "level": "Depends",
         "note": "Strong governed execution once recipes and functions are exposed, with coverage determined by enterprise configuration."
       },
-      "blocker": "An enterprise administrator must configure the environment and choose the tools the assistant can use.",
+      "blocker": "Choose which recipes may run and check their business effects. Available tools depend on the administrator’s configuration.",
       "dailyTasks": [
         "Run the recipes or functions your administrator exposes.",
         "Connect approved business steps through those tools."

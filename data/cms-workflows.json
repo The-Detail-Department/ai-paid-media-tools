@@ -234,7 +234,7 @@
       "object": "CMS content and its publication state",
       "setup": {
         "level": "Hard",
-        "note": "A developer must create an authenticated app, grant content permissions and build the assistant’s API connection. The developer toolkit alone does not write to your store."
+        "note": "A developer must create an authenticated app, grant content permissions and build the assistant’s API connection."
       },
       "actions": {
         "read": "Unverified",
@@ -253,7 +253,7 @@
         "level": "Some steps",
         "note": "Create articles and pages with publication settings. This review does not establish a turnkey editorial MCP or general store-management coverage."
       },
-      "blocker": "Build an authenticated Admin API connection first. Shopify’s developer AI tools help with development; they do not by themselves edit your store.",
+      "blocker": "Review the copy and check the storefront after publication. Translation and editorial approvals need their own workflow.",
       "evidenceBasis": "Documentation reviewed",
       "dailyTasks": [
         "Create a blog article or information page.",
@@ -350,7 +350,7 @@
         "level": "Some steps",
         "note": "Read, create, update and delete CMS pages and blocks. Page content and activation are separate fields; storefront delivery still needs a check."
       },
-      "blocker": "Confirm your Commerce version and hosting type. This assessment covers the traditional CMS API, not visual Page Builder editing, a complete approval process or SaaS feature parity.",
+      "blocker": "Check the rendered page and use the editor for visual Page Builder work. This assessment does not establish a complete approval process or Adobe Commerce SaaS feature parity.",
       "evidenceBasis": "Documentation reviewed"
     }
   }

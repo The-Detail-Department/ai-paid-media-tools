@@ -130,7 +130,7 @@ Workato Enterprise MCP can expose governed recipe functions, API collections, re
 - Run the recipes or functions your administrator exposes.
 - Connect approved business steps through those tools.
 
-> **What still needs you:** An enterprise administrator must configure the environment and choose the tools the assistant can use.
+> **What still needs you:** Choose which recipes may run and check their business effects. Available tools depend on the administrator’s configuration.
 
 - **Route:** Enterprise MCP.
 - **Scope:** API collections, recipes, recipe functions and skills.
