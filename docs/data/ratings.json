@@ -1,8 +1,8 @@
 {
   "meta": {
-    "version": "0.4",
-    "updatedOn": "2026-10-29",
-    "definition": "The Detail Department's recommendation for real daily AI paid-media work today, scored against the human job for each category rather than one universal feature checklist.",
+    "version": "0.5",
+    "updatedOn": "2026-11-16",
+    "definition": "Editorial comparison of what external AI can read, write and how easily it connects. Same combined lens across categories; not a vendor-quality score.",
     "statusDefinition": {
       "Production": "Dependable enough for a controlled recurring workflow today.",
       "Test": "Worth piloting, but access, maturity or control needs a bounded test.",
@@ -33,14 +33,11 @@
       "readiness": "Production",
       "grade": "B-",
       "positives": [
-        "Official, maintained MCP with a clear read boundary.",
-        "Google Ads Query Language supports detailed account and performance diagnosis.",
-        "Useful as a reporting and second-pair-of-eyes surface once configured."
+        "Read campaign structure, metrics and GAQL reports.",
+        "Create assets and manage labels, not campaigns or budgets."
       ],
       "negatives": [
-        "The MCP cannot create, modify or delete any campaign object.",
-        "Setup requires Python, a developer token, Google Cloud, enabled APIs, OAuth and client configuration.",
-        "The workflow stops at diagnosis and cannot perform the optimisation it recommends."
+        "Campaign changes still require another route; video upload is local only."
       ],
       "position": "Reference"
     },
@@ -49,30 +46,23 @@
       "readiness": "Test",
       "grade": "B-",
       "positives": [
-        "Hosted OAuth makes the connector much easier to add than a custom Marketing API integration.",
-        "It can read performance and campaign structure in the assistant.",
-        "It can create supported campaign, ad-set and ad objects."
+        "The previous grade is retained while current evidence is incomplete."
       ],
       "negatives": [
-        "The current beta does not provide dependable general modification of existing campaign objects.",
-        "Availability still varies by ad account and by individual tool.",
-        "Creation without ordinary follow-up editing sends the operator back to Ads Manager."
+        "Official pages were inaccessible; keep the previous grade visibly pending."
       ],
       "position": "Reference"
     },
     "tiktok-for-business": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "A",
+      "grade": "A-",
       "positives": [
-        "Official remote MCP covers campaign, reporting, audience and creative work.",
-        "Read/write capability makes it useful beyond analysis.",
-        "The interface is designed for advertiser workflows rather than a generic API bridge."
+        "Read campaign information, reports and audience context.",
+        "Create campaigns and change budgets, bids and targeting."
       ],
       "negatives": [
-        "Broad write permissions increase the cost of a bad instruction.",
-        "Business account eligibility and permissions still govern availability.",
-        "No dedicated official CLI was verified."
+        "Exact deletion and launch tools remain unverified."
       ],
       "position": "Reference"
     },
@@ -81,14 +71,11 @@
       "readiness": "Production",
       "grade": "C+",
       "positives": [
-        "Official managed connection is easier than building against the API.",
-        "Provides entity-level performance data for campaigns, ad groups, ads and keywords.",
-        "Useful for conversational audits and cross-platform reporting."
+        "Read campaigns, keywords, assets, reports and change history.",
+        "Register an Entra app, configure OAuth and connect the hosted MCP."
       ],
       "negatives": [
-        "The documented launch surface is read-only.",
-        "It cannot create an ad or apply the campaign changes suggested by an audit.",
-        "Broad manage-campaign language on the product page overstates the action boundary described in its FAQ."
+        "Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration."
       ],
       "position": "Reference"
     },
@@ -97,30 +84,24 @@
       "readiness": "Test",
       "grade": "B+",
       "positives": [
-        "Official MCP can create, update and delete campaign objects.",
-        "Retail-media context makes it strategically important.",
-        "Uses the established Amazon Ads API permission model."
+        "Read performance, account and billing information.",
+        "Create, update and delete supported campaigns."
       ],
       "negatives": [
-        "The MCP is still an open beta.",
-        "Access is limited to partners with active API credentials.",
-        "Destructive campaign operations require strong human approval gates."
+        "Open beta with partner/API access; not every ad product is covered."
       ],
       "position": "Reference"
     },
     "snapchat-ads": {
       "section": "Media platforms",
-      "readiness": "Test",
-      "grade": "C",
+      "readiness": "Production",
+      "grade": "C+",
       "positives": [
-        "Official hosted MCP provides campaign retrieval and analysis.",
-        "Read-only control is suitable for a cautious reporting pilot.",
-        "The underlying Marketing API offers a route to deeper integration."
+        "Read authorised campaign setup and performance.",
+        "An administrator approves the agent; each member grants access."
       ],
       "negatives": [
-        "MCP access is still allowlisted.",
-        "The MCP cannot execute campaign changes.",
-        "No official plugin or dedicated CLI was verified."
+        "Self-service access still requires organisation approval and member consent."
       ],
       "position": "Reference"
     },
@@ -129,14 +110,11 @@
       "readiness": "Test",
       "grade": "C",
       "positives": [
-        "Official Marketing APIs cover campaign management and reporting.",
-        "Strong fit for B2B audience and lead-generation workflows.",
-        "Production access tiers and permissions are documented."
+        "Read campaign configuration and performance through approved APIs.",
+        "Create and manage campaigns through custom API code."
       ],
       "negatives": [
-        "No official MCP was verified.",
-        "API product approval and access tiers add friction.",
-        "Daily AI use needs a custom or third-party integration layer."
+        "No ready official agent connector verified; use a supported API version."
       ],
       "position": "Reference"
     },
@@ -145,14 +123,11 @@
       "readiness": "Test",
       "grade": "C+",
       "positives": [
-        "Official Ads API supports campaign and reporting workflows.",
-        "Useful specialist channel for visual discovery and commerce.",
-        "An authorised integration can run recurring production tasks."
+        "Read campaigns, ad groups and performance.",
+        "Create and manage campaigns, ad groups and ads via API."
       ],
       "negatives": [
-        "No official MCP or agent plugin was verified.",
-        "No dedicated official CLI was verified.",
-        "AI workflows require custom engineering or a maintained intermediary."
+        "Custom integration required; some fields become immutable after draft."
       ],
       "position": "Reference"
     },
@@ -161,94 +136,76 @@
       "readiness": "Test",
       "grade": "C",
       "positives": [
-        "Official Ads API v3 exposes campaign and account operations.",
-        "Community context can be valuable for specific audience strategies.",
-        "OAuth provides a conventional route for controlled integrations."
+        "Read campaign information and reports through API v3.",
+        "Create campaigns and audiences; modify supported settings."
       ],
       "negatives": [
-        "No official MCP, plugin or CLI was verified.",
-        "Advertising API access requires approval.",
-        "A useful daily agent workflow must be built and maintained separately."
+        "Exact deletion and activation coverage remains unverified."
       ],
       "position": "Reference"
     },
     "x-ads": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "B",
+      "grade": "B+",
       "positives": [
-        "Official Ads-specific MCP documents campaign and line-item writes.",
-        "New campaigns and line items start paused, with separate activation tools.",
-        "Includes targeting, creative, audience and conversion-tracking tools."
+        "Read campaign structure, analytics, audiences and creative assets.",
+        "Build and edit campaigns, then activate them explicitly."
       ],
       "negatives": [
-        "Developer-app and Ads access remain prerequisites.",
-        "Campaign deletion is not in the documented MCP tool list.",
-        "Activation and budget changes require explicit operating controls."
+        "Developer-app OAuth setup remains; selected deletes exclude campaign deletion."
       ],
       "position": "Reference"
     },
     "display-video-360": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "B-",
+      "grade": "C+",
       "positives": [
-        "Mature official API covers core programmatic campaign resources.",
-        "Supports insertion orders, line items, targeting, creatives and users.",
-        "Role-based access can separate read, standard and admin operations."
+        "Read trafficking resources; use a separate route for performance reports.",
+        "Manage supported resources, including responsive YouTube ads in v5 beta."
       ],
       "negatives": [
-        "No official MCP or agent plugin was verified.",
-        "Performance reporting requires the separate Bid Manager API.",
-        "Some YouTube and Partners write workflows remain outside the API."
+        "Custom API work remains; the YouTube update does not cover every format."
       ],
       "position": "Reference"
     },
     "campaign-manager-360": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "B",
+      "grade": "C+",
       "positives": [
-        "Mature API supports trafficking, creative, conversion and reporting workflows.",
-        "Broad resource coverage suits complex enterprise operations.",
-        "User-profile permissions remain the control plane."
+        "Read campaign resources and reports via API v5.",
+        "Create campaigns and reports; update supported campaign fields."
       ],
       "negatives": [
-        "No official MCP, plugin or dedicated CLI was verified.",
-        "The resource model and permissions create implementation overhead.",
-        "Write access can affect live trafficking and needs a second-person check."
+        "A custom trafficking integration is needed; archive is not deletion."
       ],
       "position": "Reference"
     },
     "search-ads-360": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "C+",
+      "grade": "C",
       "positives": [
-        "High-volume official reporting API with a purpose-built query language.",
-        "Immediate access to granular campaign, ad and keyword data.",
-        "REST, gRPC and official client libraries support production pipelines."
+        "Query campaign-to-keyword resources and performance reports.",
+        "Build an authenticated API integration and maintain it."
       ],
       "negatives": [
-        "The reporting API is read-only.",
-        "Offline conversions use a separate API surface.",
-        "No official MCP or dedicated agent integration was verified."
+        "Custom setup still stops at diagnosis; campaign changes happen elsewhere."
       ],
       "position": "Reference"
     },
     "apple-ads": {
       "section": "Media platforms",
       "readiness": "Production",
-      "grade": "B-",
+      "grade": "C+",
       "positives": [
-        "Official API supports campaign, ad-group, keyword and reporting work.",
-        "API roles distinguish read-only from read/write access.",
-        "Covers ads on the App Store and Apple Maps."
+        "Read reports and authorised campaign configuration.",
+        "Create and manage supported campaigns, ad groups and keywords."
       ],
       "negatives": [
-        "No official MCP, plugin or dedicated CLI was verified.",
-        "Third-party providers require separate registration.",
-        "Daily AI use needs a custom integration and careful OAuth setup."
+        "No ready official AI connector verified; exact delete and activation tools remain unverified."
       ],
       "position": "Reference"
     },
@@ -257,46 +214,36 @@
       "readiness": "Test",
       "grade": "B",
       "positives": [
-        "Official OAK MCP connects AI assistants to Ask Koa.",
-        "Published scope includes querying data, creating campaigns and monitoring live activity.",
-        "The underlying REST and GraphQL APIs cover substantial platform operations."
+        "The previous grade is retained while current evidence is incomplete."
       ],
       "negatives": [
-        "OAK is available only to selected partners in private beta.",
-        "Broad action scope makes approval and audit controls essential.",
-        "Practical onboarding still depends on an account representative."
+        "Private beta and inaccessible tool evidence; keep the previous grade pending."
       ],
       "position": "Reference"
     },
     "google-analytics": {
       "section": "Analytics",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "B",
       "positives": [
-        "Official open-source MCP is suitable for recurring reporting and analysis.",
-        "Read-only design limits accidental property changes.",
-        "Google Analytics data and administration APIs provide a mature foundation."
+        "Read properties, dimensions, key events and analytics reports.",
+        "Create annotations, custom dimensions and key events with writes enabled."
       ],
       "negatives": [
-        "The MCP cannot edit events, audiences or property settings.",
-        "Cloud credentials and property permissions still require setup.",
-        "No separate official plugin or marketer-facing CLI was verified."
+        "Three creation tools do not provide general property administration or tracking implementation."
       ],
       "position": "Reference"
     },
     "google-tag-manager": {
       "section": "Measurement",
       "readiness": "Production",
-      "grade": "B",
+      "grade": "B+",
       "positives": [
-        "Official API supports container, workspace, tag, trigger and variable workflows.",
-        "Useful for repeatable measurement deployment and governance.",
-        "Workspace and version concepts support controlled changes."
+        "Read accounts, containers, workspaces, tags and versions.",
+        "Change configuration, create previews and publish container versions."
       ],
       "negatives": [
-        "No official MCP, agent plugin or dedicated CLI was verified.",
-        "Incorrect writes can damage live measurement.",
-        "Safe automation needs preview, review and publication gates outside the API."
+        "Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified."
       ],
       "position": "Reference"
     },
@@ -305,78 +252,63 @@
       "readiness": "Production",
       "grade": "A-",
       "positives": [
-        "Official MCP supports both analysis and write operations.",
-        "Official agent plugins, skills and a CLI create several usable entry points.",
-        "Strong fit for behavioural analysis and experimentation workflows."
+        "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
+        "Create and edit analytical content and tracking definitions."
       ],
       "negatives": [
-        "Write capability requires careful project and taxonomy governance.",
-        "It is an analytics layer, not a media-buying control plane.",
-        "Teams still need consistent event instrumentation for useful answers."
+        "Guides/surveys stop at drafts; definition changes do not ingest production events."
       ],
       "position": "Reference"
     },
     "mixpanel": {
       "section": "Analytics",
-      "readiness": "Test",
-      "grade": "B+",
+      "readiness": "Production",
+      "grade": "A-",
       "positives": [
-        "The official tool reference now documents dashboard creation, updates and deletion.",
-        "Lexicon editing and data-quality tools extend the route beyond reporting.",
-        "Regional endpoints and OAuth or service-account authentication are documented."
+        "Read events, funnels, retention, saved reports and data-quality issues.",
+        "Manage dashboards and cohorts; update definitions and resolve data issues."
       ],
       "negatives": [
-        "Experiments, feature flags and audit-log tools have beta or access limits.",
-        "Free-plan query limits and organisation enablement can affect availability.",
-        "Documented tools still need a controlled account-level pilot."
+        "US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable."
       ],
       "position": "Reference"
     },
     "supermetrics": {
       "section": "Data infrastructure",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "A-",
       "positives": [
-        "Official read-only MCP fits recurring cross-channel retrieval.",
-        "Established connector coverage reduces bespoke API maintenance.",
-        "Official AI integrations and CLI provide several workflow options."
+        "Read connected marketing accounts, fields and cross-channel performance.",
+        "Create paused campaigns and edit supported budgets, ads and settings."
       ],
       "negatives": [
-        "The CLI remains alpha.",
-        "The MCP cannot change campaigns.",
-        "Coverage and economics depend on the commercial plan and connector."
+        "Writes require account-level opt-in and entitlement; coverage varies across seven ad platforms."
       ],
       "position": "Reference"
     },
     "dataforseo": {
       "section": "Research and intelligence",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "C+",
       "positives": [
-        "Official MCP and CLI make search and competitive data directly usable by agents.",
-        "Read-only control is appropriate for external research data.",
-        "Broad API coverage supports repeatable market and SERP analysis."
+        "Retrieve SERP, keyword, backlink and competitor research data.",
+        "Connect the hosted v3 MCP with OAuth and a funded DataForSEO account."
       ],
       "negatives": [
-        "It does not operate advertising accounts.",
-        "Usage-based API costs need monitoring.",
-        "Raw results still require paid-media judgement before action."
+        "Research execution is not campaign control; API endpoint costs and allowances apply."
       ],
       "position": "Specialist"
     },
     "airbyte": {
       "section": "Data infrastructure",
       "readiness": "Test",
-      "grade": "B",
+      "grade": "B+",
       "positives": [
-        "Official agent MCP can expose useful connector and data-movement context.",
-        "Large connector ecosystem supports cross-channel data collection.",
-        "Open-source and managed routes give teams deployment choice."
+        "Read connector configuration, sync status, logs and supported external records.",
+        "Manage connectors and pipelines; start or cancel syncs."
       ],
       "negatives": [
-        "MCP control is mixed and depends on the configured interface.",
-        "Self-hosting adds operational overhead.",
-        "It is infrastructure rather than a marketer-facing daily interface."
+        "External source/destination records remain read-only; infrastructure and credentials must already exist."
       ],
       "position": "Reference"
     },
@@ -385,14 +317,11 @@
       "readiness": "Test",
       "grade": "C+",
       "positives": [
-        "Mature managed data movement supports reliable recurring pipelines.",
-        "Official MCP, agent plugins and Connector SDK CLI cover several technical workflows.",
-        "Read-only MCP control is a sensible context boundary."
+        "Query the prepared warehouse context layer with read-only SQL.",
+        "Use the Claude connector or a custom ChatGPT app after the context layer is built."
       ],
       "negatives": [
-        "Agent Context MCP is still a public preview.",
-        "The MCP is not a substitute for connector operations or warehouse permissions.",
-        "Enterprise cost and administration may be disproportionate for a small stack."
+        "Public Preview; the native connector still needs an administrator-prepared context layer."
       ],
       "position": "Reference"
     },
@@ -401,78 +330,63 @@
       "readiness": "Production",
       "grade": "B",
       "positives": [
-        "Official open-source toolbox exposes governed database tools through MCP.",
-        "Supports BigQuery and other common production data stores.",
-        "CLI and Gemini extensions help teams package repeatable access."
+        "Query configured databases and inspect their schemas.",
+        "Execute only the database operations exposed by your toolset."
       ],
       "negatives": [
-        "It is not a paid-media connector by itself.",
-        "Read/write risk depends entirely on tool definitions and database roles.",
-        "Secure configuration requires data-engineering discipline."
+        "Hosting, credentials and tool design remain your responsibility; read-only behaviour varies by engine."
       ],
       "position": "Specialist"
     },
     "snowflake": {
       "section": "Data infrastructure",
       "readiness": "Production",
-      "grade": "B",
+      "grade": "B+",
       "positives": [
-        "Official managed MCP works inside Snowflake's role and governance model.",
-        "Strong foundation for cross-channel measurement and governed client data.",
-        "Official CLI, APIs and drivers support serious production engineering."
+        "Query governed data through configured SQL and Cortex tools.",
+        "Optional SQL and custom tools can change data when explicitly enabled."
       ],
       "negatives": [
-        "It needs warehouse, role and cost governance expertise.",
-        "Mixed control can expose consequential writes when roles are too broad.",
-        "It is infrastructure, not a ready-made paid-media workflow."
+        "SQL defaults to read-only; hosting is managed but tool and data preparation is technical."
       ],
       "position": "Reference"
     },
     "meridian": {
       "section": "Modelling",
       "readiness": "Research",
-      "grade": "B+",
+      "grade": "B-",
       "positives": [
-        "Google-backed open-source marketing-mix modelling package.",
-        "Useful for incrementality and budget-allocation questions beyond platform attribution.",
-        "Python package can be made reproducible in a governed modelling workflow."
+        "Inspect prepared data, model results and convergence diagnostics.",
+        "Run modelling scripts and produce saved models and budget scenarios."
       ],
       "negatives": [
-        "No official MCP, plugin or dedicated CLI was verified.",
-        "Requires statistical skill and suitable historical data.",
-        "It is not a daily campaign-operation interface."
+        "Official agent skills still require local Python, historical data and specialist validation."
       ],
       "position": "Specialist"
     },
     "robyn": {
       "section": "Modelling",
       "readiness": "Research",
-      "grade": "B",
+      "grade": "C",
       "positives": [
-        "Established open-source marketing-mix modelling project from Meta.",
-        "Supports automated model exploration and budget-allocation analysis.",
-        "R and Python routes broaden analyst access."
+        "Read prepared historical data and inspect model outputs through code.",
+        "Fit models and generate diagnostics and allocation scenarios."
       ],
       "negatives": [
-        "No official MCP or marketer-facing CLI was verified.",
-        "Model selection and calibration still require specialist judgement.",
-        "Outputs do not translate directly into safe platform changes."
+        "Specialist coding setup; no ready official external-agent connector verified."
       ],
       "position": "Specialist"
     },
     "pymc-marketing": {
       "section": "Modelling",
       "readiness": "Research",
-      "grade": "B",
+      "grade": "C+",
       "positives": [
-        "Flexible Bayesian tooling for media-mix and customer-value modelling.",
-        "Open source and inspectable for teams that need methodological control.",
-        "Python ecosystem supports custom analysis and reproducibility."
+        "Read prepared data and fitted Bayesian models through Python.",
+        "Create models, diagnostics, forecasts and allocation scenarios."
       ],
       "negatives": [
-        "Requires strong Python and statistical expertise.",
-        "No official MCP, plugin or dedicated workflow CLI was verified.",
-        "It is a modelling library rather than a daily media-operations product."
+        "Simba MCP is a separate product; its hosted capabilities do not belong to this library entry."
       ],
       "position": "Specialist"
     },
@@ -481,14 +395,11 @@
       "readiness": "Production",
       "grade": "A-",
       "positives": [
-        "Official MCP reaches a broad catalogue of business applications.",
-        "Read/write actions make it useful for practical cross-tool workflows.",
-        "Platform CLI supports maintained custom integrations."
+        "Read and search records in connected apps.",
+        "Run supported app actions; workflow creation is separate early access."
       ],
       "negatives": [
-        "Connector depth and field coverage vary by application.",
-        "Broad action access can create unintended external changes.",
-        "Task limits and commercial plans can constrain high-volume operations."
+        "Coverage depends on each app; Next Gen Zaps deployment is not available to every account."
       ],
       "position": "Reference"
     },
@@ -497,14 +408,11 @@
       "readiness": "Production",
       "grade": "A-",
       "positives": [
-        "Official MCP and CLI support flexible API-based automation.",
-        "Code steps handle gaps that fixed connectors cannot cover.",
-        "Strong fit for event-driven media and measurement workflows."
+        "Search and retrieve records from connected apps.",
+        "Create and update app records through hosted actions."
       ],
       "negatives": [
-        "More engineering-oriented than a typical marketer tool.",
-        "Credential and secret handling needs careful ownership.",
-        "Failures can cross several connected systems and need monitoring."
+        "Each app has its own tools; app actions do not establish Pipedream workflow authoring."
       ],
       "position": "Emerging"
     },
@@ -513,14 +421,11 @@
       "readiness": "Test",
       "grade": "B+",
       "positives": [
-        "The instance MCP documents workflow creation and editing as well as execution.",
-        "Workflow enablement and user permissions bound access.",
-        "Self-hosting supports teams that can own the operational setup."
+        "Read exposed workflows, executions and supported data tables.",
+        "Create, edit, test, publish and unpublish workflows."
       ],
       "negatives": [
-        "Building and editing require n8n 2.13.0 or later.",
-        "Enabled workflow access is shared across connected clients rather than separately selected per client.",
-        "Workflow execution can trigger external writes using connected credentials."
+        "Credentials and admin setup remain; protected instances restrict mutations."
       ],
       "position": "Emerging"
     },
@@ -529,30 +434,24 @@
       "readiness": "Test",
       "grade": "B+",
       "positives": [
-        "Official remote and desktop MCP expose real design context.",
-        "Supported clients can create or modify native canvas content.",
-        "Plugin API and agent skills support structured creative workflows."
+        "Read design structure, components, variables and file context.",
+        "Create and edit native canvas objects in supported clients."
       ],
       "negatives": [
-        "Write-to-canvas is beta and depends on current seat eligibility and file permissions.",
-        "It does not connect creative output to media-platform delivery by itself.",
-        "No dedicated official Figma CLI was verified."
+        "Canvas writing is beta; library publishing stays manual and visual review remains necessary."
       ],
       "position": "Reference"
     },
     "canva": {
       "section": "Creative production",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "A-",
       "positives": [
-        "Official MCP supports design creation, editing, assets and export.",
-        "Remote OAuth makes it accessible to common agent clients.",
-        "Apps CLI and Connect APIs support deeper product integration."
+        "Read designs, pages, content, folders and permitted brand templates.",
+        "Create and edit designs, transform images and export assets."
       ],
       "negatives": [
-        "The Apps CLI is not a daily creative-production CLI.",
-        "Brand and format governance still need human review.",
-        "It does not validate media-platform setup or campaign delivery."
+        "Premium licensing and tool limits apply; general deletion and social publishing are not established."
       ],
       "position": "Reference"
     },
@@ -562,30 +461,24 @@
       "grade": "B+",
       "position": "Reference",
       "positives": [
-        "Hosted official MCP with normal Adobe permissions.",
-        "Creates and runs ranked or trended reports.",
-        "Can manage segments, date ranges and workspace projects."
+        "Read reports, components, date ranges and workspace projects.",
+        "Create or update segments, calculated metrics and projects."
       ],
       "negatives": [
-        "Enterprise entitlement and administrator permissions are required.",
-        "It does not operate ad platforms.",
-        "Report correctness still depends on governed suites and components."
+        "No delete tool is listed; component writes do not configure collection tags."
       ]
     },
     "adobe-customer-journey-analytics": {
       "section": "Analytics",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "A-",
       "position": "Reference",
       "positives": [
-        "Official hosted MCP for cross-channel analysis.",
-        "Uses the organisation existing CJA permissions.",
-        "Can work with reusable components and projects."
+        "Read data views, components, audiences, projects and reports.",
+        "Create or update analytical components, projects and audiences."
       ],
       "negatives": [
-        "Useful only after substantial data-view and identity work.",
-        "Enterprise access raises the setup bar.",
-        "It cannot repair upstream instrumentation."
+        "No general deletion or connection administration; audience creation does not prove downstream activation."
       ]
     },
     "posthog": {
@@ -594,14 +487,11 @@
       "grade": "A",
       "position": "Emerging",
       "positives": [
-        "Queries the major product-analytics methods and SQL.",
-        "Creates, updates and deletes insights and dashboards.",
-        "One-command wizard installation is unusually direct."
+        "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
+        "Manage dashboards, insights, flags, experiments and supported pipelines."
       ],
       "negatives": [
-        "It is product-led rather than paid-media-led.",
-        "Quality depends on the event implementation.",
-        "It does not control media spend or delivery."
+        "Events must already be collected; some AI tools can incur additional usage costs."
       ]
     },
     "appsflyer": {
@@ -610,14 +500,11 @@
       "grade": "B",
       "position": "Reference",
       "positives": [
-        "Hosted official MCP with OAuth and token routes.",
-        "Useful campaign and attribution diagnosis in chat.",
-        "Includes implementation and OneLink troubleshooting."
+        "Read aggregate performance, creative, SKAN and configuration data.",
+        "Create OneLink short links under existing templates, with confirmation."
       ],
       "negatives": [
-        "The service is explicitly beta.",
-        "Sessions can require frequent reconnection.",
-        "The reviewed route diagnoses more than it configures."
+        "Beta: ten links per account per day; no wider account-editing MCP tools documented."
       ]
     },
     "adjust": {
@@ -626,30 +513,24 @@
       "grade": "C+",
       "position": "Reference",
       "positives": [
-        "Mature APIs and SDKs cover measurement and reporting.",
-        "App Automation can create or update configured apps.",
-        "Device APIs support testing workflows."
+        "Read aggregate Adjust performance data.",
+        "Ask Adjust to enable access, then connect the custom OAuth connector."
       ],
       "negatives": [
-        "No official MCP or agent plugin was verified.",
-        "Capabilities are split across several APIs.",
-        "Some automation requires vendor enablement."
+        "Early Access requires enablement; no user-level or event-level data."
       ]
     },
     "segment": {
       "section": "Measurement",
       "readiness": "Production",
-      "grade": "B-",
+      "grade": "C",
       "position": "Reference",
       "positives": [
-        "Mature collection and routing infrastructure.",
-        "Public API provides CRUD for core workspace resources.",
-        "Strong governance surface for tracking plans and destinations."
+        "Read workspace sources, destinations, warehouses and tracking plans through API.",
+        "Manage supported workspace resources through a custom API integration."
       ],
       "negatives": [
-        "No official MCP was verified.",
-        "A custom agent layer is required.",
-        "Identity and instrumentation design remain specialist work."
+        "Twilio docs MCP only retrieves documentation; it cannot access or change the account."
       ]
     },
     "adobe-firefly-creative-production": {
@@ -658,94 +539,76 @@
       "grade": "B+",
       "position": "Reference",
       "positives": [
-        "Hosted MCP runs real reusable creative workflows.",
-        "Supports generation, editing, composition and format variants.",
-        "Asynchronous monitoring fits large production jobs."
+        "Discover actions/templates, check run status and retrieve outputs.",
+        "Compose creative workflows, transform media and publish reusable workflows."
       ],
       "negatives": [
-        "Enterprise-only access limits practical adoption.",
-        "Workflow design must exist before reliable reuse.",
-        "Human brand and output review remains essential."
+        "Organisation credentials are required; output links expire and publishing does not distribute ads."
       ]
     },
     "runway": {
       "section": "Creative production",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "B+",
       "position": "Emerging",
       "positives": [
-        "Official MCP, API, SDKs and open GitHub server.",
-        "Creates and edits image, video and audio assets.",
-        "Task APIs and reusable workflows support automation."
+        "Retrieve generated outputs; general library search is unverified.",
+        "Generate images/videos and perform supported reference-based transformations."
       ],
       "negatives": [
-        "Outputs still need rights and brand review.",
-        "Temporary result URLs require disciplined download.",
-        "Generation cost and model choice need controls."
+        "Do not borrow Runway Dev tools or archived server capabilities into the generation app."
       ]
     },
     "ahrefs": {
       "section": "Research and intelligence",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "C+",
       "position": "Reference",
       "positives": [
-        "Hosted official MCP with straightforward OAuth.",
-        "Strong keyword, backlink and competitor evidence.",
-        "Useful without building a custom API wrapper."
+        "Retrieve keyword, backlink, domain and SEO research reports.",
+        "Install the Claude connector with Lite-or-higher Ahrefs access."
       ],
       "negatives": [
-        "Read-only research rather than activation.",
-        "Requires an eligible paid plan.",
-        "It does not include first-party campaign truth."
+        "Strong research access does not edit websites; plan and API-unit allowances apply."
       ]
     },
     "semrush": {
       "section": "Research and intelligence",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "C+",
       "position": "Reference",
       "positives": [
-        "Hosted OAuth endpoint works across major clients.",
-        "Broad SEO, paid-search, shopping and market reports.",
-        "Discovery tools make a large API easier for agents."
+        "Read SEO, Trends and supported Projects reports.",
+        "Connect the official ChatGPT app, or configure the hosted OAuth MCP in another supported client."
       ],
       "negatives": [
-        "Every call consumes API units.",
-        "Project methods exposed by MCP are read-only.",
-        "Subscription entitlements make coverage variable."
+        "MCP does not inherit wider REST API mutations; API units and subscribed datasets apply."
       ]
     },
     "similarweb": {
       "section": "Research and intelligence",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "C+",
       "position": "Reference",
       "positives": [
-        "Hosted MCP covers more than 75 intelligence endpoints.",
-        "Strong web, app, search, audience and retail breadth.",
-        "Supports direct competitor comparison."
+        "Read website/app, audience, traffic, search and commerce intelligence.",
+        "Install the official Claude connector and authorise access to subscribed datasets."
       ],
       "negatives": [
-        "Requires API-inclusive paid access.",
-        "Queries consume data credits.",
-        "Estimated and delayed datasets are not first-party live truth."
+        "The connector exposes subscribed datasets only and consumes data credits."
       ]
     },
     "rudderstack": {
       "section": "Data infrastructure",
       "readiness": "Test",
-      "grade": "B+",
+      "grade": "B-",
       "position": "Emerging",
       "positives": [
-        "Hosted OAuth MCP is easy to connect.",
-        "Can access and manage sources, destinations and transformations.",
-        "Covers event streams and documentation."
+        "Read exposed sources, destinations, transformations and event context.",
+        "Manage supported configuration; exact CRUD tools are not fully documented."
       ],
       "negatives": [
-        "Official docs warn that the MCP is still in active development.",
-        "Some product features are missing.",
-        "Connection stability may vary during updates."
+        "Active development and incomplete public action coverage; verify the actual tool inventory."
       ]
     },
     "databricks": {
@@ -754,14 +617,11 @@
       "grade": "B+",
       "position": "Reference",
       "positives": [
-        "Managed MCP uses workspace governance and permissions.",
-        "Can expose SQL, Genie and Vector Search.",
-        "Strong fit for governed enterprise data estates."
+        "Query governed analytics with Genie One or use the separate SQL MCP.",
+        "SQL MCP can change data within warehouse and Unity Catalog permissions."
       ],
       "negatives": [
-        "Managed MCP remains public preview.",
-        "Requires substantial platform configuration.",
-        "Not a turn-key paid-media connection."
+        "Genie One is GA; SQL writes use a separate Beta route requiring admin enablement."
       ]
     },
     "dbt": {
@@ -770,62 +630,50 @@
       "grade": "B+",
       "position": "Specialist",
       "positives": [
-        "Official open-source MCP with broad toolsets.",
-        "Strong lineage, health, semantic and SQL context.",
-        "Can run build and test when explicitly enabled."
+        "Read metrics, model context, lineage, freshness, jobs and SQL results.",
+        "Trigger, retry or cancel jobs; execute SQL with development credentials."
       ],
       "negatives": [
-        "Setup changes materially by toolset.",
-        "Useful operation requires analytics-engineering expertise.",
-        "CLI writes can change warehouse objects."
+        "Remote MCP does not run local project commands; SQL write rights follow development credentials."
       ]
     },
     "make": {
       "section": "Automation and workflow",
       "readiness": "Production",
-      "grade": "A-",
+      "grade": "B+",
       "position": "Reference",
       "positives": [
-        "Universal hosted OAuth endpoint.",
-        "Can run scenarios on all plans.",
-        "Paid scopes can manage scenarios and related entities."
+        "Read authorised scenarios, connections, teams and organisation context.",
+        "Modify supported automation assets and run authorised scenarios."
       ],
       "negatives": [
-        "Scenario quality depends on clear inputs and outputs.",
-        "Management scopes can affect live automation.",
-        "Connector depth still varies by app."
+        "Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking."
       ]
     },
     "workato": {
       "section": "Automation and workflow",
       "readiness": "Production",
-      "grade": "B+",
+      "grade": "B",
       "position": "Reference",
       "positives": [
-        "Enterprise-hosted runtime with identity and audit controls.",
-        "Exposes recipes, API collections, functions and skills.",
-        "Strong governance for consequential workflows."
+        "Read permitted projects, folders, connections, jobs and workspace assets.",
+        "Manage role-enabled workspace resources and exposed business tools."
       ],
       "negatives": [
-        "Enterprise-only access.",
-        "An administrator must create the endpoint.",
-        "Setup is heavier than self-service competitors."
+        "Enterprise administration and scoped API roles remain; no universal recipe deployment claim."
       ]
     },
     "gumloop": {
       "section": "Automation and workflow",
       "readiness": "Test",
-      "grade": "B+",
+      "grade": "A-",
       "position": "Emerging",
       "positives": [
-        "AI-native agent and workflow construction.",
-        "Supports 50-plus built-in and arbitrary remote MCP servers.",
-        "CLI has JSON output for automation."
+        "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.",
+        "Create and edit agents/skills, run them and manage supported triggers."
       ],
       "negatives": [
-        "No universal external Gumloop MCP endpoint was verified.",
-        "Production reliability inherits every connected dependency.",
-        "External MCP servers must be publicly reachable."
+        "Personal/team scopes differ; complete visual-flow authoring is not established."
       ]
     }
   }

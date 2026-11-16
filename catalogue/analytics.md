@@ -8,63 +8,183 @@ Analytics products judged on whether an agent can investigate performance and le
 
 [Media platforms](media-platforms.md) · [Analytics](analytics.md) · [Measurement](measurement.md) · [Creative production](creative-production.md) · [Research and intelligence](research-intelligence.md) · [Data infrastructure](data-infrastructure.md) · [Automation and workflow](automation-workflow.md) · [Modelling](modelling.md)
 
-| Tool | Grade | Market role | Readiness | Setup | Analyse | Build reports | Configure | Validate | Share | Human-job coverage |
+| Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Amplitude](#amplitude) | **A-** | Reference | Production | Easy | Yes | Yes | Yes | Partial | Yes | Most steps |
-| [Adobe Analytics](#adobe-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
-| [Adobe Customer Journey Analytics](#adobe-customer-journey-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
-| [Google Analytics](#google-analytics) | **B+** | Reference | Production | Hard | Yes | Partial | No | Partial | Partial | Some steps |
-| [Mixpanel](#mixpanel) | **B+** | Reference | Test | Easy | Yes | Yes | Partial | Partial | Unverified | Most steps |
-| [PostHog](#posthog) | **A** | Emerging | Production | Easy | Yes | Yes | Yes | Yes | Partial | Most steps |
+| [Adobe Customer Journey Analytics](#adobe-customer-journey-analytics) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | No | Unverified | Most steps |
+| [Amplitude](#amplitude) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | No | Most steps |
+| [Mixpanel](#mixpanel) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | Yes | Unverified | Most steps |
+| [Adobe Analytics](#adobe-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | No | Unverified | Most steps |
+| [Google Analytics](#google-analytics) | **B** | Reference | Production | Hard | Yes | Partial | No | No | No | Some steps |
+| [PostHog](#posthog) | **A** | Emerging | Production | Easy | Yes | Yes | Yes | Partial | Partial | Most steps |
+
+## Adobe Customer Journey Analytics
+
+**A- · Production · Reference**
+
+Read data views, components, audiences, projects and reports. Create or update analytical components, projects and audiences.
+
+**Day to day**
+
+- Read data views, components, audiences, projects and reports.
+- Create or update analytical components, projects and audiences.
+
+> **What still needs you:** No general deletion or connection administration; audience creation does not prove downstream activation.
+
+- **Route:** Adobe CJA Claude directory connector.
+- **Scope:** Read data views, components, audiences, projects and reports..
+- **Setup:** Moderate. Use the Claude directory connector; product permissions and MCP Full Access still apply. [Connection documentation](https://developer.adobe.com/analytics-mcp/docs/cja/reference).
+- **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **No** · Publish / activate **Unverified**
+- **Read:** Read data views, components, audiences, projects and reports.
+- **Write:** Create or update analytical components, projects and audiences.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Read data views, components, audiences, projects and reports.
+- **create:** Segments, metrics, projects, audiences and date ranges.
+- **modify:** Segments, metrics, projects and audiences.
+- **delete:** No delete tool in the published catalogue.
+- **publish:** Downstream audience activation is not established.
+- **Coverage:** Most steps. Create or update analytical components, projects and audiences. No general deletion or connection administration; audience creation does not prove downstream activation.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Read data views, components, audiences, projects and reports.
+- Create or update analytical components, projects and audiences.
+
+**Limits**
+
+- No general deletion or connection administration; audience creation does not prove downstream activation.
+
+**Official links**
+
+- **Product / official page:** [Customer Journey Analytics](https://business.adobe.com/products/customer-journey-analytics/adobe-customer-journey-analytics.html)
+- **AI interface / endpoint:** [Adobe CJA Claude directory connector](https://developer.adobe.com/analytics-mcp/docs/cja/reference)
+- **MCP:** [Adobe CJA Claude directory connector](https://developer.adobe.com/analytics-mcp/docs/cja/reference)
+- **Plugin:** [Official app or directory connector](https://developer.adobe.com/analytics-mcp/docs/cja/reference)
+- **CLI:** No dedicated official CJA CLI verified
+- **API / SDK:** [CJA APIs](https://developer.adobe.com/cja-apis/docs/)
+- **Documentation:** [Connection and tool documentation](https://developer.adobe.com/analytics-mcp/docs/cja/reference)
+- **GitHub:** No official repository verified
+
+- **Access:** CJA entitlement, relevant data-view/component permissions and MCP Read-only or Full Access. Writes require Full Access and underlying action permissions; product admins automatically receive Full Access.
+- **Watch:** No general deletion or connection administration; audience creation does not prove downstream activation.
+- **Sources:** [Connection and tool documentation](https://developer.adobe.com/analytics-mcp/docs/cja/reference) · [Additional official documentation](https://developer.adobe.com/analytics-mcp/docs/guides/permissions) · [Additional official documentation](https://developer.adobe.com/analytics-mcp/docs/guides/claude)
+- **Last checked:** 16 Nov 2026
+
+[Back to comparison](#analytics)
 
 ## Amplitude
 
 **A- · Production · Reference**
 
-Amplitude's hosted MCP can work with charts, dashboards, experiments, cohorts and taxonomy. It does not ingest event data.
+Query analytics and inspect charts, cohorts, experiments and taxonomy. Create and edit analytical content and tracking definitions.
 
 **Day to day**
 
-- Investigate funnels, retention and user behaviour.
-- Create or update supported charts, dashboards and analytics definitions.
+- Query analytics and inspect charts, cohorts, experiments and taxonomy.
+- Create and edit analytical content and tracking definitions.
 
-> **What still needs you:** Review changes to shared charts and event definitions. The assistant acts with the connected user’s permissions.
+> **What still needs you:** Guides/surveys stop at drafts; definition changes do not ingest production events.
 
-- **Route:** Official remote MCP.
-- **Scope:** Charts, dashboards, cohorts, experiments and taxonomy.
-- **Setup:** Easy. Connect the hosted MCP and authorise an Amplitude user with the appropriate project role. [Connection documentation](https://amplitude.com/docs/amplitude-ai/amplitude-mcp).
+- **Route:** Amplitude official hosted MCP.
+- **Scope:** Query analytics and inspect charts, cohorts, experiments and taxonomy..
+- **Setup:** Moderate. Connect hosted OAuth and grant MCP write rights; wider ChatGPT tools use progressive discovery. [Connection documentation](https://amplitude.com/docs/amplitude-ai/amplitude-mcp).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Partial** · Share **Yes**
-- **Coverage:** Most steps. Strong analytics-asset workflow. Raw event instrumentation and ingestion remain outside the MCP.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **No**
+- **Read:** Query analytics and inspect charts, cohorts, experiments and taxonomy.
+- **Write:** Create and edit analytical content and tracking definitions.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Query analytics and inspect charts, cohorts, experiments and taxonomy.
+- **create:** Analytical content, cohorts, experiments and tracking definitions.
+- **modify:** Supported analytical content, flags, metrics and taxonomy.
+- **delete:** Tracking-plan event/property definitions with restore support.
+- **publish:** Guides, surveys and custom agents still publish in the UI.
+- **Coverage:** Most steps. Create and edit analytical content and tracking definitions. Guides/surveys stop at drafts; definition changes do not ingest production events.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official MCP supports both analysis and write operations.
-- Official agent plugins, skills and a CLI create several usable entry points.
-- Strong fit for behavioural analysis and experimentation workflows.
+- Query analytics and inspect charts, cohorts, experiments and taxonomy.
+- Create and edit analytical content and tracking definitions.
 
 **Limits**
 
-- Write capability requires careful project and taxonomy governance.
-- It is an analytics layer, not a media-buying control plane.
-- Teams still need consistent event instrumentation for useful answers.
+- Guides/surveys stop at drafts; definition changes do not ingest production events.
 
 **Official links**
 
-- **Product / official page:** [Amplitude MCP](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
-- **AI interface / endpoint:** [Official remote MCP](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
-- **MCP:** [Official remote MCP](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
+- **Product / official page:** [Connection and tool documentation](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
+- **AI interface / endpoint:** [Amplitude official hosted MCP](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
+- **MCP:** [Amplitude official hosted MCP](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
 - **Plugin:** [Official agent plugins and skills](https://amplitude.com/docs/amplitude-ai)
 - **CLI:** [Amplitude Wizard CLI](https://www.amplitude.com/docs/get-started/setup-wizard-cli)
 - **API / SDK:** [Analytics and management APIs](https://www.docs.developers.amplitude.com/)
-- **Documentation:** [Amplitude MCP](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
+- **Documentation:** [Connection and tool documentation](https://amplitude.com/docs/amplitude-ai/amplitude-mcp)
 - **GitHub:** No official repository verified
 
-- **Access:** Amplitude account, project access and user-scoped permissions.
-- **Watch:** Write tools can change analytical assets and taxonomy. Event ingestion remains outside the MCP.
-- **Sources:** [Amplitude MCP](https://amplitude.com/docs/amplitude-ai/amplitude-mcp) · [Wizard CLI](https://www.amplitude.com/docs/get-started/setup-wizard-cli)
-- **Last checked:** 5 Sept 2026
+- **Access:** Existing customers, including free Starter, can use MCP. Write actions require Use MCP (write) plus product permissions. Service-account authentication requires Enterprise.
+- **Watch:** Guides/surveys stop at drafts; definition changes do not ingest production events.
+- **Sources:** [Connection and tool documentation](https://amplitude.com/docs/amplitude-ai/amplitude-mcp) · [Additional official documentation](https://amplitude.com/mcp-server) · [Additional official documentation](https://amplitude.com/docs/amplitude-ai/guides-surveys-mcp)
+- **Last checked:** 16 Nov 2026
+
+[Back to comparison](#analytics)
+
+## Mixpanel
+
+**A- · Production · Reference**
+
+Read events, funnels, retention, saved reports and data-quality issues. Manage dashboards and cohorts; update definitions and resolve data issues.
+
+**Day to day**
+
+- Read events, funnels, retention, saved reports and data-quality issues.
+- Manage dashboards and cohorts; update definitions and resolve data issues.
+
+> **What still needs you:** US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable.
+
+- **Route:** Mixpanel native connector + hosted MCP.
+- **Scope:** Read events, funnels, retention, saved reports and data-quality issues..
+- **Setup:** Moderate. Use the regional connector; existing accounts can need admin enablement. [Connection documentation](https://docs.mixpanel.com/docs/mcp).
+- **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Yes** · Publish / activate **Unverified**
+- **Read:** Read events, funnels, retention, saved reports and data-quality issues.
+- **Write:** Manage dashboards and cohorts; update definitions and resolve data issues.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Read events, funnels, retention, saved reports and data-quality issues.
+- **create:** Dashboards and cohorts; experiments/flags are beta.
+- **modify:** Dashboards, cohorts, Lexicon, properties and lookup tables.
+- **delete:** Dashboards and cohorts.
+- **publish:** Experiment/flag writes are beta; audience targeting is not supported.
+- **Coverage:** Most steps. Manage dashboards and cohorts; update definitions and resolve data issues. US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Read events, funnels, retention, saved reports and data-quality issues.
+- Manage dashboards and cohorts; update definitions and resolve data issues.
+
+**Limits**
+
+- US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable.
+
+**Official links**
+
+- **Product / official page:** [Connection and tool documentation](https://docs.mixpanel.com/docs/mcp)
+- **AI interface / endpoint:** [Mixpanel native connector + hosted MCP](https://docs.mixpanel.com/docs/mcp)
+- **MCP:** [Mixpanel native connector + hosted MCP](https://docs.mixpanel.com/docs/mcp)
+- **Plugin:** [Official app or directory connector](https://docs.mixpanel.com/docs/mcp)
+- **CLI:** No dedicated official CLI verified
+- **API / SDK:** [Mixpanel APIs](https://developer.mixpanel.com/reference/overview)
+- **Documentation:** [Connection and tool documentation](https://docs.mixpanel.com/docs/mcp)
+- **GitHub:** [Vendor source code](https://github.com/mixpanel/docs/blob/main/changelogs.mdx)
+
+- **Access:** Existing project roles apply. New Free/Growth accounts after 1 August 2026 have MCP enabled by default; other accounts require an organisation admin. Free query limits apply. Audit-log queries need organisation admin/owner.
+- **Watch:** US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable.
+- **Sources:** [Connection and tool documentation](https://docs.mixpanel.com/docs/mcp) · [Vendor source code](https://github.com/mixpanel/docs/blob/main/changelogs.mdx)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#analytics)
 
@@ -72,203 +192,113 @@ Amplitude's hosted MCP can work with charts, dashboards, experiments, cohorts an
 
 **B+ · Production · Reference**
 
-Adobe hosts a production MCP that can query Analytics data, create reports and manage analysis components through the same product permissions as the UI.
+Read reports, components, date ranges and workspace projects. Create or update segments, calculated metrics and projects.
 
 **Day to day**
 
-- Investigate report-suite data.
-- Create supported reusable analysis components and projects.
+- Read reports, components, date ranges and workspace projects.
+- Create or update segments, calculated metrics and projects.
 
-> **What still needs you:** An administrator must grant access. The assistant depends on the report suite’s existing data quality and configuration.
+> **What still needs you:** No delete tool is listed; component writes do not configure collection tags.
 
-- **Route:** Adobe-hosted MCP.
-- **Scope:** Report suites, components, reports and workspace projects.
-- **Setup:** Moderate. Connect the hosted endpoint, authenticate and obtain MCP Access plus the product permissions needed for each action. [MCP setup guide](https://developer.adobe.com/analytics-mcp/docs/guides/).
+- **Route:** Adobe Analytics official hosted MCP.
+- **Scope:** Read reports, components, date ranges and workspace projects..
+- **Setup:** Moderate. Add the hosted URL, sign in with Adobe ID and obtain MCP Full Access for writes. [Connection documentation](https://developer.adobe.com/analytics-mcp/docs/aa/reference).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Partial** · Share **Partial**
-- **Coverage:** Most steps. It completes ad-hoc analysis and creates reusable components or projects; governed interpretation and stakeholder delivery remain human work.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **No** · Publish / activate **Unverified**
+- **Read:** Read reports, components, date ranges and workspace projects.
+- **Write:** Create or update segments, calculated metrics and projects.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read reports, components, date ranges and workspace projects.
+- **create:** Segments, calculated metrics, date ranges and projects.
+- **modify:** Supported segments, calculated metrics and projects.
+- **delete:** No delete tool in the published catalogue.
+- **publish:** Not established by the reviewed sources.
+- **Coverage:** Most steps. Create or update segments, calculated metrics and projects. No delete tool is listed; component writes do not configure collection tags.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Hosted official MCP with normal Adobe permissions.
-- Creates and runs ranked or trended reports.
-- Can manage segments, date ranges and workspace projects.
+- Read reports, components, date ranges and workspace projects.
+- Create or update segments, calculated metrics and projects.
 
 **Limits**
 
-- Enterprise entitlement and administrator permissions are required.
-- It does not operate ad platforms.
-- Report correctness still depends on governed suites and components.
+- No delete tool is listed; component writes do not configure collection tags.
 
 **Official links**
 
 - **Product / official page:** [Adobe Analytics](https://business.adobe.com/products/adobe-analytics.html)
-- **AI interface / endpoint:** [https://aa-mcp.adobe.io/mcp](https://aa-mcp.adobe.io/mcp)
-- **MCP:** [Adobe-hosted Analytics MCP](https://developer.adobe.com/analytics-mcp/docs/aa/)
+- **AI interface / endpoint:** [Adobe Analytics official hosted MCP](https://developer.adobe.com/analytics-mcp/docs/aa/reference)
+- **MCP:** [Adobe Analytics official hosted MCP](https://developer.adobe.com/analytics-mcp/docs/aa/reference)
 - **Plugin:** [Adobe Analytics agent skills](https://github.com/adobe/skills)
 - **CLI:** No dedicated official analytics CLI verified
 - **API / SDK:** [Adobe Analytics APIs](https://developer.adobe.com/analytics-apis/docs/2.0/)
-- **Documentation:** [Adobe Analytics MCP server](https://developer.adobe.com/analytics-mcp/docs/aa/)
-- **GitHub:** [Adobe Analytics MCP documentation source](https://github.com/AdobeDocs/analytics-mcp)
+- **Documentation:** [Connection and tool documentation](https://developer.adobe.com/analytics-mcp/docs/aa/reference)
+- **GitHub:** No official repository verified
 
-- **Access:** Adobe Analytics entitlement, MCP Access permission and the normal product permissions for each action.
-- **Watch:** The server can create components and projects. Validate definitions and report scope before sharing outputs.
-- **Sources:** [Adobe Analytics MCP server](https://developer.adobe.com/analytics-mcp/docs/aa/) · [Analytics MCP getting started](https://developer.adobe.com/analytics-mcp/docs/guides/) · [Analytics MCP documentation source](https://github.com/AdobeDocs/analytics-mcp)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#analytics)
-
-## Adobe Customer Journey Analytics
-
-**B+ · Production · Reference**
-
-Adobe hosts a separate CJA MCP for cross-channel data views, components, reports and workspace projects.
-
-**Day to day**
-
-- Analyse behaviour across a prepared cross-channel dataset.
-- Build supported analysis components and projects.
-
-> **What still needs you:** A data team must fix missing connections, identity matching and data-view definitions. The assistant cannot make weak inputs reliable.
-
-- **Route:** Adobe-hosted MCP.
-- **Scope:** CJA connections, data views, components, reports and projects.
-- **Setup:** Moderate. Connect the hosted endpoint and authenticate with CJA entitlements, MCP Access and normal product permissions. [MCP setup guide](https://developer.adobe.com/analytics-mcp/docs/guides/).
-- **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Partial** · Share **Partial**
-- **Coverage:** Most steps. Strong analysis and component coverage once the cross-channel data model exists; upstream data design stays outside the route.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Official hosted MCP for cross-channel analysis.
-- Uses the organisation existing CJA permissions.
-- Can work with reusable components and projects.
-
-**Limits**
-
-- Useful only after substantial data-view and identity work.
-- Enterprise access raises the setup bar.
-- It cannot repair upstream instrumentation.
-
-**Official links**
-
-- **Product / official page:** [Customer Journey Analytics](https://business.adobe.com/products/customer-journey-analytics/adobe-customer-journey-analytics.html)
-- **AI interface / endpoint:** [https://cja-mcp.adobe.io/mcp](https://cja-mcp.adobe.io/mcp)
-- **MCP:** [Adobe-hosted CJA MCP](https://developer.adobe.com/analytics-mcp/docs/cja/)
-- **Plugin:** [Adobe CJA agent skills](https://github.com/adobe/skills)
-- **CLI:** No dedicated official CJA CLI verified
-- **API / SDK:** [CJA APIs](https://developer.adobe.com/cja-apis/docs/)
-- **Documentation:** [Analytics MCP servers](https://developer.adobe.com/analytics-mcp/docs/)
-- **GitHub:** [Adobe Analytics MCP documentation source](https://github.com/AdobeDocs/analytics-mcp)
-
-- **Access:** CJA entitlement, MCP Access permission and the relevant data-view and component permissions.
-- **Watch:** Cross-channel power depends on the organisation already having governed connections, data views and identity design.
-- **Sources:** [Analytics MCP servers](https://developer.adobe.com/analytics-mcp/docs/) · [Analytics MCP getting started](https://developer.adobe.com/analytics-mcp/docs/guides/) · [Analytics MCP documentation source](https://github.com/AdobeDocs/analytics-mcp)
-- **Last checked:** 5 Sept 2026
+- **Access:** Requires Adobe Analytics access and MCP Read-only Access or MCP Full Access. Writes require Full Access plus normal component permissions. Product admins automatically have Full Access.
+- **Watch:** No delete tool is listed; component writes do not configure collection tags.
+- **Sources:** [Connection and tool documentation](https://developer.adobe.com/analytics-mcp/docs/aa/reference) · [Additional official documentation](https://developer.adobe.com/analytics-mcp/docs/guides/permissions) · [Additional official documentation](https://developer.adobe.com/analytics-mcp/docs/guides/claude)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#analytics)
 
 ## Google Analytics
 
-**B+ · Production · Reference**
+**B · Production · Reference**
 
-Google's open-source MCP lets agents query Analytics reporting and administration data without changing the property.
+Read properties, dimensions, key events and analytics reports. Create annotations, custom dimensions and key events with writes enabled.
 
 **Day to day**
 
-- Ask where visits and conversions came from.
-- Compare pages, events and audience segments in reports.
+- Read properties, dimensions, key events and analytics reports.
+- Create annotations, custom dimensions and key events with writes enabled.
 
-> **What still needs you:** Fix tracking and property settings elsewhere. The assistant can investigate the data, but cannot repair its collection.
+> **What still needs you:** Three creation tools do not provide general property administration or tracking implementation.
 
-- **Route:** Official MCP.
-- **Scope:** Property metadata, dimensions, metrics and reports.
-- **Setup:** Hard. An administrator or developer must enable the Google APIs, configure credentials and grant access to the intended properties. [Connection documentation](https://developers.google.com/analytics/devguides/MCP).
+- **Route:** Google Analytics official MCP, local or self-deployed.
+- **Scope:** Read properties, dimensions, key events and analytics reports..
+- **Setup:** Hard. Run the Python MCP, configure Google credentials and explicitly enable writes. [Connection documentation](https://github.com/googleanalytics/google-analytics-mcp).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Partial** · Configure **No** · Validate **Partial** · Share **Partial**
-- **Coverage:** Some steps. Strong querying and reporting, but events, audiences and property settings cannot be changed through the MCP.
+- **Capabilities:** Read **Yes** · Create **Partial** · Edit **No** · Delete **No** · Publish / activate **No**
+- **Read:** Read properties, dimensions, key events and analytics reports.
+- **Write:** Create annotations, custom dimensions and key events with writes enabled.
+- **Connection type:** self-managed
+- **Review:** current
+- **read:** Read properties, dimensions, key events and analytics reports.
+- **create:** Annotations, custom dimensions and key events.
+- **modify:** No general update tools documented.
+- **delete:** No general delete tools documented.
+- **publish:** Creating a key event does not implement its collection.
+- **Coverage:** Some steps. Create annotations, custom dimensions and key events with writes enabled. Three creation tools do not provide general property administration or tracking implementation.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official open-source MCP is suitable for recurring reporting and analysis.
-- Read-only design limits accidental property changes.
-- Google Analytics data and administration APIs provide a mature foundation.
+- Read properties, dimensions, key events and analytics reports.
+- Create annotations, custom dimensions and key events with writes enabled.
 
 **Limits**
 
-- The MCP cannot edit events, audiences or property settings.
-- Cloud credentials and property permissions still require setup.
-- No separate official plugin or marketer-facing CLI was verified.
+- Three creation tools do not provide general property administration or tracking implementation.
 
 **Official links**
 
-- **Product / official page:** [Google Analytics MCP guide](https://developers.google.com/analytics/devguides/MCP)
-- **AI interface / endpoint:** [Official, open source](https://developers.google.com/analytics/devguides/MCP)
-- **MCP:** [Official, open source](https://developers.google.com/analytics/devguides/MCP)
+- **Product / official page:** [Vendor source code](https://github.com/googleanalytics/google-analytics-mcp)
+- **AI interface / endpoint:** [Google Analytics official MCP, local or self-deployed](https://github.com/googleanalytics/google-analytics-mcp)
+- **MCP:** [Google Analytics official MCP, local or self-deployed](https://github.com/googleanalytics/google-analytics-mcp)
 - **Plugin:** No separate official plugin verified
 - **CLI:** Package launcher only; no analytics CLI
 - **API / SDK:** [Data API and Admin API](https://developers.google.com/analytics/devguides/reporting/data/v1)
-- **Documentation:** [Google Analytics MCP guide](https://developers.google.com/analytics/devguides/MCP)
-- **GitHub:** [Official MCP repository](https://github.com/googleanalytics/google-analytics-mcp)
+- **Documentation:** [Vendor source code](https://github.com/googleanalytics/google-analytics-mcp)
+- **GitHub:** [Vendor source code](https://github.com/googleanalytics/google-analytics-mcp)
 
-- **Access:** Google Cloud credentials and property permissions.
-- **Watch:** Read-only means the MCP cannot edit events, audiences or property settings.
-- **Sources:** [Google Analytics MCP guide](https://developers.google.com/analytics/devguides/MCP) · [Official MCP repository](https://github.com/googleanalytics/google-analytics-mcp)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#analytics)
-
-## Mixpanel
-
-**B+ · Test · Reference**
-
-Mixpanel’s hosted MCP queries product analytics and manages dashboards, Lexicon metadata and supported analytics assets.
-
-**Day to day**
-
-- Investigate funnels and retention.
-- Create dashboards and tidy supported event or property definitions.
-
-> **What still needs you:** Some tools remain in beta. Audience targeting and cohort edits inside experiment or feature-flag workflows still need the interface.
-
-- **Route:** Official hosted MCP.
-- **Scope:** Product analytics data and supported assets.
-- **Setup:** Easy. Connect a compatible MCP client and authorise the Mixpanel account. [Connection documentation](https://docs.mixpanel.com/docs/mcp).
-- **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Partial** · Validate **Partial** · Share **Unverified**
-- **Coverage:** Most steps. Query analytics, create and update dashboards, edit Lexicon metadata and manage supported cohorts and other assets.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- The official tool reference now documents dashboard creation, updates and deletion.
-- Lexicon editing and data-quality tools extend the route beyond reporting.
-- Regional endpoints and OAuth or service-account authentication are documented.
-
-**Limits**
-
-- Experiments, feature flags and audit-log tools have beta or access limits.
-- Free-plan query limits and organisation enablement can affect availability.
-- Documented tools still need a controlled account-level pilot.
-
-**Official links**
-
-- **Product / official page:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp)
-- **AI interface / endpoint:** [Official hosted MCP](https://docs.mixpanel.com/docs/mcp)
-- **MCP:** [Official hosted MCP](https://docs.mixpanel.com/docs/mcp)
-- **Plugin:** No separate official plugin verified
-- **CLI:** No dedicated official CLI verified
-- **API / SDK:** [Mixpanel APIs](https://developer.mixpanel.com/reference/overview)
-- **Documentation:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp)
-- **GitHub:** No official repository verified
-
-- **Access:** Mixpanel account and compatible MCP client.
-- **Watch:** The core tool list documents writes. Experiments and feature flags are open beta; audit-log access is limited beta.
-- **Sources:** [Mixpanel MCP tool reference](https://docs.mixpanel.com/docs/mcp) · [Mixpanel MCP](https://mixpanel.com/ai/mcp) · [MCP announcement](https://mixpanel.com/blog/mixpanel-mcp-server/)
-- **Last checked:** 29 Oct 2026
+- **Access:** Read access follows Analytics account permissions. Writes default off; require --allow-write plus analytics.edit. Custom dimensions require Editor; key events require Marketer or Editor.
+- **Watch:** Three creation tools do not provide general property administration or tracking implementation.
+- **Sources:** [Vendor source code](https://github.com/googleanalytics/google-analytics-mcp) · [Vendor source code](https://github.com/googleanalytics/google-analytics-mcp/releases/tag/1.1.0)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#analytics)
 
@@ -276,50 +306,56 @@ Mixpanel’s hosted MCP queries product analytics and manages dashboards, Lexico
 
 **A · Production · Emerging**
 
-PostHog MCP queries trends, funnels, retention, paths and SQL, then creates, updates or deletes saved insights and dashboards.
+Read analytics, SQL/schema, insights, errors and pipeline diagnostics. Manage dashboards, insights, flags, experiments and supported pipelines.
 
 **Day to day**
 
-- Investigate funnels and product behaviour.
-- Create or update reusable insights and dashboards.
+- Read analytics, SQL/schema, insights, errors and pipeline diagnostics.
+- Manage dashboards, insights, flags, experiments and supported pipelines.
 
-> **What still needs you:** Apply advertising changes elsewhere. This connection works on analytics, not campaign optimisation.
+> **What still needs you:** Events must already be collected; some AI tools can incur additional usage costs.
 
-- **Route:** Official PostHog MCP.
-- **Scope:** Events, SQL, insights and dashboards.
-- **Setup:** Easy. Run the official wizard, authorise a PostHog project and expose the required tools. [Connection documentation](https://posthog.com/docs/product-analytics/surfaces/mcp).
+- **Route:** PostHog Claude connector + official plugin.
+- **Scope:** Read analytics, SQL/schema, insights, errors and pipeline diagnostics..
+- **Setup:** Easy. Add PostHog from the Claude directory and sign in; authentication selects US/EU. [Connection documentation](https://posthog.com/docs/model-context-protocol).
 - **Human job:** Explore data, answer a question, build a reusable report, configure analysis components and share the result.
-- **Capabilities:** Analyse **Yes** · Build reports **Yes** · Configure **Yes** · Validate **Yes** · Share **Partial**
-- **Coverage:** Most steps. The route can investigate behaviour and maintain reusable insights and dashboards; distribution and paid-media decisions remain outside it.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **Partial**
+- **Read:** Read analytics, SQL/schema, insights, errors and pipeline diagnostics.
+- **Write:** Manage dashboards, insights, flags, experiments and supported pipelines.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Read analytics, SQL/schema, insights, errors and pipeline diagnostics.
+- **create:** Insights, dashboards, flags, experiments and exports.
+- **modify:** Supported analytics, error and pipeline objects.
+- **delete:** Insights, dashboards and supported batch exports.
+- **publish:** Enable or disable supported pipeline functions; permissions apply.
+- **Coverage:** Most steps. Manage dashboards, insights, flags, experiments and supported pipelines. Events must already be collected; some AI tools can incur additional usage costs.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Queries the major product-analytics methods and SQL.
-- Creates, updates and deletes insights and dashboards.
-- One-command wizard installation is unusually direct.
+- Read analytics, SQL/schema, insights, errors and pipeline diagnostics.
+- Manage dashboards, insights, flags, experiments and supported pipelines.
 
 **Limits**
 
-- It is product-led rather than paid-media-led.
-- Quality depends on the event implementation.
-- It does not control media spend or delivery.
+- Events must already be collected; some AI tools can incur additional usage costs.
 
 **Official links**
 
 - **Product / official page:** [PostHog Product Analytics](https://posthog.com/product-analytics)
-- **AI interface / endpoint:** [Official PostHog MCP](https://posthog.com/docs/product-analytics/surfaces/mcp)
-- **MCP:** [Official PostHog MCP](https://posthog.com/docs/product-analytics/surfaces/mcp)
-- **Plugin:** [PostHog wizard installer](https://posthog.com/docs/product-analytics/surfaces/mcp)
+- **AI interface / endpoint:** [PostHog Claude connector + official plugin](https://posthog.com/docs/model-context-protocol)
+- **MCP:** [PostHog Claude connector + official plugin](https://posthog.com/docs/model-context-protocol)
+- **Plugin:** [Official app or directory connector](https://posthog.com/docs/model-context-protocol)
 - **CLI:** [PostHog wizard](https://github.com/PostHog/wizard)
 - **API / SDK:** [PostHog API](https://posthog.com/docs/api)
-- **Documentation:** [PostHog MCP analytics guide](https://posthog.com/docs/product-analytics/surfaces/mcp)
-- **GitHub:** [PostHog monorepo](https://github.com/PostHog/posthog)
+- **Documentation:** [Connection and tool documentation](https://posthog.com/docs/model-context-protocol)
+- **GitHub:** No official repository verified
 
-- **Access:** A PostHog project, captured events and a supported MCP client; the wizard handles installation.
-- **Watch:** It is strongest for product and web behaviour, not ad-platform delivery or media cost governance.
-- **Sources:** [PostHog MCP analytics guide](https://posthog.com/docs/product-analytics/surfaces/mcp) · [PostHog source](https://github.com/PostHog/posthog)
-- **Last checked:** 5 Sept 2026
+- **Access:** Existing project access and authorised scopes apply. MCP connection/calls are free; some tools using LLMs internally require organisation AI data processing enabled and can incur PostHog AI spend.
+- **Watch:** Events must already be collected; some AI tools can incur additional usage costs.
+- **Sources:** [Connection and tool documentation](https://posthog.com/docs/model-context-protocol) · [Additional official documentation](https://posthog.com/docs/model-context-protocol/claude-desktop) · [Additional official documentation](https://posthog.com/docs/product-analytics/surfaces/mcp) · [Additional official documentation](https://posthog.com/docs/data-pipelines/surfaces/mcp)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#analytics)
 

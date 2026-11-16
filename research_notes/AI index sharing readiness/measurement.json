@@ -1,0 +1,190 @@
+[
+  {
+    "id": "google-analytics",
+    "verifiedOn": "2026-11-16",
+    "route": "Google-owned googleanalytics/google-analytics-mcp, release 1.1.0; local Python MCP or customer-deployed HTTP server",
+    "read": "Account/property discovery, Ads links, annotations, key events, custom dimensions/metrics, core/funnel/conversions/realtime reports.",
+    "write": "Opt-in creation of property annotations, custom dimensions and key events. No general update/delete/property administration tool is documented in the current MCP catalogue.",
+    "setupTier": "self-managed",
+    "setupDetails": "Install Python/pipx, enable Analytics Admin and Data APIs, configure Google credentials and the MCP client. Remote HTTP/OAuth and Docker/Cloud Run are self-deployment options, not a Google-hosted connector.",
+    "access": "Read access follows Analytics account permissions. Writes default off; require --allow-write plus analytics.edit. Custom dimensions require Editor; key events require Marketer or Editor.",
+    "limitations": ["Three creation operations are not general Admin API CRUD.", "The user must operate the local server or deploy/maintain an HTTP service."],
+    "sources": [
+      {"url":"https://github.com/googleanalytics/google-analytics-mcp","label":"Google-owned MCP tool catalogue and setup"},
+      {"url":"https://github.com/googleanalytics/google-analytics-mcp/releases/tag/1.1.0","label":"6 November release: custom dimensions and key-event writes"}
+    ],
+    "proposedGrade": "B",
+    "gradeReason": "Strong reporting and some useful creation, but self-managed authentication/runtime and limited writes prevent an A under the new criteria.",
+    "changedClaims": ["Replace read-only with read plus three opt-in create operations.", "Replace local-only wording with local or self-deployed HTTP.", "B+ to B is rubric recalibration, not a product regression."]
+  },
+  {
+    "id": "google-tag-manager",
+    "verifiedOn": "2026-11-16",
+    "route": "Stape's third-party hosted Google Tag Manager MCP at https://gtm-mcp.stape.io/mcp; not Google-owned",
+    "read": "GTM account/container/workspace discovery and configuration reads, including tags and live/version state.",
+    "write": "Documented MCP tools create/update/remove/revert tags; create/update/remove/synchronise workspaces, create versions and quick previews; publish/update/remove/undelete versions.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Add a custom remote connector and sign in with Google OAuth. Maintainer documents direct Claude, ChatGPT, Cursor and coding-client connections. Optional local CLI uses supplied credentials.",
+    "access": "Google account must have the relevant GTM permissions, particularly publish rights. Hosted traffic passes through Stape; local CLI is an alternative. AI workspace policy can restrict custom connectors.",
+    "limitations": ["This is a third-party route and must be labelled as such.", "Publishing a container does not establish correct tracking, consent or website installation; test those separately.", "Hosted commercial limits were not established in this review."],
+    "sources": [
+      {"url":"https://github.com/stape-io/google-tag-manager-mcp-server","label":"Stape-maintained hosted/local route and OAuth setup"},
+      {"url":"https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/tagActions.ts","label":"Actual tag MCP actions"},
+      {"url":"https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/versionActions.ts","label":"Actual version publish/update/delete actions"},
+      {"url":"https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/workspaceActions.ts","label":"Actual workspace and preview actions"},
+      {"url":"https://developers.google.com/tag-platform/tag-manager/api/v2","label":"Google's own underlying API"}
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "A useful hosted route can perform a real configuration-to-publish workflow. Keep B+ provisional to provider constraints and actual setup checks, rather than crediting Google with a native integration.",
+    "changedClaims": ["API-only is incomplete: add the maintained third-party hosted MCP.", "Keep 'no Google-owned MCP verified' separate from 'no practical MCP'.", "If editorial policy rates only Google-owned routes, retain the custom API route but grade it C+ under the new criteria, and show Stape separately."]
+  },
+  {
+    "id": "amplitude",
+    "verifiedOn": "2026-11-16",
+    "route": "Amplitude-hosted MCP: https://mcp.amplitude.com/mcp (US), https://mcp.eu.amplitude.com/mcp (EU)",
+    "read": "Analytics queries and content discovery across charts, dashboards, notebooks, cohorts, experiments and taxonomy; import/export connection and job information.",
+    "write": "Create/edit analytical content, experiments, cohorts, flags and metrics; create/update/delete/restore tracking-plan event/property definitions. Guides/surveys can be drafted, not published through MCP.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Connect a remote MCP client using OAuth. ChatGPT's default catalogue is a subset; append ?discovery=progressive for wider tool discovery.",
+    "access": "Existing customers, including free Starter, can use MCP. Write actions require Use MCP (write) plus product permissions. Service-account authentication requires Enterprise.",
+    "limitations": ["Event-definition writes are not production event ingestion.", "Guide/survey audience, scheduling, publishing and testing remain in the UI.", "Custom-agent creation/configuration/publishing remains in the UI."],
+    "sources": [
+      {"url":"https://amplitude.com/docs/amplitude-ai/amplitude-mcp","label":"Current tool scope, permissions and workflow boundaries"},
+      {"url":"https://amplitude.com/mcp-server","label":"MCP plan availability"},
+      {"url":"https://amplitude.com/docs/amplitude-ai/guides-surveys-mcp","label":"Draft versus publish boundary"}
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Broad useful read/write through hosted OAuth; explicit publishing and ingestion gaps keep it below fully comprehensive coverage.",
+    "changedClaims": ["Retain A- with stronger evidence and explicit UI boundaries.", "Explain event definitions versus ingested events.", "Show ChatGPT's default subset and progressive discovery caveat."]
+  },
+  {
+    "id": "mixpanel",
+    "verifiedOn": "2026-11-16",
+    "route": "Mixpanel connector in Claude/ChatGPT, backed by regional hosted MCP: mcp.mixpanel.com, mcp-eu.mixpanel.com or mcp-in.mixpanel.com, each /mcp",
+    "read": "Events/properties, insights, funnels, flows, retention, saved reports, replays, user context and data-quality issues.",
+    "write": "Dashboard and cohort CRUD; update Lexicon, custom properties and lookup tables; resolve/dismiss data-quality issues. Experiment/feature-flag creation and edits are beta.",
+    "setupTier": "native-app",
+    "setupDetails": "Official docs link directly to Claude and ChatGPT connectors for US. EU/India require custom regional connectors; ChatGPT requires developer mode for those configurations.",
+    "access": "Existing project roles apply. New Free/Growth accounts after 1 August 2026 have MCP enabled by default; other accounts require an organisation admin. Free query limits apply. Audit-log queries need organisation admin/owner.",
+    "limitations": ["Experiment/flag audience targeting is not supported through MCP.", "Run-Query does not support cohort filters/breakdowns, SCD fields or Saved Metrics.", "600 MCP requests/hour/user; service accounts are beta."],
+    "sources": [
+      {"url":"https://docs.mixpanel.com/docs/mcp","label":"Current tools, native connectors, regional setup and limitations"},
+      {"url":"https://github.com/mixpanel/docs/blob/main/changelogs.mdx","label":"Cohort, lookup-table, custom-property and experiment-tool updates"}
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Routine analytics plus real content CRUD and direct connectors justify an upgrade; query and targeting gaps remain meaningful.",
+    "changedClaims": ["Upgrade B+ to A- on current read/write/setup evidence.", "Do not label the whole server beta solely because experiments, flags and service accounts are beta.", "Audit-log querying is documented without the old limited-beta label; keep its admin/owner restriction."]
+  },
+  {
+    "id": "adobe-analytics",
+    "verifiedOn": "2026-11-16",
+    "route": "Adobe-hosted Analytics MCP at https://aa-mcp.adobe.io/mcp",
+    "read": "Report-suite/component discovery, ranked/trended reports, segments, calculated metrics, date ranges, workspace projects and component usage.",
+    "write": "upsertSegment, upsertCalculatedMetric, createDateRange and upsertProject create or update analytical components. No delete tool appears in the published catalogue.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Add a custom connector and authenticate with Adobe ID; select the appropriate IMS organisation. Adobe Analytics is manually added in Claude, unlike CJA's directory connector.",
+    "access": "Requires Adobe Analytics access and MCP Read-only Access or MCP Full Access. Writes require Full Access plus normal component permissions. Product admins automatically have Full Access.",
+    "limitations": ["Do not infer delete capability from broader Analytics APIs.", "Read-only/full access are separate permissions; full access does not remove product-level restrictions.", "This does not configure website collection tags."],
+    "sources": [
+      {"url":"https://developer.adobe.com/analytics-mcp/docs/aa/reference","label":"Exact tool catalogue and write operations"},
+      {"url":"https://developer.adobe.com/analytics-mcp/docs/guides/permissions","label":"Current read-only/full access model"},
+      {"url":"https://developer.adobe.com/analytics-mcp/docs/guides/claude","label":"Manual Adobe Analytics versus directory CJA connection"}
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Good reporting and component creation/editing through hosted OAuth, but access administration and absent deletion constrain the complete workflow.",
+    "changedClaims": ["Replace generic MCP Access entitlement with Read-only/Full Access distinction.", "Strengthen Modify to Yes for the named supported components.", "Replace Delete Partial with no deletion documented on this evaluated route."]
+  },
+  {
+    "id": "adobe-customer-journey-analytics",
+    "verifiedOn": "2026-11-16",
+    "route": "Adobe Customer Journey Analytics Claude directory connector, backed by https://cja-mcp.adobe.io/mcp",
+    "read": "Data views, dimensions, metrics, segments, date ranges, projects, audiences, component usage and reports.",
+    "write": "Create/update segments, calculated metrics, workspace projects and audiences; create date ranges. No delete tool appears in the current reference.",
+    "setupTier": "native-app",
+    "setupDetails": "Select Adobe Customer Journey Analytics in Claude's connector directory and authenticate with Adobe ID. Other compatible clients use the hosted endpoint.",
+    "access": "CJA entitlement, relevant data-view/component permissions and MCP Read-only or Full Access. Writes require Full Access and underlying action permissions; product admins automatically receive Full Access.",
+    "limitations": ["The connector does not establish the underlying CJA data model or connections.", "No general delete action is documented.", "MCP audience creation does not imply unrestricted activation in every downstream channel."],
+    "sources": [
+      {"url":"https://developer.adobe.com/analytics-mcp/docs/cja/reference","label":"Exact report, component and audience tool catalogue"},
+      {"url":"https://developer.adobe.com/analytics-mcp/docs/guides/permissions","label":"MCP and product permissions"},
+      {"url":"https://developer.adobe.com/analytics-mcp/docs/guides/claude","label":"Official directory connector setup"}
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "A native connector with broad analytical reads and meaningful project/component/audience writes; configuration and deletion gaps remain.",
+    "changedClaims": ["Upgrade setup from generic hosted configuration to the verified Claude directory connector.", "Upgrade B+ to A- for easier connection and explicit audience/project writes.", "Do not borrow connection-management or deletion capabilities from other Adobe APIs."]
+  },
+  {
+    "id": "posthog",
+    "verifiedOn": "2026-11-16",
+    "route": "PostHog Claude directory connector / official AI plugin, backed by https://mcp.posthog.com/mcp",
+    "read": "Trends, funnels, retention, paths, SQL/schema, saved insights/dashboards, errors and pipeline diagnostics.",
+    "write": "Insight/dashboard CRUD, feature-flag and experiment management, error status/assignment rules, CDP functions and batch exports. Pipeline docs explicitly cover creating/updating/deleting exports and enabling/disabling functions.",
+    "setupTier": "native-app",
+    "setupDetails": "Add PostHog from Claude's connector directory and sign in. Wizard and official coding-client plugin are alternatives. Authentication routes automatically to US/EU.",
+    "access": "Existing project access and authorised scopes apply. MCP connection/calls are free; some tools using LLMs internally require organisation AI data processing enabled and can incur PostHog AI spend.",
+    "limitations": ["Analytics requires events already collected through instrumentation.", "Pipeline/flag changes can affect live behaviour and require the relevant permissions.", "Directory availability depends on the client; hosted setup remains an alternative."],
+    "sources": [
+      {"url":"https://posthog.com/docs/model-context-protocol","label":"Hosted MCP scope, billing and installation options"},
+      {"url":"https://posthog.com/docs/model-context-protocol/claude-desktop","label":"Official native Claude connector"},
+      {"url":"https://posthog.com/docs/product-analytics/surfaces/mcp","label":"Exact analytics and insight/dashboard CRUD tools"},
+      {"url":"https://posthog.com/docs/data-pipelines/surfaces/mcp","label":"Explicit pipeline and export writes"}
+    ],
+    "proposedGrade": "A",
+    "gradeReason": "Broad read/write coverage with a direct connector and clear operational tools beyond reporting.",
+    "changedClaims": ["Retain A, expand beyond analytics-only coverage.", "Add official Claude connector, regional auto-routing and per-tool AI processing/billing caveat."]
+  },
+  {
+    "id": "appsflyer",
+    "verifiedOn": "2026-11-16",
+    "route": "AppsFlyer beta hosted MCP at https://mcp.appsflyer.com/auth/mcp",
+    "read": "Aggregated performance, creative results, SKAN, Protect360, incrementality results, app/partner settings, OneLink and audience configuration.",
+    "write": "create_onelink_link creates a short link under an existing template after user confirmation. No edit/delete or broader account-changing MCP tool is documented.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "OAuth custom connector in Claude/ChatGPT or compatible clients. A separate vendor custom GPT is also documented; this grade evaluates the MCP route.",
+    "access": "Beta; existing AppsFlyer permissions apply. MCP is enabled by default but an admin can disable it. Account-level bearer tokens are available for automation.",
+    "limitations": ["OneLink creation is limited to 10 links/account/day and existing templates.", "Browser OAuth sessions reconnect after roughly 10 hours.", "Partner-integration tools exclude agency/ad-network users and permission configuration.", "Apple Ads bid execution announced in Agent Hub closed beta is not proof of an external MCP write tool."],
+    "sources": [
+      {"url":"https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP","label":"Tool mapping, OneLink creation, setup and limits"},
+      {"url":"https://www.appsflyer.com/company/newsroom/pr/agentic-ai-mcp-tools","label":"12 November 2026 release distinguishes MCP additions from Agent Hub actions"}
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Broad useful reads plus a real confirmed creation operation through hosted OAuth, but write depth and beta restrictions stop short of A.",
+    "changedClaims": ["Replace read-only and Create No with bounded OneLink creation.", "Add Protect360, creative performance and partner configuration from 12 November release.", "Upgrade B to B+ while retaining beta status and separating Agent Hub actions."]
+  },
+  {
+    "id": "adjust",
+    "verifiedOn": "2026-11-16",
+    "route": "Official Adjust MCP at https://mcp.adjust.com/mcpo, Early Access",
+    "read": "Aggregated Adjust performance data for analysis in an external assistant.",
+    "write": "No Adjust-account mutation is documented for this MCP. 'Act on data' refers to an external workflow acting in another system, not create/edit/delete in Adjust.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Ask an Adjust representative to enable MCP/add it to the package, then configure a custom remote connector and authenticate with OAuth. Official instructions cover Claude, Codex and Cursor.",
+    "access": "Early Access and account enablement required. Existing token-based configurations must reconnect through OAuth. Multi-account users select the account during authorisation.",
+    "limitations": ["Aggregated data only; no user-level or event-level access.", "No mutation tool catalogue is published in the reviewed guide.", "Growth Copilot inside Datascape is a separate interface and does not establish MCP action coverage."],
+    "sources": [
+      {"url":"https://help.adjust.com/en/article/adjust-mcp","label":"Official endpoint, Early Access, OAuth and aggregation limits"},
+      {"url":"https://www.adjust.com/blog/adjust-mcp/","label":"18 May 2026 official external MCP explanation"}
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "A real hosted route replaces the custom integration burden, but it remains read-only in verified scope and access-gated.",
+    "changedClaims": ["Replace API-only/no official MCP verified with the official Early Access MCP.", "Do not retain API create/update/delete marks on the new MCP route.", "Retain C+ under the new read/write/setup rubric; easier setup is offset by bounded read-only coverage."]
+  },
+  {
+    "id": "segment",
+    "verifiedOn": "2026-11-16",
+    "route": "Twilio Segment Public API via a custom agent integration; Twilio's separate documentation MCP is not a data/action connector",
+    "read": "Custom API code can inspect workspace resources such as sources, destinations, warehouses and tracking plans. The hosted Twilio docs MCP only retrieves public specifications/documentation.",
+    "write": "The Public API documents CRUD for supported workspace resources. Those are API actions, not verified ready-to-connect Segment MCP actions.",
+    "setupTier": "custom-api",
+    "setupDetails": "Build/run a server-side integration and supply a Segment Public API token. The no-auth endpoint https://mcp.twilio.com/docs cannot execute API calls on the user's behalf.",
+    "access": "Public API is available to Team and Business tiers; only Workspace Owners can create tokens, assigning owner/member access. US and EU workspaces are supported.",
+    "limitations": ["No first-party operational Segment MCP was verified in the reviewed primary sources.", "Docs MCP search/retrieve does not access customer data or change Segment.", "Separate Profile/Tracking APIs must not be implied by Public API configuration coverage."],
+    "sources": [
+      {"url":"https://www.twilio.com/docs/segment/api/public-api","label":"Public API CRUD, plan and token constraints"},
+      {"url":"https://www.twilio.com/docs/ai/mcp","label":"Twilio documentation MCP explicitly does not execute API calls"}
+    ],
+    "proposedGrade": "C",
+    "gradeReason": "Capable underlying APIs still require custom integration. Documentation search alone does not meet routine account read/write criteria.",
+    "changedClaims": ["Recalibrate B- to C under the user's practical connection criterion.", "Mention Twilio docs MCP with an explicit docs-only label, not a functional Segment MCP tick.", "Keep absence wording qualified to the sources reviewed."]
+  }
+]

@@ -1,0 +1,789 @@
+[
+  {
+    "id": "google-ads",
+    "route": "Official google-ads-mcp v0.0.6, local stdio or operator-deployed Cloud Run",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "GAQL account resources, metrics, segments and metadata."
+    },
+    "write": {
+      "create": {
+        "status": "partial",
+        "scope": "Standalone assets, local video uploads and labels."
+      },
+      "modify": {
+        "status": "partial",
+        "scope": "Labels and label associations only; no campaign, budget, bid or ad edits."
+      },
+      "delete": {
+        "status": "partial",
+        "scope": "Labels and supported label associations only."
+      },
+      "publish": {
+        "status": "no",
+        "scope": "No campaign activation or asset-to-campaign linking."
+      }
+    },
+    "setupTier": "self-managed",
+    "setupDetails": "Python 3.10+, pipx, Google Cloud project, OAuth/ADC and MCP configuration. Remote hosting is your deployment, not a managed Google connector.",
+    "access": "Production API access requires approved Cloud project access. Developer tokens sunset 9 September 2026.",
+    "limitations": [
+      "Propose-and-confirm mutations; optional read-only mode.",
+      "Video upload is local only.",
+      "Developer Assistant plugin for Claude Code/Antigravity generates code; it is not a full campaign-management plugin."
+    ],
+    "sources": [
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+        "label": "Current MCP integration guide"
+      },
+      {
+        "url": "https://github.com/googleads/google-ads-mcp",
+        "label": "Official source repository"
+      },
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+        "label": "Developer token transition"
+      }
+    ],
+    "proposedGrade": "B-",
+    "gradeReason": "Useful diagnosis and bounded writes; technical setup and no routine campaign optimisation.",
+    "changedClaims": [
+      "Replace read-only with partial writes.",
+      "Remove developer-token prerequisite.",
+      "Distinguish self-hosted remote transport from vendor-hosted service."
+    ]
+  },
+  {
+    "id": "meta-ads",
+    "route": "Official hosted Ads AI Connector MCP, previously recorded at https://mcp.facebook.com/ads",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "review-pending",
+    "read": {
+      "status": "unverified",
+      "scope": "Prior evidence: campaign structure and performance."
+    },
+    "write": {
+      "create": {
+        "status": "unverified",
+        "scope": "Prior evidence: supported campaigns, ad sets and ads."
+      },
+      "modify": {
+        "status": "unverified",
+        "scope": "Current editing inventory not reverified."
+      },
+      "delete": {
+        "status": "unverified",
+        "scope": "No fresh connector-specific evidence."
+      },
+      "publish": {
+        "status": "unverified",
+        "scope": "No fresh activation evidence; do not borrow Marketing API behaviour."
+      }
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Prior hosted OAuth route retained provisionally. Current connector onboarding and regional eligibility could not be reverified.",
+    "access": "Prior record: open beta. Current announcement redirects to login; developer pages return 429 or inaccessible.",
+    "limitations": [
+      "Do not refresh capability verifiedOn in public datasets solely from this attempted check.",
+      "A community mirror points to an official Ads CLI announcement; original pages remain inaccessible, so do not certify CLI scope from the mirror."
+    ],
+    "sources": [
+      {
+        "url": "https://www.facebook.com/business/news/meta-ads-ai-connectors",
+        "label": "Official announcement, login blocked"
+      },
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/",
+        "label": "Official connector documentation, inaccessible"
+      },
+      {
+        "url": "https://developers.facebook.com/blog/post/2026/04/29/introducing-ads-cli",
+        "label": "Official CLI lead, 429"
+      },
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+        "label": "Marketing API, distinct route"
+      }
+    ],
+    "proposedGrade": "B-",
+    "gradeReason": "Preserve existing grade, visibly review pending; inaccessible evidence is not a downgrade to D.",
+    "changedClaims": [
+      "Flag current review pending.",
+      "Remove categorical no-official-CLI claim until official CLI documentation can be checked.",
+      "Do not infer connector writes from general Graph API documentation."
+    ]
+  },
+  {
+    "id": "tiktok-for-business",
+    "route": "Official TikTok for Business remote MCP: full or progressive-disclosure endpoint",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Campaign information, performance reports, audience and creative workflows."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Campaign creation is explicitly documented."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Budget, bidding and targeting changes; pause ad groups."
+      },
+      "delete": {
+        "status": "unverified",
+        "scope": "Help page does not establish exact delete tools."
+      },
+      "publish": {
+        "status": "unverified",
+        "scope": "Creation is documented, but a distinct launch/activation operation was not independently established."
+      }
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Add the vendor endpoint to a compatible agent, then authorise business access. Full endpoint loads about 400 tools; progressive route starts with about 40.",
+    "access": "TikTok for Business account and authorised permissions; vendor describes production-ready support.",
+    "limitations": [
+      "Compatible with Claude and other agents is not proof of a native directory app.",
+      "Confirm authenticated tool inventory for specific campaign types and deletion."
+    ],
+    "sources": [
+      {
+        "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en",
+        "label": "Official MCP help, updated August 2026"
+      },
+      {
+        "url": "https://ads.tiktok.com/business/en/blog/tiktok-agentic-hub-ai-agents-skills-mcp",
+        "label": "Agentic Hub announcement"
+      },
+      {
+        "url": "https://business-api.tiktok.com/portal/docs",
+        "label": "Business API documentation"
+      }
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Broad routine read/write through hosted MCP; exact delete and launch boundaries remain unverified.",
+    "changedClaims": [
+      "Make create/edit/pause explicit; do not label every CRUD operation yes.",
+      "Keep full and progressive endpoint choices separate."
+    ],
+    "endpoints": {
+      "full": "https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat",
+      "progressive": "https://business-api.tiktok.com/open_mcp/tt-ads-mcp-layer"
+    }
+  },
+  {
+    "id": "microsoft-advertising",
+    "route": "Official Microsoft Advertising remote MCP",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Accounts, campaigns, ads, keywords, asset groups, assets, audience associations, performance and change history."
+    },
+    "write": {
+      "create": {
+        "status": "no",
+        "scope": "Read-only tools."
+      },
+      "modify": {
+        "status": "no",
+        "scope": "Read-only tools."
+      },
+      "delete": {
+        "status": "no",
+        "scope": "Read-only tools."
+      },
+      "publish": {
+        "status": "no",
+        "scope": "No activation tools."
+      }
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Vendor endpoint. Claude/ChatGPT require your own Entra OAuth app registration; VS Code Copilot supports interactive sign-in without your own app.",
+    "access": "Existing Advertising account permissions; personal and work/school Microsoft accounts supported.",
+    "limitations": [
+      "Marketing-page campaign-management wording does not establish writes.",
+      "Client plan and organisation connector permissions still apply."
+    ],
+    "sources": [
+      {
+        "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools",
+        "label": "Read-only entity tool reference"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13",
+        "label": "Setup guide, updated 20 October 2026"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Useful broad reading, but no operational writes and extra OAuth setup in ChatGPT/Claude.",
+    "changedClaims": [
+      "Replace stale marketing URL with tool and setup references.",
+      "Add client-specific setup friction; hosted does not mean one click."
+    ],
+    "endpoint": "https://partner.api.bingads.microsoft.com/ext/mcp/vnext"
+  },
+  {
+    "id": "amazon-ads",
+    "route": "Official Amazon Ads MCP Server open beta",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Performance/reporting, account settings, billing and financial data."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Campaigns; multi-step Sponsored Products and market-expansion workflows."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Campaign updates documented."
+      },
+      "delete": {
+        "status": "yes",
+        "scope": "Campaign deletion documented."
+      },
+      "publish": {
+        "status": "partial",
+        "scope": "Vendor describes launch workflows, with campaign review and approval still required."
+      }
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Connect compatible Claude, ChatGPT, Gemini or custom agents through the official MCP; active Ads API credentials remain a prerequisite.",
+    "access": "Globally available open beta to Amazon Ads partners with active API credentials.",
+    "limitations": [
+      "Announcement does not prove every ad product or every object is supported.",
+      "Not independently tested against an account."
+    ],
+    "sources": [
+      {
+        "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta",
+        "label": "Official announcement, 2 February 2026"
+      }
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Strong multi-step actions, with partner/API onboarding and open-beta limits.",
+    "changedClaims": [
+      "Keep open beta and active API credentials prominent.",
+      "Separate ready-to-launch campaign creation from approved activation."
+    ]
+  },
+  {
+    "id": "snapchat-ads",
+    "route": "Official Snapchat Ads MCP at https://mcp.snapchat.com/ads",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Authorised campaign setup and performance data."
+    },
+    "write": {
+      "create": {
+        "status": "no",
+        "scope": "Explicitly read-only."
+      },
+      "modify": {
+        "status": "no",
+        "scope": "Explicitly read-only."
+      },
+      "delete": {
+        "status": "no",
+        "scope": "Explicitly read-only."
+      },
+      "publish": {
+        "status": "no",
+        "scope": "Write access is planned, not released."
+      }
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Self-service connection using Snap-provided client IDs for Claude, ChatGPT, Codex, Gemini or Antigravity; no developer client registration.",
+    "access": "No allowlist. Organisation Admin/Business Admin first approves each agent; each member then authorises their own existing access.",
+    "limitations": [
+      "Organisation approval and member consent are per agent.",
+      "Broader Marketing API write capabilities do not apply to this MCP."
+    ],
+    "sources": [
+      {
+        "url": "https://developers.snap.com/marketing-api/Ads-MCP/Introduction",
+        "label": "Current scope and self-service onboarding"
+      },
+      {
+        "url": "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent",
+        "label": "Supported client setup"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Simple hosted reading; no campaign actions. Easier access than the old allowlisted route.",
+    "changedClaims": [
+      "Remove allowlist rollout and restricted-access claims.",
+      "Retain read-only boundary."
+    ]
+  },
+  {
+    "id": "linkedin-ads",
+    "route": "Official LinkedIn Marketing API through a custom AI integration",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Campaign configuration and performance reporting via approved APIs."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Supported campaign creation via API."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Targeting, budgets, schedules and campaign status via API."
+      },
+      "delete": {
+        "status": "partial",
+        "scope": "DELETE for draft campaigns; PENDING_DELETION workflow for non-drafts."
+      },
+      "publish": {
+        "status": "partial",
+        "scope": "ACTIVE status and reactivation are API operations, subject to eligibility and serving status."
+      }
+    },
+    "setupTier": "custom-api",
+    "setupDetails": "Register developer app, obtain product access and relevant permissions, then implement and maintain an agent bridge.",
+    "access": "r_ads/rw_ads scopes and account roles; Viewer remains read-only even with rw_ads.",
+    "limitations": [
+      "No vendor-backed native app or MCP verified in this review.",
+      "Marketing API version 202511 sunsets 16 November 2026; use a supported version."
+    ],
+    "sources": [
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+        "label": "Marketing API programme"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10",
+        "label": "Campaign operations, permissions and version notice"
+      }
+    ],
+    "proposedGrade": "C",
+    "gradeReason": "Capable API, but users still need a custom or separately assessed integration.",
+    "changedClaims": [
+      "Document draft vs non-draft deletion.",
+      "Add current version sunset note.",
+      "Grade AI connection friction, not B2B channel value."
+    ]
+  },
+  {
+    "id": "pinterest-ads",
+    "route": "Official Pinterest API v5 through a custom AI integration",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Campaigns, ad groups and advertising performance."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Campaigns, ad groups and ads."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Supported campaign/ad-group fields, schedules, targeting and status."
+      },
+      "delete": {
+        "status": "partial",
+        "scope": "DELETED_DRAFT permanently deletes drafts; ARCHIVE marks campaigns deleted, with recovery requiring support."
+      },
+      "publish": {
+        "status": "yes",
+        "scope": "ACTIVE status enables delivery; DRAFT supports preparation before publishing."
+      }
+    },
+    "setupTier": "custom-api",
+    "setupDetails": "Developer app, OAuth, authorised business/ad account and implemented agent bridge.",
+    "access": "Business Access, supported advertising country, billing and advertising agreement; some onboarding remains in Pinterest UI.",
+    "limitations": [
+      "No vendor-backed MCP/native agent app verified.",
+      "Some fields become immutable outside draft; labels and some scheduling features are closed beta."
+    ],
+    "sources": [
+      {
+        "url": "https://dev.pinterest.com/docs/work-with-ads/ads-overview/",
+        "label": "Ads API access and coverage"
+      },
+      {
+        "url": "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/",
+        "label": "Creation, updates, draft/publish/archive states"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Broad operational API, but AI connection still needs development.",
+    "changedClaims": [
+      "Explain draft/active/archive behaviour instead of generic partial delete.",
+      "Do not treat Use with AI documentation affordance as an operational connector."
+    ]
+  },
+  {
+    "id": "reddit-ads",
+    "route": "Official Reddit Ads API v3 through a custom AI integration",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Account/campaign information and reports."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Supported campaigns and custom audiences via API."
+      },
+      "modify": {
+        "status": "partial",
+        "scope": "Campaign management is documented; operation-by-operation field coverage not exhaustively checked."
+      },
+      "delete": {
+        "status": "unverified",
+        "scope": "Current campaign deletion endpoint not checked; app deletion is not campaign deletion."
+      },
+      "publish": {
+        "status": "unverified",
+        "scope": "No exact activation workflow verified in this pass."
+      }
+    },
+    "setupTier": "custom-api",
+    "setupDetails": "Business admin creates an Ads Manager developer application, configures OAuth and builds an agent integration.",
+    "access": "App creation is business-admin-only; existing authorisation and Ads API terms apply.",
+    "limitations": [
+      "No official native app or MCP verified.",
+      "v4 is listed as preview; assessed route remains v3.",
+      "Do not retain an unsupported blanket approval gate from older guidance."
+    ],
+    "sources": [
+      {
+        "url": "https://ads-api.reddit.com/docs/",
+        "label": "Current Ads API v3 documentation"
+      },
+      {
+        "url": "https://ads-api.reddit.com/docs/v3/guides/quick-start/create-dev-app",
+        "label": "Current developer application setup"
+      }
+    ],
+    "proposedGrade": "C",
+    "gradeReason": "Custom implementation is still required; exact activation/deletion coverage remains a gap.",
+    "changedClaims": [
+      "Update onboarding to business-admin developer app flow.",
+      "Separate v3 from v4 preview.",
+      "Avoid asserting every CRUD action."
+    ]
+  },
+  {
+    "id": "x-ads",
+    "route": "Official X Ads hosted MCP, 74 documented tools",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Accounts, campaign structure, analytics, reach, audiences and creatives."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Campaigns, line items, audiences, creative/media and conversion objects."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Campaigns, line items and supported audience/media/conversion objects."
+      },
+      "delete": {
+        "status": "partial",
+        "scope": "Selected audiences, creatives, media and tags; no campaign-delete tool documented."
+      },
+      "publish": {
+        "status": "yes",
+        "scope": "Separate activate_campaign and activate_line_item; new objects start paused."
+      }
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Register X developer app, enable Ads Project access, set callbacks and connect with OAuth scopes. No bespoke API code.",
+    "access": "Existing ad account access; ads.read/ads.write and optional media.write scopes.",
+    "limitations": [
+      "One live OAuth grant per app/user; separate client apps may be needed.",
+      "Not a simple directory app install."
+    ],
+    "sources": [
+      {
+        "url": "https://docs.x.com/x-ads-api/mcp",
+        "label": "Official tool inventory, activation and connection steps"
+      }
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Broad routine actions and explicit activation, but developer-app setup prevents the easiest tier.",
+    "changedClaims": [
+      "Use current 74-tool scope.",
+      "Do not use general X posting tools as evidence of Ads capabilities."
+    ],
+    "endpoint": "https://ads-api.x.com/mcp"
+  },
+  {
+    "id": "display-video-360",
+    "route": "Official DV360 API, including v5 beta, through a custom AI integration",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Campaign/trafficking resources. Performance requires a separate reporting route such as Bid Manager API."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Supported campaigns, insertion orders, line items and creatives; v5 adds responsive YouTube ad creation."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Supported resources and targeting; v5 adds responsive YouTube ad updates."
+      },
+      "delete": {
+        "status": "partial",
+        "scope": "Line-item deletion; v5 responsive YouTube ad deletion. Not universal object deletion."
+      },
+      "publish": {
+        "status": "partial",
+        "scope": "Resource status updates, subject to hierarchy, validation and serving eligibility; not a turnkey agent workflow."
+      }
+    },
+    "setupTier": "custom-api",
+    "setupDetails": "Google Cloud/OAuth, authorised DV360 user and a maintained agent bridge; reporting integration is separate.",
+    "access": "DV360 permissions apply. v5 is labelled beta in current reference.",
+    "limitations": [
+      "No official operational MCP/native app verified.",
+      "12 November update covers specified responsive YouTube formats, not all YouTube workflows."
+    ],
+    "sources": [
+      {
+        "url": "https://developers.google.com/display-video/api",
+        "label": "Official overview"
+      },
+      {
+        "url": "https://developers.google.com/display-video/api/reference/rest/v5/advertisers.lineItems",
+        "label": "v5 line-item methods and beta status"
+      },
+      {
+        "url": "https://developers.google.com/ads/blog/posts/2026/11/manage-responsive-youtube-ads-with-display",
+        "label": "12 November 2026 responsive YouTube write support"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Deep API, but no packaged agent route and separate reporting setup.",
+    "changedClaims": [
+      "Narrow old YouTube-write limitation after 12 November launch.",
+      "Mark v5 beta.",
+      "Regrade B- API depth to C+ for practical AI setup."
+    ]
+  },
+  {
+    "id": "campaign-manager-360",
+    "route": "Official Campaign Manager 360 API v5 through a custom AI integration",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Campaign resources and reports through authorised user profiles."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Campaigns and reports; broader trafficking resources documented separately."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Campaign fields and archival flag."
+      },
+      "delete": {
+        "status": "partial",
+        "scope": "Campaign resource has no delete method; archive is not hard delete. Other resource-specific deletes need separate verification."
+      },
+      "publish": {
+        "status": "partial",
+        "scope": "Trafficking setup can be changed, but linked ads/placements and serving conditions still matter; no single verified universal publish action."
+      }
+    },
+    "setupTier": "custom-api",
+    "setupDetails": "API-enabled CM360 account, permitted user profile, Google Cloud project, OAuth and implemented integration.",
+    "access": "Existing CM360 user-profile permissions control API access.",
+    "limitations": [
+      "No official native agent app/MCP verified.",
+      "Strong API coverage is not evidence of simple daily AI setup."
+    ],
+    "sources": [
+      {
+        "url": "https://developers.google.com/doubleclick-advertisers/getting_started",
+        "label": "Setup, permissions and campaign/report coverage"
+      },
+      {
+        "url": "https://developers.google.com/doubleclick-advertisers/rest/v5/campaigns",
+        "label": "Campaign fields and methods"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Useful enterprise API, but a custom agent connection and trafficking model are still required.",
+    "changedClaims": [
+      "Regrade B to C+ under hands-off setup rubric.",
+      "Do not advertise campaign hard deletion."
+    ]
+  },
+  {
+    "id": "search-ads-360",
+    "route": "Official Search Ads 360 Reporting API through a custom AI integration",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Queryable campaign-to-keyword resources and reporting data."
+    },
+    "write": {
+      "create": {
+        "status": "no",
+        "scope": "Reporting API is read-only."
+      },
+      "modify": {
+        "status": "no",
+        "scope": "Reporting API is read-only."
+      },
+      "delete": {
+        "status": "no",
+        "scope": "Reporting API is read-only."
+      },
+      "publish": {
+        "status": "no",
+        "scope": "Reporting API cannot activate campaigns."
+      }
+    },
+    "setupTier": "custom-api",
+    "setupDetails": "Configure Google account/API authentication and implement a reporting bridge to the assistant.",
+    "access": "Authorised Search Ads 360 account access.",
+    "limitations": [
+      "No official operational MCP or native agent app verified.",
+      "Other conversion APIs must not be counted as campaign-writing capability."
+    ],
+    "sources": [
+      {
+        "url": "https://developers.google.com/search-ads/reporting",
+        "label": "Official explicit read-only scope"
+      }
+    ],
+    "proposedGrade": "C",
+    "gradeReason": "Read-only and custom setup; useful analysis but recommendations must be applied elsewhere.",
+    "changedClaims": [
+      "Regrade C+ to C for read-only plus custom setup."
+    ]
+  },
+  {
+    "id": "apple-ads",
+    "route": "Official Apple Ads Platform API through a custom AI integration",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "documentation-verified",
+    "read": {
+      "status": "yes",
+      "scope": "Reports and campaign configuration for authorised App Store/Maps accounts."
+    },
+    "write": {
+      "create": {
+        "status": "yes",
+        "scope": "Campaigns, ad groups and keywords; Maps advertising supported."
+      },
+      "modify": {
+        "status": "yes",
+        "scope": "Supported campaign-management operations through read/write roles."
+      },
+      "delete": {
+        "status": "unverified",
+        "scope": "Help page does not enumerate deletion operations."
+      },
+      "publish": {
+        "status": "unverified",
+        "scope": "Exact activation operation not enumerated by reviewed help page."
+      }
+    },
+    "setupTier": "custom-api",
+    "setupDetails": "Account admin assigns an API user role; OAuth client plus custom integration. Service providers register a third-party OAuth application.",
+    "access": "Read-only, read/write and limited-account roles are separate.",
+    "limitations": [
+      "No vendor-backed native agent app/MCP verified.",
+      "Documentation describes both App Store and Maps; this is not proof of all-product parity.",
+      "Exact delete/activation boundaries need endpoint-level review."
+    ],
+    "sources": [
+      {
+        "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api",
+        "label": "Current API scope and onboarding"
+      },
+      {
+        "url": "https://developer.apple.com/documentation/apple-ads-platform-api",
+        "label": "API reference, JavaScript-rendered page not fully extractable"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Practical developer API, but no ready AI connector verified.",
+    "changedClaims": [
+      "Regrade B- to C+ for custom setup.",
+      "Do not claim deletion without endpoint evidence."
+    ]
+  },
+  {
+    "id": "the-trade-desk",
+    "route": "Official Open Agentic Kit (OAK), MCP-based access to Ask Koa",
+    "verifiedOn": "2026-11-16",
+    "verificationStatus": "review-pending",
+    "read": {
+      "status": "partial",
+      "scope": "Platform data access is announced; exact exposed objects not publicly reverified."
+    },
+    "write": {
+      "create": {
+        "status": "unverified",
+        "scope": "Exact current creation inventory inaccessible."
+      },
+      "modify": {
+        "status": "unverified",
+        "scope": "Exact current modification inventory inaccessible."
+      },
+      "delete": {
+        "status": "unverified",
+        "scope": "No public tool-level evidence obtained."
+      },
+      "publish": {
+        "status": "unverified",
+        "scope": "No public activation-tool evidence obtained."
+      }
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Selected partners request access through their account representative; approved onboarding documentation must establish exact configuration.",
+    "access": "Private beta from 10 August 2026. Current public search excerpt still says selected partners only.",
+    "limitations": [
+      "Release-note page has no readable body via direct fetch; current search index supplies the beta announcement.",
+      "Do not infer Ask Koa/MCP tools from broader REST or GraphQL capabilities.",
+      "Hosted classification retained provisionally; transport details were not independently exposed."
+    ],
+    "sources": [
+      {
+        "url": "https://partner.thetradedesk.com/v3/portal/api/doc/ReleaseNotes",
+        "label": "Official indexed release notes, private beta announcement"
+      },
+      {
+        "url": "https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates",
+        "label": "Official release notes, direct body inaccessible"
+      }
+    ],
+    "proposedGrade": "B",
+    "gradeReason": "Preserve previous grade as review pending, excluded from confident ranking until tool/access evidence is available.",
+    "changedClaims": [
+      "Replace categorical CRUD yes with unverified/limited evidence.",
+      "Make selected-partner private beta prominent."
+    ]
+  }
+]

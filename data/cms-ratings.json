@@ -1,8 +1,8 @@
 {
   "meta": {
-    "version": "0.1",
-    "updatedOn": "2026-10-29",
-    "definition": "Editorial assessment of the named AI-compatible CMS workflow, not a ranking of CMS quality.",
+    "version": "0.5",
+    "updatedOn": "2026-11-16",
+    "definition": "Editorial comparison of what external AI can read, write and how easily it connects. Same combined lens across categories; not a vendor-quality score.",
     "statusDefinition": {
       "Production": "Dependable enough for a controlled recurring workflow today.",
       "Test": "Worth piloting, but access, maturity or control needs a bounded test.",
@@ -24,44 +24,41 @@
   "ratings": {
     "wordpress-com": {
       "section": "CMS and site builders",
-      "readiness": "Test",
-      "grade": "B+",
+      "readiness": "Production",
+      "grade": "A",
       "position": "Reference",
       "positives": [
-        "Draft creation and post-section editing are documented.",
-        "Existing WordPress roles and tool controls govern access."
+        "Read posts, pages, blocks, settings and site statistics.",
+        "Draft, edit, publish and trash posts and pages."
       ],
       "negatives": [
-        "Tool availability varies by site, plan and account settings.",
-        "Shared account-level settings need review before enabling writes."
+        "Live edits can apply immediately. Free-site access ends 30 November 2026."
       ]
     },
     "wordpress-adapter": {
       "section": "CMS and site builders",
       "readiness": "Test",
-      "grade": "B",
+      "grade": "C",
       "position": "Reference",
       "positives": [
-        "Uses a common WordPress Abilities contract.",
-        "The site can define narrowly scoped operations and permission checks."
+        "Discover and run explicitly exposed WordPress abilities.",
+        "Editorial actions depend on additional installed abilities."
       ],
       "negatives": [
-        "Requires technical setup and suitable Abilities.",
-        "Editorial coverage varies by plugin and site configuration."
+        "Installing the adapter alone does not supply a complete editorial workflow."
       ]
     },
     "webflow": {
       "section": "CMS and site builders",
-      "readiness": "Test",
-      "grade": "B+",
+      "readiness": "Production",
+      "grade": "A-",
       "position": "Reference",
       "positives": [
-        "Combines structured content and site-design operations.",
-        "Uses existing site permissions and roles."
+        "Read collections, schemas, CMS items and site data.",
+        "Draft, edit, publish, unpublish and delete CMS items."
       ],
       "negatives": [
-        "New localised CMS items are not supported through this route.",
-        "Some visual operations require the Designer, and new site creation stays in the dashboard."
+        "New localised items and site projects remain unavailable; some visual tasks need Designer open."
       ]
     },
     "contentful": {
@@ -70,12 +67,11 @@
       "grade": "A-",
       "position": "Reference",
       "positives": [
-        "Explicit entry and release publication tools.",
-        "Per-environment tool gating supplements user permissions."
+        "Read entries, models, assets, locales, references and releases.",
+        "Manage content, publish assets and schedule supported releases."
       ],
       "negatives": [
-        "Each environment needs MCP app configuration.",
-        "Local-server defaults do not restrict a PAT to one environment."
+        "Configure each environment; CMS publication does not verify the separate live frontend."
       ]
     },
     "sanity": {
@@ -84,12 +80,11 @@
       "grade": "A-",
       "position": "Reference",
       "positives": [
-        "Schema-aware document operations and explicit publishing tools.",
-        "Supports draft and release-version workflows."
+        "Query documents, schemas, projects and datasets.",
+        "Create and edit drafts; publish individual documents."
       ],
       "negatives": [
-        "Localisation depends on project schema and conventions.",
-        "Wrong draft or release IDs can target a different editorial state."
+        "Release scheduling/publication stays outside MCP; liveEdit types bypass drafts."
       ]
     },
     "directus": {
@@ -98,12 +93,11 @@
       "grade": "B+",
       "position": "Reference",
       "positives": [
-        "Reuses existing Directus permissions.",
-        "Content operations do not require a separate middleware layer."
+        "Read items, schemas, relationships, files and automation context.",
+        "Manage items, files, schemas and configured workflows."
       ],
       "negatives": [
-        "Publication and localisation need project-specific modelling.",
-        "A broad service role can expose more data than an editorial assistant needs."
+        "Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration."
       ]
     },
     "shopify": {
@@ -112,12 +106,11 @@
       "grade": "B",
       "position": "Reference",
       "positives": [
-        "Documented article and page creation with publication settings.",
-        "Explicit API scopes provide a configurable access boundary."
+        "Query store pages and other authorised Admin GraphQL data.",
+        "Create, edit, publish and delete supported pages and articles."
       ],
       "negatives": [
-        "Requires an app and custom integration work.",
-        "Editing, deletion and localisation are not verified by the creation endpoints assessed here."
+        "A coding-agent plugin still needs local CLI/runtime and scoped store access."
       ]
     },
     "woocommerce": {
@@ -126,40 +119,37 @@
       "grade": "B",
       "position": "Reference",
       "positives": [
-        "Official product operations use WordPress permission checks.",
-        "The adapter can expose supported store tasks directly to an assistant."
+        "Read products, orders and order notes.",
+        "Create, update and delete products; perform selected order actions."
       ],
       "negatives": [
-        "The integration remains developer preview.",
-        "Version changes, extension fields and publication behaviour need a store-level test."
+        "Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking."
       ]
     },
     "bigcommerce": {
       "section": "Commerce content",
       "readiness": "Test",
-      "grade": "B",
+      "grade": "B-",
       "position": "Reference",
       "positives": [
-        "Documented page and blog operations cover recurring content edits.",
-        "Blog publication is explicit in the API."
+        "Read product content and selected commerce data.",
+        "Create hidden products and edit product copy and SEO fields."
       ],
       "negatives": [
-        "Requires a custom authenticated integration.",
-        "Page visibility and blog publication have different semantics."
+        "Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication."
       ]
     },
     "adobe-commerce": {
       "section": "Commerce content",
       "readiness": "Test",
-      "grade": "B",
+      "grade": "C",
       "position": "Reference",
       "positives": [
-        "Explicit CMS page and block operations.",
-        "CMS access is controlled through integration permissions."
+        "Read and search CMS pages and blocks through REST APIs.",
+        "Create, edit and delete pages/blocks; control page activation."
       ],
       "negatives": [
-        "Requires custom engineering and deployment-specific checks.",
-        "An API write does not prove the storefront or Page Builder layout is correct."
+        "Traditional Commerce/Magento API scope only; custom integration and visual checks remain."
       ]
     }
   }
