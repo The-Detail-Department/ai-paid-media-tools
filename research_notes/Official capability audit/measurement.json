@@ -1,0 +1,1267 @@
+{
+  "records": [
+    {
+      "id": "google-analytics",
+      "tool": {
+        "id": "google-analytics",
+        "name": "Google Analytics",
+        "category": "Measurement",
+        "channels": [
+          "Cross-channel",
+          "Web",
+          "App"
+        ],
+        "jobs": [
+          "Measure",
+          "Report",
+          "Analyse"
+        ],
+        "summary": "Read properties, dimensions, key events and analytics reports. Create annotations, custom dimensions and key events with writes enabled.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "both",
+          "control": "mixed",
+          "label": "Google Analytics official MCP, local or self-deployed",
+          "url": "https://github.com/googleanalytics/google-analytics-mcp"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "Package launcher only; no analytics CLI"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Data API and Admin API",
+          "url": "https://developers.google.com/analytics/devguides/reporting/data/v1"
+        },
+        "access": "Read access follows Analytics account permissions. Writes default off; require --allow-write plus analytics.edit. Custom dimensions require Editor; key events require Marketer or Editor.",
+        "caution": "Self-managed setup. Writes only create annotations, custom dimensions and key events.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Google Analytics MCP tools and setup",
+            "url": "https://github.com/googleanalytics/google-analytics-mcp",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Google Analytics MCP",
+        "object": "Read properties, dimensions, key events and analytics reports.",
+        "setup": {
+          "level": "Hard",
+          "tier": "self-managed",
+          "note": "Run the Python MCP, configure Google credentials and explicitly enable writes.",
+          "documentation": {
+            "label": "Install and configure",
+            "url": "https://github.com/googleanalytics/google-analytics-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "No",
+          "delete": "No",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create annotations, custom dimensions and key events with writes enabled. Self-managed setup. Writes only create annotations, custom dimensions and key events."
+        },
+        "blocker": "Self-managed setup. Writes only create annotations, custom dimensions and key events.",
+        "dailyTasks": [
+          "Read properties, dimensions, key events and analytics reports.",
+          "Create annotations, custom dimensions and key events with writes enabled."
+        ],
+        "actionScopes": {
+          "read": "Read properties, dimensions, key events and analytics reports.",
+          "create": "Annotations, custom dimensions and key events.",
+          "modify": "No update tools listed.",
+          "delete": "No delete tools listed.",
+          "publish": "Creating a key event does not implement its collection."
+        },
+        "readSummary": "Read properties, dimensions, key events and analytics reports.",
+        "writeSummary": "Create annotations, custom dimensions and key events with writes enabled.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://github.com/googleanalytics/google-analytics-mcp"
+          ],
+          "note": "Official source package; run and configure it yourself. Writes are off by default."
+        }
+      },
+      "rating": {
+        "section": "Analytics",
+        "readiness": "Production",
+        "grade": "B",
+        "positives": [
+          "Read properties, dimensions, key events and analytics reports.",
+          "Create annotations, custom dimensions and key events with writes enabled."
+        ],
+        "negatives": [
+          "Self-managed setup. Writes only create annotations, custom dimensions and key events."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "google-tag-manager",
+      "tool": {
+        "id": "google-tag-manager",
+        "name": "Google Tag Manager",
+        "category": "Measurement",
+        "channels": [
+          "Cross-channel",
+          "Web",
+          "App"
+        ],
+        "jobs": [
+          "Build",
+          "Measure",
+          "Automate"
+        ],
+        "summary": "Read accounts, containers, workspaces, tags and versions. Change configuration, create previews and publish container versions.",
+        "mcp": {
+          "provenance": "community",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Third-party, Stape",
+          "url": "https://github.com/stape-io/google-tag-manager-mcp-server"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Tag Manager API",
+          "url": "https://developers.google.com/tag-platform/tag-manager/api/v2"
+        },
+        "access": "Google account must have the relevant GTM permissions, particularly publish rights. Hosted traffic passes through Stape; local CLI is an alternative. AI workspace policy can restrict custom connectors.",
+        "caution": "Third-party connection, not Google-operated. Publishing still needs tracking and consent checks.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Stape hosted and local setup",
+            "url": "https://github.com/stape-io/google-tag-manager-mcp-server",
+            "kind": "source-code"
+          },
+          {
+            "label": "Stape tag actions",
+            "url": "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/tagActions.ts",
+            "kind": "source-code"
+          },
+          {
+            "label": "Stape version and publishing actions",
+            "url": "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/versionActions.ts",
+            "kind": "source-code"
+          },
+          {
+            "label": "Stape workspace actions",
+            "url": "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/workspaceActions.ts",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Stape GTM MCP",
+        "object": "Read accounts, containers, workspaces, tags and versions.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect Stape hosted MCP with Google OAuth and the required GTM rights.",
+          "documentation": {
+            "label": "Connect with Stape",
+            "url": "https://github.com/stape-io/google-tag-manager-mcp-server"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Yes",
+          "publish": "Yes"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Change configuration, create previews and publish container versions. Third-party connection, not Google-operated. Publishing still needs tracking and consent checks."
+        },
+        "blocker": "Third-party connection, not Google-operated. Publishing still needs tracking and consent checks.",
+        "dailyTasks": [
+          "Read accounts, containers, workspaces, tags and versions.",
+          "Change configuration, create previews and publish container versions."
+        ],
+        "actionScopes": {
+          "read": "Read accounts, containers, workspaces, tags and versions.",
+          "create": "Tags, workspaces, previews and versions.",
+          "modify": "Tags, workspaces and versions, including synchronisation.",
+          "delete": "Supported tags, workspaces and versions.",
+          "publish": "Container versions with publish permission."
+        },
+        "readSummary": "Read accounts, containers, workspaces, tags and versions.",
+        "writeSummary": "Change configuration, create previews and publish container versions.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "third-party",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://github.com/stape-io/google-tag-manager-mcp-server",
+            "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/tagActions.ts",
+            "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/versionActions.ts",
+            "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/workspaceActions.ts"
+          ],
+          "note": "Stape operates this connection, not Google. Hosted commercial terms remain unverified."
+        }
+      },
+      "rating": {
+        "section": "Measurement",
+        "readiness": "Test",
+        "grade": "B+",
+        "positives": [
+          "Read accounts, containers, workspaces, tags and versions.",
+          "Change configuration, create previews and publish container versions."
+        ],
+        "negatives": [
+          "Third-party connection, not Google-operated. Publishing still needs tracking and consent checks."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "amplitude",
+      "tool": {
+        "id": "amplitude",
+        "name": "Amplitude",
+        "category": "Measurement",
+        "channels": [
+          "Cross-channel",
+          "Web",
+          "App"
+        ],
+        "jobs": [
+          "Measure",
+          "Analyse",
+          "Experiment"
+        ],
+        "summary": "Query analytics and inspect charts, cohorts, experiments and taxonomy. Create and edit analytical content and tracking definitions; sync cohorts to destinations.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Amplitude official hosted MCP",
+          "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official agent plugins and skills",
+          "url": "https://amplitude.com/docs/amplitude-ai"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Amplitude CLI",
+          "url": "https://amplitude.com/docs/developers/cli"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Analytics and management APIs",
+          "url": "https://www.docs.developers.amplitude.com/"
+        },
+        "access": "Existing customers, including free Starter, can use MCP. Write actions require Use MCP (write) plus product permissions. Service-account authentication requires Enterprise.",
+        "caution": "Guides/surveys stop at drafts; definition changes do not ingest production events.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Amplitude MCP tools and access",
+            "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
+            "kind": "official"
+          },
+          {
+            "label": "Guide and survey draft limits",
+            "url": "https://amplitude.com/docs/amplitude-ai/guides-surveys-mcp",
+            "kind": "official"
+          },
+          {
+            "label": "Amplitude CLI",
+            "url": "https://amplitude.com/docs/developers/cli",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Amplitude MCP",
+        "object": "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect hosted OAuth and grant MCP write rights; wider ChatGPT tools use progressive discovery.",
+          "documentation": {
+            "label": "Connect Amplitude",
+            "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create and edit analytical content and tracking definitions; sync cohorts to destinations. Guides/surveys stop at drafts; definition changes do not ingest production events."
+        },
+        "blocker": "Guides/surveys stop at drafts; definition changes do not ingest production events.",
+        "dailyTasks": [
+          "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
+          "Create and edit analytical content and tracking definitions; sync cohorts to destinations."
+        ],
+        "actionScopes": {
+          "read": "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
+          "create": "Analytical content, cohorts, experiments and tracking definitions.",
+          "modify": "Supported analytical content, flags, metrics and taxonomy.",
+          "delete": "Tracking-plan event/property definitions with restore support.",
+          "publish": "Sync cohorts to destinations. Guides, surveys and custom agents publish in the UI."
+        },
+        "readSummary": "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
+        "writeSummary": "Create and edit analytical content and tracking definitions; sync cohorts to destinations.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
+            "https://amplitude.com/docs/amplitude-ai/guides-surveys-mcp",
+            "https://amplitude.com/docs/developers/cli"
+          ],
+          "note": "Available to existing customers; write tools require MCP write permission. Service-account authentication is Enterprise-only."
+        }
+      },
+      "rating": {
+        "section": "Analytics",
+        "readiness": "Production",
+        "grade": "A-",
+        "positives": [
+          "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
+          "Create and edit analytical content and tracking definitions; sync cohorts to destinations."
+        ],
+        "negatives": [
+          "Guides/surveys stop at drafts; definition changes do not ingest production events."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "mixpanel",
+      "tool": {
+        "id": "mixpanel",
+        "name": "Mixpanel",
+        "category": "Measurement",
+        "channels": [
+          "Cross-channel",
+          "Web",
+          "App"
+        ],
+        "jobs": [
+          "Measure",
+          "Analyse",
+          "Report"
+        ],
+        "summary": "Read events, funnels, retention, saved reports and data-quality issues. Manage dashboards and cohorts; update definitions and resolve data issues.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Mixpanel native connector + hosted MCP",
+          "url": "https://docs.mixpanel.com/docs/mcp"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://docs.mixpanel.com/docs/mcp"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Mixpanel APIs",
+          "url": "https://developer.mixpanel.com/reference/overview"
+        },
+        "access": "Existing project roles apply. New Free/Growth accounts after 1 August 2026 have MCP enabled by default; other accounts require an organisation admin. Free query limits apply. Audit-log queries need organisation admin/owner.",
+        "caution": "Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Mixpanel tools, regions and beta limits",
+            "url": "https://docs.mixpanel.com/docs/mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Mixpanel connector",
+        "object": "Read events, funnels, retention, saved reports and data-quality issues.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "native-app",
+          "note": "Use the regional connector; existing accounts can need admin enablement.",
+          "documentation": {
+            "label": "Connect Mixpanel",
+            "url": "https://docs.mixpanel.com/docs/mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Yes",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Manage dashboards and cohorts; update definitions and resolve data issues. Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors."
+        },
+        "blocker": "Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors.",
+        "dailyTasks": [
+          "Read events, funnels, retention, saved reports and data-quality issues.",
+          "Manage dashboards and cohorts; update definitions and resolve data issues."
+        ],
+        "actionScopes": {
+          "read": "Read events, funnels, retention, saved reports and data-quality issues.",
+          "create": "Dashboards, cohorts, tracking plans and custom properties; experiments and flags are beta.",
+          "modify": "Dashboards, cohorts, Lexicon, properties and lookup tables.",
+          "delete": "Dashboards, cohorts, tags and tracking plans.",
+          "publish": "A separate publish action is unverified; experiment and flag tools remain beta."
+        },
+        "readSummary": "Read events, funnels, retention, saved reports and data-quality issues.",
+        "writeSummary": "Manage dashboards and cohorts; update definitions and resolve data issues.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.mixpanel.com/docs/mcp"
+          ],
+          "note": "Core tools are available. Experiment and feature-flag tools, and service-account authentication, are beta."
+        }
+      },
+      "rating": {
+        "section": "Analytics",
+        "readiness": "Production",
+        "grade": "A-",
+        "positives": [
+          "Read events, funnels, retention, saved reports and data-quality issues.",
+          "Manage dashboards and cohorts; update definitions and resolve data issues."
+        ],
+        "negatives": [
+          "Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "supermetrics",
+      "tool": {
+        "id": "supermetrics",
+        "name": "Supermetrics",
+        "category": "Data movement",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Report",
+          "Measure",
+          "Automate"
+        ],
+        "summary": "Read connected marketing accounts, fields and cross-channel performance. Create paused campaigns and edit supported budgets, ads and settings.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Supermetrics Claude / ChatGPT app",
+          "url": "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "beta",
+          "label": "Official CLI, alpha",
+          "url": "https://docs.supermetrics.com/apidocs/cli"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Supermetrics API",
+          "url": "https://docs.supermetrics.com/apidocs/getting-started"
+        },
+        "access": "AI chats or MCP entitlement/trial, Campaign management entitlement and seat where applicable, connected accounts with platform edit permission. The connection owner enables writes for each account/team.",
+        "caution": "Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Campaign actions and limits",
+            "url": "https://docs.supermetrics.com/v1/docs/how-to-manage-ad-campaigns-with-ai-tools",
+            "kind": "official"
+          },
+          {
+            "label": "Write access and approvals",
+            "url": "https://docs.supermetrics.com/docs/how-to-enable-campaign-write-access",
+            "kind": "official"
+          },
+          {
+            "label": "Claude and ChatGPT connections",
+            "url": "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Supermetrics connector",
+        "object": "Read connected marketing accounts, fields and cross-channel performance.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "native-app",
+          "note": "Connect the Claude or ChatGPT app, authorise data sources and enable campaign writes separately.",
+          "documentation": {
+            "label": "Connect Supermetrics",
+            "url": "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create paused campaigns and edit supported budgets, ads and settings. Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform."
+        },
+        "blocker": "Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform.",
+        "dailyTasks": [
+          "Read connected marketing accounts, fields and cross-channel performance.",
+          "Create paused campaigns and edit supported budgets, ads and settings."
+        ],
+        "actionScopes": {
+          "read": "Read connected marketing accounts, fields and cross-channel performance.",
+          "create": "Supported campaigns, initially paused.",
+          "modify": "Supported campaign budgets, status, settings and ads.",
+          "delete": "Supported campaigns; removal is irreversible.",
+          "publish": "Enable supported campaigns after review and the configured approval checks."
+        },
+        "readSummary": "Read connected marketing accounts, fields and cross-channel performance.",
+        "writeSummary": "Create paused campaigns and edit supported budgets, ads and settings.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.supermetrics.com/v1/docs/how-to-manage-ad-campaigns-with-ai-tools",
+            "https://docs.supermetrics.com/docs/how-to-enable-campaign-write-access",
+            "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools"
+          ],
+          "note": "Official Supermetrics app, providing third-party access to ad platforms. Entitlement and account-owner write approval are required."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Production",
+        "grade": "A-",
+        "positives": [
+          "Read connected marketing accounts, fields and cross-channel performance.",
+          "Create paused campaigns and edit supported budgets, ads and settings."
+        ],
+        "negatives": [
+          "Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "dataforseo",
+      "tool": {
+        "id": "dataforseo",
+        "name": "DataForSEO",
+        "category": "Research data",
+        "channels": [
+          "Search",
+          "SEO",
+          "Market intelligence"
+        ],
+        "jobs": [
+          "Research",
+          "Plan",
+          "Analyse"
+        ],
+        "summary": "Retrieve SERP, keyword, backlink and competitor research data. Submit billable research tasks; no campaign or website mutations.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "DataForSEO v3 hosted research MCP",
+          "url": "https://github.com/dataforseo/mcp-server-typescript"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official CLI in the MCP package",
+          "url": "https://github.com/dataforseo/mcp-server-typescript"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "DataForSEO APIs and clients",
+          "url": "https://docs.dataforseo.com/v3/"
+        },
+        "access": "DataForSEO account, API access and funding/entitlement for the requested endpoint; compatible remote MCP client.",
+        "caution": "Research execution is not campaign control; API endpoint costs and allowances apply.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "DataForSEO v3 MCP and CLI",
+            "url": "https://github.com/dataforseo/mcp-server-typescript",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "DataForSEO v3 MCP",
+        "object": "Retrieve SERP, keyword, backlink and competitor research data.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the hosted v3 MCP with OAuth and a funded DataForSEO account.",
+          "documentation": {
+            "label": "Connect DataForSEO",
+            "url": "https://github.com/dataforseo/mcp-server-typescript"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "No",
+          "delete": "Unverified",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "Submit billable research tasks; no campaign or website mutations. Research execution is not campaign control; API endpoint costs and allowances apply."
+        },
+        "blocker": "Research execution is not campaign control; API endpoint costs and allowances apply.",
+        "dailyTasks": [
+          "Retrieve SERP, keyword, backlink and competitor research data."
+        ],
+        "actionScopes": {
+          "read": "Retrieve SERP, keyword, backlink and competitor research data.",
+          "create": "Billable research/API tasks only.",
+          "modify": "No campaign or website edits established.",
+          "delete": "Deletion capabilities are unverified.",
+          "publish": "No content or advertising publication."
+        },
+        "readSummary": "Retrieve SERP, keyword, backlink and competitor research data.",
+        "writeSummary": "Submit billable research tasks; no campaign or website mutations.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://github.com/dataforseo/mcp-server-typescript"
+          ],
+          "note": "Official hosted service; paid API usage and endpoint allowances apply."
+        }
+      },
+      "rating": {
+        "section": "Research and intelligence",
+        "readiness": "Production",
+        "grade": "C+",
+        "positives": [
+          "Retrieve SERP, keyword, backlink and competitor research data.",
+          "Submit billable research tasks; no campaign or website mutations."
+        ],
+        "negatives": [
+          "Research execution is not campaign control; API endpoint costs and allowances apply."
+        ],
+        "position": "Specialist"
+      }
+    },
+    {
+      "id": "adobe-analytics",
+      "tool": {
+        "id": "adobe-analytics",
+        "name": "Adobe Analytics",
+        "category": "Enterprise analytics",
+        "channels": [
+          "Cross-channel",
+          "Web"
+        ],
+        "jobs": [
+          "Analyse",
+          "Report",
+          "Configure"
+        ],
+        "summary": "Read reports, components, date ranges and workspace projects. Create or update segments, calculated metrics and projects.",
+        "product": {
+          "label": "Adobe Analytics",
+          "url": "https://business.adobe.com/products/adobe-analytics.html"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Adobe Analytics official hosted MCP",
+          "url": "https://developer.adobe.com/analytics-mcp/docs/aa/reference"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Adobe Analytics agent skills",
+          "url": "https://github.com/adobe/skills"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official analytics CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Adobe Analytics APIs",
+          "url": "https://developer.adobe.com/analytics-apis/docs/2.0/"
+        },
+        "access": "Requires Adobe Analytics access and MCP Read-only Access or MCP Full Access. Writes require Full Access plus normal component permissions. Product admins automatically have Full Access.",
+        "caution": "No delete tool is listed; component writes do not configure collection tags.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Adobe Analytics MCP tools",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/aa/reference",
+            "kind": "official"
+          },
+          {
+            "label": "Adobe MCP permissions",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
+            "kind": "official"
+          },
+          {
+            "label": "Adobe Claude setup",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Adobe Analytics MCP",
+        "object": "Read reports, components, date ranges and workspace projects.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Add the hosted URL, sign in with Adobe ID and obtain MCP Full Access for writes.",
+          "documentation": {
+            "label": "Connect Adobe Analytics",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "No",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create or update segments, calculated metrics and projects. No delete tool is listed; component writes do not configure collection tags."
+        },
+        "blocker": "No delete tool is listed; component writes do not configure collection tags.",
+        "dailyTasks": [
+          "Read reports, components, date ranges and workspace projects.",
+          "Create or update segments, calculated metrics and projects."
+        ],
+        "actionScopes": {
+          "read": "Read reports, components, date ranges and workspace projects.",
+          "create": "Segments, calculated metrics, date ranges and projects.",
+          "modify": "Supported segments, calculated metrics and projects.",
+          "delete": "No delete tool in the published catalogue.",
+          "publish": "Publication beyond analytical component writes is unverified."
+        },
+        "readSummary": "Read reports, components, date ranges and workspace projects.",
+        "writeSummary": "Create or update segments, calculated metrics and projects.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developer.adobe.com/analytics-mcp/docs/aa/reference",
+            "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
+            "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
+          ],
+          "note": "Adobe Analytics entitlement and MCP permissions required; writes need MCP Full Access."
+        }
+      },
+      "rating": {
+        "section": "Analytics",
+        "readiness": "Production",
+        "grade": "B+",
+        "position": "Reference",
+        "positives": [
+          "Read reports, components, date ranges and workspace projects.",
+          "Create or update segments, calculated metrics and projects."
+        ],
+        "negatives": [
+          "No delete tool is listed; component writes do not configure collection tags."
+        ]
+      }
+    },
+    {
+      "id": "adobe-customer-journey-analytics",
+      "tool": {
+        "id": "adobe-customer-journey-analytics",
+        "name": "Adobe Customer Journey Analytics",
+        "category": "Enterprise analytics",
+        "channels": [
+          "Cross-channel",
+          "Customer journey"
+        ],
+        "jobs": [
+          "Analyse",
+          "Report",
+          "Configure"
+        ],
+        "summary": "Read data views, components, audiences, projects and reports. Create or update analytical components, projects and audiences.",
+        "product": {
+          "label": "Customer Journey Analytics",
+          "url": "https://business.adobe.com/products/customer-journey-analytics/adobe-customer-journey-analytics.html"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Adobe CJA Claude directory connector",
+          "url": "https://developer.adobe.com/analytics-mcp/docs/cja/reference"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://developer.adobe.com/analytics-mcp/docs/cja/reference"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CJA CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "CJA APIs",
+          "url": "https://developer.adobe.com/cja-apis/docs/"
+        },
+        "access": "CJA entitlement, relevant data-view/component permissions and MCP Read-only or Full Access. Writes require Full Access and underlying action permissions; product admins automatically receive Full Access.",
+        "caution": "No general deletion or connection administration; audience creation does not prove downstream activation.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "CJA MCP tools",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/cja/reference",
+            "kind": "official"
+          },
+          {
+            "label": "Adobe MCP permissions",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
+            "kind": "official"
+          },
+          {
+            "label": "CJA directory connector",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Adobe CJA connector",
+        "object": "Read data views, components, audiences, projects and reports.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "native-app",
+          "note": "Use the Claude directory connector; product permissions and MCP Full Access still apply.",
+          "documentation": {
+            "label": "Connect Customer Journey Analytics",
+            "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "No",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create or update analytical components, projects and audiences. No general deletion or connection administration; audience creation does not prove downstream activation."
+        },
+        "blocker": "No general deletion or connection administration; audience creation does not prove downstream activation.",
+        "dailyTasks": [
+          "Read data views, components, audiences, projects and reports.",
+          "Create or update analytical components, projects and audiences."
+        ],
+        "actionScopes": {
+          "read": "Read data views, components, audiences, projects and reports.",
+          "create": "Segments, metrics, projects, audiences and date ranges.",
+          "modify": "Segments, metrics, projects and audiences.",
+          "delete": "No delete tool in the published catalogue.",
+          "publish": "Downstream audience activation is unverified."
+        },
+        "readSummary": "Read data views, components, audiences, projects and reports.",
+        "writeSummary": "Create or update analytical components, projects and audiences.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developer.adobe.com/analytics-mcp/docs/cja/reference",
+            "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
+            "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
+          ],
+          "note": "CJA entitlement and MCP permissions required; writes need MCP Full Access."
+        }
+      },
+      "rating": {
+        "section": "Analytics",
+        "readiness": "Production",
+        "grade": "A-",
+        "position": "Reference",
+        "positives": [
+          "Read data views, components, audiences, projects and reports.",
+          "Create or update analytical components, projects and audiences."
+        ],
+        "negatives": [
+          "No general deletion or connection administration; audience creation does not prove downstream activation."
+        ]
+      }
+    },
+    {
+      "id": "posthog",
+      "tool": {
+        "id": "posthog",
+        "name": "PostHog",
+        "category": "Product analytics",
+        "channels": [
+          "Web",
+          "Product"
+        ],
+        "jobs": [
+          "Analyse",
+          "Report",
+          "Investigate"
+        ],
+        "summary": "Read analytics, SQL/schema, insights, errors and pipeline diagnostics. Manage dashboards, insights, flags, experiments and supported pipelines.",
+        "product": {
+          "label": "PostHog Product Analytics",
+          "url": "https://posthog.com/product-analytics"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "PostHog Claude connector + official plugin",
+          "url": "https://posthog.com/docs/model-context-protocol"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://posthog.com/docs/model-context-protocol"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "PostHog wizard",
+          "url": "https://github.com/PostHog/wizard"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "PostHog API",
+          "url": "https://posthog.com/docs/api"
+        },
+        "access": "Existing project access and authorised scopes apply. MCP connection/calls are free; some tools using LLMs internally require organisation AI data processing enabled and can incur PostHog AI spend.",
+        "caution": "Events must already be collected; some AI tools can incur additional usage costs.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "PostHog MCP setup and costs",
+            "url": "https://posthog.com/docs/model-context-protocol",
+            "kind": "official"
+          },
+          {
+            "label": "PostHog MCP tool reference",
+            "url": "https://posthog.com/docs/model-context-protocol/tools",
+            "kind": "official"
+          },
+          {
+            "label": "PostHog Claude connector",
+            "url": "https://posthog.com/docs/model-context-protocol/claude-desktop",
+            "kind": "official"
+          },
+          {
+            "label": "PostHog pipeline actions",
+            "url": "https://posthog.com/docs/data-pipelines/surfaces/mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "PostHog connector",
+        "object": "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Add PostHog from the Claude directory and sign in; authentication selects US/EU.",
+          "documentation": {
+            "label": "Connect PostHog",
+            "url": "https://posthog.com/docs/model-context-protocol"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Manage dashboards, insights, flags, experiments and supported pipelines. Events must already be collected; some AI tools can incur additional usage costs."
+        },
+        "blocker": "Events must already be collected; some AI tools can incur additional usage costs.",
+        "dailyTasks": [
+          "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
+          "Manage dashboards, insights, flags, experiments and supported pipelines."
+        ],
+        "actionScopes": {
+          "read": "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
+          "create": "Insights, dashboards, flags, experiments and exports.",
+          "modify": "Supported analytics, error and pipeline objects.",
+          "delete": "Insights, dashboards, flags, surveys and supported batch exports.",
+          "publish": "Enable feature flags, launch surveys and enable supported pipeline destinations."
+        },
+        "readSummary": "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
+        "writeSummary": "Manage dashboards, insights, flags, experiments and supported pipelines.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://posthog.com/docs/model-context-protocol",
+            "https://posthog.com/docs/model-context-protocol/tools",
+            "https://posthog.com/docs/model-context-protocol/claude-desktop",
+            "https://posthog.com/docs/data-pipelines/surfaces/mcp"
+          ],
+          "note": "Official hosted connector; project permissions apply. Some AI-powered tools require opt-in and incur usage costs."
+        }
+      },
+      "rating": {
+        "section": "Analytics",
+        "readiness": "Production",
+        "grade": "A",
+        "position": "Emerging",
+        "positives": [
+          "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
+          "Manage dashboards, insights, flags, experiments and supported pipelines."
+        ],
+        "negatives": [
+          "Events must already be collected; some AI tools can incur additional usage costs."
+        ]
+      }
+    },
+    {
+      "id": "appsflyer",
+      "tool": {
+        "id": "appsflyer",
+        "name": "AppsFlyer",
+        "category": "Mobile attribution",
+        "channels": [
+          "Mobile",
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Measure",
+          "Audit",
+          "Report"
+        ],
+        "summary": "Read aggregate performance, creative, SKAN and configuration data. Create OneLink short links under existing templates, with confirmation.",
+        "product": {
+          "label": "AppsFlyer MCP",
+          "url": "https://www.appsflyer.com/products/agentic-ai/mcp/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "beta",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "AppsFlyer official hosted MCP",
+          "url": "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "AppsFlyer developer hub",
+          "url": "https://dev.appsflyer.com/hc"
+        },
+        "access": "Beta; existing AppsFlyer permissions apply. MCP is enabled by default but an admin can disable it. Account-level bearer tokens are available for automation.",
+        "caution": "Beta. Ten new OneLink links per account per day; broader account editing is not documented.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "AppsFlyer beta tools and limits",
+            "url": "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "AppsFlyer MCP",
+        "object": "Read aggregate performance, creative, SKAN and configuration data.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the hosted MCP with OAuth; permissions and beta availability apply.",
+          "documentation": {
+            "label": "Connect AppsFlyer",
+            "url": "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "No",
+          "delete": "No",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create OneLink short links under existing templates, with confirmation. Beta. Ten new OneLink links per account per day; broader account editing is not documented."
+        },
+        "blocker": "Beta. Ten new OneLink links per account per day; broader account editing is not documented.",
+        "dailyTasks": [
+          "Read aggregate performance, creative, SKAN and configuration data.",
+          "Create OneLink short links under existing templates, with confirmation."
+        ],
+        "actionScopes": {
+          "read": "Read aggregate performance, creative, SKAN and configuration data.",
+          "create": "OneLink links under existing templates.",
+          "modify": "No edit tool documented for this route.",
+          "delete": "No delete tool documented for this route.",
+          "publish": "Link creation is not campaign activation."
+        },
+        "readSummary": "Read aggregate performance, creative, SKAN and configuration data.",
+        "writeSummary": "Create OneLink short links under existing templates, with confirmation.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "beta",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP"
+          ],
+          "note": "Beta for evaluation; account permissions apply. OneLink creation is limited to ten links per account per day."
+        }
+      },
+      "rating": {
+        "section": "Measurement",
+        "readiness": "Test",
+        "grade": "B",
+        "position": "Reference",
+        "positives": [
+          "Read aggregate performance, creative, SKAN and configuration data.",
+          "Create OneLink short links under existing templates, with confirmation."
+        ],
+        "negatives": [
+          "Beta. Ten new OneLink links per account per day; broader account editing is not documented."
+        ]
+      }
+    }
+  ]
+}

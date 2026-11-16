@@ -1,0 +1,1855 @@
+{
+  "reviewedOn": "2026-11-16",
+  "evidenceBasis": "Documentation reviewed",
+  "records": [
+    {
+      "id": "google-ads",
+      "tool": {
+        "id": "google-ads",
+        "name": "Google Ads",
+        "category": "Media buying",
+        "channels": [
+          "Search",
+          "Shopping",
+          "Display",
+          "Video"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaign structure, metrics and GAQL reports. Create assets and manage labels, not campaigns or budgets.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "both",
+          "control": "mixed",
+          "label": "Google Ads official MCP, local or self-deployed",
+          "url": "https://github.com/googleads/google-ads-mcp"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Google Ads API Developer Assistant and agent skills",
+          "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Google Ads API and client libraries",
+          "url": "https://developers.google.com/google-ads/api/docs/start"
+        },
+        "access": "Production API access requires approved Cloud project access. Developer tokens sunset 9 September 2026.",
+        "caution": "Campaign changes still require another route; video upload is local only.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "MCP tools and setup",
+            "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+            "kind": "official"
+          },
+          {
+            "label": "Official MCP source",
+            "url": "https://github.com/googleads/google-ads-mcp",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Google Ads official MCP, local or self-deployed",
+        "object": "Read campaign structure, metrics and GAQL reports.",
+        "setup": {
+          "level": "Hard",
+          "tier": "self-managed",
+          "note": "Run Python locally or host the server; configure Google Cloud approval and OAuth.",
+          "documentation": {
+            "label": "Install the Google Ads MCP",
+            "url": "https://github.com/googleads/google-ads-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "Partial",
+          "delete": "Partial",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create assets and manage labels, not campaigns or budgets. Campaign changes still require another route; video upload is local only."
+        },
+        "blocker": "Campaign changes still require another route; video upload is local only.",
+        "dailyTasks": [
+          "Read campaign structure, metrics and GAQL reports.",
+          "Create assets and manage labels, not campaigns or budgets."
+        ],
+        "actionScopes": {
+          "read": "Read campaign structure, metrics and GAQL reports.",
+          "create": "Standalone assets, videos and labels.",
+          "modify": "Labels and their associations only.",
+          "delete": "Labels and supported associations only.",
+          "publish": "No campaign activation or campaign asset linking."
+        },
+        "readSummary": "Read campaign structure, metrics and GAQL reports.",
+        "writeSummary": "Create assets and manage labels, not campaigns or budgets.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "restricted",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+            "https://github.com/googleads/google-ads-mcp"
+          ],
+          "note": "Self-managed server. Google Cloud approval is required for production-account API access."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "B-",
+        "positives": [
+          "Read campaign structure, metrics and GAQL reports.",
+          "Create assets and manage labels, not campaigns or budgets."
+        ],
+        "negatives": [
+          "Campaign changes still require another route; video upload is local only."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "meta-ads",
+      "tool": {
+        "id": "meta-ads",
+        "name": "Meta Ads",
+        "category": "Media buying",
+        "channels": [
+          "Social",
+          "Display",
+          "Video"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaign performance, audiences and catalogue data. Create and edit campaigns, ad sets and ads, then activate them.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Official hosted MCP; feature access varies",
+          "url": "https://mcp.facebook.com/ads"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Meta Ads CLI",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview.md"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Marketing API",
+          "url": "https://developers.facebook.com/docs/marketing-apis/"
+        },
+        "access": "OAuth sign-in or an authorised token; a Meta app is optional. Account permissions and feature availability still apply.",
+        "caution": "General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Meta MCP overview",
+            "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview.md",
+            "kind": "official"
+          },
+          {
+            "label": "Campaign and audience tools",
+            "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-ad-creation-and-management.md",
+            "kind": "official"
+          },
+          {
+            "label": "Reporting tools",
+            "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-comprehensive-reporting.md",
+            "kind": "official"
+          },
+          {
+            "label": "Catalogue tools",
+            "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-catalog-creation-and-management.md",
+            "kind": "official"
+          },
+          {
+            "label": "MCP authentication",
+            "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started.md",
+            "kind": "official"
+          },
+          {
+            "label": "Meta Ads CLI",
+            "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview.md",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Meta Ads official hosted MCP",
+        "object": "Read campaign performance, audiences and catalogue data.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the Meta-hosted server and grant access. Meta documents an option without your own developer app.",
+          "documentation": {
+            "label": "Connect Meta Ads",
+            "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started.md"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Yes"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create and edit campaigns, ad sets and ads, then activate them. General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented."
+        },
+        "blocker": "General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented.",
+        "dailyTasks": [
+          "Read campaign performance, audiences and catalogue data.",
+          "Create and edit campaigns, ad sets and ads, then activate them."
+        ],
+        "actionScopes": {
+          "read": "Campaigns, ad sets, ads, performance, audiences and catalogues.",
+          "create": "Campaigns, ad sets, ads and supported creatives; ads start paused.",
+          "modify": "Campaign, ad-set and ad fields, audiences and catalogue data.",
+          "delete": "Custom audiences and selected catalogue objects; campaign deletion is not documented.",
+          "publish": "Explicit activation of paused campaigns, ad sets and ads."
+        },
+        "readSummary": "Read campaign performance, audiences and catalogue data.",
+        "writeSummary": "Create and edit campaigns, ad sets and ads, then activate them.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "unverified",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview.md",
+            "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-ad-creation-and-management.md",
+            "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-comprehensive-reporting.md",
+            "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-catalog-creation-and-management.md",
+            "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started.md",
+            "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview.md"
+          ],
+          "note": "Official hosted MCP. Current docs do not confirm general rollout; some creative formats have limited availability."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "B+",
+        "positives": [
+          "Official hosted campaign reads, creation, editing and activation.",
+          "OAuth access without a mandatory developer app."
+        ],
+        "negatives": [
+          "General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "tiktok-for-business",
+      "tool": {
+        "id": "tiktok-for-business",
+        "name": "TikTok for Business",
+        "category": "Media buying",
+        "channels": [
+          "Social",
+          "Video"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report",
+          "Create"
+        ],
+        "summary": "Read campaign information, reports and audience context. Create campaigns and change budgets, bids and targeting.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "TikTok for Business official hosted MCP",
+          "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "TikTok API for Business",
+          "url": "https://business-api.tiktok.com/portal/docs"
+        },
+        "access": "TikTok for Business account and authorised permissions; vendor describes production-ready support.",
+        "caution": "Exact deletion and launch tools remain unverified.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "TikTok MCP capabilities and setup",
+            "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en",
+            "kind": "official"
+          },
+          {
+            "label": "TikTok MCP tool library",
+            "url": "https://business-api.tiktok.com/portal/docs/available-tools-in-tiktok-for-business-mcp-server/v1.3",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "TikTok for Business official hosted MCP",
+        "object": "Read campaign information, reports and audience context.",
+        "setup": {
+          "level": "Easy",
+          "tier": "hosted-mcp",
+          "note": "Add the hosted MCP and approve account access. No developer credentials or custom code are required.",
+          "documentation": {
+            "label": "Connect TikTok Ads",
+            "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create campaigns and change budgets, bids and targeting. Exact deletion and launch tools remain unverified."
+        },
+        "blocker": "Exact deletion and launch tools remain unverified.",
+        "dailyTasks": [
+          "Read campaign information, reports and audience context.",
+          "Create campaigns and change budgets, bids and targeting."
+        ],
+        "actionScopes": {
+          "read": "Read campaign information, reports and audience context.",
+          "create": "Campaigns.",
+          "modify": "Budgets, bids, targeting and ad-group pausing.",
+          "delete": "Not established by the reviewed sources.",
+          "publish": "Creation does not establish a separate activation tool."
+        },
+        "readSummary": "Read campaign information, reports and audience context.",
+        "writeSummary": "Create campaigns and change budgets, bids and targeting.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en",
+            "https://business-api.tiktok.com/portal/docs/available-tools-in-tiktok-for-business-mcp-server/v1.3"
+          ],
+          "note": "Vendor describes a production-ready, zero-code hosted connection; no developer credentials are required."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "A-",
+        "positives": [
+          "Read campaign information, reports and audience context.",
+          "Create campaigns and change budgets, bids and targeting."
+        ],
+        "negatives": [
+          "Exact deletion and launch tools remain unverified."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "microsoft-advertising",
+      "tool": {
+        "id": "microsoft-advertising",
+        "name": "Microsoft Advertising",
+        "category": "Media buying",
+        "channels": [
+          "Search",
+          "Shopping",
+          "Display"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaigns, keywords, assets, reports and change history. Read-only; apply changes in another tool.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-only",
+          "label": "Microsoft Advertising official hosted MCP",
+          "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Microsoft Advertising API",
+          "url": "https://learn.microsoft.com/en-us/advertising/"
+        },
+        "access": "Existing Advertising account permissions; personal and work/school Microsoft accounts supported.",
+        "caution": "Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Microsoft MCP read tools",
+            "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools?view=bingads-13",
+            "kind": "official"
+          },
+          {
+            "label": "Microsoft MCP setup",
+            "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Microsoft Advertising official hosted MCP",
+        "object": "Read campaigns, keywords, assets, reports and change history.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "For ChatGPT or Claude, register an Entra app and configure OAuth. VS Code has an interactive sign-in route.",
+          "documentation": {
+            "label": "Connect Microsoft Advertising",
+            "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "No",
+          "modify": "No",
+          "delete": "No",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "Read-only; apply changes in another tool. Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration."
+        },
+        "blocker": "Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration.",
+        "dailyTasks": [
+          "Read campaigns, keywords, assets, reports and change history."
+        ],
+        "actionScopes": {
+          "read": "Read campaigns, keywords, assets, reports and change history.",
+          "create": "Read-only connection.",
+          "modify": "Read-only connection.",
+          "delete": "Read-only connection.",
+          "publish": "Read-only connection."
+        },
+        "readSummary": "Read campaigns, keywords, assets, reports and change history.",
+        "writeSummary": "Read-only; apply changes in another tool.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools?view=bingads-13",
+            "https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13"
+          ],
+          "note": "Read-only. ChatGPT and Claude require your own Entra app registration; VS Code supports interactive sign-in."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Production",
+        "grade": "C+",
+        "positives": [
+          "Read campaigns, keywords, assets, reports and change history.",
+          "Register an Entra app, configure OAuth and connect the hosted MCP."
+        ],
+        "negatives": [
+          "Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "amazon-ads",
+      "tool": {
+        "id": "amazon-ads",
+        "name": "Amazon Ads",
+        "category": "Media buying",
+        "channels": [
+          "Retail media",
+          "Search",
+          "Display",
+          "Video"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read performance, account and billing information. Create, update and delete supported campaigns.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "beta",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Amazon Ads official hosted MCP",
+          "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "Amazon Ads API",
+          "url": "https://advertising.amazon.com/en-ca/about-api"
+        },
+        "access": "Globally available open beta to Amazon Ads partners with active API credentials.",
+        "caution": "Open beta with partner/API access; not every ad product is covered.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Amazon MCP beta and capabilities",
+            "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Amazon Ads official hosted MCP",
+        "object": "Read performance, account and billing information.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "Use approved Amazon Ads API credentials and connect the beta server.",
+          "documentation": {
+            "label": "Amazon MCP access",
+            "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Yes",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create, update and delete supported campaigns. Open beta with partner/API access; not every ad product is covered."
+        },
+        "blocker": "Open beta with partner/API access; not every ad product is covered.",
+        "dailyTasks": [
+          "Read performance, account and billing information.",
+          "Create, update and delete supported campaigns."
+        ],
+        "actionScopes": {
+          "read": "Read performance, account and billing information.",
+          "create": "Supported campaigns and Sponsored Products workflows.",
+          "modify": "Supported campaign settings.",
+          "delete": "Supported campaigns.",
+          "publish": "Launch workflows still include review and approval."
+        },
+        "readSummary": "Read performance, account and billing information.",
+        "writeSummary": "Create, update and delete supported campaigns.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "beta",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta"
+          ],
+          "note": "Open beta for Amazon Ads partners with active API credentials; supported ad products vary."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "B+",
+        "positives": [
+          "Read performance, account and billing information.",
+          "Create, update and delete supported campaigns."
+        ],
+        "negatives": [
+          "Open beta with partner/API access; not every ad product is covered."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "snapchat-ads",
+      "tool": {
+        "id": "snapchat-ads",
+        "name": "Snapchat Ads",
+        "category": "Media buying",
+        "channels": [
+          "Social",
+          "Video",
+          "AR"
+        ],
+        "jobs": [
+          "Report",
+          "Analyse"
+        ],
+        "summary": "Read authorised campaign setup and performance. Read-only; campaign writes are not released.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-only",
+          "label": "Official self-service, read-only MCP",
+          "url": "https://developers.snap.com/marketing-api/Ads-MCP/Introduction"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "Snap Marketing API",
+          "url": "https://developers.snap.com/marketing-api/home"
+        },
+        "access": "No allowlist. Organisation Admin/Business Admin first approves each agent; each member then authorises their own existing access.",
+        "caution": "Self-service access still requires organisation approval and member consent.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Snapchat MCP access and scope",
+            "url": "https://developers.snap.com/marketing-api/Ads-MCP/Introduction",
+            "kind": "official"
+          },
+          {
+            "label": "Connect a Snapchat agent",
+            "url": "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Snapchat Ads official hosted MCP",
+        "object": "Read authorised campaign setup and performance.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "An administrator approves the agent; each member grants access.",
+          "documentation": {
+            "label": "Connect Snapchat Ads",
+            "url": "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "No",
+          "modify": "No",
+          "delete": "No",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "Read-only; campaign writes are not released. Self-service access still requires organisation approval and member consent."
+        },
+        "blocker": "Self-service access still requires organisation approval and member consent.",
+        "dailyTasks": [
+          "Read authorised campaign setup and performance."
+        ],
+        "actionScopes": {
+          "read": "Read authorised campaign setup and performance.",
+          "create": "Read-only connection.",
+          "modify": "Read-only connection.",
+          "delete": "Read-only connection.",
+          "publish": "Read-only connection."
+        },
+        "readSummary": "Read authorised campaign setup and performance.",
+        "writeSummary": "Read-only; campaign writes are not released.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.snap.com/marketing-api/Ads-MCP/Introduction",
+            "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent"
+          ],
+          "note": "Read-only self-service access. An organisation admin approves each agent, then members authorise individually."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Production",
+        "grade": "C+",
+        "positives": [
+          "Read authorised campaign setup and performance.",
+          "An administrator approves the agent; each member grants access."
+        ],
+        "negatives": [
+          "Self-service access still requires organisation approval and member consent."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "linkedin-ads",
+      "tool": {
+        "id": "linkedin-ads",
+        "name": "LinkedIn Ads",
+        "category": "Media buying",
+        "channels": [
+          "Social",
+          "B2B"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaign configuration and performance through approved APIs. Create and manage campaigns through custom API code.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "LinkedIn Marketing APIs",
+          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/"
+        },
+        "access": "r_ads/rw_ads scopes and account roles; Viewer remains read-only even with rw_ads.",
+        "caution": "No ready official agent connector verified; use a supported API version.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "LinkedIn campaign operations",
+            "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10",
+            "kind": "official"
+          },
+          {
+            "label": "LinkedIn API access tiers",
+            "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "LinkedIn Ads API, custom integration",
+        "object": "Read campaign configuration and performance through approved APIs.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Obtain Advertising API access, configure OAuth and build the AI integration.",
+          "documentation": {
+            "label": "LinkedIn API access",
+            "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create and manage campaigns through custom API code. No ready official agent connector verified; use a supported API version."
+        },
+        "blocker": "No ready official agent connector verified; use a supported API version.",
+        "dailyTasks": [
+          "Read campaign configuration and performance through approved APIs.",
+          "Create and manage campaigns through custom API code."
+        ],
+        "actionScopes": {
+          "read": "Read campaign configuration and performance through approved APIs.",
+          "create": "Supported campaigns.",
+          "modify": "Targeting, budgets, schedules and status.",
+          "delete": "Draft DELETE; non-drafts follow PENDING_DELETION.",
+          "publish": "ACTIVE status remains subject to serving eligibility."
+        },
+        "readSummary": "Read campaign configuration and performance through approved APIs.",
+        "writeSummary": "Create and manage campaigns through custom API code.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "restricted",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10",
+            "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview"
+          ],
+          "note": "Custom API integration. Advertising API access is vetted; development and standard tiers have different limits."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C",
+        "positives": [
+          "Read campaign configuration and performance through approved APIs.",
+          "Create and manage campaigns through custom API code."
+        ],
+        "negatives": [
+          "No ready official agent connector verified; use a supported API version."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "pinterest-ads",
+      "tool": {
+        "id": "pinterest-ads",
+        "name": "Pinterest Ads",
+        "category": "Media buying",
+        "channels": [
+          "Social",
+          "Visual discovery"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaigns, ad groups and performance. Create and manage campaigns, ad groups and ads via API.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "preview",
+          "mode": "remote",
+          "control": "not-stated",
+          "label": "Official MCP announced; launch unconfirmed",
+          "url": "https://dev.pinterest.com/about-pinterest-mcp/"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Pinterest API for ads",
+          "url": "https://dev.pinterest.com/docs/work-with-ads/ads-overview/"
+        },
+        "access": "Business Access, supported advertising country, billing and advertising agreement; some onboarding remains in Pinterest UI.",
+        "caution": "Custom integration required. The announced official MCP is not yet verified as launched.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Pinterest campaign API",
+            "url": "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/",
+            "kind": "official"
+          },
+          {
+            "label": "Pinterest MCP announcement",
+            "url": "https://dev.pinterest.com/about-pinterest-mcp/",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Pinterest Ads API, custom integration",
+        "object": "Read campaigns, ad groups and performance.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Build an authenticated API integration and maintain it.",
+          "documentation": {
+            "label": "Pinterest campaign setup",
+            "url": "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Yes"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create and manage campaigns, ad groups and ads via API. Custom integration required. The announced official MCP is not yet verified as launched."
+        },
+        "blocker": "Custom integration required. The announced official MCP is not yet verified as launched.",
+        "dailyTasks": [
+          "Read campaigns, ad groups and performance.",
+          "Create and manage campaigns, ad groups and ads via API."
+        ],
+        "actionScopes": {
+          "read": "Read campaigns, ad groups and performance.",
+          "create": "Campaigns, ad groups and ads.",
+          "modify": "Supported fields, targeting, schedules and status.",
+          "delete": "Draft deletion differs from archival and recovery.",
+          "publish": "DRAFT preparation and ACTIVE delivery states."
+        },
+        "readSummary": "Read campaigns, ad groups and performance.",
+        "writeSummary": "Create and manage campaigns, ad groups and ads via API.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/",
+            "https://dev.pinterest.com/about-pinterest-mcp/"
+          ],
+          "note": "The assessed route is the official API and needs custom integration. Pinterest announces MCP, but launch and tools are unconfirmed."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C+",
+        "positives": [
+          "Read campaigns, ad groups and performance.",
+          "Create and manage campaigns, ad groups and ads via API."
+        ],
+        "negatives": [
+          "Custom integration required. The announced official MCP is not yet verified as launched."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "reddit-ads",
+      "tool": {
+        "id": "reddit-ads",
+        "name": "Reddit Ads",
+        "category": "Media buying",
+        "channels": [
+          "Social",
+          "Community"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaign information and reports through API v3. Create campaigns and update budgets, schedules and delivery status.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "Reddit Ads API v3",
+          "url": "https://ads-api.reddit.com/docs/"
+        },
+        "access": "App creation is business-admin-only; existing authorisation and Ads API terms apply.",
+        "caution": "Custom AI integration required. Activation does not bypass ad approval or billing checks.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Reddit API access",
+            "url": "https://ads-api.reddit.com/docs/v3/api/reddit-advertising-api",
+            "kind": "official"
+          },
+          {
+            "label": "Reddit campaign creation",
+            "url": "https://ads-api.reddit.com/docs/v3/api/create-campaign",
+            "kind": "official"
+          },
+          {
+            "label": "Reddit campaign updates",
+            "url": "https://ads-api.reddit.com/docs/v3/api/update-campaign",
+            "kind": "official"
+          },
+          {
+            "label": "Reddit v3 OpenAPI schema",
+            "url": "https://ads-api.reddit.com/api/v3/openapi.json",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Reddit Ads API, custom integration",
+        "object": "Read campaign information and reports through API v3.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Create an OAuth developer app, grant ad permissions and build the integration.",
+          "documentation": {
+            "label": "Reddit API access",
+            "url": "https://ads-api.reddit.com/docs/v3/api/reddit-advertising-api"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create campaigns and update budgets, schedules and delivery status. Custom AI integration required. Activation does not bypass ad approval or billing checks."
+        },
+        "blocker": "Custom AI integration required. Activation does not bypass ad approval or billing checks.",
+        "dailyTasks": [
+          "Read campaign information and reports through API v3.",
+          "Create campaigns and update budgets, schedules and delivery status."
+        ],
+        "actionScopes": {
+          "read": "Read campaign information and reports through API v3.",
+          "create": "Supported campaigns and custom audiences.",
+          "modify": "Campaign names, budgets, bids, schedules and configured status.",
+          "delete": "Campaign configured_status can be DELETED; this is a status change, not a hard-delete endpoint.",
+          "publish": "Set campaign configured_status to ACTIVE; effective delivery still depends on approval and billing."
+        },
+        "readSummary": "Read campaign information and reports through API v3.",
+        "writeSummary": "Create campaigns and update budgets, schedules and delivery status.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://ads-api.reddit.com/docs/v3/api/reddit-advertising-api",
+            "https://ads-api.reddit.com/docs/v3/api/create-campaign",
+            "https://ads-api.reddit.com/docs/v3/api/update-campaign",
+            "https://ads-api.reddit.com/api/v3/openapi.json"
+          ],
+          "note": "API v3 is open to developers without allowlisting. An OAuth app and custom AI integration are required."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C+",
+        "positives": [
+          "Read campaign information and reports through API v3.",
+          "Create campaigns and update budgets, schedules and delivery status."
+        ],
+        "negatives": [
+          "Custom AI integration required. Activation does not bypass ad approval or billing checks."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "x-ads",
+      "tool": {
+        "id": "x-ads",
+        "name": "X Ads",
+        "category": "Media buying",
+        "channels": [
+          "Social"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaign structure, analytics, audiences and creative assets. Build and edit campaigns, then activate them explicitly.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "X Ads official hosted MCP",
+          "url": "https://docs.x.com/x-ads-api/mcp"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "xurl agent skill",
+          "url": "https://github.com/xdevplatform/xurl/blob/main/SKILL.md"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "xurl CLI",
+          "url": "https://github.com/xdevplatform/xurl"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "X Ads API",
+          "url": "https://docs.x.com/x-ads-api/introduction"
+        },
+        "access": "Existing ad account access; ads.read/ads.write and optional media.write scopes.",
+        "caution": "Developer-app OAuth setup remains; selected deletes exclude campaign deletion.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "X Ads MCP tools and setup",
+            "url": "https://docs.x.com/x-ads-api/mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "X Ads official hosted MCP",
+        "object": "Read campaign structure, analytics, audiences and creative assets.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "Configure the developer app and OAuth grant, then connect hosted MCP.",
+          "documentation": {
+            "label": "Connect X Ads",
+            "url": "https://docs.x.com/x-ads-api/mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Yes"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Build and edit campaigns, then activate them explicitly. Developer-app OAuth setup remains; selected deletes exclude campaign deletion."
+        },
+        "blocker": "Developer-app OAuth setup remains; selected deletes exclude campaign deletion.",
+        "dailyTasks": [
+          "Read campaign structure, analytics, audiences and creative assets.",
+          "Build and edit campaigns, then activate them explicitly."
+        ],
+        "actionScopes": {
+          "read": "Read campaign structure, analytics, audiences and creative assets.",
+          "create": "Campaigns, line items, audiences and creative objects.",
+          "modify": "Campaigns, line items and supported related objects.",
+          "delete": "Selected audiences, creatives, media and tags.",
+          "publish": "Explicit campaign and line-item activation; new objects start paused."
+        },
+        "readSummary": "Read campaign structure, analytics, audiences and creative assets.",
+        "writeSummary": "Build and edit campaigns, then activate them explicitly.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.x.com/x-ads-api/mcp"
+          ],
+          "note": "Hosted MCP with developer-app registration and OAuth. Campaigns and line items start paused."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "B+",
+        "positives": [
+          "Read campaign structure, analytics, audiences and creative assets.",
+          "Build and edit campaigns, then activate them explicitly."
+        ],
+        "negatives": [
+          "Developer-app OAuth setup remains; selected deletes exclude campaign deletion."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "display-video-360",
+      "tool": {
+        "id": "display-video-360",
+        "name": "Display & Video 360",
+        "category": "Media buying",
+        "channels": [
+          "Display",
+          "Video",
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read trafficking resources; use a separate route for performance reports. Manage supported resources, including responsive YouTube ads in v5 beta.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "beta",
+          "label": "Display & Video 360 API",
+          "url": "https://developers.google.com/display-video/api"
+        },
+        "access": "DV360 permissions apply. v5 is labelled beta in current reference.",
+        "caution": "Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "DV360 API v5 reference",
+            "url": "https://developers.google.com/display-video/api/reference/rest/v5/advertisers.lineItems",
+            "kind": "official"
+          },
+          {
+            "label": "Responsive YouTube ads release",
+            "url": "https://developers.google.com/ads/blog/posts/2026/11/manage-responsive-youtube-ads-with-display",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Display & Video 360 API v5 beta, custom integration",
+        "object": "Read trafficking resources; use a separate route for performance reports.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Build an authenticated API integration and maintain it.",
+          "documentation": {
+            "label": "DV360 API setup",
+            "url": "https://developers.google.com/display-video/api"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Manage supported resources, including responsive YouTube ads in v5 beta. Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload."
+        },
+        "blocker": "Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload.",
+        "dailyTasks": [
+          "Read trafficking resources; use a separate route for performance reports.",
+          "Manage supported resources, including responsive YouTube ads in v5 beta."
+        ],
+        "actionScopes": {
+          "read": "Read trafficking resources; use a separate route for performance reports.",
+          "create": "Campaigns, insertion orders, line items and supported creatives.",
+          "modify": "Supported resources and targeting.",
+          "delete": "Line items and v5 responsive YouTube ads.",
+          "publish": "Status updates depend on hierarchy, validation and serving eligibility."
+        },
+        "readSummary": "Read trafficking resources; use a separate route for performance reports.",
+        "writeSummary": "Manage supported resources, including responsive YouTube ads in v5 beta.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "beta",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.google.com/display-video/api/reference/rest/v5/advertisers.lineItems",
+            "https://developers.google.com/ads/blog/posts/2026/11/manage-responsive-youtube-ads-with-display"
+          ],
+          "note": "API v5 remains public beta. Custom integration and existing DV360 account access are required."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C+",
+        "positives": [
+          "Read trafficking resources; use a separate route for performance reports.",
+          "Manage supported resources, including responsive YouTube ads in v5 beta."
+        ],
+        "negatives": [
+          "Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "campaign-manager-360",
+      "tool": {
+        "id": "campaign-manager-360",
+        "name": "Campaign Manager 360",
+        "category": "Media buying",
+        "channels": [
+          "Display",
+          "Video",
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Build",
+          "Measure",
+          "Report"
+        ],
+        "summary": "Read campaign resources and reports via API v5. Create campaigns and reports; update supported campaign fields.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "Campaign Manager 360 API",
+          "url": "https://developers.google.com/doubleclick-advertisers/rest/"
+        },
+        "access": "Existing CM360 user-profile permissions control API access.",
+        "caution": "A custom trafficking integration is needed; archive is not deletion.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "CM360 campaign operations",
+            "url": "https://developers.google.com/doubleclick-advertisers/rest/v5/campaigns",
+            "kind": "official"
+          },
+          {
+            "label": "CM360 API setup",
+            "url": "https://developers.google.com/doubleclick-advertisers/getting_started",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Campaign Manager 360 API, custom integration",
+        "object": "Read campaign resources and reports via API v5.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Build an authenticated API integration and maintain it.",
+          "documentation": {
+            "label": "CM360 API setup",
+            "url": "https://developers.google.com/doubleclick-advertisers/getting_started"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create campaigns and reports; update supported campaign fields. A custom trafficking integration is needed; archive is not deletion."
+        },
+        "blocker": "A custom trafficking integration is needed; archive is not deletion.",
+        "dailyTasks": [
+          "Read campaign resources and reports via API v5.",
+          "Create campaigns and reports; update supported campaign fields."
+        ],
+        "actionScopes": {
+          "read": "Read campaign resources and reports via API v5.",
+          "create": "Campaigns and reports.",
+          "modify": "Campaign fields and archive state.",
+          "delete": "No campaign delete method; other resource deletes unverified.",
+          "publish": "Campaign creation does not establish a universal publish action."
+        },
+        "readSummary": "Read campaign resources and reports via API v5.",
+        "writeSummary": "Create campaigns and reports; update supported campaign fields.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.google.com/doubleclick-advertisers/rest/v5/campaigns",
+            "https://developers.google.com/doubleclick-advertisers/getting_started"
+          ],
+          "note": "Official API; a custom AI integration and authorised CM360 user profile are required."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C+",
+        "positives": [
+          "Read campaign resources and reports via API v5.",
+          "Create campaigns and reports; update supported campaign fields."
+        ],
+        "negatives": [
+          "A custom trafficking integration is needed; archive is not deletion."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "search-ads-360",
+      "tool": {
+        "id": "search-ads-360",
+        "name": "Search Ads 360",
+        "category": "Media buying",
+        "channels": [
+          "Search",
+          "Shopping"
+        ],
+        "jobs": [
+          "Report",
+          "Analyse",
+          "Measure"
+        ],
+        "summary": "Query campaign-to-keyword resources and performance reports. The evaluated Reporting API is read-only.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "Search Ads 360 Reporting API",
+          "url": "https://developers.google.com/search-ads/reporting"
+        },
+        "access": "Authorised Search Ads 360 account access.",
+        "caution": "Custom setup still stops at diagnosis; campaign changes happen elsewhere.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "SA360 Reporting API scope",
+            "url": "https://developers.google.com/search-ads/reporting",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Search Ads 360 API, custom integration",
+        "object": "Query campaign-to-keyword resources and performance reports.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Build an authenticated API integration and maintain it.",
+          "documentation": {
+            "label": "SA360 Reporting API",
+            "url": "https://developers.google.com/search-ads/reporting"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "No",
+          "modify": "No",
+          "delete": "No",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "The evaluated Reporting API is read-only. Custom setup still stops at diagnosis; campaign changes happen elsewhere."
+        },
+        "blocker": "Custom setup still stops at diagnosis; campaign changes happen elsewhere.",
+        "dailyTasks": [
+          "Query campaign-to-keyword resources and performance reports."
+        ],
+        "actionScopes": {
+          "read": "Query campaign-to-keyword resources and performance reports.",
+          "create": "Read-only connection.",
+          "modify": "Read-only connection.",
+          "delete": "Read-only connection.",
+          "publish": "Read-only connection."
+        },
+        "readSummary": "Query campaign-to-keyword resources and performance reports.",
+        "writeSummary": "The evaluated Reporting API is read-only.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.google.com/search-ads/reporting"
+          ],
+          "note": "Read-only API. An authenticated reporting integration must be built."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C",
+        "positives": [
+          "Query campaign-to-keyword resources and performance reports.",
+          "Build an authenticated API integration and maintain it."
+        ],
+        "negatives": [
+          "Custom setup still stops at diagnosis; campaign changes happen elsewhere."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "apple-ads",
+      "tool": {
+        "id": "apple-ads",
+        "name": "Apple Ads",
+        "category": "Media buying",
+        "channels": [
+          "App",
+          "Search"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report"
+        ],
+        "summary": "Read campaign configuration, reports and performance. Create, edit and delete campaign resources; enable eligible ads.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "Apple Ads Platform API",
+          "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api"
+        },
+        "access": "Read-only, read/write and limited-account roles are separate.",
+        "caution": "Custom AI integration required. Enabled status does not guarantee serving.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Apple Ads API scope",
+            "url": "https://developer.apple.com/documentation/apple-ads-platform-api.md",
+            "kind": "official"
+          },
+          {
+            "label": "Apple campaign endpoints",
+            "url": "https://developer.apple.com/documentation/apple-ads-platform-api/campaigns-endpoints.md",
+            "kind": "official"
+          },
+          {
+            "label": "App Store launch workflow",
+            "url": "https://developer.apple.com/documentation/apple-ads-platform-api/journey-app-store-ads.md",
+            "kind": "official"
+          },
+          {
+            "label": "Apple API access",
+            "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Apple Ads API, custom integration",
+        "object": "Read campaign configuration, reports and performance.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Build an authenticated API integration and maintain it.",
+          "documentation": {
+            "label": "Apple Ads API access",
+            "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Yes",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create, edit and delete campaign resources; enable eligible ads. Custom AI integration required. Enabled status does not guarantee serving."
+        },
+        "blocker": "Custom AI integration required. Enabled status does not guarantee serving.",
+        "dailyTasks": [
+          "Read campaign configuration, reports and performance.",
+          "Create, edit and delete campaign resources; enable eligible ads."
+        ],
+        "actionScopes": {
+          "read": "Read reports and authorised campaign configuration.",
+          "create": "Campaigns, ad groups and keywords.",
+          "modify": "Supported campaign-management operations.",
+          "delete": "Campaigns, ad groups, ads, creatives and keywords have documented delete endpoints.",
+          "publish": "Enable campaign, ad-group and ad status; delivery also depends on eligibility and approval."
+        },
+        "readSummary": "Read campaign configuration, reports and performance.",
+        "writeSummary": "Create, edit and delete campaign resources; enable eligible ads.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developer.apple.com/documentation/apple-ads-platform-api.md",
+            "https://developer.apple.com/documentation/apple-ads-platform-api/campaigns-endpoints.md",
+            "https://developer.apple.com/documentation/apple-ads-platform-api/journey-app-store-ads.md",
+            "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api"
+          ],
+          "note": "Official API with an API-user role and OAuth. The AI integration must be built and maintained."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C+",
+        "positives": [
+          "Read campaign configuration, reports and performance.",
+          "Create, edit and delete campaign resources; enable eligible ads."
+        ],
+        "negatives": [
+          "Custom AI integration required. Enabled status does not guarantee serving."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "the-trade-desk",
+      "tool": {
+        "id": "the-trade-desk",
+        "name": "The Trade Desk",
+        "category": "Media buying",
+        "channels": [
+          "Display",
+          "Video",
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Build",
+          "Optimise",
+          "Report",
+          "Operate"
+        ],
+        "summary": "Read campaign data, pacing, performance and platform documentation. Write availability is unconfirmed.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "mode": "remote",
+          "control": "not-stated",
+          "label": "OAK hosted MCP, closed beta",
+          "url": "https://api.thetradedesk.com/mcp/koa"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "restricted",
+          "label": "Platform REST and GraphQL APIs",
+          "url": "https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines"
+        },
+        "access": "Selected-partner closed beta. Account-team approval and authorised OAuth or API-token access are required.",
+        "caution": "Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "OAK capabilities and release status",
+            "url": "https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/McpOpenAgenticKitOverview",
+            "kind": "official"
+          },
+          {
+            "label": "OAK access and setup",
+            "url": "https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "The Trade Desk OAK hosted MCP",
+        "object": "Read campaign data, pacing, performance and platform documentation.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "Request closed-beta access, then connect the hosted server using an approved authentication method.",
+          "documentation": {
+            "label": "Request and connect OAK",
+            "url": "https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Unverified",
+          "modify": "Unverified",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "Write availability is unconfirmed. Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026."
+        },
+        "blocker": "Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026.",
+        "dailyTasks": [
+          "Read campaign data, pacing, performance and platform documentation.",
+          "Write availability is unconfirmed."
+        ],
+        "actionScopes": {
+          "read": "Campaign, ad-group, creative, audience, seed and deal data, reports and documentation.",
+          "create": "Official release table still labels configuration H2 2026; availability is unconfirmed.",
+          "modify": "Write examples exist, but their release table does not confirm shipment.",
+          "delete": "No deletion boundary is documented in the reviewed OAK pages.",
+          "publish": "No activation boundary is documented in the reviewed OAK pages."
+        },
+        "readSummary": "Read campaign data, pacing, performance and platform documentation.",
+        "writeSummary": "Write availability is unconfirmed.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "restricted",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/McpOpenAgenticKitOverview",
+            "https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted"
+          ],
+          "note": "Closed beta for selected partners. Reads are documented as available; writes remain labelled H2 2026."
+        }
+      },
+      "rating": {
+        "section": "Media platforms",
+        "readiness": "Test",
+        "grade": "C+",
+        "positives": [
+          "Vendor-hosted access to campaign data and reports."
+        ],
+        "negatives": [
+          "Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026."
+        ],
+        "position": "Reference"
+      }
+    }
+  ]
+}

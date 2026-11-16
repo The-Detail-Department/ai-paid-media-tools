@@ -62,7 +62,7 @@
         "tier": "self-managed",
         "note": "Run Python locally or host the server; configure Google Cloud approval and OAuth.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Install the Google Ads MCP",
           "url": "https://github.com/googleads/google-ads-mcp"
         }
       },
@@ -92,56 +92,83 @@
       "readSummary": "Read campaign structure, metrics and GAQL reports.",
       "writeSummary": "Create assets and manage labels, not campaigns or budgets.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "restricted",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+          "https://github.com/googleads/google-ads-mcp"
+        ],
+        "note": "Self-managed server. Google Cloud approval is required for production-account API access."
+      }
     },
     "meta-ads": {
-      "surface": "Meta Ads AI Connector, previous assessment",
-      "object": "Prior review covered campaign structure and performance.",
+      "surface": "Meta Ads official hosted MCP",
+      "object": "Read campaign performance, audiences and catalogue data.",
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
-        "note": "Previously documented hosted MCP; current access needs confirmation.",
+        "note": "Connect the Meta-hosted server and grant access. Meta documents an option without your own developer app.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://www.facebook.com/business/news/meta-ads-ai-connectors"
+          "label": "Connect Meta Ads",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started.md"
         }
       },
       "actions": {
-        "read": "Unverified",
-        "create": "Unverified",
-        "modify": "Unverified",
-        "delete": "Unverified",
-        "publish": "Unverified"
+        "read": "Yes",
+        "create": "Yes",
+        "modify": "Yes",
+        "delete": "Partial",
+        "publish": "Yes"
       },
       "coverage": {
-        "level": "Depends",
-        "note": "Current connector writes remain unverified. Official pages were inaccessible; keep the previous grade visibly pending."
+        "level": "Most steps",
+        "note": "Create and edit campaigns, ad sets and ads, then activate them. General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented."
       },
-      "blocker": "Official pages were inaccessible; keep the previous grade visibly pending.",
+      "blocker": "General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented.",
       "dailyTasks": [
-        "Prior review covered campaign structure and performance."
+        "Read campaign performance, audiences and catalogue data.",
+        "Create and edit campaigns, ad sets and ads, then activate them."
       ],
       "actionScopes": {
-        "read": "Prior review covered campaign structure and performance.",
-        "create": "Current tool coverage needs verification.",
-        "modify": "Current tool coverage needs verification.",
-        "delete": "Current tool coverage needs verification.",
-        "publish": "Current tool coverage needs verification."
+        "read": "Campaigns, ad sets, ads, performance, audiences and catalogues.",
+        "create": "Campaigns, ad sets, ads and supported creatives; ads start paused.",
+        "modify": "Campaign, ad-set and ad fields, audiences and catalogue data.",
+        "delete": "Custom audiences and selected catalogue objects; campaign deletion is not documented.",
+        "publish": "Explicit activation of paused campaigns, ad sets and ads."
       },
-      "readSummary": "Prior review covered campaign structure and performance.",
-      "writeSummary": "Current connector writes remain unverified.",
+      "readSummary": "Read campaign performance, audiences and catalogue data.",
+      "writeSummary": "Create and edit campaigns, ad sets and ads, then activate them.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "pending"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "unverified",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview.md",
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-ad-creation-and-management.md",
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-comprehensive-reporting.md",
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-catalog-creation-and-management.md",
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started.md",
+          "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview.md"
+        ],
+        "note": "Official hosted MCP. Current docs do not confirm general rollout; some creative formats have limited availability."
+      }
     },
     "tiktok-for-business": {
       "surface": "TikTok for Business official hosted MCP",
       "object": "Read campaign information, reports and audience context.",
       "setup": {
-        "level": "Moderate",
+        "level": "Easy",
         "tier": "hosted-mcp",
-        "note": "Connect the hosted MCP and authorise the relevant account.",
+        "note": "Add the hosted MCP and approve account access. No developer credentials or custom code are required.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect TikTok Ads",
           "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en"
         }
       },
@@ -171,7 +198,18 @@
       "readSummary": "Read campaign information, reports and audience context.",
       "writeSummary": "Create campaigns and change budgets, bids and targeting.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en",
+          "https://business-api.tiktok.com/portal/docs/available-tools-in-tiktok-for-business-mcp-server/v1.3"
+        ],
+        "note": "Vendor describes a production-ready, zero-code hosted connection; no developer credentials are required."
+      }
     },
     "microsoft-advertising": {
       "surface": "Microsoft Advertising official hosted MCP",
@@ -179,10 +217,10 @@
       "setup": {
         "level": "Hard",
         "tier": "hosted-mcp",
-        "note": "Register an Entra app, configure OAuth and connect the hosted MCP.",
+        "note": "For ChatGPT or Claude, register an Entra app and configure OAuth. VS Code has an interactive sign-in route.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools"
+          "label": "Connect Microsoft Advertising",
+          "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13"
         }
       },
       "actions": {
@@ -202,15 +240,26 @@
       ],
       "actionScopes": {
         "read": "Read campaigns, keywords, assets, reports and change history.",
-        "create": "No action on this route.",
-        "modify": "No action on this route.",
-        "delete": "No action on this route.",
-        "publish": "No action on this route."
+        "create": "Read-only connection.",
+        "modify": "Read-only connection.",
+        "delete": "Read-only connection.",
+        "publish": "Read-only connection."
       },
       "readSummary": "Read campaigns, keywords, assets, reports and change history.",
       "writeSummary": "Read-only; apply changes in another tool.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools?view=bingads-13",
+          "https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13"
+        ],
+        "note": "Read-only. ChatGPT and Claude require your own Entra app registration; VS Code supports interactive sign-in."
+      }
     },
     "amazon-ads": {
       "surface": "Amazon Ads official hosted MCP",
@@ -220,7 +269,7 @@
         "tier": "hosted-mcp",
         "note": "Use approved Amazon Ads API credentials and connect the beta server.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Amazon MCP access",
           "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta"
         }
       },
@@ -250,7 +299,17 @@
       "readSummary": "Read performance, account and billing information.",
       "writeSummary": "Create, update and delete supported campaigns.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta"
+        ],
+        "note": "Open beta for Amazon Ads partners with active API credentials; supported ad products vary."
+      }
     },
     "snapchat-ads": {
       "surface": "Snapchat Ads official hosted MCP",
@@ -260,8 +319,8 @@
         "tier": "hosted-mcp",
         "note": "An administrator approves the agent; each member grants access.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://developers.snap.com/marketing-api/Ads-MCP/Introduction"
+          "label": "Connect Snapchat Ads",
+          "url": "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent"
         }
       },
       "actions": {
@@ -281,15 +340,26 @@
       ],
       "actionScopes": {
         "read": "Read authorised campaign setup and performance.",
-        "create": "No action on this route.",
-        "modify": "No action on this route.",
-        "delete": "No action on this route.",
-        "publish": "No action on this route."
+        "create": "Read-only connection.",
+        "modify": "Read-only connection.",
+        "delete": "Read-only connection.",
+        "publish": "Read-only connection."
       },
       "readSummary": "Read authorised campaign setup and performance.",
       "writeSummary": "Read-only; campaign writes are not released.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.snap.com/marketing-api/Ads-MCP/Introduction",
+          "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent"
+        ],
+        "note": "Read-only self-service access. An organisation admin approves each agent, then members authorise individually."
+      }
     },
     "linkedin-ads": {
       "surface": "LinkedIn Ads API, custom integration",
@@ -297,10 +367,10 @@
       "setup": {
         "level": "Hard",
         "tier": "custom-api",
-        "note": "Build an authenticated API integration and maintain it.",
+        "note": "Obtain Advertising API access, configure OAuth and build the AI integration.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/"
+          "label": "LinkedIn API access",
+          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview"
         }
       },
       "actions": {
@@ -329,7 +399,18 @@
       "readSummary": "Read campaign configuration and performance through approved APIs.",
       "writeSummary": "Create and manage campaigns through custom API code.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "restricted",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10",
+          "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview"
+        ],
+        "note": "Custom API integration. Advertising API access is vetted; development and standard tiers have different limits."
+      }
     },
     "pinterest-ads": {
       "surface": "Pinterest Ads API, custom integration",
@@ -339,8 +420,8 @@
         "tier": "custom-api",
         "note": "Build an authenticated API integration and maintain it.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://dev.pinterest.com/docs/work-with-ads/ads-overview/"
+          "label": "Pinterest campaign setup",
+          "url": "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/"
         }
       },
       "actions": {
@@ -352,9 +433,9 @@
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Create and manage campaigns, ad groups and ads via API. Custom integration required; some fields become immutable after draft."
+        "note": "Create and manage campaigns, ad groups and ads via API. Custom integration required. The announced official MCP is not yet verified as launched."
       },
-      "blocker": "Custom integration required; some fields become immutable after draft.",
+      "blocker": "Custom integration required. The announced official MCP is not yet verified as launched.",
       "dailyTasks": [
         "Read campaigns, ad groups and performance.",
         "Create and manage campaigns, ad groups and ads via API."
@@ -369,7 +450,18 @@
       "readSummary": "Read campaigns, ad groups and performance.",
       "writeSummary": "Create and manage campaigns, ad groups and ads via API.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/",
+          "https://dev.pinterest.com/about-pinterest-mcp/"
+        ],
+        "note": "The assessed route is the official API and needs custom integration. Pinterest announces MCP, but launch and tools are unconfirmed."
+      }
     },
     "reddit-ads": {
       "surface": "Reddit Ads API, custom integration",
@@ -377,39 +469,52 @@
       "setup": {
         "level": "Hard",
         "tier": "custom-api",
-        "note": "Build an authenticated API integration and maintain it.",
+        "note": "Create an OAuth developer app, grant ad permissions and build the integration.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://ads-api.reddit.com/docs/"
+          "label": "Reddit API access",
+          "url": "https://ads-api.reddit.com/docs/v3/api/reddit-advertising-api"
         }
       },
       "actions": {
         "read": "Yes",
         "create": "Yes",
-        "modify": "Partial",
-        "delete": "Unverified",
-        "publish": "Unverified"
+        "modify": "Yes",
+        "delete": "Partial",
+        "publish": "Partial"
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Create campaigns and audiences; modify supported settings. Exact deletion and activation coverage remains unverified."
+        "note": "Create campaigns and update budgets, schedules and delivery status. Custom AI integration required. Activation does not bypass ad approval or billing checks."
       },
-      "blocker": "Exact deletion and activation coverage remains unverified.",
+      "blocker": "Custom AI integration required. Activation does not bypass ad approval or billing checks.",
       "dailyTasks": [
         "Read campaign information and reports through API v3.",
-        "Create campaigns and audiences; modify supported settings."
+        "Create campaigns and update budgets, schedules and delivery status."
       ],
       "actionScopes": {
         "read": "Read campaign information and reports through API v3.",
         "create": "Supported campaigns and custom audiences.",
-        "modify": "Campaign management; field coverage is incomplete.",
-        "delete": "Not established by the reviewed sources.",
-        "publish": "Not established by the reviewed sources."
+        "modify": "Campaign names, budgets, bids, schedules and configured status.",
+        "delete": "Campaign configured_status can be DELETED; this is a status change, not a hard-delete endpoint.",
+        "publish": "Set campaign configured_status to ACTIVE; effective delivery still depends on approval and billing."
       },
       "readSummary": "Read campaign information and reports through API v3.",
-      "writeSummary": "Create campaigns and audiences; modify supported settings.",
+      "writeSummary": "Create campaigns and update budgets, schedules and delivery status.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://ads-api.reddit.com/docs/v3/api/reddit-advertising-api",
+          "https://ads-api.reddit.com/docs/v3/api/create-campaign",
+          "https://ads-api.reddit.com/docs/v3/api/update-campaign",
+          "https://ads-api.reddit.com/api/v3/openapi.json"
+        ],
+        "note": "API v3 is open to developers without allowlisting. An OAuth app and custom AI integration are required."
+      }
     },
     "x-ads": {
       "surface": "X Ads official hosted MCP",
@@ -419,7 +524,7 @@
         "tier": "hosted-mcp",
         "note": "Configure the developer app and OAuth grant, then connect hosted MCP.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect X Ads",
           "url": "https://docs.x.com/x-ads-api/mcp"
         }
       },
@@ -449,17 +554,27 @@
       "readSummary": "Read campaign structure, analytics, audiences and creative assets.",
       "writeSummary": "Build and edit campaigns, then activate them explicitly.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.x.com/x-ads-api/mcp"
+        ],
+        "note": "Hosted MCP with developer-app registration and OAuth. Campaigns and line items start paused."
+      }
     },
     "display-video-360": {
-      "surface": "Display & Video 360 API, custom integration",
+      "surface": "Display & Video 360 API v5 beta, custom integration",
       "object": "Read trafficking resources; use a separate route for performance reports.",
       "setup": {
         "level": "Hard",
         "tier": "custom-api",
         "note": "Build an authenticated API integration and maintain it.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "DV360 API setup",
           "url": "https://developers.google.com/display-video/api"
         }
       },
@@ -472,9 +587,9 @@
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Manage supported resources, including responsive YouTube ads in v5 beta. Custom API work remains; the YouTube update does not cover every format."
+        "note": "Manage supported resources, including responsive YouTube ads in v5 beta. Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload."
       },
-      "blocker": "Custom API work remains; the YouTube update does not cover every format.",
+      "blocker": "Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload.",
       "dailyTasks": [
         "Read trafficking resources; use a separate route for performance reports.",
         "Manage supported resources, including responsive YouTube ads in v5 beta."
@@ -489,7 +604,18 @@
       "readSummary": "Read trafficking resources; use a separate route for performance reports.",
       "writeSummary": "Manage supported resources, including responsive YouTube ads in v5 beta.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.google.com/display-video/api/reference/rest/v5/advertisers.lineItems",
+          "https://developers.google.com/ads/blog/posts/2026/11/manage-responsive-youtube-ads-with-display"
+        ],
+        "note": "API v5 remains public beta. Custom integration and existing DV360 account access are required."
+      }
     },
     "campaign-manager-360": {
       "surface": "Campaign Manager 360 API, custom integration",
@@ -499,7 +625,7 @@
         "tier": "custom-api",
         "note": "Build an authenticated API integration and maintain it.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "CM360 API setup",
           "url": "https://developers.google.com/doubleclick-advertisers/getting_started"
         }
       },
@@ -508,7 +634,7 @@
         "create": "Yes",
         "modify": "Yes",
         "delete": "Unverified",
-        "publish": "Partial"
+        "publish": "Unverified"
       },
       "coverage": {
         "level": "Some steps",
@@ -524,12 +650,23 @@
         "create": "Campaigns and reports.",
         "modify": "Campaign fields and archive state.",
         "delete": "No campaign delete method; other resource deletes unverified.",
-        "publish": "No universal publish action established."
+        "publish": "Campaign creation does not establish a universal publish action."
       },
       "readSummary": "Read campaign resources and reports via API v5.",
       "writeSummary": "Create campaigns and reports; update supported campaign fields.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.google.com/doubleclick-advertisers/rest/v5/campaigns",
+          "https://developers.google.com/doubleclick-advertisers/getting_started"
+        ],
+        "note": "Official API; a custom AI integration and authorised CM360 user profile are required."
+      }
     },
     "search-ads-360": {
       "surface": "Search Ads 360 API, custom integration",
@@ -539,7 +676,7 @@
         "tier": "custom-api",
         "note": "Build an authenticated API integration and maintain it.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "SA360 Reporting API",
           "url": "https://developers.google.com/search-ads/reporting"
         }
       },
@@ -560,25 +697,35 @@
       ],
       "actionScopes": {
         "read": "Query campaign-to-keyword resources and performance reports.",
-        "create": "No action on this route.",
-        "modify": "No action on this route.",
-        "delete": "No action on this route.",
-        "publish": "No action on this route."
+        "create": "Read-only connection.",
+        "modify": "Read-only connection.",
+        "delete": "Read-only connection.",
+        "publish": "Read-only connection."
       },
       "readSummary": "Query campaign-to-keyword resources and performance reports.",
       "writeSummary": "The evaluated Reporting API is read-only.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.google.com/search-ads/reporting"
+        ],
+        "note": "Read-only API. An authenticated reporting integration must be built."
+      }
     },
     "apple-ads": {
       "surface": "Apple Ads API, custom integration",
-      "object": "Read reports and authorised campaign configuration.",
+      "object": "Read campaign configuration, reports and performance.",
       "setup": {
         "level": "Hard",
         "tier": "custom-api",
         "note": "Build an authenticated API integration and maintain it.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Apple Ads API access",
           "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api"
         }
       },
@@ -586,78 +733,103 @@
         "read": "Yes",
         "create": "Yes",
         "modify": "Yes",
-        "delete": "Unverified",
-        "publish": "Unverified"
+        "delete": "Yes",
+        "publish": "Partial"
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Create and manage supported campaigns, ad groups and keywords. No ready official AI connector verified; exact delete and activation tools remain unverified."
+        "note": "Create, edit and delete campaign resources; enable eligible ads. Custom AI integration required. Enabled status does not guarantee serving."
       },
-      "blocker": "No ready official AI connector verified; exact delete and activation tools remain unverified.",
+      "blocker": "Custom AI integration required. Enabled status does not guarantee serving.",
       "dailyTasks": [
-        "Read reports and authorised campaign configuration.",
-        "Create and manage supported campaigns, ad groups and keywords."
+        "Read campaign configuration, reports and performance.",
+        "Create, edit and delete campaign resources; enable eligible ads."
       ],
       "actionScopes": {
         "read": "Read reports and authorised campaign configuration.",
         "create": "Campaigns, ad groups and keywords.",
         "modify": "Supported campaign-management operations.",
-        "delete": "Not established by the reviewed sources.",
-        "publish": "Not established by the reviewed sources."
+        "delete": "Campaigns, ad groups, ads, creatives and keywords have documented delete endpoints.",
+        "publish": "Enable campaign, ad-group and ad status; delivery also depends on eligibility and approval."
       },
-      "readSummary": "Read reports and authorised campaign configuration.",
-      "writeSummary": "Create and manage supported campaigns, ad groups and keywords.",
+      "readSummary": "Read campaign configuration, reports and performance.",
+      "writeSummary": "Create, edit and delete campaign resources; enable eligible ads.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developer.apple.com/documentation/apple-ads-platform-api.md",
+          "https://developer.apple.com/documentation/apple-ads-platform-api/campaigns-endpoints.md",
+          "https://developer.apple.com/documentation/apple-ads-platform-api/journey-app-store-ads.md",
+          "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api"
+        ],
+        "note": "Official API with an API-user role and OAuth. The AI integration must be built and maintained."
+      }
     },
     "the-trade-desk": {
-      "surface": "The Trade Desk OAK, previous assessment",
-      "object": "Platform data access is announced; exact tools remain unverified.",
+      "surface": "The Trade Desk OAK hosted MCP",
+      "object": "Read campaign data, pacing, performance and platform documentation.",
       "setup": {
-        "level": "Moderate",
+        "level": "Hard",
         "tier": "hosted-mcp",
-        "note": "Selected-partner access; current transport and tools need confirmation.",
+        "note": "Request closed-beta access, then connect the hosted server using an approved authentication method.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://partner.thetradedesk.com/v3/portal/api/doc/ReleaseNotes"
+          "label": "Request and connect OAK",
+          "url": "https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted"
         }
       },
       "actions": {
-        "read": "Unverified",
+        "read": "Yes",
         "create": "Unverified",
         "modify": "Unverified",
         "delete": "Unverified",
         "publish": "Unverified"
       },
       "coverage": {
-        "level": "Depends",
-        "note": "Current OAK action inventory remains unverified. Private beta and inaccessible tool evidence; keep the previous grade pending."
+        "level": "Assist only",
+        "note": "Write availability is unconfirmed. Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026."
       },
-      "blocker": "Private beta and inaccessible tool evidence; keep the previous grade pending.",
+      "blocker": "Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026.",
       "dailyTasks": [
-        "Platform data access is announced; exact tools remain unverified."
+        "Read campaign data, pacing, performance and platform documentation.",
+        "Write availability is unconfirmed."
       ],
       "actionScopes": {
-        "read": "Platform data access is announced; exact tools remain unverified.",
-        "create": "Current tool coverage needs verification.",
-        "modify": "Current tool coverage needs verification.",
-        "delete": "Current tool coverage needs verification.",
-        "publish": "Current tool coverage needs verification."
+        "read": "Campaign, ad-group, creative, audience, seed and deal data, reports and documentation.",
+        "create": "Official release table still labels configuration H2 2026; availability is unconfirmed.",
+        "modify": "Write examples exist, but their release table does not confirm shipment.",
+        "delete": "No deletion boundary is documented in the reviewed OAK pages.",
+        "publish": "No activation boundary is documented in the reviewed OAK pages."
       },
-      "readSummary": "Platform data access is announced; exact tools remain unverified.",
-      "writeSummary": "Current OAK action inventory remains unverified.",
+      "readSummary": "Read campaign data, pacing, performance and platform documentation.",
+      "writeSummary": "Write availability is unconfirmed.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "pending"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "restricted",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/McpOpenAgenticKitOverview",
+          "https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted"
+        ],
+        "note": "Closed beta for selected partners. Reads are documented as available; writes remain labelled H2 2026."
+      }
     },
     "google-analytics": {
-      "surface": "Google Analytics official MCP, local or self-deployed",
+      "surface": "Google Analytics MCP",
       "object": "Read properties, dimensions, key events and analytics reports.",
       "setup": {
         "level": "Hard",
         "tier": "self-managed",
         "note": "Run the Python MCP, configure Google credentials and explicitly enable writes.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Install and configure",
           "url": "https://github.com/googleanalytics/google-analytics-mcp"
         }
       },
@@ -670,9 +842,9 @@
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Create annotations, custom dimensions and key events with writes enabled. Three creation tools do not provide general property administration or tracking implementation."
+        "note": "Create annotations, custom dimensions and key events with writes enabled. Self-managed setup. Writes only create annotations, custom dimensions and key events."
       },
-      "blocker": "Three creation tools do not provide general property administration or tracking implementation.",
+      "blocker": "Self-managed setup. Writes only create annotations, custom dimensions and key events.",
       "dailyTasks": [
         "Read properties, dimensions, key events and analytics reports.",
         "Create annotations, custom dimensions and key events with writes enabled."
@@ -680,24 +852,34 @@
       "actionScopes": {
         "read": "Read properties, dimensions, key events and analytics reports.",
         "create": "Annotations, custom dimensions and key events.",
-        "modify": "No general update tools documented.",
-        "delete": "No general delete tools documented.",
+        "modify": "No update tools listed.",
+        "delete": "No delete tools listed.",
         "publish": "Creating a key event does not implement its collection."
       },
       "readSummary": "Read properties, dimensions, key events and analytics reports.",
       "writeSummary": "Create annotations, custom dimensions and key events with writes enabled.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://github.com/googleanalytics/google-analytics-mcp"
+        ],
+        "note": "Official source package; run and configure it yourself. Writes are off by default."
+      }
     },
     "google-tag-manager": {
-      "surface": "Stape hosted GTM MCP (third-party)",
+      "surface": "Stape GTM MCP",
       "object": "Read accounts, containers, workspaces, tags and versions.",
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
         "note": "Connect Stape hosted MCP with Google OAuth and the required GTM rights.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect with Stape",
           "url": "https://github.com/stape-io/google-tag-manager-mcp-server"
         }
       },
@@ -710,9 +892,9 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Change configuration, create previews and publish container versions. Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified."
+        "note": "Change configuration, create previews and publish container versions. Third-party connection, not Google-operated. Publishing still needs tracking and consent checks."
       },
-      "blocker": "Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified.",
+      "blocker": "Third-party connection, not Google-operated. Publishing still needs tracking and consent checks.",
       "dailyTasks": [
         "Read accounts, containers, workspaces, tags and versions.",
         "Change configuration, create previews and publish container versions."
@@ -727,17 +909,30 @@
       "readSummary": "Read accounts, containers, workspaces, tags and versions.",
       "writeSummary": "Change configuration, create previews and publish container versions.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "third-party",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://github.com/stape-io/google-tag-manager-mcp-server",
+          "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/tagActions.ts",
+          "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/versionActions.ts",
+          "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/workspaceActions.ts"
+        ],
+        "note": "Stape operates this connection, not Google. Hosted commercial terms remain unverified."
+      }
     },
     "amplitude": {
-      "surface": "Amplitude official hosted MCP",
+      "surface": "Amplitude MCP",
       "object": "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
         "note": "Connect hosted OAuth and grant MCP write rights; wider ChatGPT tools use progressive discovery.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect Amplitude",
           "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp"
         }
       },
@@ -746,38 +941,50 @@
         "create": "Yes",
         "modify": "Yes",
         "delete": "Partial",
-        "publish": "No"
+        "publish": "Partial"
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Create and edit analytical content and tracking definitions. Guides/surveys stop at drafts; definition changes do not ingest production events."
+        "note": "Create and edit analytical content and tracking definitions; sync cohorts to destinations. Guides/surveys stop at drafts; definition changes do not ingest production events."
       },
       "blocker": "Guides/surveys stop at drafts; definition changes do not ingest production events.",
       "dailyTasks": [
         "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
-        "Create and edit analytical content and tracking definitions."
+        "Create and edit analytical content and tracking definitions; sync cohorts to destinations."
       ],
       "actionScopes": {
         "read": "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
         "create": "Analytical content, cohorts, experiments and tracking definitions.",
         "modify": "Supported analytical content, flags, metrics and taxonomy.",
         "delete": "Tracking-plan event/property definitions with restore support.",
-        "publish": "Guides, surveys and custom agents still publish in the UI."
+        "publish": "Sync cohorts to destinations. Guides, surveys and custom agents publish in the UI."
       },
       "readSummary": "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
-      "writeSummary": "Create and edit analytical content and tracking definitions.",
+      "writeSummary": "Create and edit analytical content and tracking definitions; sync cohorts to destinations.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
+          "https://amplitude.com/docs/amplitude-ai/guides-surveys-mcp",
+          "https://amplitude.com/docs/developers/cli"
+        ],
+        "note": "Available to existing customers; write tools require MCP write permission. Service-account authentication is Enterprise-only."
+      }
     },
     "mixpanel": {
-      "surface": "Mixpanel native connector + hosted MCP",
+      "surface": "Mixpanel connector",
       "object": "Read events, funnels, retention, saved reports and data-quality issues.",
       "setup": {
         "level": "Moderate",
         "tier": "native-app",
         "note": "Use the regional connector; existing accounts can need admin enablement.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect Mixpanel",
           "url": "https://docs.mixpanel.com/docs/mcp"
         }
       },
@@ -790,24 +997,34 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Manage dashboards and cohorts; update definitions and resolve data issues. US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable."
+        "note": "Manage dashboards and cohorts; update definitions and resolve data issues. Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors."
       },
-      "blocker": "US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable.",
+      "blocker": "Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors.",
       "dailyTasks": [
         "Read events, funnels, retention, saved reports and data-quality issues.",
         "Manage dashboards and cohorts; update definitions and resolve data issues."
       ],
       "actionScopes": {
         "read": "Read events, funnels, retention, saved reports and data-quality issues.",
-        "create": "Dashboards and cohorts; experiments/flags are beta.",
+        "create": "Dashboards, cohorts, tracking plans and custom properties; experiments and flags are beta.",
         "modify": "Dashboards, cohorts, Lexicon, properties and lookup tables.",
-        "delete": "Dashboards and cohorts.",
-        "publish": "Experiment/flag writes are beta; audience targeting is not supported."
+        "delete": "Dashboards, cohorts, tags and tracking plans.",
+        "publish": "A separate publish action is unverified; experiment and flag tools remain beta."
       },
       "readSummary": "Read events, funnels, retention, saved reports and data-quality issues.",
       "writeSummary": "Manage dashboards and cohorts; update definitions and resolve data issues.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.mixpanel.com/docs/mcp"
+        ],
+        "note": "Core tools are available. Experiment and feature-flag tools, and service-account authentication, are beta."
+      }
     },
     "figma": {
       "surface": "Figma native connector + hosted MCP",
@@ -817,8 +1034,8 @@
         "tier": "native-app",
         "note": "Use an official supported connector with the required seat and file permissions.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://www.figma.com/mcp-catalog/"
+          "label": "Canvas editing and beta limits",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/"
         }
       },
       "actions": {
@@ -847,7 +1064,18 @@
       "readSummary": "Read design structure, components, variables and file context.",
       "writeSummary": "Create and edit native canvas objects in supported clients.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://www.figma.com/mcp-catalog/",
+          "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/"
+        ],
+        "note": "Canvas writing is beta. A supported client, eligible plan and file edit permission are required."
+      }
     },
     "canva": {
       "surface": "Canva native connector + hosted MCP",
@@ -857,7 +1085,7 @@
         "tier": "native-app",
         "note": "Connect the official ChatGPT app or supported Canva AI Connector and authorise the account.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Canva ChatGPT connection",
           "url": "https://www.canva.com/help/connect-chatgpt-to-canva/"
         }
       },
@@ -866,13 +1094,13 @@
         "create": "Yes",
         "modify": "Yes",
         "delete": "Unverified",
-        "publish": "Partial"
+        "publish": "Unverified"
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Create and edit designs, transform images and export assets. Premium licensing and tool limits apply; general deletion and social publishing are not established."
+        "note": "Create and edit designs, transform images and export assets. Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it."
       },
-      "blocker": "Premium licensing and tool limits apply; general deletion and social publishing are not established.",
+      "blocker": "Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it.",
       "dailyTasks": [
         "Read designs, pages, content, folders and permitted brand templates.",
         "Create and edit designs, transform images and export assets."
@@ -881,23 +1109,35 @@
         "read": "Read designs, pages, content, folders and permitted brand templates.",
         "create": "Designs, imported assets and folders.",
         "modify": "Supported design elements, images and resizing.",
-        "delete": "Not established by the reviewed sources.",
-        "publish": "Brand-template publication on eligible plans; not social posting."
+        "delete": "Deletion tools are not documented for this route.",
+        "publish": "Export is supported. Brand-template publication and social posting are not established for this connector."
       },
       "readSummary": "Read designs, pages, content, folders and permitted brand templates.",
       "writeSummary": "Create and edit designs, transform images and export assets.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://www.canva.com/help/connect-chatgpt-to-canva/",
+          "https://www.canva.com/help/mcp-agent-setup/",
+          "https://www.canva.com/help/mcp-canva-usage/"
+        ],
+        "note": "Official AI Connector on Free and paid accounts. Admin approval, feature-specific plans and AI allowances apply."
+      }
     },
     "supermetrics": {
-      "surface": "Supermetrics Claude / ChatGPT app",
+      "surface": "Supermetrics connector",
       "object": "Read connected marketing accounts, fields and cross-channel performance.",
       "setup": {
         "level": "Moderate",
         "tier": "native-app",
         "note": "Connect the Claude or ChatGPT app, authorise data sources and enable campaign writes separately.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect Supermetrics",
           "url": "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools"
         }
       },
@@ -910,9 +1150,9 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Create paused campaigns and edit supported budgets, ads and settings. Writes require account-level opt-in and entitlement; coverage varies across seven ad platforms."
+        "note": "Create paused campaigns and edit supported budgets, ads and settings. Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform."
       },
-      "blocker": "Writes require account-level opt-in and entitlement; coverage varies across seven ad platforms.",
+      "blocker": "Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform.",
       "dailyTasks": [
         "Read connected marketing accounts, fields and cross-channel performance.",
         "Create paused campaigns and edit supported budgets, ads and settings."
@@ -922,22 +1162,34 @@
         "create": "Supported campaigns, initially paused.",
         "modify": "Supported campaign budgets, status, settings and ads.",
         "delete": "Supported campaigns; removal is irreversible.",
-        "publish": "Publish Studio dashboards; campaign status actions depend on platform support."
+        "publish": "Enable supported campaigns after review and the configured approval checks."
       },
       "readSummary": "Read connected marketing accounts, fields and cross-channel performance.",
       "writeSummary": "Create paused campaigns and edit supported budgets, ads and settings.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.supermetrics.com/v1/docs/how-to-manage-ad-campaigns-with-ai-tools",
+          "https://docs.supermetrics.com/docs/how-to-enable-campaign-write-access",
+          "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools"
+        ],
+        "note": "Official Supermetrics app, providing third-party access to ad platforms. Entitlement and account-owner write approval are required."
+      }
     },
     "dataforseo": {
-      "surface": "DataForSEO v3 hosted research MCP",
+      "surface": "DataForSEO v3 MCP",
       "object": "Retrieve SERP, keyword, backlink and competitor research data.",
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
         "note": "Connect the hosted v3 MCP with OAuth and a funded DataForSEO account.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect DataForSEO",
           "url": "https://github.com/dataforseo/mcp-server-typescript"
         }
       },
@@ -960,13 +1212,23 @@
         "read": "Retrieve SERP, keyword, backlink and competitor research data.",
         "create": "Billable research/API tasks only.",
         "modify": "No campaign or website edits established.",
-        "delete": "Not established by the reviewed sources.",
+        "delete": "Deletion capabilities are unverified.",
         "publish": "No content or advertising publication."
       },
       "readSummary": "Retrieve SERP, keyword, backlink and competitor research data.",
       "writeSummary": "Submit billable research tasks; no campaign or website mutations.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://github.com/dataforseo/mcp-server-typescript"
+        ],
+        "note": "Official hosted service; paid API usage and endpoint allowances apply."
+      }
     },
     "airbyte": {
       "surface": "Airbyte platform MCP, pipeline operations",
@@ -974,9 +1236,9 @@
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
-        "note": "Connect the platform MCP with OAuth; prepare sources/destinations and enable direct reads where supported.",
+        "note": "Connect with OAuth, configure sources and destinations, then enable agent access for direct reads where needed.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Airbyte MCP setup",
           "url": "https://docs.airbyte.com/platform/airbyte-mcp"
         }
       },
@@ -989,9 +1251,9 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Manage connectors and pipelines; start or cancel syncs. External source/destination records remain read-only; infrastructure and credentials must already exist."
+        "note": "Manage connectors and pipelines; start or cancel syncs. Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup."
       },
-      "blocker": "External source/destination records remain read-only; infrastructure and credentials must already exist.",
+      "blocker": "Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup.",
       "dailyTasks": [
         "Read connector configuration, sync status, logs and supported external records.",
         "Manage connectors and pipelines; start or cancel syncs."
@@ -1000,13 +1262,24 @@
         "read": "Read connector configuration, sync status, logs and supported external records.",
         "create": "Connectors, connections and custom connector definitions.",
         "modify": "Connectors, streams, connections and sync configuration.",
-        "delete": "Resources whose name contains delete-me or deleteme.",
-        "publish": "Deploy configured connectors and start syncs; no external record writes."
+        "delete": "Sources, destinations, connections and definitions marked delete-me or deleteme.",
+        "publish": "Publish custom connector definitions and start pipeline syncs."
       },
       "readSummary": "Read connector configuration, sync status, logs and supported external records.",
       "writeSummary": "Manage connectors and pipelines; start or cancel syncs.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.airbyte.com/platform/airbyte-mcp",
+          "https://docs.airbyte.com/platform/airbyte-mcp/tools"
+        ],
+        "note": "Available for Airbyte Cloud and Flex; active development. Direct reads need administrator enablement."
+      }
     },
     "fivetran": {
       "surface": "Fivetran Agent Context native connector",
@@ -1016,7 +1289,7 @@
         "tier": "native-app",
         "note": "Use the Claude connector or a custom ChatGPT app after the context layer is built.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Agent Context MCP tools",
           "url": "https://fivetran.com/docs/context-layer/agent-context-mcp"
         }
       },
@@ -1024,28 +1297,40 @@
         "read": "Yes",
         "create": "Partial",
         "modify": "No",
-        "delete": "Unverified",
-        "publish": "Unverified"
+        "delete": "No",
+        "publish": "No"
       },
       "coverage": {
         "level": "Assist only",
-        "note": "Submit answer feedback only; no operational data changes. Public Preview; the native connector still needs an administrator-prepared context layer."
+        "note": "Submit answer feedback only; no operational data changes. Public Preview. An administrator must build the context layer and grant access; business data remains read-only."
       },
-      "blocker": "Public Preview; the native connector still needs an administrator-prepared context layer.",
+      "blocker": "Public Preview. An administrator must build the context layer and grant access; business data remains read-only.",
       "dailyTasks": [
-        "Query the prepared warehouse context layer with read-only SQL."
+        "Query the prepared warehouse context layer with read-only SQL.",
+        "Submit answer feedback only; no operational data changes."
       ],
       "actionScopes": {
         "read": "Query the prepared warehouse context layer with read-only SQL.",
-        "create": "Answer feedback only.",
-        "modify": "No operational-data mutation documented.",
-        "delete": "Not established by the reviewed sources.",
-        "publish": "Not established by the reviewed sources."
+        "create": "Submit response feedback, not business records.",
+        "modify": "Queries are read-only; operational records cannot be changed.",
+        "delete": "No delete tool in the documented inventory.",
+        "publish": "No publishing or pipeline execution tool."
       },
       "readSummary": "Query the prepared warehouse context layer with read-only SQL.",
       "writeSummary": "Submit answer feedback only; no operational data changes.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "preview",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://fivetran.com/docs/context-layer/agent-context-mcp",
+          "https://fivetran.com/docs/context-layer/agent-context-mcp/setup-guide"
+        ],
+        "note": "Public Preview; requires a prepared context layer and administrator-granted access."
+      }
     },
     "google-mcp-toolbox": {
       "surface": "Google MCP Toolbox, self-managed database tools",
@@ -1053,9 +1338,9 @@
       "setup": {
         "level": "Specialist",
         "tier": "self-managed",
-        "note": "Run the Toolbox binary/container and configure database credentials and allowed tools.",
+        "note": "Install the Toolbox server or extension, supply database credentials and choose a prebuilt or custom toolset.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Toolbox setup and supported databases",
           "url": "https://mcp-toolbox.dev/documentation/introduction/"
         }
       },
@@ -1068,24 +1353,36 @@
       },
       "coverage": {
         "level": "Depends",
-        "note": "Execute only the database operations exposed by your toolset. Hosting, credentials and tool design remain your responsibility; read-only behaviour varies by engine."
+        "note": "Execute only the database operations exposed by your toolset. Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset."
       },
-      "blocker": "Hosting, credentials and tool design remain your responsibility; read-only behaviour varies by engine.",
+      "blocker": "Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset.",
       "dailyTasks": [
         "Query configured databases and inspect their schemas.",
         "Execute only the database operations exposed by your toolset."
       ],
       "actionScopes": {
         "read": "Query configured databases and inspect their schemas.",
-        "create": "Configured database tools and permissions determine support.",
-        "modify": "Configured database tools and permissions determine support.",
-        "delete": "Configured database tools and permissions determine support.",
-        "publish": "No direct campaign publication established."
+        "create": "Create database objects or records through configured tools, where permissions allow.",
+        "modify": "Update database records through configured tools, where permissions allow.",
+        "delete": "Delete database objects or records only through enabled tools and permissions.",
+        "publish": "No advertising or content publishing tool in this evaluated database route."
       },
       "readSummary": "Query configured databases and inspect their schemas.",
       "writeSummary": "Execute only the database operations exposed by your toolset.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://mcp-toolbox.dev/documentation/introduction/",
+          "https://mcp-toolbox.dev/documentation/configuration/security/read-only/",
+          "https://github.com/googleapis/mcp-toolbox"
+        ],
+        "note": "Official released server; deployment, database access and allowed operations require configuration."
+      }
     },
     "snowflake": {
       "surface": "Snowflake-managed MCP with configured tools",
@@ -1095,7 +1392,7 @@
         "tier": "hosted-mcp",
         "note": "An administrator creates the MCP server and tools; users connect with supported authentication.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Managed MCP tools and permissions",
           "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
         }
       },
@@ -1108,34 +1405,45 @@
       },
       "coverage": {
         "level": "Depends",
-        "note": "Optional SQL and custom tools can change data when explicitly enabled. SQL defaults to read-only; hosting is managed but tool and data preparation is technical."
+        "note": "Optional SQL and custom tools can change data when explicitly enabled. An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration."
       },
-      "blocker": "SQL defaults to read-only; hosting is managed but tool and data preparation is technical.",
+      "blocker": "An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration.",
       "dailyTasks": [
         "Query governed data through configured SQL and Cortex tools.",
         "Optional SQL and custom tools can change data when explicitly enabled."
       ],
       "actionScopes": {
         "read": "Query governed data through configured SQL and Cortex tools.",
-        "create": "Exposed SQL/procedures and role permissions determine support.",
-        "modify": "Exposed SQL/procedures and role permissions determine support.",
-        "delete": "Exposed SQL/procedures and role permissions determine support.",
+        "create": "Configured SQL or procedures can create objects when write access is enabled.",
+        "modify": "Configured SQL or procedures can update data within role permissions.",
+        "delete": "Configured SQL or procedures can delete permitted data; disabled in read-only SQL mode.",
         "publish": "No general campaign or content publishing route."
       },
       "readSummary": "Query governed data through configured SQL and Cortex tools.",
       "writeSummary": "Optional SQL and custom tools can change data when explicitly enabled.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+          "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp"
+        ],
+        "note": "Managed MCP is generally available; server configuration, tool grants and data preparation are required."
+      }
     },
     "zapier": {
-      "surface": "Zapier official hosted MCP",
+      "surface": "Zapier official plugin and hosted MCP",
       "object": "Read and search records in connected apps.",
       "setup": {
-        "level": "Moderate",
-        "tier": "hosted-mcp",
-        "note": "Connect hosted MCP and authorise apps; select managed or agentic tool discovery.",
+        "level": "Easy",
+        "tier": "native-app",
+        "note": "Install the official plugin in a supported client, then authorise Zapier and the apps you need.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Zapier MCP actions and access",
           "url": "https://docs.zapier.com/mcp/home"
         }
       },
@@ -1160,12 +1468,24 @@
         "create": "Supported app records, such as tasks and messages.",
         "modify": "Supported app records, such as CRM fields.",
         "delete": "Only where an authorised app exposes deletion.",
-        "publish": "Supported sends/posts; Next Gen Zaps deployment is early access."
+        "publish": "Send messages and emails through supported app actions. Zap deployment is separate early access."
       },
       "readSummary": "Read and search records in connected apps.",
       "writeSummary": "Run supported app actions; workflow creation is separate early access.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.zapier.com/mcp/home",
+          "https://github.com/zapier/zapier-mcp",
+          "https://docs.zapier.com/mcp/get-started/quickstart"
+        ],
+        "note": "Official plugin or hosted connection. App permissions and task allowances apply; workflow authoring remains early access."
+      }
     },
     "pipedream": {
       "surface": "Pipedream official hosted MCP",
@@ -1175,7 +1495,7 @@
         "tier": "hosted-mcp",
         "note": "Connect the app-specific hosted server and authorise its account.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Pipedream MCP actions and access",
           "url": "https://pipedream.com/docs/connect/mcp"
         }
       },
@@ -1205,7 +1525,17 @@
       "readSummary": "Search and retrieve records from connected apps.",
       "writeSummary": "Create and update app records through hosted actions.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://pipedream.com/docs/connect/mcp"
+        ],
+        "note": "Official hosted app servers. Available actions depend on the connected app and its permissions."
+      }
     },
     "n8n": {
       "surface": "n8n Cloud instance MCP",
@@ -1215,7 +1545,7 @@
         "tier": "hosted-mcp",
         "note": "Enable the instance MCP on n8n Cloud and authorise user-scoped workflows.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "n8n MCP setup and permissions",
           "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server"
         }
       },
@@ -1223,14 +1553,14 @@
         "read": "Yes",
         "create": "Yes",
         "modify": "Yes",
-        "delete": "Unverified",
+        "delete": "Partial",
         "publish": "Yes"
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Create, edit, test, publish and unpublish workflows. Credentials and admin setup remain; protected instances restrict mutations."
+        "note": "Create, edit, test, publish and unpublish workflows. Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply."
       },
-      "blocker": "Credentials and admin setup remain; protected instances restrict mutations.",
+      "blocker": "Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply.",
       "dailyTasks": [
         "Read exposed workflows, executions and supported data tables.",
         "Create, edit, test, publish and unpublish workflows."
@@ -1239,13 +1569,24 @@
         "read": "Read exposed workflows, executions and supported data tables.",
         "create": "Workflows from validated SDK code and data tables.",
         "modify": "Workflows and supported data tables.",
-        "delete": "Workflow deletion is not established; unpublish is not delete.",
+        "delete": "Delete data-table columns from n8n 2.16.0. Workflow deletion remains unverified.",
         "publish": "Explicit publish_workflow and unpublish_workflow."
       },
       "readSummary": "Read exposed workflows, executions and supported data tables.",
       "writeSummary": "Create, edit, test, publish and unpublish workflows.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.n8n.io/connect/connect-to-n8n-mcp-server",
+          "https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference"
+        ],
+        "note": "Official instance MCP. An administrator enables access; tools depend on version and workflow permissions."
+      }
     },
     "meridian": {
       "surface": "Meridian Agent Skills + local Python",
@@ -1253,9 +1594,9 @@
       "setup": {
         "level": "Specialist",
         "tier": "self-managed",
-        "note": "Install the official skills and Python runtime; review mappings, priors and execution.",
+        "note": "Install the skills in a coding agent and provide Python, historical data and modelling assumptions.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Meridian agent skills and checkpoints",
           "url": "https://developers.google.com/meridian/docs/user-guide/agent-skills"
         }
       },
@@ -1268,9 +1609,9 @@
       },
       "coverage": {
         "level": "Specialist",
-        "note": "Run modelling scripts and produce saved models and budget scenarios. Official agent skills still require local Python, historical data and specialist validation."
+        "note": "Run modelling scripts and produce saved models and budget scenarios. Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review."
       },
-      "blocker": "Official agent skills still require local Python, historical data and specialist validation.",
+      "blocker": "Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.",
       "dailyTasks": [
         "Inspect prepared data, model results and convergence diagnostics.",
         "Run modelling scripts and produce saved models and budget scenarios."
@@ -1279,13 +1620,24 @@
         "read": "Inspect prepared data, model results and convergence diagnostics.",
         "create": "Model scripts, fitted models, reports and scenarios.",
         "modify": "Model configuration and reproducible local scripts.",
-        "delete": "Not established by the reviewed sources.",
-        "publish": "No live campaign budget changes."
+        "delete": "No model-deletion action documented for the skills.",
+        "publish": "Reports and scenario files only; no live campaign budget changes."
       },
       "readSummary": "Inspect prepared data, model results and convergence diagnostics.",
       "writeSummary": "Run modelling scripts and produce saved models and budget scenarios.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.google.com/meridian/docs/user-guide/agent-skills",
+          "https://github.com/google/meridian"
+        ],
+        "note": "Official published agent skills; local Python, prepared data and specialist validation are still required."
+      }
     },
     "robyn": {
       "surface": "Robyn library through a coding environment",
@@ -1293,9 +1645,9 @@
       "setup": {
         "level": "Specialist",
         "tier": "self-managed",
-        "note": "Install R/Robyn or the Python beta, dependencies and prepared data.",
+        "note": "Install the R package and dependencies, or the separate Python beta; prepare data and modelling code.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Robyn R installation",
           "url": "https://facebookexperimental.github.io/Robyn/docs/installation/"
         }
       },
@@ -1308,9 +1660,9 @@
       },
       "coverage": {
         "level": "Specialist",
-        "note": "Fit models and generate diagnostics and allocation scenarios. Specialist coding setup; no ready official external-agent connector verified."
+        "note": "Fit models and generate diagnostics and allocation scenarios. Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified."
       },
-      "blocker": "Specialist coding setup; no ready official external-agent connector verified.",
+      "blocker": "Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.",
       "dailyTasks": [
         "Read prepared historical data and inspect model outputs through code.",
         "Fit models and generate diagnostics and allocation scenarios."
@@ -1319,13 +1671,25 @@
         "read": "Read prepared historical data and inspect model outputs through code.",
         "create": "Models, diagnostics and allocation scenarios.",
         "modify": "Model inputs and parameters through code.",
-        "delete": "Not established by the reviewed sources.",
+        "delete": "No model-deletion operation documented in the reviewed package guides.",
         "publish": "No live campaign budget changes."
       },
       "readSummary": "Read prepared historical data and inspect model outputs through code.",
       "writeSummary": "Fit models and generate diagnostics and allocation scenarios.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://facebookexperimental.github.io/Robyn/docs/installation/",
+          "https://facebookexperimental.github.io/Robyn/docs/robyn-api/",
+          "https://github.com/facebookexperimental/Robyn"
+        ],
+        "note": "R has a stable release; the Python route is beta. No ready official chat connector was verified."
+      }
     },
     "pymc-marketing": {
       "surface": "PyMC-Marketing library through Python",
@@ -1335,7 +1699,7 @@
         "tier": "self-managed",
         "note": "Install Python dependencies, prepare model assumptions and review the statistical results.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "PyMC-Marketing library documentation",
           "url": "https://www.pymc-marketing.io/en/stable/"
         }
       },
@@ -1348,9 +1712,9 @@
       },
       "coverage": {
         "level": "Specialist",
-        "note": "Create models, diagnostics, forecasts and allocation scenarios. Simba MCP is a separate product; its hosted capabilities do not belong to this library entry."
+        "note": "Create models, diagnostics, forecasts and allocation scenarios. Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library."
       },
-      "blocker": "Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.",
+      "blocker": "Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.",
       "dailyTasks": [
         "Read prepared data and fitted Bayesian models through Python.",
         "Create models, diagnostics, forecasts and allocation scenarios."
@@ -1359,24 +1723,36 @@
         "read": "Read prepared data and fitted Bayesian models through Python.",
         "create": "Models, forecasts, diagnostics and scenarios.",
         "modify": "Model specification and assumptions through code.",
-        "delete": "Not established by the reviewed sources.",
+        "delete": "No model-deletion API documented in the reviewed library workflow.",
         "publish": "No live campaign budget changes."
       },
       "readSummary": "Read prepared data and fitted Bayesian models through Python.",
       "writeSummary": "Create models, diagnostics, forecasts and allocation scenarios.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://www.pymc-marketing.io/en/stable/",
+          "https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html",
+          "https://github.com/pymc-labs/pymc-marketing"
+        ],
+        "note": "Published Python library; no ready official chat connector was verified. Experimental modules are outside this assessment."
+      }
     },
     "adobe-analytics": {
-      "surface": "Adobe Analytics official hosted MCP",
+      "surface": "Adobe Analytics MCP",
       "object": "Read reports, components, date ranges and workspace projects.",
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
         "note": "Add the hosted URL, sign in with Adobe ID and obtain MCP Full Access for writes.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://developer.adobe.com/analytics-mcp/docs/aa/reference"
+          "label": "Connect Adobe Analytics",
+          "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
         }
       },
       "actions": {
@@ -1400,23 +1776,35 @@
         "create": "Segments, calculated metrics, date ranges and projects.",
         "modify": "Supported segments, calculated metrics and projects.",
         "delete": "No delete tool in the published catalogue.",
-        "publish": "Not established by the reviewed sources."
+        "publish": "Publication beyond analytical component writes is unverified."
       },
       "readSummary": "Read reports, components, date ranges and workspace projects.",
       "writeSummary": "Create or update segments, calculated metrics and projects.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developer.adobe.com/analytics-mcp/docs/aa/reference",
+          "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
+          "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
+        ],
+        "note": "Adobe Analytics entitlement and MCP permissions required; writes need MCP Full Access."
+      }
     },
     "adobe-customer-journey-analytics": {
-      "surface": "Adobe CJA Claude directory connector",
+      "surface": "Adobe CJA connector",
       "object": "Read data views, components, audiences, projects and reports.",
       "setup": {
         "level": "Moderate",
         "tier": "native-app",
         "note": "Use the Claude directory connector; product permissions and MCP Full Access still apply.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://developer.adobe.com/analytics-mcp/docs/cja/reference"
+          "label": "Connect Customer Journey Analytics",
+          "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
         }
       },
       "actions": {
@@ -1440,22 +1828,34 @@
         "create": "Segments, metrics, projects, audiences and date ranges.",
         "modify": "Segments, metrics, projects and audiences.",
         "delete": "No delete tool in the published catalogue.",
-        "publish": "Downstream audience activation is not established."
+        "publish": "Downstream audience activation is unverified."
       },
       "readSummary": "Read data views, components, audiences, projects and reports.",
       "writeSummary": "Create or update analytical components, projects and audiences.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developer.adobe.com/analytics-mcp/docs/cja/reference",
+          "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
+          "https://developer.adobe.com/analytics-mcp/docs/guides/claude"
+        ],
+        "note": "CJA entitlement and MCP permissions required; writes need MCP Full Access."
+      }
     },
     "posthog": {
-      "surface": "PostHog Claude connector + official plugin",
+      "surface": "PostHog connector",
       "object": "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
       "setup": {
         "level": "Easy",
         "tier": "native-app",
         "note": "Add PostHog from the Claude directory and sign in; authentication selects US/EU.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect PostHog",
           "url": "https://posthog.com/docs/model-context-protocol"
         }
       },
@@ -1479,23 +1879,36 @@
         "read": "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
         "create": "Insights, dashboards, flags, experiments and exports.",
         "modify": "Supported analytics, error and pipeline objects.",
-        "delete": "Insights, dashboards and supported batch exports.",
-        "publish": "Enable or disable supported pipeline functions; permissions apply."
+        "delete": "Insights, dashboards, flags, surveys and supported batch exports.",
+        "publish": "Enable feature flags, launch surveys and enable supported pipeline destinations."
       },
       "readSummary": "Read analytics, SQL/schema, insights, errors and pipeline diagnostics.",
       "writeSummary": "Manage dashboards, insights, flags, experiments and supported pipelines.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://posthog.com/docs/model-context-protocol",
+          "https://posthog.com/docs/model-context-protocol/tools",
+          "https://posthog.com/docs/model-context-protocol/claude-desktop",
+          "https://posthog.com/docs/data-pipelines/surfaces/mcp"
+        ],
+        "note": "Official hosted connector; project permissions apply. Some AI-powered tools require opt-in and incur usage costs."
+      }
     },
     "appsflyer": {
-      "surface": "AppsFlyer official hosted MCP",
+      "surface": "AppsFlyer MCP",
       "object": "Read aggregate performance, creative, SKAN and configuration data.",
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
         "note": "Connect the hosted MCP with OAuth; permissions and beta availability apply.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect AppsFlyer",
           "url": "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP"
         }
       },
@@ -1508,9 +1921,9 @@
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Create OneLink short links under existing templates, with confirmation. Beta: ten links per account per day; no wider account-editing MCP tools documented."
+        "note": "Create OneLink short links under existing templates, with confirmation. Beta. Ten new OneLink links per account per day; broader account editing is not documented."
       },
-      "blocker": "Beta: ten links per account per day; no wider account-editing MCP tools documented.",
+      "blocker": "Beta. Ten new OneLink links per account per day; broader account editing is not documented.",
       "dailyTasks": [
         "Read aggregate performance, creative, SKAN and configuration data.",
         "Create OneLink short links under existing templates, with confirmation."
@@ -1525,7 +1938,17 @@
       "readSummary": "Read aggregate performance, creative, SKAN and configuration data.",
       "writeSummary": "Create OneLink short links under existing templates, with confirmation.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP"
+        ],
+        "note": "Beta for evaluation; account permissions apply. OneLink creation is limited to ten links per account per day."
+      }
     },
     "adjust": {
       "surface": "Adjust official hosted MCP",
@@ -1535,7 +1958,7 @@
         "tier": "hosted-mcp",
         "note": "Ask Adjust to enable access, then connect the custom OAuth connector.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Adjust MCP access and data",
           "url": "https://help.adjust.com/en/article/adjust-mcp"
         }
       },
@@ -1556,15 +1979,25 @@
       ],
       "actionScopes": {
         "read": "Read aggregate Adjust performance data.",
-        "create": "Not established by the reviewed sources.",
-        "modify": "Not established by the reviewed sources.",
-        "delete": "Not established by the reviewed sources.",
+        "create": "Creation tools are not documented for this route.",
+        "modify": "Editing tools are not documented for this route.",
+        "delete": "Deletion tools are not documented for this route.",
         "publish": "Not established by the reviewed sources."
       },
       "readSummary": "Read aggregate Adjust performance data.",
       "writeSummary": "No Adjust account mutations are documented for this MCP.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "preview",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://help.adjust.com/en/article/adjust-mcp"
+        ],
+        "note": "Early Access requires Adjust to enable the service on your account."
+      }
     },
     "segment": {
       "surface": "Twilio Segment API, custom integration",
@@ -1574,7 +2007,7 @@
         "tier": "custom-api",
         "note": "Build a server-side API integration with an owner-issued Team/Business token.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Segment Public API scope and access",
           "url": "https://www.twilio.com/docs/segment/api/public-api"
         }
       },
@@ -1587,9 +2020,9 @@
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Manage supported workspace resources through a custom API integration. Twilio docs MCP only retrieves documentation; it cannot access or change the account."
+        "note": "Manage supported workspace resources through a custom API integration. Requires a custom API integration. The Twilio MCP retrieves documentation only, not account data."
       },
-      "blocker": "Twilio docs MCP only retrieves documentation; it cannot access or change the account.",
+      "blocker": "Requires a custom API integration. The Twilio MCP retrieves documentation only, not account data.",
       "dailyTasks": [
         "Read workspace sources, destinations, warehouses and tracking plans through API.",
         "Manage supported workspace resources through a custom API integration."
@@ -1604,7 +2037,18 @@
       "readSummary": "Read workspace sources, destinations, warehouses and tracking plans through API.",
       "writeSummary": "Manage supported workspace resources through a custom API integration.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://www.twilio.com/docs/segment/api/public-api",
+          "https://www.twilio.com/docs/ai/mcp"
+        ],
+        "note": "The official API is available on Team and Business plans. An AI integration must still be built."
+      }
     },
     "adobe-firefly-creative-production": {
       "surface": "Adobe Run-Workflow hosted MCP",
@@ -1614,7 +2058,7 @@
         "tier": "hosted-mcp",
         "note": "Obtain the organisation IMS token and service API key, then configure hosted MCP.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Adobe creative workflow capabilities",
           "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html"
         }
       },
@@ -1644,7 +2088,19 @@
       "readSummary": "Discover actions/templates, check run status and retrieve outputs.",
       "writeSummary": "Compose creative workflows, transform media and publish reusable workflows.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "restricted",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html",
+          "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-tools.html",
+          "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/install-run-workflow-mcp.html"
+        ],
+        "note": "Requires organisation service access, an IMS token and a service API key supplied by an administrator."
+      }
     },
     "runway": {
       "surface": "Runway native generation app",
@@ -1654,7 +2110,7 @@
         "tier": "native-app",
         "note": "Install the ChatGPT generation app and authorise a Runway account with eligible models and credits.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Runway generation app",
           "url": "https://runway.com/mcp"
         }
       },
@@ -1663,13 +2119,13 @@
         "create": "Yes",
         "modify": "Partial",
         "delete": "Unverified",
-        "publish": "No"
+        "publish": "Unverified"
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Generate images/videos and perform supported reference-based transformations. Do not borrow Runway Dev tools or archived server capabilities into the generation app."
+        "note": "Generate images/videos and perform supported reference-based transformations. Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified."
       },
-      "blocker": "Do not borrow Runway Dev tools or archived server capabilities into the generation app.",
+      "blocker": "Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified.",
       "dailyTasks": [
         "Retrieve generated outputs; general library search is unverified.",
         "Generate images/videos and perform supported reference-based transformations."
@@ -1678,13 +2134,24 @@
         "read": "Retrieve generated outputs; general library search is unverified.",
         "create": "Images and videos using available account models.",
         "modify": "Reference-based generation/restyling; no full timeline editing.",
-        "delete": "Not established by the reviewed sources.",
-        "publish": "No ad or social publishing established."
+        "delete": "Deletion tools are not documented for this route.",
+        "publish": "No ad or social publication tool is documented for the generation app."
       },
       "readSummary": "Retrieve generated outputs; general library search is unverified.",
       "writeSummary": "Generate images/videos and perform supported reference-based transformations.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://runway.com/mcp",
+          "https://help.runwayml.com/hc/en-us/articles/51931843164691-Connecting-to-Runway-MCP"
+        ],
+        "note": "Official generation app. Every generation uses Runway credits; Unlimited Mode is unavailable through MCP."
+      }
     },
     "ahrefs": {
       "surface": "Ahrefs Claude connector + hosted MCP",
@@ -1694,36 +2161,52 @@
         "tier": "native-app",
         "note": "Install the Claude connector with Lite-or-higher Ahrefs access.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Ahrefs MCP access",
           "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
         }
       },
       "actions": {
         "read": "Yes",
-        "create": "Unverified",
-        "modify": "Unverified",
-        "delete": "Unverified",
+        "create": "Partial",
+        "modify": "Partial",
+        "delete": "Partial",
         "publish": "No"
       },
       "coverage": {
-        "level": "Assist only",
-        "note": "No operational content or account writes established. Strong research access does not edit websites; plan and API-unit allowances apply."
+        "level": "Some steps",
+        "note": "Create, organise and delete Ahrefs projects. Website publishing is outside this route. Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply."
       },
-      "blocker": "Strong research access does not edit websites; plan and API-unit allowances apply.",
+      "blocker": "Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply.",
       "dailyTasks": [
-        "Retrieve keyword, backlink, domain and SEO research reports."
+        "Retrieve keyword, backlink, domain and SEO research reports.",
+        "Create, organise and delete Ahrefs projects. Website publishing is outside this route."
       ],
       "actionScopes": {
         "read": "Retrieve keyword, backlink, domain and SEO research reports.",
-        "create": "Not established by the reviewed sources.",
-        "modify": "Not established by the reviewed sources.",
-        "delete": "Not established by the reviewed sources.",
+        "create": "Create Ahrefs projects through the MCP-enabled Add Projects operation.",
+        "modify": "Change project access and move or remove projects from folders.",
+        "delete": "Delete Ahrefs projects. Keyword deletion is API-only in the reviewed reference.",
         "publish": "Not a content publishing route."
       },
       "readSummary": "Retrieve keyword, backlink, domain and SEO research reports.",
-      "writeSummary": "No operational content or account writes established.",
+      "writeSummary": "Create, organise and delete Ahrefs projects. Website publishing is outside this route.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.ahrefs.com/en/mcp/docs/introduction",
+          "https://docs.ahrefs.com/en/mcp/docs/claude-desktop-web",
+          "https://docs.ahrefs.com/en/mcp/docs/tool-categories",
+          "https://docs.ahrefs.com/en/api/reference/management/post-projects",
+          "https://docs.ahrefs.com/en/api/reference/management/patch-update-project",
+          "https://docs.ahrefs.com/en/api/reference/management/delete-projects"
+        ],
+        "note": "Official Claude connector and hosted MCP on Lite or higher plans. Permissions, API-unit and dataset limits apply."
+      }
     },
     "semrush": {
       "surface": "Semrush ChatGPT app + hosted MCP",
@@ -1733,7 +2216,7 @@
         "tier": "native-app",
         "note": "Connect the official ChatGPT app, or configure the hosted OAuth MCP in another supported client.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Semrush MCP actions and access",
           "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/"
         }
       },
@@ -1741,7 +2224,7 @@
         "read": "Yes",
         "create": "No",
         "modify": "No",
-        "delete": "Unverified",
+        "delete": "No",
         "publish": "No"
       },
       "coverage": {
@@ -1756,13 +2239,23 @@
         "read": "Read SEO, Trends and supported Projects reports.",
         "create": "Project creation is explicitly excluded.",
         "modify": "Project settings changes are explicitly excluded.",
-        "delete": "Not established by the reviewed sources.",
+        "delete": "The MCP exposes read-only Projects API methods.",
         "publish": "Not a content publishing route."
       },
       "readSummary": "Read SEO, Trends and supported Projects reports.",
       "writeSummary": "Read-only; project creation and settings changes are excluded.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developer.semrush.com/api/v3/introduction/semrush-mcp/"
+        ],
+        "note": "Official app and hosted MCP. An eligible SEO or Trends plan and API units are required."
+      }
     },
     "similarweb": {
       "surface": "Similarweb Claude connector",
@@ -1772,7 +2265,7 @@
         "tier": "native-app",
         "note": "Install the official Claude connector and authorise access to subscribed datasets.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Similarweb MCP datasets and access",
           "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup"
         }
       },
@@ -1793,25 +2286,36 @@
       ],
       "actionScopes": {
         "read": "Read website/app, audience, traffic, search and commerce intelligence.",
-        "create": "Not established by the reviewed sources.",
-        "modify": "Not established by the reviewed sources.",
-        "delete": "Not established by the reviewed sources.",
+        "create": "Creation tools are not documented for this route.",
+        "modify": "Editing tools are not documented for this route.",
+        "delete": "Deletion tools are not documented for this route.",
         "publish": "Not a content publishing route."
       },
       "readSummary": "Read website/app, audience, traffic, search and commerce intelligence.",
       "writeSummary": "No account, campaign or content writes established.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup",
+          "https://docs.similarweb.com/api-v5/mcp-integration/available-integrations/claude-integration"
+        ],
+        "note": "Official hosted connector requires API/MCP access on an eligible subscription and consumes data credits."
+      }
     },
     "rudderstack": {
-      "surface": "RudderStack official hosted MCP",
-      "object": "Read exposed sources, destinations, transformations and event context.",
+      "surface": "RudderStack hosted MCP",
+      "object": "Read source, destination, transformation and event context.",
       "setup": {
         "level": "Moderate",
         "tier": "hosted-mcp",
         "note": "Connect the hosted MCP and authorise the relevant account.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Hosted MCP setup and limitations",
           "url": "https://mcp.rudderstack.com/docs"
         }
       },
@@ -1824,35 +2328,45 @@
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Manage supported configuration; exact CRUD tools are not fully documented. Active development and incomplete public action coverage; verify the actual tool inventory."
+        "note": "Destination configuration is documented; exact create, delete and publish tools remain unverified. The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented."
       },
-      "blocker": "Active development and incomplete public action coverage; verify the actual tool inventory.",
+      "blocker": "The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented.",
       "dailyTasks": [
-        "Read exposed sources, destinations, transformations and event context.",
-        "Manage supported configuration; exact CRUD tools are not fully documented."
+        "Read source, destination, transformation and event context.",
+        "Destination configuration is documented; exact create, delete and publish tools remain unverified."
       ],
       "actionScopes": {
-        "read": "Read exposed sources, destinations, transformations and event context.",
-        "create": "Not established by the reviewed sources.",
-        "modify": "Documented source/transformation management and destination configuration.",
-        "delete": "Not established by the reviewed sources.",
-        "publish": "Not established by the reviewed sources."
+        "read": "Source, destination, transformation and event context.",
+        "create": "No specific creation tool documented.",
+        "modify": "Destination configuration and source/transformation management; exact fields unverified.",
+        "delete": "No specific deletion tool documented.",
+        "publish": "No specific publishing or deployment tool documented."
       },
-      "readSummary": "Read exposed sources, destinations, transformations and event context.",
-      "writeSummary": "Manage supported configuration; exact CRUD tools are not fully documented.",
+      "readSummary": "Read source, destination, transformation and event context.",
+      "writeSummary": "Destination configuration is documented; exact create, delete and publish tools remain unverified.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "pending",
+      "connection": {
+        "provenance": "official",
+        "availability": "unverified",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://mcp.rudderstack.com/docs"
+        ],
+        "note": "Official hosted MCP; release maturity and the complete action inventory remain unverified."
+      }
     },
     "databricks": {
-      "surface": "Databricks Genie One + separate SQL MCP",
-      "object": "Query governed analytics with Genie One or use the separate SQL MCP.",
+      "surface": "Databricks SQL MCP",
+      "object": "Run SQL against governed tables and inspect database schemas.",
       "setup": {
         "level": "Hard",
         "tier": "hosted-mcp",
-        "note": "Use workspace-hosted MCP; prepare data access and enable the SQL preview where needed.",
+        "note": "An account admin enables Enhanced Unity Gateway preview; connect the workspace MCP with the required grants.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services"
+          "label": "Databricks SQL MCP and beta requirements",
+          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql"
         }
       },
       "actions": {
@@ -1864,24 +2378,35 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "SQL MCP can change data within warehouse and Unity Catalog permissions. Genie One is GA; SQL writes use a separate Beta route requiring admin enablement."
+        "note": "Execute SQL writes within warehouse permissions; administrators can disable writes. SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes."
       },
-      "blocker": "Genie One is GA; SQL writes use a separate Beta route requiring admin enablement.",
+      "blocker": "SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes.",
       "dailyTasks": [
-        "Query governed analytics with Genie One or use the separate SQL MCP.",
-        "SQL MCP can change data within warehouse and Unity Catalog permissions."
+        "Run SQL against governed tables and inspect database schemas.",
+        "Execute SQL writes within warehouse permissions; administrators can disable writes."
       ],
       "actionScopes": {
-        "read": "Query governed analytics with Genie One or use the separate SQL MCP.",
-        "create": "SQL-supported objects/data, subject to permissions.",
-        "modify": "SQL-supported objects/data, subject to permissions.",
-        "delete": "SQL-supported objects/data, subject to permissions.",
+        "read": "SQL query results and database schemas.",
+        "create": "SQL-created objects and records, subject to permissions and write policy.",
+        "modify": "SQL updates, subject to permissions and write policy.",
+        "delete": "SQL deletes, subject to permissions and write policy.",
         "publish": "Database execution is not advertising publication."
       },
-      "readSummary": "Query governed analytics with Genie One or use the separate SQL MCP.",
-      "writeSummary": "SQL MCP can change data within warehouse and Unity Catalog permissions.",
+      "readSummary": "Run SQL against governed tables and inspect database schemas.",
+      "writeSummary": "Execute SQL writes within warehouse permissions; administrators can disable writes.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql",
+          "https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services"
+        ],
+        "note": "SQL MCP is Beta; an account admin must enable Enhanced Unity Gateway preview."
+      }
     },
     "dbt": {
       "surface": "dbt remote MCP, excluding local CLI",
@@ -1891,7 +2416,7 @@
         "tier": "hosted-mcp",
         "note": "Connect the account MCP URL with OAuth or a supported token; prepare projects and warehouse access.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Remote MCP authentication and permissions",
           "url": "https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp"
         }
       },
@@ -1904,24 +2429,35 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Trigger, retry or cancel jobs; execute SQL with development credentials. Remote MCP does not run local project commands; SQL write rights follow development credentials."
+        "note": "Trigger, retry or cancel jobs; execute SQL with development credentials. OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server."
       },
-      "blocker": "Remote MCP does not run local project commands; SQL write rights follow development credentials.",
+      "blocker": "OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server.",
       "dailyTasks": [
         "Read metrics, model context, lineage, freshness, jobs and SQL results.",
         "Trigger, retry or cancel jobs; execute SQL with development credentials."
       ],
       "actionScopes": {
         "read": "Read metrics, model context, lineage, freshness, jobs and SQL results.",
-        "create": "Permitted SQL creations and job runs.",
-        "modify": "Permitted SQL updates; retry/cancel supported jobs.",
-        "delete": "Permitted SQL deletes, not universal dbt object deletion.",
-        "publish": "Trigger configured jobs; local build/run requires the self-hosted route."
+        "create": "SQL creations allowed by development warehouse credentials; start configured job runs.",
+        "modify": "SQL updates allowed by development credentials; retry or cancel supported jobs.",
+        "delete": "SQL deletes allowed by development credentials; no general dbt-object deletion tool.",
+        "publish": "Run configured platform jobs; remote MCP cannot execute local dbt build or run commands."
       },
       "readSummary": "Read metrics, model context, lineage, freshness, jobs and SQL results.",
       "writeSummary": "Trigger, retry or cancel jobs; execute SQL with development credentials.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp",
+          "https://docs.getdbt.com/docs/dbt-ai/mcp-available-tools"
+        ],
+        "note": "Remote MCP is available; its OAuth path is public beta. Token authentication remains available, with plan and resource permissions."
+      }
     },
     "make": {
       "surface": "Make official hosted MCP",
@@ -1931,37 +2467,47 @@
         "tier": "hosted-mcp",
         "note": "Connect the v2 hosted OAuth endpoint and grant the required management scopes.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Make MCP actions and plans",
           "url": "https://developers.make.com/mcp-server"
         }
       },
       "actions": {
         "read": "Yes",
-        "create": "Depends",
+        "create": "Unverified",
         "modify": "Partial",
-        "delete": "Depends",
-        "publish": "Partial"
+        "delete": "Unverified",
+        "publish": "Unverified"
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Modify supported automation assets and run authorised scenarios. Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking."
+        "note": "Modify supported automation assets and run authorised scenarios. Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified."
       },
-      "blocker": "Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking.",
+      "blocker": "Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.",
       "dailyTasks": [
         "Read authorised scenarios, connections, teams and organisation context.",
         "Modify supported automation assets and run authorised scenarios."
       ],
       "actionScopes": {
         "read": "Read authorised scenarios, connections, teams and organisation context.",
-        "create": "Depends on granted management tools.",
+        "create": "The public MCP guide does not identify a creation tool.",
         "modify": "Supported scenarios, connections, webhooks, stores and settings.",
-        "delete": "Only if the specific authorised tool exists.",
-        "publish": "Run active/on-demand scenarios; activation is not established universally."
+        "delete": "The public MCP guide does not identify a deletion tool.",
+        "publish": "Execution of active or on-demand scenarios is documented. Scenario activation is unverified."
       },
       "readSummary": "Read authorised scenarios, connections, teams and organisation context.",
       "writeSummary": "Modify supported automation assets and run authorised scenarios.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.make.com/mcp-server"
+        ],
+        "note": "Official hosted MCP. Scenario execution is available on all plans; management tools require a paid plan and scopes."
+      }
     },
     "workato": {
       "surface": "Workato Developer/Embedded API MCP",
@@ -1971,37 +2517,47 @@
         "tier": "hosted-mcp",
         "note": "Configure an API-client role/token and the remote MCP; curate business tools separately.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://docs.workato.com/mcp"
+          "label": "Workato MCP permissions and regions",
+          "url": "https://docs.workato.com/en/mcp/developer-api-mcp"
         }
       },
       "actions": {
         "read": "Yes",
         "create": "Partial",
         "modify": "Partial",
-        "delete": "Depends",
-        "publish": "Depends"
+        "delete": "Unverified",
+        "publish": "Unverified"
       },
       "coverage": {
         "level": "Some steps",
-        "note": "Manage role-enabled workspace resources and exposed business tools. Enterprise administration and scoped API roles remain; no universal recipe deployment claim."
+        "note": "Manage role-enabled workspace resources and exposed business tools. API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded."
       },
-      "blocker": "Enterprise administration and scoped API roles remain; no universal recipe deployment claim.",
+      "blocker": "API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.",
       "dailyTasks": [
         "Read permitted projects, folders, connections, jobs and workspace assets.",
         "Manage role-enabled workspace resources and exposed business tools."
       ],
       "actionScopes": {
         "read": "Read permitted projects, folders, connections, jobs and workspace assets.",
-        "create": "Enabled projects, folders, tags and other authorised resources.",
-        "modify": "Authorised workspace assets and organisation.",
-        "delete": "Only role-enabled endpoints with an explicit delete action.",
-        "publish": "Depends on scoped endpoints and exposed recipes."
+        "create": "Create projects or folders when enabled in the API-client role.",
+        "modify": "Update folders and permitted workspace assets.",
+        "delete": "No specific MCP deletion endpoint was verified.",
+        "publish": "Recipe deployment through this MCP was not verified."
       },
       "readSummary": "Read permitted projects, folders, connections, jobs and workspace assets.",
       "writeSummary": "Manage role-enabled workspace resources and exposed business tools.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "restricted",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.workato.com/en/mcp/developer-api-mcp"
+        ],
+        "note": "Official MCP requires configured API-client roles and tokens. Unavailable in the China data centre."
+      }
     },
     "gumloop": {
       "surface": "Gumloop external management MCP",
@@ -2011,7 +2567,7 @@
         "tier": "hosted-mcp",
         "note": "Connect the hosted management MCP and use the appropriate personal or team scope.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Gumloop MCP access and scope",
           "url": "https://docs.gumloop.com/mcp-server/overview.md"
         }
       },
@@ -2041,7 +2597,18 @@
       "readSummary": "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.",
       "writeSummary": "Create and edit agents/skills, run them and manage supported triggers.",
       "evidenceBasis": "Documentation reviewed",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.gumloop.com/mcp-server/overview.md",
+          "https://docs.gumloop.com/mcp-server/tools/agents"
+        ],
+        "note": "Official hosted management MCP. Personal-key and team-scoped connections expose different operations."
+      }
     }
   }
 }

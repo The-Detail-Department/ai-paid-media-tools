@@ -25,23 +25,24 @@ Inspect prepared data, model results and convergence diagnostics. Run modelling 
 - Inspect prepared data, model results and convergence diagnostics.
 - Run modelling scripts and produce saved models and budget scenarios.
 
-> **What still needs you:** Official agent skills still require local Python, historical data and specialist validation.
+> **What still needs you:** Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.
 
 - **Route:** Meridian Agent Skills + local Python.
 - **Scope:** Inspect prepared data, model results and convergence diagnostics..
-- **Setup:** Specialist. Install the official skills and Python runtime; review mappings, priors and execution. [Connection documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills).
+- **Setup:** Specialist. Install the skills in a coding agent and provide Python, historical data and modelling assumptions. [Meridian agent skills and checkpoints](https://developers.google.com/meridian/docs/user-guide/agent-skills).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **No**
 - **Read:** Inspect prepared data, model results and convergence diagnostics.
 - **Write:** Run modelling scripts and produce saved models and budget scenarios.
 - **Connection type:** self-managed
+- **Connection status:** official · generally-available. Official published agent skills; local Python, prepared data and specialist validation are still required.
 - **Review:** current
 - **read:** Inspect prepared data, model results and convergence diagnostics.
 - **create:** Model scripts, fitted models, reports and scenarios.
 - **modify:** Model configuration and reproducible local scripts.
-- **delete:** Not established by the reviewed sources.
-- **publish:** No live campaign budget changes.
-- **Coverage:** Specialist. Run modelling scripts and produce saved models and budget scenarios. Official agent skills still require local Python, historical data and specialist validation.
+- **delete:** No model-deletion action documented for the skills.
+- **publish:** Reports and scenario files only; no live campaign budget changes.
+- **Coverage:** Specialist. Run modelling scripts and produce saved models and budget scenarios. Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
@@ -51,22 +52,22 @@ Inspect prepared data, model results and convergence diagnostics. Run modelling 
 
 **Limits**
 
-- Official agent skills still require local Python, historical data and specialist validation.
+- Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.
 
 **Official links**
 
-- **Product / official page:** [Connection and tool documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills)
+- **Product / official page:** [Meridian agent skills and checkpoints](https://developers.google.com/meridian/docs/user-guide/agent-skills)
 - **AI interface / endpoint:** [Meridian Agent Skills](https://developers.google.com/meridian/docs/user-guide/agent-skills)
 - **MCP:** No official MCP verified
 - **Plugin:** [Meridian Agent Skills](https://developers.google.com/meridian/docs/user-guide/agent-skills)
 - **CLI:** Python package, not a dedicated CLI
 - **API / SDK:** [Open-source Python package](https://github.com/google/meridian)
-- **Documentation:** [Connection and tool documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills)
-- **GitHub:** [Vendor source code](https://github.com/google/meridian/discussions/1819)
+- **Documentation:** [Meridian agent skills and checkpoints](https://developers.google.com/meridian/docs/user-guide/agent-skills)
+- **GitHub:** [Meridian library and skills source](https://github.com/google/meridian)
 
 - **Access:** Open-source skills/library, compatible coding agent, Python dependencies and appropriate compute; specialist judgement for priors, data and model validation.
-- **Watch:** Official agent skills still require local Python, historical data and specialist validation.
-- **Sources:** [Connection and tool documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills) · [Additional official documentation](https://developers.google.com/meridian/docs/user-guide/installing) · [Vendor source code](https://github.com/google/meridian/discussions/1819)
+- **Watch:** Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.
+- **Sources:** [Meridian agent skills and checkpoints](https://developers.google.com/meridian/docs/user-guide/agent-skills) · [Meridian library and skills source](https://github.com/google/meridian)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#modelling)
@@ -82,23 +83,24 @@ Read prepared data and fitted Bayesian models through Python. Create models, dia
 - Read prepared data and fitted Bayesian models through Python.
 - Create models, diagnostics, forecasts and allocation scenarios.
 
-> **What still needs you:** Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
+> **What still needs you:** Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.
 
 - **Route:** PyMC-Marketing library through Python.
 - **Scope:** Read prepared data and fitted Bayesian models through Python..
-- **Setup:** Specialist. Install Python dependencies, prepare model assumptions and review the statistical results. [Connection documentation](https://www.pymc-marketing.io/en/stable/).
+- **Setup:** Specialist. Install Python dependencies, prepare model assumptions and review the statistical results. [PyMC-Marketing library documentation](https://www.pymc-marketing.io/en/stable/).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **No**
 - **Read:** Read prepared data and fitted Bayesian models through Python.
 - **Write:** Create models, diagnostics, forecasts and allocation scenarios.
 - **Connection type:** self-managed
+- **Connection status:** official · generally-available. Published Python library; no ready official chat connector was verified. Experimental modules are outside this assessment.
 - **Review:** current
 - **read:** Read prepared data and fitted Bayesian models through Python.
 - **create:** Models, forecasts, diagnostics and scenarios.
 - **modify:** Model specification and assumptions through code.
-- **delete:** Not established by the reviewed sources.
+- **delete:** No model-deletion API documented in the reviewed library workflow.
 - **publish:** No live campaign budget changes.
-- **Coverage:** Specialist. Create models, diagnostics, forecasts and allocation scenarios. Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
+- **Coverage:** Specialist. Create models, diagnostics, forecasts and allocation scenarios. Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
@@ -108,22 +110,22 @@ Read prepared data and fitted Bayesian models through Python. Create models, dia
 
 **Limits**
 
-- Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
+- Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.
 
 **Official links**
 
-- **Product / official page:** [Connection and tool documentation](https://www.pymc-marketing.io/en/stable/)
+- **Product / official page:** [PyMC-Marketing library documentation](https://www.pymc-marketing.io/en/stable/)
 - **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** Python package, not a dedicated CLI
 - **API / SDK:** [Open-source Python package](https://github.com/pymc-labs/pymc-marketing)
-- **Documentation:** [Connection and tool documentation](https://www.pymc-marketing.io/en/stable/)
-- **GitHub:** [Vendor source code](https://github.com/getsimba-ai/simba-mcp)
+- **Documentation:** [PyMC-Marketing library documentation](https://www.pymc-marketing.io/en/stable/)
+- **GitHub:** [Official PyMC-Marketing repository](https://github.com/pymc-labs/pymc-marketing)
 
-- **Access:** Open-source library, compatible Python environment and compute. Separate hosted products have their own accounts and access requirements.
-- **Watch:** Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
-- **Sources:** [Connection and tool documentation](https://www.pymc-marketing.io/en/stable/) · [Additional official documentation](https://www.pymc-labs.com/open-source) · [Vendor source code](https://github.com/getsimba-ai/simba-mcp)
+- **Access:** Open-source Python library with compatible dependencies and compute. Hosted products and experimental modules have separate access and maturity.
+- **Watch:** Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.
+- **Sources:** [PyMC-Marketing library documentation](https://www.pymc-marketing.io/en/stable/) · [Python modelling workflow](https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html) · [Official PyMC-Marketing repository](https://github.com/pymc-labs/pymc-marketing)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#modelling)
@@ -139,23 +141,24 @@ Read prepared historical data and inspect model outputs through code. Fit models
 - Read prepared historical data and inspect model outputs through code.
 - Fit models and generate diagnostics and allocation scenarios.
 
-> **What still needs you:** Specialist coding setup; no ready official external-agent connector verified.
+> **What still needs you:** Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.
 
 - **Route:** Robyn library through a coding environment.
 - **Scope:** Read prepared historical data and inspect model outputs through code..
-- **Setup:** Specialist. Install R/Robyn or the Python beta, dependencies and prepared data. [Connection documentation](https://facebookexperimental.github.io/Robyn/docs/installation/).
+- **Setup:** Specialist. Install the R package and dependencies, or the separate Python beta; prepare data and modelling code. [Robyn R installation](https://facebookexperimental.github.io/Robyn/docs/installation/).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
 - **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **No**
 - **Read:** Read prepared historical data and inspect model outputs through code.
 - **Write:** Fit models and generate diagnostics and allocation scenarios.
 - **Connection type:** self-managed
+- **Connection status:** official · beta. R has a stable release; the Python route is beta. No ready official chat connector was verified.
 - **Review:** current
 - **read:** Read prepared historical data and inspect model outputs through code.
 - **create:** Models, diagnostics and allocation scenarios.
 - **modify:** Model inputs and parameters through code.
-- **delete:** Not established by the reviewed sources.
+- **delete:** No model-deletion operation documented in the reviewed package guides.
 - **publish:** No live campaign budget changes.
-- **Coverage:** Specialist. Fit models and generate diagnostics and allocation scenarios. Specialist coding setup; no ready official external-agent connector verified.
+- **Coverage:** Specialist. Fit models and generate diagnostics and allocation scenarios. Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
@@ -165,22 +168,22 @@ Read prepared historical data and inspect model outputs through code. Fit models
 
 **Limits**
 
-- Specialist coding setup; no ready official external-agent connector verified.
+- Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.
 
 **Official links**
 
-- **Product / official page:** [Connection and tool documentation](https://facebookexperimental.github.io/Robyn/docs/installation/)
+- **Product / official page:** [Robyn R installation](https://facebookexperimental.github.io/Robyn/docs/installation/)
 - **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** R and Python package, not a dedicated CLI
-- **API / SDK:** [Open-source R and Python package](https://github.com/facebookexperimental/Robyn)
-- **Documentation:** [Connection and tool documentation](https://facebookexperimental.github.io/Robyn/docs/installation/)
-- **GitHub:** No official repository verified
+- **API / SDK:** [Official R package and Python beta](https://github.com/facebookexperimental/Robyn)
+- **Documentation:** [Robyn R installation](https://facebookexperimental.github.io/Robyn/docs/installation/)
+- **GitHub:** [Official Robyn package source](https://github.com/facebookexperimental/Robyn)
 
-- **Access:** Open-source packages and suitable compute; modelling skills and prepared data required.
-- **Watch:** Specialist coding setup; no ready official external-agent connector verified.
-- **Sources:** [Connection and tool documentation](https://facebookexperimental.github.io/Robyn/docs/installation/) · [Additional official documentation](https://facebookexperimental.github.io/Robyn/docs/robyn-api/)
+- **Access:** R package has a stable CRAN release; Python implementation is beta. Both require runtime dependencies, prepared data and modelling expertise.
+- **Watch:** Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.
+- **Sources:** [Robyn R installation](https://facebookexperimental.github.io/Robyn/docs/installation/) · [Robyn Python beta and modelling workflow](https://facebookexperimental.github.io/Robyn/docs/robyn-api/) · [Official Robyn package source](https://github.com/facebookexperimental/Robyn)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#modelling)

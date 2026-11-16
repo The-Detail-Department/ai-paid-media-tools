@@ -32,7 +32,7 @@
         "Draft, edit, publish and trash posts and pages."
       ],
       "negatives": [
-        "Live edits can apply immediately. Free-site access ends 30 November 2026."
+        "Live edits can apply immediately. Free-site MCP access ends 30 November 2026."
       ]
     },
     "wordpress-adapter": {
@@ -41,8 +41,8 @@
       "grade": "C",
       "position": "Reference",
       "positives": [
-        "Discover and run explicitly exposed WordPress abilities.",
-        "Editorial actions depend on additional installed abilities."
+        "Official adapter with HTTP and local connections.",
+        "Per-ability permissions and explicit tool exposure."
       ],
       "negatives": [
         "Installing the adapter alone does not supply a complete editorial workflow."
@@ -68,7 +68,7 @@
       "position": "Reference",
       "positives": [
         "Read entries, models, assets, locales, references and releases.",
-        "Manage content, publish assets and schedule supported releases."
+        "Create, edit, delete and publish entries and assets; schedule releases."
       ],
       "negatives": [
         "Configure each environment; CMS publication does not verify the separate live frontend."
@@ -84,7 +84,7 @@
         "Create and edit drafts; publish individual documents."
       ],
       "negatives": [
-        "Release scheduling/publication stays outside MCP; liveEdit types bypass drafts."
+        "Release scheduling needs Studio or the HTTP API. Document validation is beta; liveEdit types bypass drafts."
       ]
     },
     "directus": {
@@ -97,7 +97,7 @@
         "Manage items, files, schemas and configured workflows."
       ],
       "negatives": [
-        "Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration."
+        "Publishing follows your content model. Deletes are disabled by default; self-hosted OAuth needs configuration."
       ]
     },
     "shopify": {
@@ -120,10 +120,10 @@
       "position": "Reference",
       "positives": [
         "Read products, orders and order notes.",
-        "Create, update and delete products; perform selected order actions."
+        "Create, edit, publish and delete supported products; update order status and notes."
       ],
       "negatives": [
-        "Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking."
+        "Developer preview. Requires MCP Adapter; the old WooCommerce endpoint no longer works in 11.3."
       ]
     },
     "bigcommerce": {
@@ -136,7 +136,7 @@
         "Create hidden products and edit product copy and SEO fields."
       ],
       "negatives": [
-        "Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication."
+        "Beta. Products are created hidden; publishing, product deletion and page/blog editing stay outside this MCP."
       ]
     },
     "adobe-commerce": {
@@ -149,7 +149,7 @@
         "Create, edit and delete pages/blocks; control page activation."
       ],
       "negatives": [
-        "Traditional Commerce/Magento API scope only; custom integration and visual checks remain."
+        "Custom integration required. CMS REST scope applies to traditional Commerce/Magento, not automatically SaaS."
       ]
     }
   }

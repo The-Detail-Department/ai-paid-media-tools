@@ -33,9 +33,10 @@
         "url": "https://github.com/googleads/google-ads-mcp"
       },
       "plugin": {
-        "provenance": "none",
-        "maturity": "none-verified",
-        "label": "No official plugin verified"
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Google Ads API Developer Assistant and agent skills",
+        "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server"
       },
       "cli": {
         "provenance": "none",
@@ -53,19 +54,14 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "MCP tools and setup",
           "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
           "kind": "official"
         },
         {
-          "label": "Vendor source code",
+          "label": "Official MCP source",
           "url": "https://github.com/googleads/google-ads-mcp",
           "kind": "source-code"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
-          "kind": "official"
         }
       ]
     },
@@ -83,13 +79,13 @@
         "Optimise",
         "Report"
       ],
-      "summary": "Prior review covered campaign structure and performance. Current connector writes remain unverified.",
+      "summary": "Read campaign performance, audiences and catalogue data. Create and edit campaigns, ad sets and ads, then activate them.",
       "mcp": {
         "provenance": "official",
-        "maturity": "beta",
+        "maturity": "restricted",
         "mode": "remote",
-        "control": "not-stated",
-        "label": "Previous MCP record; review pending",
+        "control": "read-write",
+        "label": "Official hosted MCP; feature access varies",
         "url": "https://mcp.facebook.com/ads"
       },
       "plugin": {
@@ -98,9 +94,10 @@
         "label": "No separate official plugin verified"
       },
       "cli": {
-        "provenance": "none",
-        "maturity": "none-verified",
-        "label": "No dedicated official CLI verified"
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Meta Ads CLI",
+        "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview.md"
       },
       "developer": {
         "provenance": "official",
@@ -108,28 +105,38 @@
         "label": "Marketing API",
         "url": "https://developers.facebook.com/docs/marketing-apis/"
       },
-      "access": "Prior record: open beta. Current announcement redirects to login; developer pages return 429 or inaccessible.",
-      "caution": "Official pages were inaccessible; keep the previous grade visibly pending.",
-      "verifiedOn": "2026-09-05",
+      "access": "OAuth sign-in or an authorised token; a Meta app is optional. Account permissions and feature availability still apply.",
+      "caution": "General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented.",
+      "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://www.facebook.com/business/news/meta-ads-ai-connectors",
+          "label": "Meta MCP overview",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview.md",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/",
+          "label": "Campaign and audience tools",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-ad-creation-and-management.md",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://developers.facebook.com/blog/post/2026/04/29/introducing-ads-cli",
+          "label": "Reporting tools",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-comprehensive-reporting.md",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+          "label": "Catalogue tools",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-tools-catalog-creation-and-management.md",
+          "kind": "official"
+        },
+        {
+          "label": "MCP authentication",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-get-started.md",
+          "kind": "official"
+        },
+        {
+          "label": "Meta Ads CLI",
+          "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-cli/ads-cli-overview.md",
           "kind": "official"
         }
       ]
@@ -178,18 +185,13 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "TikTok MCP capabilities and setup",
           "url": "https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://ads.tiktok.com/business/en/blog/tiktok-agentic-hub-ai-agents-skills-mcp",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://business-api.tiktok.com/portal/docs",
+          "label": "TikTok MCP tool library",
+          "url": "https://business-api.tiktok.com/portal/docs/available-tools-in-tiktok-for-business-mcp-server/v1.3",
           "kind": "official"
         }
       ]
@@ -238,12 +240,12 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools",
+          "label": "Microsoft MCP read tools",
+          "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-tools?view=bingads-13",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Microsoft MCP setup",
           "url": "https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13",
           "kind": "official"
         }
@@ -294,7 +296,7 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Amazon MCP beta and capabilities",
           "url": "https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta",
           "kind": "official"
         }
@@ -343,12 +345,12 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Snapchat MCP access and scope",
           "url": "https://developers.snap.com/marketing-api/Ads-MCP/Introduction",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Connect a Snapchat agent",
           "url": "https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent",
           "kind": "official"
         }
@@ -396,13 +398,13 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+          "label": "LinkedIn campaign operations",
+          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10",
+          "label": "LinkedIn API access tiers",
+          "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
           "kind": "official"
         }
       ]
@@ -422,11 +424,12 @@
       ],
       "summary": "Read campaigns, ad groups and performance. Create and manage campaigns, ad groups and ads via API.",
       "mcp": {
-        "provenance": "none",
-        "maturity": "none-verified",
-        "mode": "none",
-        "control": "none",
-        "label": "No official MCP verified"
+        "provenance": "official",
+        "maturity": "preview",
+        "mode": "remote",
+        "control": "not-stated",
+        "label": "Official MCP announced; launch unconfirmed",
+        "url": "https://dev.pinterest.com/about-pinterest-mcp/"
       },
       "plugin": {
         "provenance": "none",
@@ -445,17 +448,17 @@
         "url": "https://dev.pinterest.com/docs/work-with-ads/ads-overview/"
       },
       "access": "Business Access, supported advertising country, billing and advertising agreement; some onboarding remains in Pinterest UI.",
-      "caution": "Custom integration required; some fields become immutable after draft.",
+      "caution": "Custom integration required. The announced official MCP is not yet verified as launched.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://dev.pinterest.com/docs/work-with-ads/ads-overview/",
+          "label": "Pinterest campaign API",
+          "url": "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/",
+          "label": "Pinterest MCP announcement",
+          "url": "https://dev.pinterest.com/about-pinterest-mcp/",
           "kind": "official"
         }
       ]
@@ -473,7 +476,7 @@
         "Optimise",
         "Report"
       ],
-      "summary": "Read campaign information and reports through API v3. Create campaigns and audiences; modify supported settings.",
+      "summary": "Read campaign information and reports through API v3. Create campaigns and update budgets, schedules and delivery status.",
       "mcp": {
         "provenance": "none",
         "maturity": "none-verified",
@@ -498,17 +501,27 @@
         "url": "https://ads-api.reddit.com/docs/"
       },
       "access": "App creation is business-admin-only; existing authorisation and Ads API terms apply.",
-      "caution": "Exact deletion and activation coverage remains unverified.",
+      "caution": "Custom AI integration required. Activation does not bypass ad approval or billing checks.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://ads-api.reddit.com/docs/",
+          "label": "Reddit API access",
+          "url": "https://ads-api.reddit.com/docs/v3/api/reddit-advertising-api",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://ads-api.reddit.com/docs/v3/guides/quick-start/create-dev-app",
+          "label": "Reddit campaign creation",
+          "url": "https://ads-api.reddit.com/docs/v3/api/create-campaign",
+          "kind": "official"
+        },
+        {
+          "label": "Reddit campaign updates",
+          "url": "https://ads-api.reddit.com/docs/v3/api/update-campaign",
+          "kind": "official"
+        },
+        {
+          "label": "Reddit v3 OpenAPI schema",
+          "url": "https://ads-api.reddit.com/api/v3/openapi.json",
           "kind": "official"
         }
       ]
@@ -557,7 +570,7 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "X Ads MCP tools and setup",
           "url": "https://docs.x.com/x-ads-api/mcp",
           "kind": "official"
         }
@@ -597,26 +610,21 @@
       },
       "developer": {
         "provenance": "official",
-        "maturity": "restricted",
+        "maturity": "beta",
         "label": "Display & Video 360 API",
         "url": "https://developers.google.com/display-video/api"
       },
       "access": "DV360 permissions apply. v5 is labelled beta in current reference.",
-      "caution": "Custom API work remains; the YouTube update does not cover every format.",
+      "caution": "Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://developers.google.com/display-video/api",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
+          "label": "DV360 API v5 reference",
           "url": "https://developers.google.com/display-video/api/reference/rest/v5/advertisers.lineItems",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Responsive YouTube ads release",
           "url": "https://developers.google.com/ads/blog/posts/2026/11/manage-responsive-youtube-ads-with-display",
           "kind": "official"
         }
@@ -665,13 +673,13 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://developers.google.com/doubleclick-advertisers/getting_started",
+          "label": "CM360 campaign operations",
+          "url": "https://developers.google.com/doubleclick-advertisers/rest/v5/campaigns",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://developers.google.com/doubleclick-advertisers/rest/v5/campaigns",
+          "label": "CM360 API setup",
+          "url": "https://developers.google.com/doubleclick-advertisers/getting_started",
           "kind": "official"
         }
       ]
@@ -718,7 +726,7 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "SA360 Reporting API scope",
           "url": "https://developers.google.com/search-ads/reporting",
           "kind": "official"
         }
@@ -737,7 +745,7 @@
         "Optimise",
         "Report"
       ],
-      "summary": "Read reports and authorised campaign configuration. Create and manage supported campaigns, ad groups and keywords.",
+      "summary": "Read campaign configuration, reports and performance. Create, edit and delete campaign resources; enable eligible ads.",
       "mcp": {
         "provenance": "none",
         "maturity": "none-verified",
@@ -762,17 +770,27 @@
         "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api"
       },
       "access": "Read-only, read/write and limited-account roles are separate.",
-      "caution": "No ready official AI connector verified; exact delete and activation tools remain unverified.",
+      "caution": "Custom AI integration required. Enabled status does not guarantee serving.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api",
+          "label": "Apple Ads API scope",
+          "url": "https://developer.apple.com/documentation/apple-ads-platform-api.md",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://developer.apple.com/documentation/apple-ads-platform-api",
+          "label": "Apple campaign endpoints",
+          "url": "https://developer.apple.com/documentation/apple-ads-platform-api/campaigns-endpoints.md",
+          "kind": "official"
+        },
+        {
+          "label": "App Store launch workflow",
+          "url": "https://developer.apple.com/documentation/apple-ads-platform-api/journey-app-store-ads.md",
+          "kind": "official"
+        },
+        {
+          "label": "Apple API access",
+          "url": "https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api",
           "kind": "official"
         }
       ]
@@ -792,14 +810,14 @@
         "Report",
         "Operate"
       ],
-      "summary": "Platform data access is announced; exact tools remain unverified. Current OAK action inventory remains unverified.",
+      "summary": "Read campaign data, pacing, performance and platform documentation. Write availability is unconfirmed.",
       "mcp": {
         "provenance": "official",
         "maturity": "restricted",
         "mode": "remote",
         "control": "not-stated",
-        "label": "Previous MCP record; review pending",
-        "url": "https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates"
+        "label": "OAK hosted MCP, closed beta",
+        "url": "https://api.thetradedesk.com/mcp/koa"
       },
       "plugin": {
         "provenance": "none",
@@ -817,18 +835,18 @@
         "label": "Platform REST and GraphQL APIs",
         "url": "https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines"
       },
-      "access": "Private beta from 10 August 2026. Current public search excerpt still says selected partners only.",
-      "caution": "Private beta and inaccessible tool evidence; keep the previous grade pending.",
-      "verifiedOn": "2026-09-05",
+      "access": "Selected-partner closed beta. Account-team approval and authorised OAuth or API-token access are required.",
+      "caution": "Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026.",
+      "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://partner.thetradedesk.com/v3/portal/api/doc/ReleaseNotes",
+          "label": "OAK capabilities and release status",
+          "url": "https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/McpOpenAgenticKitOverview",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates",
+          "label": "OAK access and setup",
+          "url": "https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted",
           "kind": "official"
         }
       ]
@@ -873,17 +891,12 @@
         "url": "https://developers.google.com/analytics/devguides/reporting/data/v1"
       },
       "access": "Read access follows Analytics account permissions. Writes default off; require --allow-write plus analytics.edit. Custom dimensions require Editor; key events require Marketer or Editor.",
-      "caution": "Three creation tools do not provide general property administration or tracking implementation.",
+      "caution": "Self-managed setup. Writes only create annotations, custom dimensions and key events.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Vendor source code",
+          "label": "Google Analytics MCP tools and setup",
           "url": "https://github.com/googleanalytics/google-analytics-mcp",
-          "kind": "source-code"
-        },
-        {
-          "label": "Vendor source code",
-          "url": "https://github.com/googleanalytics/google-analytics-mcp/releases/tag/1.1.0",
           "kind": "source-code"
         }
       ]
@@ -928,33 +941,28 @@
         "url": "https://developers.google.com/tag-platform/tag-manager/api/v2"
       },
       "access": "Google account must have the relevant GTM permissions, particularly publish rights. Hosted traffic passes through Stape; local CLI is an alternative. AI workspace policy can restrict custom connectors.",
-      "caution": "Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified.",
+      "caution": "Third-party connection, not Google-operated. Publishing still needs tracking and consent checks.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Vendor source code",
+          "label": "Stape hosted and local setup",
           "url": "https://github.com/stape-io/google-tag-manager-mcp-server",
           "kind": "source-code"
         },
         {
-          "label": "Vendor source code",
+          "label": "Stape tag actions",
           "url": "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/tagActions.ts",
           "kind": "source-code"
         },
         {
-          "label": "Vendor source code",
+          "label": "Stape version and publishing actions",
           "url": "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/versionActions.ts",
           "kind": "source-code"
         },
         {
-          "label": "Vendor source code",
+          "label": "Stape workspace actions",
           "url": "https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/workspaceActions.ts",
           "kind": "source-code"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://developers.google.com/tag-platform/tag-manager/api/v2",
-          "kind": "official"
         }
       ]
     },
@@ -972,7 +980,7 @@
         "Analyse",
         "Experiment"
       ],
-      "summary": "Query analytics and inspect charts, cohorts, experiments and taxonomy. Create and edit analytical content and tracking definitions.",
+      "summary": "Query analytics and inspect charts, cohorts, experiments and taxonomy. Create and edit analytical content and tracking definitions; sync cohorts to destinations.",
       "mcp": {
         "provenance": "official",
         "maturity": "available",
@@ -990,8 +998,8 @@
       "cli": {
         "provenance": "official",
         "maturity": "available",
-        "label": "Amplitude Wizard CLI",
-        "url": "https://www.amplitude.com/docs/get-started/setup-wizard-cli"
+        "label": "Amplitude CLI",
+        "url": "https://amplitude.com/docs/developers/cli"
       },
       "developer": {
         "provenance": "official",
@@ -1004,18 +1012,18 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Amplitude MCP tools and access",
           "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://amplitude.com/mcp-server",
+          "label": "Guide and survey draft limits",
+          "url": "https://amplitude.com/docs/amplitude-ai/guides-surveys-mcp",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://amplitude.com/docs/amplitude-ai/guides-surveys-mcp",
+          "label": "Amplitude CLI",
+          "url": "https://amplitude.com/docs/developers/cli",
           "kind": "official"
         }
       ]
@@ -1061,18 +1069,13 @@
         "url": "https://developer.mixpanel.com/reference/overview"
       },
       "access": "Existing project roles apply. New Free/Growth accounts after 1 August 2026 have MCP enabled by default; other accounts require an organisation admin. Free query limits apply. Audit-log queries need organisation admin/owner.",
-      "caution": "US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable.",
+      "caution": "Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Mixpanel tools, regions and beta limits",
           "url": "https://docs.mixpanel.com/docs/mcp",
           "kind": "official"
-        },
-        {
-          "label": "Vendor source code",
-          "url": "https://github.com/mixpanel/docs/blob/main/changelogs.mdx",
-          "kind": "source-code"
         }
       ]
     },
@@ -1116,28 +1119,23 @@
         "url": "https://docs.supermetrics.com/apidocs/getting-started"
       },
       "access": "AI chats or MCP entitlement/trial, Campaign management entitlement and seat where applicable, connected accounts with platform edit permission. The connection owner enables writes for each account/team.",
-      "caution": "Writes require account-level opt-in and entitlement; coverage varies across seven ad platforms.",
+      "caution": "Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://docs.supermetrics.com/docs/how-to-enable-campaign-write-access",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
+          "label": "Campaign actions and limits",
           "url": "https://docs.supermetrics.com/v1/docs/how-to-manage-ad-campaigns-with-ai-tools",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools",
+          "label": "Write access and approvals",
+          "url": "https://docs.supermetrics.com/docs/how-to-enable-campaign-write-access",
           "kind": "official"
         },
         {
-          "label": "Vendor source code",
-          "url": "https://github.com/supermetrics-public/supermetrics-mcp/blob/main/README.md",
-          "kind": "source-code"
+          "label": "Claude and ChatGPT connections",
+          "url": "https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools",
+          "kind": "official"
         }
       ]
     },
@@ -1186,7 +1184,7 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Vendor source code",
+          "label": "DataForSEO v3 MCP and CLI",
           "url": "https://github.com/dataforseo/mcp-server-typescript",
           "kind": "source-code"
         }
@@ -1230,29 +1228,19 @@
         "label": "Python SDK and HTTP API",
         "url": "https://docs.airbyte.com/"
       },
-      "access": "Hosted MCP supports Airbyte Cloud editions and Flex. Direct reads/search require Cloud and supported connectors. Airbyte roles and stored connector credentials govern access.",
-      "caution": "External source/destination records remain read-only; infrastructure and credentials must already exist.",
+      "access": "Hosted MCP supports Airbyte Cloud editions and Flex with OAuth and Airbyte permissions. Direct reads need admin-enabled agent access and supported connectors; externally managed secrets are not supported for direct reads.",
+      "caution": "Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Airbyte MCP setup",
           "url": "https://docs.airbyte.com/platform/airbyte-mcp",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Pipeline tools and deletion safeguards",
           "url": "https://docs.airbyte.com/platform/airbyte-mcp/tools",
           "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://docs.airbyte.com/platform/airbyte-mcp/install",
-          "kind": "official"
-        },
-        {
-          "label": "Vendor source code",
-          "url": "https://github.com/airbytehq/airbyte/blob/master/docs/ai-agents/interfaces/mcp/readme.md",
-          "kind": "source-code"
         }
       ]
     },
@@ -1296,16 +1284,16 @@
         "url": "https://fivetran.com/docs/rest-api"
       },
       "access": "Public Preview. Fivetran/admin access, an organisation context layer, permitted users and AI-workspace administration for initial setup. Query-role options depend on warehouse.",
-      "caution": "Public Preview; the native connector still needs an administrator-prepared context layer.",
+      "caution": "Public Preview. An administrator must build the context layer and grant access; business data remains read-only.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Agent Context MCP tools",
           "url": "https://fivetran.com/docs/context-layer/agent-context-mcp",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Context layer and connector setup",
           "url": "https://fivetran.com/docs/context-layer/agent-context-mcp/setup-guide",
           "kind": "official"
         }
@@ -1352,22 +1340,22 @@
         "url": "https://mcp-toolbox.dev/"
       },
       "access": "Open-source server plus a supported database/cloud account, credentials, network access and operation-level permissions.",
-      "caution": "Hosting, credentials and tool design remain your responsibility; read-only behaviour varies by engine.",
+      "caution": "Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Toolbox setup and supported databases",
           "url": "https://mcp-toolbox.dev/documentation/introduction/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Read-only configuration by engine",
           "url": "https://mcp-toolbox.dev/documentation/configuration/security/read-only/",
           "kind": "official"
         },
         {
-          "label": "Vendor source code",
-          "url": "https://github.com/google/mcp",
+          "label": "Official Toolbox repository and releases",
+          "url": "https://github.com/googleapis/mcp-toolbox",
           "kind": "source-code"
         }
       ]
@@ -1412,12 +1400,17 @@
         "url": "https://docs.snowflake.com/en/developer"
       },
       "access": "Snowflake account, warehouse/data, configured semantic views/search/agents as relevant, and separate permissions for both server and underlying tools.",
-      "caution": "SQL defaults to read-only; hosting is managed but tool and data preparation is technical.",
+      "caution": "An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Managed MCP tools and permissions",
           "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+          "kind": "official"
+        },
+        {
+          "label": "Managed MCP general availability",
+          "url": "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp",
           "kind": "official"
         }
       ]
@@ -1460,22 +1453,17 @@
         "url": "https://github.com/google/meridian"
       },
       "access": "Open-source skills/library, compatible coding agent, Python dependencies and appropriate compute; specialist judgement for priors, data and model validation.",
-      "caution": "Official agent skills still require local Python, historical data and specialist validation.",
+      "caution": "Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Meridian agent skills and checkpoints",
           "url": "https://developers.google.com/meridian/docs/user-guide/agent-skills",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://developers.google.com/meridian/docs/user-guide/installing",
-          "kind": "official"
-        },
-        {
-          "label": "Vendor source code",
-          "url": "https://github.com/google/meridian/discussions/1819",
+          "label": "Meridian library and skills source",
+          "url": "https://github.com/google/meridian",
           "kind": "source-code"
         }
       ]
@@ -1513,22 +1501,27 @@
       "developer": {
         "provenance": "official",
         "maturity": "available",
-        "label": "Open-source R and Python package",
+        "label": "Official R package and Python beta",
         "url": "https://github.com/facebookexperimental/Robyn"
       },
-      "access": "Open-source packages and suitable compute; modelling skills and prepared data required.",
-      "caution": "Specialist coding setup; no ready official external-agent connector verified.",
+      "access": "R package has a stable CRAN release; Python implementation is beta. Both require runtime dependencies, prepared data and modelling expertise.",
+      "caution": "Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Robyn R installation",
           "url": "https://facebookexperimental.github.io/Robyn/docs/installation/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Robyn Python beta and modelling workflow",
           "url": "https://facebookexperimental.github.io/Robyn/docs/robyn-api/",
           "kind": "official"
+        },
+        {
+          "label": "Official Robyn package source",
+          "url": "https://github.com/facebookexperimental/Robyn",
+          "kind": "source-code"
         }
       ]
     },
@@ -1568,23 +1561,23 @@
         "label": "Open-source Python package",
         "url": "https://github.com/pymc-labs/pymc-marketing"
       },
-      "access": "Open-source library, compatible Python environment and compute. Separate hosted products have their own accounts and access requirements.",
-      "caution": "Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.",
+      "access": "Open-source Python library with compatible dependencies and compute. Hosted products and experimental modules have separate access and maturity.",
+      "caution": "Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "PyMC-Marketing library documentation",
           "url": "https://www.pymc-marketing.io/en/stable/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://www.pymc-labs.com/open-source",
+          "label": "Python modelling workflow",
+          "url": "https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html",
           "kind": "official"
         },
         {
-          "label": "Vendor source code",
-          "url": "https://github.com/getsimba-ai/simba-mcp",
+          "label": "Official PyMC-Marketing repository",
+          "url": "https://github.com/pymc-labs/pymc-marketing",
           "kind": "source-code"
         }
       ]
@@ -1611,9 +1604,10 @@
         "url": "https://docs.zapier.com/mcp/home"
       },
       "plugin": {
-        "provenance": "none",
-        "maturity": "none-verified",
-        "label": "MCP tool bundles, not a separate plugin"
+        "provenance": "official",
+        "maturity": "available",
+        "label": "Official Zapier plugin",
+        "url": "https://github.com/zapier/zapier-mcp"
       },
       "cli": {
         "provenance": "official",
@@ -1632,13 +1626,18 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Zapier MCP actions and access",
           "url": "https://docs.zapier.com/mcp/home",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://help.zapier.com/hc/en-us/articles/48308034391821-What-is-Zapier-MCP",
+          "label": "Official Zapier plugin",
+          "url": "https://github.com/zapier/zapier-mcp",
+          "kind": "source-code"
+        },
+        {
+          "label": "Zapier connection guide",
+          "url": "https://docs.zapier.com/mcp/get-started/quickstart",
           "kind": "official"
         }
       ]
@@ -1686,13 +1685,8 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Pipedream MCP actions and access",
           "url": "https://pipedream.com/docs/connect/mcp",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://mcp.pipedream.com",
           "kind": "official"
         }
       ]
@@ -1740,12 +1734,12 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "n8n MCP setup and permissions",
           "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "n8n MCP tool reference",
           "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference",
           "kind": "official"
         }
@@ -1790,23 +1784,18 @@
         "label": "REST and Plugin APIs",
         "url": "https://developers.figma.com/"
       },
-      "access": "Supported client, file edit access and eligible Figma plan; Full seat required outside Drafts. Canvas writing is free during beta, with future usage pricing announced.",
+      "access": "Professional, Education, Organization or Enterprise plan; supported remote MCP client and file edit access. Canvas writing is beta.",
       "caution": "Canvas writing is beta; library publishing stays manual and visual review remains necessary.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Figma integrations",
           "url": "https://www.figma.com/mcp-catalog/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Canvas editing and beta limits",
           "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://developers.figma.com/docs/figma-mcp-server/",
           "kind": "official"
         }
       ]
@@ -1852,23 +1841,23 @@
         "label": "Apps SDK and Connect APIs",
         "url": "https://www.canva.dev/docs/"
       },
-      "access": "AI Connector available to Free and paid accounts, subject to admin controls. Brand templates/autofill/resize and export quality have plan restrictions; AI allowances apply.",
-      "caution": "Premium licensing and tool limits apply; general deletion and social publishing are not established.",
+      "access": "Available to Free and paid accounts, subject to admin controls. Brand templates, autofill, video generation and image tools have feature-specific plan limits and AI allowances.",
+      "caution": "Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Canva ChatGPT connection",
           "url": "https://www.canva.com/help/connect-chatgpt-to-canva/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Canva AI Connector access",
           "url": "https://www.canva.com/help/mcp-agent-setup/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://www.canva.dev/docs/apps/mcp/tools/",
+          "label": "Canva AI Connector actions",
+          "url": "https://www.canva.com/help/mcp-canva-usage/",
           "kind": "official"
         }
       ]
@@ -1921,17 +1910,17 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Adobe Analytics MCP tools",
           "url": "https://developer.adobe.com/analytics-mcp/docs/aa/reference",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Adobe MCP permissions",
           "url": "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Adobe Claude setup",
           "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude",
           "kind": "official"
         }
@@ -1985,17 +1974,17 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "CJA MCP tools",
           "url": "https://developer.adobe.com/analytics-mcp/docs/cja/reference",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Adobe MCP permissions",
           "url": "https://developer.adobe.com/analytics-mcp/docs/guides/permissions",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "CJA directory connector",
           "url": "https://developer.adobe.com/analytics-mcp/docs/guides/claude",
           "kind": "official"
         }
@@ -2050,22 +2039,22 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "PostHog MCP setup and costs",
           "url": "https://posthog.com/docs/model-context-protocol",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "PostHog MCP tool reference",
+          "url": "https://posthog.com/docs/model-context-protocol/tools",
+          "kind": "official"
+        },
+        {
+          "label": "PostHog Claude connector",
           "url": "https://posthog.com/docs/model-context-protocol/claude-desktop",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://posthog.com/docs/product-analytics/surfaces/mcp",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
+          "label": "PostHog pipeline actions",
           "url": "https://posthog.com/docs/data-pipelines/surfaces/mcp",
           "kind": "official"
         }
@@ -2114,17 +2103,12 @@
         "url": "https://dev.appsflyer.com/hc"
       },
       "access": "Beta; existing AppsFlyer permissions apply. MCP is enabled by default but an admin can disable it. Account-level bearer tokens are available for automation.",
-      "caution": "Beta: ten links per account per day; no wider account-editing MCP tools documented.",
+      "caution": "Beta. Ten new OneLink links per account per day; broader account editing is not documented.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "AppsFlyer beta tools and limits",
           "url": "https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://www.appsflyer.com/company/newsroom/pr/agentic-ai-mcp-tools",
           "kind": "official"
         }
       ]
@@ -2176,13 +2160,8 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Adjust MCP access and data",
           "url": "https://help.adjust.com/en/article/adjust-mcp",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://www.adjust.com/blog/adjust-mcp/",
           "kind": "official"
         }
       ]
@@ -2207,16 +2186,17 @@
       },
       "mcp": {
         "provenance": "official",
-        "maturity": "available",
+        "maturity": "beta",
         "mode": "remote",
         "control": "read-only",
         "label": "Documentation MCP only; account route uses the API",
         "url": "https://www.twilio.com/docs/ai/mcp"
       },
       "plugin": {
-        "provenance": "none",
-        "maturity": "none-verified",
-        "label": "No official agent plugin verified"
+        "provenance": "official",
+        "maturity": "beta",
+        "label": "Twilio docs connector only",
+        "url": "https://www.twilio.com/docs/ai/mcp"
       },
       "cli": {
         "provenance": "none",
@@ -2234,12 +2214,12 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Segment Public API scope and access",
           "url": "https://www.twilio.com/docs/segment/api/public-api",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Twilio documentation MCP limits",
           "url": "https://www.twilio.com/docs/ai/mcp",
           "kind": "official"
         }
@@ -2293,17 +2273,17 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Adobe creative workflow capabilities",
           "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Adobe MCP tool reference",
           "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-tools.html",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Adobe service access requirements",
           "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/install-run-workflow-mcp.html",
           "kind": "official"
         }
@@ -2357,29 +2337,19 @@
         "label": "Runway API and SDKs",
         "url": "https://docs.dev.runwayml.com/api/"
       },
-      "access": "Runway account; eligible models and generation costs depend on plan and Runway credits.",
-      "caution": "Do not borrow Runway Dev tools or archived server capabilities into the generation app.",
+      "access": "Sign in with a Runway account; no API key required. Available models depend on plan. MCP supports Credits Mode only, including on plans with Unlimited Mode in the app.",
+      "caution": "Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Runway generation app",
           "url": "https://runway.com/mcp",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://mcp.runwayml.com/",
+          "label": "Runway connection and credit limits",
+          "url": "https://help.runwayml.com/hc/en-us/articles/51931843164691-Connecting-to-Runway-MCP",
           "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://docs.dev.runwayml.com/guides/mcp/",
-          "kind": "official"
-        },
-        {
-          "label": "Vendor source code",
-          "url": "https://github.com/runwayml/runway-api-mcp-server",
-          "kind": "source-code"
         }
       ]
     },
@@ -2396,7 +2366,7 @@
         "Compare",
         "Analyse"
       ],
-      "summary": "Retrieve keyword, backlink, domain and SEO research reports. No operational content or account writes established.",
+      "summary": "Retrieve keyword, backlink, domain and SEO research reports. Create, organise and delete Ahrefs projects. Website publishing is outside this route.",
       "product": {
         "label": "Ahrefs MCP",
         "url": "https://ahrefs.com/mcp/"
@@ -2405,7 +2375,7 @@
         "provenance": "official",
         "maturity": "available",
         "mode": "remote",
-        "control": "read-only",
+        "control": "mixed",
         "label": "Ahrefs Claude connector + hosted MCP",
         "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
       },
@@ -2427,22 +2397,37 @@
         "url": "https://docs.ahrefs.com/docs/api/reference/introduction"
       },
       "access": "Lite plan or higher, monthly API units and per-request row limits.",
-      "caution": "Strong research access does not edit websites; plan and API-unit allowances apply.",
+      "caution": "Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Ahrefs MCP access",
           "url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Ahrefs Claude connector",
           "url": "https://docs.ahrefs.com/en/mcp/docs/claude-desktop-web",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Ahrefs MCP tool groups",
           "url": "https://docs.ahrefs.com/en/mcp/docs/tool-categories",
+          "kind": "official"
+        },
+        {
+          "label": "Create projects through MCP",
+          "url": "https://docs.ahrefs.com/en/api/reference/management/post-projects",
+          "kind": "official"
+        },
+        {
+          "label": "Update projects through MCP",
+          "url": "https://docs.ahrefs.com/en/api/reference/management/patch-update-project",
+          "kind": "official"
+        },
+        {
+          "label": "Delete projects through MCP",
+          "url": "https://docs.ahrefs.com/en/api/reference/management/delete-projects",
           "kind": "official"
         }
       ]
@@ -2491,18 +2476,13 @@
         "label": "Semrush API",
         "url": "https://developer.semrush.com/api/"
       },
-      "access": "Appropriate Semrush API subscription and units; Trends coverage follows subscription level.",
+      "access": "Eligible SEO plans include API units; higher tiers may require a separate unit package. Traffic and Market data requires a Trends API subscription.",
       "caution": "MCP does not inherit wider REST API mutations; API units and subscribed datasets apply.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Semrush MCP actions and access",
           "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://www.semrush.com/mcp/",
           "kind": "official"
         }
       ]
@@ -2557,12 +2537,12 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Similarweb MCP datasets and access",
           "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Similarweb Claude connector",
           "url": "https://docs.similarweb.com/api-v5/mcp-integration/available-integrations/claude-integration",
           "kind": "official"
         }
@@ -2581,17 +2561,17 @@
         "Transform",
         "Operate"
       ],
-      "summary": "Read exposed sources, destinations, transformations and event context. Manage supported configuration; exact CRUD tools are not fully documented.",
+      "summary": "Read source, destination, transformation and event context. Destination configuration is documented; exact create, delete and publish tools remain unverified.",
       "product": {
         "label": "RudderStack",
         "url": "https://www.rudderstack.com/"
       },
       "mcp": {
         "provenance": "official",
-        "maturity": "beta",
+        "maturity": "none-verified",
         "mode": "remote",
         "control": "mixed",
-        "label": "RudderStack official hosted MCP",
+        "label": "RudderStack hosted MCP; maturity unconfirmed",
         "url": "https://mcp.rudderstack.com/docs"
       },
       "plugin": {
@@ -2612,11 +2592,11 @@
         "url": "https://www.rudderstack.com/docs/api/"
       },
       "access": "Active RudderStack account with relevant permissions; team connector setup may require an administrator.",
-      "caution": "Active development and incomplete public action coverage; verify the actual tool inventory.",
+      "caution": "The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Hosted MCP setup and limitations",
           "url": "https://mcp.rudderstack.com/docs",
           "kind": "official"
         }
@@ -2635,7 +2615,7 @@
         "Model",
         "Operate"
       ],
-      "summary": "Query governed analytics with Genie One or use the separate SQL MCP. SQL MCP can change data within warehouse and Unity Catalog permissions.",
+      "summary": "Run SQL against governed tables and inspect database schemas. Execute SQL writes within warehouse permissions; administrators can disable writes.",
       "product": {
         "label": "Databricks",
         "url": "https://www.databricks.com/"
@@ -2645,8 +2625,8 @@
         "maturity": "beta",
         "mode": "remote",
         "control": "mixed",
-        "label": "Databricks Genie One + separate SQL MCP",
-        "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services"
+        "label": "Databricks SQL MCP",
+        "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql"
       },
       "plugin": {
         "provenance": "none",
@@ -2665,18 +2645,18 @@
         "label": "Databricks APIs and SDKs",
         "url": "https://docs.databricks.com/aws/en/dev-tools/"
       },
-      "access": "Databricks workspace and resource privileges. Genie One MCP is GA; SQL MCP requires an account admin to enable Enhanced Unity Gateway preview and is Beta.",
-      "caution": "Genie One is GA; SQL writes use a separate Beta route requiring admin enablement.",
+      "access": "SQL MCP is Beta and requires an account admin to enable Enhanced Unity Gateway preview, plus MCP, warehouse and Unity Catalog privileges. Genie One is a separate generally available analytics route.",
+      "caution": "SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services",
+          "label": "Databricks SQL MCP and beta requirements",
+          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql",
+          "label": "Databricks MCP routes and access",
+          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services",
           "kind": "official"
         }
       ]
@@ -2725,22 +2705,17 @@
         "url": "https://docs.getdbt.com/"
       },
       "access": "Remote MCP is available across dbt platform plans but underlying API tools vary by plan. OAuth is public beta for Starter, Enterprise and Enterprise+. Token-based execute_sql needs a personal token, not a service token.",
-      "caution": "Remote MCP does not run local project commands; SQL write rights follow development credentials.",
+      "caution": "OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Remote MCP authentication and permissions",
           "url": "https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Remote tools and SQL write boundaries",
           "url": "https://docs.getdbt.com/docs/dbt-ai/mcp-available-tools",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://docs.getdbt.com/docs/dbt-ai/about-mcp",
           "kind": "official"
         }
       ]
@@ -2787,18 +2762,13 @@
         "label": "Make API and developer hub",
         "url": "https://developers.make.com/"
       },
-      "access": "Scenario-run tools on all plans; management tools on paid plans, with appropriate scopes and downstream connections.",
-      "caution": "Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking.",
+      "access": "Scenario-run tools are available on all plans; management tools require a paid plan and appropriate scopes.",
+      "caution": "Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Make MCP actions and plans",
           "url": "https://developers.make.com/mcp-server",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://developers.make.com/mcp-server/connect-using-oauth",
           "kind": "official"
         }
       ]
@@ -2845,17 +2815,12 @@
         "label": "Workato developer APIs",
         "url": "https://docs.workato.com/developing-connectors/sdk.html"
       },
-      "access": "Workato organisation access and project/endpoint permissions. Embedded API needs Embedded-admin token; vendor says MCP unavailable in CN despite a CN URL appearing in its table.",
-      "caution": "Enterprise administration and scoped API roles remain; no universal recipe deployment claim.",
+      "access": "Configured Workato API-client role and token required. Embedded API requires an Embedded-admin token. Available in supported regions; the stated China exclusion takes precedence over the conflicting URL table.",
+      "caution": "API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
-          "url": "https://docs.workato.com/mcp",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
+          "label": "Workato MCP permissions and regions",
           "url": "https://docs.workato.com/en/mcp/developer-api-mcp",
           "kind": "official"
         }
@@ -2908,17 +2873,12 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Gumloop MCP access and scope",
           "url": "https://docs.gumloop.com/mcp-server/overview.md",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
-          "url": "https://docs.gumloop.com/mcp-server/setup",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
+          "label": "Gumloop agent and trigger tools",
           "url": "https://docs.gumloop.com/mcp-server/tools/agents",
           "kind": "official"
         }

@@ -52,7 +52,7 @@ Practical boundaries:
 - API-only routes requiring a custom AI integration are capped at C+.
 - Self-managed routes with useful writes generally fall in the B range.
 - Preview, beta and account gates affect both the grade and readiness.
-- Meta Ads and The Trade Desk retain their previous grades as **review pending** where current documentation was inaccessible. They must not appear as freshly verified leaders.
+- A pending evidence review is shown as **Not scored**. Any historical grade retained in the data is not a current recommendation.
 
 This November rubric differs from the earlier category-specific grades. A changed grade can reflect the revised question, a changed product, or both; consult the record rather than treating it as a vendor regression.
 
@@ -153,3 +153,21 @@ account access, administrator work or engineering that makes the connection poss
 `featuredTools` and `sectionOrder` are editorial navigation choices, not measured
 popularity or market-share rankings. The commerce additions remain documentation
 reviews; no connection or live write was performed.
+
+## Official status and availability
+
+Each evaluated route records `connection.provenance`, `connection.availability`,
+`connection.evidence`, `connection.checkedOn`, source URLs and an access note. These
+refer to the named connection, not every interface offered by the platform. A
+third-party connection to a platform is not that platform's official connection.
+
+Official does not mean generally available, simple to install or fully capable.
+Beta, preview, restricted access and unverified availability are explicit flags and
+cannot carry Production readiness. Local setup, custom integration work and
+unverified individual actions remain visible separately. An available route with
+optional beta tools identifies those limits in its access note and action scope.
+
+Documentation review does not establish a working authenticated connection, a
+successful live write, or availability for every account. Current review attempts
+are dated with `checkedOn`; an unsuccessful attempt does not reset the last
+verified date or convert unknown capabilities into supported ones.

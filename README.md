@@ -12,7 +12,7 @@ We compare what external AI can read, what it can write and how easily it connec
 
 [Media platforms](#media-platforms) · [Analytics](#analytics) · [Measurement](#measurement) · [Creative production](#creative-production) · [Research and intelligence](#research-and-intelligence) · [Data infrastructure](#data-infrastructure) · [Automation and workflow](#automation-and-workflow) · [Modelling](#modelling)
 
-**50 tools reviewed** · 29 Production · 18 Test · 3 Research · Catalogue updated 16 Nov 2026
+**50 tools reviewed** · 20 Production · 27 Test · 3 Research · Catalogue updated 16 Nov 2026
 
 [Read the methodology](METHODOLOGY.md) · [Propose a correction](../../issues/new?template=correction.yml)
 
@@ -24,25 +24,25 @@ Advertising platforms and buying systems, judged on the named documented route a
 
 - **TikTok for Business (A-):** Its official remote MCP covers campaign, reporting, audience and creative work.
 - **Google Ads (B-):** Google's official Ads MCP cannot create an ad, change a bid or budget, pause an entity or fix the issue it finds.
-- **Meta Ads (B-):** Meta's connector can create supported objects, then still sends the operator back to Ads Manager for ordinary changes.
+- **Meta Ads (B+):** Meta's connector can create supported objects, then still sends the operator back to Ads Manager for ordinary changes.
 
 | Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [TikTok for Business](catalogue/media-platforms.md#tiktok-for-business) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | Unverified | Unverified | Most steps |
+| [TikTok for Business](catalogue/media-platforms.md#tiktok-for-business) | **A-** | Reference | Test | Easy | Yes | Yes | Yes | Unverified | Unverified | Most steps |
 | [Amazon Ads](catalogue/media-platforms.md#amazon-ads) | **B+** | Reference | Test | Hard | Yes | Yes | Yes | Yes | Partial | Most steps |
+| [Meta Ads](catalogue/media-platforms.md#meta-ads) | **B+** | Reference | Test | Moderate | Yes | Yes | Yes | Partial | Yes | Most steps |
 | [X Ads](catalogue/media-platforms.md#x-ads) | **B+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Yes | Most steps |
-| [The Trade Desk](catalogue/media-platforms.md#the-trade-desk) | **B** (previous; review pending) | Reference | Test | Moderate | Unverified | Unverified | Unverified | Unverified | Unverified | Depends |
-| [Google Ads](catalogue/media-platforms.md#google-ads) | **B-** | Reference | Production | Hard | Yes | Partial | Partial | Partial | No | Some steps |
-| [Meta Ads](catalogue/media-platforms.md#meta-ads) | **B-** (previous; review pending) | Reference | Test | Moderate | Unverified | Unverified | Unverified | Unverified | Unverified | Depends |
-| [Apple Ads](catalogue/media-platforms.md#apple-ads) | **C+** | Reference | Production | Hard | Yes | Yes | Yes | Unverified | Unverified | Some steps |
-| [Campaign Manager 360](catalogue/media-platforms.md#campaign-manager-360) | **C+** | Reference | Production | Hard | Yes | Yes | Yes | Unverified | Partial | Some steps |
-| [Display & Video 360](catalogue/media-platforms.md#display--video-360) | **C+** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Partial | Some steps |
+| [Google Ads](catalogue/media-platforms.md#google-ads) | **B-** | Reference | Test | Hard | Yes | Partial | Partial | Partial | No | Some steps |
 | [Microsoft Advertising](catalogue/media-platforms.md#microsoft-advertising) | **C+** | Reference | Production | Hard | Yes | No | No | No | No | Assist only |
 | [Snapchat Ads](catalogue/media-platforms.md#snapchat-ads) | **C+** | Reference | Production | Moderate | Yes | No | No | No | No | Assist only |
+| [Apple Ads](catalogue/media-platforms.md#apple-ads) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Yes | Partial | Some steps |
+| [Campaign Manager 360](catalogue/media-platforms.md#campaign-manager-360) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Unverified | Unverified | Some steps |
+| [Display & Video 360](catalogue/media-platforms.md#display--video-360) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Partial | Some steps |
 | [Pinterest Ads](catalogue/media-platforms.md#pinterest-ads) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Yes | Some steps |
-| [Search Ads 360](catalogue/media-platforms.md#search-ads-360) | **C** | Reference | Production | Hard | Yes | No | No | No | No | Assist only |
+| [Reddit Ads](catalogue/media-platforms.md#reddit-ads) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Partial | Some steps |
+| [The Trade Desk](catalogue/media-platforms.md#the-trade-desk) | **C+** | Reference | Test | Hard | Yes | Unverified | Unverified | Unverified | Unverified | Assist only |
 | [LinkedIn Ads](catalogue/media-platforms.md#linkedin-ads) | **C** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Partial | Some steps |
-| [Reddit Ads](catalogue/media-platforms.md#reddit-ads) | **C** | Reference | Test | Hard | Yes | Yes | Partial | Unverified | Unverified | Some steps |
+| [Search Ads 360](catalogue/media-platforms.md#search-ads-360) | **C** | Reference | Test | Hard | Yes | No | No | No | No | Assist only |
 
 [Open the detailed assessments](catalogue/media-platforms.md)
 
@@ -53,7 +53,7 @@ Analytics products judged on whether an agent can investigate performance and le
 | Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Adobe Customer Journey Analytics](catalogue/analytics.md#adobe-customer-journey-analytics) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | No | Unverified | Most steps |
-| [Amplitude](catalogue/analytics.md#amplitude) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | No | Most steps |
+| [Amplitude](catalogue/analytics.md#amplitude) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Mixpanel](catalogue/analytics.md#mixpanel) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | Yes | Unverified | Most steps |
 | [Adobe Analytics](catalogue/analytics.md#adobe-analytics) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | No | Unverified | Most steps |
 | [Google Analytics](catalogue/analytics.md#google-analytics) | **B** | Reference | Production | Hard | Yes | Partial | No | No | No | Some steps |
@@ -67,7 +67,7 @@ Collection, tagging and attribution systems judged on implementation, validation
 
 | Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Google Tag Manager](catalogue/measurement.md#google-tag-manager) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
+| [Google Tag Manager](catalogue/measurement.md#google-tag-manager) | **B+** | Reference | Test | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
 | [AppsFlyer](catalogue/measurement.md#appsflyer) | **B** | Reference | Test | Moderate | Yes | Partial | No | No | No | Some steps |
 | [Adjust](catalogue/measurement.md#adjust) | **C+** | Reference | Test | Moderate | Yes | Unverified | Unverified | Unverified | Unverified | Assist only |
 | [Twilio Segment](catalogue/measurement.md#twilio-segment) | **C** | Reference | Production | Hard | Yes | Yes | Yes | Yes | Unverified | Some steps |
@@ -80,10 +80,10 @@ Creative systems judged on context, generation, editing, format adaptation and u
 
 | Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Canva](catalogue/creative-production.md#canva) | **A-** | Reference | Production | Easy | Yes | Yes | Yes | Unverified | Partial | Most steps |
+| [Canva](catalogue/creative-production.md#canva) | **A-** | Reference | Production | Easy | Yes | Yes | Yes | Unverified | Unverified | Most steps |
 | [Adobe Firefly Creative Production](catalogue/creative-production.md#adobe-firefly-creative-production) | **B+** | Reference | Test | Hard | Yes | Yes | Partial | No | Partial | Most steps |
 | [Figma](catalogue/creative-production.md#figma) | **B+** | Reference | Test | Easy | Yes | Yes | Yes | Partial | No | Most steps |
-| [Runway](catalogue/creative-production.md#runway) | **B+** | Emerging | Production | Easy | Partial | Yes | Partial | Unverified | No | Most steps |
+| [Runway](catalogue/creative-production.md#runway) | **B+** | Emerging | Production | Easy | Partial | Yes | Partial | Unverified | Unverified | Most steps |
 
 [Open the detailed assessments](catalogue/creative-production.md)
 
@@ -93,8 +93,8 @@ External research systems judged on discovery, retrieval, comparison, analysis a
 
 | Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Ahrefs](catalogue/research-intelligence.md#ahrefs) | **C+** | Reference | Production | Easy | Yes | Unverified | Unverified | Unverified | No | Assist only |
-| [Semrush](catalogue/research-intelligence.md#semrush) | **C+** | Reference | Production | Easy | Yes | No | No | Unverified | No | Assist only |
+| [Ahrefs](catalogue/research-intelligence.md#ahrefs) | **B** | Reference | Production | Easy | Yes | Partial | Partial | Partial | No | Some steps |
+| [Semrush](catalogue/research-intelligence.md#semrush) | **C+** | Reference | Production | Easy | Yes | No | No | No | No | Assist only |
 | [Similarweb](catalogue/research-intelligence.md#similarweb) | **C+** | Reference | Production | Easy | Yes | Unverified | Unverified | Unverified | No | Assist only |
 | [DataForSEO](catalogue/research-intelligence.md#dataforseo) | **C+** | Specialist | Production | Moderate | Yes | Partial | No | Unverified | No | Assist only |
 
@@ -110,8 +110,8 @@ Pipelines, warehouses and semantic layers judged on connection, inspection, quer
 | [Snowflake](catalogue/data-infrastructure.md#snowflake) | **B+** | Reference | Production | Hard | Yes | Depends | Depends | Depends | No | Depends |
 | [Airbyte](catalogue/data-infrastructure.md#airbyte) | **B+** | Reference | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
 | [Databricks](catalogue/data-infrastructure.md#databricks) | **B+** | Reference | Test | Hard | Yes | Depends | Depends | Depends | No | Most steps |
-| [Fivetran](catalogue/data-infrastructure.md#fivetran) | **C+** | Reference | Test | Hard | Yes | Partial | No | Unverified | Unverified | Assist only |
-| [RudderStack](catalogue/data-infrastructure.md#rudderstack) | **B-** | Emerging | Test | Moderate | Yes | Unverified | Partial | Unverified | Unverified | Some steps |
+| [Fivetran](catalogue/data-infrastructure.md#fivetran) | **C+** | Reference | Test | Hard | Yes | Partial | No | No | No | Assist only |
+| [RudderStack](catalogue/data-infrastructure.md#rudderstack) | **Not scored: verification needed** | Emerging | Test | Moderate | Yes | Unverified | Partial | Unverified | Unverified | Some steps |
 | [dbt](catalogue/data-infrastructure.md#dbt) | **B+** | Specialist | Test | Moderate | Yes | Depends | Depends | Depends | Partial | Most steps |
 | [Google MCP Toolbox for Databases](catalogue/data-infrastructure.md#google-mcp-toolbox-for-databases) | **B** | Specialist | Production | Specialist | Yes | Depends | Depends | Depends | No | Depends |
 
@@ -123,12 +123,12 @@ Cross-tool automation systems judged on connection, workflow construction, execu
 
 | Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Zapier](catalogue/automation-workflow.md#zapier) | **A-** | Reference | Production | Moderate | Yes | Partial | Partial | Depends | Partial | Most steps |
-| [Make](catalogue/automation-workflow.md#make) | **B+** | Reference | Production | Moderate | Yes | Depends | Partial | Depends | Partial | Most steps |
-| [Workato](catalogue/automation-workflow.md#workato) | **B** | Reference | Production | Hard | Yes | Partial | Partial | Depends | Depends | Some steps |
+| [Zapier](catalogue/automation-workflow.md#zapier) | **A-** | Reference | Production | Easy | Yes | Partial | Partial | Depends | Partial | Most steps |
+| [Make](catalogue/automation-workflow.md#make) | **B** | Reference | Test | Moderate | Yes | Unverified | Partial | Unverified | Unverified | Most steps |
+| [Workato](catalogue/automation-workflow.md#workato) | **B** | Reference | Test | Hard | Yes | Partial | Partial | Unverified | Unverified | Some steps |
 | [Pipedream](catalogue/automation-workflow.md#pipedream) | **A-** | Emerging | Production | Moderate | Yes | Partial | Partial | Depends | Partial | Most steps |
 | [Gumloop](catalogue/automation-workflow.md#gumloop) | **A-** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
-| [n8n](catalogue/automation-workflow.md#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Unverified | Yes | Most steps |
+| [n8n](catalogue/automation-workflow.md#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Yes | Most steps |
 
 [Open the detailed assessments](catalogue/automation-workflow.md)
 
