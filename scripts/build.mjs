@@ -13,13 +13,14 @@ const socialImageUrl = siteUrl + 'assets/social-preview.png';
 const sectionConfig = {
   'Media platforms': {
     file: 'media-platforms.md',
-    description: 'Advertising platforms and buying systems, judged on the most direct official route available to an AI-assisted operator.',
+    description: 'Advertising platforms and buying systems, judged on the named documented route available to an AI-assisted operator.',
     humanJob: 'Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.',
     criteria: [
-      { key: 'read', label: 'Read', fallback: 'read' },
-      { key: 'create', label: 'Create', fallback: 'create' },
-      { key: 'modify', label: 'Modify', fallback: 'modify' },
-      { key: 'delete', label: 'Delete', fallback: 'delete' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   },
   Analytics: {
@@ -27,11 +28,11 @@ const sectionConfig = {
     description: 'Analytics products judged on whether an agent can investigate performance and leave useful analysis behind.',
     humanJob: 'Explore data, answer a question, build a reusable report, configure analysis components and share the result.',
     criteria: [
-      { key: 'analyse', label: 'Analyse', fallback: 'read' },
-      { key: 'buildReports', label: 'Build reports', fallback: 'create' },
-      { key: 'configure', label: 'Configure', fallback: 'modify' },
-      { key: 'validate', label: 'Validate', fallback: 'read' },
-      { key: 'share', label: 'Share', fallback: 'create' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   },
   Measurement: {
@@ -39,11 +40,11 @@ const sectionConfig = {
     description: 'Collection, tagging and attribution systems judged on implementation, validation and operational monitoring.',
     humanJob: 'Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.',
     criteria: [
-      { key: 'inspect', label: 'Inspect', fallback: 'read' },
-      { key: 'configure', label: 'Configure', fallback: 'modify' },
-      { key: 'validate', label: 'Validate', fallback: 'read' },
-      { key: 'deploy', label: 'Deploy', fallback: 'create' },
-      { key: 'monitor', label: 'Monitor', fallback: 'read' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   },
   'Creative production': {
@@ -51,11 +52,11 @@ const sectionConfig = {
     description: 'Creative systems judged on context, generation, editing, format adaptation and usable output.',
     humanJob: 'Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.',
     criteria: [
-      { key: 'context', label: 'Read context', fallback: 'read' },
-      { key: 'create', label: 'Create', fallback: 'create' },
-      { key: 'edit', label: 'Edit', fallback: 'modify' },
-      { key: 'adapt', label: 'Adapt', fallback: 'modify' },
-      { key: 'export', label: 'Export', fallback: 'read' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   },
   'Research and intelligence': {
@@ -63,11 +64,11 @@ const sectionConfig = {
     description: 'External research systems judged on discovery, retrieval, comparison, analysis and export.',
     humanJob: 'Find the right market evidence, retrieve it, compare competitors or queries, analyse patterns and export the evidence.',
     criteria: [
-      { key: 'discover', label: 'Discover', fallback: 'read' },
-      { key: 'retrieve', label: 'Retrieve', fallback: 'read' },
-      { key: 'compare', label: 'Compare', fallback: 'read' },
-      { key: 'analyse', label: 'Analyse', fallback: 'read' },
-      { key: 'export', label: 'Export', fallback: 'read' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   },
   'Data infrastructure': {
@@ -75,11 +76,11 @@ const sectionConfig = {
     description: 'Pipelines, warehouses and semantic layers judged on connection, inspection, querying, transformation and operation.',
     humanJob: 'Connect sources, inspect schemas and health, query data, transform it and operate the pipeline safely.',
     criteria: [
-      { key: 'connect', label: 'Connect', fallback: 'create' },
-      { key: 'inspect', label: 'Inspect', fallback: 'read' },
-      { key: 'query', label: 'Query', fallback: 'read' },
-      { key: 'transform', label: 'Transform', fallback: 'modify' },
-      { key: 'operate', label: 'Operate', fallback: 'delete' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   },
   'Automation and workflow': {
@@ -87,11 +88,11 @@ const sectionConfig = {
     description: 'Cross-tool automation systems judged on connection, workflow construction, execution, debugging and monitoring.',
     humanJob: 'Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.',
     criteria: [
-      { key: 'connect', label: 'Connect', fallback: 'create' },
-      { key: 'build', label: 'Build', fallback: 'create' },
-      { key: 'run', label: 'Run', fallback: 'read' },
-      { key: 'debug', label: 'Debug', fallback: 'modify' },
-      { key: 'monitor', label: 'Monitor', fallback: 'read' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   },
   Modelling: {
@@ -99,11 +100,11 @@ const sectionConfig = {
     description: 'Specialist modelling frameworks judged on preparation, configuration, execution, validation and scenario planning.',
     humanJob: 'Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.',
     criteria: [
-      { key: 'prepare', label: 'Prepare data', fallback: 'create' },
-      { key: 'configure', label: 'Configure', fallback: 'modify' },
-      { key: 'run', label: 'Run', fallback: 'create' },
-      { key: 'validate', label: 'Validate', fallback: 'read' },
-      { key: 'scenarios', label: 'Scenarios', fallback: 'modify' }
+      {key: "read", label: "Read", fallback: "read"},
+      {key: "create", label: "Create", fallback: "create"},
+      {key: "modify", label: "Edit", fallback: "modify"},
+      {key: "delete", label: "Delete", fallback: "delete"},
+      {key: "publish", label: "Publish / activate", fallback: "publish"}
     ]
   }
 };
@@ -166,7 +167,7 @@ const operationCell = (label, value) => [
 
 const capabilitiesFor = (tool) => sectionConfig[tool.section].criteria.map((criterion) => ({
   label: criterion.label,
-  value: tool.workflow.capabilities?.[criterion.key] ?? tool.workflow.actions[criterion.fallback]
+  value: tool.workflow.actions[criterion.key]
 }));
 
 const evidenceBasisFor = (tool) => tool.workflow.evidenceBasis ?? workflowData.meta.defaultEvidenceBasis;
@@ -235,11 +236,12 @@ const toolRows = tools.map((tool, index) => {
     '  </div>',
     '  <div class="tool-rating">',
     '    <strong>' + escapeHtml(tool.grade) + '</strong>',
-    '    <span>' + escapeHtml(tool.readiness) + '</span>',
+    '    <span>' + escapeHtml(workflow.reviewStatus === 'pending' ? 'Previous grade; review pending' : tool.readiness) + '</span>',
     '  </div>',
     '  <section class="tool-detail" aria-label="' + escapeHtml(tool.name) + ' workflow detail">',
     '    <div class="blocker"><span>Biggest daily blocker</span><p>' + escapeHtml(workflow.blocker) + '</p></div>',
     '    <div class="operation-grid">',
+    operationCell('Connection', workflow.setup.tier),
     operationCell('Setup', workflow.setup.level),
     ...capabilitiesFor(tool).map((entry) => operationCell(entry.label, entry.value)),
     operationCell('Coverage', workflow.coverage.level),
@@ -374,7 +376,7 @@ const githubAnchor = (value) => value
 
 const overviewRow = (tool, link) => '| ' + [
   '[' + tool.name + '](' + link + ')',
-  '**' + tool.grade + '**',
+  '**' + tool.grade + '**' + (tool.workflow.reviewStatus === 'pending' ? ' (previous; review pending)' : ''),
   tool.position,
   tool.readiness,
   tool.workflow.setup.level,
@@ -417,6 +419,11 @@ const toolDetail = (tool, section) => {
     '- **Setup:** ' + workflow.setup.level + '. ' + workflow.setup.note + ' [' + workflow.setup.documentation.label + '](' + workflow.setup.documentation.url + ').',
     '- **Human job:** ' + sectionConfig[section].humanJob,
     '- **Capabilities:** ' + capabilitiesFor(tool).map((entry) => entry.label + ' **' + entry.value + '**').join(' · '),
+    '- **Read:** ' + workflow.readSummary,
+    '- **Write:** ' + workflow.writeSummary,
+    '- **Connection type:** ' + workflow.setup.tier,
+    '- **Review:** ' + workflow.reviewStatus,
+    ...Object.entries(workflow.actionScopes).map(([action, scope]) => '- **' + action + ':** ' + scope),
     '- **Coverage:** ' + workflow.coverage.level + '. ' + workflow.coverage.note,
     '- **Evidence basis:** ' + evidenceBasisFor(tool),
     '',
@@ -498,7 +505,7 @@ const readme = [
   '',
   'An evidence-backed comparison of Model Context Protocol (MCP) servers, advertising APIs, plugins and command-line tools used across media buying, analytics, measurement, creative production and marketing automation.',
   '',
-  'We grade the route an operator can connect now, not the vendor\'s potential. Every category is judged against the work a human would normally do with that kind of tool.',
+  'We compare what external AI can read, what it can write and how easily it connects. The same combined lens applies across categories, with the exact route and its limits stated in each record.',
   '',
   '> **Evidence basis:** ' + workflowData.meta.defaultEvidenceBasis + ' unless an entry states otherwise. A Production readiness label is not proof of hands-on execution.',
   '',
@@ -514,13 +521,13 @@ const readme = [
   '',
   '## How scoring works',
   '',
-  '1. Can the route finish a recurring job?',
-  '2. How much of that category\'s human job can it complete?',
-  '3. How hard is it to connect?',
+  '1. What useful information can external AI read?',
+  '2. What can it create, edit, delete or publish?',
+  '3. Is connection native, hosted, self-managed or custom-built?',
   '4. How much of the manual product does it cover?',
   '5. Is it mature and governable?',
   '',
-  '**Grade** measures daily usefulness. **Readiness** measures maturity. Production does not mean complete feature coverage.',
+  '**Grade** combines read, write and setup. Read-only and custom-API-only routes are capped at C+; that does not rate their overall product quality. **Readiness** describes documented maturity, not hands-on testing.',
   '',
   '| Grade | Use |',
   '| :---: | :--- |',
@@ -533,7 +540,7 @@ const readme = [
   '',
   '## CMS companion',
   '',
-  '[The AI CMS Index](catalogue/cms.md) assesses CMS platforms and AI/LLM workflows using a separate content-operations capability matrix.',
+  '[The AI CMS Index](catalogue/cms.md) assesses CMS platforms and AI/LLM workflows using the same read/write/setup lens, with content-specific action boundaries.',
   '',
   '## Data and maintenance',
   '',

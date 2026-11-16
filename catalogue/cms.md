@@ -2,339 +2,464 @@
 
 CMS platforms and their AI/LLM workflows. The assessment belongs to the named route, not the whole product.
 
-Catalogue updated: 2026-10-29. Editorial lead: [Léon Houlier](https://github.com/leonhoulier).
+Catalogue updated: 2026-11-16. Editorial lead: [Léon Houlier](https://github.com/leonhoulier).
 
 All entries: **Documentation reviewed**. No account connection or executed workflow is claimed. [Methodology](../METHODOLOGY.md#cms-companion).
 
-| Platform | Route | Grade | Readiness | Read | Draft | Edit | Publish | Localise |
+| Platform | Route | Grade | Readiness | Read | Create | Edit | Delete | Publish |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| WordPress.com | Official hosted MCP | B+ | Test | Yes | Yes | Yes | Yes | Depends |
-| WordPress MCP Adapter | Official adapter and registered Abilities | B | Test | Depends | Depends | Depends | Depends | Depends |
-| Webflow | Official Webflow MCP | B+ | Test | Yes | Yes | Yes | Unverified | Partial |
-| Contentful | Official hosted MCP | A- | Production | Yes | Yes | Yes | Yes | Yes |
-| Sanity | Official Sanity MCP | A- | Production | Yes | Yes | Yes | Yes | Depends |
-| Directus | Official built-in MCP | B+ | Test | Yes | Depends | Yes | Depends | Depends |
-| Shopify | Admin GraphQL API, custom integration | B | Test | Unverified | Yes | Unverified | Yes | Unverified |
-| WooCommerce | Official Abilities and MCP Adapter, developer preview | B | Test | Yes | Unverified | Yes | Unverified | Depends |
-| BigCommerce | Pages V3 and Blog Content APIs | B | Test | Yes | Partial | Yes | Partial | Depends |
-| Adobe Commerce / Magento | CMS REST API, PaaS or on-premises | B | Test | Yes | Partial | Yes | Partial | Depends |
+| WordPress.com | WordPress.com ChatGPT plugin / Claude connector | A | Production | Yes | Yes | Yes | Yes | Yes |
+| WordPress MCP Adapter | WordPress MCP Adapter with exposed abilities | C | Test | Depends | Depends | Depends | Depends | Depends |
+| Webflow | Webflow ChatGPT app / Claude connector | A- | Production | Yes | Yes | Yes | Yes | Yes |
+| Contentful | Contentful official hosted MCP | A- | Production | Yes | Yes | Yes | Yes | Yes |
+| Sanity | Sanity official hosted MCP | A- | Production | Yes | Yes | Yes | Partial | Yes |
+| Directus | Built-in MCP on your Directus instance | B+ | Test | Yes | Yes | Yes | Partial | Depends |
+| Shopify | Shopify AI Toolkit + authenticated local CLI | B | Test | Yes | Yes | Yes | Yes | Yes |
+| WooCommerce | WooCommerce abilities + WordPress MCP Adapter | B | Test | Yes | Yes | Yes | Yes | Unverified |
+| BigCommerce | BigCommerce Store Management MCP, early access | B- | Test | Yes | Partial | Yes | No | No |
+| Adobe Commerce / Magento | Adobe Commerce/Magento CMS REST API, custom integration | C | Test | Yes | Yes | Yes | Yes | Partial |
 
 ## WordPress.com
 
-Hosted MCP for posts, pages and supported site operations, including Jetpack-connected sites.
+Read posts, pages, blocks, settings and site statistics. Draft, edit, publish and trash posts and pages.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Read posts, pages, blocks, settings and site statistics.
+
+**Write:** Draft, edit, publish and trash posts and pages.
+
+**Connection type:** native-app
+
+- **read:** Read posts, pages, blocks, settings and site statistics.
+- **create:** Posts and pages default to draft.
+- **modify:** Whole content or individual blocks, including live content.
+- **delete:** Posts/pages move to trash; restoration window is 30 days.
+- **publish:** Post/page status changes publish content.
 
 **Day to day**
 
-- Create a draft post and edit supported page content.
-- Publish approved posts through the tools enabled for the site.
+- Read posts, pages, blocks, settings and site statistics.
+- Draft, edit, publish and trash posts and pages.
 
-**Route:** Official hosted MCP. **Setup:** Easy. Enable account MCP, connect with OAuth and select tool access; availability varies by plan, host and user permissions. [Connection documentation](https://developer.wordpress.com/docs/mcp/).
+**Route:** WordPress.com ChatGPT plugin / Claude connector. **Setup:** Easy. Enable MCP, connect the ChatGPT plugin or Claude connector and approve site permissions. [Connection documentation](https://developer.wordpress.com/docs/mcp/).
 
-**Coverage:** Most steps. Documented post and page operations support drafts, updates and publication. Inspect the live tool catalogue for the connected site.
+**Coverage:** Most steps. Draft, edit, publish and trash posts and pages. Live edits can apply immediately. Free-site access ends 30 November 2026.
 
-**Boundary:** Review changes before sending them: edits to a published post can go live immediately. Account tool settings are shared across connected assistants.
+**Boundary:** Live edits can apply immediately. Free-site access ends 30 November 2026.
 
 **Strengths**
 
-- Draft creation and post-section editing are documented.
-- Existing WordPress roles and tool controls govern access.
+- Read posts, pages, blocks, settings and site statistics.
+- Draft, edit, publish and trash posts and pages.
 
 **Limits**
 
-- Tool availability varies by site, plan and account settings.
-- Shared account-level settings need review before enabling writes.
+- Live edits can apply immediately. Free-site access ends 30 November 2026.
 
 **Official sources**
 
-- [Official route documentation](https://developer.wordpress.com/docs/mcp/)
-- [WordPress.com tool reference](https://developer.wordpress.com/docs/mcp/tools-reference/)
+- [Connection and tool documentation](https://developer.wordpress.com/docs/mcp/)
+- [Additional official documentation](https://developer.wordpress.com/docs/mcp/tools-reference/)
+- [Additional official documentation](https://wordpress.com/support/mcp/)
 
 ## WordPress MCP Adapter
 
-Official adapter exposes registered WordPress Abilities to an MCP client; capabilities depend on the site implementation.
+Discover and run explicitly exposed WordPress abilities. Editorial actions depend on additional installed abilities.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Discover and run explicitly exposed WordPress abilities.
+
+**Write:** Editorial actions depend on additional installed abilities.
+
+**Connection type:** self-managed
+
+- **read:** Discover and run explicitly exposed WordPress abilities.
+- **create:** Requires an exposed creation ability.
+- **modify:** Requires an exposed editing ability.
+- **delete:** Requires an exposed deletion ability.
+- **publish:** Requires an exposed publication ability.
 
 **Day to day**
 
-- Ask an assistant to run the Abilities registered on your site.
-- Expose a specific editorial task once its code and permissions exist.
+- Discover and run explicitly exposed WordPress abilities.
+- Editorial actions depend on additional installed abilities.
 
-**Route:** Official adapter and registered Abilities. **Setup:** Hard. A developer must install the adapter and supply the WordPress Abilities you need. Each Ability needs code, an input definition and a permission check. [Connection documentation](https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/).
+**Route:** WordPress MCP Adapter with exposed abilities. **Setup:** Hard. Install the adapter, expose abilities and configure authenticated access. [Connection documentation](https://github.com/WordPress/mcp-adapter).
 
-**Coverage:** Depends. The adapter connects agents to explicitly exposed Abilities; it is not a bundled, complete editorial toolset.
+**Coverage:** Depends. Editorial actions depend on additional installed abilities. Installing the adapter alone does not supply a complete editorial workflow.
 
-**Boundary:** Installing the adapter does not add editorial tools by itself. A developer must supply and check each task, including its permissions.
+**Boundary:** Installing the adapter alone does not supply a complete editorial workflow.
 
 **Strengths**
 
-- Uses a common WordPress Abilities contract.
-- The site can define narrowly scoped operations and permission checks.
+- Discover and run explicitly exposed WordPress abilities.
+- Editorial actions depend on additional installed abilities.
 
 **Limits**
 
-- Requires technical setup and suitable Abilities.
-- Editorial coverage varies by plugin and site configuration.
+- Installing the adapter alone does not supply a complete editorial workflow.
 
 **Official sources**
 
-- [Official route documentation](https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/)
+- [Vendor source code](https://github.com/WordPress/mcp-adapter)
+- [Vendor source code](https://raw.githubusercontent.com/WordPress/mcp-adapter/trunk/README.md)
+- [Additional official documentation](https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/)
+- [Additional official documentation](https://wordpress.org/plugins/mcp-adapter/)
 
 ## Webflow
 
-Official MCP manages CMS content alongside design, assets and supported site operations.
+Read collections, schemas, CMS items and site data. Draft, edit, publish, unpublish and delete CMS items.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Read collections, schemas, CMS items and site data.
+
+**Write:** Draft, edit, publish, unpublish and delete CMS items.
+
+**Connection type:** native-app
+
+- **read:** Read collections, schemas, CMS items and site data.
+- **create:** CMS items, staged as drafts.
+- **modify:** Draft CMS updates and supported design properties.
+- **delete:** CMS items and collection fields.
+- **publish:** Explicit CMS item publish and unpublish.
 
 **Day to day**
 
-- Update CMS items and supported page content.
-- Edit existing secondary-language items where the tool supports them.
+- Read collections, schemas, CMS items and site data.
+- Draft, edit, publish, unpublish and delete CMS items.
 
-**Route:** Official Webflow MCP. **Setup:** Moderate. Authorise the right workspace and site role. Some design operations also need the Designer and its bridge app open. [Connection documentation](https://developers.webflow.com/mcp/reference/overview).
+**Route:** Webflow ChatGPT app / Claude connector. **Setup:** Easy. Use the ChatGPT app or Claude connector and authorise the site with OAuth. [Connection documentation](https://developers.webflow.com/mcp/installing/chatgpt).
 
-**Coverage:** Most steps. Manage CMS collections and items, with partial localisation and additional design tools. Scope publication tools to the connected site.
+**Coverage:** Most steps. Draft, edit, publish, unpublish and delete CMS items. New localised items and site projects remain unavailable; some visual tasks need Designer open.
 
-**Boundary:** New items in secondary languages still need another route. Some actions also require the right site role or an open Designer session.
+**Boundary:** New localised items and site projects remain unavailable; some visual tasks need Designer open.
 
 **Strengths**
 
-- Combines structured content and site-design operations.
-- Uses existing site permissions and roles.
+- Read collections, schemas, CMS items and site data.
+- Draft, edit, publish, unpublish and delete CMS items.
 
 **Limits**
 
-- New localised CMS items are not supported through this route.
-- Some visual operations require the Designer, and new site creation stays in the dashboard.
+- New localised items and site projects remain unavailable; some visual tasks need Designer open.
 
 **Official sources**
 
-- [Official route documentation](https://developers.webflow.com/mcp/reference/overview)
-- [Webflow MCP limitations and localisation](https://developers.webflow.com/mcp/faqs)
+- [Connection and tool documentation](https://developers.webflow.com/mcp/installing/chatgpt)
+- [Additional official documentation](https://developers.webflow.com/mcp/reference/getting-started)
+- [Additional official documentation](https://developers.webflow.com/mcp/tools/data-tools)
+- [Additional official documentation](https://developers.webflow.com/mcp/reference/overview)
 
 ## Contentful
 
-Hosted MCP supports content entries, assets, content models, locales and releases.
+Read entries, models, assets, locales, references and releases. Manage content, publish assets and schedule supported releases.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Read entries, models, assets, locales, references and releases.
+
+**Write:** Manage content, publish assets and schedule supported releases.
+
+**Connection type:** hosted-mcp
+
+- **read:** Read entries, models, assets, locales, references and releases.
+- **create:** Entries and assets before publication.
+- **modify:** Entries, assets, models and locales.
+- **delete:** Entries, assets, models and locales.
+- **publish:** Content publication, unpublication and supported scheduled releases.
 
 **Day to day**
 
-- Draft and edit entries, assets and locale content.
-- Publish approved content or organise it into a release.
+- Read entries, models, assets, locales, references and releases.
+- Manage content, publish assets and schedule supported releases.
 
-**Route:** Official hosted MCP. **Setup:** Moderate. An administrator enables the required tools for each space and environment. You then connect the assistant with your own Contentful account. [Connection documentation](https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/).
+**Route:** Contentful official hosted MCP. **Setup:** Moderate. Configure the MCP app per environment, then connect with OAuth. [Connection documentation](https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/).
 
-**Coverage:** Most steps. Create and update entries, publish or unpublish content, manage locales and validate or schedule releases.
+**Coverage:** Most steps. Manage content, publish assets and schedule supported releases. Configure each environment; CMS publication does not verify the separate live frontend.
 
-**Boundary:** Check the user role and the tools enabled for the environment. Publishing in Contentful does not deploy your website; a local token-based connection has different access rules.
+**Boundary:** Configure each environment; CMS publication does not verify the separate live frontend.
 
 **Strengths**
 
-- Explicit entry and release publication tools.
-- Per-environment tool gating supplements user permissions.
+- Read entries, models, assets, locales, references and releases.
+- Manage content, publish assets and schedule supported releases.
 
 **Limits**
 
-- Each environment needs MCP app configuration.
-- Local-server defaults do not restrict a PAT to one environment.
+- Configure each environment; CMS publication does not verify the separate live frontend.
 
 **Official sources**
 
-- [Official route documentation](https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/)
+- [Connection and tool documentation](https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/)
 
 ## Sanity
 
-Hosted MCP queries content, creates drafts, patches documents and manages publication and release versions.
+Query documents, schemas, projects and datasets. Create and edit drafts; publish individual documents.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Query documents, schemas, projects and datasets.
+
+**Write:** Create and edit drafts; publish individual documents.
+
+**Connection type:** hosted-mcp
+
+- **read:** Query documents, schemas, projects and datasets.
+- **create:** Drafts or release versions; liveEdit types are immediately published.
+- **modify:** Patches to drafts and release versions.
+- **delete:** Discard drafts/release versions; published-document deletion unverified.
+- **publish:** Individual drafts and unpublish; no release scheduling or publication.
 
 **Day to day**
 
-- Find and edit structured content with its schema in view.
-- Publish drafts or prepare content in a release version.
+- Query documents, schemas, projects and datasets.
+- Create and edit drafts; publish individual documents.
 
-**Route:** Official Sanity MCP. **Setup:** Moderate. Connect with your Sanity account or a scoped API token. Select the correct project and dataset, and check the role’s write permissions. [Connection documentation](https://www.sanity.io/docs/ai/mcp-server).
+**Route:** Sanity official hosted MCP. **Setup:** Moderate. Connect the hosted MCP and authorise the relevant account. [Connection documentation](https://www.sanity.io/docs/ai/mcp-server).
 
-**Coverage:** Most steps. Query with GROQ, create or edit structured content and publish drafts. Release versions require their own document IDs.
+**Coverage:** Most steps. Create and edit drafts; publish individual documents. Release scheduling/publication stays outside MCP; liveEdit types bypass drafts.
 
-**Boundary:** Check the schema, language setup and draft or release version before editing. Some document types skip drafts. Context MCP is a separate, read-only connection.
+**Boundary:** Release scheduling/publication stays outside MCP; liveEdit types bypass drafts.
 
 **Strengths**
 
-- Schema-aware document operations and explicit publishing tools.
-- Supports draft and release-version workflows.
+- Query documents, schemas, projects and datasets.
+- Create and edit drafts; publish individual documents.
 
 **Limits**
 
-- Localisation depends on project schema and conventions.
-- Wrong draft or release IDs can target a different editorial state.
+- Release scheduling/publication stays outside MCP; liveEdit types bypass drafts.
 
 **Official sources**
 
-- [Official route documentation](https://www.sanity.io/docs/ai/mcp-server)
-- [Read-only Sanity Context MCP](https://www.sanity.io/docs/ai/sanity-context-mcp)
+- [Connection and tool documentation](https://www.sanity.io/docs/ai/mcp-server)
+- [Additional official documentation](https://www.sanity.io/docs/context/mcp-reference)
 
 ## Directus
 
-Built-in MCP connects assistants to content and data operations under existing Directus permissions.
+Read items, schemas, relationships, files and automation context. Manage items, files, schemas and configured workflows.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Read items, schemas, relationships, files and automation context.
+
+**Write:** Manage items, files, schemas and configured workflows.
+
+**Connection type:** self-managed
+
+- **read:** Read items, schemas, relationships, files and automation context.
+- **create:** Items using the project status conventions.
+- **modify:** Items, files, schemas and automation.
+- **delete:** Role permission plus Allow Deletes; off by default.
+- **publish:** Project-specific status fields and workflows.
 
 **Day to day**
 
-- Find and edit content in configured collections.
-- Use the publication and language fields your project defines.
+- Read items, schemas, relationships, files and automation context.
+- Manage items, files, schemas and configured workflows.
 
-**Route:** Official built-in MCP. **Setup:** Moderate. Use Directus 11.12 or later, enable MCP and create a dedicated user with suitable permissions and an access token. [Connection documentation](https://directus.com/docs/guides/ai/mcp).
+**Route:** Built-in MCP on your Directus instance. **Setup:** Moderate. Enable MCP and OAuth on the existing instance; self-hosting needs configuration and restart. [Connection documentation](https://directus.com/docs/guides/ai/mcp).
 
-**Coverage:** Depends. Create and edit content using the configured collections, roles and workflows. Publication is a project-specific status or workflow, not a universal publish button.
+**Coverage:** Most steps. Manage items, files, schemas and configured workflows. Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration.
 
-**Boundary:** Your project defines which fields control publication and languages. Check the role’s edit and delete permissions before changing content.
+**Boundary:** Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration.
 
 **Strengths**
 
-- Reuses existing Directus permissions.
-- Content operations do not require a separate middleware layer.
+- Read items, schemas, relationships, files and automation context.
+- Manage items, files, schemas and configured workflows.
 
 **Limits**
 
-- Publication and localisation need project-specific modelling.
-- A broad service role can expose more data than an editorial assistant needs.
+- Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration.
 
 **Official sources**
 
-- [Official route documentation](https://directus.com/docs/guides/ai/mcp)
+- [Connection and tool documentation](https://directus.com/docs/guides/ai/mcp)
+- [Additional official documentation](https://directus.com/docs/guides/ai/mcp/installation)
+- [Additional official documentation](https://directus.com/docs/guides/ai/mcp/oauth)
+- [Additional official documentation](https://directus.com/docs/guides/ai/mcp/tools)
 
 ## Shopify
 
-The Admin GraphQL API supports article and page creation and publication through a custom agent integration.
+Query store pages and other authorised Admin GraphQL data. Create, edit, publish and delete supported pages and articles.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Query store pages and other authorised Admin GraphQL data.
+
+**Write:** Create, edit, publish and delete supported pages and articles.
+
+**Connection type:** self-managed
+
+- **read:** Query store pages and other authorised Admin GraphQL data.
+- **create:** Pages and articles with publication controls.
+- **modify:** Page content, handles, templates and publication settings.
+- **delete:** Permanent pageDelete and articleDelete mutations.
+- **publish:** Page status and immediate/scheduled article publication.
 
 **Day to day**
 
-- Create a blog article or information page.
-- Set its publication status or schedule when creating it.
+- Query store pages and other authorised Admin GraphQL data.
+- Create, edit, publish and delete supported pages and articles.
 
-**Route:** Admin GraphQL API, custom integration. **Setup:** Hard. A developer must create an authenticated app, grant content permissions and build the assistant’s API connection. [Admin API setup guide](https://shopify.dev/docs/api/admin-graphql/latest#authentication).
+**Route:** Shopify AI Toolkit + authenticated local CLI. **Setup:** Hard. Install AI Toolkit and Shopify CLI, authenticate the store and explicitly allow mutations. [Connection documentation](https://shopify.dev/docs/apps/build/ai-toolkit).
 
-**Coverage:** Some steps. Create articles and pages with publication settings. This review does not establish a turnkey editorial MCP or general store-management coverage.
+**Coverage:** Some steps. Create, edit, publish and delete supported pages and articles. A coding-agent plugin still needs local CLI/runtime and scoped store access.
 
-**Boundary:** Review the copy and check the storefront after publication. Translation and editorial approvals need their own workflow.
+**Boundary:** A coding-agent plugin still needs local CLI/runtime and scoped store access.
 
 **Strengths**
 
-- Documented article and page creation with publication settings.
-- Explicit API scopes provide a configurable access boundary.
+- Query store pages and other authorised Admin GraphQL data.
+- Create, edit, publish and delete supported pages and articles.
 
 **Limits**
 
-- Requires an app and custom integration work.
-- Editing, deletion and localisation are not verified by the creation endpoints assessed here.
+- A coding-agent plugin still needs local CLI/runtime and scoped store access.
 
 **Official sources**
 
-- [Official route documentation](https://shopify.dev/docs/api/admin-graphql/2026-10/mutations/articleCreate)
-- [Page creation and publication](https://shopify.dev/docs/api/admin-graphql/2026-10/mutations/pageCreate)
-- [Developer AI toolkit](https://shopify.dev/docs/apps/build/devmcp)
+- [Connection and tool documentation](https://shopify.dev/docs/apps/build/ai-toolkit)
+- [Additional official documentation](https://shopify.dev/docs/api/shopify-cli/store/store-auth)
+- [Additional official documentation](https://shopify.dev/docs/api/shopify-cli/store/store-execute)
+- [Additional official documentation](https://shopify.dev/docs/api/admin-graphql/latest/queries/pages)
+- [Additional official documentation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageCreate)
+- [Additional official documentation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageUpdate)
+- [Additional official documentation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageDelete)
+- [Additional official documentation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/articleCreate)
+- [Additional official documentation](https://shopify.dev/docs/api/admin-graphql/latest/mutations/articleDelete)
 
 ## WooCommerce
 
-Official product Abilities let an assistant query and change supported store content through the WordPress MCP Adapter.
+Read products, orders and order notes. Create, update and delete products; perform selected order actions.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Read products, orders and order notes.
+
+**Write:** Create, update and delete products; perform selected order actions.
+
+**Connection type:** self-managed
+
+- **read:** Read products, orders and order notes.
+- **create:** Products; draft defaults not established.
+- **modify:** Products plus selected order status and note operations.
+- **delete:** Purpose-built product deletion ability.
+- **publish:** Not established by the reviewed sources.
 
 **Day to day**
 
-- Find products for a content review.
-- Create or update the product fields exposed by the store’s Abilities.
+- Read products, orders and order notes.
+- Create, update and delete products; perform selected order actions.
 
-**Route:** Official Abilities and MCP Adapter, developer preview. **Setup:** Moderate. A site administrator installs the MCP Adapter and creates a limited WordPress application password. Check the installed WooCommerce version and its Abilities before connecting. [Connection documentation](https://developer.woocommerce.com/docs/features/mcp/).
+**Route:** WooCommerce abilities + WordPress MCP Adapter. **Setup:** Hard. Install MCP Adapter separately; use a WordPress application password and expose the required abilities. [Connection documentation](https://developer.woocommerce.com/docs/features/mcp/).
 
-**Coverage:** Some steps. Product query, creation, updates and deletion are documented. Editorial fields depend on the exposed Ability schemas.
+**Coverage:** Some steps. Create, update and delete products; perform selected order actions. Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking.
 
-**Boundary:** The connection is a developer preview. Version 11.3 changes older connections; check support for extension fields and languages separately.
+**Boundary:** Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking.
 
 **Strengths**
 
-- Official product operations use WordPress permission checks.
-- The adapter can expose supported store tasks directly to an assistant.
+- Read products, orders and order notes.
+- Create, update and delete products; perform selected order actions.
 
 **Limits**
 
-- The integration remains developer preview.
-- Version changes, extension fields and publication behaviour need a store-level test.
+- Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking.
 
 **Official sources**
 
-- [WooCommerce MCP integration](https://developer.woocommerce.com/docs/features/mcp/)
-- [Version 11.3 migration advisory](https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp/)
-- [Version 11.3 beta status](https://developer.woocommerce.com/2026/10/26/woocommerce-11-3-pre-release/)
+- [Connection and tool documentation](https://developer.woocommerce.com/docs/features/mcp/)
+- [Additional official documentation](https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp/)
 
 ## BigCommerce
 
-Content APIs manage web pages and blog posts through a custom integration.
+Read product content and selected commerce data. Create hidden products and edit product copy and SEO fields.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Read product content and selected commerce data.
+
+**Write:** Create hidden products and edit product copy and SEO fields.
+
+**Connection type:** hosted-mcp
+
+- **read:** Read product content and selected commerce data.
+- **create:** Hidden products; promotions start disabled.
+- **modify:** Product copy, SEO and selected commerce fields.
+- **delete:** No deletion tool in the published management inventory.
+- **publish:** Hidden products require publication elsewhere.
 
 **Day to day**
 
-- Update information pages and their metadata.
-- Create, edit and publish blog posts.
+- Read product content and selected commerce data.
+- Create hidden products and edit product copy and SEO fields.
 
-**Route:** Pages V3 and Blog Content APIs. **Setup:** Hard. A developer must create a store API account, grant content permissions and build the connection to the assistant. [API account setup](https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts).
+**Route:** BigCommerce Store Management MCP, early access. **Setup:** Moderate. Store owner enables beta; connect with OAuth and grant explicit per-store scopes. [Connection documentation](https://docs.bigcommerce.com/developer/api-reference/mcp/store-management).
 
-**Coverage:** Some steps. Read, create, edit and delete pages or blog posts. Blog posts have a publication flag; page visibility is not a complete editorial approval workflow.
+**Coverage:** Some steps. Create hidden products and edit product copy and SEO fields. Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication.
 
-**Boundary:** Review changes before writing, then check the storefront. Your integration must handle each channel’s content and language conventions.
+**Boundary:** Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication.
 
 **Strengths**
 
-- Documented page and blog operations cover recurring content edits.
-- Blog publication is explicit in the API.
+- Read product content and selected commerce data.
+- Create hidden products and edit product copy and SEO fields.
 
 **Limits**
 
-- Requires a custom authenticated integration.
-- Page visibility and blog publication have different semantics.
+- Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication.
 
 **Official sources**
 
-- [Pages V3](https://docs.bigcommerce.com/developer/api-reference/rest/admin/content/pages)
-- [Official blog Content API schema](https://github.com/bigcommerce/api-specs/blob/main/reference/store_content.v2.yml)
+- [Connection and tool documentation](https://docs.bigcommerce.com/developer/api-reference/mcp/overview)
+- [Additional official documentation](https://docs.bigcommerce.com/developer/api-reference/mcp/store-management)
+- [Additional official documentation](https://docs.bigcommerce.com/developer/api-reference/rest/admin/content/pages)
 
 ## Adobe Commerce / Magento
 
-The traditional Commerce REST API manages CMS pages and blocks through a custom integration.
+Read and search CMS pages and blocks through REST APIs. Create, edit and delete pages/blocks; control page activation.
 
-Reviewed: 2026-10-29. Documentation reviewed.
+Reviewed: 2026-11-16. Documentation reviewed.
+
+**Read:** Read and search CMS pages and blocks through REST APIs.
+
+**Write:** Create, edit and delete pages/blocks; control page activation.
+
+**Connection type:** custom-api
+
+- **read:** Read and search CMS pages and blocks through REST APIs.
+- **create:** CMS pages and blocks, including inactive content.
+- **modify:** CMS pages and blocks.
+- **delete:** CMS pages and blocks with the required permissions.
+- **publish:** is_active changes visibility; no complete editorial approval flow.
 
 **Day to day**
 
-- Update CMS page copy and reusable content blocks.
-- Prepare page changes and set the page’s active state.
+- Read and search CMS pages and blocks through REST APIs.
+- Create, edit and delete pages/blocks; control page activation.
 
-**Route:** CMS REST API, PaaS or on-premises. **Setup:** Hard. A developer must configure an integration with CMS permissions and connect it to the assistant. The team must confirm the store’s version, deployment type and content conventions. [API documentation](https://developer.adobe.com/commerce/webapi/rest/).
+**Route:** Adobe Commerce/Magento CMS REST API, custom integration. **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://developer.adobe.com/commerce/webapi/rest/).
 
-**Coverage:** Some steps. Read, create, update and delete CMS pages and blocks. Page content and activation are separate fields; storefront delivery still needs a check.
+**Coverage:** Some steps. Create, edit and delete pages/blocks; control page activation. Traditional Commerce/Magento API scope only; custom integration and visual checks remain.
 
-**Boundary:** Check the rendered page and use the editor for visual Page Builder work. This assessment does not establish a complete approval process or Adobe Commerce SaaS feature parity.
+**Boundary:** Traditional Commerce/Magento API scope only; custom integration and visual checks remain.
 
 **Strengths**
 
-- Explicit CMS page and block operations.
-- CMS access is controlled through integration permissions.
+- Read and search CMS pages and blocks through REST APIs.
+- Create, edit and delete pages/blocks; control page activation.
 
 **Limits**
 
-- Requires custom engineering and deployment-specific checks.
-- An API write does not prove the storefront or Page Builder layout is correct.
+- Traditional Commerce/Magento API scope only; custom integration and visual checks remain.
 
 **Official sources**
 
-- [Adobe Commerce REST API overview](https://developer.adobe.com/commerce/webapi/rest/)
-- [CMS API routes](https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Cms/etc/webapi.xml)
-- [CMS page content and activation fields](https://github.com/magento/magento2/blob/2.4-develop/app/code/Magento/Cms/Api/Data/PageInterface.php)
+- [Connection and tool documentation](https://developer.adobe.com/commerce/webapi/rest/)
+- [Vendor source code](https://raw.githubusercontent.com/magento/magento2/2.4-develop/app/code/Magento/Cms/etc/webapi.xml)
+- [Vendor source code](https://raw.githubusercontent.com/magento/magento2/2.4-develop/app/code/Magento/Cms/Api/Data/PageInterface.php)

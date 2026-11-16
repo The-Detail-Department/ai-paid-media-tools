@@ -1,6 +1,6 @@
 # Media platforms
 
-Advertising platforms and buying systems, judged on the most direct official route available to an AI-assisted operator.
+Advertising platforms and buying systems, judged on the named documented route available to an AI-assisted operator.
 
 > **Evidence basis:** Documentation reviewed unless an entry states otherwise.
 
@@ -8,72 +8,78 @@ Advertising platforms and buying systems, judged on the most direct official rou
 
 [Media platforms](media-platforms.md) · [Analytics](analytics.md) · [Measurement](measurement.md) · [Creative production](creative-production.md) · [Research and intelligence](research-intelligence.md) · [Data infrastructure](data-infrastructure.md) · [Automation and workflow](automation-workflow.md) · [Modelling](modelling.md)
 
-| Tool | Grade | Market role | Readiness | Setup | Read | Create | Modify | Delete | Human-job coverage |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [TikTok for Business](#tiktok-for-business) | **A** | Reference | Production | Easy | Yes | Yes | Yes | Partial | Most steps |
-| [Amazon Ads](#amazon-ads) | **B+** | Reference | Test | Hard | Yes | Yes | Yes | Yes | Most steps |
-| [Campaign Manager 360](#campaign-manager-360) | **B** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Most steps |
-| [The Trade Desk](#the-trade-desk) | **B** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Most steps |
-| [X Ads](#x-ads) | **B** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Most steps |
-| [Apple Ads](#apple-ads) | **B-** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Some steps |
-| [Display & Video 360](#display--video-360) | **B-** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Some steps |
-| [Google Ads](#google-ads) | **B-** | Reference | Production | Hard | Yes | No | No | No | Assist only |
-| [Meta Ads](#meta-ads) | **B-** | Reference | Test | Easy | Yes | Partial | No | No | Some steps |
-| [Microsoft Advertising](#microsoft-advertising) | **C+** | Reference | Production | Easy | Yes | No | No | No | Assist only |
-| [Search Ads 360](#search-ads-360) | **C+** | Reference | Production | Hard | Yes | No | No | No | Assist only |
-| [Pinterest Ads](#pinterest-ads) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Some steps |
-| [LinkedIn Ads](#linkedin-ads) | **C** | Reference | Test | Hard | Yes | Partial | Partial | Partial | Some steps |
-| [Reddit Ads](#reddit-ads) | **C** | Reference | Test | Hard | Yes | Partial | Partial | Partial | Some steps |
-| [Snapchat Ads](#snapchat-ads) | **C** | Reference | Test | Hard | Yes | No | No | No | Assist only |
+| Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [TikTok for Business](#tiktok-for-business) | **A-** | Reference | Production | Moderate | Yes | Yes | Yes | Unverified | Unverified | Most steps |
+| [Amazon Ads](#amazon-ads) | **B+** | Reference | Test | Hard | Yes | Yes | Yes | Yes | Partial | Most steps |
+| [X Ads](#x-ads) | **B+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Yes | Most steps |
+| [The Trade Desk](#the-trade-desk) | **B** (previous; review pending) | Reference | Test | Moderate | Unverified | Unverified | Unverified | Unverified | Unverified | Depends |
+| [Google Ads](#google-ads) | **B-** | Reference | Production | Hard | Yes | Partial | Partial | Partial | No | Some steps |
+| [Meta Ads](#meta-ads) | **B-** (previous; review pending) | Reference | Test | Moderate | Unverified | Unverified | Unverified | Unverified | Unverified | Depends |
+| [Apple Ads](#apple-ads) | **C+** | Reference | Production | Hard | Yes | Yes | Yes | Unverified | Unverified | Some steps |
+| [Campaign Manager 360](#campaign-manager-360) | **C+** | Reference | Production | Hard | Yes | Yes | Yes | Unverified | Partial | Some steps |
+| [Display & Video 360](#display--video-360) | **C+** | Reference | Production | Hard | Yes | Yes | Yes | Partial | Partial | Some steps |
+| [Microsoft Advertising](#microsoft-advertising) | **C+** | Reference | Production | Hard | Yes | No | No | No | No | Assist only |
+| [Snapchat Ads](#snapchat-ads) | **C+** | Reference | Production | Moderate | Yes | No | No | No | No | Assist only |
+| [Pinterest Ads](#pinterest-ads) | **C+** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Yes | Some steps |
+| [Search Ads 360](#search-ads-360) | **C** | Reference | Production | Hard | Yes | No | No | No | No | Assist only |
+| [LinkedIn Ads](#linkedin-ads) | **C** | Reference | Test | Hard | Yes | Yes | Yes | Partial | Partial | Some steps |
+| [Reddit Ads](#reddit-ads) | **C** | Reference | Test | Hard | Yes | Yes | Partial | Unverified | Unverified | Some steps |
 
 ## TikTok for Business
 
-**A · Production · Reference**
+**A- · Production · Reference**
 
-A vendor-hosted MCP for campaign management, reporting, audiences and creative operations, with full and progressive-disclosure endpoints.
+Read campaign information, reports and audience context. Create campaigns and change budgets, bids and targeting.
 
 **Day to day**
 
-- Build campaigns and adjust supported bids or targeting.
-- Check results and manage supported creative assets.
+- Read campaign information, reports and audience context.
+- Create campaigns and change budgets, bids and targeting.
 
-> **What still needs you:** Choose the tools needed for the task and review changes before launch. Loading every available tool makes daily use harder.
+> **What still needs you:** Exact deletion and launch tools remain unverified.
 
-- **Route:** Official remote MCP.
-- **Scope:** Campaigns, ad groups, ads, audiences, creative and reporting.
-- **Setup:** Easy. Connect the hosted service and approve account access. Check which advertising tools your account receives. [Connection documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en).
+- **Route:** TikTok for Business official hosted MCP.
+- **Scope:** Read campaign information, reports and audience context..
+- **Setup:** Moderate. Connect the hosted MCP and authorise the relevant account. [Connection documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
-- **Coverage:** Most steps. Around 400 tools cover creation, targeting, bidding, reporting and creative operations. Some manual and account workflows remain outside the route.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **Unverified**
+- **Read:** Read campaign information, reports and audience context.
+- **Write:** Create campaigns and change budgets, bids and targeting.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read campaign information, reports and audience context.
+- **create:** Campaigns.
+- **modify:** Budgets, bids, targeting and ad-group pausing.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Creation does not establish a separate activation tool.
+- **Coverage:** Most steps. Create campaigns and change budgets, bids and targeting. Exact deletion and launch tools remain unverified.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official remote MCP covers campaign, reporting, audience and creative work.
-- Read/write capability makes it useful beyond analysis.
-- The interface is designed for advertiser workflows rather than a generic API bridge.
+- Read campaign information, reports and audience context.
+- Create campaigns and change budgets, bids and targeting.
 
 **Limits**
 
-- Broad write permissions increase the cost of a bad instruction.
-- Business account eligibility and permissions still govern availability.
-- No dedicated official CLI was verified.
+- Exact deletion and launch tools remain unverified.
 
 **Official links**
 
-- **Product / official page:** [TikTok for Business MCP documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
-- **AI interface / endpoint:** [Official remote MCP](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
-- **MCP:** [Official remote MCP](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
+- **Product / official page:** [Connection and tool documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
+- **AI interface / endpoint:** [TikTok for Business official hosted MCP](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
+- **MCP:** [TikTok for Business official hosted MCP](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
 - **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [TikTok API for Business](https://business-api.tiktok.com/portal/docs)
-- **Documentation:** [TikTok for Business MCP documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
+- **Documentation:** [Connection and tool documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en)
 - **GitHub:** No official repository verified
 
-- **Access:** TikTok for Business account and OAuth permissions.
-- **Watch:** The broad endpoint exposes hundreds of tools. Progressive disclosure is safer for smaller agent contexts.
-- **Sources:** [TikTok for Business MCP documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en) · [API for Business documentation](https://business-api.tiktok.com/portal/docs)
-- **Last checked:** 5 Sept 2026
+- **Access:** TikTok for Business account and authorised permissions; vendor describes production-ready support.
+- **Watch:** Exact deletion and launch tools remain unverified.
+- **Sources:** [Connection and tool documentation](https://ads.tiktok.com/resources/help/article/about-tiktok-for-business-mcp-server?lang=en) · [Additional official documentation](https://ads.tiktok.com/business/en/blog/tiktok-agentic-hub-ai-agents-skills-mcp) · [Additional official documentation](https://business-api.tiktok.com/portal/docs)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
@@ -81,101 +87,113 @@ A vendor-hosted MCP for campaign management, reporting, audiences and creative o
 
 **B+ · Test · Reference**
 
-An official MCP layer over Amazon Ads API functionality, including multi-step tools for campaign creation, reporting and market expansion.
+Read performance, account and billing information. Create, update and delete supported campaigns.
 
 **Day to day**
 
-- Create or update supported campaigns.
-- Request reports and prepare campaigns for additional markets.
+- Read performance, account and billing information.
+- Create, update and delete supported campaigns.
 
-> **What still needs you:** Partner API access is required, and the connection is still in beta. Check the actions available to your account.
+> **What still needs you:** Open beta with partner/API access; not every ad product is covered.
 
-- **Route:** Official remote MCP, open beta.
-- **Scope:** Campaigns, accounts, reports, billing and selected multi-step workflows.
-- **Setup:** Hard. An eligible Amazon Ads partner needs active API credentials. A hosted connector does not remove that access requirement. [Beta access information](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta).
+- **Route:** Amazon Ads official hosted MCP.
+- **Scope:** Read performance, account and billing information..
+- **Setup:** Hard. Use approved Amazon Ads API credentials and connect the beta server. [Connection documentation](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Yes**
-- **Coverage:** Most steps. Includes individual API capabilities plus tools for account creation, reports, campaign launch and locale expansion.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Yes** · Publish / activate **Partial**
+- **Read:** Read performance, account and billing information.
+- **Write:** Create, update and delete supported campaigns.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read performance, account and billing information.
+- **create:** Supported campaigns and Sponsored Products workflows.
+- **modify:** Supported campaign settings.
+- **delete:** Supported campaigns.
+- **publish:** Launch workflows still include review and approval.
+- **Coverage:** Most steps. Create, update and delete supported campaigns. Open beta with partner/API access; not every ad product is covered.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official MCP can create, update and delete campaign objects.
-- Retail-media context makes it strategically important.
-- Uses the established Amazon Ads API permission model.
+- Read performance, account and billing information.
+- Create, update and delete supported campaigns.
 
 **Limits**
 
-- The MCP is still an open beta.
-- Access is limited to partners with active API credentials.
-- Destructive campaign operations require strong human approval gates.
+- Open beta with partner/API access; not every ad product is covered.
 
 **Official links**
 
-- **Product / official page:** [Amazon Ads MCP announcement](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
-- **AI interface / endpoint:** [Official open beta](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
-- **MCP:** [Official open beta](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
+- **Product / official page:** [Connection and tool documentation](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
+- **AI interface / endpoint:** [Amazon Ads official hosted MCP](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
+- **MCP:** [Amazon Ads official hosted MCP](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
 - **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Amazon Ads API](https://advertising.amazon.com/en-ca/about-api)
-- **Documentation:** [Amazon Ads MCP announcement](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
+- **Documentation:** [Connection and tool documentation](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
 - **GitHub:** No official repository verified
 
-- **Access:** Open beta for Amazon Ads partners with active API credentials.
-- **Watch:** The MCP can create, update and delete campaigns. Use review and approval controls before execution.
-- **Sources:** [Amazon Ads MCP announcement](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta) · [Amazon Ads API](https://advertising.amazon.com/en-ca/about-api)
-- **Last checked:** 5 Sept 2026
+- **Access:** Globally available open beta to Amazon Ads partners with active API credentials.
+- **Watch:** Open beta with partner/API access; not every ad product is covered.
+- **Sources:** [Connection and tool documentation](https://advertising.amazon.com/en-ca/library/news/amazon-ads-mcp-server-open-beta)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
-## Campaign Manager 360
+## X Ads
 
-**B · Production · Reference**
+**B+ · Test · Reference**
 
-The Campaign Manager 360 API supports large-scale trafficking, creative, conversion, reporting and attribution workflows.
+Read campaign structure, analytics, audiences and creative assets. Build and edit campaigns, then activate them explicitly.
 
 **Day to day**
 
-- Manage placements, ads and creatives.
-- Retrieve trafficking and measurement data.
+- Read campaign structure, analytics, audiences and creative assets.
+- Build and edit campaigns, then activate them explicitly.
 
-> **What still needs you:** A developer must map the account permissions and linked campaign objects. A second person should check the finished setup.
+> **What still needs you:** Developer-app OAuth setup remains; selected deletes exclude campaign deletion.
 
-- **Route:** Official API.
-- **Scope:** Campaigns, placements, ads, creatives, conversions and reports.
-- **Setup:** Hard. A developer must configure Google Cloud and account authentication. The CM360 account and user profile need API permission. [API setup guide](https://developers.google.com/doubleclick-advertisers/getting_started).
+- **Route:** X Ads official hosted MCP.
+- **Scope:** Read campaign structure, analytics, audiences and creative assets..
+- **Setup:** Hard. Configure the developer app and OAuth grant, then connect hosted MCP. [Connection documentation](https://docs.x.com/x-ads-api/mcp).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
-- **Coverage:** Most steps. Strong trafficking and measurement coverage, but no official agent interface packages the resource model for daily use.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **Yes**
+- **Read:** Read campaign structure, analytics, audiences and creative assets.
+- **Write:** Build and edit campaigns, then activate them explicitly.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read campaign structure, analytics, audiences and creative assets.
+- **create:** Campaigns, line items, audiences and creative objects.
+- **modify:** Campaigns, line items and supported related objects.
+- **delete:** Selected audiences, creatives, media and tags.
+- **publish:** Explicit campaign and line-item activation; new objects start paused.
+- **Coverage:** Most steps. Build and edit campaigns, then activate them explicitly. Developer-app OAuth setup remains; selected deletes exclude campaign deletion.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Mature API supports trafficking, creative, conversion and reporting workflows.
-- Broad resource coverage suits complex enterprise operations.
-- User-profile permissions remain the control plane.
+- Read campaign structure, analytics, audiences and creative assets.
+- Build and edit campaigns, then activate them explicitly.
 
 **Limits**
 
-- No official MCP, plugin or dedicated CLI was verified.
-- The resource model and permissions create implementation overhead.
-- Write access can affect live trafficking and needs a second-person check.
+- Developer-app OAuth setup remains; selected deletes exclude campaign deletion.
 
 **Official links**
 
-- **Product / official page:** [Campaign Manager 360 API](https://developers.google.com/doubleclick-advertisers/rest/)
-- **AI interface / endpoint:** No official AI route verified
-- **MCP:** No official MCP verified
-- **Plugin:** No official agent plugin verified
-- **CLI:** No dedicated official CLI verified
-- **API / SDK:** [Campaign Manager 360 API](https://developers.google.com/doubleclick-advertisers/rest/)
-- **Documentation:** [Campaign Manager 360 API](https://developers.google.com/doubleclick-advertisers/rest/)
+- **Product / official page:** [Connection and tool documentation](https://docs.x.com/x-ads-api/mcp)
+- **AI interface / endpoint:** [X Ads official hosted MCP](https://docs.x.com/x-ads-api/mcp)
+- **MCP:** [X Ads official hosted MCP](https://docs.x.com/x-ads-api/mcp)
+- **Plugin:** [xurl agent skill](https://github.com/xdevplatform/xurl/blob/main/SKILL.md)
+- **CLI:** [xurl CLI](https://github.com/xdevplatform/xurl)
+- **API / SDK:** [X Ads API](https://docs.x.com/x-ads-api/introduction)
+- **Documentation:** [Connection and tool documentation](https://docs.x.com/x-ads-api/mcp)
 - **GitHub:** No official repository verified
 
-- **Access:** A Campaign Manager 360 account with API access, a permitted user profile, a Google Cloud project and OAuth 2.0 credentials.
-- **Watch:** Many resources are writable. User-profile permissions in Campaign Manager 360 govern what the API can change.
-- **Sources:** [Campaign Manager 360 API](https://developers.google.com/doubleclick-advertisers/rest/) · [Campaign Manager 360 API setup](https://developers.google.com/doubleclick-advertisers/getting_started)
-- **Last checked:** 5 Sept 2026
+- **Access:** Existing ad account access; ads.read/ads.write and optional media.write scopes.
+- **Watch:** Developer-app OAuth setup remains; selected deletes exclude campaign deletion.
+- **Sources:** [Connection and tool documentation](https://docs.x.com/x-ads-api/mcp)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
@@ -183,202 +201,53 @@ The Campaign Manager 360 API supports large-scale trafficking, creative, convers
 
 **B · Test · Reference**
 
-The Trade Desk's Open Agentic Kit provides MCP-based access to Ask Koa for platform data and actions, including campaign creation and monitoring.
+Platform data access is announced; exact tools remain unverified. Current OAK action inventory remains unverified.
 
 **Day to day**
 
-- Explore the data and actions enabled for your beta account.
-- Confirm the available tools with your account team before planning a workflow.
+- Platform data access is announced; exact tools remain unverified.
 
-> **What still needs you:** Your account team must confirm eligibility and available tools. Most teams cannot test this beta on their own.
+> **What still needs you:** Private beta and inaccessible tool evidence; keep the previous grade pending.
 
-- **Route:** Official OAK MCP, private beta.
-- **Scope:** Campaign planning, activation, optimisation and reporting.
-- **Setup:** Hard. Available only to selected partners through an account representative, with account-managed credentials. [Beta access information](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates).
+- **Route:** The Trade Desk OAK, previous assessment.
+- **Scope:** Platform data access is announced; exact tools remain unverified..
+- **Setup:** Moderate. Selected-partner access; current transport and tools need confirmation. [Connection documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ReleaseNotes).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
-- **Coverage:** Most steps. Published scope spans data and actions, but exact tool coverage is not public and access is private beta.
+- **Capabilities:** Read **Unverified** · Create **Unverified** · Edit **Unverified** · Delete **Unverified** · Publish / activate **Unverified**
+- **Read:** Platform data access is announced; exact tools remain unverified.
+- **Write:** Current OAK action inventory remains unverified.
+- **Connection type:** hosted-mcp
+- **Review:** pending
+- **read:** Platform data access is announced; exact tools remain unverified.
+- **create:** Current tool coverage needs verification.
+- **modify:** Current tool coverage needs verification.
+- **delete:** Current tool coverage needs verification.
+- **publish:** Current tool coverage needs verification.
+- **Coverage:** Depends. Current OAK action inventory remains unverified. Private beta and inaccessible tool evidence; keep the previous grade pending.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official OAK MCP connects AI assistants to Ask Koa.
-- Published scope includes querying data, creating campaigns and monitoring live activity.
-- The underlying REST and GraphQL APIs cover substantial platform operations.
+- The previous grade is retained while current evidence is incomplete.
 
 **Limits**
 
-- OAK is available only to selected partners in private beta.
-- Broad action scope makes approval and audit controls essential.
-- Practical onboarding still depends on an account representative.
+- Private beta and inaccessible tool evidence; keep the previous grade pending.
 
 **Official links**
 
-- **Product / official page:** [OAK private beta release note](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates)
-- **AI interface / endpoint:** [Official OAK MCP, private beta](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates)
-- **MCP:** [Official OAK MCP, private beta](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates)
+- **Product / official page:** [Connection and tool documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ReleaseNotes)
+- **AI interface / endpoint:** [Previous MCP record; review pending](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates)
+- **MCP:** [Previous MCP record; review pending](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates)
 - **Plugin:** No separate official agent plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Platform REST and GraphQL APIs](https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines)
-- **Documentation:** [OAK private beta release note](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates)
+- **Documentation:** [Connection and tool documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ReleaseNotes)
 - **GitHub:** No official repository verified
 
-- **Access:** OAK is available to selected partners in private beta through their account representative. API credentials are also account-managed.
-- **Watch:** Published scope includes both data and actions. Treat campaign creation and other platform mutations as approval-gated operations.
-- **Sources:** [OAK private beta release note](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates) · [Open Agentic Kit definition](https://partner.thetradedesk.com/v3/portal/resources/doc/Glossary) · [Platform API usage](https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#media-platforms)
-
-## X Ads
-
-**B · Test · Reference**
-
-X Ads has an official hosted MCP for campaign creation and updates, targeting, audiences, creative assets and reporting.
-
-**Day to day**
-
-- Build paused campaigns and line items.
-- Update supported targeting, audiences and creative assets.
-
-> **What still needs you:** Review paused campaigns before activating them: activation can start spend. Some Ads API operations remain outside the MCP.
-
-- **Route:** Official hosted Ads MCP.
-- **Scope:** Advertiser resources, campaigns and reporting.
-- **Setup:** Hard. A developer must register an X app, enable Ads access and configure account authentication with the required permissions. [Connection documentation](https://docs.x.com/x-ads-api/mcp).
-- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
-- **Coverage:** Most steps. Read accounts and results, create and update campaigns and line items, manage targeting and supported creative and audience objects.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Official Ads-specific MCP documents campaign and line-item writes.
-- New campaigns and line items start paused, with separate activation tools.
-- Includes targeting, creative, audience and conversion-tracking tools.
-
-**Limits**
-
-- Developer-app and Ads access remain prerequisites.
-- Campaign deletion is not in the documented MCP tool list.
-- Activation and budget changes require explicit operating controls.
-
-**Official links**
-
-- **Product / official page:** [X Ads MCP tools and authentication](https://docs.x.com/x-ads-api/mcp)
-- **AI interface / endpoint:** [https://ads-api.x.com/mcp](https://ads-api.x.com/mcp)
-- **MCP:** [Official X Ads MCP](https://docs.x.com/x-ads-api/mcp)
-- **Plugin:** [xurl agent skill](https://github.com/xdevplatform/xurl/blob/main/SKILL.md)
-- **CLI:** [xurl CLI](https://github.com/xdevplatform/xurl)
-- **API / SDK:** [X Ads API](https://docs.x.com/x-ads-api/introduction)
-- **Documentation:** [X Ads MCP tools and authentication](https://docs.x.com/x-ads-api/mcp)
-- **GitHub:** [Official xurl repository](https://github.com/xdevplatform/xurl)
-
-- **Access:** Developer account and Ads API access; some endpoints require allowlisting.
-- **Watch:** Campaigns and line items are created paused. Activation is a separate action; some object deletion is documented, but campaign deletion is not.
-- **Sources:** [X Ads MCP tools and authentication](https://docs.x.com/x-ads-api/mcp) · [X Ads API documentation](https://docs.x.com/x-ads-api/introduction) · [Official xurl repository](https://github.com/xdevplatform/xurl) · [General X API MCP documentation](https://github.com/xdevplatform/docs/blob/main/tools/mcp.mdx)
-- **Last checked:** 29 Oct 2026
-
-[Back to comparison](#media-platforms)
-
-## Apple Ads
-
-**B- · Production · Reference**
-
-Apple's Platform API lets advertisers and agencies manage campaigns, ad groups and keywords, pull reports and work with App Store and Apple Maps ads.
-
-**Day to day**
-
-- Create and update supported App Store campaigns.
-- Retrieve campaign results for review.
-
-> **What still needs you:** Review bids, budgets and targeting before applying changes. The assistant can only use the API actions your integration exposes.
-
-- **Route:** Official Platform API.
-- **Scope:** Campaigns, ad groups, keywords and reports.
-- **Setup:** Hard. A developer must configure API credentials, an eligible account role and the integration used by the assistant. [API documentation](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api).
-- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
-- **Coverage:** Some steps. Core campaign operations are covered, but no official MCP, agent plugin or daily CLI was verified.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Official API supports campaign, ad-group, keyword and reporting work.
-- API roles distinguish read-only from read/write access.
-- Covers ads on the App Store and Apple Maps.
-
-**Limits**
-
-- No official MCP, plugin or dedicated CLI was verified.
-- Third-party providers require separate registration.
-- Daily AI use needs a custom integration and careful OAuth setup.
-
-**Official links**
-
-- **Product / official page:** [Apple Ads Platform API](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api)
-- **AI interface / endpoint:** No official AI route verified
-- **MCP:** No official MCP verified
-- **Plugin:** No official agent plugin verified
-- **CLI:** No dedicated official CLI verified
-- **API / SDK:** [Apple Ads Platform API](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api)
-- **Documentation:** [Apple Ads Platform API](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api)
-- **GitHub:** No official repository verified
-
-- **Access:** An Apple Ads API user with an eligible role and OAuth 2.0 credentials; third-party providers require separate registration.
-- **Watch:** API roles can be read-only or read-write. Verify the assigned role before using an automation layer.
-- **Sources:** [Apple Ads Platform API](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api) · [Apple Ads API resources](https://ads.apple.com/app-store/resources)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#media-platforms)
-
-## Display & Video 360
-
-**B- · Production · Reference**
-
-Google's DV360 API can manage advertisers, campaigns, insertion orders, line items, targeting, creatives and users. Reporting uses a separate Bid Manager API.
-
-**Day to day**
-
-- Build and update supported campaigns and line items.
-- Manage trafficking settings through an integration.
-
-> **What still needs you:** Building campaigns and retrieving performance use separate APIs. Some tasks still need the DV360 interface.
-
-- **Route:** Official API.
-- **Scope:** Advertisers, campaigns, insertion orders, line items, targeting and creatives.
-- **Setup:** Hard. A developer must configure Google Cloud, account authentication and a custom connection. The user also needs DV360 account permissions. [API documentation](https://developers.google.com/display-video/api).
-- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
-- **Coverage:** Some steps. Broad trafficking coverage, but performance reporting is separate and some YouTube and Partners writes are unsupported.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Mature official API covers core programmatic campaign resources.
-- Supports insertion orders, line items, targeting, creatives and users.
-- Role-based access can separate read, standard and admin operations.
-
-**Limits**
-
-- No official MCP or agent plugin was verified.
-- Performance reporting requires the separate Bid Manager API.
-- Some YouTube and Partners write workflows remain outside the API.
-
-**Official links**
-
-- **Product / official page:** [DV360 API overview](https://developers.google.com/display-video/api)
-- **AI interface / endpoint:** No official AI route verified
-- **MCP:** No official MCP verified
-- **Plugin:** No official agent plugin verified
-- **CLI:** No dedicated official CLI verified
-- **API / SDK:** [Display & Video 360 API](https://developers.google.com/display-video/api)
-- **Documentation:** [DV360 API overview](https://developers.google.com/display-video/api)
-- **GitHub:** No official repository verified
-
-- **Access:** A Google Cloud project, OAuth 2.0 and a DV360 user with access to the relevant partner or advertiser.
-- **Watch:** The API can retrieve, create and update resources, but it does not return performance data and does not support every YouTube & Partners write workflow.
-- **Sources:** [DV360 API overview](https://developers.google.com/display-video/api) · [DV360 API limitations and permissions](https://developers.google.com/display-video/api/support/faq)
+- **Access:** Private beta from 10 August 2026. Current public search excerpt still says selected partners only.
+- **Watch:** Private beta and inaccessible tool evidence; keep the previous grade pending.
+- **Sources:** [Connection and tool documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ReleaseNotes) · [Additional official documentation](https://partner.thetradedesk.com/v3/portal/news/doc/DocsUpdates)
 - **Last checked:** 5 Sept 2026
 
 [Back to comparison](#media-platforms)
@@ -387,50 +256,56 @@ Google's DV360 API can manage advertisers, campaigns, insertion orders, line ite
 
 **B- · Production · Reference**
 
-Queries account structure and performance through Google Ads Query Language. The current official MCP surface is read-only.
+Read campaign structure, metrics and GAQL reports. Create assets and manage labels, not campaigns or budgets.
 
 **Day to day**
 
-- Compare spend and conversions across campaigns.
-- Find campaigns that need a closer look.
+- Read campaign structure, metrics and GAQL reports.
+- Create assets and manage labels, not campaigns or budgets.
 
-> **What still needs you:** It cannot create an ad, change a bid or budget, pause an entity or fix the issue it finds.
+> **What still needs you:** Campaign changes still require another route; video upload is local only.
 
-- **Route:** Official MCP.
-- **Scope:** Campaign and performance data.
-- **Setup:** Hard. A developer must obtain Ads API access, configure a Google Cloud project and set up account authentication before the assistant can query it. [Connection documentation](https://github.com/googleads/google-ads-mcp).
+- **Route:** Google Ads official MCP, local or self-deployed.
+- **Scope:** Read campaign structure, metrics and GAQL reports..
+- **Setup:** Hard. Run Python locally or host the server; configure Google Cloud approval and OAuth. [Connection documentation](https://github.com/googleads/google-ads-mcp).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
-- **Coverage:** Assist only. Account discovery, metadata and GAQL queries. Campaign building and optimisation still happen elsewhere.
+- **Capabilities:** Read **Yes** · Create **Partial** · Edit **Partial** · Delete **Partial** · Publish / activate **No**
+- **Read:** Read campaign structure, metrics and GAQL reports.
+- **Write:** Create assets and manage labels, not campaigns or budgets.
+- **Connection type:** self-managed
+- **Review:** current
+- **read:** Read campaign structure, metrics and GAQL reports.
+- **create:** Standalone assets, videos and labels.
+- **modify:** Labels and their associations only.
+- **delete:** Labels and supported associations only.
+- **publish:** No campaign activation or campaign asset linking.
+- **Coverage:** Some steps. Create assets and manage labels, not campaigns or budgets. Campaign changes still require another route; video upload is local only.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official, maintained MCP with a clear read boundary.
-- Google Ads Query Language supports detailed account and performance diagnosis.
-- Useful as a reporting and second-pair-of-eyes surface once configured.
+- Read campaign structure, metrics and GAQL reports.
+- Create assets and manage labels, not campaigns or budgets.
 
 **Limits**
 
-- The MCP cannot create, modify or delete any campaign object.
-- Setup requires Python, a developer token, Google Cloud, enabled APIs, OAuth and client configuration.
-- The workflow stops at diagnosis and cannot perform the optimisation it recommends.
+- Campaign changes still require another route; video upload is local only.
 
 **Official links**
 
-- **Product / official page:** [Google Ads API documentation](https://developers.google.com/google-ads/api/docs/start)
-- **AI interface / endpoint:** [Official, open source](https://github.com/googleads/google-ads-mcp)
-- **MCP:** [Official, open source](https://github.com/googleads/google-ads-mcp)
+- **Product / official page:** [Connection and tool documentation](https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server)
+- **AI interface / endpoint:** [Google Ads official MCP, local or self-deployed](https://github.com/googleads/google-ads-mcp)
+- **MCP:** [Google Ads official MCP, local or self-deployed](https://github.com/googleads/google-ads-mcp)
 - **Plugin:** No official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Google Ads API and client libraries](https://developers.google.com/google-ads/api/docs/start)
-- **Documentation:** [Google Ads API documentation](https://developers.google.com/google-ads/api/docs/start)
-- **GitHub:** [Official MCP repository](https://github.com/googleads/google-ads-mcp)
+- **Documentation:** [Connection and tool documentation](https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server)
+- **GitHub:** [Vendor source code](https://github.com/googleads/google-ads-mcp)
 
-- **Access:** Developer token, Google Cloud project and account credentials.
-- **Watch:** The MCP can inspect but cannot create or change campaigns. API access levels still apply.
-- **Sources:** [Official MCP repository](https://github.com/googleads/google-ads-mcp) · [Google Ads API documentation](https://developers.google.com/google-ads/api/docs/start)
-- **Last checked:** 5 Sept 2026
+- **Access:** Production API access requires approved Cloud project access. Developer tokens sunset 9 September 2026.
+- **Watch:** Campaign changes still require another route; video upload is local only.
+- **Sources:** [Connection and tool documentation](https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server) · [Vendor source code](https://github.com/googleads/google-ads-mcp) · [Additional official documentation](https://developers.google.com/google-ads/api/docs/api-policy/developer-token)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
@@ -438,50 +313,225 @@ Queries account structure and performance through Google Ads Query Language. The
 
 **B- · Test · Reference**
 
-Meta's hosted Ads AI Connector brings campaign data and actions into compatible assistants through MCP.
+Prior review covered campaign structure and performance. Current connector writes remain unverified.
 
 **Day to day**
 
-- Review campaign performance and account structure.
-- Create supported campaigns, ad sets and ads.
+- Prior review covered campaign structure and performance.
 
-> **What still needs you:** Check which changes your account supports. Some edits still need Ads Manager after the assistant creates the campaign.
+> **What still needs you:** Official pages were inaccessible; keep the previous grade visibly pending.
 
-- **Route:** Official remote MCP, open beta.
-- **Scope:** Campaigns, ad sets, ads and insights.
-- **Setup:** Easy. Add the hosted connector and sign in. The tools offered can differ by account during the rollout. [Connector information](https://www.facebook.com/business/news/meta-ads-ai-connectors).
+- **Route:** Meta Ads AI Connector, previous assessment.
+- **Scope:** Prior review covered campaign structure and performance..
+- **Setup:** Moderate. Previously documented hosted MCP; current access needs confirmation. [Connection documentation](https://www.facebook.com/business/news/meta-ads-ai-connectors).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Partial** · Modify **No** · Delete **No**
-- **Coverage:** Some steps. Creation and analysis are present, but the current beta does not provide dependable general modification of existing campaign objects.
+- **Capabilities:** Read **Unverified** · Create **Unverified** · Edit **Unverified** · Delete **Unverified** · Publish / activate **Unverified**
+- **Read:** Prior review covered campaign structure and performance.
+- **Write:** Current connector writes remain unverified.
+- **Connection type:** hosted-mcp
+- **Review:** pending
+- **read:** Prior review covered campaign structure and performance.
+- **create:** Current tool coverage needs verification.
+- **modify:** Current tool coverage needs verification.
+- **delete:** Current tool coverage needs verification.
+- **publish:** Current tool coverage needs verification.
+- **Coverage:** Depends. Current connector writes remain unverified. Official pages were inaccessible; keep the previous grade visibly pending.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Hosted OAuth makes the connector much easier to add than a custom Marketing API integration.
-- It can read performance and campaign structure in the assistant.
-- It can create supported campaign, ad-set and ad objects.
+- The previous grade is retained while current evidence is incomplete.
 
 **Limits**
 
-- The current beta does not provide dependable general modification of existing campaign objects.
-- Availability still varies by ad account and by individual tool.
-- Creation without ordinary follow-up editing sends the operator back to Ads Manager.
+- Official pages were inaccessible; keep the previous grade visibly pending.
 
 **Official links**
 
-- **Product / official page:** [Meta Ads AI Connectors announcement](https://www.facebook.com/business/news/meta-ads-ai-connectors)
-- **AI interface / endpoint:** [Official open beta](https://mcp.facebook.com/ads)
-- **MCP:** [Official open beta](https://mcp.facebook.com/ads)
+- **Product / official page:** [Connection and tool documentation](https://www.facebook.com/business/news/meta-ads-ai-connectors)
+- **AI interface / endpoint:** [Previous MCP record; review pending](https://mcp.facebook.com/ads)
+- **MCP:** [Previous MCP record; review pending](https://mcp.facebook.com/ads)
 - **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Marketing API](https://developers.facebook.com/docs/marketing-apis/)
-- **Documentation:** [Meta Ads AI Connectors announcement](https://www.facebook.com/business/news/meta-ads-ai-connectors)
+- **Documentation:** [Connection and tool documentation](https://www.facebook.com/business/news/meta-ads-ai-connectors)
 - **GitHub:** No official repository verified
 
-- **Access:** Open beta; account and regional availability may vary.
-- **Watch:** Inspect the authenticated tool list and permissions before allowing campaign changes.
-- **Sources:** [Meta Ads AI Connectors announcement](https://www.facebook.com/business/news/meta-ads-ai-connectors) · [Marketing APIs](https://developers.facebook.com/docs/marketing-apis/)
+- **Access:** Prior record: open beta. Current announcement redirects to login; developer pages return 429 or inaccessible.
+- **Watch:** Official pages were inaccessible; keep the previous grade visibly pending.
+- **Sources:** [Connection and tool documentation](https://www.facebook.com/business/news/meta-ads-ai-connectors) · [Additional official documentation](https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/) · [Additional official documentation](https://developers.facebook.com/blog/post/2026/04/29/introducing-ads-cli) · [Additional official documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api)
 - **Last checked:** 5 Sept 2026
+
+[Back to comparison](#media-platforms)
+
+## Apple Ads
+
+**C+ · Production · Reference**
+
+Read reports and authorised campaign configuration. Create and manage supported campaigns, ad groups and keywords.
+
+**Day to day**
+
+- Read reports and authorised campaign configuration.
+- Create and manage supported campaigns, ad groups and keywords.
+
+> **What still needs you:** No ready official AI connector verified; exact delete and activation tools remain unverified.
+
+- **Route:** Apple Ads API, custom integration.
+- **Scope:** Read reports and authorised campaign configuration..
+- **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api).
+- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **Unverified**
+- **Read:** Read reports and authorised campaign configuration.
+- **Write:** Create and manage supported campaigns, ad groups and keywords.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Read reports and authorised campaign configuration.
+- **create:** Campaigns, ad groups and keywords.
+- **modify:** Supported campaign-management operations.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Not established by the reviewed sources.
+- **Coverage:** Some steps. Create and manage supported campaigns, ad groups and keywords. No ready official AI connector verified; exact delete and activation tools remain unverified.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Read reports and authorised campaign configuration.
+- Create and manage supported campaigns, ad groups and keywords.
+
+**Limits**
+
+- No ready official AI connector verified; exact delete and activation tools remain unverified.
+
+**Official links**
+
+- **Product / official page:** [Connection and tool documentation](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api)
+- **AI interface / endpoint:** No official AI route verified
+- **MCP:** No official MCP verified
+- **Plugin:** No official agent plugin verified
+- **CLI:** No dedicated official CLI verified
+- **API / SDK:** [Apple Ads Platform API](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api)
+- **Documentation:** [Connection and tool documentation](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api)
+- **GitHub:** No official repository verified
+
+- **Access:** Read-only, read/write and limited-account roles are separate.
+- **Watch:** No ready official AI connector verified; exact delete and activation tools remain unverified.
+- **Sources:** [Connection and tool documentation](https://ads.apple.com/maps/apple-ads/help/campaigns/0022-use-apple-ads-platform-api) · [Additional official documentation](https://developer.apple.com/documentation/apple-ads-platform-api)
+- **Last checked:** 16 Nov 2026
+
+[Back to comparison](#media-platforms)
+
+## Campaign Manager 360
+
+**C+ · Production · Reference**
+
+Read campaign resources and reports via API v5. Create campaigns and reports; update supported campaign fields.
+
+**Day to day**
+
+- Read campaign resources and reports via API v5.
+- Create campaigns and reports; update supported campaign fields.
+
+> **What still needs you:** A custom trafficking integration is needed; archive is not deletion.
+
+- **Route:** Campaign Manager 360 API, custom integration.
+- **Scope:** Read campaign resources and reports via API v5..
+- **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://developers.google.com/doubleclick-advertisers/getting_started).
+- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **Partial**
+- **Read:** Read campaign resources and reports via API v5.
+- **Write:** Create campaigns and reports; update supported campaign fields.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Read campaign resources and reports via API v5.
+- **create:** Campaigns and reports.
+- **modify:** Campaign fields and archive state.
+- **delete:** No campaign delete method; other resource deletes unverified.
+- **publish:** No universal publish action established.
+- **Coverage:** Some steps. Create campaigns and reports; update supported campaign fields. A custom trafficking integration is needed; archive is not deletion.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Read campaign resources and reports via API v5.
+- Create campaigns and reports; update supported campaign fields.
+
+**Limits**
+
+- A custom trafficking integration is needed; archive is not deletion.
+
+**Official links**
+
+- **Product / official page:** [Connection and tool documentation](https://developers.google.com/doubleclick-advertisers/getting_started)
+- **AI interface / endpoint:** No official AI route verified
+- **MCP:** No official MCP verified
+- **Plugin:** No official agent plugin verified
+- **CLI:** No dedicated official CLI verified
+- **API / SDK:** [Campaign Manager 360 API](https://developers.google.com/doubleclick-advertisers/rest/)
+- **Documentation:** [Connection and tool documentation](https://developers.google.com/doubleclick-advertisers/getting_started)
+- **GitHub:** No official repository verified
+
+- **Access:** Existing CM360 user-profile permissions control API access.
+- **Watch:** A custom trafficking integration is needed; archive is not deletion.
+- **Sources:** [Connection and tool documentation](https://developers.google.com/doubleclick-advertisers/getting_started) · [Additional official documentation](https://developers.google.com/doubleclick-advertisers/rest/v5/campaigns)
+- **Last checked:** 16 Nov 2026
+
+[Back to comparison](#media-platforms)
+
+## Display & Video 360
+
+**C+ · Production · Reference**
+
+Read trafficking resources; use a separate route for performance reports. Manage supported resources, including responsive YouTube ads in v5 beta.
+
+**Day to day**
+
+- Read trafficking resources; use a separate route for performance reports.
+- Manage supported resources, including responsive YouTube ads in v5 beta.
+
+> **What still needs you:** Custom API work remains; the YouTube update does not cover every format.
+
+- **Route:** Display & Video 360 API, custom integration.
+- **Scope:** Read trafficking resources; use a separate route for performance reports..
+- **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://developers.google.com/display-video/api).
+- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **Partial**
+- **Read:** Read trafficking resources; use a separate route for performance reports.
+- **Write:** Manage supported resources, including responsive YouTube ads in v5 beta.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Read trafficking resources; use a separate route for performance reports.
+- **create:** Campaigns, insertion orders, line items and supported creatives.
+- **modify:** Supported resources and targeting.
+- **delete:** Line items and v5 responsive YouTube ads.
+- **publish:** Status updates depend on hierarchy, validation and serving eligibility.
+- **Coverage:** Some steps. Manage supported resources, including responsive YouTube ads in v5 beta. Custom API work remains; the YouTube update does not cover every format.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Read trafficking resources; use a separate route for performance reports.
+- Manage supported resources, including responsive YouTube ads in v5 beta.
+
+**Limits**
+
+- Custom API work remains; the YouTube update does not cover every format.
+
+**Official links**
+
+- **Product / official page:** [Connection and tool documentation](https://developers.google.com/display-video/api)
+- **AI interface / endpoint:** No official AI route verified
+- **MCP:** No official MCP verified
+- **Plugin:** No official agent plugin verified
+- **CLI:** No dedicated official CLI verified
+- **API / SDK:** [Display & Video 360 API](https://developers.google.com/display-video/api)
+- **Documentation:** [Connection and tool documentation](https://developers.google.com/display-video/api)
+- **GitHub:** No official repository verified
+
+- **Access:** DV360 permissions apply. v5 is labelled beta in current reference.
+- **Watch:** Custom API work remains; the YouTube update does not cover every format.
+- **Sources:** [Connection and tool documentation](https://developers.google.com/display-video/api) · [Additional official documentation](https://developers.google.com/display-video/api/reference/rest/v5/advertisers.lineItems) · [Additional official documentation](https://developers.google.com/ads/blog/posts/2026/11/manage-responsive-youtube-ads-with-display)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
@@ -489,101 +539,111 @@ Meta's hosted Ads AI Connector brings campaign data and actions into compatible 
 
 **C+ · Production · Reference**
 
-Microsoft's governed MCP provides campaign structure, performance queries and audits. Its current documented launch surface is read-only.
+Read campaigns, keywords, assets, reports and change history. Read-only; apply changes in another tool.
 
 **Day to day**
 
-- Ask questions about campaign performance.
-- Audit account settings before making changes elsewhere.
+- Read campaigns, keywords, assets, reports and change history.
 
-> **What still needs you:** Make campaign changes in the advertising interface. The documented assistant tools retrieve and audit data.
+> **What still needs you:** Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration.
 
-- **Route:** Official managed MCP.
-- **Scope:** Accounts, campaigns, ad groups, ads, keywords and performance.
-- **Setup:** Easy. Connect a supported assistant and sign in with access to the advertising account. [Connection documentation](https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server).
+- **Route:** Microsoft Advertising official hosted MCP.
+- **Scope:** Read campaigns, keywords, assets, reports and change history..
+- **Setup:** Hard. Register an Entra app, configure OAuth and connect the hosted MCP. [Connection documentation](https://learn.microsoft.com/en-us/advertising/guides/mcp-tools).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
-- **Coverage:** Assist only. Current launch documentation covers exploration, performance queries and audits, not mutation.
+- **Capabilities:** Read **Yes** · Create **No** · Edit **No** · Delete **No** · Publish / activate **No**
+- **Read:** Read campaigns, keywords, assets, reports and change history.
+- **Write:** Read-only; apply changes in another tool.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read campaigns, keywords, assets, reports and change history.
+- **create:** No action on this route.
+- **modify:** No action on this route.
+- **delete:** No action on this route.
+- **publish:** No action on this route.
+- **Coverage:** Assist only. Read-only; apply changes in another tool. Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official managed connection is easier than building against the API.
-- Provides entity-level performance data for campaigns, ad groups, ads and keywords.
-- Useful for conversational audits and cross-platform reporting.
+- Read campaigns, keywords, assets, reports and change history.
+- Register an Entra app, configure OAuth and connect the hosted MCP.
 
 **Limits**
 
-- The documented launch surface is read-only.
-- It cannot create an ad or apply the campaign changes suggested by an audit.
-- Broad manage-campaign language on the product page overstates the action boundary described in its FAQ.
+- Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration.
 
 **Official links**
 
-- **Product / official page:** [Microsoft Advertising MCP](https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server)
-- **AI interface / endpoint:** [Official managed MCP](https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server)
-- **MCP:** [Official managed MCP](https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server)
+- **Product / official page:** [Connection and tool documentation](https://learn.microsoft.com/en-us/advertising/guides/mcp-tools)
+- **AI interface / endpoint:** [Microsoft Advertising official hosted MCP](https://learn.microsoft.com/en-us/advertising/guides/mcp-tools)
+- **MCP:** [Microsoft Advertising official hosted MCP](https://learn.microsoft.com/en-us/advertising/guides/mcp-tools)
 - **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Microsoft Advertising API](https://learn.microsoft.com/en-us/advertising/)
-- **Documentation:** [Microsoft Advertising MCP](https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server)
+- **Documentation:** [Connection and tool documentation](https://learn.microsoft.com/en-us/advertising/guides/mcp-tools)
 - **GitHub:** No official repository verified
 
-- **Access:** Microsoft Advertising account and API permissions.
-- **Watch:** The launch FAQ documents data retrieval and audits, not campaign creation or modification.
-- **Sources:** [Microsoft Advertising MCP](https://learninglab.about.ads.microsoft.com/en/solutions/technology/mcp-server) · [Advertising API documentation](https://learn.microsoft.com/en-us/advertising/)
-- **Last checked:** 5 Sept 2026
+- **Access:** Existing Advertising account permissions; personal and work/school Microsoft accounts supported.
+- **Watch:** Hosted does not mean one-click: ChatGPT and Claude need an Entra app registration.
+- **Sources:** [Connection and tool documentation](https://learn.microsoft.com/en-us/advertising/guides/mcp-tools) · [Additional official documentation](https://learn.microsoft.com/en-us/advertising/guides/mcp-setup?view=bingads-13)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
-## Search Ads 360
+## Snapchat Ads
 
 **C+ · Production · Reference**
 
-The Search Ads 360 Reporting API provides high-volume, query-based reporting over campaigns, ads, keywords and performance data.
+Read authorised campaign setup and performance. Read-only; campaign writes are not released.
 
 **Day to day**
 
-- Compare performance across linked search accounts.
-- Prepare recurring reports from account data.
+- Read authorised campaign setup and performance.
 
-> **What still needs you:** Make optimisation changes elsewhere. This connection reports on the account but cannot apply its recommendations.
+> **What still needs you:** Self-service access still requires organisation approval and member consent.
 
-- **Route:** Official Reporting API.
-- **Scope:** Campaign, ad, keyword and performance data.
-- **Setup:** Hard. A developer must configure account authentication and build the reporting connection for the authorised SA360 accounts. [API documentation](https://developers.google.com/search-ads/reporting).
+- **Route:** Snapchat Ads official hosted MCP.
+- **Scope:** Read authorised campaign setup and performance..
+- **Setup:** Moderate. An administrator approves the agent; each member grants access. [Connection documentation](https://developers.snap.com/marketing-api/Ads-MCP/Introduction).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
-- **Coverage:** Assist only. High-volume reporting only. Offline conversion upload is a separate surface and ordinary campaign writes are absent.
+- **Capabilities:** Read **Yes** · Create **No** · Edit **No** · Delete **No** · Publish / activate **No**
+- **Read:** Read authorised campaign setup and performance.
+- **Write:** Read-only; campaign writes are not released.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read authorised campaign setup and performance.
+- **create:** No action on this route.
+- **modify:** No action on this route.
+- **delete:** No action on this route.
+- **publish:** No action on this route.
+- **Coverage:** Assist only. Read-only; campaign writes are not released. Self-service access still requires organisation approval and member consent.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- High-volume official reporting API with a purpose-built query language.
-- Immediate access to granular campaign, ad and keyword data.
-- REST, gRPC and official client libraries support production pipelines.
+- Read authorised campaign setup and performance.
+- An administrator approves the agent; each member grants access.
 
 **Limits**
 
-- The reporting API is read-only.
-- Offline conversions use a separate API surface.
-- No official MCP or dedicated agent integration was verified.
+- Self-service access still requires organisation approval and member consent.
 
 **Official links**
 
-- **Product / official page:** [Search Ads 360 Reporting API](https://developers.google.com/search-ads/reporting)
-- **AI interface / endpoint:** No official AI route verified
-- **MCP:** No official MCP verified
-- **Plugin:** No official agent plugin verified
+- **Product / official page:** [Connection and tool documentation](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
+- **AI interface / endpoint:** [Official self-service, read-only MCP](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
+- **MCP:** [Official self-service, read-only MCP](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
+- **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
-- **API / SDK:** [Search Ads 360 Reporting API](https://developers.google.com/search-ads/reporting)
-- **Documentation:** [Search Ads 360 Reporting API](https://developers.google.com/search-ads/reporting)
+- **API / SDK:** [Snap Marketing API](https://developers.snap.com/marketing-api/home)
+- **Documentation:** [Connection and tool documentation](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
 - **GitHub:** No official repository verified
 
-- **Access:** OAuth 2.0 application credentials and access to the relevant Search Ads 360 manager or client account.
-- **Watch:** The reporting API is read-only. Offline conversion uploads use a separate Search Ads 360 API surface.
-- **Sources:** [Search Ads 360 Reporting API](https://developers.google.com/search-ads/reporting) · [Reporting API overview](https://developers.google.com/search-ads/reporting/overview)
-- **Last checked:** 5 Sept 2026
+- **Access:** No allowlist. Organisation Admin/Business Admin first approves each agent; each member then authorises their own existing access.
+- **Watch:** Self-service access still requires organisation approval and member consent.
+- **Sources:** [Connection and tool documentation](https://developers.snap.com/marketing-api/Ads-MCP/Introduction) · [Additional official documentation](https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
@@ -591,50 +651,112 @@ The Search Ads 360 Reporting API provides high-volume, query-based reporting ove
 
 **C+ · Test · Reference**
 
-Pinterest's Ads API supports programmatic campaign and reporting workflows. No vendor-backed MCP source was verified.
+Read campaigns, ad groups and performance. Create and manage campaigns, ad groups and ads via API.
 
 **Day to day**
 
-- Create and update supported advertising objects.
-- Pull campaign results into a reporting workflow.
+- Read campaigns, ad groups and performance.
+- Create and manage campaigns, ad groups and ads via API.
 
-> **What still needs you:** Review the targeting, budget and creative before applying changes, then check the result in the account.
+> **What still needs you:** Custom integration required; some fields become immutable after draft.
 
-- **Route:** Official Ads API.
-- **Scope:** Campaigns, ad groups, ads, audiences and reporting.
-- **Setup:** Hard. A developer must create an app, authorise the ad accounts and build an integration around the API. [API documentation](https://dev.pinterest.com/docs/work-with-ads/ads-overview/).
+- **Route:** Pinterest Ads API, custom integration.
+- **Scope:** Read campaigns, ad groups and performance..
+- **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://dev.pinterest.com/docs/work-with-ads/ads-overview/).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Yes** · Modify **Yes** · Delete **Partial**
-- **Coverage:** Some steps. Useful campaign and reporting coverage through the API, without a vendor-backed MCP, plugin or CLI.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **Yes**
+- **Read:** Read campaigns, ad groups and performance.
+- **Write:** Create and manage campaigns, ad groups and ads via API.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Read campaigns, ad groups and performance.
+- **create:** Campaigns, ad groups and ads.
+- **modify:** Supported fields, targeting, schedules and status.
+- **delete:** Draft deletion differs from archival and recovery.
+- **publish:** DRAFT preparation and ACTIVE delivery states.
+- **Coverage:** Some steps. Create and manage campaigns, ad groups and ads via API. Custom integration required; some fields become immutable after draft.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official Ads API supports campaign and reporting workflows.
-- Useful specialist channel for visual discovery and commerce.
-- An authorised integration can run recurring production tasks.
+- Read campaigns, ad groups and performance.
+- Create and manage campaigns, ad groups and ads via API.
 
 **Limits**
 
-- No official MCP or agent plugin was verified.
-- No dedicated official CLI was verified.
-- AI workflows require custom engineering or a maintained intermediary.
+- Custom integration required; some fields become immutable after draft.
 
 **Official links**
 
-- **Product / official page:** [Pinterest API overview](https://developer.pinterest.com/docs/overview/welcome/)
+- **Product / official page:** [Connection and tool documentation](https://dev.pinterest.com/docs/work-with-ads/ads-overview/)
 - **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Pinterest API for ads](https://dev.pinterest.com/docs/work-with-ads/ads-overview/)
-- **Documentation:** [Pinterest API overview](https://developer.pinterest.com/docs/overview/welcome/)
+- **Documentation:** [Connection and tool documentation](https://dev.pinterest.com/docs/work-with-ads/ads-overview/)
 - **GitHub:** No official repository verified
 
-- **Access:** Pinterest developer application and authorised ad accounts.
-- **Watch:** Use the API directly or an integration layer, and identify the maintainer of any MCP wrapper.
-- **Sources:** [Pinterest API overview](https://developer.pinterest.com/docs/overview/welcome/) · [Ads API overview](https://dev.pinterest.com/docs/work-with-ads/ads-overview/)
-- **Last checked:** 5 Sept 2026
+- **Access:** Business Access, supported advertising country, billing and advertising agreement; some onboarding remains in Pinterest UI.
+- **Watch:** Custom integration required; some fields become immutable after draft.
+- **Sources:** [Connection and tool documentation](https://dev.pinterest.com/docs/work-with-ads/ads-overview/) · [Additional official documentation](https://dev.pinterest.com/docs/work-with-ads/create-campaigns-and-ad-groups/)
+- **Last checked:** 16 Nov 2026
+
+[Back to comparison](#media-platforms)
+
+## Search Ads 360
+
+**C · Production · Reference**
+
+Query campaign-to-keyword resources and performance reports. The evaluated Reporting API is read-only.
+
+**Day to day**
+
+- Query campaign-to-keyword resources and performance reports.
+
+> **What still needs you:** Custom setup still stops at diagnosis; campaign changes happen elsewhere.
+
+- **Route:** Search Ads 360 API, custom integration.
+- **Scope:** Query campaign-to-keyword resources and performance reports..
+- **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://developers.google.com/search-ads/reporting).
+- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
+- **Capabilities:** Read **Yes** · Create **No** · Edit **No** · Delete **No** · Publish / activate **No**
+- **Read:** Query campaign-to-keyword resources and performance reports.
+- **Write:** The evaluated Reporting API is read-only.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Query campaign-to-keyword resources and performance reports.
+- **create:** No action on this route.
+- **modify:** No action on this route.
+- **delete:** No action on this route.
+- **publish:** No action on this route.
+- **Coverage:** Assist only. The evaluated Reporting API is read-only. Custom setup still stops at diagnosis; campaign changes happen elsewhere.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Query campaign-to-keyword resources and performance reports.
+- Build an authenticated API integration and maintain it.
+
+**Limits**
+
+- Custom setup still stops at diagnosis; campaign changes happen elsewhere.
+
+**Official links**
+
+- **Product / official page:** [Connection and tool documentation](https://developers.google.com/search-ads/reporting)
+- **AI interface / endpoint:** No official AI route verified
+- **MCP:** No official MCP verified
+- **Plugin:** No official agent plugin verified
+- **CLI:** No dedicated official CLI verified
+- **API / SDK:** [Search Ads 360 Reporting API](https://developers.google.com/search-ads/reporting)
+- **Documentation:** [Connection and tool documentation](https://developers.google.com/search-ads/reporting)
+- **GitHub:** No official repository verified
+
+- **Access:** Authorised Search Ads 360 account access.
+- **Watch:** Custom setup still stops at diagnosis; campaign changes happen elsewhere.
+- **Sources:** [Connection and tool documentation](https://developers.google.com/search-ads/reporting)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
@@ -642,50 +764,56 @@ Pinterest's Ads API supports programmatic campaign and reporting workflows. No v
 
 **C · Test · Reference**
 
-LinkedIn's Marketing APIs cover campaign management and reporting. We found community MCP wrappers, but no vendor-backed MCP source.
+Read campaign configuration and performance through approved APIs. Create and manage campaigns through custom API code.
 
 **Day to day**
 
-- Build or update campaigns through an approved integration.
-- Retrieve results for reporting.
+- Read campaign configuration and performance through approved APIs.
+- Create and manage campaigns through custom API code.
 
-> **What still needs you:** Approve targeting, budgets and creative before the integration makes changes. Check the finished campaign in the advertising account.
+> **What still needs you:** No ready official agent connector verified; use a supported API version.
 
-- **Route:** Official Marketing API.
-- **Scope:** Campaigns, reporting, audiences, leads and conversions.
-- **Setup:** Hard. A developer must register an app, obtain approval for the advertising use case and build the connection to the assistant. [API documentation](https://learn.microsoft.com/en-us/linkedin/marketing/).
+- **Route:** LinkedIn Ads API, custom integration.
+- **Scope:** Read campaign configuration and performance through approved APIs..
+- **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://learn.microsoft.com/en-us/linkedin/marketing/).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Partial** · Modify **Partial** · Delete **Partial**
-- **Coverage:** Some steps. The API covers important campaign-management jobs, but access is approved by product and use case and there is no official agent interface.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **Partial**
+- **Read:** Read campaign configuration and performance through approved APIs.
+- **Write:** Create and manage campaigns through custom API code.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Read campaign configuration and performance through approved APIs.
+- **create:** Supported campaigns.
+- **modify:** Targeting, budgets, schedules and status.
+- **delete:** Draft DELETE; non-drafts follow PENDING_DELETION.
+- **publish:** ACTIVE status remains subject to serving eligibility.
+- **Coverage:** Some steps. Create and manage campaigns through custom API code. No ready official agent connector verified; use a supported API version.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official Marketing APIs cover campaign management and reporting.
-- Strong fit for B2B audience and lead-generation workflows.
-- Production access tiers and permissions are documented.
+- Read campaign configuration and performance through approved APIs.
+- Create and manage campaigns through custom API code.
 
 **Limits**
 
-- No official MCP was verified.
-- API product approval and access tiers add friction.
-- Daily AI use needs a custom or third-party integration layer.
+- No ready official agent connector verified; use a supported API version.
 
 **Official links**
 
-- **Product / official page:** [Accessing LinkedIn APIs](https://www.linkedin.com/help/linkedin/answer/a526048/accessing-linkedin-apis?lang=en)
+- **Product / official page:** [Connection and tool documentation](https://learn.microsoft.com/en-us/linkedin/marketing/)
 - **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [LinkedIn Marketing APIs](https://learn.microsoft.com/en-us/linkedin/marketing/)
-- **Documentation:** [Accessing LinkedIn APIs](https://www.linkedin.com/help/linkedin/answer/a526048/accessing-linkedin-apis?lang=en)
+- **Documentation:** [Connection and tool documentation](https://learn.microsoft.com/en-us/linkedin/marketing/)
 - **GitHub:** No official repository verified
 
-- **Access:** Developer application, product approval and tier-specific permissions.
-- **Watch:** Do not treat a community wrapper as LinkedIn-supported. Marketing API access is gated by product and tier.
-- **Sources:** [Accessing LinkedIn APIs](https://www.linkedin.com/help/linkedin/answer/a526048/accessing-linkedin-apis?lang=en) · [Marketing API access tiers](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08)
-- **Last checked:** 5 Sept 2026
+- **Access:** r_ads/rw_ads scopes and account roles; Viewer remains read-only even with rw_ads.
+- **Watch:** No ready official agent connector verified; use a supported API version.
+- **Sources:** [Connection and tool documentation](https://learn.microsoft.com/en-us/linkedin/marketing/) · [Additional official documentation](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-10)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 
@@ -693,101 +821,56 @@ LinkedIn's Marketing APIs cover campaign management and reporting. We found comm
 
 **C · Test · Reference**
 
-Reddit's Ads API v3 exposes campaign and account operations. No vendor-backed MCP source was verified.
+Read campaign information and reports through API v3. Create campaigns and audiences; modify supported settings.
 
 **Day to day**
 
-- Create and manage supported campaigns through an integration.
-- Retrieve account and campaign results.
+- Read campaign information and reports through API v3.
+- Create campaigns and audiences; modify supported settings.
 
-> **What still needs you:** Review campaign changes and check the result in the advertising account. The integration only covers the API operations you implement.
+> **What still needs you:** Exact deletion and activation coverage remains unverified.
 
-- **Route:** Official Ads API.
-- **Scope:** Accounts, campaigns, ad groups, ads and reporting.
-- **Setup:** Hard. A developer must register an app, obtain advertising access and connect the API to the assistant. [API documentation](https://ads-api.reddit.com/docs/).
+- **Route:** Reddit Ads API, custom integration.
+- **Scope:** Read campaign information and reports through API v3..
+- **Setup:** Hard. Build an authenticated API integration and maintain it. [Connection documentation](https://ads-api.reddit.com/docs/).
 - **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **Partial** · Modify **Partial** · Delete **Partial**
-- **Coverage:** Some steps. Core campaign operations exist in the API, but no official agent interface was verified.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Partial** · Delete **Unverified** · Publish / activate **Unverified**
+- **Read:** Read campaign information and reports through API v3.
+- **Write:** Create campaigns and audiences; modify supported settings.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Read campaign information and reports through API v3.
+- **create:** Supported campaigns and custom audiences.
+- **modify:** Campaign management; field coverage is incomplete.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Not established by the reviewed sources.
+- **Coverage:** Some steps. Create campaigns and audiences; modify supported settings. Exact deletion and activation coverage remains unverified.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official Ads API v3 exposes campaign and account operations.
-- Community context can be valuable for specific audience strategies.
-- OAuth provides a conventional route for controlled integrations.
+- Read campaign information and reports through API v3.
+- Create campaigns and audiences; modify supported settings.
 
 **Limits**
 
-- No official MCP, plugin or CLI was verified.
-- Advertising API access requires approval.
-- A useful daily agent workflow must be built and maintained separately.
+- Exact deletion and activation coverage remains unverified.
 
 **Official links**
 
-- **Product / official page:** [Reddit Ads API v3](https://ads-api.reddit.com/docs/)
+- **Product / official page:** [Connection and tool documentation](https://ads-api.reddit.com/docs/)
 - **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Reddit Ads API v3](https://ads-api.reddit.com/docs/)
-- **Documentation:** [Reddit Ads API v3](https://ads-api.reddit.com/docs/)
+- **Documentation:** [Connection and tool documentation](https://ads-api.reddit.com/docs/)
 - **GitHub:** No official repository verified
 
-- **Access:** OAuth application and approved advertising access.
-- **Watch:** Community connectors should be checked against the current v3 API and Reddit's access terms.
-- **Sources:** [Reddit Ads API v3](https://ads-api.reddit.com/docs/)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#media-platforms)
-
-## Snapchat Ads
-
-**C · Test · Reference**
-
-A hosted Ads MCP for retrieving Snapchat campaign data and insights from supported AI clients.
-
-**Day to day**
-
-- Read campaign settings and results.
-- Investigate performance before making changes in Ads Manager.
-
-> **What still needs you:** You must make campaign changes elsewhere. This connection is restricted to approved accounts and only reads data.
-
-- **Route:** Official remote MCP, allowlist.
-- **Scope:** Campaign data and performance.
-- **Setup:** Hard. The account must be admitted to the MCP allowlist before you can connect and sign in. [Connection documentation](https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent).
-- **Human job:** Inspect delivery, build campaigns, maintain live objects and remove or archive them safely.
-- **Capabilities:** Read **Yes** · Create **No** · Modify **No** · Delete **No**
-- **Coverage:** Assist only. Retrieval and analysis only. The broader Marketing API is a separate engineering route.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Official hosted MCP provides campaign retrieval and analysis.
-- Read-only control is suitable for a cautious reporting pilot.
-- The underlying Marketing API offers a route to deeper integration.
-
-**Limits**
-
-- MCP access is still allowlisted.
-- The MCP cannot execute campaign changes.
-- No official plugin or dedicated CLI was verified.
-
-**Official links**
-
-- **Product / official page:** [Ads MCP introduction](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
-- **AI interface / endpoint:** [Official, allowlist rollout](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
-- **MCP:** [Official, allowlist rollout](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
-- **Plugin:** No separate official plugin verified
-- **CLI:** No dedicated official CLI verified
-- **API / SDK:** [Snap Marketing API](https://developers.snap.com/marketing-api/home)
-- **Documentation:** [Ads MCP introduction](https://developers.snap.com/marketing-api/Ads-MCP/Introduction)
-- **GitHub:** No official repository verified
-
-- **Access:** Allowlist rollout and authenticated ad-account access.
-- **Watch:** The documented MCP is read-only even though the underlying Marketing API has broader capabilities.
-- **Sources:** [Ads MCP introduction](https://developers.snap.com/marketing-api/Ads-MCP/Introduction) · [Connect an agent](https://developers.snap.com/marketing-api/Ads-MCP/connect-an-agent)
-- **Last checked:** 5 Sept 2026
+- **Access:** App creation is business-admin-only; existing authorisation and Ads API terms apply.
+- **Watch:** Exact deletion and activation coverage remains unverified.
+- **Sources:** [Connection and tool documentation](https://ads-api.reddit.com/docs/) · [Additional official documentation](https://ads-api.reddit.com/docs/v3/guides/quick-start/create-dev-app)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#media-platforms)
 

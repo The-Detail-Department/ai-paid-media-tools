@@ -8,162 +8,180 @@ Specialist modelling frameworks judged on preparation, configuration, execution,
 
 [Media platforms](media-platforms.md) · [Analytics](analytics.md) · [Measurement](measurement.md) · [Creative production](creative-production.md) · [Research and intelligence](research-intelligence.md) · [Data infrastructure](data-infrastructure.md) · [Automation and workflow](automation-workflow.md) · [Modelling](modelling.md)
 
-| Tool | Grade | Market role | Readiness | Setup | Prepare data | Configure | Run | Validate | Scenarios | Human-job coverage |
+| Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Meridian](#meridian) | **B+** | Specialist | Research | Specialist | Partial | Yes | Yes | Yes | Yes | Specialist |
-| [PyMC-Marketing](#pymc-marketing) | **B** | Specialist | Research | Specialist | Partial | Yes | Yes | Yes | Yes | Specialist |
-| [Robyn](#robyn) | **B** | Specialist | Research | Specialist | Partial | Yes | Yes | Yes | Yes | Specialist |
+| [Meridian](#meridian) | **B-** | Specialist | Research | Specialist | Yes | Yes | Yes | Unverified | No | Specialist |
+| [PyMC-Marketing](#pymc-marketing) | **C+** | Specialist | Research | Specialist | Yes | Yes | Yes | Unverified | No | Specialist |
+| [Robyn](#robyn) | **C** | Specialist | Research | Specialist | Yes | Yes | Yes | Unverified | No | Specialist |
 
 ## Meridian
 
-**B+ · Research · Specialist**
+**B- · Research · Specialist**
 
-Google's open-source marketing mix modelling framework for estimating incremental impact and informing budget allocation.
+Inspect prepared data, model results and convergence diagnostics. Run modelling scripts and produce saved models and budget scenarios.
 
 **Day to day**
 
-- Model how marketing investment relates to business results.
-- Compare budget scenarios after validating the model.
+- Inspect prepared data, model results and convergence diagnostics.
+- Run modelling scripts and produce saved models and budget scenarios.
 
-> **What still needs you:** A specialist must prepare the data, check the model’s assumptions and interpret the scenarios. It does not change campaigns.
+> **What still needs you:** Official agent skills still require local Python, historical data and specialist validation.
 
-- **Route:** Official open-source Python package.
-- **Scope:** Marketing mix models and budget scenarios.
-- **Setup:** Specialist. A modeller must prepare historical data, run the Python model and validate its assumptions before using budget scenarios. [Model documentation](https://github.com/google/meridian).
+- **Route:** Meridian Agent Skills + local Python.
+- **Scope:** Inspect prepared data, model results and convergence diagnostics..
+- **Setup:** Specialist. Install the official skills and Python runtime; review mappings, priors and execution. [Connection documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
-- **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
-- **Coverage:** Specialist. Covers the MMM lifecycle and scenario planning, not live campaign control.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Inspect prepared data, model results and convergence diagnostics.
+- **Write:** Run modelling scripts and produce saved models and budget scenarios.
+- **Connection type:** self-managed
+- **Review:** current
+- **read:** Inspect prepared data, model results and convergence diagnostics.
+- **create:** Model scripts, fitted models, reports and scenarios.
+- **modify:** Model configuration and reproducible local scripts.
+- **delete:** Not established by the reviewed sources.
+- **publish:** No live campaign budget changes.
+- **Coverage:** Specialist. Run modelling scripts and produce saved models and budget scenarios. Official agent skills still require local Python, historical data and specialist validation.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Google-backed open-source marketing-mix modelling package.
-- Useful for incrementality and budget-allocation questions beyond platform attribution.
-- Python package can be made reproducible in a governed modelling workflow.
+- Inspect prepared data, model results and convergence diagnostics.
+- Run modelling scripts and produce saved models and budget scenarios.
 
 **Limits**
 
-- No official MCP, plugin or dedicated CLI was verified.
-- Requires statistical skill and suitable historical data.
-- It is not a daily campaign-operation interface.
+- Official agent skills still require local Python, historical data and specialist validation.
 
 **Official links**
 
-- **Product / official page:** [Official Meridian repository](https://github.com/google/meridian)
-- **AI interface / endpoint:** No official AI route verified
+- **Product / official page:** [Connection and tool documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills)
+- **AI interface / endpoint:** [Meridian Agent Skills](https://developers.google.com/meridian/docs/user-guide/agent-skills)
 - **MCP:** No official MCP verified
-- **Plugin:** No official agent plugin verified
+- **Plugin:** [Meridian Agent Skills](https://developers.google.com/meridian/docs/user-guide/agent-skills)
 - **CLI:** Python package, not a dedicated CLI
 - **API / SDK:** [Open-source Python package](https://github.com/google/meridian)
-- **Documentation:** [Official Meridian repository](https://github.com/google/meridian)
-- **GitHub:** [Official Meridian repository](https://github.com/google/meridian)
+- **Documentation:** [Connection and tool documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills)
+- **GitHub:** [Vendor source code](https://github.com/google/meridian/discussions/1819)
 
-- **Access:** Open source; requires model-ready historical data and Python expertise.
-- **Watch:** A model library is not an autonomous media optimiser. Inputs, priors, validation and decision rules remain practitioner work.
-- **Sources:** [Official Meridian repository](https://github.com/google/meridian)
-- **Last checked:** 5 Sept 2026
+- **Access:** Open-source skills/library, compatible coding agent, Python dependencies and appropriate compute; specialist judgement for priors, data and model validation.
+- **Watch:** Official agent skills still require local Python, historical data and specialist validation.
+- **Sources:** [Connection and tool documentation](https://developers.google.com/meridian/docs/user-guide/agent-skills) · [Additional official documentation](https://developers.google.com/meridian/docs/user-guide/installing) · [Vendor source code](https://github.com/google/meridian/discussions/1819)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#modelling)
 
 ## PyMC-Marketing
 
-**B · Research · Specialist**
+**C+ · Research · Specialist**
 
-An open-source Bayesian marketing analytics package covering marketing mix modelling and customer-lifetime-value work.
+Read prepared data and fitted Bayesian models through Python. Create models, diagnostics, forecasts and allocation scenarios.
 
 **Day to day**
 
-- Build custom marketing-mix or customer-value models.
-- Test assumptions and compare modelled scenarios.
+- Read prepared data and fitted Bayesian models through Python.
+- Create models, diagnostics, forecasts and allocation scenarios.
 
-> **What still needs you:** A specialist must build and validate the model before its results can inform a budget decision.
+> **What still needs you:** Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
 
-- **Route:** Official open-source Python package.
-- **Scope:** Bayesian marketing models.
-- **Setup:** Specialist. A modeller needs Python, prepared data and Bayesian modelling expertise to build and validate a useful model. [Model documentation](https://github.com/pymc-labs/pymc-marketing).
+- **Route:** PyMC-Marketing library through Python.
+- **Scope:** Read prepared data and fitted Bayesian models through Python..
+- **Setup:** Specialist. Install Python dependencies, prepare model assumptions and review the statistical results. [Connection documentation](https://www.pymc-marketing.io/en/stable/).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
-- **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
-- **Coverage:** Specialist. Flexible modelling toolkit, not a campaign-operation or turn-key daily marketer interface.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Read prepared data and fitted Bayesian models through Python.
+- **Write:** Create models, diagnostics, forecasts and allocation scenarios.
+- **Connection type:** self-managed
+- **Review:** current
+- **read:** Read prepared data and fitted Bayesian models through Python.
+- **create:** Models, forecasts, diagnostics and scenarios.
+- **modify:** Model specification and assumptions through code.
+- **delete:** Not established by the reviewed sources.
+- **publish:** No live campaign budget changes.
+- **Coverage:** Specialist. Create models, diagnostics, forecasts and allocation scenarios. Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Flexible Bayesian tooling for media-mix and customer-value modelling.
-- Open source and inspectable for teams that need methodological control.
-- Python ecosystem supports custom analysis and reproducibility.
+- Read prepared data and fitted Bayesian models through Python.
+- Create models, diagnostics, forecasts and allocation scenarios.
 
 **Limits**
 
-- Requires strong Python and statistical expertise.
-- No official MCP, plugin or dedicated workflow CLI was verified.
-- It is a modelling library rather than a daily media-operations product.
+- Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
 
 **Official links**
 
-- **Product / official page:** [PyMC-Marketing documentation](https://www.pymc-marketing.io/en/stable/)
+- **Product / official page:** [Connection and tool documentation](https://www.pymc-marketing.io/en/stable/)
 - **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** Python package, not a dedicated CLI
 - **API / SDK:** [Open-source Python package](https://github.com/pymc-labs/pymc-marketing)
-- **Documentation:** [PyMC-Marketing documentation](https://www.pymc-marketing.io/en/stable/)
-- **GitHub:** [PyMC-Marketing repository](https://github.com/pymc-labs/pymc-marketing)
+- **Documentation:** [Connection and tool documentation](https://www.pymc-marketing.io/en/stable/)
+- **GitHub:** [Vendor source code](https://github.com/getsimba-ai/simba-mcp)
 
-- **Access:** Open source; requires Python and Bayesian modelling expertise.
-- **Watch:** The package supports analysis. It does not provide a governed connection to advertising accounts.
-- **Sources:** [PyMC-Marketing repository](https://github.com/pymc-labs/pymc-marketing) · [PyMC-Marketing documentation](https://www.pymc-marketing.io/en/stable/)
-- **Last checked:** 5 Sept 2026
+- **Access:** Open-source library, compatible Python environment and compute. Separate hosted products have their own accounts and access requirements.
+- **Watch:** Simba MCP is a separate product; its hosted capabilities do not belong to this library entry.
+- **Sources:** [Connection and tool documentation](https://www.pymc-marketing.io/en/stable/) · [Additional official documentation](https://www.pymc-labs.com/open-source) · [Vendor source code](https://github.com/getsimba-ai/simba-mcp)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#modelling)
 
 ## Robyn
 
-**B · Research · Specialist**
+**C · Research · Specialist**
 
-Meta's open-source marketing mix modelling package for estimating channel contribution and budget scenarios.
+Read prepared historical data and inspect model outputs through code. Fit models and generate diagnostics and allocation scenarios.
 
 **Day to day**
 
-- Build marketing-mix models from historical data.
-- Explore allocation scenarios for a planning discussion.
+- Read prepared historical data and inspect model outputs through code.
+- Fit models and generate diagnostics and allocation scenarios.
 
-> **What still needs you:** A practitioner must interpret the model and approve any resulting campaign changes.
+> **What still needs you:** Specialist coding setup; no ready official external-agent connector verified.
 
-- **Route:** Official open-source R and Python package.
-- **Scope:** Marketing mix models and budget allocation scenarios.
-- **Setup:** Specialist. A modeller must prepare historical data and configure the R or Python workflow, then validate the results. [Model documentation](https://github.com/facebookexperimental/Robyn).
+- **Route:** Robyn library through a coding environment.
+- **Scope:** Read prepared historical data and inspect model outputs through code..
+- **Setup:** Specialist. Install R/Robyn or the Python beta, dependencies and prepared data. [Connection documentation](https://facebookexperimental.github.io/Robyn/docs/installation/).
 - **Human job:** Prepare model-ready data, configure assumptions, run the model, validate it and turn scenarios into planning evidence.
-- **Capabilities:** Prepare data **Partial** · Configure **Yes** · Run **Yes** · Validate **Yes** · Scenarios **Yes**
-- **Coverage:** Specialist. Produces MMM results and allocation hypotheses, without a governed connection to live accounts.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Read prepared historical data and inspect model outputs through code.
+- **Write:** Fit models and generate diagnostics and allocation scenarios.
+- **Connection type:** self-managed
+- **Review:** current
+- **read:** Read prepared historical data and inspect model outputs through code.
+- **create:** Models, diagnostics and allocation scenarios.
+- **modify:** Model inputs and parameters through code.
+- **delete:** Not established by the reviewed sources.
+- **publish:** No live campaign budget changes.
+- **Coverage:** Specialist. Fit models and generate diagnostics and allocation scenarios. Specialist coding setup; no ready official external-agent connector verified.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Established open-source marketing-mix modelling project from Meta.
-- Supports automated model exploration and budget-allocation analysis.
-- R and Python routes broaden analyst access.
+- Read prepared historical data and inspect model outputs through code.
+- Fit models and generate diagnostics and allocation scenarios.
 
 **Limits**
 
-- No official MCP or marketer-facing CLI was verified.
-- Model selection and calibration still require specialist judgement.
-- Outputs do not translate directly into safe platform changes.
+- Specialist coding setup; no ready official external-agent connector verified.
 
 **Official links**
 
-- **Product / official page:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
+- **Product / official page:** [Connection and tool documentation](https://facebookexperimental.github.io/Robyn/docs/installation/)
 - **AI interface / endpoint:** No official AI route verified
 - **MCP:** No official MCP verified
 - **Plugin:** No official agent plugin verified
 - **CLI:** R and Python package, not a dedicated CLI
 - **API / SDK:** [Open-source R and Python package](https://github.com/facebookexperimental/Robyn)
-- **Documentation:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
-- **GitHub:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
+- **Documentation:** [Connection and tool documentation](https://facebookexperimental.github.io/Robyn/docs/installation/)
+- **GitHub:** No official repository verified
 
-- **Access:** Open source; requires prepared data and statistical modelling expertise.
-- **Watch:** Robyn produces model outputs, not campaign changes. Treat automated budget recommendations as hypotheses requiring review.
-- **Sources:** [Official Robyn repository](https://github.com/facebookexperimental/Robyn)
-- **Last checked:** 5 Sept 2026
+- **Access:** Open-source packages and suitable compute; modelling skills and prepared data required.
+- **Watch:** Specialist coding setup; no ready official external-agent connector verified.
+- **Sources:** [Connection and tool documentation](https://facebookexperimental.github.io/Robyn/docs/installation/) · [Additional official documentation](https://facebookexperimental.github.io/Robyn/docs/robyn-api/)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#modelling)
 

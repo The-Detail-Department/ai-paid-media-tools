@@ -23,33 +23,38 @@ The evidence label records how directly a route has been observed. It is separat
 
 Unless an entry states otherwise, the current evidence basis is **Documentation reviewed**. A Production rating means the documented route appears dependable enough for a controlled recurring workflow. It does not claim that The Detail Department has executed it.
 
-## What matters, in order
+## What matters
 
-1. **End-to-end completion.** Can the route finish a recurring job, or does it stop at analysis?
-2. **The human job.** Every category has its own capability test. Read, Create, Modify and Delete are right for media platforms, but wrong for analytics, measurement or modelling.
-3. **Connection effort.** Hosted OAuth is materially different from developer approval, a cloud project, API enablement, tokens and custom client configuration.
-4. **Manual-feature coverage.** An MCP or API can exist while exposing only a small subset of the vendor's interface.
-5. **Maturity and governance.** Beta access, inconsistent account availability, unclear permissions and broad write scopes reduce production confidence.
+We assess how much an external AI assistant can do without an operator opening the platform:
 
-The `surface` field names the exact route being judged. Capabilities belong to that route. We do not borrow a capability from the manual product or an underlying API to make an MCP, plugin or CLI appear more complete.
+1. **Read.** Can it retrieve useful account data, content and context?
+2. **Write.** Can it create, edit, delete or publish the core work? These are separate actions. Creating a draft is not publishing it.
+3. **Connect.** Is this a native AI app, a vendor-hosted MCP, a self-managed connection or a custom API integration?
+
+The same combined lens applies across categories. Category-specific daily tasks explain the practical value; they no longer give a read-only research tool an A that could be mistaken for execution ability.
+
+The `surface` field names the exact route. Capabilities belong only to that route. We do not borrow from the manual platform, another connector or an underlying API. Third-party routes are explicitly identified. No connection is assumed to expose every feature.
 
 ## How we grade
 
-The letter grade is The Detail Department's recommendation for current daily work, not a score for the vendor or its full product.
+Grades are editorial judgements about the connection, not measured vendor scores, product quality or client results. We do not imply a precision that the documentation cannot support.
 
 | Grade | Meaning |
 | --- | --- |
-| A+, A, A- | Strong daily recommendation. Lower marks retain material limits. |
-| B+, B, B- | Useful in a defined workflow, with access, coverage or integration friction. |
-| C+, C, C- | Narrow, immature or too indirect for most daily teams. |
-| D / F | Not recommended for current production use. |
+| A+, A, A- | Useful reads, substantial core writes and a simple native or hosted connection. Material restrictions lower the grade. |
+| B+, B, B- | Useful reading and execution, but bounded actions, technical setup or manual handoffs remain. |
+| C+, C, C- | Read-only, narrow or custom-built access. May still be an excellent tool for its specialist job. |
+| D / F | No practical route established, or unsuitable for the stated workflow. Missing evidence alone is not a failing grade. |
 
-Practical grade ceilings:
+Practical boundaries:
 
-- A read-only route cannot score above B+ for a workflow whose normal job includes execution.
-- A media-platform route that cannot dependably modify core objects cannot score above B-.
-- A route requiring custom engineering or gated developer approval cannot score above B unless its operational value is exceptional.
-- Beta, preview, allowlist and private-beta routes normally remain Test regardless of their feature list.
+- Read-only routes are capped at C+ on this combined read/write/setup measure.
+- API-only routes requiring a custom AI integration are capped at C+.
+- Self-managed routes with useful writes generally fall in the B range.
+- Preview, beta and account gates affect both the grade and readiness.
+- Meta Ads and The Trade Desk retain their previous grades as **review pending** where current documentation was inaccessible. They must not appear as freshly verified leaders.
+
+This November rubric differs from the earlier category-specific grades. A changed grade can reflect the revised question, a changed product, or both; consult the record rather than treating it as a vendor regression.
 
 Readiness is recorded separately:
 
@@ -94,18 +99,15 @@ Production never means broad feature parity or unrestricted automation.
 
 Market role is editorial context, not a quality score. An Emerging product can earn a higher grade than a Reference product.
 
-### Category capability tests
+### Connection tiers
 
-| Category | Human-job capabilities |
-| --- | --- |
-| Media platforms | Read, Create, Modify, Delete |
-| Analytics | Analyse, Build reports, Configure, Validate, Share |
-| Measurement | Inspect, Configure, Validate, Deploy, Monitor |
-| Creative production | Read context, Create, Edit, Adapt, Export |
-| Research and intelligence | Discover, Retrieve, Compare, Analyse, Export |
-| Data infrastructure | Connect, Inspect, Query, Transform, Operate |
-| Automation and workflow | Connect, Build, Run, Debug, Monitor |
-| Modelling | Prepare data, Configure, Run, Validate, Scenarios |
+- **Native AI app / plugin:** add the vendor's app or plugin in a supported AI client and authorise it. Exact clients, plans and permission gates are in the record.
+- **Hosted MCP:** add a remote service run by its provider. OAuth, API keys, admin consent or vendor approval may still be required.
+- **Self-managed connection:** install or host an MCP, CLI or local skills environment yourself.
+- **Custom API:** an API exists, but the evaluated AI workflow requires an integration to be built.
+- **None verified:** no dependable connection route was established in this review.
+
+Setup level (Easy, Moderate, Hard or Specialist) describes the remaining effort within that tier. A hosted URL does not automatically mean an easy setup.
 
 ## Interface labels
 
@@ -133,7 +135,7 @@ The index is intentionally conservative. A missing capability is better than an 
 
 The AI CMS Index uses `data/cms-tools.json`, `data/cms-workflows.json` and
 `data/cms-ratings.json`. It assesses the named AI-compatible route against reading,
-drafting, editing, publishing and localisation. It does not rank LLM providers
+creating, editing, deleting and publishing content. Localisation is described only where the named route documents it. It does not rank LLM providers
 or the general quality of a CMS. The same evidence labels and grade ceilings apply.
 
 Publication means changing content visibility in the CMS. It does not prove that
@@ -141,11 +143,7 @@ a separate frontend has deployed, caches have cleared or the live page is correc
 A developer documentation assistant is not evidence of authenticated content writes.
 A platform's manual interface and API do not establish capability in its MCP.
 
-A catalogue update is not a blanket re-verification: each entry carries its own
-`verifiedOn` date. The October maintenance pass rechecked four media routes and
-checked existing source links; other media records retain their September dates.
-All initial CMS records are documentation reviews, with no connected-account or
-execution claim. Unverified cells identify the limits of this review.
+The 16 November 2026 review covers all 60 records. It is a primary-documentation review, not connected-account testing. `reviewStatus=pending` identifies unresolved current evidence; a previous `verifiedOn` date is preserved there. Other unverified actions remain labelled within the record rather than being inferred.
 
 ## Practical examples and reading order
 

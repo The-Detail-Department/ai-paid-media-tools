@@ -28,19 +28,6 @@ const allowedSections = new Set([
   'Content platforms',
   'Commerce content'
 ]);
-const capabilityKeys = {
-  'Media platforms': ['read', 'create', 'modify', 'delete'],
-  Analytics: ['analyse', 'buildReports', 'configure', 'validate', 'share'],
-  Measurement: ['inspect', 'configure', 'validate', 'deploy', 'monitor'],
-  'Creative production': ['context', 'create', 'edit', 'adapt', 'export'],
-  'Research and intelligence': ['discover', 'retrieve', 'compare', 'analyse', 'export'],
-  'Data infrastructure': ['connect', 'inspect', 'query', 'transform', 'operate'],
-  'Automation and workflow': ['connect', 'build', 'run', 'debug', 'monitor'],
-  'CMS and site builders': ['read', 'draft', 'edit', 'publish', 'localise'],
-  'Content platforms': ['read', 'draft', 'edit', 'publish', 'localise'],
-  'Commerce content': ['read', 'draft', 'edit', 'publish', 'localise'],
-  Modelling: ['prepare', 'configure', 'run', 'validate', 'scenarios']
-};
 const gradePattern = /^(A\+|A|A-|B\+|B|B-|C\+|C|C-|D|F)$/;
 const allowedPosition = new Set(['Reference', 'Emerging', 'Specialist']);
 const allowedSetup = new Set(['Easy', 'Moderate', 'Hard', 'Specialist']);
@@ -158,16 +145,15 @@ for (const [index, tool] of data.tools.entries()) {
   if (!workflow.setup?.note) errors.push(path + ' workflow setup note is required');
   if (!workflow.setup?.documentation?.label) errors.push(path + ' needs a setup documentation label');
   try { if (new URL(workflow.setup?.documentation?.url).protocol !== 'https:') throw new Error(); } catch { errors.push(path + ' needs an HTTPS setup documentation URL'); }
-  for (const action of ['read', 'create', 'modify', 'delete']) {
+  for (const action of ['read', 'create', 'modify', 'delete', 'publish']) {
     if (!allowedAction.has(workflow.actions?.[action])) errors.push(path + ' workflow action ' + action + ' is invalid');
   }
-  if (rating.section !== 'Media platforms') {
-    for (const capability of capabilityKeys[rating.section] ?? []) {
-      if (!allowedAction.has(workflow.capabilities?.[capability])) {
-        errors.push(path + ' workflow capability ' + capability + ' is invalid');
-      }
-    }
+  for (const action of ['read', 'create', 'modify', 'delete', 'publish']) {
+    if (!workflow.actionScopes?.[action]?.trim()) errors.push(path + ' needs explicit scope for ' + action);
   }
+  if (!workflow.readSummary?.trim() || !workflow.writeSummary?.trim()) errors.push(path + ' needs read/write summaries');
+  if (!['native-app', 'hosted-mcp', 'self-managed', 'custom-api', 'none-verified'].includes(workflow.setup?.tier)) errors.push(path + ' has invalid setup tier');
+  if (!['current', 'pending'].includes(workflow.reviewStatus)) errors.push(path + ' has invalid review status');
   if (!allowedCoverage.has(workflow.coverage?.level)) errors.push(path + ' workflow coverage is invalid');
   if (!workflow.coverage?.note) errors.push(path + ' workflow coverage note is required');
   if (workflow.evidenceBasis && !allowedEvidenceBasis.has(workflow.evidenceBasis)) {

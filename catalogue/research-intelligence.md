@@ -8,214 +8,234 @@ External research systems judged on discovery, retrieval, comparison, analysis a
 
 [Media platforms](media-platforms.md) · [Analytics](analytics.md) · [Measurement](measurement.md) · [Creative production](creative-production.md) · [Research and intelligence](research-intelligence.md) · [Data infrastructure](data-infrastructure.md) · [Automation and workflow](automation-workflow.md) · [Modelling](modelling.md)
 
-| Tool | Grade | Market role | Readiness | Setup | Discover | Retrieve | Compare | Analyse | Export | Human-job coverage |
+| Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Ahrefs](#ahrefs) | **A-** | Reference | Production | Easy | Yes | Yes | Yes | Yes | Partial | Most steps |
-| [Semrush](#semrush) | **A-** | Reference | Production | Easy | Yes | Yes | Yes | Yes | Yes | Most steps |
-| [Similarweb](#similarweb) | **A-** | Reference | Production | Easy | Yes | Yes | Yes | Yes | Yes | Most steps |
-| [DataForSEO](#dataforseo) | **B+** | Specialist | Production | Moderate | Yes | Yes | Yes | Partial | Yes | Most steps |
+| [Ahrefs](#ahrefs) | **C+** | Reference | Production | Easy | Yes | Unverified | Unverified | Unverified | No | Assist only |
+| [Semrush](#semrush) | **C+** | Reference | Production | Easy | Yes | No | No | Unverified | No | Assist only |
+| [Similarweb](#similarweb) | **C+** | Reference | Production | Easy | Yes | Unverified | Unverified | Unverified | No | Assist only |
+| [DataForSEO](#dataforseo) | **C+** | Specialist | Production | Moderate | Yes | Partial | No | Unverified | No | Assist only |
 
 ## Ahrefs
 
-**A- · Production · Reference**
+**C+ · Production · Reference**
 
-Ahrefs hosts an official MCP for keyword, competitor, backlink and content-gap research against live Ahrefs data.
+Retrieve keyword, backlink, domain and SEO research reports. No operational content or account writes established.
 
 **Day to day**
 
-- Research search visibility and competing sites.
-- Collect keyword and backlink information for a brief.
+- Retrieve keyword, backlink, domain and SEO research reports.
 
-> **What still needs you:** Use it for research. It cannot report directly on your advertising accounts or change campaigns.
+> **What still needs you:** Strong research access does not edit websites; plan and API-unit allowances apply.
 
-- **Route:** Official hosted MCP.
-- **Scope:** Keywords, domains, backlinks, competitors and content gaps.
-- **Setup:** Easy. Connect the hosted endpoint and authenticate an eligible Ahrefs account. [Connection documentation](https://docs.ahrefs.com/en/mcp/docs/introduction).
+- **Route:** Ahrefs Claude connector + hosted MCP.
+- **Scope:** Retrieve keyword, backlink, domain and SEO research reports..
+- **Setup:** Easy. Install the Claude connector with Lite-or-higher Ahrefs access. [Connection documentation](https://docs.ahrefs.com/en/mcp/docs/introduction).
 - **Human job:** Find the right market evidence, retrieve it, compare competitors or queries, analyse patterns and export the evidence.
-- **Capabilities:** Discover **Yes** · Retrieve **Yes** · Compare **Yes** · Analyse **Yes** · Export **Partial**
-- **Coverage:** Most steps. Strong search and competitor research without custom integration; decision framing and activation remain outside the product.
+- **Capabilities:** Read **Yes** · Create **Unverified** · Edit **Unverified** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Retrieve keyword, backlink, domain and SEO research reports.
+- **Write:** No operational content or account writes established.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Retrieve keyword, backlink, domain and SEO research reports.
+- **create:** Not established by the reviewed sources.
+- **modify:** Not established by the reviewed sources.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Not a content publishing route.
+- **Coverage:** Assist only. No operational content or account writes established. Strong research access does not edit websites; plan and API-unit allowances apply.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Hosted official MCP with straightforward OAuth.
-- Strong keyword, backlink and competitor evidence.
-- Useful without building a custom API wrapper.
+- Retrieve keyword, backlink, domain and SEO research reports.
+- Install the Claude connector with Lite-or-higher Ahrefs access.
 
 **Limits**
 
-- Read-only research rather than activation.
-- Requires an eligible paid plan.
-- It does not include first-party campaign truth.
+- Strong research access does not edit websites; plan and API-unit allowances apply.
 
 **Official links**
 
 - **Product / official page:** [Ahrefs MCP](https://ahrefs.com/mcp/)
-- **AI interface / endpoint:** [https://api.ahrefs.com/mcp/mcp](https://api.ahrefs.com/mcp/mcp)
-- **MCP:** [Official hosted MCP](https://docs.ahrefs.com/en/mcp/docs/introduction)
-- **Plugin:** No separate official plugin verified
+- **AI interface / endpoint:** [Ahrefs Claude connector + hosted MCP](https://docs.ahrefs.com/en/mcp/docs/introduction)
+- **MCP:** [Ahrefs Claude connector + hosted MCP](https://docs.ahrefs.com/en/mcp/docs/introduction)
+- **Plugin:** [Official app or directory connector](https://docs.ahrefs.com/en/mcp/docs/introduction)
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Ahrefs API](https://docs.ahrefs.com/docs/api/reference/introduction)
-- **Documentation:** [Ahrefs MCP introduction](https://docs.ahrefs.com/en/mcp/docs/introduction)
+- **Documentation:** [Connection and tool documentation](https://docs.ahrefs.com/en/mcp/docs/introduction)
 - **GitHub:** No official repository verified
 
-- **Access:** Eligible paid Ahrefs plan and OAuth through a compatible MCP client.
-- **Watch:** It supplies external search evidence, not first-party campaign truth or media-platform actions.
-- **Sources:** [Ahrefs MCP introduction](https://docs.ahrefs.com/en/mcp/docs/introduction) · [Ahrefs MCP product page](https://ahrefs.com/mcp/)
-- **Last checked:** 5 Sept 2026
+- **Access:** Lite plan or higher, monthly API units and per-request row limits.
+- **Watch:** Strong research access does not edit websites; plan and API-unit allowances apply.
+- **Sources:** [Connection and tool documentation](https://docs.ahrefs.com/en/mcp/docs/introduction) · [Additional official documentation](https://docs.ahrefs.com/en/mcp/docs/claude-desktop-web) · [Additional official documentation](https://docs.ahrefs.com/en/mcp/docs/tool-categories)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#research-and-intelligence)
 
 ## Semrush
 
-**A- · Production · Reference**
+**C+ · Production · Reference**
 
-Semrush Public MCP exposes SEO, traffic, market, project and paid-search reports through a hosted OAuth endpoint.
+Read SEO, Trends and supported Projects reports. Read-only; project creation and settings changes are excluded.
 
 **Day to day**
 
-- Find and run relevant search or competitor reports.
-- Compare research results before deciding what to change.
+- Read SEO, Trends and supported Projects reports.
 
-> **What still needs you:** The connection only reads research data and uses API units. Apply campaign decisions elsewhere.
+> **What still needs you:** MCP does not inherit wider REST API mutations; API units and subscribed datasets apply.
 
-- **Route:** Semrush Public MCP.
-- **Scope:** SEO, traffic, market, paid-search, shopping and project reports.
-- **Setup:** Easy. Connect the hosted OAuth endpoint with an eligible subscription and enough API units. [Connection documentation](https://developer.semrush.com/api/v3/introduction/semrush-mcp/).
+- **Route:** Semrush ChatGPT app + hosted MCP.
+- **Scope:** Read SEO, Trends and supported Projects reports..
+- **Setup:** Easy. Connect the official ChatGPT app, or configure the hosted OAuth MCP in another supported client. [Connection documentation](https://developer.semrush.com/api/v3/introduction/semrush-mcp/).
 - **Human job:** Find the right market evidence, retrieve it, compare competitors or queries, analyse patterns and export the evidence.
-- **Capabilities:** Discover **Yes** · Retrieve **Yes** · Compare **Yes** · Analyse **Yes** · Export **Yes**
-- **Coverage:** Most steps. Broad report discovery and execution across Semrush datasets; changes to projects or campaigns stay elsewhere.
+- **Capabilities:** Read **Yes** · Create **No** · Edit **No** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Read SEO, Trends and supported Projects reports.
+- **Write:** Read-only; project creation and settings changes are excluded.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Read SEO, Trends and supported Projects reports.
+- **create:** Project creation is explicitly excluded.
+- **modify:** Project settings changes are explicitly excluded.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Not a content publishing route.
+- **Coverage:** Assist only. Read-only; project creation and settings changes are excluded. MCP does not inherit wider REST API mutations; API units and subscribed datasets apply.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Hosted OAuth endpoint works across major clients.
-- Broad SEO, paid-search, shopping and market reports.
-- Discovery tools make a large API easier for agents.
+- Read SEO, Trends and supported Projects reports.
+- Connect the official ChatGPT app, or configure the hosted OAuth MCP in another supported client.
 
 **Limits**
 
-- Every call consumes API units.
-- Project methods exposed by MCP are read-only.
-- Subscription entitlements make coverage variable.
+- MCP does not inherit wider REST API mutations; API units and subscribed datasets apply.
 
 **Official links**
 
 - **Product / official page:** [Semrush MCP](https://www.semrush.com/mcp/)
-- **AI interface / endpoint:** [https://mcp.semrush.com/v2/mcp](https://mcp.semrush.com/v2/mcp)
-- **MCP:** [Official public MCP](https://developer.semrush.com/api/v3/introduction/semrush-mcp/)
-- **Plugin:** [Official ChatGPT app](https://developer.semrush.com/api/v3/introduction/semrush-mcp/)
+- **AI interface / endpoint:** [Semrush ChatGPT app + hosted MCP](https://developer.semrush.com/api/v3/introduction/semrush-mcp/)
+- **MCP:** [Semrush ChatGPT app + hosted MCP](https://developer.semrush.com/api/v3/introduction/semrush-mcp/)
+- **Plugin:** [Official app or directory connector](https://developer.semrush.com/api/v3/introduction/semrush-mcp/)
 - **CLI:** No dedicated official Semrush CLI verified
 - **API / SDK:** [Semrush API](https://developer.semrush.com/api/)
-- **Documentation:** [Semrush MCP documentation](https://developer.semrush.com/api/v3/introduction/semrush-mcp/)
+- **Documentation:** [Connection and tool documentation](https://developer.semrush.com/api/v3/introduction/semrush-mcp/)
 - **GitHub:** No official repository verified
 
-- **Access:** An eligible Semrush subscription and API units; available datasets follow the subscription.
-- **Watch:** MCP calls consume API units and the Projects API exposure is read-only even where the underlying API can mutate projects.
-- **Sources:** [Semrush MCP documentation](https://developer.semrush.com/api/v3/introduction/semrush-mcp/) · [Semrush API overview](https://developer.semrush.com/api/v3/introduction/semrush-api-overview/)
-- **Last checked:** 5 Sept 2026
+- **Access:** Appropriate Semrush API subscription and units; Trends coverage follows subscription level.
+- **Watch:** MCP does not inherit wider REST API mutations; API units and subscribed datasets apply.
+- **Sources:** [Connection and tool documentation](https://developer.semrush.com/api/v3/introduction/semrush-mcp/) · [Additional official documentation](https://www.semrush.com/mcp/)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#research-and-intelligence)
 
 ## Similarweb
 
-**A- · Production · Reference**
+**C+ · Production · Reference**
 
-Similarweb hosts an MCP with broad web, app, audience, search, PPC-spend and retail intelligence coverage.
+Read website/app, audience, traffic, search and commerce intelligence. No account, campaign or content writes established.
 
 **Day to day**
 
-- Compare external traffic and market estimates.
-- Build research using the datasets your subscription includes.
+- Read website/app, audience, traffic, search and commerce intelligence.
 
-> **What still needs you:** Treat figures as external estimates, often delayed. Check decisions against your own platform and analytics data.
+> **What still needs you:** The connector exposes subscribed datasets only and consumes data credits.
 
-- **Route:** Official hosted MCP.
-- **Scope:** Web, app, search, audience, PPC and retail intelligence.
-- **Setup:** Easy. Connect the hosted endpoint and authenticate an API-inclusive subscription. [Connection documentation](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup).
+- **Route:** Similarweb Claude connector.
+- **Scope:** Read website/app, audience, traffic, search and commerce intelligence..
+- **Setup:** Easy. Install the official Claude connector and authorise access to subscribed datasets. [Connection documentation](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup).
 - **Human job:** Find the right market evidence, retrieve it, compare competitors or queries, analyse patterns and export the evidence.
-- **Capabilities:** Discover **Yes** · Retrieve **Yes** · Compare **Yes** · Analyse **Yes** · Export **Yes**
-- **Coverage:** Most steps. Wide external-market coverage and direct comparisons, bounded by licensed datasets and data-credit economics.
+- **Capabilities:** Read **Yes** · Create **Unverified** · Edit **Unverified** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Read website/app, audience, traffic, search and commerce intelligence.
+- **Write:** No account, campaign or content writes established.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Read website/app, audience, traffic, search and commerce intelligence.
+- **create:** Not established by the reviewed sources.
+- **modify:** Not established by the reviewed sources.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Not a content publishing route.
+- **Coverage:** Assist only. No account, campaign or content writes established. The connector exposes subscribed datasets only and consumes data credits.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Hosted MCP covers more than 75 intelligence endpoints.
-- Strong web, app, search, audience and retail breadth.
-- Supports direct competitor comparison.
+- Read website/app, audience, traffic, search and commerce intelligence.
+- Install the official Claude connector and authorise access to subscribed datasets.
 
 **Limits**
 
-- Requires API-inclusive paid access.
-- Queries consume data credits.
-- Estimated and delayed datasets are not first-party live truth.
+- The connector exposes subscribed datasets only and consumes data credits.
 
 **Official links**
 
 - **Product / official page:** [Similarweb](https://www.similarweb.com/)
-- **AI interface / endpoint:** [https://mcp.similarweb.com](https://mcp.similarweb.com)
-- **MCP:** [Official hosted MCP](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup)
-- **Plugin:** Official connectors use the MCP route
+- **AI interface / endpoint:** [Similarweb Claude connector](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup)
+- **MCP:** [Similarweb Claude connector](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup)
+- **Plugin:** [Official app or directory connector](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup)
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Similarweb API v5](https://docs.similarweb.com/api-v5)
-- **Documentation:** [Similarweb MCP setup](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup)
+- **Documentation:** [Connection and tool documentation](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup)
 - **GitHub:** No official repository verified
 
-- **Access:** Business, Enterprise or API-only subscription with an active API key and dataset entitlements.
-- **Watch:** Queries consume data credits and many datasets are estimates with monthly or delayed freshness rather than first-party live data.
-- **Sources:** [Similarweb MCP setup](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup) · [Similarweb API v5](https://docs.similarweb.com/api-v5)
-- **Last checked:** 5 Sept 2026
+- **Access:** API-only, Business or Enterprise subscription with API/MCP access. Data credits apply; plan limits datasets, regions and historical ranges.
+- **Watch:** The connector exposes subscribed datasets only and consumes data credits.
+- **Sources:** [Connection and tool documentation](https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup) · [Additional official documentation](https://docs.similarweb.com/api-v5/mcp-integration/available-integrations/claude-integration)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#research-and-intelligence)
 
 ## DataForSEO
 
-**B+ · Production · Specialist**
+**C+ · Production · Specialist**
 
-The official server and CLI browse DataForSEO documentation and make authenticated API requests for SERP, keyword, backlink and market data.
+Retrieve SERP, keyword, backlink and competitor research data. Submit billable research tasks; no campaign or website mutations.
 
 **Day to day**
 
-- Research search results, keywords and competitors.
-- Bring search data into a report or planning workflow.
+- Retrieve SERP, keyword, backlink and competitor research data.
 
-> **What still needs you:** Use the results as research inputs. It cannot change campaigns or report directly on your advertising accounts.
+> **What still needs you:** Research execution is not campaign control; API endpoint costs and allowances apply.
 
-- **Route:** Official remote and local MCP.
-- **Scope:** SERPs, keywords, backlinks, businesses, products and content data.
-- **Setup:** Moderate. Hosted OAuth is relatively direct; CLI and local MCP use API credentials and module-specific billing. [Connection documentation](https://github.com/dataforseo/mcp-server-typescript).
+- **Route:** DataForSEO v3 hosted research MCP.
+- **Scope:** Retrieve SERP, keyword, backlink and competitor research data..
+- **Setup:** Moderate. Connect the hosted v3 MCP with OAuth and a funded DataForSEO account. [Connection documentation](https://github.com/dataforseo/mcp-server-typescript).
 - **Human job:** Find the right market evidence, retrieve it, compare competitors or queries, analyse patterns and export the evidence.
-- **Capabilities:** Discover **Yes** · Retrieve **Yes** · Compare **Yes** · Analyse **Partial** · Export **Yes**
-- **Coverage:** Most steps. Wide research-data coverage. It does not read or control the advertiser's own paid-media accounts.
+- **Capabilities:** Read **Yes** · Create **Partial** · Edit **No** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Retrieve SERP, keyword, backlink and competitor research data.
+- **Write:** Submit billable research tasks; no campaign or website mutations.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Retrieve SERP, keyword, backlink and competitor research data.
+- **create:** Billable research/API tasks only.
+- **modify:** No campaign or website edits established.
+- **delete:** Not established by the reviewed sources.
+- **publish:** No content or advertising publication.
+- **Coverage:** Assist only. Submit billable research tasks; no campaign or website mutations. Research execution is not campaign control; API endpoint costs and allowances apply.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official MCP and CLI make search and competitive data directly usable by agents.
-- Read-only control is appropriate for external research data.
-- Broad API coverage supports repeatable market and SERP analysis.
+- Retrieve SERP, keyword, backlink and competitor research data.
+- Connect the hosted v3 MCP with OAuth and a funded DataForSEO account.
 
 **Limits**
 
-- It does not operate advertising accounts.
-- Usage-based API costs need monitoring.
-- Raw results still require paid-media judgement before action.
+- Research execution is not campaign control; API endpoint costs and allowances apply.
 
 **Official links**
 
-- **Product / official page:** [DataForSEO API documentation](https://docs.dataforseo.com/v3/)
-- **AI interface / endpoint:** [Official remote and local MCP](https://github.com/dataforseo/mcp-server-typescript)
-- **MCP:** [Official remote and local MCP](https://github.com/dataforseo/mcp-server-typescript)
+- **Product / official page:** [Vendor source code](https://github.com/dataforseo/mcp-server-typescript)
+- **AI interface / endpoint:** [DataForSEO v3 hosted research MCP](https://github.com/dataforseo/mcp-server-typescript)
+- **MCP:** [DataForSEO v3 hosted research MCP](https://github.com/dataforseo/mcp-server-typescript)
 - **Plugin:** No separate official plugin verified
 - **CLI:** [Official CLI in the MCP package](https://github.com/dataforseo/mcp-server-typescript)
 - **API / SDK:** [DataForSEO APIs and clients](https://docs.dataforseo.com/v3/)
-- **Documentation:** [DataForSEO API documentation](https://docs.dataforseo.com/v3/)
-- **GitHub:** [Official MCP and CLI repository](https://github.com/dataforseo/mcp-server-typescript)
+- **Documentation:** [Vendor source code](https://github.com/dataforseo/mcp-server-typescript)
+- **GitHub:** [Vendor source code](https://github.com/dataforseo/mcp-server-typescript)
 
-- **Access:** OAuth for hosted HTTP or API credentials for CLI and local stdio.
-- **Watch:** This supplies research data; it does not control paid-media accounts. API modules are billed and enabled separately.
-- **Sources:** [Official MCP and CLI repository](https://github.com/dataforseo/mcp-server-typescript) · [DataForSEO API documentation](https://docs.dataforseo.com/v3/)
-- **Last checked:** 5 Sept 2026
+- **Access:** DataForSEO account, API access and funding/entitlement for the requested endpoint; compatible remote MCP client.
+- **Watch:** Research execution is not campaign control; API endpoint costs and allowances apply.
+- **Sources:** [Vendor source code](https://github.com/dataforseo/mcp-server-typescript)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#research-and-intelligence)
 

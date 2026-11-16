@@ -1,0 +1,222 @@
+[
+  {
+    "id": "supermetrics",
+    "verifiedOn": "2026-11-16",
+    "route": "Official Supermetrics apps for Claude and ChatGPT, backed by vendor-hosted Supermetrics MCP",
+    "read": "Discover connected sources, accounts and fields; retrieve cross-channel marketing performance. Campaign inspection and research tools are available on supported ad platforms.",
+    "write": "Create paused campaigns, change budgets/status/settings, edit ads and remove campaigns on supported platforms. Publish Supermetrics Studio dashboards. This is no longer a reporting-only route.",
+    "setupTier": "native-app",
+    "setupDetails": "Connect the directory app with OAuth, then authorise data sources. Remote MCP is also available at https://mcp.supermetrics.com/mcp. Writing requires an additional account-level opt-in.",
+    "access": "AI chats or MCP entitlement/trial, Campaign management entitlement and seat where applicable, connected accounts with platform edit permission. The connection owner enables writes for each account/team.",
+    "limitations": [
+      "Campaign management covers Google, Meta, Microsoft, TikTok, LinkedIn, Snapchat and ChatGPT Ads, not every reporting connector.",
+      "Write access starts disabled. Approval policy is configurable; do not claim every change always requires human confirmation. New campaigns start paused.",
+      "Ad editing differs by platform; some edits create a replacement ad. Snapchat creative editing is not supported. Campaign removal is irreversible.",
+      "Platform eligibility, quotas and supported campaign formats still apply. Documentation verification does not prove an individual account can use every action."
+    ],
+    "sources": [
+      {"url":"https://docs.supermetrics.com/docs/how-to-enable-campaign-write-access","label":"Campaign write permissions and entitlements, published 12 November 2026"},
+      {"url":"https://docs.supermetrics.com/v1/docs/how-to-manage-ad-campaigns-with-ai-tools","label":"Supported platforms, campaign actions and limitations, updated 12 November 2026"},
+      {"url":"https://docs.supermetrics.com/docs/how-to-connect-supermetrics-to-ai-tools","label":"AI app setup and subscription requirements, updated 13 November 2026"},
+      {"url":"https://github.com/supermetrics-public/supermetrics-mcp/blob/main/README.md","label":"Official remote MCP and directory integrations"}
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Native chat apps now combine broad reporting with substantial routine campaign actions. Account gating and uneven format coverage prevent a full-control claim.",
+    "changedClaims": ["Replace read-only MCP description.","Raise prior B+ to A- for this evaluated route.","Replace mandatory-confirmation blanket wording with account-level configurable approvals."]
+  },
+  {
+    "id": "dataforseo",
+    "verifiedOn": "2026-11-16",
+    "route": "Official DataForSEO v3 hosted MCP",
+    "read": "Find API documentation and request SERP, keyword, competitor, backlink and other research data through the generic api_request tool.",
+    "write": "Can submit billable research/API tasks. No verified ability to change advertising accounts, publish content or alter search rankings. Research requests must not be described as campaign writes.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Add https://mcp.dataforseo.com/v3/mcp and authenticate with OAuth. Local stdio/CLI remain alternatives requiring API credentials and a local runtime.",
+    "access": "DataForSEO account, API access and funding/entitlement for the requested endpoint; compatible remote MCP client.",
+    "limitations": ["Current v3 interface exposes documentation discovery and a generic API-request tool, not the older fixed tool catalogue.","Endpoint parameters, charges and available datasets still matter.","Useful research access is not ad-platform administration."],
+    "sources": [{"url":"https://github.com/dataforseo/mcp-server-typescript","label":"Official v3 server, OAuth, hosted URL and tool definitions"}],
+    "proposedGrade": "B+",
+    "gradeReason": "Easy hosted research access with broad data coverage; operational writes are outside this product's purpose.",
+    "changedClaims": ["Retain B+ but name v3 and its generic request interface.","Distinguish paid task creation from marketing-platform writes."]
+  },
+  {
+    "id": "airbyte",
+    "verifiedOn": "2026-11-16",
+    "route": "Current official Airbyte platform MCP at mcp.airbyte.com, not the older Agents endpoint or documentation-only MCP",
+    "read": "Inspect workspaces, connectors, configurations, sync status and logs. With agent access enabled, read supported source records or destination SQL results; search indexed synced data where configured.",
+    "write": "Deploy/update connectors, create/update connections, select streams, start/cancel syncs and manage custom connector definitions. Deletion exists but requires the resource name to contain delete-me or deleteme. Direct record reads/search cannot create, update or delete source/destination records.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Connect https://mcp.airbyte.com/mcp with Airbyte OAuth. No MCP server hosting is needed; useful data access still requires configured sources/destinations and administrator enablement.",
+    "access": "Hosted MCP supports Airbyte Cloud editions and Flex. Direct reads/search require Cloud and supported connectors. Airbyte roles and stored connector credentials govern access.",
+    "limitations": ["Pipeline writes and source-system record writes are different capabilities.","Direct reads do not support connectors using external secret managers.","Self-managed Core requires local MCP setup and has documented known issues.","Older Agents documentation advertises a separate US-only ChatGPT app and source actions. Do not combine it silently with current platform MCP."],
+    "sources": [
+      {"url":"https://docs.airbyte.com/platform/airbyte-mcp","label":"Current route, access and direct-read boundaries"},
+      {"url":"https://docs.airbyte.com/platform/airbyte-mcp/tools","label":"Exact pipeline tools and deletion safeguards"},
+      {"url":"https://docs.airbyte.com/platform/airbyte-mcp/install","label":"Current hosted installation"},
+      {"url":"https://github.com/airbytehq/airbyte/blob/master/docs/ai-agents/interfaces/mcp/readme.md","label":"Older distinct Agent MCP route, retained only to explain the route mismatch"}
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Hosted OAuth plus useful pipeline CRUD and troubleshooting, but data-estate setup and read-only external records limit marketer self-service.",
+    "changedClaims": ["Replace the obsolete docs URL that redirects to the documentation homepage.","Use current platform MCP scope instead of merging it with older Agent MCP claims.","Improve B to B+ for hosted pipeline operations; keep setup prerequisites visible."]
+  },
+  {
+    "id": "fivetran",
+    "verifiedOn": "2026-11-16",
+    "route": "Fivetran Agent Context MCP, including official Claude directory connector",
+    "read": "Read-only SQL against the connected warehouse context layer: business definitions, metrics and operational data discovered through the AGENTS schema.",
+    "write": "The provide_feedback tool submits answer feedback. No verified pipeline creation, connector changes, warehouse record mutation or campaign action through this route.",
+    "setupTier": "native-app",
+    "setupDetails": "Claude offers Agent Context MCP in its connector directory. ChatGPT uses a custom workspace app at https://api.fivetran.ai/mcp. A usable context layer must already be built.",
+    "access": "Public Preview. Fivetran/admin access, an organisation context layer, permitted users and AI-workspace administration for initial setup. Query-role options depend on warehouse.",
+    "limitations": ["Native connector installation does not remove upstream warehouse/context modelling work.","The sole documented write is feedback, not business-data mutation.","Connector SDK plugins and connector APIs are separate routes; their abilities must not inflate this MCP grade."],
+    "sources": [
+      {"url":"https://fivetran.com/docs/context-layer/agent-context-mcp","label":"Public Preview tool list: execute_sql read and provide_feedback write"},
+      {"url":"https://fivetran.com/docs/context-layer/agent-context-mcp/setup-guide","label":"Claude directory, ChatGPT custom app and context prerequisites"}
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Convenient AI access once prepared, but operational scope remains read-only and the context layer needs administrator preparation.",
+    "changedClaims": ["Correct metadata-only wording: the route can query business/operational data in the context layer.","Record native Claude connector and the feedback-only write exception.","Retain C+ and Public Preview."]
+  },
+  {
+    "id": "google-mcp-toolbox",
+    "verifiedOn": "2026-11-16",
+    "route": "Google MCP Toolbox for Databases, self-managed prebuilt or custom toolsets",
+    "read": "Query connected databases, inspect schemas and retrieve database-specific information through the enabled toolset.",
+    "write": "Can execute configured SQL or database administration tools when enabled and permitted. Create/update/delete support depends on database, exposed tools, credentials and read-only configuration; it is not a ready-made ad-platform connector.",
+    "setupTier": "self-managed",
+    "setupDetails": "Run the Toolbox binary/container locally or deploy it, configure data-source access and toolsets, then connect an MCP client. Prebuilt configurations reduce coding but not database administration.",
+    "access": "Open-source server plus a supported database/cloud account, credentials, network access and operation-level permissions.",
+    "limitations": ["Do not substitute Google Cloud's distinct managed remote MCP products for this self-managed Toolbox entry.","Supported engines have explicit read-only modes that block writes and suppress write tools; configuration differs by engine.","Database writes do not automatically update the advertising source platform."],
+    "sources": [
+      {"url":"https://mcp-toolbox.dev/documentation/introduction/","label":"Toolbox architecture, tools and deployment options"},
+      {"url":"https://mcp-toolbox.dev/documentation/configuration/security/read-only/","label":"Engine-specific read-only enforcement and tool suppression"},
+      {"url":"https://github.com/google/mcp","label":"Official distinction between managed remote products and open-source Toolbox"}
+    ],
+    "proposedGrade": "B",
+    "gradeReason": "Strong configurable database actions, offset by operator-managed infrastructure and tool design.",
+    "changedClaims": ["Retain B and conditional actions.","Explicitly separate self-managed Toolbox from Google's managed remote MCP services."]
+  },
+  {
+    "id": "snowflake",
+    "verifiedOn": "2026-11-16",
+    "route": "Snowflake-managed MCP server with explicitly configured Cortex, SQL and custom tools",
+    "read": "Query governed data via Cortex Agents/Search/Analyst and configured SQL tools. Analyst alone generates SQL; executing it requires the execution route.",
+    "write": "SYSTEM_EXECUTE_SQL is read-only by default; writes require changing that configuration and sufficient role privileges. Configured UDFs/stored procedures can perform actions. Tool annotations alone are not enforcement.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "A Snowflake administrator creates an MCP server object and exposes approved tools; clients connect using OAuth or other supported authentication. Snowflake hosts the server.",
+    "access": "Snowflake account, warehouse/data, configured semantic views/search/agents as relevant, and separate permissions for both server and underlying tools.",
+    "limitations": ["Managed hosting does not mean zero-configuration business access.","Writes exist only through exposed and authorised tools; no general campaign management is implied.","Generated SQL and executed SQL must be distinguished."],
+    "sources": [{"url":"https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp","label":"Managed MCP configuration, tool types, SQL read_only default and RBAC"}],
+    "proposedGrade": "B+",
+    "gradeReason": "Broad governed data access and optional actions without hosting a server, but technical preparation is substantial.",
+    "changedClaims": ["Replace vague writes-depend wording with default-read-only SQL and explicit opt-in.","Raise B to B+ for managed, configurable workflow coverage."]
+  },
+  {
+    "id": "meridian",
+    "verifiedOn": "2026-11-16",
+    "route": "Google Meridian official Agent Skills plus local google-meridian Python library",
+    "read": "Assist with data schema mapping, documentation, fitted models and convergence diagnostics using local inputs.",
+    "write": "Generate/run reproducible modelling scripts, fit/save models, produce reports and budget scenarios. No direct advertising-account budget changes are established.",
+    "setupTier": "self-managed",
+    "setupDetails": "Install the official skills into a compatible coding agent and run generated Python in a configured local environment. The modelling runtime and clean historical data remain necessary.",
+    "access": "Open-source skills/library, compatible coding agent, Python dependencies and appropriate compute; specialist judgement for priors, data and model validation.",
+    "limitations": ["The official skill workflow includes review checkpoints for mappings, priors, sampling and script execution.","An agent skill is not a native ChatGPT/Claude app or vendor-hosted execution MCP.","The September announcement calls the toolkit MCP-based, but the current implementation guide documents Agent Skills and local Python. Grade that explicit route."],
+    "sources": [
+      {"url":"https://developers.google.com/meridian/docs/user-guide/agent-skills","label":"Official five skills, installation, runtime and checkpoints"},
+      {"url":"https://developers.google.com/meridian/docs/user-guide/installing","label":"Python library installation and compute requirements"},
+      {"url":"https://github.com/google/meridian/discussions/1819","label":"Meridian 2.0 announcement and introduction of agentic skills"}
+    ],
+    "proposedGrade": "B-",
+    "gradeReason": "A real official guided agent workflow exists, but specialist modelling and local execution prevent a plug-and-play grade.",
+    "changedClaims": ["Remove blanket claim that only an unassisted Python library exists.","Add official Agent Skills while retaining specialist setup and no platform writes.","Recalibrate B+ to B- for ease and operational readiness, not statistical quality."]
+  },
+  {
+    "id": "robyn",
+    "verifiedOn": "2026-11-16",
+    "route": "Meta Robyn R package or Python beta, run through a configured coding environment",
+    "read": "Load prepared historical marketing data and inspect model outputs through package code. No ready official account-reading connector was verified.",
+    "write": "Fit models, generate diagnostics and compute budget-allocation scenarios. These are model artefacts, not changes to live campaign budgets.",
+    "setupTier": "self-managed",
+    "setupDetails": "Install R and Robyn plus Nevergrad/reticulate, or the Python beta; configure data and model parameters. An AI coding agent can assist but is not bundled as a turnkey chat integration.",
+    "access": "Open-source packages and suitable compute; modelling skills and prepared data required.",
+    "limitations": ["Official Python implementation remains labelled beta.","No official ready ChatGPT/Claude app or hosted execution MCP was verified in reviewed sources; this is a bounded research result, not proof that no community wrapper exists.","Scenario output does not deploy campaign changes."],
+    "sources": [
+      {"url":"https://facebookexperimental.github.io/Robyn/docs/installation/","label":"R, Nevergrad and Python installation paths"},
+      {"url":"https://facebookexperimental.github.io/Robyn/docs/robyn-api/","label":"Python beta, notebooks and configurable model lifecycle"}
+    ],
+    "proposedGrade": "C",
+    "gradeReason": "Useful specialist modelling software; AI operation still relies on code and local setup rather than a verified ready integration.",
+    "changedClaims": ["Separate model artefact creation from advertising writes.","Recalibrate B to C for the AI connection rubric, without judging modelling quality."]
+  },
+  {
+    "id": "pymc-marketing",
+    "verifiedOn": "2026-11-16",
+    "route": "PyMC-Marketing Python library in a configured coding environment; Simba MCP is a separate related product",
+    "read": "Consume prepared marketing/customer data and inspect fitted Bayesian model results through Python.",
+    "write": "Create models, fit posterior distributions, generate diagnostics, forecasts and allocation scenarios. The library itself does not supply verified campaign-account writes.",
+    "setupTier": "self-managed",
+    "setupDetails": "Install Python dependencies, prepare data and model assumptions, then run code/notebooks. A coding assistant can help; runtime and statistical review remain required.",
+    "access": "Open-source library, compatible Python environment and compute. Separate hosted products have their own accounts and access requirements.",
+    "limitations": ["PyMC Labs lists Simba MCP, which can upload data, fit models and run scenarios, but that is a separate platform rather than a connector bundled with the library.","Do not assign Simba's hosted/API capabilities to this entry without explicitly changing the evaluated route and commercial prerequisites.","Model and budget scenarios are not live advertising mutations."],
+    "sources": [
+      {"url":"https://www.pymc-marketing.io/en/stable/","label":"Library installation, MMM/CLV functions and diagnostics"},
+      {"url":"https://www.pymc-labs.com/open-source","label":"Official ecosystem distinguishes PyMC-Marketing and Simba MCP"},
+      {"url":"https://github.com/getsimba-ai/simba-mcp","label":"Separate Simba route: authenticated model lifecycle tools"}
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Rich programmable modelling but specialist execution for the named library route. Related ready MCP products deserve their own explicitly scoped assessment.",
+    "changedClaims": ["Recalibrate B to C+ for connection readiness.","Do not repeat an ecosystem-wide no-MCP claim: an official related Simba route is documented."]
+  },
+  {
+    "id": "rudderstack",
+    "verifiedOn": "2026-11-16",
+    "route": "Official hosted RudderStack MCP",
+    "read": "Inspect configured sources, destinations, transformations, event streams and documentation as exposed by the server.",
+    "write": "Documentation describes managing sources/transformations and configuring destinations. Exact create/update/delete coverage is not itemised; record partial configuration writes, not blanket CRUD.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Add https://mcp.rudderstack.com/mcp to a compatible client and complete RudderStack OAuth. Some desktop clients use a local mcp-remote bridge.",
+    "access": "Active RudderStack account with relevant permissions; team connector setup may require an administrator.",
+    "limitations": ["Vendor marks the server in active development, with unavailable features and possible update-time instability.","Public documentation does not enumerate all actions or plan eligibility.","No live tool inventory or account operation was tested."],
+    "sources": [{"url":"https://mcp.rudderstack.com/docs","label":"Official hosted endpoint, scopes described, OAuth and limitations"}],
+    "proposedGrade": "B-",
+    "gradeReason": "Straightforward hosted access but incomplete public evidence for action depth and documented maturity limitations.",
+    "changedClaims": ["Replace create/modify/delete partial labels with specifically evidenced configuration scope and unknown deletion coverage.","Reduce B+ to B- pending stronger action-level evidence."]
+  },
+  {
+    "id": "databricks",
+    "verifiedOn": "2026-11-16",
+    "route": "Databricks-provided MCP services: Genie One for business questions and system.ai.dbsql for explicit SQL",
+    "read": "Genie One answers governed natural-language analytics questions. SQL MCP inspects and queries Unity Catalog data on a permitted SQL warehouse.",
+    "write": "SQL MCP explicitly supports reads and writes by default, subject to Unity Catalog/warehouse permissions; disallow_writes can block mutations. This is database action, not native ad-account management.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Use the workspace-hosted MCP URL with supported authenticated clients. Configure workspace data, warehouse access and governance; no separate server hosting is needed.",
+    "access": "Databricks workspace and resource privileges. Genie One MCP is GA; SQL MCP requires an account admin to enable Enhanced Unity Gateway preview and is Beta.",
+    "limitations": ["Do not label all Databricks MCP functionality as one public-preview feature.","Genie analytics and raw SQL execution are separate routes with different intent and capabilities.","Writes and costs remain governed by policies, credentials and compute access."],
+    "sources": [
+      {"url":"https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services","label":"Current service catalogue and GA/Beta distinctions, updated 13 November 2026"},
+      {"url":"https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql","label":"Explicit SQL writes, policy controls and endpoint, updated 10 November 2026"}
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Managed access supports meaningful analytics and governed SQL actions; prerequisite data engineering and beta write route limit frictionless use.",
+    "changedClaims": ["Replace the redirected managed-mcp URL.","Split GA Genie One from Beta SQL MCP.","Replace vague conditional-write wording with explicit default-write support and policy controls.","Retain B+."]
+  },
+  {
+    "id": "dbt",
+    "verifiedOn": "2026-11-16",
+    "route": "Official remote dbt MCP, with self-hosted MCP kept separate for local CLI/code generation",
+    "read": "Query metrics, inspect models, lineage/freshness, job configuration/results and warehouse SQL results.",
+    "write": "Remote Admin tools can trigger, retry and cancel job runs. execute_sql does not block writes and uses personal development warehouse permissions. Local dbt run/build/test and code generation require the self-hosted route.",
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Copy the account's MCP URL into a client and use OAuth where eligible, otherwise supported tokens. No local install for remote; prepared projects/environments and warehouse credentials still matter.",
+    "access": "Remote MCP is available across dbt platform plans but underlying API tools vary by plan. OAuth is public beta for Starter, Enterprise and Enterprise+. Token-based execute_sql needs a personal token, not a service token.",
+    "limitations": ["Remote MCP is not wholly read-only despite high-level consumption-oriented wording.","No local project or CLI execution through remote MCP.","Warehouse writes depend on development credentials, not production deployment credentials.","Tools can change without a deprecation period; self-host a pinned version when a stable contract is needed."],
+    "sources": [
+      {"url":"https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp","label":"Remote setup, OAuth eligibility and token constraints"},
+      {"url":"https://docs.getdbt.com/docs/dbt-ai/mcp-available-tools","label":"Remote/local tool matrix, job actions and explicit SQL write semantics"},
+      {"url":"https://docs.getdbt.com/docs/dbt-ai/about-mcp","label":"Server types and plan-dependent tool access"}
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Hosted governed analytics and job actions improve setup materially, while local development and advanced execution still require technical preparation.",
+    "changedClaims": ["Replace self-hosted-only claim with remote and local routes.","Do not call remote MCP read-only: current tool docs explicitly allow SQL writes and job mutations.","Retain B+ with clearer setup and action boundaries."]
+  }
+]

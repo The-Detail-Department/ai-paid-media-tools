@@ -8,61 +8,67 @@ Creative systems judged on context, generation, editing, format adaptation and u
 
 [Media platforms](media-platforms.md) · [Analytics](analytics.md) · [Measurement](measurement.md) · [Creative production](creative-production.md) · [Research and intelligence](research-intelligence.md) · [Data infrastructure](data-infrastructure.md) · [Automation and workflow](automation-workflow.md) · [Modelling](modelling.md)
 
-| Tool | Grade | Market role | Readiness | Setup | Read context | Create | Edit | Adapt | Export | Human-job coverage |
+| Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Canva](#canva) | **B+** | Reference | Production | Easy | Yes | Yes | Partial | Partial | Yes | Some steps |
-| [Adobe Firefly Creative Production](#adobe-firefly-creative-production) | **B+** | Reference | Test | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
-| [Figma](#figma) | **B+** | Reference | Test | Easy | Yes | Partial | Partial | Partial | Partial | Some steps |
-| [Runway](#runway) | **A-** | Emerging | Production | Moderate | Partial | Yes | Yes | Yes | Yes | Most steps |
+| [Canva](#canva) | **A-** | Reference | Production | Easy | Yes | Yes | Yes | Unverified | Partial | Most steps |
+| [Adobe Firefly Creative Production](#adobe-firefly-creative-production) | **B+** | Reference | Test | Hard | Yes | Yes | Partial | No | Partial | Most steps |
+| [Figma](#figma) | **B+** | Reference | Test | Easy | Yes | Yes | Yes | Partial | No | Most steps |
+| [Runway](#runway) | **B+** | Emerging | Production | Easy | Partial | Yes | Partial | Unverified | No | Most steps |
 
 ## Canva
 
-**B+ · Production · Reference**
+**A- · Production · Reference**
 
-Canva's remote MCP supports design creation and editing, assets, brand resources, search, export and collaboration.
+Read designs, pages, content, folders and permitted brand templates. Create and edit designs, transform images and export assets.
 
 **Day to day**
 
-- Create and edit supported designs.
-- Adapt content using the tools available to your Canva account.
+- Read designs, pages, content, folders and permitted brand templates.
+- Create and edit designs, transform images and export assets.
 
-> **What still needs you:** Check the design and the tools available to your account. The Apps CLI builds Canva apps; it is not a substitute for the design tools.
+> **What still needs you:** Premium licensing and tool limits apply; general deletion and social publishing are not established.
 
-- **Route:** Official remote MCP.
-- **Scope:** Designs, assets and selected content workflows.
-- **Setup:** Easy. Connect and authorise an individual Canva account. App-development workflows have separate requirements. [Connection documentation](https://www.canva.dev/docs/mcp/).
+- **Route:** Canva native connector + hosted MCP.
+- **Scope:** Read designs, pages, content, folders and permitted brand templates..
+- **Setup:** Easy. Connect the official ChatGPT app or supported Canva AI Connector and authorise the account. [Connection documentation](https://www.canva.com/help/connect-chatgpt-to-canva/).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
-- **Capabilities:** Read context **Yes** · Create **Yes** · Edit **Partial** · Adapt **Partial** · Export **Yes**
-- **Coverage:** Some steps. Useful design creation and editing, without full parity with Canva's manual editor and app ecosystem.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **Partial**
+- **Read:** Read designs, pages, content, folders and permitted brand templates.
+- **Write:** Create and edit designs, transform images and export assets.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Read designs, pages, content, folders and permitted brand templates.
+- **create:** Designs, imported assets and folders.
+- **modify:** Supported design elements, images and resizing.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Brand-template publication on eligible plans; not social posting.
+- **Coverage:** Most steps. Create and edit designs, transform images and export assets. Premium licensing and tool limits apply; general deletion and social publishing are not established.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official MCP supports design creation, editing, assets and export.
-- Remote OAuth makes it accessible to common agent clients.
-- Apps CLI and Connect APIs support deeper product integration.
+- Read designs, pages, content, folders and permitted brand templates.
+- Create and edit designs, transform images and export assets.
 
 **Limits**
 
-- The Apps CLI is not a daily creative-production CLI.
-- Brand and format governance still need human review.
-- It does not validate media-platform setup or campaign delivery.
+- Premium licensing and tool limits apply; general deletion and social publishing are not established.
 
 **Official links**
 
-- **Product / official page:** [Canva MCP documentation](https://www.canva.dev/docs/mcp/)
-- **AI interface / endpoint:** [Official remote MCP](https://www.canva.dev/docs/mcp/)
-- **MCP:** [Official remote MCP](https://www.canva.dev/docs/mcp/)
-- **Plugin:** AI Connector uses MCP; no separate plugin counted
+- **Product / official page:** [Connection and tool documentation](https://www.canva.com/help/connect-chatgpt-to-canva/)
+- **AI interface / endpoint:** [Canva native connector + hosted MCP](https://www.canva.com/help/connect-chatgpt-to-canva/)
+- **MCP:** [Canva native connector + hosted MCP](https://www.canva.com/help/connect-chatgpt-to-canva/)
+- **Plugin:** [Official app or directory connector](https://www.canva.com/help/connect-chatgpt-to-canva/)
 - **CLI:** [Canva Apps CLI](https://www.canva.dev/docs/apps/canva-cli/)
 - **API / SDK:** [Apps SDK and Connect APIs](https://www.canva.dev/docs/)
-- **Documentation:** [Canva MCP documentation](https://www.canva.dev/docs/mcp/)
+- **Documentation:** [Connection and tool documentation](https://www.canva.com/help/connect-chatgpt-to-canva/)
 - **GitHub:** No official repository verified
 
-- **Access:** A Canva account and individual OAuth authorisation; app-development features have separate requirements.
-- **Watch:** The Apps CLI builds Canva apps. It is not a general command-line interface for day-to-day creative production.
-- **Sources:** [Canva MCP documentation](https://www.canva.dev/docs/mcp/) · [Canva CLI](https://www.canva.dev/docs/apps/canva-cli/)
-- **Last checked:** 5 Sept 2026
+- **Access:** AI Connector available to Free and paid accounts, subject to admin controls. Brand templates/autofill/resize and export quality have plan restrictions; AI allowances apply.
+- **Watch:** Premium licensing and tool limits apply; general deletion and social publishing are not established.
+- **Sources:** [Connection and tool documentation](https://www.canva.com/help/connect-chatgpt-to-canva/) · [Additional official documentation](https://www.canva.com/help/mcp-agent-setup/) · [Additional official documentation](https://www.canva.dev/docs/apps/mcp/tools/)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#creative-production)
 
@@ -70,50 +76,56 @@ Canva's remote MCP supports design creation and editing, assets, brand resources
 
 **B+ · Test · Reference**
 
-Adobe Run-Workflow MCP can discover, submit and monitor reusable creative workflows for generation, editing, composition and format adaptation.
+Discover actions/templates, check run status and retrieve outputs. Compose creative workflows, transform media and publish reusable workflows.
 
 **Day to day**
 
-- Run approved creative-production workflows.
-- Track jobs and review the resulting assets.
+- Discover actions/templates, check run status and retrieve outputs.
+- Compose creative workflows, transform media and publish reusable workflows.
 
-> **What still needs you:** An enterprise administrator must provide access and prepare reusable workflows before the assistant can run them.
+> **What still needs you:** Organisation credentials are required; output links expire and publishing does not distribute ads.
 
-- **Route:** Hosted Run-Workflow MCP.
-- **Scope:** Published creative workflows, images, videos and batch jobs.
-- **Setup:** Moderate. Requires enterprise entitlement, an MCP client and organisation workflows or templates that the server can discover and run. [Connection documentation](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html).
+- **Route:** Adobe Run-Workflow hosted MCP.
+- **Scope:** Discover actions/templates, check run status and retrieve outputs..
+- **Setup:** Hard. Obtain the organisation IMS token and service API key, then configure hosted MCP. [Connection documentation](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
-- **Capabilities:** Read context **Yes** · Create **Yes** · Edit **Yes** · Adapt **Yes** · Export **Yes**
-- **Coverage:** Most steps. Can execute and monitor multi-step production workflows, with human brand, legal and final-quality approval.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Partial** · Delete **No** · Publish / activate **Partial**
+- **Read:** Discover actions/templates, check run status and retrieve outputs.
+- **Write:** Compose creative workflows, transform media and publish reusable workflows.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Discover actions/templates, check run status and retrieve outputs.
+- **create:** Workflows and generated/processed media.
+- **modify:** Supported image/video transformations.
+- **delete:** No delete tool; cancellation only stops execution.
+- **publish:** Reusable workflows, not ad or social distribution.
+- **Coverage:** Most steps. Compose creative workflows, transform media and publish reusable workflows. Organisation credentials are required; output links expire and publishing does not distribute ads.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Hosted MCP runs real reusable creative workflows.
-- Supports generation, editing, composition and format variants.
-- Asynchronous monitoring fits large production jobs.
+- Discover actions/templates, check run status and retrieve outputs.
+- Compose creative workflows, transform media and publish reusable workflows.
 
 **Limits**
 
-- Enterprise-only access limits practical adoption.
-- Workflow design must exist before reliable reuse.
-- Human brand and output review remains essential.
+- Organisation credentials are required; output links expire and publishing does not distribute ads.
 
 **Official links**
 
 - **Product / official page:** [Firefly Creative Production](https://business.adobe.com/products/firefly-business/firefly-creative-production.html)
-- **AI interface / endpoint:** [Hosted Run-Workflow MCP](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html)
-- **MCP:** [Hosted Run-Workflow MCP](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html)
+- **AI interface / endpoint:** [Adobe Run-Workflow hosted MCP](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html)
+- **MCP:** [Adobe Run-Workflow hosted MCP](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html)
 - **Plugin:** No separate official agent plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Creative Production Workflow API](https://developer.adobe.com/firefly-services/docs/workflow-builder-api/)
-- **Documentation:** [Run-Workflow MCP overview](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html)
-- **GitHub:** [Firefly Services JavaScript SDK](https://github.com/Firefly-Services/firefly-services-sdk-js)
+- **Documentation:** [Connection and tool documentation](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html)
+- **GitHub:** No official repository verified
 
-- **Access:** Firefly Creative Production for Enterprise plus the permissions and published workflows required by the organisation.
-- **Watch:** The agent can run what the enterprise workflow layer exposes; brand fidelity and final asset approval still need human review.
-- **Sources:** [Run-Workflow MCP overview](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html) · [Creative Production Workflow API](https://developer.adobe.com/firefly-services/docs/workflow-builder-api/) · [Firefly Services SDK](https://github.com/Firefly-Services/firefly-services-sdk-js)
-- **Last checked:** 5 Sept 2026
+- **Access:** Organisation service access and admin-provided credentials; availability must be checked for the customer organisation.
+- **Watch:** Organisation credentials are required; output links expire and publishing does not distribute ads.
+- **Sources:** [Connection and tool documentation](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html) · [Additional official documentation](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-tools.html) · [Additional official documentation](https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/install-run-workflow-mcp.html)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#creative-production)
 
@@ -121,101 +133,113 @@ Adobe Run-Workflow MCP can discover, submit and monitor reusable creative workfl
 
 **B+ · Test · Reference**
 
-Figma's remote MCP can retrieve design context and, for supported clients and seats, create or modify native canvas content.
+Read design structure, components, variables and file context. Create and edit native canvas objects in supported clients.
 
 **Day to day**
 
-- Read design context and prepare a code handoff.
-- Create or edit supported canvas content through the remote beta.
+- Read design structure, components, variables and file context.
+- Create and edit native canvas objects in supported clients.
 
-> **What still needs you:** Canvas editing is in beta and does not cover every design action. Reading a desktop file does not automatically grant remote editing access.
+> **What still needs you:** Canvas writing is beta; library publishing stays manual and visual review remains necessary.
 
-- **Route:** Official remote MCP, canvas writes beta.
-- **Scope:** Design files, components, variables and canvas objects.
-- **Setup:** Easy. Connect a supported client to the remote MCP and authorise Figma; verify write eligibility and file permissions. [Connection documentation](https://developers.figma.com/docs/figma-mcp-server/).
+- **Route:** Figma native connector + hosted MCP.
+- **Scope:** Read design structure, components, variables and file context..
+- **Setup:** Easy. Use an official supported connector with the required seat and file permissions. [Connection documentation](https://www.figma.com/mcp-catalog/).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
-- **Capabilities:** Read context **Yes** · Create **Partial** · Edit **Partial** · Adapt **Partial** · Export **Partial**
-- **Coverage:** Some steps. Excellent design context and code handoff. Write-to-canvas is useful but does not reproduce the full editor or plugin ecosystem.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **No**
+- **Read:** Read design structure, components, variables and file context.
+- **Write:** Create and edit native canvas objects in supported clients.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Read design structure, components, variables and file context.
+- **create:** Native frames, components, variables and layouts.
+- **modify:** Editable canvas structure through use_figma.
+- **delete:** Node-level changes; no general file deletion claim.
+- **publish:** Component/library publishing remains manual.
+- **Coverage:** Most steps. Create and edit native canvas objects in supported clients. Canvas writing is beta; library publishing stays manual and visual review remains necessary.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official remote and desktop MCP expose real design context.
-- Supported clients can create or modify native canvas content.
-- Plugin API and agent skills support structured creative workflows.
+- Read design structure, components, variables and file context.
+- Create and edit native canvas objects in supported clients.
 
 **Limits**
 
-- Write-to-canvas is beta and depends on current seat eligibility and file permissions.
-- It does not connect creative output to media-platform delivery by itself.
-- No dedicated official Figma CLI was verified.
+- Canvas writing is beta; library publishing stays manual and visual review remains necessary.
 
 **Official links**
 
-- **Product / official page:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/)
-- **AI interface / endpoint:** [Official remote and desktop MCP](https://developers.figma.com/docs/figma-mcp-server/)
-- **MCP:** [Official remote and desktop MCP](https://developers.figma.com/docs/figma-mcp-server/)
-- **Plugin:** [Official plugins and agent skills](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/)
+- **Product / official page:** [Connection and tool documentation](https://www.figma.com/mcp-catalog/)
+- **AI interface / endpoint:** [Figma native connector + hosted MCP](https://www.figma.com/mcp-catalog/)
+- **MCP:** [Figma native connector + hosted MCP](https://www.figma.com/mcp-catalog/)
+- **Plugin:** [Official app or directory connector](https://www.figma.com/mcp-catalog/)
 - **CLI:** No dedicated official Figma CLI verified
 - **API / SDK:** [REST and Plugin APIs](https://developers.figma.com/)
-- **Documentation:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/)
+- **Documentation:** [Connection and tool documentation](https://www.figma.com/mcp-catalog/)
 - **GitHub:** No official repository verified
 
-- **Access:** Supported MCP client and file permissions; write-to-canvas uses the remote server and remains beta.
-- **Watch:** Canvas writing is beta. Verify current seat eligibility and edit permission; desktop context tools do not imply remote write access.
-- **Sources:** [Figma MCP introduction](https://developers.figma.com/docs/figma-mcp-server/) · [Write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/)
-- **Last checked:** 29 Oct 2026
+- **Access:** Supported client, file edit access and eligible Figma plan; Full seat required outside Drafts. Canvas writing is free during beta, with future usage pricing announced.
+- **Watch:** Canvas writing is beta; library publishing stays manual and visual review remains necessary.
+- **Sources:** [Connection and tool documentation](https://www.figma.com/mcp-catalog/) · [Additional official documentation](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/) · [Additional official documentation](https://developers.figma.com/docs/figma-mcp-server/)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#creative-production)
 
 ## Runway
 
-**A- · Production · Emerging**
+**B+ · Production · Emerging**
 
-Runway offers an official generation MCP, a hosted developer MCP, APIs and SDKs for images, video, audio, editing, upscaling and reusable workflows.
+Retrieve generated outputs; general library search is unverified. Generate images/videos and perform supported reference-based transformations.
 
 **Day to day**
 
-- Generate or transform supported image and video assets.
-- Check generation jobs and collect outputs for review.
+- Retrieve generated outputs; general library search is unverified.
+- Generate images/videos and perform supported reference-based transformations.
 
-> **What still needs you:** Review the output for brand fit, usage rights and campaign requirements before using it.
+> **What still needs you:** Do not borrow Runway Dev tools or archived server capabilities into the generation app.
 
-- **Route:** Official generation MCP and API.
-- **Scope:** Image, video, audio, tasks and workflows.
-- **Setup:** Moderate. Use the official local MCP repository or hosted developer route, then configure billing and authentication. [Connection documentation](https://docs.dev.runwayml.com/guides/mcp/).
+- **Route:** Runway native generation app.
+- **Scope:** Retrieve generated outputs; general library search is unverified..
+- **Setup:** Easy. Install the ChatGPT generation app and authorise a Runway account with eligible models and credits. [Connection documentation](https://runway.com/mcp).
 - **Human job:** Understand the brief and source assets, create, edit, adapt to placements and export production-ready files.
-- **Capabilities:** Read context **Partial** · Create **Yes** · Edit **Yes** · Adapt **Yes** · Export **Yes**
-- **Coverage:** Most steps. Creates and transforms production media across modalities; the brief, brand system, rights review and final QC remain human responsibilities.
+- **Capabilities:** Read **Partial** · Create **Yes** · Edit **Partial** · Delete **Unverified** · Publish / activate **No**
+- **Read:** Retrieve generated outputs; general library search is unverified.
+- **Write:** Generate images/videos and perform supported reference-based transformations.
+- **Connection type:** native-app
+- **Review:** current
+- **read:** Retrieve generated outputs; general library search is unverified.
+- **create:** Images and videos using available account models.
+- **modify:** Reference-based generation/restyling; no full timeline editing.
+- **delete:** Not established by the reviewed sources.
+- **publish:** No ad or social publishing established.
+- **Coverage:** Most steps. Generate images/videos and perform supported reference-based transformations. Do not borrow Runway Dev tools or archived server capabilities into the generation app.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official MCP, API, SDKs and open GitHub server.
-- Creates and edits image, video and audio assets.
-- Task APIs and reusable workflows support automation.
+- Retrieve generated outputs; general library search is unverified.
+- Generate images/videos and perform supported reference-based transformations.
 
 **Limits**
 
-- Outputs still need rights and brand review.
-- Temporary result URLs require disciplined download.
-- Generation cost and model choice need controls.
+- Do not borrow Runway Dev tools or archived server capabilities into the generation app.
 
 **Official links**
 
 - **Product / official page:** [Runway](https://runwayml.com/)
-- **AI interface / endpoint:** [Official generation and developer MCP routes](https://docs.dev.runwayml.com/guides/mcp/)
-- **MCP:** [Official generation and developer MCP routes](https://docs.dev.runwayml.com/guides/mcp/)
-- **Plugin:** [Runway agent skills](https://github.com/runwayml/skills)
+- **AI interface / endpoint:** [Runway native generation app](https://runway.com/mcp)
+- **MCP:** [Runway native generation app](https://runway.com/mcp)
+- **Plugin:** [Official app or directory connector](https://runway.com/mcp)
 - **CLI:** No general production CLI verified
 - **API / SDK:** [Runway API and SDKs](https://docs.dev.runwayml.com/api/)
-- **Documentation:** [Runway MCP guide](https://docs.dev.runwayml.com/guides/mcp/)
+- **Documentation:** [Connection and tool documentation](https://runway.com/mcp)
 - **GitHub:** [Runway API MCP server](https://github.com/runwayml/runway-api-mcp-server)
 
-- **Access:** Runway developer account, billing and either OAuth for the hosted developer MCP or an API key for generation.
-- **Watch:** Generated assets require creative and rights review, and temporary output URLs must be downloaded before expiry.
-- **Sources:** [Runway MCP guide](https://docs.dev.runwayml.com/guides/mcp/) · [Runway API reference](https://docs.dev.runwayml.com/api/) · [Runway API MCP server](https://github.com/runwayml/runway-api-mcp-server)
-- **Last checked:** 5 Sept 2026
+- **Access:** Runway account; eligible models and generation costs depend on plan and Runway credits.
+- **Watch:** Do not borrow Runway Dev tools or archived server capabilities into the generation app.
+- **Sources:** [Connection and tool documentation](https://runway.com/mcp) · [Additional official documentation](https://mcp.runwayml.com/) · [Additional official documentation](https://docs.dev.runwayml.com/guides/mcp/) · [Vendor source code](https://github.com/runwayml/runway-api-mcp-server)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#creative-production)
 

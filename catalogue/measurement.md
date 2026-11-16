@@ -8,61 +8,67 @@ Collection, tagging and attribution systems judged on implementation, validation
 
 [Media platforms](media-platforms.md) · [Analytics](analytics.md) · [Measurement](measurement.md) · [Creative production](creative-production.md) · [Research and intelligence](research-intelligence.md) · [Data infrastructure](data-infrastructure.md) · [Automation and workflow](automation-workflow.md) · [Modelling](modelling.md)
 
-| Tool | Grade | Market role | Readiness | Setup | Inspect | Configure | Validate | Deploy | Monitor | Human-job coverage |
+| Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Google Tag Manager](#google-tag-manager) | **B** | Reference | Production | Hard | Yes | Yes | Partial | Yes | Partial | Most steps |
-| [AppsFlyer](#appsflyer) | **B** | Reference | Test | Easy | Yes | No | Partial | No | Yes | Some steps |
-| [Twilio Segment](#twilio-segment) | **B-** | Reference | Production | Hard | Yes | Yes | Partial | Yes | Partial | Most steps |
-| [Adjust](#adjust) | **C+** | Reference | Test | Hard | Yes | Partial | Partial | Partial | Yes | Some steps |
+| [Google Tag Manager](#google-tag-manager) | **B+** | Reference | Production | Moderate | Yes | Yes | Yes | Yes | Yes | Most steps |
+| [AppsFlyer](#appsflyer) | **B** | Reference | Test | Moderate | Yes | Partial | No | No | No | Some steps |
+| [Adjust](#adjust) | **C+** | Reference | Test | Moderate | Yes | Unverified | Unverified | Unverified | Unverified | Assist only |
+| [Twilio Segment](#twilio-segment) | **C** | Reference | Production | Hard | Yes | Yes | Yes | Yes | Unverified | Some steps |
 
 ## Google Tag Manager
 
-**B · Production · Reference**
+**B+ · Production · Reference**
 
-The Tag Manager API can manage accounts, containers, workspaces, tags and triggers. No vendor-backed MCP source was verified.
+Read accounts, containers, workspaces, tags and versions. Change configuration, create previews and publish container versions.
 
 **Day to day**
 
-- Prepare tags, triggers and variables in a workspace.
-- Create versions and publish approved container changes.
+- Read accounts, containers, workspaces, tags and versions.
+- Change configuration, create previews and publish container versions.
 
-> **What still needs you:** Review the workspace before publishing. A container change can immediately alter tracking on the live site.
+> **What still needs you:** Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified.
 
-- **Route:** Official API.
-- **Scope:** Accounts, containers, workspaces, tags, triggers and versions.
-- **Setup:** Hard. A developer must build the API connection and configure account authentication. Container permissions must allow the intended edits or publication. [API documentation](https://developers.google.com/tag-platform/tag-manager/api/v2).
+- **Route:** Stape hosted GTM MCP (third-party).
+- **Scope:** Read accounts, containers, workspaces, tags and versions..
+- **Setup:** Moderate. Connect Stape hosted MCP with Google OAuth and the required GTM rights. [Connection documentation](https://github.com/stape-io/google-tag-manager-mcp-server).
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
-- **Capabilities:** Inspect **Yes** · Configure **Yes** · Validate **Partial** · Deploy **Yes** · Monitor **Partial**
-- **Coverage:** Most steps. Most configuration objects are available through the API, including version and publish workflows.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Yes** · Publish / activate **Yes**
+- **Read:** Read accounts, containers, workspaces, tags and versions.
+- **Write:** Change configuration, create previews and publish container versions.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read accounts, containers, workspaces, tags and versions.
+- **create:** Tags, workspaces, previews and versions.
+- **modify:** Tags, workspaces and versions, including synchronisation.
+- **delete:** Supported tags, workspaces and versions.
+- **publish:** Container versions with publish permission.
+- **Coverage:** Most steps. Change configuration, create previews and publish container versions. Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Official API supports container, workspace, tag, trigger and variable workflows.
-- Useful for repeatable measurement deployment and governance.
-- Workspace and version concepts support controlled changes.
+- Read accounts, containers, workspaces, tags and versions.
+- Change configuration, create previews and publish container versions.
 
 **Limits**
 
-- No official MCP, agent plugin or dedicated CLI was verified.
-- Incorrect writes can damage live measurement.
-- Safe automation needs preview, review and publication gates outside the API.
+- Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified.
 
 **Official links**
 
-- **Product / official page:** [Tag Manager API v2](https://developers.google.com/tag-platform/tag-manager/api/v2)
+- **Product / official page:** [Additional official documentation](https://developers.google.com/tag-platform/tag-manager/api/v2)
 - **AI interface / endpoint:** No official AI route verified
-- **MCP:** No official MCP verified
+- **MCP:** [Third-party, Stape](https://github.com/stape-io/google-tag-manager-mcp-server)
 - **Plugin:** No official agent plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Tag Manager API](https://developers.google.com/tag-platform/tag-manager/api/v2)
-- **Documentation:** [Tag Manager API v2](https://developers.google.com/tag-platform/tag-manager/api/v2)
-- **GitHub:** No official repository verified
+- **Documentation:** [Additional official documentation](https://developers.google.com/tag-platform/tag-manager/api/v2)
+- **GitHub:** [Vendor source code](https://github.com/stape-io/google-tag-manager-mcp-server)
 
-- **Access:** Google Cloud OAuth credentials and container permissions.
-- **Watch:** Publishing a container is a production change. Put review, environments and rollback around any agent workflow.
-- **Sources:** [Tag Manager API v2](https://developers.google.com/tag-platform/tag-manager/api/v2)
-- **Last checked:** 5 Sept 2026
+- **Access:** Google account must have the relevant GTM permissions, particularly publish rights. Hosted traffic passes through Stape; local CLI is an alternative. AI workspace policy can restrict custom connectors.
+- **Watch:** Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified.
+- **Sources:** [Vendor source code](https://github.com/stape-io/google-tag-manager-mcp-server) · [Vendor source code](https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/tagActions.ts) · [Vendor source code](https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/versionActions.ts) · [Vendor source code](https://github.com/stape-io/google-tag-manager-mcp-server/blob/main/packages/core/src/tools/workspaceActions.ts) · [Additional official documentation](https://developers.google.com/tag-platform/tag-manager/api/v2)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#measurement)
 
@@ -70,101 +76,56 @@ The Tag Manager API can manage accounts, containers, workspaces, tags and trigge
 
 **B · Test · Reference**
 
-AppsFlyer beta MCP brings campaign performance, attribution trends and implementation troubleshooting into AI clients.
+Read aggregate performance, creative, SKAN and configuration data. Create OneLink short links under existing templates, with confirmation.
 
 **Day to day**
 
-- Check campaign and attribution performance.
-- Investigate measurement issues before changing configuration elsewhere.
+- Read aggregate performance, creative, SKAN and configuration data.
+- Create OneLink short links under existing templates, with confirmation.
 
-> **What still needs you:** Configuration changes still need a person or another API connection. The assistant beta focuses on analysis and audits.
+> **What still needs you:** Beta: ten links per account per day; no wider account-editing MCP tools documented.
 
-- **Route:** Official beta MCP.
-- **Scope:** Apps, campaign performance, attribution and implementation guidance.
-- **Setup:** Easy. Use hosted OAuth in supported clients or an account-level bearer token for automation. [Connection documentation](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP).
+- **Route:** AppsFlyer official hosted MCP.
+- **Scope:** Read aggregate performance, creative, SKAN and configuration data..
+- **Setup:** Moderate. Connect the hosted MCP with OAuth; permissions and beta availability apply. [Connection documentation](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP).
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
-- **Capabilities:** Inspect **Yes** · Configure **No** · Validate **Partial** · Deploy **No** · Monitor **Yes**
-- **Coverage:** Some steps. Useful performance monitoring and implementation diagnosis, without a dependable write route for correcting configuration.
+- **Capabilities:** Read **Yes** · Create **Partial** · Edit **No** · Delete **No** · Publish / activate **No**
+- **Read:** Read aggregate performance, creative, SKAN and configuration data.
+- **Write:** Create OneLink short links under existing templates, with confirmation.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read aggregate performance, creative, SKAN and configuration data.
+- **create:** OneLink links under existing templates.
+- **modify:** No edit tool documented for this route.
+- **delete:** No delete tool documented for this route.
+- **publish:** Link creation is not campaign activation.
+- **Coverage:** Some steps. Create OneLink short links under existing templates, with confirmation. Beta: ten links per account per day; no wider account-editing MCP tools documented.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Hosted official MCP with OAuth and token routes.
-- Useful campaign and attribution diagnosis in chat.
-- Includes implementation and OneLink troubleshooting.
+- Read aggregate performance, creative, SKAN and configuration data.
+- Create OneLink short links under existing templates, with confirmation.
 
 **Limits**
 
-- The service is explicitly beta.
-- Sessions can require frequent reconnection.
-- The reviewed route diagnoses more than it configures.
+- Beta: ten links per account per day; no wider account-editing MCP tools documented.
 
 **Official links**
 
 - **Product / official page:** [AppsFlyer MCP](https://www.appsflyer.com/products/agentic-ai/mcp/)
-- **AI interface / endpoint:** [https://mcp.appsflyer.com/auth/mcp](https://mcp.appsflyer.com/auth/mcp)
-- **MCP:** [Official beta MCP](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP)
+- **AI interface / endpoint:** [AppsFlyer official hosted MCP](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP)
+- **MCP:** [AppsFlyer official hosted MCP](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP)
 - **Plugin:** No separate official plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [AppsFlyer developer hub](https://dev.appsflyer.com/hc)
-- **Documentation:** [AppsFlyer MCP beta guide](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP)
+- **Documentation:** [Connection and tool documentation](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP)
 - **GitHub:** No official repository verified
 
-- **Access:** AppsFlyer account, appropriate app permissions and OAuth or an account-level MCP token.
-- **Watch:** The service is explicitly beta, authenticated sessions can be short-lived and the reviewed tools diagnose rather than apply implementation changes.
-- **Sources:** [AppsFlyer MCP beta guide](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP) · [AppsFlyer developer hub](https://dev.appsflyer.com/hc)
-- **Last checked:** 5 Sept 2026
-
-[Back to comparison](#measurement)
-
-## Twilio Segment
-
-**B- · Production · Reference**
-
-Segment collects and routes first-party events, while its Public API manages sources, destinations, warehouses and tracking plans; an official MCP was not verified.
-
-**Day to day**
-
-- Inspect sources and destinations.
-- Manage supported workspace configuration through an integration.
-
-> **What still needs you:** Decide which workspace changes the assistant may make, then check that the data still reaches the intended destinations.
-
-- **Route:** Public API and collection SDKs.
-- **Scope:** Sources, destinations, warehouses, tracking plans and events.
-- **Setup:** Hard. A developer must connect the workspace API, select permissions and map the events and resources the assistant may change. [API documentation](https://www.twilio.com/docs/segment/api/public-api).
-- **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
-- **Capabilities:** Inspect **Yes** · Configure **Yes** · Validate **Partial** · Deploy **Yes** · Monitor **Partial**
-- **Coverage:** Most steps. The Public API can manage core workspace resources, but event design and quality validation still require specialist work.
-- **Evidence basis:** Documentation reviewed
-
-**Good**
-
-- Mature collection and routing infrastructure.
-- Public API provides CRUD for core workspace resources.
-- Strong governance surface for tracking plans and destinations.
-
-**Limits**
-
-- No official MCP was verified.
-- A custom agent layer is required.
-- Identity and instrumentation design remain specialist work.
-
-**Official links**
-
-- **Product / official page:** [Twilio Segment](https://www.twilio.com/docs/segment)
-- **AI interface / endpoint:** No official AI route verified
-- **MCP:** No official MCP verified
-- **Plugin:** No official agent plugin verified
-- **CLI:** No general official workspace CLI verified
-- **API / SDK:** [Segment Public API](https://www.twilio.com/docs/segment/api/public-api)
-- **Documentation:** [Segment Public API](https://www.twilio.com/docs/segment/api/public-api)
-- **GitHub:** No official repository verified
-
-- **Access:** Team or Business tier for Public API access; workspace owners create API tokens.
-- **Watch:** A powerful API is not a ready agent workflow. Instrumentation plans, identity and destination governance remain human-led.
-- **Sources:** [Segment Public API](https://www.twilio.com/docs/segment/api/public-api) · [Segment Connections](https://www.twilio.com/docs/segment/connections)
-- **Last checked:** 5 Sept 2026
+- **Access:** Beta; existing AppsFlyer permissions apply. MCP is enabled by default but an admin can disable it. Account-level bearer tokens are available for automation.
+- **Watch:** Beta: ten links per account per day; no wider account-editing MCP tools documented.
+- **Sources:** [Connection and tool documentation](https://support.appsflyer.com/hc/en-us/articles/36349070304785--Beta-AppsFlyer-MCP) · [Additional official documentation](https://www.appsflyer.com/company/newsroom/pr/agentic-ai-mcp-tools)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#measurement)
 
@@ -172,50 +133,112 @@ Segment collects and routes first-party events, while its Public API manages sou
 
 **C+ · Test · Reference**
 
-Adjust exposes mature SDKs and several focused APIs for reporting, app configuration, campaigns and device testing, but no official agent route was verified.
+Read aggregate Adjust performance data. No Adjust account mutations are documented for this MCP.
 
 **Day to day**
 
-- Retrieve attribution reports.
-- Manage supported settings through the appropriate APIs.
+- Read aggregate Adjust performance data.
 
-> **What still needs you:** Choose the APIs needed for the task and review each change. Features and access differ across the separate services.
+> **What still needs you:** Early Access requires enablement; no user-level or event-level data.
 
-- **Route:** Official APIs and SDKs.
-- **Scope:** Attribution data, apps, events, campaigns and test devices.
-- **Setup:** Hard. Choose and authenticate several APIs, obtain feature enablement where required, then build the agent wrapper. [API documentation](https://dev.adjust.com/en/).
+- **Route:** Adjust official hosted MCP.
+- **Scope:** Read aggregate Adjust performance data..
+- **Setup:** Moderate. Ask Adjust to enable access, then connect the custom OAuth connector. [Connection documentation](https://help.adjust.com/en/article/adjust-mcp).
 - **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
-- **Capabilities:** Inspect **Yes** · Configure **Partial** · Validate **Partial** · Deploy **Partial** · Monitor **Yes**
-- **Coverage:** Some steps. Broad developer capability exists, but it is fragmented and not presented as a ready AI route.
+- **Capabilities:** Read **Yes** · Create **Unverified** · Edit **Unverified** · Delete **Unverified** · Publish / activate **Unverified**
+- **Read:** Read aggregate Adjust performance data.
+- **Write:** No Adjust account mutations are documented for this MCP.
+- **Connection type:** hosted-mcp
+- **Review:** current
+- **read:** Read aggregate Adjust performance data.
+- **create:** Not established by the reviewed sources.
+- **modify:** Not established by the reviewed sources.
+- **delete:** Not established by the reviewed sources.
+- **publish:** Not established by the reviewed sources.
+- **Coverage:** Assist only. No Adjust account mutations are documented for this MCP. Early Access requires enablement; no user-level or event-level data.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
 
-- Mature APIs and SDKs cover measurement and reporting.
-- App Automation can create or update configured apps.
-- Device APIs support testing workflows.
+- Read aggregate Adjust performance data.
+- Ask Adjust to enable access, then connect the custom OAuth connector.
 
 **Limits**
 
-- No official MCP or agent plugin was verified.
-- Capabilities are split across several APIs.
-- Some automation requires vendor enablement.
+- Early Access requires enablement; no user-level or event-level data.
 
 **Official links**
 
 - **Product / official page:** [Adjust](https://www.adjust.com/)
-- **AI interface / endpoint:** No official AI route verified
-- **MCP:** No official MCP verified
+- **AI interface / endpoint:** [Adjust official hosted MCP](https://help.adjust.com/en/article/adjust-mcp)
+- **MCP:** [Adjust official hosted MCP](https://help.adjust.com/en/article/adjust-mcp)
 - **Plugin:** No official agent plugin verified
 - **CLI:** No dedicated official CLI verified
 - **API / SDK:** [Adjust APIs and SDKs](https://dev.adjust.com/en/)
-- **Documentation:** [Adjust API documentation](https://dev.adjust.com/en/api/)
+- **Documentation:** [Connection and tool documentation](https://help.adjust.com/en/article/adjust-mcp)
 - **GitHub:** No official repository verified
 
-- **Access:** Adjust account and API tokens; some automation features require enablement by an Adjust representative.
-- **Watch:** The API surface is fragmented by job and needs a custom agent layer. App Automation is not enabled for every account.
-- **Sources:** [Adjust API documentation](https://dev.adjust.com/en/api/) · [App Automation API](https://dev.adjust.com/en/api/app-automation-api/)
-- **Last checked:** 5 Sept 2026
+- **Access:** Early Access and account enablement required. Existing token-based configurations must reconnect through OAuth. Multi-account users select the account during authorisation.
+- **Watch:** Early Access requires enablement; no user-level or event-level data.
+- **Sources:** [Connection and tool documentation](https://help.adjust.com/en/article/adjust-mcp) · [Additional official documentation](https://www.adjust.com/blog/adjust-mcp/)
+- **Last checked:** 16 Nov 2026
+
+[Back to comparison](#measurement)
+
+## Twilio Segment
+
+**C · Production · Reference**
+
+Read workspace sources, destinations, warehouses and tracking plans through API. Manage supported workspace resources through a custom API integration.
+
+**Day to day**
+
+- Read workspace sources, destinations, warehouses and tracking plans through API.
+- Manage supported workspace resources through a custom API integration.
+
+> **What still needs you:** Twilio docs MCP only retrieves documentation; it cannot access or change the account.
+
+- **Route:** Twilio Segment API, custom integration.
+- **Scope:** Read workspace sources, destinations, warehouses and tracking plans through API..
+- **Setup:** Hard. Build a server-side API integration with an owner-issued Team/Business token. [Connection documentation](https://www.twilio.com/docs/segment/api/public-api).
+- **Human job:** Inspect the implementation, configure collection, validate events, deploy changes and monitor data quality.
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Yes** · Publish / activate **Unverified**
+- **Read:** Read workspace sources, destinations, warehouses and tracking plans through API.
+- **Write:** Manage supported workspace resources through a custom API integration.
+- **Connection type:** custom-api
+- **Review:** current
+- **read:** Read workspace sources, destinations, warehouses and tracking plans through API.
+- **create:** Supported workspace resources via API.
+- **modify:** Supported workspace resources via API.
+- **delete:** Supported workspace resources via API.
+- **publish:** Not established by the reviewed sources.
+- **Coverage:** Some steps. Manage supported workspace resources through a custom API integration. Twilio docs MCP only retrieves documentation; it cannot access or change the account.
+- **Evidence basis:** Documentation reviewed
+
+**Good**
+
+- Read workspace sources, destinations, warehouses and tracking plans through API.
+- Manage supported workspace resources through a custom API integration.
+
+**Limits**
+
+- Twilio docs MCP only retrieves documentation; it cannot access or change the account.
+
+**Official links**
+
+- **Product / official page:** [Twilio Segment](https://www.twilio.com/docs/segment)
+- **AI interface / endpoint:** [Documentation MCP only; account route uses the API](https://www.twilio.com/docs/ai/mcp)
+- **MCP:** [Documentation MCP only; account route uses the API](https://www.twilio.com/docs/ai/mcp)
+- **Plugin:** No official agent plugin verified
+- **CLI:** No general official workspace CLI verified
+- **API / SDK:** [Segment Public API](https://www.twilio.com/docs/segment/api/public-api)
+- **Documentation:** [Connection and tool documentation](https://www.twilio.com/docs/segment/api/public-api)
+- **GitHub:** No official repository verified
+
+- **Access:** Public API is available to Team and Business tiers; only Workspace Owners can create tokens, assigning owner/member access. US and EU workspaces are supported.
+- **Watch:** Twilio docs MCP only retrieves documentation; it cannot access or change the account.
+- **Sources:** [Connection and tool documentation](https://www.twilio.com/docs/segment/api/public-api) · [Additional official documentation](https://www.twilio.com/docs/ai/mcp)
+- **Last checked:** 16 Nov 2026
 
 [Back to comparison](#measurement)
 

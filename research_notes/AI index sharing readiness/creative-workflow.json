@@ -1,0 +1,445 @@
+[
+  {
+    "id": "zapier",
+    "route": "Official Zapier MCP; Next Gen Zaps is a separate early-access capability.",
+    "read": "Search/read connected app records through available actions.",
+    "write": {
+      "create": "Supported app actions, such as tasks and messages.",
+      "edit": "Supported app actions, such as updating CRM records.",
+      "publish": "App-specific sends/posts; Next Gen Zaps can build and deploy recurring workflows in early access.",
+      "delete": "Only where the connected app exposes a suitable action; no universal deletion claim."
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Connect a Zapier MCP server and authorise app accounts. Agentic mode discovers/adds actions; managed mode fixes the allowed set.",
+    "access": "Zapier account, connected app permissions and applicable task allowance.",
+    "limitations": "Action coverage varies by app. Workflow deployment is early access, not the general availability of all Zap authoring.",
+    "sources": [
+      {
+        "url": "https://docs.zapier.com/mcp/home",
+        "label": "Zapier MCP overview and Next Gen Zaps boundary"
+      },
+      {
+        "url": "https://help.zapier.com/hc/en-us/articles/48308034391821-What-is-Zapier-MCP",
+        "label": "Zapier MCP access and usage"
+      }
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Broad practical reads and writes with managed authentication; account connections and app-specific gaps remain.",
+    "changedClaims": [
+      "Add agentic versus managed server modes.",
+      "Add early-access Zap building/deployment without implying every account has it.",
+      "Do not describe integration-development CLI as the everyday automation route."
+    ]
+  },
+  {
+    "id": "pipedream",
+    "route": "Official hosted Pipedream Connect MCP servers, one per integrated app.",
+    "read": "Connected app reads, such as repository search and spreadsheet retrieval.",
+    "write": {
+      "create": "App-specific actions create issues, messages, documents and other records.",
+      "edit": "App-specific actions update data and records.",
+      "publish": "App-specific actions can send email or publish social updates.",
+      "delete": "Conditional on the chosen app tool, not a platform-wide promise."
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "End users connect accounts at mcp.pipedream.com; hosted servers manage OAuth. Developer embedding is an alternative, not mandatory.",
+    "access": "Pipedream account, connected app authorisation, usage and downstream permissions.",
+    "limitations": "MCP app actions do not by themselves establish authoring/deploying Pipedream workflows. Tool availability is per app.",
+    "sources": [
+      {
+        "url": "https://pipedream.com/docs/connect/mcp",
+        "label": "Pipedream MCP architecture, consumer route and actions"
+      },
+      {
+        "url": "https://mcp.pipedream.com",
+        "label": "Official app-specific MCP catalogue"
+      }
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Broad app actions and hosted authentication without custom integration code; individual app coverage still determines the job.",
+    "changedClaims": [
+      "Explain consumer setup separately from developer embedding.",
+      "Keep app-action capability separate from Pipedream workflow authoring."
+    ]
+  },
+  {
+    "id": "n8n",
+    "route": "Official instance-level n8n MCP on n8n Cloud; self-hosted instances are an alternative.",
+    "read": "Search accessible workflow previews; inspect exposed workflows, executions and supported data tables.",
+    "write": {
+      "create": "Create workflows from validated Workflow SDK code and create data tables.",
+      "edit": "Edit workflows and data tables; validate and test configurations.",
+      "publish": "Explicit publish_workflow and unpublish_workflow tools activate/deactivate production versions.",
+      "delete": "General workflow deletion not established in reviewed tool reference; do not substitute unpublish for delete."
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "On n8n Cloud, an owner/admin enables instance MCP, exposes workflows, then connects the instance URL. Self-hosting adds operational work.",
+    "access": "Suitable n8n version, instance permissions and connected-service credentials. Authoring is documented from 2.13.0; individual tools have version gates.",
+    "limitations": "Enabled workflows are user-scoped, not separately scoped to each connected client. Protected instances block non-read tools except production workflow execution. Building a valid flow does not supply missing credentials.",
+    "sources": [
+      {
+        "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server",
+        "label": "n8n instance connection, permissions and Cloud setup"
+      },
+      {
+        "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference",
+        "label": "n8n exact authoring, test, publish and protection tools"
+      }
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Substantial native workflow management, but admin enablement, version differences and credentials increase setup effort.",
+    "changedClaims": [
+      "Add explicit publishing/unpublishing capability.",
+      "Use Cloud as easiest route instead of implying self-hosting is required.",
+      "Keep deletion unverified and mention protected-instance constraints."
+    ]
+  },
+  {
+    "id": "figma",
+    "route": "Official Figma app/connector backed by remote Figma MCP and use_figma canvas tools.",
+    "read": "Read design context, structure, components and variables from accessible files.",
+    "write": {
+      "create": "Native frames, components, variants, variables and auto layout in Design, FigJam and Slides.",
+      "edit": "Update real editable canvas structure through use_figma and the Plugin API.",
+      "publish": "Component/library publishing remains manual before Code Connect mappings.",
+      "delete": "Node-level changes through Plugin API are distinct from deleting a file; do not promise file deletion."
+    },
+    "setupTier": "native-app",
+    "setupDetails": "Official ChatGPT/Claude integration or supported agent plugin; remote MCP and Figma skills are needed for canvas writing.",
+    "access": "Supported client, file edit access and eligible Figma plan; Full seat required outside Drafts. Canvas writing is free during beta, with future usage pricing announced.",
+    "limitations": "Beta quality needs visual review. Fonts must be uploaded; component imports containing images/video and GIF creation remain unsupported. Read support in a client does not automatically prove write support.",
+    "sources": [
+      {
+        "url": "https://www.figma.com/mcp-catalog/",
+        "label": "Official MCP client catalogue and integrations"
+      },
+      {
+        "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
+        "label": "Native canvas write scope and limitations"
+      },
+      {
+        "url": "https://developers.figma.com/docs/figma-mcp-server/",
+        "label": "Remote server, supported clients and seat conditions"
+      }
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Broad native editing with simple official integrations, held below A by beta status, supported-client gates and manual publishing.",
+    "changedClaims": [
+      "Never label current Figma MCP read-only.",
+      "Differentiate editable native canvas from flat code-to-canvas capture.",
+      "State remote write beta and manual component publishing."
+    ]
+  },
+  {
+    "id": "canva",
+    "route": "Official Canva AI Connector/app for everyday design work; remote Canva MCP supplies tools.",
+    "read": "Search designs/folders, read pages/content/notes, inspect assets, comments and permitted brand templates.",
+    "write": {
+      "create": "Generate/create/copy/import designs; upload assets and create folders.",
+      "edit": "Editing transactions, supported element operations, image transforms and resizing.",
+      "publish": "Publish brand templates on eligible plans and export files; social publishing not established here.",
+      "delete": "No general design/folder deletion tool established in the reviewed inventory."
+    },
+    "setupTier": "native-app",
+    "setupDetails": "Connect Canva from the supported assistant app/connector interface and approve access. No local server needed.",
+    "access": "AI Connector available to Free and paid accounts, subject to admin controls. Brand templates/autofill/resize and export quality have plan restrictions; AI allowances apply.",
+    "limitations": "Not all editor operations are promised. Premium assets may block export without licensing. The separate developer-assistance MCP and Apps CLI are not the everyday design route.",
+    "sources": [
+      {
+        "url": "https://www.canva.com/help/connect-chatgpt-to-canva/",
+        "label": "Official Canva ChatGPT plugin setup"
+      },
+      {
+        "url": "https://www.canva.com/help/mcp-agent-setup/",
+        "label": "Everyday connector access and controls"
+      },
+      {
+        "url": "https://www.canva.dev/docs/apps/mcp/tools/",
+        "label": "Exact tool inventory and plan limits"
+      }
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Substantial read/create/edit/export capability through an official app; publishing and deletion remain narrower than the entire Canva UI.",
+    "changedClaims": [
+      "Replace vague partial editing with transaction-based editing.",
+      "Add brand-template publishing and current image tools.",
+      "Do not claim general deletion or social publishing."
+    ]
+  },
+  {
+    "id": "adobe-firefly-creative-production",
+    "route": "Adobe hosted Run-Workflow MCP, not the entire Creative Cloud suite.",
+    "read": "Discover creative actions/templates, check execution status and retrieve outputs.",
+    "write": {
+      "create": "Compose new workflows and create generated/processed media.",
+      "edit": "Supported workflows transform images/video, including compositing and adaptation.",
+      "publish": "Publish workflows for reuse; this is not distribution to ad or social platforms.",
+      "delete": "No deletion tool in reviewed inventory. cancel_workflow stops an execution only."
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Add https://run-workflow.adobe.io/mcp with organisation-issued IMS access token and service API key.",
+    "access": "Organisation service access and admin-provided credentials; availability must be checked for the customer organisation.",
+    "limitations": "Creative operation coverage is discoverable, not universal Adobe UI automation. Output links last about one hour. Credential setup is heavier than a consumer plugin.",
+    "sources": [
+      {
+        "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html",
+        "label": "Run-Workflow MCP creation and execution scope"
+      },
+      {
+        "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-tools.html",
+        "label": "Exact compose, run, cancel and publish tools"
+      },
+      {
+        "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/install-run-workflow-mcp.html",
+        "label": "IMS token and service-key requirements"
+      }
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Useful creative production and reusable workflow authoring, constrained by organisation setup and bounded action coverage.",
+    "changedClaims": [
+      "Remove assertion that all workflows must already exist.",
+      "Add compose_workflow and publish_workflow.",
+      "Separate cancellation from deletion and workflow publishing from media distribution."
+    ]
+  },
+  {
+    "id": "runway",
+    "route": "Official Runway generation app in ChatGPT or hosted generation MCP at mcp.runwayml.com; separate from Runway Dev MCP.",
+    "read": "Return generated outputs in the conversation. General account/library search through the generation route was not established.",
+    "write": {
+      "create": "Generate images and videos using account-eligible models; results saved in the Runway library.",
+      "edit": "Reference-based restyling and generation from supplied product images; full timeline/project editing not established.",
+      "publish": "No ad/social publishing established.",
+      "delete": "No generation-route deletion established."
+    },
+    "setupTier": "native-app",
+    "setupDetails": "Install official Runway app/plugin in ChatGPT and sign in; other clients can add the hosted generation MCP URL. No API key for this route.",
+    "access": "Runway account; eligible models and generation costs depend on plan and Runway credits.",
+    "limitations": "Do not borrow developer-MCP task/router tools or REST API deletion into the generation app. Public marketing examples demonstrate intended workflows, not measured output quality.",
+    "sources": [
+      {
+        "url": "https://runway.com/mcp",
+        "label": "Official generation app, account access and credits"
+      },
+      {
+        "url": "https://mcp.runwayml.com/",
+        "label": "Hosted generation endpoint"
+      },
+      {
+        "url": "https://docs.dev.runwayml.com/guides/mcp/",
+        "label": "Separate Runway Dev MCP scope"
+      },
+      {
+        "url": "https://github.com/runwayml/runway-api-mcp-server",
+        "label": "Old server archived 30 September 2026"
+      }
+    ],
+    "proposedGrade": "B+",
+    "gradeReason": "Very easy creation route, but bounded generation capabilities and incomplete read/edit/publish/delete coverage prevent a universal A claim.",
+    "changedClaims": [
+      "Prefer the current native generation app.",
+      "Mark old API MCP repository archived.",
+      "Separate generation, developer tooling and raw API; remove unsupported blanket modify/delete claims."
+    ]
+  },
+  {
+    "id": "ahrefs",
+    "route": "Official Ahrefs Claude connector or hosted Ahrefs MCP.",
+    "read": "Retrieve SEO research data across supported domain, keyword, backlink and other report tools.",
+    "write": {
+      "create": "No account/content creation established.",
+      "edit": "No account/content editing established.",
+      "publish": "Not a publishing route.",
+      "delete": "No deletion established."
+    },
+    "setupTier": "native-app",
+    "setupDetails": "Find Ahrefs in approved Claude connectors and authorise the workspace; manual hosted MCP setup is an alternative.",
+    "access": "Lite plan or higher, monthly API units and per-request row limits.",
+    "limitations": "Research access is not website editing or campaign management. Coverage follows the account and API allowance.",
+    "sources": [
+      {
+        "url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+        "label": "Ahrefs MCP access and unit limits"
+      },
+      {
+        "url": "https://docs.ahrefs.com/en/mcp/docs/claude-desktop-web",
+        "label": "Native Claude connector installation"
+      },
+      {
+        "url": "https://docs.ahrefs.com/en/mcp/docs/tool-categories",
+        "label": "Official research tool categories"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Under the requested uniform read/write/setup rubric: excellent simple research access, but no write workflow. This is not an assessment of SEO-data quality.",
+    "changedClaims": [
+      "Make native Claude setup explicit.",
+      "Label read-only beside the grade.",
+      "Old A- research-category grade is not comparable with an overall write-weighted grade."
+    ]
+  },
+  {
+    "id": "semrush",
+    "route": "Official Semrush ChatGPT app or hosted OAuth MCP.",
+    "read": "SEO and Trends data plus read-only Projects API reports, subject to subscribed datasets.",
+    "write": {
+      "create": "Projects API creation is explicitly excluded from MCP.",
+      "edit": "Project settings and other actions are explicitly excluded.",
+      "publish": "No publishing route.",
+      "delete": "No deletion route established."
+    },
+    "setupTier": "native-app",
+    "setupDetails": "Connect the official Semrush app from ChatGPT Apps and approve account access; hosted MCP works with other supported clients.",
+    "access": "Appropriate Semrush API subscription and units; Trends coverage follows subscription level.",
+    "limitations": "The wider REST API may have mutations that the MCP does not expose. Usage consumes API units.",
+    "sources": [
+      {
+        "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/",
+        "label": "MCP read-only Projects boundary, ChatGPT app and units"
+      },
+      {
+        "url": "https://www.semrush.com/mcp/",
+        "label": "Official Semrush MCP product route"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Strong research and simplest setup, but explicitly no account/project mutations under the requested combined rubric.",
+    "changedClaims": [
+      "Keep official ChatGPT app as easiest route.",
+      "Explicitly reject transferring Projects API writes to MCP.",
+      "Old A- category grade should not imply operational write access."
+    ]
+  },
+  {
+    "id": "similarweb",
+    "route": "Official Similarweb native Claude connector backed by hosted MCP.",
+    "read": "Retrieve website/app, traffic-source, audience, search and commerce intelligence within the subscribed datasets.",
+    "write": {
+      "create": "No operational record creation established.",
+      "edit": "No account/campaign edits established.",
+      "publish": "No publishing route.",
+      "delete": "No deletion route established."
+    },
+    "setupTier": "native-app",
+    "setupDetails": "Select Similarweb in Claude Connectors and sign in. Hosted https://mcp.similarweb.com is an alternative.",
+    "access": "API-only, Business or Enterprise subscription with API/MCP access. Data credits apply; plan limits datasets, regions and historical ranges.",
+    "limitations": "External intelligence is not a connected advertiser account-control route. MCP unlocks no additional datasets beyond subscription entitlement.",
+    "sources": [
+      {
+        "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup",
+        "label": "MCP endpoint, access and credit model"
+      },
+      {
+        "url": "https://docs.similarweb.com/api-v5/mcp-integration/available-integrations/claude-integration",
+        "label": "Native connector and dataset limits"
+      }
+    ],
+    "proposedGrade": "C+",
+    "gradeReason": "Easy, broad intelligence reads but no writes under the uniform rubric; not a rating of data quality or usefulness.",
+    "changedClaims": [
+      "Show native Claude connector rather than technical-only setup.",
+      "Make read-only scope clear.",
+      "Do not present previous A- research grade as broad automation capability."
+    ]
+  },
+  {
+    "id": "make",
+    "route": "Official Make-hosted MCP v2 with scenario-run and paid management scopes.",
+    "read": "Inspect authorised scenarios, related entities, teams and organisations.",
+    "write": {
+      "create": "Scenario/entity creation depends on granted management tools; broad API parity is not assumed.",
+      "edit": "Modify scenarios, connections, webhooks, data stores and permitted team/organisation settings.",
+      "publish": "Run active/on-demand scenarios; creating a scenario does not by itself establish activation or external publishing.",
+      "delete": "Only if the specific authorised management tool exists; not established universally."
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Connect OAuth to https://mcp.make.com/v2 and choose organisation/scopes. Make Skills can assist connection and scenario construction.",
+    "access": "Scenario-run tools on all plans; management tools on paid plans, with appropriate scopes and downstream connections.",
+    "limitations": "Inspect actual available tools for the selected account. Do not infer every Make API operation from general management wording.",
+    "sources": [
+      {
+        "url": "https://developers.make.com/mcp-server",
+        "label": "Current v2 endpoint, scope/plan split and management coverage"
+      },
+      {
+        "url": "https://developers.make.com/mcp-server/connect-using-oauth",
+        "label": "OAuth setup"
+      }
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Hosted connection and broad automation management; paid/scoped tool availability and downstream credentials constrain completeness.",
+    "changedClaims": [
+      "Update universal endpoint to /v2.",
+      "Separate free scenario execution from paid management.",
+      "Avoid unqualified create/delete/activation claims."
+    ]
+  },
+  {
+    "id": "workato",
+    "route": "Official remote Developer/Embedded API MCP for workspace management; Enterprise custom MCP separately exposes business recipes/tools.",
+    "read": "Inspect authorised projects, folders, connections, jobs and workspace assets.",
+    "write": {
+      "create": "Create enabled resources such as projects/folders/tags through API-client-role endpoints.",
+      "edit": "Modify authorised assets and folder organisation; recipe/business writes depend on exposed tools.",
+      "publish": "No universal recipe deployment claim; scoped endpoints/custom recipes determine execution.",
+      "delete": "Only where a role-enabled endpoint explicitly permits it; not universal."
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Create/configure API client role and token, select data-centre remote endpoint, then configure client. Some clients use mcp-remote bridge.",
+    "access": "Workato organisation access and project/endpoint permissions. Embedded API needs Embedded-admin token; vendor says MCP unavailable in CN despite a CN URL appearing in its table.",
+    "limitations": "Admin/API-role setup is substantial. Custom enterprise MCP does not grant automatic access to every connected app. Avoid implying one-click consumer install.",
+    "sources": [
+      {
+        "url": "https://docs.workato.com/mcp",
+        "label": "Enterprise/custom server routes and regional availability"
+      },
+      {
+        "url": "https://docs.workato.com/en/mcp/developer-api-mcp",
+        "label": "Developer API remote route, tokens and actual examples"
+      }
+    ],
+    "proposedGrade": "B",
+    "gradeReason": "Useful scoped workspace and business operations, with materially heavier administration than simple native connectors.",
+    "changedClaims": [
+      "Add dedicated Developer/Embedded API MCP route.",
+      "Do not limit Workato to hand-built recipes alone.",
+      "Keep region and role boundaries and separate custom business tools."
+    ]
+  },
+  {
+    "id": "gumloop",
+    "route": "Official hosted Gumloop management MCP at https://mcp.gumloop.com/gumloop/mcp.",
+    "read": "Inspect agents/configuration, sessions, artifacts and connected tools; search permitted Company Brain sources and find flows/runs.",
+    "write": {
+      "create": "Create agents, sessions and reusable skills; configure triggers.",
+      "edit": "Update agents/configuration, skills and supported organisation settings.",
+      "publish": "Start agents and runs and manage triggers; editing/publishing arbitrary visual-flow definitions not established.",
+      "delete": "delete_agent and delete_agent_trigger explicitly documented; personal-key scope required for those operations."
+    },
+    "setupTier": "hosted-mcp",
+    "setupDetails": "Add a custom connector and complete authorisation. Documentation requires a Gumloop API key and describes OAuth connection; no self-hosted server needed.",
+    "access": "Gumloop account and appropriate personal/team scope. Several agent, evaluation, session and organisation operations require a personal API key.",
+    "limitations": "Distinguish external Gumloop management MCP from importing external MCP tools into Gumloop. Connected-app writes remain tool-specific. No claim of complete visual-flow authoring.",
+    "sources": [
+      {
+        "url": "https://docs.gumloop.com/mcp-server/overview.md",
+        "label": "Official external management MCP and scope restrictions"
+      },
+      {
+        "url": "https://docs.gumloop.com/mcp-server/setup",
+        "label": "Custom connector and authentication"
+      },
+      {
+        "url": "https://docs.gumloop.com/mcp-server/tools/agents",
+        "label": "Agent CRUD and configuration"
+      }
+    ],
+    "proposedGrade": "A-",
+    "gradeReason": "Broad agent management and execution through a hosted connector; scope restrictions and incomplete flow authoring remain.",
+    "changedClaims": [
+      "Replace no official external MCP verified: official external server now documented.",
+      "Differentiate external management from Gumloop as MCP client.",
+      "Add exact agent CRUD and personal-key restrictions."
+    ]
+  }
+]
