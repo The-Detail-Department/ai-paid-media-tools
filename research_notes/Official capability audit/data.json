@@ -1,0 +1,1242 @@
+{
+  "checkedOn": "2026-11-16",
+  "scope": "10 official data and modelling routes; documentation only, no authenticated execution",
+  "records": [
+    {
+      "id": "airbyte",
+      "tool": {
+        "id": "airbyte",
+        "name": "Airbyte",
+        "category": "Data movement",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Ingest",
+          "Automate",
+          "Measure"
+        ],
+        "summary": "Read connector configuration, sync status, logs and supported external records. Manage connectors and pipelines; start or cancel syncs.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Airbyte platform MCP, pipeline operations",
+          "url": "https://docs.airbyte.com/platform/airbyte-mcp"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "abctl for local deployment",
+          "url": "https://docs.airbyte.com/platform/using-airbyte/getting-started/oss-quickstart"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Python SDK and HTTP API",
+          "url": "https://docs.airbyte.com/"
+        },
+        "access": "Hosted MCP supports Airbyte Cloud editions and Flex with OAuth and Airbyte permissions. Direct reads need admin-enabled agent access and supported connectors; externally managed secrets are not supported for direct reads.",
+        "caution": "Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Airbyte MCP setup",
+            "url": "https://docs.airbyte.com/platform/airbyte-mcp",
+            "kind": "official"
+          },
+          {
+            "label": "Pipeline tools and deletion safeguards",
+            "url": "https://docs.airbyte.com/platform/airbyte-mcp/tools",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Airbyte platform MCP, pipeline operations",
+        "object": "Read connector configuration, sync status, logs and supported external records.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect with OAuth, configure sources and destinations, then enable agent access for direct reads where needed.",
+          "documentation": {
+            "label": "Airbyte MCP setup",
+            "url": "https://docs.airbyte.com/platform/airbyte-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Manage connectors and pipelines; start or cancel syncs. Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup."
+        },
+        "blocker": "Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup.",
+        "dailyTasks": [
+          "Read connector configuration, sync status, logs and supported external records.",
+          "Manage connectors and pipelines; start or cancel syncs."
+        ],
+        "actionScopes": {
+          "read": "Read connector configuration, sync status, logs and supported external records.",
+          "create": "Connectors, connections and custom connector definitions.",
+          "modify": "Connectors, streams, connections and sync configuration.",
+          "delete": "Sources, destinations, connections and definitions marked delete-me or deleteme.",
+          "publish": "Publish custom connector definitions and start pipeline syncs."
+        },
+        "readSummary": "Read connector configuration, sync status, logs and supported external records.",
+        "writeSummary": "Manage connectors and pipelines; start or cancel syncs.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.airbyte.com/platform/airbyte-mcp",
+            "https://docs.airbyte.com/platform/airbyte-mcp/tools"
+          ],
+          "note": "Available for Airbyte Cloud and Flex; active development. Direct reads need administrator enablement."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Test",
+        "grade": "B+",
+        "positives": [
+          "Read connector configuration, sync status, logs and supported external records.",
+          "Manage connectors and pipelines; start or cancel syncs."
+        ],
+        "negatives": [
+          "Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "fivetran",
+      "tool": {
+        "id": "fivetran",
+        "name": "Fivetran",
+        "category": "Data movement",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Ingest",
+          "Automate",
+          "Measure"
+        ],
+        "summary": "Query the prepared warehouse context layer with read-only SQL. Submit answer feedback only; no operational data changes.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "preview",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Fivetran Agent Context native connector",
+          "url": "https://fivetran.com/docs/context-layer/agent-context-mcp"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "preview",
+          "label": "Official app or directory connector",
+          "url": "https://fivetran.com/docs/context-layer/agent-context-mcp"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Connector SDK CLI",
+          "url": "https://fivetran.com/docs/connector-sdk/getting-started/connector-sdk-commands"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "REST API and Connector SDK",
+          "url": "https://fivetran.com/docs/rest-api"
+        },
+        "access": "Public Preview. Fivetran/admin access, an organisation context layer, permitted users and AI-workspace administration for initial setup. Query-role options depend on warehouse.",
+        "caution": "Public Preview. An administrator must build the context layer and grant access; business data remains read-only.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Agent Context MCP tools",
+            "url": "https://fivetran.com/docs/context-layer/agent-context-mcp",
+            "kind": "official"
+          },
+          {
+            "label": "Context layer and connector setup",
+            "url": "https://fivetran.com/docs/context-layer/agent-context-mcp/setup-guide",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Fivetran Agent Context native connector",
+        "object": "Query the prepared warehouse context layer with read-only SQL.",
+        "setup": {
+          "level": "Hard",
+          "tier": "native-app",
+          "note": "Use the Claude connector or a custom ChatGPT app after the context layer is built.",
+          "documentation": {
+            "label": "Agent Context MCP tools",
+            "url": "https://fivetran.com/docs/context-layer/agent-context-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "No",
+          "delete": "No",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "Submit answer feedback only; no operational data changes. Public Preview. An administrator must build the context layer and grant access; business data remains read-only."
+        },
+        "blocker": "Public Preview. An administrator must build the context layer and grant access; business data remains read-only.",
+        "dailyTasks": [
+          "Query the prepared warehouse context layer with read-only SQL.",
+          "Submit answer feedback only; no operational data changes."
+        ],
+        "actionScopes": {
+          "read": "Query the prepared warehouse context layer with read-only SQL.",
+          "create": "Submit response feedback, not business records.",
+          "modify": "Queries are read-only; operational records cannot be changed.",
+          "delete": "No delete tool in the documented inventory.",
+          "publish": "No publishing or pipeline execution tool."
+        },
+        "readSummary": "Query the prepared warehouse context layer with read-only SQL.",
+        "writeSummary": "Submit answer feedback only; no operational data changes.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "preview",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://fivetran.com/docs/context-layer/agent-context-mcp",
+            "https://fivetran.com/docs/context-layer/agent-context-mcp/setup-guide"
+          ],
+          "note": "Public Preview; requires a prepared context layer and administrator-granted access."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Test",
+        "grade": "C+",
+        "positives": [
+          "Query the prepared warehouse context layer with read-only SQL.",
+          "Submit answer feedback only; no operational data changes."
+        ],
+        "negatives": [
+          "Public Preview. An administrator must build the context layer and grant access; business data remains read-only."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "google-mcp-toolbox",
+      "tool": {
+        "id": "google-mcp-toolbox",
+        "name": "Google MCP Toolbox for Databases",
+        "category": "Data access",
+        "channels": [
+          "Cross-channel",
+          "Warehouse"
+        ],
+        "jobs": [
+          "Measure",
+          "Analyse",
+          "Automate"
+        ],
+        "summary": "Query configured databases and inspect their schemas. Execute only the database operations exposed by your toolset.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "both",
+          "control": "mixed",
+          "label": "Google MCP Toolbox, self-managed database tools",
+          "url": "https://mcp-toolbox.dev/documentation/introduction/"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Gemini CLI extensions",
+          "url": "https://github.com/googleapis/mcp-toolbox"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "toolbox CLI",
+          "url": "https://mcp-toolbox.dev/documentation/introduction/"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "BigQuery and database connectors",
+          "url": "https://mcp-toolbox.dev/"
+        },
+        "access": "Open-source server plus a supported database/cloud account, credentials, network access and operation-level permissions.",
+        "caution": "Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Toolbox setup and supported databases",
+            "url": "https://mcp-toolbox.dev/documentation/introduction/",
+            "kind": "official"
+          },
+          {
+            "label": "Read-only configuration by engine",
+            "url": "https://mcp-toolbox.dev/documentation/configuration/security/read-only/",
+            "kind": "official"
+          },
+          {
+            "label": "Official Toolbox repository and releases",
+            "url": "https://github.com/googleapis/mcp-toolbox",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Google MCP Toolbox, self-managed database tools",
+        "object": "Query configured databases and inspect their schemas.",
+        "setup": {
+          "level": "Specialist",
+          "tier": "self-managed",
+          "note": "Install the Toolbox server or extension, supply database credentials and choose a prebuilt or custom toolset.",
+          "documentation": {
+            "label": "Toolbox setup and supported databases",
+            "url": "https://mcp-toolbox.dev/documentation/introduction/"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Depends",
+          "modify": "Depends",
+          "delete": "Depends",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Depends",
+          "note": "Execute only the database operations exposed by your toolset. Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset."
+        },
+        "blocker": "Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset.",
+        "dailyTasks": [
+          "Query configured databases and inspect their schemas.",
+          "Execute only the database operations exposed by your toolset."
+        ],
+        "actionScopes": {
+          "read": "Query configured databases and inspect their schemas.",
+          "create": "Create database objects or records through configured tools, where permissions allow.",
+          "modify": "Update database records through configured tools, where permissions allow.",
+          "delete": "Delete database objects or records only through enabled tools and permissions.",
+          "publish": "No advertising or content publishing tool in this evaluated database route."
+        },
+        "readSummary": "Query configured databases and inspect their schemas.",
+        "writeSummary": "Execute only the database operations exposed by your toolset.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://mcp-toolbox.dev/documentation/introduction/",
+            "https://mcp-toolbox.dev/documentation/configuration/security/read-only/",
+            "https://github.com/googleapis/mcp-toolbox"
+          ],
+          "note": "Official released server; deployment, database access and allowed operations require configuration."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Production",
+        "grade": "B",
+        "positives": [
+          "Query configured databases and inspect their schemas.",
+          "Execute only the database operations exposed by your toolset."
+        ],
+        "negatives": [
+          "Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset."
+        ],
+        "position": "Specialist"
+      }
+    },
+    {
+      "id": "snowflake",
+      "tool": {
+        "id": "snowflake",
+        "name": "Snowflake",
+        "category": "Data access",
+        "channels": [
+          "Cross-channel",
+          "Warehouse"
+        ],
+        "jobs": [
+          "Measure",
+          "Analyse",
+          "Automate"
+        ],
+        "summary": "Query governed data through configured SQL and Cortex tools. Optional SQL and custom tools can change data when explicitly enabled.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Snowflake-managed MCP with configured tools",
+          "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated paid-media plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Snowflake CLI",
+          "url": "https://docs.snowflake.com/en/developer-guide/snowflake-cli/index"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Drivers, APIs and SDKs",
+          "url": "https://docs.snowflake.com/en/developer"
+        },
+        "access": "Snowflake account, warehouse/data, configured semantic views/search/agents as relevant, and separate permissions for both server and underlying tools.",
+        "caution": "An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Managed MCP tools and permissions",
+            "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+            "kind": "official"
+          },
+          {
+            "label": "Managed MCP general availability",
+            "url": "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Snowflake-managed MCP with configured tools",
+        "object": "Query governed data through configured SQL and Cortex tools.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "An administrator creates the MCP server and tools; users connect with supported authentication.",
+          "documentation": {
+            "label": "Managed MCP tools and permissions",
+            "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Depends",
+          "modify": "Depends",
+          "delete": "Depends",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Depends",
+          "note": "Optional SQL and custom tools can change data when explicitly enabled. An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration."
+        },
+        "blocker": "An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration.",
+        "dailyTasks": [
+          "Query governed data through configured SQL and Cortex tools.",
+          "Optional SQL and custom tools can change data when explicitly enabled."
+        ],
+        "actionScopes": {
+          "read": "Query governed data through configured SQL and Cortex tools.",
+          "create": "Configured SQL or procedures can create objects when write access is enabled.",
+          "modify": "Configured SQL or procedures can update data within role permissions.",
+          "delete": "Configured SQL or procedures can delete permitted data; disabled in read-only SQL mode.",
+          "publish": "No general campaign or content publishing route."
+        },
+        "readSummary": "Query governed data through configured SQL and Cortex tools.",
+        "writeSummary": "Optional SQL and custom tools can change data when explicitly enabled.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+            "https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-agents-mcp"
+          ],
+          "note": "Managed MCP is generally available; server configuration, tool grants and data preparation are required."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Production",
+        "grade": "B+",
+        "positives": [
+          "Query governed data through configured SQL and Cortex tools.",
+          "Optional SQL and custom tools can change data when explicitly enabled."
+        ],
+        "negatives": [
+          "An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "meridian",
+      "tool": {
+        "id": "meridian",
+        "name": "Meridian",
+        "category": "Modelling",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Model",
+          "Plan",
+          "Measure"
+        ],
+        "summary": "Inspect prepared data, model results and convergence diagnostics. Run modelling scripts and produce saved models and budget scenarios.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Meridian Agent Skills",
+          "url": "https://developers.google.com/meridian/docs/user-guide/agent-skills"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "Python package, not a dedicated CLI"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Open-source Python package",
+          "url": "https://github.com/google/meridian"
+        },
+        "access": "Open-source skills/library, compatible coding agent, Python dependencies and appropriate compute; specialist judgement for priors, data and model validation.",
+        "caution": "Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Meridian agent skills and checkpoints",
+            "url": "https://developers.google.com/meridian/docs/user-guide/agent-skills",
+            "kind": "official"
+          },
+          {
+            "label": "Meridian library and skills source",
+            "url": "https://github.com/google/meridian",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Meridian Agent Skills + local Python",
+        "object": "Inspect prepared data, model results and convergence diagnostics.",
+        "setup": {
+          "level": "Specialist",
+          "tier": "self-managed",
+          "note": "Install the skills in a coding agent and provide Python, historical data and modelling assumptions.",
+          "documentation": {
+            "label": "Meridian agent skills and checkpoints",
+            "url": "https://developers.google.com/meridian/docs/user-guide/agent-skills"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Unverified",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Specialist",
+          "note": "Run modelling scripts and produce saved models and budget scenarios. Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review."
+        },
+        "blocker": "Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review.",
+        "dailyTasks": [
+          "Inspect prepared data, model results and convergence diagnostics.",
+          "Run modelling scripts and produce saved models and budget scenarios."
+        ],
+        "actionScopes": {
+          "read": "Inspect prepared data, model results and convergence diagnostics.",
+          "create": "Model scripts, fitted models, reports and scenarios.",
+          "modify": "Model configuration and reproducible local scripts.",
+          "delete": "No model-deletion action documented for the skills.",
+          "publish": "Reports and scenario files only; no live campaign budget changes."
+        },
+        "readSummary": "Inspect prepared data, model results and convergence diagnostics.",
+        "writeSummary": "Run modelling scripts and produce saved models and budget scenarios.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.google.com/meridian/docs/user-guide/agent-skills",
+            "https://github.com/google/meridian"
+          ],
+          "note": "Official published agent skills; local Python, prepared data and specialist validation are still required."
+        }
+      },
+      "rating": {
+        "section": "Modelling",
+        "readiness": "Research",
+        "grade": "B-",
+        "positives": [
+          "Inspect prepared data, model results and convergence diagnostics.",
+          "Run modelling scripts and produce saved models and budget scenarios."
+        ],
+        "negatives": [
+          "Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review."
+        ],
+        "position": "Specialist"
+      }
+    },
+    {
+      "id": "robyn",
+      "tool": {
+        "id": "robyn",
+        "name": "Robyn",
+        "category": "Modelling",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Model",
+          "Plan",
+          "Measure"
+        ],
+        "summary": "Read prepared historical data and inspect model outputs through code. Fit models and generate diagnostics and allocation scenarios.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "R and Python package, not a dedicated CLI"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official R package and Python beta",
+          "url": "https://github.com/facebookexperimental/Robyn"
+        },
+        "access": "R package has a stable CRAN release; Python implementation is beta. Both require runtime dependencies, prepared data and modelling expertise.",
+        "caution": "Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Robyn R installation",
+            "url": "https://facebookexperimental.github.io/Robyn/docs/installation/",
+            "kind": "official"
+          },
+          {
+            "label": "Robyn Python beta and modelling workflow",
+            "url": "https://facebookexperimental.github.io/Robyn/docs/robyn-api/",
+            "kind": "official"
+          },
+          {
+            "label": "Official Robyn package source",
+            "url": "https://github.com/facebookexperimental/Robyn",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Robyn library through a coding environment",
+        "object": "Read prepared historical data and inspect model outputs through code.",
+        "setup": {
+          "level": "Specialist",
+          "tier": "self-managed",
+          "note": "Install the R package and dependencies, or the separate Python beta; prepare data and modelling code.",
+          "documentation": {
+            "label": "Robyn R installation",
+            "url": "https://facebookexperimental.github.io/Robyn/docs/installation/"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Unverified",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Specialist",
+          "note": "Fit models and generate diagnostics and allocation scenarios. Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified."
+        },
+        "blocker": "Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified.",
+        "dailyTasks": [
+          "Read prepared historical data and inspect model outputs through code.",
+          "Fit models and generate diagnostics and allocation scenarios."
+        ],
+        "actionScopes": {
+          "read": "Read prepared historical data and inspect model outputs through code.",
+          "create": "Models, diagnostics and allocation scenarios.",
+          "modify": "Model inputs and parameters through code.",
+          "delete": "No model-deletion operation documented in the reviewed package guides.",
+          "publish": "No live campaign budget changes."
+        },
+        "readSummary": "Read prepared historical data and inspect model outputs through code.",
+        "writeSummary": "Fit models and generate diagnostics and allocation scenarios.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "beta",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://facebookexperimental.github.io/Robyn/docs/installation/",
+            "https://facebookexperimental.github.io/Robyn/docs/robyn-api/",
+            "https://github.com/facebookexperimental/Robyn"
+          ],
+          "note": "R has a stable release; the Python route is beta. No ready official chat connector was verified."
+        }
+      },
+      "rating": {
+        "section": "Modelling",
+        "readiness": "Research",
+        "grade": "C",
+        "positives": [
+          "Read prepared historical data and inspect model outputs through code.",
+          "Fit models and generate diagnostics and allocation scenarios."
+        ],
+        "negatives": [
+          "Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified."
+        ],
+        "position": "Specialist"
+      }
+    },
+    {
+      "id": "pymc-marketing",
+      "tool": {
+        "id": "pymc-marketing",
+        "name": "PyMC-Marketing",
+        "category": "Modelling",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Model",
+          "Plan",
+          "Measure"
+        ],
+        "summary": "Read prepared data and fitted Bayesian models through Python. Create models, diagnostics, forecasts and allocation scenarios.",
+        "mcp": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "mode": "none",
+          "control": "none",
+          "label": "No official MCP verified"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "Python package, not a dedicated CLI"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Open-source Python package",
+          "url": "https://github.com/pymc-labs/pymc-marketing"
+        },
+        "access": "Open-source Python library with compatible dependencies and compute. Hosted products and experimental modules have separate access and maturity.",
+        "caution": "Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "PyMC-Marketing library documentation",
+            "url": "https://www.pymc-marketing.io/en/stable/",
+            "kind": "official"
+          },
+          {
+            "label": "Python modelling workflow",
+            "url": "https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html",
+            "kind": "official"
+          },
+          {
+            "label": "Official PyMC-Marketing repository",
+            "url": "https://github.com/pymc-labs/pymc-marketing",
+            "kind": "source-code"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "PyMC-Marketing library through Python",
+        "object": "Read prepared data and fitted Bayesian models through Python.",
+        "setup": {
+          "level": "Specialist",
+          "tier": "self-managed",
+          "note": "Install Python dependencies, prepare model assumptions and review the statistical results.",
+          "documentation": {
+            "label": "PyMC-Marketing library documentation",
+            "url": "https://www.pymc-marketing.io/en/stable/"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Unverified",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Specialist",
+          "note": "Create models, diagnostics, forecasts and allocation scenarios. Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library."
+        },
+        "blocker": "Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library.",
+        "dailyTasks": [
+          "Read prepared data and fitted Bayesian models through Python.",
+          "Create models, diagnostics, forecasts and allocation scenarios."
+        ],
+        "actionScopes": {
+          "read": "Read prepared data and fitted Bayesian models through Python.",
+          "create": "Models, forecasts, diagnostics and scenarios.",
+          "modify": "Model specification and assumptions through code.",
+          "delete": "No model-deletion API documented in the reviewed library workflow.",
+          "publish": "No live campaign budget changes."
+        },
+        "readSummary": "Read prepared data and fitted Bayesian models through Python.",
+        "writeSummary": "Create models, diagnostics, forecasts and allocation scenarios.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://www.pymc-marketing.io/en/stable/",
+            "https://www.pymc-marketing.io/en/stable/notebooks/mmm/mmm_example.html",
+            "https://github.com/pymc-labs/pymc-marketing"
+          ],
+          "note": "Published Python library; no ready official chat connector was verified. Experimental modules are outside this assessment."
+        }
+      },
+      "rating": {
+        "section": "Modelling",
+        "readiness": "Research",
+        "grade": "C+",
+        "positives": [
+          "Read prepared data and fitted Bayesian models through Python.",
+          "Create models, diagnostics, forecasts and allocation scenarios."
+        ],
+        "negatives": [
+          "Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library."
+        ],
+        "position": "Specialist"
+      }
+    },
+    {
+      "id": "databricks",
+      "tool": {
+        "id": "databricks",
+        "name": "Databricks",
+        "category": "Data and AI platform",
+        "channels": [
+          "Cross-channel",
+          "Warehouse"
+        ],
+        "jobs": [
+          "Query",
+          "Model",
+          "Operate"
+        ],
+        "summary": "Run SQL against governed tables and inspect database schemas. Execute SQL writes within warehouse permissions; administrators can disable writes.",
+        "product": {
+          "label": "Databricks",
+          "url": "https://www.databricks.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "beta",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Databricks SQL MCP",
+          "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official paid-media plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Databricks CLI",
+          "url": "https://docs.databricks.com/aws/en/dev-tools/cli/"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Databricks APIs and SDKs",
+          "url": "https://docs.databricks.com/aws/en/dev-tools/"
+        },
+        "access": "SQL MCP is Beta and requires an account admin to enable Enhanced Unity Gateway preview, plus MCP, warehouse and Unity Catalog privileges. Genie One is a separate generally available analytics route.",
+        "caution": "SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Databricks SQL MCP and beta requirements",
+            "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql",
+            "kind": "official"
+          },
+          {
+            "label": "Databricks MCP routes and access",
+            "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Databricks SQL MCP",
+        "object": "Run SQL against governed tables and inspect database schemas.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "An account admin enables Enhanced Unity Gateway preview; connect the workspace MCP with the required grants.",
+          "documentation": {
+            "label": "Databricks SQL MCP and beta requirements",
+            "url": "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Depends",
+          "modify": "Depends",
+          "delete": "Depends",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Execute SQL writes within warehouse permissions; administrators can disable writes. SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes."
+        },
+        "blocker": "SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes.",
+        "dailyTasks": [
+          "Run SQL against governed tables and inspect database schemas.",
+          "Execute SQL writes within warehouse permissions; administrators can disable writes."
+        ],
+        "actionScopes": {
+          "read": "SQL query results and database schemas.",
+          "create": "SQL-created objects and records, subject to permissions and write policy.",
+          "modify": "SQL updates, subject to permissions and write policy.",
+          "delete": "SQL deletes, subject to permissions and write policy.",
+          "publish": "Database execution is not advertising publication."
+        },
+        "readSummary": "Run SQL against governed tables and inspect database schemas.",
+        "writeSummary": "Execute SQL writes within warehouse permissions; administrators can disable writes.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "beta",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.databricks.com/aws/en/agents/mcp-tools/databricks-sql",
+            "https://docs.databricks.com/aws/en/agents/mcp-tools/built-in-mcp-services"
+          ],
+          "note": "SQL MCP is Beta; an account admin must enable Enhanced Unity Gateway preview."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Test",
+        "grade": "B+",
+        "position": "Reference",
+        "positives": [
+          "Run SQL against governed tables and inspect database schemas.",
+          "Execute SQL writes within warehouse permissions; administrators can disable writes."
+        ],
+        "negatives": [
+          "SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes."
+        ]
+      }
+    },
+    {
+      "id": "dbt",
+      "tool": {
+        "id": "dbt",
+        "name": "dbt",
+        "category": "Analytics engineering",
+        "channels": [
+          "Cross-channel",
+          "Warehouse"
+        ],
+        "jobs": [
+          "Query",
+          "Transform",
+          "Validate"
+        ],
+        "summary": "Read metrics, model context, lineage, freshness, jobs and SQL results. Trigger, retry or cancel jobs; execute SQL with development credentials.",
+        "product": {
+          "label": "dbt",
+          "url": "https://www.getdbt.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "dbt remote MCP, excluding local CLI",
+          "url": "https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official paid-media plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "dbt CLI through MCP",
+          "url": "https://github.com/dbt-labs/dbt-mcp"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "dbt APIs and developer docs",
+          "url": "https://docs.getdbt.com/"
+        },
+        "access": "Remote MCP is available across dbt platform plans but underlying API tools vary by plan. OAuth is public beta for Starter, Enterprise and Enterprise+. Token-based execute_sql needs a personal token, not a service token.",
+        "caution": "OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Remote MCP authentication and permissions",
+            "url": "https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp",
+            "kind": "official"
+          },
+          {
+            "label": "Remote tools and SQL write boundaries",
+            "url": "https://docs.getdbt.com/docs/dbt-ai/mcp-available-tools",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "dbt remote MCP, excluding local CLI",
+        "object": "Read metrics, model context, lineage, freshness, jobs and SQL results.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the account MCP URL with OAuth or a supported token; prepare projects and warehouse access.",
+          "documentation": {
+            "label": "Remote MCP authentication and permissions",
+            "url": "https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Depends",
+          "modify": "Depends",
+          "delete": "Depends",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Trigger, retry or cancel jobs; execute SQL with development credentials. OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server."
+        },
+        "blocker": "OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server.",
+        "dailyTasks": [
+          "Read metrics, model context, lineage, freshness, jobs and SQL results.",
+          "Trigger, retry or cancel jobs; execute SQL with development credentials."
+        ],
+        "actionScopes": {
+          "read": "Read metrics, model context, lineage, freshness, jobs and SQL results.",
+          "create": "SQL creations allowed by development warehouse credentials; start configured job runs.",
+          "modify": "SQL updates allowed by development credentials; retry or cancel supported jobs.",
+          "delete": "SQL deletes allowed by development credentials; no general dbt-object deletion tool.",
+          "publish": "Run configured platform jobs; remote MCP cannot execute local dbt build or run commands."
+        },
+        "readSummary": "Read metrics, model context, lineage, freshness, jobs and SQL results.",
+        "writeSummary": "Trigger, retry or cancel jobs; execute SQL with development credentials.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "beta",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.getdbt.com/docs/dbt-ai/setup-remote-mcp",
+            "https://docs.getdbt.com/docs/dbt-ai/mcp-available-tools"
+          ],
+          "note": "Remote MCP is available; its OAuth path is public beta. Token authentication remains available, with plan and resource permissions."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Test",
+        "grade": "B+",
+        "position": "Specialist",
+        "positives": [
+          "Read metrics, model context, lineage, freshness, jobs and SQL results.",
+          "Trigger, retry or cancel jobs; execute SQL with development credentials."
+        ],
+        "negatives": [
+          "OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server."
+        ]
+      }
+    },
+    {
+      "id": "rudderstack",
+      "tool": {
+        "id": "rudderstack",
+        "name": "RudderStack",
+        "category": "Customer data infrastructure",
+        "channels": [
+          "Cross-channel",
+          "First-party data"
+        ],
+        "jobs": [
+          "Connect",
+          "Transform",
+          "Operate"
+        ],
+        "summary": "Read source, destination, transformation and event context. Destination configuration is documented; exact create, delete and publish tools remain unverified.",
+        "product": {
+          "label": "RudderStack",
+          "url": "https://www.rudderstack.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "none-verified",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "RudderStack hosted MCP; maturity unconfirmed",
+          "url": "https://mcp.rudderstack.com/docs"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "RudderStack CLI",
+          "url": "https://www.rudderstack.com/docs/profiles/get-started/cli/"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "RudderStack APIs",
+          "url": "https://www.rudderstack.com/docs/api/"
+        },
+        "access": "Active RudderStack account with relevant permissions; team connector setup may require an administrator.",
+        "caution": "The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Hosted MCP setup and limitations",
+            "url": "https://mcp.rudderstack.com/docs",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "RudderStack hosted MCP",
+        "object": "Read source, destination, transformation and event context.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the hosted MCP and authorise the relevant account.",
+          "documentation": {
+            "label": "Hosted MCP setup and limitations",
+            "url": "https://mcp.rudderstack.com/docs"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Unverified",
+          "modify": "Partial",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Destination configuration is documented; exact create, delete and publish tools remain unverified. The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented."
+        },
+        "blocker": "The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented.",
+        "dailyTasks": [
+          "Read source, destination, transformation and event context.",
+          "Destination configuration is documented; exact create, delete and publish tools remain unverified."
+        ],
+        "actionScopes": {
+          "read": "Source, destination, transformation and event context.",
+          "create": "No specific creation tool documented.",
+          "modify": "Destination configuration and source/transformation management; exact fields unverified.",
+          "delete": "No specific deletion tool documented.",
+          "publish": "No specific publishing or deployment tool documented."
+        },
+        "readSummary": "Read source, destination, transformation and event context.",
+        "writeSummary": "Destination configuration is documented; exact create, delete and publish tools remain unverified.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "pending",
+        "connection": {
+          "provenance": "official",
+          "availability": "unverified",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://mcp.rudderstack.com/docs"
+          ],
+          "note": "Official hosted MCP; release maturity and the complete action inventory remain unverified."
+        }
+      },
+      "rating": {
+        "section": "Data infrastructure",
+        "readiness": "Test",
+        "grade": "B-",
+        "position": "Emerging",
+        "positives": [
+          "Read source, destination, transformation and event context.",
+          "Destination configuration is documented; exact create, delete and publish tools remain unverified."
+        ],
+        "negatives": [
+          "The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented."
+        ]
+      }
+    }
+  ]
+}

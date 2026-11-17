@@ -30,7 +30,7 @@
   "ratings": {
     "google-ads": {
       "section": "Media platforms",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "B-",
       "positives": [
         "Read campaign structure, metrics and GAQL reports.",
@@ -44,18 +44,19 @@
     "meta-ads": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "B-",
+      "grade": "B+",
       "positives": [
-        "The previous grade is retained while current evidence is incomplete."
+        "Official hosted campaign reads, creation, editing and activation.",
+        "OAuth access without a mandatory developer app."
       ],
       "negatives": [
-        "Official pages were inaccessible; keep the previous grade visibly pending."
+        "General rollout is unconfirmed. Some creative formats have limited availability; campaign deletion is not documented."
       ],
       "position": "Reference"
     },
     "tiktok-for-business": {
       "section": "Media platforms",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "A-",
       "positives": [
         "Read campaign information, reports and audience context.",
@@ -127,20 +128,20 @@
         "Create and manage campaigns, ad groups and ads via API."
       ],
       "negatives": [
-        "Custom integration required; some fields become immutable after draft."
+        "Custom integration required. The announced official MCP is not yet verified as launched."
       ],
       "position": "Reference"
     },
     "reddit-ads": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "C",
+      "grade": "C+",
       "positives": [
         "Read campaign information and reports through API v3.",
-        "Create campaigns and audiences; modify supported settings."
+        "Create campaigns and update budgets, schedules and delivery status."
       ],
       "negatives": [
-        "Exact deletion and activation coverage remains unverified."
+        "Custom AI integration required. Activation does not bypass ad approval or billing checks."
       ],
       "position": "Reference"
     },
@@ -159,20 +160,20 @@
     },
     "display-video-360": {
       "section": "Media platforms",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "C+",
       "positives": [
         "Read trafficking resources; use a separate route for performance reports.",
         "Manage supported resources, including responsive YouTube ads in v5 beta."
       ],
       "negatives": [
-        "Custom API work remains; the YouTube update does not cover every format."
+        "Public beta. YouTube line-item, ad-group and targeting setup still requires the interface or SDF upload."
       ],
       "position": "Reference"
     },
     "campaign-manager-360": {
       "section": "Media platforms",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "C+",
       "positives": [
         "Read campaign resources and reports via API v5.",
@@ -185,7 +186,7 @@
     },
     "search-ads-360": {
       "section": "Media platforms",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "C",
       "positives": [
         "Query campaign-to-keyword resources and performance reports.",
@@ -198,26 +199,26 @@
     },
     "apple-ads": {
       "section": "Media platforms",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "C+",
       "positives": [
-        "Read reports and authorised campaign configuration.",
-        "Create and manage supported campaigns, ad groups and keywords."
+        "Read campaign configuration, reports and performance.",
+        "Create, edit and delete campaign resources; enable eligible ads."
       ],
       "negatives": [
-        "No ready official AI connector verified; exact delete and activation tools remain unverified."
+        "Custom AI integration required. Enabled status does not guarantee serving."
       ],
       "position": "Reference"
     },
     "the-trade-desk": {
       "section": "Media platforms",
       "readiness": "Test",
-      "grade": "B",
+      "grade": "C+",
       "positives": [
-        "The previous grade is retained while current evidence is incomplete."
+        "Vendor-hosted access to campaign data and reports."
       ],
       "negatives": [
-        "Private beta and inaccessible tool evidence; keep the previous grade pending."
+        "Closed beta. The capability table marks reads available but still dates configuration writes to H2 2026."
       ],
       "position": "Reference"
     },
@@ -230,20 +231,20 @@
         "Create annotations, custom dimensions and key events with writes enabled."
       ],
       "negatives": [
-        "Three creation tools do not provide general property administration or tracking implementation."
+        "Self-managed setup. Writes only create annotations, custom dimensions and key events."
       ],
       "position": "Reference"
     },
     "google-tag-manager": {
       "section": "Measurement",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "B+",
       "positives": [
         "Read accounts, containers, workspaces, tags and versions.",
         "Change configuration, create previews and publish container versions."
       ],
       "negatives": [
-        "Stape is a third party; publication does not verify tracking or consent. Commercial limits remain unverified."
+        "Third-party connection, not Google-operated. Publishing still needs tracking and consent checks."
       ],
       "position": "Reference"
     },
@@ -253,7 +254,7 @@
       "grade": "A-",
       "positives": [
         "Query analytics and inspect charts, cohorts, experiments and taxonomy.",
-        "Create and edit analytical content and tracking definitions."
+        "Create and edit analytical content and tracking definitions; sync cohorts to destinations."
       ],
       "negatives": [
         "Guides/surveys stop at drafts; definition changes do not ingest production events."
@@ -269,7 +270,7 @@
         "Manage dashboards and cohorts; update definitions and resolve data issues."
       ],
       "negatives": [
-        "US has direct connectors; EU/India use custom connectors. Experiment targeting is unavailable."
+        "Experiment and flag tools are beta; audience targeting needs the UI. EU and India use custom connectors."
       ],
       "position": "Reference"
     },
@@ -282,7 +283,7 @@
         "Create paused campaigns and edit supported budgets, ads and settings."
       ],
       "negatives": [
-        "Writes require account-level opt-in and entitlement; coverage varies across seven ad platforms."
+        "Third-party access to ad platforms. Writes need owner opt-in; supported actions vary by platform."
       ],
       "position": "Reference"
     },
@@ -292,7 +293,7 @@
       "grade": "C+",
       "positives": [
         "Retrieve SERP, keyword, backlink and competitor research data.",
-        "Connect the hosted v3 MCP with OAuth and a funded DataForSEO account."
+        "Submit billable research tasks; no campaign or website mutations."
       ],
       "negatives": [
         "Research execution is not campaign control; API endpoint costs and allowances apply."
@@ -308,7 +309,7 @@
         "Manage connectors and pipelines; start or cancel syncs."
       ],
       "negatives": [
-        "External source/destination records remain read-only; infrastructure and credentials must already exist."
+        "Direct record access is read-only. Deletes require a marked resource name; connectors and credentials need prior setup."
       ],
       "position": "Reference"
     },
@@ -318,10 +319,10 @@
       "grade": "C+",
       "positives": [
         "Query the prepared warehouse context layer with read-only SQL.",
-        "Use the Claude connector or a custom ChatGPT app after the context layer is built."
+        "Submit answer feedback only; no operational data changes."
       ],
       "negatives": [
-        "Public Preview; the native connector still needs an administrator-prepared context layer."
+        "Public Preview. An administrator must build the context layer and grant access; business data remains read-only."
       ],
       "position": "Reference"
     },
@@ -334,7 +335,7 @@
         "Execute only the database operations exposed by your toolset."
       ],
       "negatives": [
-        "Hosting, credentials and tool design remain your responsibility; read-only behaviour varies by engine."
+        "Requires local or hosted server setup and database credentials. Operations and read-only controls vary by database and toolset."
       ],
       "position": "Specialist"
     },
@@ -347,7 +348,7 @@
         "Optional SQL and custom tools can change data when explicitly enabled."
       ],
       "negatives": [
-        "SQL defaults to read-only; hosting is managed but tool and data preparation is technical."
+        "An administrator must expose tools and grant access. SQL is read-only by default; writes need explicit configuration."
       ],
       "position": "Reference"
     },
@@ -360,7 +361,7 @@
         "Run modelling scripts and produce saved models and budget scenarios."
       ],
       "negatives": [
-        "Official agent skills still require local Python, historical data and specialist validation."
+        "Runs in a coding environment, not a hosted chat app. Data mappings, priors and model execution need human review."
       ],
       "position": "Specialist"
     },
@@ -373,7 +374,7 @@
         "Fit models and generate diagnostics and allocation scenarios."
       ],
       "negatives": [
-        "Specialist coding setup; no ready official external-agent connector verified."
+        "Requires modelling code and prepared data. Python is beta; no ready official chat connector was verified."
       ],
       "position": "Specialist"
     },
@@ -386,7 +387,7 @@
         "Create models, diagnostics, forecasts and allocation scenarios."
       ],
       "negatives": [
-        "Simba MCP is a separate product; its hosted capabilities do not belong to this library entry."
+        "Requires Python, prepared data and modelling expertise. No ready chat connector was verified for this library."
       ],
       "position": "Specialist"
     },
@@ -425,7 +426,7 @@
         "Create, edit, test, publish and unpublish workflows."
       ],
       "negatives": [
-        "Credentials and admin setup remain; protected instances restrict mutations."
+        "Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply."
       ],
       "position": "Emerging"
     },
@@ -451,7 +452,7 @@
         "Create and edit designs, transform images and export assets."
       ],
       "negatives": [
-        "Premium licensing and tool limits apply; general deletion and social publishing are not established."
+        "Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it."
       ],
       "position": "Reference"
     },
@@ -504,7 +505,7 @@
         "Create OneLink short links under existing templates, with confirmation."
       ],
       "negatives": [
-        "Beta: ten links per account per day; no wider account-editing MCP tools documented."
+        "Beta. Ten new OneLink links per account per day; broader account editing is not documented."
       ]
     },
     "adjust": {
@@ -514,7 +515,7 @@
       "position": "Reference",
       "positives": [
         "Read aggregate Adjust performance data.",
-        "Ask Adjust to enable access, then connect the custom OAuth connector."
+        "No Adjust account mutations are documented for this MCP."
       ],
       "negatives": [
         "Early Access requires enablement; no user-level or event-level data."
@@ -530,7 +531,7 @@
         "Manage supported workspace resources through a custom API integration."
       ],
       "negatives": [
-        "Twilio docs MCP only retrieves documentation; it cannot access or change the account."
+        "Requires a custom API integration. The Twilio MCP retrieves documentation only, not account data."
       ]
     },
     "adobe-firefly-creative-production": {
@@ -556,20 +557,20 @@
         "Generate images/videos and perform supported reference-based transformations."
       ],
       "negatives": [
-        "Do not borrow Runway Dev tools or archived server capabilities into the generation app."
+        "Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified."
       ]
     },
     "ahrefs": {
       "section": "Research and intelligence",
       "readiness": "Production",
-      "grade": "C+",
+      "grade": "B",
       "position": "Reference",
       "positives": [
         "Retrieve keyword, backlink, domain and SEO research reports.",
-        "Install the Claude connector with Lite-or-higher Ahrefs access."
+        "Create, organise and delete projects through explicitly MCP-enabled endpoints."
       ],
       "negatives": [
-        "Strong research access does not edit websites; plan and API-unit allowances apply."
+        "Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply."
       ]
     },
     "semrush": {
@@ -579,7 +580,7 @@
       "position": "Reference",
       "positives": [
         "Read SEO, Trends and supported Projects reports.",
-        "Connect the official ChatGPT app, or configure the hosted OAuth MCP in another supported client."
+        "Read-only; project creation and settings changes are excluded."
       ],
       "negatives": [
         "MCP does not inherit wider REST API mutations; API units and subscribed datasets apply."
@@ -592,7 +593,7 @@
       "position": "Reference",
       "positives": [
         "Read website/app, audience, traffic, search and commerce intelligence.",
-        "Install the official Claude connector and authorise access to subscribed datasets."
+        "No account, campaign or content writes established."
       ],
       "negatives": [
         "The connector exposes subscribed datasets only and consumes data credits."
@@ -604,11 +605,11 @@
       "grade": "B-",
       "position": "Emerging",
       "positives": [
-        "Read exposed sources, destinations, transformations and event context.",
-        "Manage supported configuration; exact CRUD tools are not fully documented."
+        "Read source, destination, transformation and event context.",
+        "Destination configuration is documented; exact create, delete and publish tools remain unverified."
       ],
       "negatives": [
-        "Active development and incomplete public action coverage; verify the actual tool inventory."
+        "The vendor warns of active development and variable stability. Exact write tools and release maturity are not fully documented."
       ]
     },
     "databricks": {
@@ -617,11 +618,11 @@
       "grade": "B+",
       "position": "Reference",
       "positives": [
-        "Query governed analytics with Genie One or use the separate SQL MCP.",
-        "SQL MCP can change data within warehouse and Unity Catalog permissions."
+        "Run SQL against governed tables and inspect database schemas.",
+        "Execute SQL writes within warehouse permissions; administrators can disable writes."
       ],
       "negatives": [
-        "Genie One is GA; SQL writes use a separate Beta route requiring admin enablement."
+        "SQL MCP is Beta and needs admin enablement. Genie One is a separate generally available route; its status does not cover SQL writes."
       ]
     },
     "dbt": {
@@ -634,25 +635,25 @@
         "Trigger, retry or cancel jobs; execute SQL with development credentials."
       ],
       "negatives": [
-        "Remote MCP does not run local project commands; SQL write rights follow development credentials."
+        "OAuth is public beta. SQL uses personal development credentials; local project commands require the separate self-hosted server."
       ]
     },
     "make": {
       "section": "Automation and workflow",
-      "readiness": "Production",
-      "grade": "B+",
+      "readiness": "Test",
+      "grade": "B",
       "position": "Reference",
       "positives": [
         "Read authorised scenarios, connections, teams and organisation context.",
         "Modify supported automation assets and run authorised scenarios."
       ],
       "negatives": [
-        "Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking."
+        "Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified."
       ]
     },
     "workato": {
       "section": "Automation and workflow",
-      "readiness": "Production",
+      "readiness": "Test",
       "grade": "B",
       "position": "Reference",
       "positives": [
@@ -660,7 +661,7 @@
         "Manage role-enabled workspace resources and exposed business tools."
       ],
       "negatives": [
-        "Enterprise administration and scoped API roles remain; no universal recipe deployment claim."
+        "API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded."
       ]
     },
     "gumloop": {

@@ -154,6 +154,15 @@ for (const [index, tool] of data.tools.entries()) {
   if (!workflow.readSummary?.trim() || !workflow.writeSummary?.trim()) errors.push(path + ' needs read/write summaries');
   if (!['native-app', 'hosted-mcp', 'self-managed', 'custom-api', 'none-verified'].includes(workflow.setup?.tier)) errors.push(path + ' has invalid setup tier');
   if (!['current', 'pending'].includes(workflow.reviewStatus)) errors.push(path + ' has invalid review status');
+  const connection = workflow.connection;
+  if (!connection || !['official', 'third-party', 'community', 'unverified'].includes(connection.provenance)
+    || !['generally-available', 'beta', 'preview', 'restricted', 'unverified'].includes(connection.availability)
+    || !['documentation', 'connected', 'tested'].includes(connection.evidence)
+    || !/^\d{4}-\d{2}-\d{2}$/.test(connection.checkedOn || '') || !connection.note?.trim()
+    || !Array.isArray(connection.sourceUrls) || !connection.sourceUrls.length) errors.push(path + ' needs connection provenance, availability and evidence');
+  for (const url of connection?.sourceUrls || []) checkUrl(url, path + ' connection source');
+  if (connection?.evidence === 'documentation' && workflow.evidenceBasis !== 'Documentation reviewed') errors.push(path + ' cannot imply live testing from documentation evidence');
+  if ((workflow.reviewStatus === 'pending' || ['beta', 'preview', 'restricted', 'unverified'].includes(connection?.availability)) && rating.readiness === 'Production') errors.push(path + ' limited or unverified connection must not be marked Production');
   if (!allowedCoverage.has(workflow.coverage?.level)) errors.push(path + ' workflow coverage is invalid');
   if (!workflow.coverage?.note) errors.push(path + ' workflow coverage note is required');
   if (workflow.evidenceBasis && !allowedEvidenceBasis.has(workflow.evidenceBasis)) {

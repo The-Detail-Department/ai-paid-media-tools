@@ -50,21 +50,21 @@
         "url": "https://developer.wordpress.com/docs/mcp/"
       },
       "access": "All WordPress.com paid plans. Free sites temporarily included through 30 November 2026. Jetpack-connected sites use the same server; developer docs identify Jetpack AI or Complete after the temporary no-plan period.",
-      "caution": "Live edits can apply immediately. Free-site access ends 30 November 2026.",
+      "caution": "Live edits can apply immediately. Free-site MCP access ends 30 November 2026.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "WordPress.com connection guide",
           "url": "https://developer.wordpress.com/docs/mcp/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Content authoring tools",
           "url": "https://developer.wordpress.com/docs/mcp/tools-reference/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Plans and account permissions",
           "url": "https://wordpress.com/support/mcp/",
           "kind": "official"
         }
@@ -115,22 +115,22 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Vendor source code",
+          "label": "Official adapter repository",
           "url": "https://github.com/WordPress/mcp-adapter",
           "kind": "source-code"
         },
         {
-          "label": "Vendor source code",
+          "label": "Ability exposure and transports",
           "url": "https://raw.githubusercontent.com/WordPress/mcp-adapter/trunk/README.md",
           "kind": "source-code"
         },
         {
-          "label": "Additional official documentation",
+          "label": "WordPress adapter introduction",
           "url": "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Install the official adapter",
           "url": "https://wordpress.org/plugins/mcp-adapter/",
           "kind": "official"
         }
@@ -182,22 +182,22 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Connect the Webflow app",
           "url": "https://developers.webflow.com/mcp/installing/chatgpt",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Webflow connection setup",
           "url": "https://developers.webflow.com/mcp/reference/getting-started",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "CMS actions and tools",
           "url": "https://developers.webflow.com/mcp/tools/data-tools",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Webflow limitations",
           "url": "https://developers.webflow.com/mcp/reference/overview",
           "kind": "official"
         }
@@ -218,7 +218,7 @@
         "Publish",
         "Localise"
       ],
-      "summary": "Read entries, models, assets, locales, references and releases. Manage content, publish assets and schedule supported releases.",
+      "summary": "Read entries, models, assets, locales, references and releases. Create, edit, delete and publish entries and assets; schedule releases.",
       "mcp": {
         "provenance": "official",
         "maturity": "available",
@@ -248,7 +248,7 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Contentful tools and environment access",
           "url": "https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/",
           "kind": "official"
         }
@@ -294,17 +294,17 @@
         "label": "Evaluated route documentation",
         "url": "https://www.sanity.io/docs/ai/mcp-server"
       },
-      "access": "Sanity account with project/dataset permissions. Available tools can vary. Deployed schemas enable validation before writes.",
-      "caution": "Release scheduling/publication stays outside MCP; liveEdit types bypass drafts.",
+      "access": "Sanity account and project permissions. Authoring tools are separate from the read-only Context MCP; document validation remains beta.",
+      "caution": "Release scheduling needs Studio or the HTTP API. Document validation is beta; liveEdit types bypass drafts.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Authoring tools and limits",
           "url": "https://www.sanity.io/docs/ai/mcp-server",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Separate read-only Context MCP",
           "url": "https://www.sanity.io/docs/context/mcp-reference",
           "kind": "official"
         }
@@ -350,27 +350,27 @@
         "label": "Evaluated route documentation",
         "url": "https://directus.com/docs/guides/ai/mcp"
       },
-      "access": "MCP requires Directus 11.12+. Actual instance version, administrator enablement and user permissions govern available tools. Self-hosted operation belongs in the self-managed tier when infrastructure must be maintained by the user.",
-      "caution": "Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration.",
+      "access": "Directus 11.12+, administrator enablement and user permissions. Self-hosted OAuth requires server configuration.",
+      "caution": "Publishing follows your content model. Deletes are disabled by default; self-hosted OAuth needs configuration.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Directus MCP overview",
           "url": "https://directus.com/docs/guides/ai/mcp",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Instance setup",
           "url": "https://directus.com/docs/guides/ai/mcp/installation",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "OAuth configuration",
           "url": "https://directus.com/docs/guides/ai/mcp/oauth",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Directus tool reference",
           "url": "https://directus.com/docs/guides/ai/mcp/tools",
           "kind": "official"
         }
@@ -423,47 +423,47 @@
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Install Shopify AI Toolkit",
           "url": "https://shopify.dev/docs/apps/build/ai-toolkit",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Authenticate a store",
           "url": "https://shopify.dev/docs/api/shopify-cli/store/store-auth",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Run store queries and mutations",
           "url": "https://shopify.dev/docs/api/shopify-cli/store/store-execute",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Query pages",
           "url": "https://shopify.dev/docs/api/admin-graphql/latest/queries/pages",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Create pages",
           "url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageCreate",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Update pages",
           "url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageUpdate",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Delete pages",
           "url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageDelete",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Create articles",
           "url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/articleCreate",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Delete articles",
           "url": "https://shopify.dev/docs/api/admin-graphql/latest/mutations/articleDelete",
           "kind": "official"
         }
@@ -484,7 +484,7 @@
         "Publish",
         "Localise"
       ],
-      "summary": "Read products, orders and order notes. Create, update and delete products; perform selected order actions.",
+      "summary": "Read products, orders and order notes. Create, edit, publish and delete supported products; update order status and notes.",
       "mcp": {
         "provenance": "official",
         "maturity": "preview",
@@ -510,18 +510,33 @@
         "url": "https://developer.woocommerce.com/docs/features/mcp/"
       },
       "access": "Developer preview. WooCommerce registers abilities; each checks permissions. HTTPS and suitable permalink settings are needed for the remote route.",
-      "caution": "Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking.",
+      "caution": "Developer preview. Requires MCP Adapter; the old WooCommerce endpoint no longer works in 11.3.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "WooCommerce MCP setup and abilities",
           "url": "https://developer.woocommerce.com/docs/features/mcp/",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "WooCommerce 11.3 migration",
           "url": "https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp/",
           "kind": "official"
+        },
+        {
+          "label": "Product creation in WooCommerce 11.3.0",
+          "url": "https://github.com/woocommerce/woocommerce/blob/11.3.0/plugins/woocommerce/src/Internal/Abilities/Domain/ProductCreate.php",
+          "kind": "source-code"
+        },
+        {
+          "label": "Product updates and publication permissions",
+          "url": "https://github.com/woocommerce/woocommerce/blob/11.3.0/plugins/woocommerce/src/Internal/Abilities/Domain/ProductUpdate.php",
+          "kind": "source-code"
+        },
+        {
+          "label": "Supported product fields and status",
+          "url": "https://github.com/woocommerce/woocommerce/blob/11.3.0/plugins/woocommerce/src/Internal/Abilities/Domain/Traits/ProductAbilityTrait.php",
+          "kind": "source-code"
         }
       ]
     },
@@ -543,7 +558,7 @@
       "summary": "Read product content and selected commerce data. Create hidden products and edit product copy and SEO fields.",
       "mcp": {
         "provenance": "official",
-        "maturity": "preview",
+        "maturity": "beta",
         "mode": "remote",
         "control": "mixed",
         "label": "BigCommerce Store Management MCP, early access",
@@ -566,22 +581,17 @@
         "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/content/pages"
       },
       "access": "Active store, owner enablement, explicit per-user/per-store grants. New users start with no scopes. Rate limits depend on store plan.",
-      "caution": "Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication.",
+      "caution": "Beta. Products are created hidden; publishing, product deletion and page/blog editing stay outside this MCP.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Compare BigCommerce MCP routes",
           "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
           "kind": "official"
         },
         {
-          "label": "Additional official documentation",
+          "label": "Store Management tools and beta access",
           "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/store-management",
-          "kind": "official"
-        },
-        {
-          "label": "Additional official documentation",
-          "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/content/pages",
           "kind": "official"
         }
       ]
@@ -622,25 +632,25 @@
       "developer": {
         "provenance": "official",
         "maturity": "available",
-        "label": "Official API documentation",
+        "label": "Commerce CMS REST API",
         "url": "https://developer.adobe.com/commerce/webapi/rest/"
       },
       "access": "Traditional Commerce PaaS/on-premises/Magento API scope. Adobe explicitly documents materially different SaaS endpoint availability.",
-      "caution": "Traditional Commerce/Magento API scope only; custom integration and visual checks remain.",
+      "caution": "Custom integration required. CMS REST scope applies to traditional Commerce/Magento, not automatically SaaS.",
       "verifiedOn": "2026-11-16",
       "sources": [
         {
-          "label": "Connection and tool documentation",
+          "label": "Commerce deployment and REST API scope",
           "url": "https://developer.adobe.com/commerce/webapi/rest/",
           "kind": "official"
         },
         {
-          "label": "Vendor source code",
+          "label": "CMS page and block API routes",
           "url": "https://raw.githubusercontent.com/magento/magento2/2.4-develop/app/code/Magento/Cms/etc/webapi.xml",
           "kind": "source-code"
         },
         {
-          "label": "Vendor source code",
+          "label": "CMS page activation fields",
           "url": "https://raw.githubusercontent.com/magento/magento2/2.4-develop/app/code/Magento/Cms/Api/Data/PageInterface.php",
           "kind": "source-code"
         }

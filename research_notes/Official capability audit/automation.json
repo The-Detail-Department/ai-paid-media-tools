@@ -1,0 +1,1887 @@
+{
+  "records": [
+    {
+      "id": "zapier",
+      "tool": {
+        "id": "zapier",
+        "name": "Zapier",
+        "category": "Workflow",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Automate",
+          "Build",
+          "Operate"
+        ],
+        "summary": "Read and search records in connected apps. Run supported app actions; workflow creation is separate early access.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Zapier official hosted MCP",
+          "url": "https://docs.zapier.com/mcp/home"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official Zapier plugin",
+          "url": "https://github.com/zapier/zapier-mcp"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Zapier Platform CLI",
+          "url": "https://docs.zapier.com/integrations/build-cli/overview"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Zapier Platform",
+          "url": "https://docs.zapier.com/platform/home"
+        },
+        "access": "Zapier account, connected app permissions and applicable task allowance.",
+        "caution": "Coverage depends on each app; Next Gen Zaps deployment is not available to every account.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Zapier MCP actions and access",
+            "url": "https://docs.zapier.com/mcp/home",
+            "kind": "official"
+          },
+          {
+            "label": "Official Zapier plugin",
+            "url": "https://github.com/zapier/zapier-mcp",
+            "kind": "source-code"
+          },
+          {
+            "label": "Zapier connection guide",
+            "url": "https://docs.zapier.com/mcp/get-started/quickstart",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Zapier official plugin and hosted MCP",
+        "object": "Read and search records in connected apps.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Install the official plugin in a supported client, then authorise Zapier and the apps you need.",
+          "documentation": {
+            "label": "Zapier MCP actions and access",
+            "url": "https://docs.zapier.com/mcp/home"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "Partial",
+          "delete": "Depends",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Run supported app actions; workflow creation is separate early access. Coverage depends on each app; Next Gen Zaps deployment is not available to every account."
+        },
+        "blocker": "Coverage depends on each app; Next Gen Zaps deployment is not available to every account.",
+        "dailyTasks": [
+          "Read and search records in connected apps.",
+          "Run supported app actions; workflow creation is separate early access."
+        ],
+        "actionScopes": {
+          "read": "Read and search records in connected apps.",
+          "create": "Supported app records, such as tasks and messages.",
+          "modify": "Supported app records, such as CRM fields.",
+          "delete": "Only where an authorised app exposes deletion.",
+          "publish": "Send messages and emails through supported app actions. Zap deployment is separate early access."
+        },
+        "readSummary": "Read and search records in connected apps.",
+        "writeSummary": "Run supported app actions; workflow creation is separate early access.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.zapier.com/mcp/home",
+            "https://github.com/zapier/zapier-mcp",
+            "https://docs.zapier.com/mcp/get-started/quickstart"
+          ],
+          "note": "Official plugin or hosted connection. App permissions and task allowances apply; workflow authoring remains early access."
+        }
+      },
+      "rating": {
+        "section": "Automation and workflow",
+        "readiness": "Production",
+        "grade": "A-",
+        "positives": [
+          "Read and search records in connected apps.",
+          "Run supported app actions; workflow creation is separate early access."
+        ],
+        "negatives": [
+          "Coverage depends on each app; Next Gen Zaps deployment is not available to every account."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "pipedream",
+      "tool": {
+        "id": "pipedream",
+        "name": "Pipedream",
+        "category": "Workflow",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Automate",
+          "Build",
+          "Operate"
+        ],
+        "summary": "Search and retrieve records from connected apps. Create and update app records through hosted actions.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Pipedream official hosted MCP",
+          "url": "https://pipedream.com/docs/connect/mcp"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "pd CLI",
+          "url": "https://pipedream.com/docs/cli/reference"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Connect SDK and API",
+          "url": "https://pipedream.com/docs/connect"
+        },
+        "access": "Pipedream account, connected app authorisation, usage and downstream permissions.",
+        "caution": "Each app has its own tools; app actions do not establish Pipedream workflow authoring.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Pipedream MCP actions and access",
+            "url": "https://pipedream.com/docs/connect/mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Pipedream official hosted MCP",
+        "object": "Search and retrieve records from connected apps.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the app-specific hosted server and authorise its account.",
+          "documentation": {
+            "label": "Pipedream MCP actions and access",
+            "url": "https://pipedream.com/docs/connect/mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "Partial",
+          "delete": "Depends",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create and update app records through hosted actions. Each app has its own tools; app actions do not establish Pipedream workflow authoring."
+        },
+        "blocker": "Each app has its own tools; app actions do not establish Pipedream workflow authoring.",
+        "dailyTasks": [
+          "Search and retrieve records from connected apps.",
+          "Create and update app records through hosted actions."
+        ],
+        "actionScopes": {
+          "read": "Search and retrieve records from connected apps.",
+          "create": "Supported issues, messages, documents and records.",
+          "modify": "Supported app data and records.",
+          "delete": "Only where the selected app tool supports deletion.",
+          "publish": "App-specific email sends and social updates."
+        },
+        "readSummary": "Search and retrieve records from connected apps.",
+        "writeSummary": "Create and update app records through hosted actions.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://pipedream.com/docs/connect/mcp"
+          ],
+          "note": "Official hosted app servers. Available actions depend on the connected app and its permissions."
+        }
+      },
+      "rating": {
+        "section": "Automation and workflow",
+        "readiness": "Production",
+        "grade": "A-",
+        "positives": [
+          "Search and retrieve records from connected apps.",
+          "Create and update app records through hosted actions."
+        ],
+        "negatives": [
+          "Each app has its own tools; app actions do not establish Pipedream workflow authoring."
+        ],
+        "position": "Emerging"
+      }
+    },
+    {
+      "id": "n8n",
+      "tool": {
+        "id": "n8n",
+        "name": "n8n",
+        "category": "Workflow",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Automate",
+          "Build",
+          "Operate"
+        ],
+        "summary": "Read exposed workflows, executions and supported data tables. Create, edit, test, publish and unpublish workflows.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "n8n Cloud instance MCP",
+          "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "Native nodes and skills, not a separate plugin"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "n8n CLI",
+          "url": "https://docs.n8n.io/hosting/cli-commands/"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Public API and workflow nodes",
+          "url": "https://docs.n8n.io/api/"
+        },
+        "access": "Suitable n8n version, instance permissions and connected-service credentials. Authoring is documented from 2.13.0; individual tools have version gates.",
+        "caution": "Credentials and admin setup remain; protected instances restrict mutations.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "n8n MCP setup and permissions",
+            "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server",
+            "kind": "official"
+          },
+          {
+            "label": "n8n MCP tool reference",
+            "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "n8n Cloud instance MCP",
+        "object": "Read exposed workflows, executions and supported data tables.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Enable the instance MCP on n8n Cloud and authorise user-scoped workflows.",
+          "documentation": {
+            "label": "n8n MCP setup and permissions",
+            "url": "https://docs.n8n.io/connect/connect-to-n8n-mcp-server"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Yes"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create, edit, test, publish and unpublish workflows. Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply."
+        },
+        "blocker": "Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply.",
+        "dailyTasks": [
+          "Read exposed workflows, executions and supported data tables.",
+          "Create, edit, test, publish and unpublish workflows."
+        ],
+        "actionScopes": {
+          "read": "Read exposed workflows, executions and supported data tables.",
+          "create": "Workflows from validated SDK code and data tables.",
+          "modify": "Workflows and supported data tables.",
+          "delete": "Delete data-table columns from n8n 2.16.0. Workflow deletion remains unverified.",
+          "publish": "Explicit publish_workflow and unpublish_workflow."
+        },
+        "readSummary": "Read exposed workflows, executions and supported data tables.",
+        "writeSummary": "Create, edit, test, publish and unpublish workflows.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.n8n.io/connect/connect-to-n8n-mcp-server",
+            "https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference"
+          ],
+          "note": "Official instance MCP. An administrator enables access; tools depend on version and workflow permissions."
+        }
+      },
+      "rating": {
+        "section": "Automation and workflow",
+        "readiness": "Test",
+        "grade": "B+",
+        "positives": [
+          "Read exposed workflows, executions and supported data tables.",
+          "Create, edit, test, publish and unpublish workflows."
+        ],
+        "negatives": [
+          "Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply."
+        ],
+        "position": "Emerging"
+      }
+    },
+    {
+      "id": "figma",
+      "tool": {
+        "id": "figma",
+        "name": "Figma",
+        "category": "Creative",
+        "channels": [
+          "Cross-channel",
+          "Design"
+        ],
+        "jobs": [
+          "Create",
+          "Review",
+          "Build"
+        ],
+        "summary": "Read design structure, components, variables and file context. Create and edit native canvas objects in supported clients.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "beta",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Figma native connector + hosted MCP",
+          "url": "https://www.figma.com/mcp-catalog/"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "beta",
+          "label": "Official app or directory connector",
+          "url": "https://www.figma.com/mcp-catalog/"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official Figma CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "REST and Plugin APIs",
+          "url": "https://developers.figma.com/"
+        },
+        "access": "Professional, Education, Organization or Enterprise plan; supported remote MCP client and file edit access. Canvas writing is beta.",
+        "caution": "Canvas writing is beta; library publishing stays manual and visual review remains necessary.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Figma integrations",
+            "url": "https://www.figma.com/mcp-catalog/",
+            "kind": "official"
+          },
+          {
+            "label": "Canvas editing and beta limits",
+            "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Figma native connector + hosted MCP",
+        "object": "Read design structure, components, variables and file context.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Use an official supported connector with the required seat and file permissions.",
+          "documentation": {
+            "label": "Canvas editing and beta limits",
+            "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create and edit native canvas objects in supported clients. Canvas writing is beta; library publishing stays manual and visual review remains necessary."
+        },
+        "blocker": "Canvas writing is beta; library publishing stays manual and visual review remains necessary.",
+        "dailyTasks": [
+          "Read design structure, components, variables and file context.",
+          "Create and edit native canvas objects in supported clients."
+        ],
+        "actionScopes": {
+          "read": "Read design structure, components, variables and file context.",
+          "create": "Native frames, components, variables and layouts.",
+          "modify": "Editable canvas structure through use_figma.",
+          "delete": "Node-level changes; no general file deletion claim.",
+          "publish": "Component/library publishing remains manual."
+        },
+        "readSummary": "Read design structure, components, variables and file context.",
+        "writeSummary": "Create and edit native canvas objects in supported clients.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "beta",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://www.figma.com/mcp-catalog/",
+            "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/"
+          ],
+          "note": "Canvas writing is beta. A supported client, eligible plan and file edit permission are required."
+        }
+      },
+      "rating": {
+        "section": "Creative production",
+        "readiness": "Test",
+        "grade": "B+",
+        "positives": [
+          "Read design structure, components, variables and file context.",
+          "Create and edit native canvas objects in supported clients."
+        ],
+        "negatives": [
+          "Canvas writing is beta; library publishing stays manual and visual review remains necessary."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "canva",
+      "tool": {
+        "id": "canva",
+        "name": "Canva",
+        "category": "Creative",
+        "channels": [
+          "Cross-channel",
+          "Design",
+          "Video"
+        ],
+        "jobs": [
+          "Create",
+          "Adapt",
+          "Export"
+        ],
+        "summary": "Read designs, pages, content, folders and permitted brand templates. Create and edit designs, transform images and export assets.",
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Canva native connector + hosted MCP",
+          "url": "https://www.canva.com/help/connect-chatgpt-to-canva/"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://www.canva.com/help/connect-chatgpt-to-canva/"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Canva Apps CLI",
+          "url": "https://www.canva.dev/docs/apps/canva-cli/"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Apps SDK and Connect APIs",
+          "url": "https://www.canva.dev/docs/"
+        },
+        "access": "Available to Free and paid accounts, subject to admin controls. Brand templates, autofill, video generation and image tools have feature-specific plan limits and AI allowances.",
+        "caution": "Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Canva ChatGPT connection",
+            "url": "https://www.canva.com/help/connect-chatgpt-to-canva/",
+            "kind": "official"
+          },
+          {
+            "label": "Canva AI Connector access",
+            "url": "https://www.canva.com/help/mcp-agent-setup/",
+            "kind": "official"
+          },
+          {
+            "label": "Canva AI Connector actions",
+            "url": "https://www.canva.com/help/mcp-canva-usage/",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Canva native connector + hosted MCP",
+        "object": "Read designs, pages, content, folders and permitted brand templates.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Connect the official ChatGPT app or supported Canva AI Connector and authorise the account.",
+          "documentation": {
+            "label": "Canva ChatGPT connection",
+            "url": "https://www.canva.com/help/connect-chatgpt-to-canva/"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create and edit designs, transform images and export assets. Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it."
+        },
+        "blocker": "Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it.",
+        "dailyTasks": [
+          "Read designs, pages, content, folders and permitted brand templates.",
+          "Create and edit designs, transform images and export assets."
+        ],
+        "actionScopes": {
+          "read": "Read designs, pages, content, folders and permitted brand templates.",
+          "create": "Designs, imported assets and folders.",
+          "modify": "Supported design elements, images and resizing.",
+          "delete": "Deletion tools are not documented for this route.",
+          "publish": "Export is supported. Brand-template publication and social posting are not established for this connector."
+        },
+        "readSummary": "Read designs, pages, content, folders and permitted brand templates.",
+        "writeSummary": "Create and edit designs, transform images and export assets.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://www.canva.com/help/connect-chatgpt-to-canva/",
+            "https://www.canva.com/help/mcp-agent-setup/",
+            "https://www.canva.com/help/mcp-canva-usage/"
+          ],
+          "note": "Official AI Connector on Free and paid accounts. Admin approval, feature-specific plans and AI allowances apply."
+        }
+      },
+      "rating": {
+        "section": "Creative production",
+        "readiness": "Production",
+        "grade": "A-",
+        "positives": [
+          "Read designs, pages, content, folders and permitted brand templates.",
+          "Create and edit designs, transform images and export assets."
+        ],
+        "negatives": [
+          "Plan and admin limits apply. Deletion and publishing are unverified; exporting a design does not publish it."
+        ],
+        "position": "Reference"
+      }
+    },
+    {
+      "id": "adjust",
+      "tool": {
+        "id": "adjust",
+        "name": "Adjust",
+        "category": "Mobile attribution",
+        "channels": [
+          "Mobile",
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Measure",
+          "Configure",
+          "Report"
+        ],
+        "summary": "Read aggregate Adjust performance data. No Adjust account mutations are documented for this MCP.",
+        "product": {
+          "label": "Adjust",
+          "url": "https://www.adjust.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "preview",
+          "mode": "remote",
+          "control": "read-only",
+          "label": "Adjust official hosted MCP",
+          "url": "https://help.adjust.com/en/article/adjust-mcp"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Adjust APIs and SDKs",
+          "url": "https://dev.adjust.com/en/"
+        },
+        "access": "Early Access and account enablement required. Existing token-based configurations must reconnect through OAuth. Multi-account users select the account during authorisation.",
+        "caution": "Early Access requires enablement; no user-level or event-level data.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Adjust MCP access and data",
+            "url": "https://help.adjust.com/en/article/adjust-mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Adjust official hosted MCP",
+        "object": "Read aggregate Adjust performance data.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Ask Adjust to enable access, then connect the custom OAuth connector.",
+          "documentation": {
+            "label": "Adjust MCP access and data",
+            "url": "https://help.adjust.com/en/article/adjust-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Unverified",
+          "modify": "Unverified",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "No Adjust account mutations are documented for this MCP. Early Access requires enablement; no user-level or event-level data."
+        },
+        "blocker": "Early Access requires enablement; no user-level or event-level data.",
+        "dailyTasks": [
+          "Read aggregate Adjust performance data."
+        ],
+        "actionScopes": {
+          "read": "Read aggregate Adjust performance data.",
+          "create": "Creation tools are not documented for this route.",
+          "modify": "Editing tools are not documented for this route.",
+          "delete": "Deletion tools are not documented for this route.",
+          "publish": "Not established by the reviewed sources."
+        },
+        "readSummary": "Read aggregate Adjust performance data.",
+        "writeSummary": "No Adjust account mutations are documented for this MCP.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "preview",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://help.adjust.com/en/article/adjust-mcp"
+          ],
+          "note": "Early Access requires Adjust to enable the service on your account."
+        }
+      },
+      "rating": {
+        "section": "Measurement",
+        "readiness": "Test",
+        "grade": "C+",
+        "position": "Reference",
+        "positives": [
+          "Read aggregate Adjust performance data.",
+          "No Adjust account mutations are documented for this MCP."
+        ],
+        "negatives": [
+          "Early Access requires enablement; no user-level or event-level data."
+        ]
+      }
+    },
+    {
+      "id": "segment",
+      "tool": {
+        "id": "segment",
+        "name": "Twilio Segment",
+        "category": "Customer data platform",
+        "channels": [
+          "Cross-channel",
+          "First-party data"
+        ],
+        "jobs": [
+          "Collect",
+          "Govern",
+          "Activate"
+        ],
+        "summary": "Read workspace sources, destinations, warehouses and tracking plans through API. Manage supported workspace resources through a custom API integration.",
+        "product": {
+          "label": "Twilio Segment",
+          "url": "https://www.twilio.com/docs/segment"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "beta",
+          "mode": "remote",
+          "control": "read-only",
+          "label": "Documentation MCP only; account route uses the API",
+          "url": "https://www.twilio.com/docs/ai/mcp"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "beta",
+          "label": "Twilio docs connector only",
+          "url": "https://www.twilio.com/docs/ai/mcp"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No general official workspace CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Segment Public API",
+          "url": "https://www.twilio.com/docs/segment/api/public-api"
+        },
+        "access": "Public API is available to Team and Business tiers; only Workspace Owners can create tokens, assigning owner/member access. US and EU workspaces are supported.",
+        "caution": "Twilio docs MCP only retrieves documentation; it cannot access or change the account.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Segment Public API scope and access",
+            "url": "https://www.twilio.com/docs/segment/api/public-api",
+            "kind": "official"
+          },
+          {
+            "label": "Twilio documentation MCP limits",
+            "url": "https://www.twilio.com/docs/ai/mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Twilio Segment API, custom integration",
+        "object": "Read workspace sources, destinations, warehouses and tracking plans through API.",
+        "setup": {
+          "level": "Hard",
+          "tier": "custom-api",
+          "note": "Build a server-side API integration with an owner-issued Team/Business token.",
+          "documentation": {
+            "label": "Segment Public API scope and access",
+            "url": "https://www.twilio.com/docs/segment/api/public-api"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Yes",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Manage supported workspace resources through a custom API integration. Requires a custom API integration. The Twilio MCP retrieves documentation only, not account data."
+        },
+        "blocker": "Requires a custom API integration. The Twilio MCP retrieves documentation only, not account data.",
+        "dailyTasks": [
+          "Read workspace sources, destinations, warehouses and tracking plans through API.",
+          "Manage supported workspace resources through a custom API integration."
+        ],
+        "actionScopes": {
+          "read": "Read workspace sources, destinations, warehouses and tracking plans through API.",
+          "create": "Supported workspace resources via API.",
+          "modify": "Supported workspace resources via API.",
+          "delete": "Supported workspace resources via API.",
+          "publish": "Not established by the reviewed sources."
+        },
+        "readSummary": "Read workspace sources, destinations, warehouses and tracking plans through API.",
+        "writeSummary": "Manage supported workspace resources through a custom API integration.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://www.twilio.com/docs/segment/api/public-api",
+            "https://www.twilio.com/docs/ai/mcp"
+          ],
+          "note": "The official API is available on Team and Business plans. An AI integration must still be built."
+        }
+      },
+      "rating": {
+        "section": "Measurement",
+        "readiness": "Production",
+        "grade": "C",
+        "position": "Reference",
+        "positives": [
+          "Read workspace sources, destinations, warehouses and tracking plans through API.",
+          "Manage supported workspace resources through a custom API integration."
+        ],
+        "negatives": [
+          "Requires a custom API integration. The Twilio MCP retrieves documentation only, not account data."
+        ]
+      }
+    },
+    {
+      "id": "adobe-firefly-creative-production",
+      "tool": {
+        "id": "adobe-firefly-creative-production",
+        "name": "Adobe Firefly Creative Production",
+        "category": "Creative operations",
+        "channels": [
+          "Image",
+          "Video",
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Create",
+          "Adapt",
+          "Scale"
+        ],
+        "summary": "Discover actions/templates, check run status and retrieve outputs. Compose creative workflows, transform media and publish reusable workflows.",
+        "product": {
+          "label": "Firefly Creative Production",
+          "url": "https://business.adobe.com/products/firefly-business/firefly-creative-production.html"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Adobe Run-Workflow hosted MCP",
+          "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Creative Production Workflow API",
+          "url": "https://developer.adobe.com/firefly-services/docs/workflow-builder-api/"
+        },
+        "access": "Organisation service access and admin-provided credentials; availability must be checked for the customer organisation.",
+        "caution": "Organisation credentials are required; output links expire and publishing does not distribute ads.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Adobe creative workflow capabilities",
+            "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html",
+            "kind": "official"
+          },
+          {
+            "label": "Adobe MCP tool reference",
+            "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-tools.html",
+            "kind": "official"
+          },
+          {
+            "label": "Adobe service access requirements",
+            "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/install-run-workflow-mcp.html",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Adobe Run-Workflow hosted MCP",
+        "object": "Discover actions/templates, check run status and retrieve outputs.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "Obtain the organisation IMS token and service API key, then configure hosted MCP.",
+          "documentation": {
+            "label": "Adobe creative workflow capabilities",
+            "url": "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Partial",
+          "delete": "No",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Compose creative workflows, transform media and publish reusable workflows. Organisation credentials are required; output links expire and publishing does not distribute ads."
+        },
+        "blocker": "Organisation credentials are required; output links expire and publishing does not distribute ads.",
+        "dailyTasks": [
+          "Discover actions/templates, check run status and retrieve outputs.",
+          "Compose creative workflows, transform media and publish reusable workflows."
+        ],
+        "actionScopes": {
+          "read": "Discover actions/templates, check run status and retrieve outputs.",
+          "create": "Workflows and generated/processed media.",
+          "modify": "Supported image/video transformations.",
+          "delete": "No delete tool; cancellation only stops execution.",
+          "publish": "Reusable workflows, not ad or social distribution."
+        },
+        "readSummary": "Discover actions/templates, check run status and retrieve outputs.",
+        "writeSummary": "Compose creative workflows, transform media and publish reusable workflows.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "restricted",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-overview.html",
+            "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/run-workflow-mcp-tools.html",
+            "https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/install-run-workflow-mcp.html"
+          ],
+          "note": "Requires organisation service access, an IMS token and a service API key supplied by an administrator."
+        }
+      },
+      "rating": {
+        "section": "Creative production",
+        "readiness": "Test",
+        "grade": "B+",
+        "position": "Reference",
+        "positives": [
+          "Discover actions/templates, check run status and retrieve outputs.",
+          "Compose creative workflows, transform media and publish reusable workflows."
+        ],
+        "negatives": [
+          "Organisation credentials are required; output links expire and publishing does not distribute ads."
+        ]
+      }
+    },
+    {
+      "id": "runway",
+      "tool": {
+        "id": "runway",
+        "name": "Runway",
+        "category": "Generative media",
+        "channels": [
+          "Image",
+          "Video",
+          "Audio"
+        ],
+        "jobs": [
+          "Create",
+          "Edit",
+          "Upscale"
+        ],
+        "summary": "Retrieve generated outputs; general library search is unverified. Generate images/videos and perform supported reference-based transformations.",
+        "product": {
+          "label": "Runway",
+          "url": "https://runwayml.com/"
+        },
+        "github": {
+          "label": "Runway API MCP server",
+          "url": "https://github.com/runwayml/runway-api-mcp-server"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Runway native generation app",
+          "url": "https://runway.com/mcp"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://runway.com/mcp"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No general production CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Runway API and SDKs",
+          "url": "https://docs.dev.runwayml.com/api/"
+        },
+        "access": "Sign in with a Runway account; no API key required. Available models depend on plan. MCP supports Credits Mode only, including on plans with Unlimited Mode in the app.",
+        "caution": "Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Runway generation app",
+            "url": "https://runway.com/mcp",
+            "kind": "official"
+          },
+          {
+            "label": "Runway connection and credit limits",
+            "url": "https://help.runwayml.com/hc/en-us/articles/51931843164691-Connecting-to-Runway-MCP",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Runway native generation app",
+        "object": "Retrieve generated outputs; general library search is unverified.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Install the ChatGPT generation app and authorise a Runway account with eligible models and credits.",
+          "documentation": {
+            "label": "Runway generation app",
+            "url": "https://runway.com/mcp"
+          }
+        },
+        "actions": {
+          "read": "Partial",
+          "create": "Yes",
+          "modify": "Partial",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Generate images/videos and perform supported reference-based transformations. Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified."
+        },
+        "blocker": "Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified.",
+        "dailyTasks": [
+          "Retrieve generated outputs; general library search is unverified.",
+          "Generate images/videos and perform supported reference-based transformations."
+        ],
+        "actionScopes": {
+          "read": "Retrieve generated outputs; general library search is unverified.",
+          "create": "Images and videos using available account models.",
+          "modify": "Reference-based generation/restyling; no full timeline editing.",
+          "delete": "Deletion tools are not documented for this route.",
+          "publish": "No ad or social publication tool is documented for the generation app."
+        },
+        "readSummary": "Retrieve generated outputs; general library search is unverified.",
+        "writeSummary": "Generate images/videos and perform supported reference-based transformations.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://runway.com/mcp",
+            "https://help.runwayml.com/hc/en-us/articles/51931843164691-Connecting-to-Runway-MCP"
+          ],
+          "note": "Official generation app. Every generation uses Runway credits; Unlimited Mode is unavailable through MCP."
+        }
+      },
+      "rating": {
+        "section": "Creative production",
+        "readiness": "Production",
+        "grade": "B+",
+        "position": "Emerging",
+        "positives": [
+          "Retrieve generated outputs; general library search is unverified.",
+          "Generate images/videos and perform supported reference-based transformations."
+        ],
+        "negatives": [
+          "Every generation and retry uses credits. Library management, deletion and ad or social publishing are unverified."
+        ]
+      }
+    },
+    {
+      "id": "ahrefs",
+      "tool": {
+        "id": "ahrefs",
+        "name": "Ahrefs",
+        "category": "Search intelligence",
+        "channels": [
+          "Search",
+          "Content"
+        ],
+        "jobs": [
+          "Research",
+          "Compare",
+          "Analyse"
+        ],
+        "summary": "Retrieve keyword, backlink, domain and SEO research reports. Create, organise and delete Ahrefs projects. Website publishing is outside this route.",
+        "product": {
+          "label": "Ahrefs MCP",
+          "url": "https://ahrefs.com/mcp/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Ahrefs Claude connector + hosted MCP",
+          "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Ahrefs API",
+          "url": "https://docs.ahrefs.com/docs/api/reference/introduction"
+        },
+        "access": "Lite plan or higher, monthly API units and per-request row limits.",
+        "caution": "Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Ahrefs MCP access",
+            "url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+            "kind": "official"
+          },
+          {
+            "label": "Ahrefs Claude connector",
+            "url": "https://docs.ahrefs.com/en/mcp/docs/claude-desktop-web",
+            "kind": "official"
+          },
+          {
+            "label": "Ahrefs MCP tool groups",
+            "url": "https://docs.ahrefs.com/en/mcp/docs/tool-categories",
+            "kind": "official"
+          },
+          {
+            "label": "Create projects through MCP",
+            "url": "https://docs.ahrefs.com/en/api/reference/management/post-projects",
+            "kind": "official"
+          },
+          {
+            "label": "Update projects through MCP",
+            "url": "https://docs.ahrefs.com/en/api/reference/management/patch-update-project",
+            "kind": "official"
+          },
+          {
+            "label": "Delete projects through MCP",
+            "url": "https://docs.ahrefs.com/en/api/reference/management/delete-projects",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Ahrefs Claude connector + hosted MCP",
+        "object": "Retrieve keyword, backlink, domain and SEO research reports.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Install the Claude connector with Lite-or-higher Ahrefs access.",
+          "documentation": {
+            "label": "Ahrefs MCP access",
+            "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "Partial",
+          "delete": "Partial",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Create, organise and delete Ahrefs projects. Website publishing is outside this route. Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply."
+        },
+        "blocker": "Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply.",
+        "dailyTasks": [
+          "Retrieve keyword, backlink, domain and SEO research reports.",
+          "Create, organise and delete Ahrefs projects. Website publishing is outside this route."
+        ],
+        "actionScopes": {
+          "read": "Retrieve keyword, backlink, domain and SEO research reports.",
+          "create": "Create Ahrefs projects through the MCP-enabled Add Projects operation.",
+          "modify": "Change project access and move or remove projects from folders.",
+          "delete": "Delete Ahrefs projects. Keyword deletion is API-only in the reviewed reference.",
+          "publish": "Not a content publishing route."
+        },
+        "readSummary": "Retrieve keyword, backlink, domain and SEO research reports.",
+        "writeSummary": "Create, organise and delete Ahrefs projects. Website publishing is outside this route.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.ahrefs.com/en/mcp/docs/introduction",
+            "https://docs.ahrefs.com/en/mcp/docs/claude-desktop-web",
+            "https://docs.ahrefs.com/en/mcp/docs/tool-categories",
+            "https://docs.ahrefs.com/en/api/reference/management/post-projects",
+            "https://docs.ahrefs.com/en/api/reference/management/patch-update-project",
+            "https://docs.ahrefs.com/en/api/reference/management/delete-projects"
+          ],
+          "note": "Official Claude connector and hosted MCP on Lite or higher plans. Permissions, API-unit and dataset limits apply."
+        }
+      },
+      "rating": {
+        "section": "Research and intelligence",
+        "readiness": "Production",
+        "grade": "B",
+        "position": "Reference",
+        "positives": [
+          "Retrieve keyword, backlink, domain and SEO research reports.",
+          "Create, organise and delete projects through explicitly MCP-enabled endpoints."
+        ],
+        "negatives": [
+          "Project management does not edit a website. Some keyword mutations remain API-only; dataset and API-unit limits apply."
+        ]
+      }
+    },
+    {
+      "id": "semrush",
+      "tool": {
+        "id": "semrush",
+        "name": "Semrush",
+        "category": "Search and market intelligence",
+        "channels": [
+          "Search",
+          "Shopping",
+          "Market"
+        ],
+        "jobs": [
+          "Research",
+          "Compare",
+          "Audit"
+        ],
+        "summary": "Read SEO, Trends and supported Projects reports. Read-only; project creation and settings changes are excluded.",
+        "product": {
+          "label": "Semrush MCP",
+          "url": "https://www.semrush.com/mcp/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-only",
+          "label": "Semrush ChatGPT app + hosted MCP",
+          "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official Semrush CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Semrush API",
+          "url": "https://developer.semrush.com/api/"
+        },
+        "access": "Eligible SEO plans include API units; higher tiers may require a separate unit package. Traffic and Market data requires a Trends API subscription.",
+        "caution": "MCP does not inherit wider REST API mutations; API units and subscribed datasets apply.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Semrush MCP actions and access",
+            "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Semrush ChatGPT app + hosted MCP",
+        "object": "Read SEO, Trends and supported Projects reports.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Connect the official ChatGPT app, or configure the hosted OAuth MCP in another supported client.",
+          "documentation": {
+            "label": "Semrush MCP actions and access",
+            "url": "https://developer.semrush.com/api/v3/introduction/semrush-mcp/"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "No",
+          "modify": "No",
+          "delete": "No",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "Read-only; project creation and settings changes are excluded. MCP does not inherit wider REST API mutations; API units and subscribed datasets apply."
+        },
+        "blocker": "MCP does not inherit wider REST API mutations; API units and subscribed datasets apply.",
+        "dailyTasks": [
+          "Read SEO, Trends and supported Projects reports."
+        ],
+        "actionScopes": {
+          "read": "Read SEO, Trends and supported Projects reports.",
+          "create": "Project creation is explicitly excluded.",
+          "modify": "Project settings changes are explicitly excluded.",
+          "delete": "The MCP exposes read-only Projects API methods.",
+          "publish": "Not a content publishing route."
+        },
+        "readSummary": "Read SEO, Trends and supported Projects reports.",
+        "writeSummary": "Read-only; project creation and settings changes are excluded.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developer.semrush.com/api/v3/introduction/semrush-mcp/"
+          ],
+          "note": "Official app and hosted MCP. An eligible SEO or Trends plan and API units are required."
+        }
+      },
+      "rating": {
+        "section": "Research and intelligence",
+        "readiness": "Production",
+        "grade": "C+",
+        "position": "Reference",
+        "positives": [
+          "Read SEO, Trends and supported Projects reports.",
+          "Read-only; project creation and settings changes are excluded."
+        ],
+        "negatives": [
+          "MCP does not inherit wider REST API mutations; API units and subscribed datasets apply."
+        ]
+      }
+    },
+    {
+      "id": "similarweb",
+      "tool": {
+        "id": "similarweb",
+        "name": "Similarweb",
+        "category": "Digital intelligence",
+        "channels": [
+          "Web",
+          "App",
+          "Search",
+          "Retail"
+        ],
+        "jobs": [
+          "Research",
+          "Compare",
+          "Analyse"
+        ],
+        "summary": "Read website/app, audience, traffic, search and commerce intelligence. No account, campaign or content writes established.",
+        "product": {
+          "label": "Similarweb",
+          "url": "https://www.similarweb.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-only",
+          "label": "Similarweb Claude connector",
+          "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup"
+        },
+        "plugin": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Official app or directory connector",
+          "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup"
+        },
+        "cli": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No dedicated official CLI verified"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Similarweb API v5",
+          "url": "https://docs.similarweb.com/api-v5"
+        },
+        "access": "API-only, Business or Enterprise subscription with API/MCP access. Data credits apply; plan limits datasets, regions and historical ranges.",
+        "caution": "The connector exposes subscribed datasets only and consumes data credits.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Similarweb MCP datasets and access",
+            "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup",
+            "kind": "official"
+          },
+          {
+            "label": "Similarweb Claude connector",
+            "url": "https://docs.similarweb.com/api-v5/mcp-integration/available-integrations/claude-integration",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Similarweb Claude connector",
+        "object": "Read website/app, audience, traffic, search and commerce intelligence.",
+        "setup": {
+          "level": "Easy",
+          "tier": "native-app",
+          "note": "Install the official Claude connector and authorise access to subscribed datasets.",
+          "documentation": {
+            "label": "Similarweb MCP datasets and access",
+            "url": "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Unverified",
+          "modify": "Unverified",
+          "delete": "Unverified",
+          "publish": "No"
+        },
+        "coverage": {
+          "level": "Assist only",
+          "note": "No account, campaign or content writes established. The connector exposes subscribed datasets only and consumes data credits."
+        },
+        "blocker": "The connector exposes subscribed datasets only and consumes data credits.",
+        "dailyTasks": [
+          "Read website/app, audience, traffic, search and commerce intelligence."
+        ],
+        "actionScopes": {
+          "read": "Read website/app, audience, traffic, search and commerce intelligence.",
+          "create": "Creation tools are not documented for this route.",
+          "modify": "Editing tools are not documented for this route.",
+          "delete": "Deletion tools are not documented for this route.",
+          "publish": "Not a content publishing route."
+        },
+        "readSummary": "Read website/app, audience, traffic, search and commerce intelligence.",
+        "writeSummary": "No account, campaign or content writes established.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.similarweb.com/api-v5/mcp-integration/mcp-setup",
+            "https://docs.similarweb.com/api-v5/mcp-integration/available-integrations/claude-integration"
+          ],
+          "note": "Official hosted connector requires API/MCP access on an eligible subscription and consumes data credits."
+        }
+      },
+      "rating": {
+        "section": "Research and intelligence",
+        "readiness": "Production",
+        "grade": "C+",
+        "position": "Reference",
+        "positives": [
+          "Read website/app, audience, traffic, search and commerce intelligence.",
+          "No account, campaign or content writes established."
+        ],
+        "negatives": [
+          "The connector exposes subscribed datasets only and consumes data credits."
+        ]
+      }
+    },
+    {
+      "id": "make",
+      "tool": {
+        "id": "make",
+        "name": "Make",
+        "category": "Workflow automation",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Connect",
+          "Build",
+          "Run"
+        ],
+        "summary": "Read authorised scenarios, connections, teams and organisation context. Modify supported automation assets and run authorised scenarios.",
+        "product": {
+          "label": "Make",
+          "url": "https://www.make.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Make official hosted MCP",
+          "url": "https://developers.make.com/mcp-server"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Make Apps CLI",
+          "url": "https://developers.make.com/custom-apps-documentation/make-apps-cli"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Make API and developer hub",
+          "url": "https://developers.make.com/"
+        },
+        "access": "Scenario-run tools are available on all plans; management tools require a paid plan and appropriate scopes.",
+        "caution": "Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Make MCP actions and plans",
+            "url": "https://developers.make.com/mcp-server",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Make official hosted MCP",
+        "object": "Read authorised scenarios, connections, teams and organisation context.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the v2 hosted OAuth endpoint and grant the required management scopes.",
+          "documentation": {
+            "label": "Make MCP actions and plans",
+            "url": "https://developers.make.com/mcp-server"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Unverified",
+          "modify": "Partial",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Modify supported automation assets and run authorised scenarios. Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified."
+        },
+        "blocker": "Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.",
+        "dailyTasks": [
+          "Read authorised scenarios, connections, teams and organisation context.",
+          "Modify supported automation assets and run authorised scenarios."
+        ],
+        "actionScopes": {
+          "read": "Read authorised scenarios, connections, teams and organisation context.",
+          "create": "The public MCP guide does not identify a creation tool.",
+          "modify": "Supported scenarios, connections, webhooks, stores and settings.",
+          "delete": "The public MCP guide does not identify a deletion tool.",
+          "publish": "Execution of active or on-demand scenarios is documented. Scenario activation is unverified."
+        },
+        "readSummary": "Read authorised scenarios, connections, teams and organisation context.",
+        "writeSummary": "Modify supported automation assets and run authorised scenarios.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://developers.make.com/mcp-server"
+          ],
+          "note": "Official hosted MCP. Scenario execution is available on all plans; management tools require a paid plan and scopes."
+        }
+      },
+      "rating": {
+        "section": "Automation and workflow",
+        "readiness": "Test",
+        "grade": "B",
+        "position": "Reference",
+        "positives": [
+          "Read authorised scenarios, connections, teams and organisation context.",
+          "Modify supported automation assets and run authorised scenarios."
+        ],
+        "negatives": [
+          "Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified."
+        ]
+      }
+    },
+    {
+      "id": "workato",
+      "tool": {
+        "id": "workato",
+        "name": "Workato",
+        "category": "Enterprise automation",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Connect",
+          "Build",
+          "Govern"
+        ],
+        "summary": "Read permitted projects, folders, connections, jobs and workspace assets. Manage role-enabled workspace resources and exposed business tools.",
+        "product": {
+          "label": "Workato",
+          "url": "https://www.workato.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "mixed",
+          "label": "Workato Developer/Embedded API MCP",
+          "url": "https://docs.workato.com/mcp"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Workato CLI",
+          "url": "https://docs.workato.com/workato-cli.html"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Workato developer APIs",
+          "url": "https://docs.workato.com/developing-connectors/sdk.html"
+        },
+        "access": "Configured Workato API-client role and token required. Embedded API requires an Embedded-admin token. Available in supported regions; the stated China exclusion takes precedence over the conflicting URL table.",
+        "caution": "API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Workato MCP permissions and regions",
+            "url": "https://docs.workato.com/en/mcp/developer-api-mcp",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Workato Developer/Embedded API MCP",
+        "object": "Read permitted projects, folders, connections, jobs and workspace assets.",
+        "setup": {
+          "level": "Hard",
+          "tier": "hosted-mcp",
+          "note": "Configure an API-client role/token and the remote MCP; curate business tools separately.",
+          "documentation": {
+            "label": "Workato MCP permissions and regions",
+            "url": "https://docs.workato.com/en/mcp/developer-api-mcp"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Partial",
+          "modify": "Partial",
+          "delete": "Unverified",
+          "publish": "Unverified"
+        },
+        "coverage": {
+          "level": "Some steps",
+          "note": "Manage role-enabled workspace resources and exposed business tools. API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded."
+        },
+        "blocker": "API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.",
+        "dailyTasks": [
+          "Read permitted projects, folders, connections, jobs and workspace assets.",
+          "Manage role-enabled workspace resources and exposed business tools."
+        ],
+        "actionScopes": {
+          "read": "Read permitted projects, folders, connections, jobs and workspace assets.",
+          "create": "Create projects or folders when enabled in the API-client role.",
+          "modify": "Update folders and permitted workspace assets.",
+          "delete": "No specific MCP deletion endpoint was verified.",
+          "publish": "Recipe deployment through this MCP was not verified."
+        },
+        "readSummary": "Read permitted projects, folders, connections, jobs and workspace assets.",
+        "writeSummary": "Manage role-enabled workspace resources and exposed business tools.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "restricted",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.workato.com/en/mcp/developer-api-mcp"
+          ],
+          "note": "Official MCP requires configured API-client roles and tokens. Unavailable in the China data centre."
+        }
+      },
+      "rating": {
+        "section": "Automation and workflow",
+        "readiness": "Test",
+        "grade": "B",
+        "position": "Reference",
+        "positives": [
+          "Read permitted projects, folders, connections, jobs and workspace assets.",
+          "Manage role-enabled workspace resources and exposed business tools."
+        ],
+        "negatives": [
+          "API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded."
+        ]
+      }
+    },
+    {
+      "id": "gumloop",
+      "tool": {
+        "id": "gumloop",
+        "name": "Gumloop",
+        "category": "AI workflow automation",
+        "channels": [
+          "Cross-channel"
+        ],
+        "jobs": [
+          "Connect",
+          "Build",
+          "Run"
+        ],
+        "summary": "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources. Create and edit agents/skills, run them and manage supported triggers.",
+        "product": {
+          "label": "Gumloop",
+          "url": "https://www.gumloop.com/"
+        },
+        "mcp": {
+          "provenance": "official",
+          "maturity": "available",
+          "mode": "remote",
+          "control": "read-write",
+          "label": "Gumloop external management MCP",
+          "url": "https://docs.gumloop.com/mcp-server/overview.md"
+        },
+        "plugin": {
+          "provenance": "none",
+          "maturity": "none-verified",
+          "label": "No separate official agent plugin verified"
+        },
+        "cli": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Gumloop CLI",
+          "url": "https://docs.gumloop.com/cli/overview"
+        },
+        "developer": {
+          "provenance": "official",
+          "maturity": "available",
+          "label": "Gumloop API",
+          "url": "https://docs.gumloop.com/api-reference/getting-started"
+        },
+        "access": "Gumloop account and appropriate personal/team scope. Several agent, evaluation, session and organisation operations require a personal API key.",
+        "caution": "Personal/team scopes differ; complete visual-flow authoring is not established.",
+        "verifiedOn": "2026-11-16",
+        "sources": [
+          {
+            "label": "Gumloop MCP access and scope",
+            "url": "https://docs.gumloop.com/mcp-server/overview.md",
+            "kind": "official"
+          },
+          {
+            "label": "Gumloop agent and trigger tools",
+            "url": "https://docs.gumloop.com/mcp-server/tools/agents",
+            "kind": "official"
+          }
+        ]
+      },
+      "workflow": {
+        "surface": "Gumloop external management MCP",
+        "object": "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.",
+        "setup": {
+          "level": "Moderate",
+          "tier": "hosted-mcp",
+          "note": "Connect the hosted management MCP and use the appropriate personal or team scope.",
+          "documentation": {
+            "label": "Gumloop MCP access and scope",
+            "url": "https://docs.gumloop.com/mcp-server/overview.md"
+          }
+        },
+        "actions": {
+          "read": "Yes",
+          "create": "Yes",
+          "modify": "Yes",
+          "delete": "Partial",
+          "publish": "Partial"
+        },
+        "coverage": {
+          "level": "Most steps",
+          "note": "Create and edit agents/skills, run them and manage supported triggers. Personal/team scopes differ; complete visual-flow authoring is not established."
+        },
+        "blocker": "Personal/team scopes differ; complete visual-flow authoring is not established.",
+        "dailyTasks": [
+          "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.",
+          "Create and edit agents/skills, run them and manage supported triggers."
+        ],
+        "actionScopes": {
+          "read": "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.",
+          "create": "Agents, sessions, skills and triggers.",
+          "modify": "Agents, skills and supported configuration.",
+          "delete": "Agents and agent triggers with personal-key scope.",
+          "publish": "Start agents/runs and manage triggers; arbitrary flow publication unverified."
+        },
+        "readSummary": "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.",
+        "writeSummary": "Create and edit agents/skills, run them and manage supported triggers.",
+        "evidenceBasis": "Documentation reviewed",
+        "reviewStatus": "current",
+        "connection": {
+          "provenance": "official",
+          "availability": "generally-available",
+          "evidence": "documentation",
+          "checkedOn": "2026-11-16",
+          "sourceUrls": [
+            "https://docs.gumloop.com/mcp-server/overview.md",
+            "https://docs.gumloop.com/mcp-server/tools/agents"
+          ],
+          "note": "Official hosted management MCP. Personal-key and team-scoped connections expose different operations."
+        }
+      },
+      "rating": {
+        "section": "Automation and workflow",
+        "readiness": "Test",
+        "grade": "A-",
+        "position": "Emerging",
+        "positives": [
+          "Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.",
+          "Create and edit agents/skills, run them and manage supported triggers."
+        ],
+        "negatives": [
+          "Personal/team scopes differ; complete visual-flow authoring is not established."
+        ]
+      }
+    }
+  ]
+}

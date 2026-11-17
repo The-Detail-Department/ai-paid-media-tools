@@ -62,7 +62,7 @@
         "tier": "native-app",
         "note": "Enable MCP, connect the ChatGPT plugin or Claude connector and approve site permissions.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect WordPress.com",
           "url": "https://developer.wordpress.com/docs/mcp/"
         }
       },
@@ -75,9 +75,9 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Draft, edit, publish and trash posts and pages. Live edits can apply immediately. Free-site access ends 30 November 2026."
+        "note": "Draft, edit, publish and trash posts and pages. Live edits can apply immediately. Free-site MCP access ends 30 November 2026."
       },
-      "blocker": "Live edits can apply immediately. Free-site access ends 30 November 2026.",
+      "blocker": "Live edits can apply immediately. Free-site MCP access ends 30 November 2026.",
       "evidenceBasis": "Documentation reviewed",
       "dailyTasks": [
         "Read posts, pages, blocks, settings and site statistics.",
@@ -92,7 +92,19 @@
       },
       "readSummary": "Read posts, pages, blocks, settings and site statistics.",
       "writeSummary": "Draft, edit, publish and trash posts and pages.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developer.wordpress.com/docs/mcp/",
+          "https://developer.wordpress.com/docs/mcp/tools-reference/",
+          "https://wordpress.com/support/mcp/"
+        ],
+        "note": "Official ChatGPT plugin and Claude connector. Paid plans; temporary free access ends 30 November 2026."
+      }
     },
     "wordpress-adapter": {
       "surface": "WordPress MCP Adapter with exposed abilities",
@@ -100,9 +112,9 @@
       "setup": {
         "level": "Hard",
         "tier": "self-managed",
-        "note": "Install the adapter, expose abilities and configure authenticated access.",
+        "note": "Install the adapter, register or install the abilities you need, then configure authenticated access.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Install the adapter",
           "url": "https://github.com/WordPress/mcp-adapter"
         }
       },
@@ -124,7 +136,7 @@
         "Editorial actions depend on additional installed abilities."
       ],
       "actionScopes": {
-        "read": "Discover and run explicitly exposed WordPress abilities.",
+        "read": "Only abilities explicitly exposed by the site; installed core abilities do not guarantee post reading.",
         "create": "Requires an exposed creation ability.",
         "modify": "Requires an exposed editing ability.",
         "delete": "Requires an exposed deletion ability.",
@@ -132,7 +144,20 @@
       },
       "readSummary": "Discover and run explicitly exposed WordPress abilities.",
       "writeSummary": "Editorial actions depend on additional installed abilities.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://github.com/WordPress/mcp-adapter",
+          "https://raw.githubusercontent.com/WordPress/mcp-adapter/trunk/README.md",
+          "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/",
+          "https://wordpress.org/plugins/mcp-adapter/"
+        ],
+        "note": "Official installable adapter. Content actions require separately registered and exposed abilities."
+      }
     },
     "webflow": {
       "surface": "Webflow ChatGPT app / Claude connector",
@@ -142,7 +167,7 @@
         "tier": "native-app",
         "note": "Use the ChatGPT app or Claude connector and authorise the site with OAuth.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect Webflow",
           "url": "https://developers.webflow.com/mcp/installing/chatgpt"
         }
       },
@@ -172,7 +197,20 @@
       },
       "readSummary": "Read collections, schemas, CMS items and site data.",
       "writeSummary": "Draft, edit, publish, unpublish and delete CMS items.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developers.webflow.com/mcp/installing/chatgpt",
+          "https://developers.webflow.com/mcp/reference/getting-started",
+          "https://developers.webflow.com/mcp/tools/data-tools",
+          "https://developers.webflow.com/mcp/reference/overview"
+        ],
+        "note": "Official ChatGPT app and Claude connector. Existing site and OAuth permissions required."
+      }
     },
     "contentful": {
       "surface": "Contentful official hosted MCP",
@@ -182,7 +220,7 @@
         "tier": "hosted-mcp",
         "note": "Configure the MCP app per environment, then connect with OAuth.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect Contentful",
           "url": "https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/"
         }
       },
@@ -195,13 +233,13 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Manage content, publish assets and schedule supported releases. Configure each environment; CMS publication does not verify the separate live frontend."
+        "note": "Create, edit, delete and publish entries and assets; schedule releases. Configure each environment; CMS publication does not verify the separate live frontend."
       },
       "blocker": "Configure each environment; CMS publication does not verify the separate live frontend.",
       "evidenceBasis": "Documentation reviewed",
       "dailyTasks": [
         "Read entries, models, assets, locales, references and releases.",
-        "Manage content, publish assets and schedule supported releases."
+        "Create, edit, delete and publish entries and assets; schedule releases."
       ],
       "actionScopes": {
         "read": "Read entries, models, assets, locales, references and releases.",
@@ -211,8 +249,18 @@
         "publish": "Content publication, unpublication and supported scheduled releases."
       },
       "readSummary": "Read entries, models, assets, locales, references and releases.",
-      "writeSummary": "Manage content, publish assets and schedule supported releases.",
-      "reviewStatus": "current"
+      "writeSummary": "Create, edit, delete and publish entries and assets; schedule releases.",
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://www.contentful.com/developers/docs/mcp/model-context-protocol-mcp-server/"
+        ],
+        "note": "Official hosted server. Install and configure the MCP app in each space and environment."
+      }
     },
     "sanity": {
       "surface": "Sanity official hosted MCP",
@@ -222,7 +270,7 @@
         "tier": "hosted-mcp",
         "note": "Connect the hosted MCP and authorise the relevant account.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Connect Sanity",
           "url": "https://www.sanity.io/docs/ai/mcp-server"
         }
       },
@@ -235,9 +283,9 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Create and edit drafts; publish individual documents. Release scheduling/publication stays outside MCP; liveEdit types bypass drafts."
+        "note": "Create and edit drafts; publish individual documents. Release scheduling needs Studio or the HTTP API. Document validation is beta; liveEdit types bypass drafts."
       },
-      "blocker": "Release scheduling/publication stays outside MCP; liveEdit types bypass drafts.",
+      "blocker": "Release scheduling needs Studio or the HTTP API. Document validation is beta; liveEdit types bypass drafts.",
       "evidenceBasis": "Documentation reviewed",
       "dailyTasks": [
         "Query documents, schemas, projects and datasets.",
@@ -252,7 +300,18 @@
       },
       "readSummary": "Query documents, schemas, projects and datasets.",
       "writeSummary": "Create and edit drafts; publish individual documents.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://www.sanity.io/docs/ai/mcp-server",
+          "https://www.sanity.io/docs/context/mcp-reference"
+        ],
+        "note": "Official hosted authoring server. OAuth or token and project access required; document validation is beta."
+      }
     },
     "directus": {
       "surface": "Built-in MCP on your Directus instance",
@@ -262,8 +321,8 @@
         "tier": "self-managed",
         "note": "Enable MCP and OAuth on the existing instance; self-hosting needs configuration and restart.",
         "documentation": {
-          "label": "Connection documentation",
-          "url": "https://directus.com/docs/guides/ai/mcp"
+          "label": "Configure Directus MCP",
+          "url": "https://directus.com/docs/guides/ai/mcp/installation"
         }
       },
       "actions": {
@@ -275,9 +334,9 @@
       },
       "coverage": {
         "level": "Most steps",
-        "note": "Manage items, files, schemas and configured workflows. Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration."
+        "note": "Manage items, files, schemas and configured workflows. Publishing follows your content model. Deletes are disabled by default; self-hosted OAuth needs configuration."
       },
-      "blocker": "Draft/publish semantics follow the project schema; self-hosted OAuth needs server configuration.",
+      "blocker": "Publishing follows your content model. Deletes are disabled by default; self-hosted OAuth needs configuration.",
       "evidenceBasis": "Documentation reviewed",
       "dailyTasks": [
         "Read items, schemas, relationships, files and automation context.",
@@ -292,7 +351,20 @@
       },
       "readSummary": "Read items, schemas, relationships, files and automation context.",
       "writeSummary": "Manage items, files, schemas and configured workflows.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://directus.com/docs/guides/ai/mcp",
+          "https://directus.com/docs/guides/ai/mcp/installation",
+          "https://directus.com/docs/guides/ai/mcp/oauth",
+          "https://directus.com/docs/guides/ai/mcp/tools"
+        ],
+        "note": "Official built-in server for Directus 11.12+. Administrator enablement and instance configuration required."
+      }
     },
     "shopify": {
       "surface": "Shopify AI Toolkit + authenticated local CLI",
@@ -302,7 +374,7 @@
         "tier": "self-managed",
         "note": "Install AI Toolkit and Shopify CLI, authenticate the store and explicitly allow mutations.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Install Shopify AI Toolkit",
           "url": "https://shopify.dev/docs/apps/build/ai-toolkit"
         }
       },
@@ -328,21 +400,39 @@
         "create": "Pages and articles with publication controls.",
         "modify": "Page content, handles, templates and publication settings.",
         "delete": "Permanent pageDelete and articleDelete mutations.",
-        "publish": "Page status and immediate/scheduled article publication."
+        "publish": "Page and article publication status, including scheduled publication."
       },
       "readSummary": "Query store pages and other authorised Admin GraphQL data.",
       "writeSummary": "Create, edit, publish and delete supported pages and articles.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://shopify.dev/docs/apps/build/ai-toolkit",
+          "https://shopify.dev/docs/api/shopify-cli/store/store-auth",
+          "https://shopify.dev/docs/api/shopify-cli/store/store-execute",
+          "https://shopify.dev/docs/api/admin-graphql/latest/queries/pages",
+          "https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageCreate",
+          "https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageUpdate",
+          "https://shopify.dev/docs/api/admin-graphql/latest/mutations/pageDelete",
+          "https://shopify.dev/docs/api/admin-graphql/latest/mutations/articleCreate",
+          "https://shopify.dev/docs/api/admin-graphql/latest/mutations/articleDelete"
+        ],
+        "note": "Official coding-agent toolkit. Local Node.js, CLI, store authentication and explicit mutation approval required."
+      }
     },
     "woocommerce": {
-      "surface": "WooCommerce abilities + WordPress MCP Adapter",
+      "surface": "WooCommerce 11.3 abilities + WordPress MCP Adapter",
       "object": "Read products, orders and order notes.",
       "setup": {
         "level": "Hard",
         "tier": "self-managed",
         "note": "Install MCP Adapter separately; use a WordPress application password and expose the required abilities.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Set up WooCommerce MCP",
           "url": "https://developer.woocommerce.com/docs/features/mcp/"
         }
       },
@@ -351,28 +441,42 @@
         "create": "Yes",
         "modify": "Yes",
         "delete": "Yes",
-        "publish": "Unverified"
+        "publish": "Yes"
       },
       "dailyTasks": [
         "Read products, orders and order notes.",
-        "Create, update and delete products; perform selected order actions."
+        "Create, edit, publish and delete supported products; update order status and notes."
       ],
       "coverage": {
         "level": "Some steps",
-        "note": "Create, update and delete products; perform selected order actions. Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking."
+        "note": "Create, edit, publish and delete supported products; update order status and notes. Developer preview. Requires MCP Adapter; the old WooCommerce endpoint no longer works in 11.3."
       },
-      "blocker": "Developer preview. Version 11.3 removes the old endpoint/authentication; draft and publish semantics need checking.",
+      "blocker": "Developer preview. Requires MCP Adapter; the old WooCommerce endpoint no longer works in 11.3.",
       "evidenceBasis": "Documentation reviewed",
       "actionScopes": {
         "read": "Read products, orders and order notes.",
-        "create": "Products; draft defaults not established.",
+        "create": "Supported product types with an explicit status; do not assume draft by default.",
         "modify": "Products plus selected order status and note operations.",
         "delete": "Purpose-built product deletion ability.",
-        "publish": "Not established by the reviewed sources."
+        "publish": "Product status changes in 11.3.0; publishing requires the publish_products permission."
       },
       "readSummary": "Read products, orders and order notes.",
-      "writeSummary": "Create, update and delete products; perform selected order actions.",
-      "reviewStatus": "current"
+      "writeSummary": "Create, edit, publish and delete supported products; update order status and notes.",
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "preview",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developer.woocommerce.com/docs/features/mcp/",
+          "https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp/",
+          "https://github.com/woocommerce/woocommerce/blob/11.3.0/plugins/woocommerce/src/Internal/Abilities/Domain/ProductCreate.php",
+          "https://github.com/woocommerce/woocommerce/blob/11.3.0/plugins/woocommerce/src/Internal/Abilities/Domain/ProductUpdate.php",
+          "https://github.com/woocommerce/woocommerce/blob/11.3.0/plugins/woocommerce/src/Internal/Abilities/Domain/Traits/ProductAbilityTrait.php"
+        ],
+        "note": "Official developer preview. WooCommerce 11.3.0 and a separately installed WordPress MCP Adapter."
+      }
     },
     "bigcommerce": {
       "surface": "BigCommerce Store Management MCP, early access",
@@ -382,7 +486,7 @@
         "tier": "hosted-mcp",
         "note": "Store owner enables beta; connect with OAuth and grant explicit per-store scopes.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Enable Store Management MCP",
           "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/store-management"
         }
       },
@@ -399,9 +503,9 @@
       ],
       "coverage": {
         "level": "Some steps",
-        "note": "Create hidden products and edit product copy and SEO fields. Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication."
+        "note": "Create hidden products and edit product copy and SEO fields. Beta. Products are created hidden; publishing, product deletion and page/blog editing stay outside this MCP."
       },
-      "blocker": "Early-access merchant MCP, not shopper MCP; no page/blog tools or product publication.",
+      "blocker": "Beta. Products are created hidden; publishing, product deletion and page/blog editing stay outside this MCP.",
       "evidenceBasis": "Documentation reviewed",
       "actionScopes": {
         "read": "Read product content and selected commerce data.",
@@ -412,17 +516,28 @@
       },
       "readSummary": "Read product content and selected commerce data.",
       "writeSummary": "Create hidden products and edit product copy and SEO fields.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "beta",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+          "https://docs.bigcommerce.com/developer/api-reference/mcp/store-management"
+        ],
+        "note": "Official beta. Store owner enablement and per-user, per-store scopes required."
+      }
     },
     "adobe-commerce": {
       "surface": "Adobe Commerce/Magento CMS REST API, custom integration",
       "object": "Read and search CMS pages and blocks through REST APIs.",
       "setup": {
-        "level": "Hard",
+        "level": "Specialist",
         "tier": "custom-api",
         "note": "Build an authenticated API integration and maintain it.",
         "documentation": {
-          "label": "Connection documentation",
+          "label": "Commerce REST API guide",
           "url": "https://developer.adobe.com/commerce/webapi/rest/"
         }
       },
@@ -439,9 +554,9 @@
       ],
       "coverage": {
         "level": "Some steps",
-        "note": "Create, edit and delete pages/blocks; control page activation. Traditional Commerce/Magento API scope only; custom integration and visual checks remain."
+        "note": "Create, edit and delete pages/blocks; control page activation. Custom integration required. CMS REST scope applies to traditional Commerce/Magento, not automatically SaaS."
       },
-      "blocker": "Traditional Commerce/Magento API scope only; custom integration and visual checks remain.",
+      "blocker": "Custom integration required. CMS REST scope applies to traditional Commerce/Magento, not automatically SaaS.",
       "evidenceBasis": "Documentation reviewed",
       "actionScopes": {
         "read": "Read and search CMS pages and blocks through REST APIs.",
@@ -452,7 +567,19 @@
       },
       "readSummary": "Read and search CMS pages and blocks through REST APIs.",
       "writeSummary": "Create, edit and delete pages/blocks; control page activation.",
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "connection": {
+        "provenance": "official",
+        "availability": "generally-available",
+        "evidence": "documentation",
+        "checkedOn": "2026-11-16",
+        "sourceUrls": [
+          "https://developer.adobe.com/commerce/webapi/rest/",
+          "https://raw.githubusercontent.com/magento/magento2/2.4-develop/app/code/Magento/Cms/etc/webapi.xml",
+          "https://raw.githubusercontent.com/magento/magento2/2.4-develop/app/code/Magento/Cms/Api/Data/PageInterface.php"
+        ],
+        "note": "Official REST APIs only. An AI connection must be built; this is not a ready assistant connector."
+      }
     }
   }
 }

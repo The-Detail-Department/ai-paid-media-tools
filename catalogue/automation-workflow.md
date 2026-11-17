@@ -10,12 +10,12 @@ Cross-tool automation systems judged on connection, workflow construction, execu
 
 | Tool | Grade | Market role | Readiness | Setup | Read | Create | Edit | Delete | Publish / activate | Human-job coverage |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [Zapier](#zapier) | **A-** | Reference | Production | Moderate | Yes | Partial | Partial | Depends | Partial | Most steps |
-| [Make](#make) | **B+** | Reference | Production | Moderate | Yes | Depends | Partial | Depends | Partial | Most steps |
-| [Workato](#workato) | **B** | Reference | Production | Hard | Yes | Partial | Partial | Depends | Depends | Some steps |
+| [Zapier](#zapier) | **A-** | Reference | Production | Easy | Yes | Partial | Partial | Depends | Partial | Most steps |
+| [Make](#make) | **B** | Reference | Test | Moderate | Yes | Unverified | Partial | Unverified | Unverified | Most steps |
+| [Workato](#workato) | **B** | Reference | Test | Hard | Yes | Partial | Partial | Unverified | Unverified | Some steps |
 | [Pipedream](#pipedream) | **A-** | Emerging | Production | Moderate | Yes | Partial | Partial | Depends | Partial | Most steps |
 | [Gumloop](#gumloop) | **A-** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Partial | Most steps |
-| [n8n](#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Unverified | Yes | Most steps |
+| [n8n](#n8n) | **B+** | Emerging | Test | Moderate | Yes | Yes | Yes | Partial | Yes | Most steps |
 
 ## Zapier
 
@@ -30,20 +30,21 @@ Read and search records in connected apps. Run supported app actions; workflow c
 
 > **What still needs you:** Coverage depends on each app; Next Gen Zaps deployment is not available to every account.
 
-- **Route:** Zapier official hosted MCP.
+- **Route:** Zapier official plugin and hosted MCP.
 - **Scope:** Read and search records in connected apps..
-- **Setup:** Moderate. Connect hosted MCP and authorise apps; select managed or agentic tool discovery. [Connection documentation](https://docs.zapier.com/mcp/home).
+- **Setup:** Easy. Install the official plugin in a supported client, then authorise Zapier and the apps you need. [Zapier MCP actions and access](https://docs.zapier.com/mcp/home).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Read **Yes** · Create **Partial** · Edit **Partial** · Delete **Depends** · Publish / activate **Partial**
 - **Read:** Read and search records in connected apps.
 - **Write:** Run supported app actions; workflow creation is separate early access.
-- **Connection type:** hosted-mcp
+- **Connection type:** native-app
+- **Connection status:** official · generally-available. Official plugin or hosted connection. App permissions and task allowances apply; workflow authoring remains early access.
 - **Review:** current
 - **read:** Read and search records in connected apps.
 - **create:** Supported app records, such as tasks and messages.
 - **modify:** Supported app records, such as CRM fields.
 - **delete:** Only where an authorised app exposes deletion.
-- **publish:** Supported sends/posts; Next Gen Zaps deployment is early access.
+- **publish:** Send messages and emails through supported app actions. Zap deployment is separate early access.
 - **Coverage:** Most steps. Run supported app actions; workflow creation is separate early access. Coverage depends on each app; Next Gen Zaps deployment is not available to every account.
 - **Evidence basis:** Documentation reviewed
 
@@ -58,25 +59,25 @@ Read and search records in connected apps. Run supported app actions; workflow c
 
 **Official links**
 
-- **Product / official page:** [Connection and tool documentation](https://docs.zapier.com/mcp/home)
+- **Product / official page:** [Zapier MCP actions and access](https://docs.zapier.com/mcp/home)
 - **AI interface / endpoint:** [Zapier official hosted MCP](https://docs.zapier.com/mcp/home)
 - **MCP:** [Zapier official hosted MCP](https://docs.zapier.com/mcp/home)
-- **Plugin:** MCP tool bundles, not a separate plugin
+- **Plugin:** [Official Zapier plugin](https://github.com/zapier/zapier-mcp)
 - **CLI:** [Zapier Platform CLI](https://docs.zapier.com/integrations/build-cli/overview)
 - **API / SDK:** [Zapier Platform](https://docs.zapier.com/platform/home)
-- **Documentation:** [Connection and tool documentation](https://docs.zapier.com/mcp/home)
-- **GitHub:** No official repository verified
+- **Documentation:** [Zapier MCP actions and access](https://docs.zapier.com/mcp/home)
+- **GitHub:** [Official Zapier plugin](https://github.com/zapier/zapier-mcp)
 
 - **Access:** Zapier account, connected app permissions and applicable task allowance.
 - **Watch:** Coverage depends on each app; Next Gen Zaps deployment is not available to every account.
-- **Sources:** [Connection and tool documentation](https://docs.zapier.com/mcp/home) · [Additional official documentation](https://help.zapier.com/hc/en-us/articles/48308034391821-What-is-Zapier-MCP)
+- **Sources:** [Zapier MCP actions and access](https://docs.zapier.com/mcp/home) · [Official Zapier plugin](https://github.com/zapier/zapier-mcp) · [Zapier connection guide](https://docs.zapier.com/mcp/get-started/quickstart)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#automation-and-workflow)
 
 ## Make
 
-**B+ · Production · Reference**
+**B · Test · Reference**
 
 Read authorised scenarios, connections, teams and organisation context. Modify supported automation assets and run authorised scenarios.
 
@@ -85,23 +86,24 @@ Read authorised scenarios, connections, teams and organisation context. Modify s
 - Read authorised scenarios, connections, teams and organisation context.
 - Modify supported automation assets and run authorised scenarios.
 
-> **What still needs you:** Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking.
+> **What still needs you:** Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.
 
 - **Route:** Make official hosted MCP.
 - **Scope:** Read authorised scenarios, connections, teams and organisation context..
-- **Setup:** Moderate. Connect the v2 hosted OAuth endpoint and grant the required management scopes. [Connection documentation](https://developers.make.com/mcp-server).
+- **Setup:** Moderate. Connect the v2 hosted OAuth endpoint and grant the required management scopes. [Make MCP actions and plans](https://developers.make.com/mcp-server).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
-- **Capabilities:** Read **Yes** · Create **Depends** · Edit **Partial** · Delete **Depends** · Publish / activate **Partial**
+- **Capabilities:** Read **Yes** · Create **Unverified** · Edit **Partial** · Delete **Unverified** · Publish / activate **Unverified**
 - **Read:** Read authorised scenarios, connections, teams and organisation context.
 - **Write:** Modify supported automation assets and run authorised scenarios.
 - **Connection type:** hosted-mcp
+- **Connection status:** official · generally-available. Official hosted MCP. Scenario execution is available on all plans; management tools require a paid plan and scopes.
 - **Review:** current
 - **read:** Read authorised scenarios, connections, teams and organisation context.
-- **create:** Depends on granted management tools.
+- **create:** The public MCP guide does not identify a creation tool.
 - **modify:** Supported scenarios, connections, webhooks, stores and settings.
-- **delete:** Only if the specific authorised tool exists.
-- **publish:** Run active/on-demand scenarios; activation is not established universally.
-- **Coverage:** Most steps. Modify supported automation assets and run authorised scenarios. Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking.
+- **delete:** The public MCP guide does not identify a deletion tool.
+- **publish:** Execution of active or on-demand scenarios is documented. Scenario activation is unverified.
+- **Coverage:** Most steps. Modify supported automation assets and run authorised scenarios. Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
@@ -111,7 +113,7 @@ Read authorised scenarios, connections, teams and organisation context. Modify s
 
 **Limits**
 
-- Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking.
+- Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.
 
 **Official links**
 
@@ -121,19 +123,19 @@ Read authorised scenarios, connections, teams and organisation context. Modify s
 - **Plugin:** No separate official agent plugin verified
 - **CLI:** [Make Apps CLI](https://developers.make.com/custom-apps-documentation/make-apps-cli)
 - **API / SDK:** [Make API and developer hub](https://developers.make.com/)
-- **Documentation:** [Connection and tool documentation](https://developers.make.com/mcp-server)
+- **Documentation:** [Make MCP actions and plans](https://developers.make.com/mcp-server)
 - **GitHub:** No official repository verified
 
-- **Access:** Scenario-run tools on all plans; management tools on paid plans, with appropriate scopes and downstream connections.
-- **Watch:** Paid management scopes differ from scenario execution; exact create/delete/activation tools need checking.
-- **Sources:** [Connection and tool documentation](https://developers.make.com/mcp-server) · [Additional official documentation](https://developers.make.com/mcp-server/connect-using-oauth)
+- **Access:** Scenario-run tools are available on all plans; management tools require a paid plan and appropriate scopes.
+- **Watch:** Management requires a paid plan and scopes. Creation, deletion and activation tools are unverified.
+- **Sources:** [Make MCP actions and plans](https://developers.make.com/mcp-server)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#automation-and-workflow)
 
 ## Workato
 
-**B · Production · Reference**
+**B · Test · Reference**
 
 Read permitted projects, folders, connections, jobs and workspace assets. Manage role-enabled workspace resources and exposed business tools.
 
@@ -142,23 +144,24 @@ Read permitted projects, folders, connections, jobs and workspace assets. Manage
 - Read permitted projects, folders, connections, jobs and workspace assets.
 - Manage role-enabled workspace resources and exposed business tools.
 
-> **What still needs you:** Enterprise administration and scoped API roles remain; no universal recipe deployment claim.
+> **What still needs you:** API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.
 
 - **Route:** Workato Developer/Embedded API MCP.
 - **Scope:** Read permitted projects, folders, connections, jobs and workspace assets..
-- **Setup:** Hard. Configure an API-client role/token and the remote MCP; curate business tools separately. [Connection documentation](https://docs.workato.com/mcp).
+- **Setup:** Hard. Configure an API-client role/token and the remote MCP; curate business tools separately. [Workato MCP permissions and regions](https://docs.workato.com/en/mcp/developer-api-mcp).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
-- **Capabilities:** Read **Yes** · Create **Partial** · Edit **Partial** · Delete **Depends** · Publish / activate **Depends**
+- **Capabilities:** Read **Yes** · Create **Partial** · Edit **Partial** · Delete **Unverified** · Publish / activate **Unverified**
 - **Read:** Read permitted projects, folders, connections, jobs and workspace assets.
 - **Write:** Manage role-enabled workspace resources and exposed business tools.
 - **Connection type:** hosted-mcp
+- **Connection status:** official · restricted. Official MCP requires configured API-client roles and tokens. Unavailable in the China data centre.
 - **Review:** current
 - **read:** Read permitted projects, folders, connections, jobs and workspace assets.
-- **create:** Enabled projects, folders, tags and other authorised resources.
-- **modify:** Authorised workspace assets and organisation.
-- **delete:** Only role-enabled endpoints with an explicit delete action.
-- **publish:** Depends on scoped endpoints and exposed recipes.
-- **Coverage:** Some steps. Manage role-enabled workspace resources and exposed business tools. Enterprise administration and scoped API roles remain; no universal recipe deployment claim.
+- **create:** Create projects or folders when enabled in the API-client role.
+- **modify:** Update folders and permitted workspace assets.
+- **delete:** No specific MCP deletion endpoint was verified.
+- **publish:** Recipe deployment through this MCP was not verified.
+- **Coverage:** Some steps. Manage role-enabled workspace resources and exposed business tools. API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
@@ -168,7 +171,7 @@ Read permitted projects, folders, connections, jobs and workspace assets. Manage
 
 **Limits**
 
-- Enterprise administration and scoped API roles remain; no universal recipe deployment claim.
+- API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.
 
 **Official links**
 
@@ -178,12 +181,12 @@ Read permitted projects, folders, connections, jobs and workspace assets. Manage
 - **Plugin:** No separate official agent plugin verified
 - **CLI:** [Workato CLI](https://docs.workato.com/workato-cli.html)
 - **API / SDK:** [Workato developer APIs](https://docs.workato.com/developing-connectors/sdk.html)
-- **Documentation:** [Connection and tool documentation](https://docs.workato.com/mcp)
+- **Documentation:** [Workato MCP permissions and regions](https://docs.workato.com/en/mcp/developer-api-mcp)
 - **GitHub:** No official repository verified
 
-- **Access:** Workato organisation access and project/endpoint permissions. Embedded API needs Embedded-admin token; vendor says MCP unavailable in CN despite a CN URL appearing in its table.
-- **Watch:** Enterprise administration and scoped API roles remain; no universal recipe deployment claim.
-- **Sources:** [Connection and tool documentation](https://docs.workato.com/mcp) · [Additional official documentation](https://docs.workato.com/en/mcp/developer-api-mcp)
+- **Access:** Configured Workato API-client role and token required. Embedded API requires an Embedded-admin token. Available in supported regions; the stated China exclusion takes precedence over the conflicting URL table.
+- **Watch:** API-client roles and tokens are required. Deletion and recipe deployment remain unverified; China is excluded.
+- **Sources:** [Workato MCP permissions and regions](https://docs.workato.com/en/mcp/developer-api-mcp)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#automation-and-workflow)
@@ -203,12 +206,13 @@ Search and retrieve records from connected apps. Create and update app records t
 
 - **Route:** Pipedream official hosted MCP.
 - **Scope:** Search and retrieve records from connected apps..
-- **Setup:** Moderate. Connect the app-specific hosted server and authorise its account. [Connection documentation](https://pipedream.com/docs/connect/mcp).
+- **Setup:** Moderate. Connect the app-specific hosted server and authorise its account. [Pipedream MCP actions and access](https://pipedream.com/docs/connect/mcp).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Read **Yes** · Create **Partial** · Edit **Partial** · Delete **Depends** · Publish / activate **Partial**
 - **Read:** Search and retrieve records from connected apps.
 - **Write:** Create and update app records through hosted actions.
 - **Connection type:** hosted-mcp
+- **Connection status:** official · generally-available. Official hosted app servers. Available actions depend on the connected app and its permissions.
 - **Review:** current
 - **read:** Search and retrieve records from connected apps.
 - **create:** Supported issues, messages, documents and records.
@@ -229,18 +233,18 @@ Search and retrieve records from connected apps. Create and update app records t
 
 **Official links**
 
-- **Product / official page:** [Connection and tool documentation](https://pipedream.com/docs/connect/mcp)
+- **Product / official page:** [Pipedream MCP actions and access](https://pipedream.com/docs/connect/mcp)
 - **AI interface / endpoint:** [Pipedream official hosted MCP](https://pipedream.com/docs/connect/mcp)
 - **MCP:** [Pipedream official hosted MCP](https://pipedream.com/docs/connect/mcp)
 - **Plugin:** No separate official agent plugin verified
 - **CLI:** [pd CLI](https://pipedream.com/docs/cli/reference)
 - **API / SDK:** [Connect SDK and API](https://pipedream.com/docs/connect)
-- **Documentation:** [Connection and tool documentation](https://pipedream.com/docs/connect/mcp)
+- **Documentation:** [Pipedream MCP actions and access](https://pipedream.com/docs/connect/mcp)
 - **GitHub:** No official repository verified
 
 - **Access:** Pipedream account, connected app authorisation, usage and downstream permissions.
 - **Watch:** Each app has its own tools; app actions do not establish Pipedream workflow authoring.
-- **Sources:** [Connection and tool documentation](https://pipedream.com/docs/connect/mcp) · [Additional official documentation](https://mcp.pipedream.com)
+- **Sources:** [Pipedream MCP actions and access](https://pipedream.com/docs/connect/mcp)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#automation-and-workflow)
@@ -260,12 +264,13 @@ Read agents, sessions, artifacts, tools, flows and permitted knowledge sources. 
 
 - **Route:** Gumloop external management MCP.
 - **Scope:** Read agents, sessions, artifacts, tools, flows and permitted knowledge sources..
-- **Setup:** Moderate. Connect the hosted management MCP and use the appropriate personal or team scope. [Connection documentation](https://docs.gumloop.com/mcp-server/overview.md).
+- **Setup:** Moderate. Connect the hosted management MCP and use the appropriate personal or team scope. [Gumloop MCP access and scope](https://docs.gumloop.com/mcp-server/overview.md).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
 - **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **Partial**
 - **Read:** Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.
 - **Write:** Create and edit agents/skills, run them and manage supported triggers.
 - **Connection type:** hosted-mcp
+- **Connection status:** official · generally-available. Official hosted management MCP. Personal-key and team-scoped connections expose different operations.
 - **Review:** current
 - **read:** Read agents, sessions, artifacts, tools, flows and permitted knowledge sources.
 - **create:** Agents, sessions, skills and triggers.
@@ -292,12 +297,12 @@ Read agents, sessions, artifacts, tools, flows and permitted knowledge sources. 
 - **Plugin:** No separate official agent plugin verified
 - **CLI:** [Gumloop CLI](https://docs.gumloop.com/cli/overview)
 - **API / SDK:** [Gumloop API](https://docs.gumloop.com/api-reference/getting-started)
-- **Documentation:** [Connection and tool documentation](https://docs.gumloop.com/mcp-server/overview.md)
+- **Documentation:** [Gumloop MCP access and scope](https://docs.gumloop.com/mcp-server/overview.md)
 - **GitHub:** No official repository verified
 
 - **Access:** Gumloop account and appropriate personal/team scope. Several agent, evaluation, session and organisation operations require a personal API key.
 - **Watch:** Personal/team scopes differ; complete visual-flow authoring is not established.
-- **Sources:** [Connection and tool documentation](https://docs.gumloop.com/mcp-server/overview.md) · [Additional official documentation](https://docs.gumloop.com/mcp-server/setup) · [Additional official documentation](https://docs.gumloop.com/mcp-server/tools/agents)
+- **Sources:** [Gumloop MCP access and scope](https://docs.gumloop.com/mcp-server/overview.md) · [Gumloop agent and trigger tools](https://docs.gumloop.com/mcp-server/tools/agents)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#automation-and-workflow)
@@ -313,23 +318,24 @@ Read exposed workflows, executions and supported data tables. Create, edit, test
 - Read exposed workflows, executions and supported data tables.
 - Create, edit, test, publish and unpublish workflows.
 
-> **What still needs you:** Credentials and admin setup remain; protected instances restrict mutations.
+> **What still needs you:** Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply.
 
 - **Route:** n8n Cloud instance MCP.
 - **Scope:** Read exposed workflows, executions and supported data tables..
-- **Setup:** Moderate. Enable the instance MCP on n8n Cloud and authorise user-scoped workflows. [Connection documentation](https://docs.n8n.io/connect/connect-to-n8n-mcp-server).
+- **Setup:** Moderate. Enable the instance MCP on n8n Cloud and authorise user-scoped workflows. [n8n MCP setup and permissions](https://docs.n8n.io/connect/connect-to-n8n-mcp-server).
 - **Human job:** Connect systems, build the workflow, run it reliably, diagnose failures and monitor production execution.
-- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Unverified** · Publish / activate **Yes**
+- **Capabilities:** Read **Yes** · Create **Yes** · Edit **Yes** · Delete **Partial** · Publish / activate **Yes**
 - **Read:** Read exposed workflows, executions and supported data tables.
 - **Write:** Create, edit, test, publish and unpublish workflows.
 - **Connection type:** hosted-mcp
+- **Connection status:** official · generally-available. Official instance MCP. An administrator enables access; tools depend on version and workflow permissions.
 - **Review:** current
 - **read:** Read exposed workflows, executions and supported data tables.
 - **create:** Workflows from validated SDK code and data tables.
 - **modify:** Workflows and supported data tables.
-- **delete:** Workflow deletion is not established; unpublish is not delete.
+- **delete:** Delete data-table columns from n8n 2.16.0. Workflow deletion remains unverified.
 - **publish:** Explicit publish_workflow and unpublish_workflow.
-- **Coverage:** Most steps. Create, edit, test, publish and unpublish workflows. Credentials and admin setup remain; protected instances restrict mutations.
+- **Coverage:** Most steps. Create, edit, test, publish and unpublish workflows. Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply.
 - **Evidence basis:** Documentation reviewed
 
 **Good**
@@ -339,22 +345,22 @@ Read exposed workflows, executions and supported data tables. Create, edit, test
 
 **Limits**
 
-- Credentials and admin setup remain; protected instances restrict mutations.
+- Enable MCP per instance and workflow. Version gates and protected-instance restrictions apply.
 
 **Official links**
 
-- **Product / official page:** [Connection and tool documentation](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
+- **Product / official page:** [n8n MCP setup and permissions](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
 - **AI interface / endpoint:** [n8n Cloud instance MCP](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
 - **MCP:** [n8n Cloud instance MCP](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
 - **Plugin:** Native nodes and skills, not a separate plugin
 - **CLI:** [n8n CLI](https://docs.n8n.io/hosting/cli-commands/)
 - **API / SDK:** [Public API and workflow nodes](https://docs.n8n.io/api/)
-- **Documentation:** [Connection and tool documentation](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
+- **Documentation:** [n8n MCP setup and permissions](https://docs.n8n.io/connect/connect-to-n8n-mcp-server)
 - **GitHub:** No official repository verified
 
 - **Access:** Suitable n8n version, instance permissions and connected-service credentials. Authoring is documented from 2.13.0; individual tools have version gates.
 - **Watch:** Credentials and admin setup remain; protected instances restrict mutations.
-- **Sources:** [Connection and tool documentation](https://docs.n8n.io/connect/connect-to-n8n-mcp-server) · [Additional official documentation](https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference)
+- **Sources:** [n8n MCP setup and permissions](https://docs.n8n.io/connect/connect-to-n8n-mcp-server) · [n8n MCP tool reference](https://docs.n8n.io/connect/connect-to-n8n-mcp-server/mcp-server-tools-reference)
 - **Last checked:** 16 Nov 2026
 
 [Back to comparison](#automation-and-workflow)
