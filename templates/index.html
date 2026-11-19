@@ -38,19 +38,20 @@
       <a href="#method">What matters</a>
       <a href="#sections">Sections</a>
       <a href="data/tools.json">Facts</a>
+      <a href="{{REPOSITORY_URL}}">GitHub</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="page-title">
       <p class="eyebrow">GitHub field guide</p>
-      <h1 id="page-title">AI paid media tools</h1>
+      <h1 id="page-title">{{TITLE}}</h1>
       <div class="hero-bottom">
         <div>
-          <p class="lede">Compare what external AI can read, what it can write and how easily it connects. Each entry names the route and its limits.</p>
-          <p class="publisher">Published by <a href="https://detail-department.com/">The Detail Department</a>. Editorial lead: <a href="https://github.com/leonhoulier">Léon Houlier</a>.</p>
+          <p class="lede">{{DESCRIPTION}} Each entry names the route and its limits.</p>
+          <p class="publisher">Published by <a href="https://detail-department.com/">The Detail Department</a>. Editorial lead: <a href="https://github.com/leonhoulier">Léon Houlier</a>. Also on the website as <a href="{{WEBSITE_INDEX_URL}}">The AI Index</a>.</p>
         </div>
-        <p class="edition">Edition 0.4<br>Catalogue updated <time datetime="{{UPDATED_ISO}}">{{UPDATED}}</time></p>
+        <p class="edition">Edition {{VERSION}}<br>Catalogue updated <time datetime="{{UPDATED_ISO}}">{{UPDATED}}</time></p>
       </div>
     </section>
 
@@ -199,7 +200,7 @@
 
   <footer>
     <p>The Detail Department</p>
-    <p>AI paid-media field guide</p>
+    <p>AI paid-media field guide<br><a href="{{REPOSITORY_URL}}">Repository</a> · <a href="{{METHODOLOGY_URL}}">Methodology</a> · <a href="{{CHANGELOG_URL}}">Changelog</a> · <a href="{{CORRECTION_URL}}">Corrections</a> · <a href="llms.txt">llms.txt</a></p>
     <p>No vendor sponsorship or client relationship is implied.</p>
   </footer>
 </body>

@@ -864,6 +864,12 @@ footer p:last-child {
   .detail-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Let the three columns shrink so 761-900px viewports do not scroll sideways. */
+  .premise,
+  .maintenance {
+    grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.45fr) minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 760px) {
@@ -1020,6 +1026,12 @@ footer p:last-child {
 
   .interface {
     min-height: 64px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header nav a:nth-child(2) {
+    display: none;
   }
 }
 

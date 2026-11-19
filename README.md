@@ -1,12 +1,14 @@
 # AI paid-media tools
 
+AI paid-media tools (ai-paid-media-tools) is an open, evidence-backed index of the MCP servers, advertising APIs, plugins and command-line tools that AI agents can use in paid-media work, graded on what each documented route can read and write and how easily it connects.
+
 **The Detail Department's view of what an AI paid-media team can use in real work today.**
 
 Published by [The Detail Department](https://detail-department.com/). Editorial lead: [Léon Houlier](https://github.com/leonhoulier).
 
-An evidence-backed comparison of Model Context Protocol (MCP) servers, advertising APIs, plugins and command-line tools used across media buying, analytics, measurement, creative production and marketing automation.
+**Read it online:** [Web index](https://the-detail-department.github.io/ai-paid-media-tools/) · [The AI Media Index](https://detail-department.com/ai-media-index) and [The AI CMS Index](https://detail-department.com/ai-cms-index) on detail-department.com · [JSON data](#use-the-data) · [llms.txt](https://the-detail-department.github.io/ai-paid-media-tools/llms.txt)
 
-We compare what external AI can read, what it can write and how easily it connects. The same combined lens applies across categories, with the exact route and its limits stated in each record.
+We compare what external AI can read and write through each Model Context Protocol (MCP) server, API, plugin or command-line tool, and how easily it connects, so you can check a route before you build or buy advertising automation around it. The same combined lens applies across media buying, analytics, measurement, creative production, research, data infrastructure, marketing automation and modelling, with the exact route and its limits stated in each record.
 
 > **Evidence basis:** Documentation reviewed unless an entry states otherwise. A Production readiness label is not proof of hands-on execution.
 
@@ -163,15 +165,115 @@ Specialist modelling frameworks judged on preparation, configuration, execution,
 
 [Definitions and grade ceilings](METHODOLOGY.md)
 
+## Common questions
+
+### Is this a package, an SDK or an automation tool?
+
+No. It is an evidence index: JSON data, generated Markdown and a static web page. It connects to no advertising account and changes nothing. There is no package to install; [use the data](#use-the-data) directly.
+
+### Which advertising platforms let an AI agent change campaigns, bids or budgets?
+
+It depends on the route. Each platform's evaluated route is listed with its documented edit scope, quoted from the record, and its connection status. A custom integration means you build and host the connection yourself.
+
+**Edit documented (10)**
+
+- **TikTok for Business** · A- · TikTok for Business official hosted MCP (official, generally available). Edit scope: Budgets, bids, targeting and ad-group pausing.
+- **Amazon Ads** · B+ · Amazon Ads official hosted MCP (official, beta). Edit scope: Supported campaign settings.
+- **Meta Ads** · B+ · Meta Ads official hosted MCP (official, availability unverified). Edit scope: Campaign, ad-set and ad fields, audiences and catalogue data.
+- **X Ads** · B+ · X Ads official hosted MCP (official, generally available). Edit scope: Campaigns, line items and supported related objects.
+- **Apple Ads** · C+ · Apple Ads API, custom integration (official, generally available). Edit scope: Supported campaign-management operations.
+- **Campaign Manager 360** · C+ · Campaign Manager 360 API, custom integration (official, generally available). Edit scope: Campaign fields and archive state.
+- **Display & Video 360** · C+ · Display & Video 360 API v5 beta, custom integration (official, beta). Edit scope: Supported resources and targeting.
+- **Pinterest Ads** · C+ · Pinterest Ads API, custom integration (official, generally available). Edit scope: Supported fields, targeting, schedules and status.
+- **Reddit Ads** · C+ · Reddit Ads API, custom integration (official, generally available). Edit scope: Campaign names, budgets, bids, schedules and configured status.
+- **LinkedIn Ads** · C · LinkedIn Ads API, custom integration (official, restricted access). Edit scope: Targeting, budgets, schedules and status.
+
+**Edit partly documented (1)**
+
+- **Google Ads** · B- · Google Ads official MCP, local or self-deployed (official, restricted access). Edit scope: Labels and their associations only.
+
+**Edit not yet verified (1)**
+
+- **The Trade Desk** · C+ · The Trade Desk OAK hosted MCP (official, restricted access). Edit scope: Write examples exist, but their release table does not confirm shipment.
+
+**Edit not supported (3)**
+
+- **Microsoft Advertising** · C+ · Microsoft Advertising official hosted MCP (official, generally available). Edit scope: Read-only connection.
+- **Snapchat Ads** · C+ · Snapchat Ads official hosted MCP (official, generally available). Edit scope: Read-only connection.
+- **Search Ads 360** · C · Search Ads 360 API, custom integration (official, generally available). Edit scope: Read-only connection.
+
+### Has The Detail Department tested these routes?
+
+No hands-on testing is recorded. All 50 entries are **Documentation reviewed**: assessment based on current official documentation, product announcements and public source repositories. None is recorded as Connected, Executed or Used repeatedly, so no grade reflects a live test.
+
+### How current is it?
+
+The catalogue was last updated on 16 Nov 2026. Each record shows its own **Last checked** date, and the [changelog](CHANGELOG.md) lists every review. Vendors change AI routes quickly, so confirm the cited source before relying on an entry.
+
+### How do I correct an entry or ask a question?
+
+[Propose a correction](../../issues/new?template=correction.yml) with an official source, or ask in the [issue tracker](https://github.com/The-Detail-Department/ai-paid-media-tools/issues). The [contribution guide](CONTRIBUTING.md) explains what counts as evidence.
+
 ## CMS companion
 
 [The AI CMS Index](catalogue/cms.md) assesses CMS platforms and AI/LLM workflows using the same read/write/setup lens, with content-specific action boundaries.
+
+## Use the data
+
+There is no package to install. The index is three JSON files, published with the web index and kept in `data/` in this repository:
+
+| File | Contents |
+| :--- | :--- |
+| [tools.json](https://the-detail-department.github.io/ai-paid-media-tools/data/tools.json) | Interface facts: routes, official links, sources and review dates |
+| [workflows.json](https://the-detail-department.github.io/ai-paid-media-tools/data/workflows.json) | Daily workflow assessments: read, create, edit, delete and publish, each with its scope |
+| [ratings.json](https://the-detail-department.github.io/ai-paid-media-tools/data/ratings.json) | Editorial ratings: grade, readiness, market role, positives and limits |
+
+For example, list the advertising platforms whose evaluated route documents Edit, with its scope. You need `curl` and `jq`:
+
+```bash
+curl -s -O https://the-detail-department.github.io/ai-paid-media-tools/data/ratings.json \
+     -O https://the-detail-department.github.io/ai-paid-media-tools/data/workflows.json
+jq -r --slurpfile w workflows.json '.ratings | to_entries[]
+  | $w[0].workflows[.key] as $route
+  | select(.value.section == "Media platforms" and $route.reviewStatus == "current" and $route.actions.modify == "Yes")
+  | "\(.value.grade)\t\(.key)\t\($route.actionScopes.modify)"' ratings.json
+```
+
+Output from the catalogue updated 16 Nov 2026:
+
+```text
+B+	meta-ads	Campaign, ad-set and ad fields, audiences and catalogue data.
+A-	tiktok-for-business	Budgets, bids, targeting and ad-group pausing.
+B+	amazon-ads	Supported campaign settings.
+C	linkedin-ads	Targeting, budgets, schedules and status.
+C+	pinterest-ads	Supported fields, targeting, schedules and status.
+C+	reddit-ads	Campaign names, budgets, bids, schedules and configured status.
+B+	x-ads	Campaigns, line items and supported related objects.
+C+	display-video-360	Supported resources and targeting.
+C+	campaign-manager-360	Campaign fields and archive state.
+C+	apple-ads	Supported campaign-management operations.
+```
+
+A record whose `reviewStatus` is `pending` is shown as **Not scored**, so filter on `current` before using a grade. The CMS companion uses the same structure in `data/cms-tools.json`, `data/cms-workflows.json` and `data/cms-ratings.json`.
+
+To work on the index you need Node.js 20 or later; there are no dependencies to install:
+
+```bash
+git clone https://github.com/The-Detail-Department/ai-paid-media-tools.git
+cd ai-paid-media-tools
+npm run check   # validates the data and confirms the generated files are current
+npm run serve   # serves the web index at http://localhost:4173 (needs Python 3)
+```
+
+Edit the `data/*.json` files, then run `npm run build` and `npm run check`. The [contribution guide](CONTRIBUTING.md) explains the evidence rules.
 
 ## Data and maintenance
 
 - [Interface facts](data/tools.json)
 - [Daily workflow assessments](data/workflows.json)
 - [Editorial ratings](data/ratings.json)
+- [Web index](https://the-detail-department.github.io/ai-paid-media-tools/) and its [llms.txt](https://the-detail-department.github.io/ai-paid-media-tools/llms.txt) summary for AI assistants
+- [The AI Index](https://detail-department.com/ai-index) on detail-department.com: the website edition, rendered from a pinned snapshot of these data files
 - [Citation metadata](CITATION.cff)
 - [Changelog](CHANGELOG.md)
 - [Contribution guide](CONTRIBUTING.md)

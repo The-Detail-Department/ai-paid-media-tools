@@ -7,9 +7,20 @@ const checking = process.argv.includes('--check');
 const data = JSON.parse(await readFile(resolve(root, 'data/tools.json'), 'utf8'));
 const editorial = JSON.parse(await readFile(resolve(root, 'data/ratings.json'), 'utf8'));
 const workflowData = JSON.parse(await readFile(resolve(root, 'data/workflows.json'), 'utf8'));
+const cmsData = JSON.parse(await readFile(resolve(root, 'data/cms-tools.json'), 'utf8'));
 const siteUrl = 'https://the-detail-department.github.io/ai-paid-media-tools/';
 const repositoryUrl = 'https://github.com/The-Detail-Department/ai-paid-media-tools';
+const rawUrl = 'https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/';
 const socialImageUrl = siteUrl + 'assets/social-preview.png';
+// The website edition renders a pinned snapshot of these data files.
+const websiteIndexUrl = 'https://detail-department.com/ai-index';
+const websiteMediaIndexUrl = 'https://detail-department.com/ai-media-index';
+const websiteCmsIndexUrl = 'https://detail-department.com/ai-cms-index';
+const organisationProfiles = [
+  'https://github.com/The-Detail-Department',
+  'https://x.com/detaildept',
+  'https://www.linkedin.com/company/144640030'
+];
 const sectionConfig = {
   'Media platforms': {
     file: 'media-platforms.md',
@@ -290,16 +301,28 @@ const structuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Dataset',
   name: data.meta.title,
+  alternateName: 'ai-paid-media-tools',
   description: data.meta.description,
   url: siteUrl,
+  sameAs: repositoryUrl,
   version: data.meta.version,
   dateModified: data.meta.updatedOn,
+  inLanguage: 'en-GB',
+  isAccessibleForFree: true,
+  keywords: [
+    'paid media',
+    'media buying',
+    'advertising API',
+    'Model Context Protocol',
+    'marketing analytics',
+    'marketing automation'
+  ],
   license: 'https://opensource.org/license/mit',
   creator: {
     '@type': 'Organization',
     name: 'The Detail Department',
     url: 'https://detail-department.com/',
-    sameAs: 'https://github.com/The-Detail-Department'
+    sameAs: organisationProfiles
   },
   author: {
     '@type': 'Person',
@@ -345,7 +368,13 @@ const page = template
   .replaceAll('{{EMERGING_TOOLS}}', String(emergingTools))
   .replaceAll('{{CATEGORY_OPTIONS}}', categoryOptions)
   .replaceAll('{{SECTION_NAV}}', sectionNav)
+  .replaceAll('{{VERSION}}', escapeHtml(data.meta.version))
+  .replaceAll('{{WEBSITE_INDEX_URL}}', websiteIndexUrl)
+  .replaceAll('{{METHODOLOGY_URL}}', repositoryUrl + '/blob/main/METHODOLOGY.md')
+  .replaceAll('{{CHANGELOG_URL}}', repositoryUrl + '/blob/main/CHANGELOG.md')
+  .replaceAll('{{CORRECTION_URL}}', repositoryUrl + '/issues/new?template=correction.yml')
   .replaceAll('{{TOOL_ROWS}}', toolRows);
+if (/\{\{[A-Z_]+\}\}/.test(page)) throw new Error('Unresolved template placeholder in templates/index.html');
 
 const markdownCell = (value) => String(value).replaceAll('|', '\\|').replaceAll('\n', ' ');
 const markdownSources = (sources) => sources.map((source) => '[' + source.label + '](' + source.url + ')').join(' · ');
@@ -498,16 +527,66 @@ const readmeSections = sectionOrder.map((section) => {
   ].filter(Boolean).join('\n\n');
 }).join('\n\n');
 
+// Common questions are generated from the records so every answer stays tied to the data.
+const availabilityLabel = {
+  'generally-available': 'generally available',
+  beta: 'beta',
+  preview: 'preview',
+  restricted: 'restricted access',
+  unverified: 'availability unverified'
+};
+const routeStatus = (tool) => tool.workflow.connection.provenance + ', ' +
+  (availabilityLabel[tool.workflow.connection.availability] ?? tool.workflow.connection.availability);
+const currentMediaRoutes = rankedTools('Media platforms').filter((tool) => tool.workflow.reviewStatus === 'current');
+const editGroups = [
+  ['Yes', 'Edit documented'],
+  ['Partial', 'Edit partly documented'],
+  ['Depends', 'Edit depends on configuration'],
+  ['Unverified', 'Edit not yet verified'],
+  ['No', 'Edit not supported']
+].map(([value, label]) => [label, currentMediaRoutes.filter((tool) => tool.workflow.actions.modify === value)])
+  .filter(([, group]) => group.length);
+const editAnswer = editGroups.map(([label, group]) => [
+  '**' + label + ' (' + group.length + ')**',
+  '',
+  ...group.map((tool) => '- **' + tool.name + '** \u00b7 ' + tool.grade + ' \u00b7 ' + tool.workflow.surface +
+    ' (' + routeStatus(tool) + '). Edit scope: ' + tool.workflow.actionScopes.modify)
+].join('\n')).join('\n\n');
+
+const defaultBasis = workflowData.meta.defaultEvidenceBasis;
+const otherBases = Object.keys(workflowData.meta.evidenceBasisDefinition).filter((basis) => basis !== defaultBasis);
+const listWithOr = (items) => items.length > 1 ? items.slice(0, -1).join(', ') + ' or ' + items.at(-1) : items.join('');
+const basisCounts = Object.keys(workflowData.meta.evidenceBasisDefinition)
+  .map((basis) => [basis, tools.filter((tool) => evidenceBasisFor(tool) === basis).length])
+  .filter(([, count]) => count);
+const testedAnswer = basisCounts.length === 1 && basisCounts[0][0] === defaultBasis
+  ? 'No hands-on testing is recorded. All ' + tools.length + ' entries are **' + defaultBasis + '**: ' +
+    workflowData.meta.evidenceBasisDefinition[defaultBasis].replace(/^./, (first) => first.toLowerCase()) +
+    ' None is recorded as ' + listWithOr(otherBases) +
+    ', so no grade reflects a live test.'
+  : 'Evidence basis by entry: ' + basisCounts.map(([basis, count]) => basis + ' ' + count).join(' \u00b7 ') +
+    '. Each record states its own basis; a Production readiness label is not proof of hands-on execution.';
+
+// Mirrors the jq example below: ratings.json key order, current reviews only.
+const quickstartOutput = Object.entries(editorial.ratings)
+  .filter(([id, rating]) => rating.section === 'Media platforms' &&
+    workflowData.workflows[id]?.reviewStatus === 'current' &&
+    workflowData.workflows[id]?.actions.modify === 'Yes')
+  .map(([id, rating]) => rating.grade + '\t' + id + '\t' + workflowData.workflows[id].actionScopes.modify)
+  .join('\n');
+
 const readme = [
-  '# AI paid-media tools',
+  '# ' + data.meta.title,
+  '',
+  data.meta.description,
   '',
   '**The Detail Department\'s view of what an AI paid-media team can use in real work today.**',
   '',
   'Published by [The Detail Department](https://detail-department.com/). Editorial lead: [L\u00e9on Houlier](https://github.com/leonhoulier).',
   '',
-  'An evidence-backed comparison of Model Context Protocol (MCP) servers, advertising APIs, plugins and command-line tools used across media buying, analytics, measurement, creative production and marketing automation.',
+  '**Read it online:** [Web index](' + siteUrl + ') \u00b7 [The AI Media Index](' + websiteMediaIndexUrl + ') and [The AI CMS Index](' + websiteCmsIndexUrl + ') on detail-department.com \u00b7 [JSON data](#use-the-data) \u00b7 [llms.txt](' + siteUrl + 'llms.txt)',
   '',
-  'We compare what external AI can read, what it can write and how easily it connects. The same combined lens applies across categories, with the exact route and its limits stated in each record.',
+  'We compare what external AI can read and write through each Model Context Protocol (MCP) server, API, plugin or command-line tool, and how easily it connects, so you can check a route before you build or buy advertising automation around it. The same combined lens applies across media buying, analytics, measurement, creative production, research, data infrastructure, marketing automation and modelling, with the exact route and its limits stated in each record.',
   '',
   '> **Evidence basis:** ' + workflowData.meta.defaultEvidenceBasis + ' unless an entry states otherwise. A Production readiness label is not proof of hands-on execution.',
   '',
@@ -540,15 +619,81 @@ const readme = [
   '',
   '[Definitions and grade ceilings](METHODOLOGY.md)',
   '',
+  '## Common questions',
+  '',
+  '### Is this a package, an SDK or an automation tool?',
+  '',
+  'No. It is an evidence index: JSON data, generated Markdown and a static web page. It connects to no advertising account and changes nothing. There is no package to install; [use the data](#use-the-data) directly.',
+  '',
+  '### Which advertising platforms let an AI agent change campaigns, bids or budgets?',
+  '',
+  'It depends on the route. Each platform\'s evaluated route is listed with its documented edit scope, quoted from the record, and its connection status. A custom integration means you build and host the connection yourself.',
+  '',
+  editAnswer,
+  '',
+  '### Has The Detail Department tested these routes?',
+  '',
+  testedAnswer,
+  '',
+  '### How current is it?',
+  '',
+  'The catalogue was last updated on ' + formatDate(data.meta.updatedOn) + '. Each record shows its own **Last checked** date, and the [changelog](CHANGELOG.md) lists every review. Vendors change AI routes quickly, so confirm the cited source before relying on an entry.',
+  '',
+  '### How do I correct an entry or ask a question?',
+  '',
+  '[Propose a correction](../../issues/new?template=correction.yml) with an official source, or ask in the [issue tracker](' + repositoryUrl + '/issues). The [contribution guide](CONTRIBUTING.md) explains what counts as evidence.',
+  '',
   '## CMS companion',
   '',
   '[The AI CMS Index](catalogue/cms.md) assesses CMS platforms and AI/LLM workflows using the same read/write/setup lens, with content-specific action boundaries.',
+  '',
+  '## Use the data',
+  '',
+  'There is no package to install. The index is three JSON files, published with the web index and kept in `data/` in this repository:',
+  '',
+  '| File | Contents |',
+  '| :--- | :--- |',
+  '| [tools.json](' + siteUrl + 'data/tools.json) | Interface facts: routes, official links, sources and review dates |',
+  '| [workflows.json](' + siteUrl + 'data/workflows.json) | Daily workflow assessments: read, create, edit, delete and publish, each with its scope |',
+  '| [ratings.json](' + siteUrl + 'data/ratings.json) | Editorial ratings: grade, readiness, market role, positives and limits |',
+  '',
+  'For example, list the advertising platforms whose evaluated route documents Edit, with its scope. You need `curl` and `jq`:',
+  '',
+  '```bash',
+  'curl -s -O ' + siteUrl + 'data/ratings.json \\',
+  '     -O ' + siteUrl + 'data/workflows.json',
+  'jq -r --slurpfile w workflows.json \'.ratings | to_entries[]',
+  '  | $w[0].workflows[.key] as $route',
+  '  | select(.value.section == "Media platforms" and $route.reviewStatus == "current" and $route.actions.modify == "Yes")',
+  '  | "\\(.value.grade)\\t\\(.key)\\t\\($route.actionScopes.modify)"\' ratings.json',
+  '```',
+  '',
+  'Output from the catalogue updated ' + formatDate(data.meta.updatedOn) + ':',
+  '',
+  '```text',
+  quickstartOutput,
+  '```',
+  '',
+  'A record whose `reviewStatus` is `pending` is shown as **Not scored**, so filter on `current` before using a grade. The CMS companion uses the same structure in `data/cms-tools.json`, `data/cms-workflows.json` and `data/cms-ratings.json`.',
+  '',
+  'To work on the index you need Node.js 20 or later; there are no dependencies to install:',
+  '',
+  '```bash',
+  'git clone ' + repositoryUrl + '.git',
+  'cd ai-paid-media-tools',
+  'npm run check   # validates the data and confirms the generated files are current',
+  'npm run serve   # serves the web index at http://localhost:4173 (needs Python 3)',
+  '```',
+  '',
+  'Edit the `data/*.json` files, then run `npm run build` and `npm run check`. The [contribution guide](CONTRIBUTING.md) explains the evidence rules.',
   '',
   '## Data and maintenance',
   '',
   '- [Interface facts](data/tools.json)',
   '- [Daily workflow assessments](data/workflows.json)',
   '- [Editorial ratings](data/ratings.json)',
+  '- [Web index](' + siteUrl + ') and its [llms.txt](' + siteUrl + 'llms.txt) summary for AI assistants',
+  '- [The AI Index](' + websiteIndexUrl + ') on detail-department.com: the website edition, rendered from a pinned snapshot of these data files',
   '- [Citation metadata](CITATION.cff)',
   '- [Changelog](CHANGELOG.md)',
   '- [Contribution guide](CONTRIBUTING.md)',
@@ -558,6 +703,43 @@ const readme = [
   '',
   'Maintained by [The Detail Department](https://detail-department.com/). MIT licensed.'
 ].join('\n');
+
+// A plain-text guide for AI assistants (https://llmstxt.org/), served at the root of the web index.
+const sectionCount = (section) => tools.filter((tool) => tool.section === section).length;
+const llms = [
+  '# ' + data.meta.title,
+  '',
+  '> ' + data.meta.description,
+  '',
+  'Maintained by The Detail Department (https://detail-department.com/). Catalogue updated ' + formatDate(data.meta.updatedOn) + ': ' + tools.length + ' tools in ' + sectionOrder.length + ' sections, plus a ' + cmsData.tools.length + '-tool CMS companion. Evidence basis: ' + defaultBasis + ' unless an entry states otherwise. Grades are editorial judgements about each named route, not vendor-quality scores, measured results or live tests. This is an evidence index, not a package, SDK or automation service; it connects to no advertising account.',
+  '',
+  '## Index',
+  '',
+  '- [Web index](' + siteUrl + '): all ' + tools.length + ' tools on one static page. Every record is in the HTML; JavaScript only filters it.',
+  '- [README](' + rawUrl + 'README.md): comparison tables for every section, common questions and how to use the data.',
+  ...sectionOrder.map((section) => '- [' + section + '](' + rawUrl + 'catalogue/' + sectionConfig[section].file + '): ' +
+    sectionCount(section) + ' tools. ' + sectionConfig[section].description),
+  '- [The AI CMS Index](' + rawUrl + 'catalogue/cms.md): ' + cmsData.tools.length + ' tools. ' + cmsData.meta.description,
+  '',
+  '## Data',
+  '',
+  '- [Interface facts](' + siteUrl + 'data/tools.json): routes, official links, sources and review dates.',
+  '- [Daily workflow assessments](' + siteUrl + 'data/workflows.json): read, create, edit, delete and publish capabilities, each with its scope.',
+  '- [Editorial ratings](' + siteUrl + 'data/ratings.json): grade, readiness, market role, positives and limits.',
+  '- CMS companion data: [interface facts](' + rawUrl + 'data/cms-tools.json), [workflow assessments](' + rawUrl + 'data/cms-workflows.json) and [editorial ratings](' + rawUrl + 'data/cms-ratings.json).',
+  '',
+  '## Method and maintenance',
+  '',
+  '- [Methodology](' + rawUrl + 'METHODOLOGY.md): evidence basis, grade ceilings and readiness definitions.',
+  '- [Changelog](' + rawUrl + 'CHANGELOG.md): dated review history.',
+  '- [Contribution guide](' + rawUrl + 'CONTRIBUTING.md): how to propose an evidence-backed correction.',
+  '- [Repository](' + repositoryUrl + '): source data, generator and issue tracker.',
+  '',
+  '## Website edition',
+  '',
+  '- [The AI Index](' + websiteIndexUrl + '): The Detail Department\'s website edition of these indexes, rendered from a pinned snapshot of this repository\'s data.',
+  '- [The AI Media Index](' + websiteMediaIndexUrl + ') and [The AI CMS Index](' + websiteCmsIndexUrl + '): the media and CMS editions on the website.'
+].join('\n') + '\n';
 
 const catalogueOutputs = sectionOrder.map((section) => [
   resolve(root, 'catalogue', sectionConfig[section].file),
@@ -574,6 +756,7 @@ const outputs = new Map([
   [resolve(root, 'docs/data/ratings.json'), JSON.stringify(editorial, null, 2) + '\n'],
   [resolve(root, 'docs/data/workflows.json'), JSON.stringify(workflowData, null, 2) + '\n'],
   [resolve(root, 'docs/robots.txt'), 'User-agent: *\nAllow: /\nSitemap: ' + siteUrl + 'sitemap.xml\n'],
+  [resolve(root, 'docs/llms.txt'), llms],
   [resolve(root, 'docs/sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url>\n    <loc>' + siteUrl + '</loc>\n    <lastmod>' + data.meta.updatedOn + '</lastmod>\n  </url>\n</urlset>\n'],
   [resolve(root, 'docs/assets/favicon.svg'), await readFile(resolve(root, 'assets/favicon.svg'))],
   [resolve(root, 'docs/assets/social-preview.png'), await readFile(resolve(root, 'assets/social-preview.png'))],
