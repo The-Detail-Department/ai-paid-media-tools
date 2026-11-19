@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "AI paid media tools",
-    "description": "An evidence-backed comparison of MCP servers, advertising APIs, plugins and command-line tools for paid-media operations, analytics and measurement.",
+    "title": "AI paid-media tools",
+    "description": "AI paid-media tools (ai-paid-media-tools) is an open, evidence-backed index of the MCP servers, advertising APIs, plugins and command-line tools that AI agents can use in paid-media work, graded on what each documented route can read and write and how easily it connects.",
     "updatedOn": "2026-11-16",
     "maintainer": "The Detail Department",
     "scope": "Tools that can materially support planning, buying, measuring, modelling, moving data, automating work or producing paid-media creative.",

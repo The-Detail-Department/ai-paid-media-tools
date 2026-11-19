@@ -252,6 +252,42 @@ for (const [file, body] of markdownBodies) {
   }
 }
 
+// Generated outputs are shared by both catalogues, so check them once.
+if (!cms) {
+  const siteUrl = 'https://the-detail-department.github.io/ai-paid-media-tools/';
+  const repositoryFilePrefixes = [
+    'https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/',
+    'https://github.com/The-Detail-Department/ai-paid-media-tools/blob/main/'
+  ];
+  const generatedBodies = new Map(markdownBodies);
+  for (const file of ['docs/index.html', 'docs/llms.txt']) {
+    try {
+      generatedBodies.set(file, await readFile(resolve(root, file), 'utf8'));
+    } catch {
+      errors.push('Generated file is missing: ' + file);
+    }
+  }
+  for (const [file, body] of generatedBodies) {
+    if (body.includes('—')) errors.push(file + ' must not contain the U+2014 em dash');
+  }
+  // Absolute links back into this index must resolve to a file the build publishes or the repository tracks.
+  for (const file of ['README.md', 'docs/llms.txt']) {
+    for (const match of (generatedBodies.get(file) ?? '').matchAll(/\]\((https:[^)\s]+)\)/g)) {
+      const url = match[1].split('#')[0].split('?')[0];
+      let target = url.startsWith(siteUrl) ? 'docs/' + (url.slice(siteUrl.length) || 'index.html') : null;
+      for (const prefix of repositoryFilePrefixes) {
+        if (url.startsWith(prefix)) target = url.slice(prefix.length);
+      }
+      if (target === null) continue;
+      try {
+        await readFile(resolve(root, target));
+      } catch {
+        errors.push(file + ' links to a file that is not published: ' + match[1]);
+      }
+    }
+  }
+}
+
 if (errors.length) {
   console.error(errors.map((error) => '- ' + error).join('\n'));
   process.exit(1);

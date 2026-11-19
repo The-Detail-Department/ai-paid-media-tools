@@ -1,0 +1,38 @@
+# AI paid-media tools
+
+> AI paid-media tools (ai-paid-media-tools) is an open, evidence-backed index of the MCP servers, advertising APIs, plugins and command-line tools that AI agents can use in paid-media work, graded on what each documented route can read and write and how easily it connects.
+
+Maintained by The Detail Department (https://detail-department.com/). Catalogue updated 16 Nov 2026: 50 tools in 8 sections, plus a 10-tool CMS companion. Evidence basis: Documentation reviewed unless an entry states otherwise. Grades are editorial judgements about each named route, not vendor-quality scores, measured results or live tests. This is an evidence index, not a package, SDK or automation service; it connects to no advertising account.
+
+## Index
+
+- [Web index](https://the-detail-department.github.io/ai-paid-media-tools/): all 50 tools on one static page. Every record is in the HTML; JavaScript only filters it.
+- [README](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/README.md): comparison tables for every section, common questions and how to use the data.
+- [Media platforms](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/media-platforms.md): 15 tools. Advertising platforms and buying systems, judged on the named documented route available to an AI-assisted operator.
+- [Analytics](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/analytics.md): 6 tools. Analytics products judged on whether an agent can investigate performance and leave useful analysis behind.
+- [Measurement](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/measurement.md): 4 tools. Collection, tagging and attribution systems judged on implementation, validation and operational monitoring.
+- [Creative production](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/creative-production.md): 4 tools. Creative systems judged on context, generation, editing, format adaptation and usable output.
+- [Research and intelligence](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/research-intelligence.md): 4 tools. External research systems judged on discovery, retrieval, comparison, analysis and export.
+- [Data infrastructure](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/data-infrastructure.md): 8 tools. Pipelines, warehouses and semantic layers judged on connection, inspection, querying, transformation and operation.
+- [Automation and workflow](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/automation-workflow.md): 6 tools. Cross-tool automation systems judged on connection, workflow construction, execution, debugging and monitoring.
+- [Modelling](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/modelling.md): 3 tools. Specialist modelling frameworks judged on preparation, configuration, execution, validation and scenario planning.
+- [The AI CMS Index](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/catalogue/cms.md): 10 tools. CMS platforms assessed for AI and LLM content workflows, with documented routes, permissions and limits.
+
+## Data
+
+- [Interface facts](https://the-detail-department.github.io/ai-paid-media-tools/data/tools.json): routes, official links, sources and review dates.
+- [Daily workflow assessments](https://the-detail-department.github.io/ai-paid-media-tools/data/workflows.json): read, create, edit, delete and publish capabilities, each with its scope.
+- [Editorial ratings](https://the-detail-department.github.io/ai-paid-media-tools/data/ratings.json): grade, readiness, market role, positives and limits.
+- CMS companion data: [interface facts](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/data/cms-tools.json), [workflow assessments](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/data/cms-workflows.json) and [editorial ratings](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/data/cms-ratings.json).
+
+## Method and maintenance
+
+- [Methodology](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/METHODOLOGY.md): evidence basis, grade ceilings and readiness definitions.
+- [Changelog](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/CHANGELOG.md): dated review history.
+- [Contribution guide](https://raw.githubusercontent.com/The-Detail-Department/ai-paid-media-tools/main/CONTRIBUTING.md): how to propose an evidence-backed correction.
+- [Repository](https://github.com/The-Detail-Department/ai-paid-media-tools): source data, generator and issue tracker.
+
+## Website edition
+
+- [The AI Index](https://detail-department.com/ai-index): The Detail Department's website edition of these indexes, rendered from a pinned snapshot of this repository's data.
+- [The AI Media Index](https://detail-department.com/ai-media-index) and [The AI CMS Index](https://detail-department.com/ai-cms-index): the media and CMS editions on the website.
